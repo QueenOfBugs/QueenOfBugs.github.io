@@ -1,4 +1,1695 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My New Hugo Site</title><link>https://queenofbugs.github.io/</link><description>Recent content on My New Hugo Site</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 02 Jun 2021 09:13:07 +0800</lastBuildDate><atom:link href="https://queenofbugs.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>My Second Post</title><link>https://queenofbugs.github.io/posts/2/</link><pubDate>Wed, 02 Jun 2021 09:13:07 +0800</pubDate><guid>https://queenofbugs.github.io/posts/2/</guid><description>My New Hugo Site https://queenofbugs.github.io/posts/2/ -&lt;p>asdf&lt;/p>
 &lt;h1 id="test">test&lt;/h1>
 &lt;p>2021-06-02 09:48&lt;/p>
-- https://queenofbugs.github.io/posts/2/ -</description></item></channel></rss>
+- https://queenofbugs.github.io/posts/2/ -</description></item><item><title>Linux 入门到进阶</title><link>https://queenofbugs.github.io/posts/linux%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6/</link><pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate><guid>https://queenofbugs.github.io/posts/linux%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6/</guid><description>My New Hugo Site https://queenofbugs.github.io/posts/linux%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6/ -&lt;h1 id="linux入门到进阶">&lt;em>linux入门到进阶&lt;/em>&lt;/h1>
+&lt;blockquote>
+&lt;p>教程视频使用的是CentOS 各系统软件包路径有所不同，不要照搬&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="目录操作">目录操作&lt;/h2>
+&lt;h3 id="创建和删除">创建和删除&lt;/h3>
+&lt;ul>
+&lt;li>创建目录
+&lt;pre>&lt;code>mkdir ./a
+mkdir a
+当前目录下创建目录(文件夹)a
+mkdir /a
+根目录下创建目录a
+mkdir -p a/b/c/d/
+创建多级目录
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>删除目录
+&lt;pre>&lt;code>rmdir a
+只能删除非空目录
+rm -r a
+删除目录a(不管是否非空)课程演示会有提示是否删除子目录，但实际操作manjaro上并没有提示，直接删除了
+rm -r -f a
+rm -rf a
+删除目录a并不会显示提示信息
+-r，-R --recursive
+-f,--force
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;/ul>
+&lt;h3 id="复制和移动">复制和移动&lt;/h3>
+&lt;ul>
+&lt;li>复制
+&lt;pre>&lt;code>cp -copy files and directories
+cp [options] SOURCE DEST
+cp a.txt /
+将a.txt复制到根目录
+常用选项
+-r,-R --复制源目录下的所有文件
+-v --显示复制过程
+-p --保留文件时间戳和权限
+-a --保留文件权限，所有者，时间等全部复制
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>移动&amp;amp;改名
+&lt;pre>&lt;code>mv -move(rename) files
+mv [options] SOURCE DEST
+mv a.txt /b.txt
+将a.txt 移动到根目录且重命名为b.txt
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;/ul>
+&lt;h3 id="查看文本">查看文本&lt;/h3>
+&lt;pre>&lt;code>cat filename--查看文件所有内容
+head -number filename 查看文件头部内容(前number行)
+tail -number filename 查看文件尾部内容(后number行)
+tail 常用参数 -f 文件内容更新后，显示信息同步更新，可以实时观察日志文件
+wc 统计文件内容信息
+less
+more 也是查看文件的命令
+&lt;/code>&lt;/pre>&lt;h2 id="打包与压缩解压缩">打包与压缩解压缩&lt;/h2>
+&lt;pre>&lt;code>tar cf etc_backup.tar /etc
+打包 /etc目录到 当前目录的etc_backup.tar
+ls -lh etc_backup.tar
+查看文件的详细信息 -h显示文件大小
+打包并压缩--tar集成了压缩命令
+tar cjf etc.tar.bz2 /etc
+tar xf etc_backup.tar -C /home/
+tar xzf etc.tar.gz
+tar xjf etc.tar.bz2
+参数
+c 打包
+x 解包
+f 指定操作类型为文件
+-C,---directory=DIR
+.tar.bz2 缩写.tbz2
+.tar.gz 缩写 .tgz
+&lt;/code>&lt;/pre>&lt;h2 id="vim">vim&lt;/h2>
+&lt;h3 id="vim使用">vim使用&lt;/h3>
+&lt;p>打开vim:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">vim
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>最好的vim入门教程就是自带的vimtutor&lt;/p>
+&lt;p>四种模式：Normal、Insert、Visual、Command&lt;/p>
+&lt;p>打开vim是正常模式，切换模式都是在正常模式下的，按下&lt;!-- raw HTML omitted -->ESC&lt;!-- raw HTML omitted -->返回到正常模式&lt;/p>
+&lt;p>在正常模式下:&lt;/p>
+&lt;ul>
+&lt;li>按下A,a,O,o,I,i,进入插入模式&lt;/li>
+&lt;li>按:进入命令行模式&lt;/li>
+&lt;li>按&lt;!-- raw HTML omitted -->v&lt;!-- raw HTML omitted -->,&lt;!-- raw HTML omitted -->V&lt;!-- raw HTML omitted -->,&lt;!-- raw HTML omitted -->Ctrl&lt;!-- raw HTML omitted -->+&lt;!-- raw HTML omitted -->v&lt;!-- raw HTML omitted -->进入可视模式&lt;/li>
+&lt;/ul>
+&lt;p>正常模式&lt;/p>
+&lt;p>d 剪切&lt;/p>
+&lt;p>y 复制yank&lt;/p>
+&lt;p>u 撤销，多次按u撤销多次&lt;/p>
+&lt;p>U 撤销当前行到最后一次保存&lt;/p>
+&lt;p>CTRL+R 重做撤销的指令(取消u和U的撤销)&lt;/p>
+&lt;p>x 删除指定字符&lt;/p>
+&lt;p>r 替换指定字符&lt;/p>
+&lt;p>num G 移动到第num行&lt;/p>
+&lt;p>G 移动光标到最后一行&lt;/p>
+&lt;p>gg 移动到第一行&lt;/p>
+&lt;p>$ 移动到当前行的开头&lt;/p>
+&lt;p>&lt;strong>命令行模式&lt;/strong>&lt;/p>
+&lt;p>w 保存命令 w ~/a.txt保存当前文件到a.txt&lt;/p>
+&lt;p>! command 可执行外部命令(cat cd 等)&lt;/p>
+&lt;p>/text 向下查找text,按n查找下一个，N反向查找
+?text 向上查找text,n查找下一个，N反向查找&lt;/p>
+&lt;p>s/old/new&lt;/p>
+&lt;p>%s/old/new/g 全局替换&lt;/p>
+&lt;p>%s/old/new/gc 全局替换并确认每一次替换&lt;/p>
+&lt;p>2,5s/old/new/g 替换第二行和第五行之间的文本&lt;/p>
+&lt;p>&lt;strong>可视模式&lt;/strong>&lt;/p>
+&lt;p>v 字符可使模式&lt;/p>
+&lt;p>V 行可视模式&lt;/p>
+&lt;p>&lt;!-- raw HTML omitted -->Ctrl&lt;!-- raw HTML omitted -->+&lt;!-- raw HTML omitted -->v&lt;!-- raw HTML omitted --> 块可视模式&lt;/p>
+&lt;p>按I插入，两次&lt;!-- raw HTML omitted -->ESC&lt;!-- raw HTML omitted -->批量插入，d删除&lt;/p>
+&lt;h3 id="vim-配置">vim 配置&lt;/h3>
+&lt;p>&lt;strong>.vimrc里的等号不要分开写 a=b是对的，a = b就可能是错的&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>#高亮查找
+set hlsearch
+set nohlsearch
+#行号
+set nu
+set nonu
+## 交换文件
+## vim -r 查看当前目录下所有swp文件
+## vim -r filename 来恢复文件，然后再用rm 删除swp文件
+#不产生交换文件
+#set noswapfile
+#设置23000毫秒或者400字符保存一次，默认是4000ms(4s)或200字符保存一次，若updatecount=0,那么将不会保存交换文件
+set updatetime=23000
+set updatecount=400
+#交换文件保存的目录
+#set directory=/tmp
+#设置交换文件保存到当前目录
+set directory=./
+#设置保存目录为一个目录列表，文件优先被存放在第一个目录
+#set directory=./,/tmp
+#set directory = . vim表示不能识别(.)为当前目录，=.可以识别
+&lt;/code>&lt;/pre>&lt;h2 id="用户和用户组">用户和用户组&lt;/h2>
+&lt;h3 id="用户">用户&lt;/h3>
+&lt;pre>&lt;code>root 超级管理员用户。其他就是普通用户
+useradd --新建用户
+userdel --删除用户
+passwd --修改用户密码
+usermod --修改用户属性
+chage --修改用户属性
+useradd user1
+id user1 查看uid，uid为0是root用户
+创建了 /home/user1目录
+/etc/passwd 记录user1的信息
+/etc/shadow 记录user1密码相关信息
+未指定用户组时，创建一个和用户名完全相同的用户组
+只有管理员(root)才有权限创建用户
+userdel user1 删除user1,保留/home/user1
+userdel -r user1 删除user1,一并删除家目录/home/user1
+usermod [option] username
+options:
+-d DIR 修改用户的家目录
+usermod -d /home/u1 user1 将user1的家目录变成/home/u1
+chage -更改用户/用户密码的过期时间
+&lt;/code>&lt;/pre>&lt;h3 id="用户组">用户组&lt;/h3>
+&lt;pre>&lt;code>groupadd GROUPNAME
+groupdel GROUPNAME
+groupadd group1 新建用户组
+usermod -g group1 user1 将user1添加进group1
+useradd -g group1 user2 新建user2并添加到group1
+&lt;/code>&lt;/pre>&lt;h3 id="切换用户">切换用户&lt;/h3>
+&lt;pre>&lt;code>shell 方式切换用户
+su - user1 切换身份为user1的同时切换到user1的家目录
+su user1 切换身份为user1不切换目录
+以其他用户身份执行命令
+sudo command
+visudo 设置需要使用sudo的用户组
+以shutdown 命令为例子
+用visudo命令编辑/etc/suders文件
+用例
+%wheel ALL=(ALL) ALL
+用户组 ALL 那些终端可以访问(本地/远程) = (ALL)可以执行那些指令 是否需要密码
+Localhost=()终端可以访问
+授予user1用户shutdown -c的权限
+user3 ALL=/usr/bin/shutdown -c
+which shutdown可以查看shutdown在哪里
+修改后user3可以使用sudo执行 shutdown -c命令
+user3要有密码：passwd user3
+sudo shutdown -c
+&lt;/code>&lt;/pre>&lt;h3 id="用户和用户组配置文件">用户和用户组配置文件&lt;/h3>
+&lt;pre>&lt;code>/etc/passwd:
+root:x:0:0::/root:/bin/bash
+nobody:x:65534:65534:Nobody:/:/usr/bin/nologin
+dbus:x:81:81:System Message Bus:/:/usr/bin/nologin
+bin:x:1:1::/:/usr/bin/nologin
+daemon:x:2:2::/:/usr/bin/nologin
+mail:x:8:12::/var/spool/mail:/usr/bin/nologin
+ftp:x:14:11::/srv/ftp:/usr/bin/nologin
+http:x:33:33::/srv/http:/usr/bin/nologin
+systemd-journal-remote:x:982:982:systemd Journal Remote:/:/usr/bin/nologin
+systemd-network:x:981:981:systemd Network Management:/:/usr/bin/nologin
+systemd-resolve:x:980:980:systemd Resolver:/:/usr/bin/nologin
+systemd-timesync:x:979:979:systemd Time Synchronization:/:/usr/bin/nologin
+systemd-coredump:x:978:978:systemd Core Dumper:/:/usr/bin/nologin
+uuidd:x:68:68::/:/usr/bin/nologin
+dnsmasq:x:977:977:dnsmasq daemon:/:/usr/bin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/usr/bin/nologin
+avahi:x:976:976:Avahi mDNS/DNS-SD daemon:/:/usr/bin/nologin
+colord:x:975:975:Color management daemon:/var/lib/colord:/usr/bin/nologin
+git:x:974:974:git daemon user:/:/usr/bin/git-shell
+lightdm:x:973:973:Light Display Manager:/var/lib/lightdm:/usr/bin/nologin
+nm-openconnect:x:972:972:NetworkManager OpenConnect:/:/usr/bin/nologin
+nm-openvpn:x:971:971:NetworkManager OpenVPN:/:/usr/bin/nologin
+ntp:x:87:87:Network Time Protocol:/var/lib/ntp:/bin/false
+polkitd:x:102:102:PolicyKit daemon:/:/usr/bin/nologin
+usbmux:x:140:140:usbmux user:/:/usr/bin/nologin
+kamisama:x:1000:1000:kamisama:/home/kamisama:/bin/zsh
+dhcpcd:x:970:970:dhcpcd privilege separation:/var/lib/dhcpcd:/usr/bin/nologin
+mysql:x:969:969:MariaDB:/var/lib/mysql:/usr/bin/nologin
+rtkit:x:133:133:RealtimeKit:/proc:/usr/bin/nologin
+cups:x:209:209:cups helper user:/:/usr/bin/nologin
+xmms2:x:968:968::/var/lib/xmms2:/usr/bin/nologin
+user1:x:1001:1001::/home/user1:/bin/bash
+user2:x:1002:1002::/home/user2:/bin/bash
+&lt;/code>&lt;/pre>&lt;p>user1 &amp;ndash;用户名&lt;/p>
+&lt;p>x &amp;ndash;是否需要密码&lt;/p>
+&lt;p>1001 &amp;ndash;uid&lt;/p>
+&lt;p>1001 &amp;ndash;gid&lt;/p>
+&lt;p>第五个字段是注释&lt;/p>
+&lt;p>第六个是根目录&lt;/p>
+&lt;p>第七个是用户使用的命令解释器(bologin不能登录终端)&lt;/p>
+&lt;p>可以手写这个文件新建用户&lt;/p>
+&lt;pre>&lt;code>/etc/shadow
+root:$6$NepyQ6dyd2spEJzl$0rjYlOgixR.Lsgc2ynQ.XrqoHMyKrSjQHEH35Kv8Ncov1iPrlN7CXc8KTQoSpufDU.hMmnfYREQk0mrVjR3wp0:18392::::::
+nobody:!!:18335::::::
+dbus:!!:18335::::::
+bin:!!:18335::::::
+daemon:!!:18335::::::
+mail:!!:18335::::::
+ftp:!!:18335::::::
+http:!!:18335::::::
+systemd-journal-remote:!!:18335::::::
+systemd-network:!!:18335::::::
+systemd-resolve:!!:18335::::::
+systemd-timesync:!!:18335::::::
+systemd-coredump:!!:18335::::::
+uuidd:!!:18335::::::
+dnsmasq:!!:18335::::::
+rpc:!!:18335::::::
+avahi:!!:18335::::::
+colord:!!:18335::::::
+git:!!:18335::::::
+lightdm:!!:18335::::::
+nm-openconnect:!!:18335::::::
+nm-openvpn:!!:18335::::::
+ntp:!!:18335::::::
+polkitd:!!:18335::::::
+usbmux:!!:18335::::::
+kamisama:$6$rs.yzOpJ2aJJ58.I$rWtHVPX74W.jsZ7b8u8FNyr9H38ozqVnu8l4pxzdfsdH2Rv5JW4HQOiw/hJ8XhY4HcekJz1tfhlAmLFn4KfOb.:18392:0:99999:7:::
+dhcpcd:!!:18392::::::
+mysql:!!:18392::::::
+rtkit:!!:18392::::::
+cups:!!:18393::::::
+xmms2:!!:18395::::::
+user1:!:18401:0:99999:7:::
+user2:!:18401:0:99999:7:::
+&lt;/code>&lt;/pre>&lt;p>/etc/shadow
+用户和用户密码信息&lt;/p>
+&lt;p>root &amp;ndash;名
+$6$&amp;hellip;. &amp;ndash;加密后密码&lt;/p>
+&lt;pre>&lt;code>/etc/group
+root:x:0:root
+adm:x:999:daemon
+wheel:x:998:kamisama
+kmem:x:997:
+tty:x:5:
+utmp:x:996:
+audio:x:995:xmms2
+disk:x:994:
+input:x:993:
+kvm:x:992:
+lp:x:991:cups,kamisama
+optical:x:990:
+render:x:989:
+storage:x:988:
+uucp:x:987:
+video:x:986:
+users:x:985:
+sys:x:3:bin,kamisama
+mem:x:8:
+ftp:x:11:
+mail:x:12:
+log:x:19:
+smmsp:x:25:
+proc:x:26:polkitd
+games:x:50:
+lock:x:54:
+network:x:90:kamisama
+floppy:x:94:
+scanner:x:96:
+power:x:98:kamisama
+systemd-journal:x:984:
+rfkill:x:983:
+nobody:x:65534:
+dbus:x:81:
+bin:x:1:daemon
+daemon:x:2:bin
+http:x:33:
+systemd-journal-remote:x:982:
+systemd-network:x:981:
+systemd-resolve:x:980:
+systemd-timesync:x:979:
+systemd-coredump:x:978:
+uuidd:x:68:
+dnsmasq:x:977:
+rpc:x:32:
+locate:x:21:
+ntp:x:87:
+avahi:x:976:
+colord:x:975:
+git:x:974:
+lightdm:x:973:
+nm-openconnect:x:972:
+nm-openvpn:x:971:
+polkitd:x:102:
+usbmux:x:140:
+kamisama:x:1000:
+dhcpcd:x:970:
+mysql:x:969:
+rtkit:x:133:
+cups:x:209:
+xmms2:x:968:
+user1:x:1001:
+user2:x:1002:
+&lt;/code>&lt;/pre>&lt;p>root-&amp;gt;组名称&lt;/p>
+&lt;p>x-&amp;gt;是否需密码验证&lt;/p>
+&lt;p>0-&amp;gt;组ID&lt;/p>
+&lt;p>第四字段-&amp;gt;其他组设置&lt;/p>
+&lt;h2 id="权限管理">权限管理&lt;/h2>
+&lt;h3 id="文件与目录的权限表示">文件与目录的权限表示&lt;/h3>
+&lt;ul>
+&lt;li>查看文件权限&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash"> ls -l
+-rw------- &lt;span style="color:#ae81ff">1&lt;/span> root root &lt;span style="color:#ae81ff">1523&lt;/span> sep &lt;span style="color:#ae81ff">28&lt;/span> 12:05 anaconda-ks.cfg
+&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code> 类型 权限 所属用户和组 文件名
+文件类型
+- 普通文件
+d 目录文件
+b 块特殊文件
+c 字符特殊文件
+l 符号链接
+f 命名管道
+s 套接字文件
+权限表示方法
+r 读
+w 写
+x 执行
+数字权限的表示方法
+r=4
+w=2
+x=1
+-rw-r-xr-- 1 username groupname mtime filename
+rw- 文件属主的权限
+r-x 文件属组的权限
+r-- 其他用户的权限
+创建新用户有默认权限，根据umask值计算，属主和属组根据当前进程的用户来设定(666-umask)
+目录权限的表示方法
+x 进入目录
+rx 进入目录且显示目录内文件名
+wx 修改目录内文件名
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>
+&lt;p>修改文件权限&lt;/p>
+&lt;ul>
+&lt;li>chmod 修改文件、目录权限
+&lt;ul>
+&lt;li>chmod u+x /tmp/testfile&lt;/li>
+&lt;li>chmod 755 /tmp/testfile&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>chown 更改属组、属主&lt;/li>
+&lt;li>chgrp 单独更改属组，不常用&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">chmod &lt;span style="color:#f92672">(&lt;/span>u g o&lt;span style="color:#f92672">)[&lt;/span>-+&lt;span style="color:#f92672">=]&lt;/span>
+touch afile
+chmod u+x afile 增加属主执行权限
+chmod g-r afile 减少属组读取权限
+chmod o&lt;span style="color:#f92672">=&lt;/span>w afile 设置其他用户为只有写权限
+chmod a+r afile 属主、属组、其他用户都增加读取权限
+使用字符权限
+chmod u-wx afile 减少属主的写和执行权限
+使用数字权限
+chmod &lt;span style="color:#ae81ff">446&lt;/span> afile 属组、属主只读、其他用户读写
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">mkdir /test
+ls -ld /test
+drwxr-xr-x. &lt;span style="color:#ae81ff">2&lt;/span> root root &lt;span style="color:#ae81ff">6&lt;/span> 6月 07：18 test
+&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>root用户是不受权限限制的！&lt;/p>
+&lt;/blockquote>
+&lt;p>改变文件属主&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">chown user1 test
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>改变属组&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">chown :group1 test
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">chgrp group2 test
+&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>按住&lt;!-- raw HTML omitted -->Ctrl&lt;!-- raw HTML omitted -->+&lt;!-- raw HTML omitted -->r&lt;!-- raw HTML omitted --> 可以搜索之前执行过的命令，直接按方向键上可以使用之前的命令&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>权限管理和文件的特殊权限&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">chown user1:group1 afile 同时设置user和group
+chmod &lt;span style="color:#ae81ff">400&lt;/span> afile 读取权限
+echo &lt;span style="color:#ae81ff">123&lt;/span> &amp;gt; afile
+cat afile
+&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>echo info 显示信息 echo 123 &amp;gt; afile 输出重定向，将输出到屏幕上的信息输出到文件中一个&amp;gt;是清空文件并输出，两个&amp;gt;是追加，不清空文件&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>对目录文件，x表示可进入，r表示可查看里面的文件，w表示可以增加和删除里面的文件、普通文件，x表示可执行，r可读取文件内容，w可以修改文件内容
+所以目录文件的权限一般都是rx 或 wx 或rwx&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>特殊权限&lt;/li>
+&lt;/ul>
+&lt;pre>&lt;code>SUID 用于二进制可执行文件。执行命令时获取文件属主权限
+如 /usr/bin/passwd
+ls -l /usr/bin/passwd
+-rwsr-xr-x. 1 root root ....
+小写s 不管是什么用户执行这条命令都会以文件属主身份执行这条命令
+SGID 用于目录，在该目录创建新文件和目录时，权限自动更改为该目录的属组(用于文件共享)
+SBIT 用于目录，在该目录下新建的文件和目录，仅root 和自己可以删除，如/tmp
+ls -ld /tmp
+drwxrwxrwt. 16 root root ...
+&lt;/code>&lt;/pre>&lt;p>增加特殊权限&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">
+SUID 4+...
+chmod &lt;span style="color:#ae81ff">4755&lt;/span> /test/bfile
+ls -l /test/bfile
+-rwsr-xr-x ...
+SGID 2+...
+SBIT 1+...
+chmod &lt;span style="color:#ae81ff">1777&lt;/span> /test
+ls -l /test
+drwxrwxrwt ...
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="网络管理">网络管理&lt;/h2>
+&lt;ul>
+&lt;li>网络状态查看
+&lt;ul>
+&lt;li>网络状态查看工具
+net-tools VS iproute
+&lt;ol>
+&lt;li>net-tools
+&lt;ul>
+&lt;li>ifconfig&lt;/li>
+&lt;li>etho 第一块网卡(网络接口)&lt;/li>
+&lt;li>也可能叫下面名字&lt;/li>
+&lt;li>eno1 板载网卡&lt;/li>
+&lt;li>ens33 PCI-E网卡&lt;/li>
+&lt;li>enp0s3 无法获取物理信息的PCI-E 网卡&lt;/li>
+&lt;li>CentOS 7使用了一致性网络设备命名，以上都不匹配则用eth0&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>route&lt;/li>
+&lt;li>netstat&lt;/li>
+&lt;/ul>
+&lt;ol start="2">
+&lt;li>iproute2&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>ip&lt;/li>
+&lt;li>ss&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>&lt;strong>网络接口命令修改&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>网卡命名规则受到biosdevname 和 net.ifnames 两个参数影响&lt;/li>
+&lt;li>编辑/etc/default/grub 文件，修改GRUB_CMDLINE_LINUX，增加biosdevname=0 net.ifnames=0&lt;/li>
+&lt;li>更新grub
+&amp;gt; * grub2-mkconfig -o /boot/grub2/grub.cfg&lt;/li>
+&lt;li>重启
+&amp;gt; * reboot&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;/th>
+&lt;th>biosdevname&lt;/th>
+&lt;th>net.ifnames&lt;/th>
+&lt;th>网卡名&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>默认&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>ens33&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>组合1&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>em1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>组合2&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>eth0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>查看网络情况&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">mii-tool eth0 查看物理网卡连接情况
+route -n 查看网关命令 -n表示不解析主机名
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>
+&lt;p>网络配置&lt;/p>
+&lt;p>修改网络配置命令&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;pre>&lt;code> 网卡
+ifconfig &amp;lt;interface&amp;gt; &amp;lt;ip&amp;gt; [netmask]
+ifup/ifdown &amp;lt;interface&amp;gt; 开启关闭网卡
+网关
+route add default gw &amp;lt;ip&amp;gt;
+route add -host ...
+route add -net ...
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>路由命令&lt;/li>
+&lt;/ul>
+&lt;pre>&lt;code> 修改网关
+route del default gw 10.211.55.1 删除默认0.0.0.0网关
+route add default gw 10.211.55.2
+添加明细路由
+route add -host 10.0.0.1 gw 10.211.55.1
+指定网段添加明细路由
+route add -net 192.168.0.0 netmask 255.255.255.0 gw 10.211.55.3
+&lt;/code>&lt;/pre>&lt;p>对应ip命令&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">net-tools&lt;/th>
+&lt;th style="text-align:center">iproute2&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">ipconfig&lt;/td>
+&lt;td style="text-align:center">ip addr ls&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ifup eth0&lt;/td>
+&lt;td style="text-align:center">ip link set dev eth0 up&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">ifconfig eth1 10.0.0/24 via 192.168.0.1&lt;/td>
+&lt;td style="text-align:center">route add -net 10.0.0.0 netmask 255.255.255.0 gw 192.168.0.1&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;ul>
+&lt;li>
+&lt;p>网络故障排除&lt;/p>
+&lt;p>常用命令&lt;/p>
+&lt;ul>
+&lt;li>ping &amp;ndash;查看当前网络是否畅通&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash"> ping www.baidu.com
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>traceroute &amp;ndash;当前网络状态&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash"> traceroute -w &lt;span style="color:#ae81ff">1&lt;/span> www.baidu.com
+wait 1s超时等待
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>mtr &amp;ndash; 同上(包的丢失情况)&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash"> mtr
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>nslookup &amp;ndash;域名问题&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash"> nslookup www.baidu.com 解析域名
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>telnet &amp;ndash;端口问题&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash"> telnet www.baidu.com &lt;span style="color:#ae81ff">80&lt;/span> 查看80端口是否通
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>tcpdump &amp;ndash;tcp包&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash"> tcpdump -i any -n port &lt;span style="color:#ae81ff">80&lt;/span> 抓取任意网卡80端口的数据包
+-i any 抓取所有网卡 -n解析域名
+tcpdump -i any -n host 10.0.0.1
+tcpdump -i any -n host 10.0.0.1 and port &lt;span style="color:#ae81ff">80&lt;/span>
+tcpdump -i any -n host 10.0.0.1 and port &lt;span style="color:#ae81ff">80&lt;/span> -w /tmp/filename
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>netstat &amp;ndash;监听问题&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash"> netstat -n -t -p -l
+-n不显示域名 -t tcp方式截取 -p进程 -t监听的服务
+netstat -ntpl
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>ss &amp;ndash;监听问题&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash"> ss -ntpl
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>命令配置只是临时修改，永久生效需要修改配置文件&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>网络服务管理&lt;/p>
+&lt;p>&lt;strong>SysV和Systemd&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>service network start/stop/restart
+chkconfig -list network
+systemctl list-unit-files NetworkManager.service
+systemctl start/stop/restart NetworkManager
+systemctl enable/disable NetworkManager 开机自启动
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>常用网络配置文件&lt;/p>
+&lt;ul>
+&lt;li>ifcfg-eth0 网卡相关配置文件&lt;/li>
+&lt;li>/etc/hosts 主机名相关配置文件&lt;/li>
+&lt;li>centos7网卡配置文件
+&lt;pre>&lt;code>/etc/sysconfig/network-scripts
+TYPE=
+UIP=
+NAME=
+BOOTPROTO=none --静态 dhcp 动态
+IPADDR= ip地址
+NETMASK=
+GATEWAY=
+DNS1=...
+DNS2=...
+DNS3=...
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>修改主机名
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">hostname &lt;span style="color:#f92672">[&lt;/span>name&lt;span style="color:#f92672">]&lt;/span> 临时修改
+hostnamectl set-hostname &lt;span style="color:#f92672">[&lt;/span>name&lt;span style="color:#f92672">]&lt;/span> 永久生效
+修改hostname之后需要在/etc/hosts中修改127.0.0.1对应主机名
+不然在开机时会有服务因为主机名错误无法启动，
+计算机只能等待服务超时，会影响开机速度
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="软件安装">软件安装&lt;/h2>
+&lt;h3 id="软件包管理器安装">软件包管理器安装&lt;/h3>
+&lt;p>包管理器是方便软件安装、卸载、解决软件依赖关系的重要工具&lt;/p>
+&lt;ul>
+&lt;li>centos、redhat使用yum包管理器，软件安装包格式为rpm&lt;/li>
+&lt;li>Debian、Ubuntu使用apt包管理器，软件安装包格式为deb&lt;/li>
+&lt;/ul>
+&lt;h4 id="rpm包">rpm包&lt;/h4>
+&lt;p>*a rpm包格式&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>vim-common-7.4.10-5.el7.x86_64.rpm&lt;/p>
+&lt;p>软件命名 软件名称 软件版本 系统版本 平台&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h5 id="rpm命令">rpm命令&lt;/h5>
+&lt;ul>
+&lt;li>rpm命令常用参数
+&lt;ul>
+&lt;li>-q 查询软件包&lt;/li>
+&lt;li>-i 安装软件包&lt;/li>
+&lt;li>-e 卸载软件包&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">linux一切皆文件
+dd &lt;span style="color:#66d9ef">if&lt;/span>&lt;span style="color:#f92672">=&lt;/span>/dev/sr0 of&lt;span style="color:#f92672">=&lt;/span>/xxx/xx.iso 将光盘制造成光盘镜像
+mount /dev/sr0 /mnt/ 挂载设备
+cd /mnt
+cd packages/
+ls vim*
+找到vim-common包
+mkdir /root/rpms
+cp vim-common-*.rpm vim-enhanced-*.rpm /root/rpms
+rpm -qa 查询所有以安装的包
+rpm -qa | more 管道符，分屏显示
+rpm -q vim-common 查询软件包
+rpm -i vim-enhanced-*.rpm 安装需要打完整名称或通配符
+rpm -e vim-enhance 卸载
+rpm -e vim-common vim-enhanced 同时卸载两个软件包
+rpm -i vim-enhanced-*.rpm 提示需要依赖关系，需要手动解决依赖关系
+yum 仓库可以自动解决依赖关系
+如果软件版本不符合要求还可以通过源代码编译安装软件包
+&lt;/code>&lt;/pre>&lt;/div>&lt;/blockquote>
+&lt;h5 id="yum包管理器">yum包管理器&lt;/h5>
+&lt;ul>
+&lt;li>
+&lt;p>arpm包的问题&lt;/p>
+&lt;ul>
+&lt;li>需要自己解决依赖关系&lt;/li>
+&lt;li>软件来源不可靠&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>centos yum 源&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="http://mirror.centos.org/centos/7/">http://mirror.centos.org/centos/7/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>国内镜像&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://opsx.alibaba.com/mirror">https://opsx.alibaba.com/mirror&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>yum配置文件&lt;/p>
+&lt;ul>
+&lt;li>/ etc/yum.repos.d/CentOS-Base.repo&lt;/li>
+&lt;li>wget =O /etc/yum.repos.d/CentOS-Base.repo&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>yum命令常用选项&lt;/p>
+&lt;ul>
+&lt;li>install&lt;/li>
+&lt;li>remove&lt;/li>
+&lt;li>list| group list&lt;/li>
+&lt;li>update&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>yum修改国内源&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.baskup
+备份yum配置
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+修改配置文件
+yum makecache 更新缓存
+rmp -e vim-enhanced
+rmp -e vim-common
+卸载vim
+yum install vim-enhanced
+安装vim-enhanced 会自动安装vim-common
+yum remove vim
+卸载vim
+yum update 更新所有软件
+yum update name 更新name软件
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h3 id="源代码安装">源代码安装&lt;/h3>
+&lt;ul>
+&lt;li>早期linux收费软件用二进制安装(开源之前),还要授权各种协议，十分麻烦&lt;/li>
+&lt;li>开源(公开源代码)之后，诞生源代码编译安装
+&lt;ul>
+&lt;li>wget &lt;a href="https://openresty.org/download/openresty-1.15.8.1tar.gz">https://openresty.org/download/openresty-1.15.8.1tar.gz&lt;/a>&lt;/li>
+&lt;li>tar -zxf openresty-VERSION.tar.gz 解压缩&lt;/li>
+&lt;li>cd openresty-VERSION/ 进入到源代码目录&lt;/li>
+&lt;li>./configure &amp;ndash;prefix=/usr/local/openresty 步骤一：配置软件和系统匹配，prefix制定软件安装配置，一般要指定，不然删除的时候要到处找&lt;/li>
+&lt;li>make -j2 用两个逻辑上CPU进行编译，一定程度上加快编译速度&lt;/li>
+&lt;li>make install 编译好的软件安装到指定目录&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>执行./congifure 有时会报错，在错误信息中找到缺失的依赖库/软件，需要安装对应软件来解决错误。解决错误后再执行一次，查看还缺少什么库，再重复上面步骤，直到成功执行不报错。如果提示gmake、 gmake install是方便跨平台安装的，gmake也可以制定 -j2加快速度，但是如果代码之间有依赖关系，也不会加快多少速度的，没有依赖关系才能明显加快&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>cd /usr/local/openresty 进入安装目录，可以查看软件目录&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>源码安装是最后的手段，不到万不得已，还是不要费时费力使用源码安装了
+源代码安装是需要用到软件的最新特性，但软件仓库里不是最新版本时才使用的&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="升级内核">升级内核&lt;/h2>
+&lt;ul>
+&lt;li>rpm格式内核
+&lt;ul>
+&lt;li>uname -r 查看内核版本&lt;/li>
+&lt;li>yum install kernel-3.10.0 升级内核版本&lt;/li>
+&lt;li>yum update 升级已安装的其他软件包和补丁&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>源代码编译安装
+&lt;ul>
+&lt;li>安装依赖包 yum install gcc gcc-c++ make ncurses-devel openssl-devel elfutils-libelf-devel&lt;/li>
+&lt;li>下载并解压缩内核&lt;/li>
+&lt;li>&lt;a href="https://www.kernel.org">https://www.kernel.org&lt;/a>&lt;/li>
+&lt;li>tar xvf linux-5.1.10.tar.xz -C /usr/src/kernels&lt;/li>
+&lt;li>配置内核编译参数
+&lt;ul>
+&lt;li>cd /usr/src/kernels/linux-5.1.10&lt;/li>
+&lt;li>make menuconfig | allyesconfig | allnoconfig&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>使用当前系统内核配置
+&lt;ul>
+&lt;li>cp /boot/config-kernelversion.platform /usr/src/kernels/linux-5.1.10/.config&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>查看CPU
+&lt;ul>
+&lt;li>lscpu&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>编译
+&lt;ul>
+&lt;li>make -j2 all&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>安装内核
+&lt;ul>
+&lt;li>make modules_install&lt;/li>
+&lt;li>make install&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>uname -r 查看内核版本
+epel仓库可以扩展centos仓库
+yum install epel-release -y 安装epel
+升级内核 yum install kernel
+yum install kernel-3.10.0 制定版本内核
+yum update 更新整个系统
+&lt;strong>源代码安装内核&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">下载内核文件linux-5.1.14.tar.xz
+安装依赖项
+yum install gcc gcc-c++ make ncurse-devel openssl-devel elfutil-libelf-devel
+解压
+tar xvf linux-5.1.14.tar.xz -C /usr/src/kernels/
+cd /usr/src/kernels/
+cd linux-5.1.14/
+ls -a 查看所有文件&lt;span style="color:#f92672">(&lt;/span>隐藏文件&lt;span style="color:#f92672">)&lt;/span>，有配置属性
+make menuconfig 配置内核，进入类似图形界面的配置界面
+File systems--&amp;gt;DOS/FAT/NT Filesystems--&amp;gt; NTFS file system support 查看提示可以选择各种安装选项
+M --模块化加载 * --固化到内核
+选择保存退出就支持NTFS文件了
+将当前系统的配置应用到新的内核配置
+cd /boot
+cp config-3.10.0-957.21.2.e17.x86_64 /usr/src/kernels/linux-5.1.14/.config
+原有配置不支持NTFS，需要再配置
+cd - 返回上一个工作目录
+make menuconfig 再次设置NTFS支持
+安装之前 查看cpu个数
+lscpu &lt;span style="color:#f92672">(&lt;/span>Core per socket 表示内核个数&lt;span style="color:#f92672">)&lt;/span>
+make -j2 all 编译内核
+df -h 查看使用了多少空间
+安装编译好的内核模块
+make modules_install
+***
+DEPMOD 5.1.14
+安装内核
+make install
+reboot 重启
+来到引导界面&lt;span style="color:#f92672">(&lt;/span>GRUB界面&lt;span style="color:#f92672">)&lt;/span>
+原始是3.10版本内核
+新安装是5.1.14
+进入后开启终端
+uname -r 查看系统内核版本
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="grub配置">GRUB配置&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>grub&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>grub配置文件&lt;/p>
+&lt;ul>
+&lt;li>/etc/default/grub
+&lt;ul>
+&lt;li>简单(默认)配置文件
+&lt;pre>&lt;code>vim /etc/default/grub
+两个重要设置项
+GRUB_DEFAULT=saved
+saved指引导时默认引导到哪一个内核
+grub2-editenv list 查看当前使用内核
+grep ^menu /boot/grub2/grub.cfg 搜索所有内核
+grub2-set-default 0 引导第一个内核
+grub2-set-default 1 第二个。。。
+GRUB_CMDLINE_LINUX = '...' rhgb 图形界面 quiet静默模式，只打印必要消息，
+如果系统异常，可以去掉这两个参数，重启时可以看到更详细的信息,修改网卡信息也是这里添加参数
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>/etc/grub.d/
+&lt;ul>
+&lt;li>详细配置文件的目录&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>/boot/grub2/grub.cfg
+*&lt;/li>
+&lt;li>grub2-mkconfig -o /boot/grub2/grub.cfg&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>使用单用户进入系统(忘记root密码)&lt;/p>
+&lt;ul>
+&lt;li>重启电脑
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">reboot
+选择要引导的内核，按e键
+找到linux16... 这一行
+找到root&lt;span style="color:#f92672">=&lt;/span>...找到根目录的目录
+在最后添加一个 single &lt;span style="color:#f92672">(&lt;/span> centos7 是 rd.break&lt;span style="color:#f92672">)&lt;/span>
+按下Ctrl+x重启
+再次启动不需要输入密码就可以进入
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>单用户进入系统进入的是系统虚拟出来的根目录，操作不会被保存
+mount -o remount,rw /sysroot 重新挂载硬盘(逻辑上),以可读写方式挂载 /sysroot
+chroot /sysroot 修改根目录为实际根目录
+echo 123456|passwd &amp;ndash;stdin root 通过echo显示的信息通过管道传递给passwd
+至此，root密码已经被重置，但是
+系统中的SELinux安全组件(强制访问控制)会校验/etc/passwd 和/etc/shadow，发现这两个文件非标准修改，会导致无法进入到系统
+关闭SELinux
+vim /etc/selinux/config
+SELINUX=enforcing 改成disabled就关闭了SElinux组件
+保存退出
+exit 回到虚拟root
+reboot&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="进程管理">进程管理&lt;/h2>
+&lt;ul>
+&lt;li>进程的概念&lt;/li>
+&lt;li>进程的控制命令&lt;/li>
+&lt;li>进程的通信方式&amp;ndash;信号&lt;/li>
+&lt;li>守护进程和系统日志&lt;/li>
+&lt;li>服务管理工具systemctl&lt;/li>
+&lt;li>SELinux简介&lt;/li>
+&lt;/ul>
+&lt;h3 id="进程的概念">进程的概念&lt;/h3>
+&lt;ul>
+&lt;li>进程&amp;ndash;a运行中的程序，从程序开始运行到终止的整个生命周期是可管理的
+&lt;ul>
+&lt;li>C程序的启动是从main函数开始的
+&lt;ul>
+&lt;li>int main(int agrc, char *argv[])&lt;/li>
+&lt;li>终止的方式并不唯一，并分为正常种植和异常终止
+&lt;ul>
+&lt;li>正常终止也分为从main返回、调用exit等方式&lt;/li>
+&lt;li>异常种植分为调用abort、接受信号等&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>查看进程
+&lt;ul>
+&lt;li>ps&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">kamisama-Manjaroi3 :: ~ » ps
+PID TTY TIME CMD
+&lt;span style="color:#ae81ff">215660&lt;/span> pts/1 00:00:00 zsh
+&lt;span style="color:#ae81ff">215674&lt;/span> pts/1 00:00:00 ps
+ps -e | more 查看不同终端的所有进程 且通过管道分页输出
+ps -ef | more 加上f显示UID&lt;span style="color:#f92672">(&lt;/span>有效用户ID&lt;span style="color:#f92672">)&lt;/span>,PPID&lt;span style="color:#f92672">(&lt;/span>父进程&lt;span style="color:#f92672">)&lt;/span>
+ps -eLf | more 显示轻量级进程&lt;span style="color:#f92672">(&lt;/span>线程&lt;span style="color:#f92672">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>pstree 查看进程树&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">pstree | more
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>top 动态查看进程/系统 信息&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">top
+up开机时间
+user 用户数
+load average 平均负载 衡量系统负载程度 三个数字 分别是1min 5min 10min采样得到的系统繁忙程度
+%CPU&lt;span style="color:#f92672">(&lt;/span>s&lt;span style="color:#f92672">)&lt;/span>: us 用户使用 sy 系统进程 ni:nice 优先级 id idle 空闲 wa iowait磁盘速度过慢就会等待io
+按数字1可以查看每一个CPU的运行状态&lt;span style="color:#f92672">(&lt;/span>再次按1取消&lt;span style="color:#f92672">)&lt;/span>
+按s可以设置状态更新时间间隔
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>进程也是树形结构，进程和权限有着密不可分的关系&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="进程控制">进程控制&lt;/h3>
+&lt;h4 id="进程的优先级调整">进程的优先级调整&lt;/h4>
+&lt;ul>
+&lt;li>调整优先级
+&lt;ul>
+&lt;li>nice 范围从-20到19&lt;/li>
+&lt;li>renice 重新设置优先级&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>进程的作业控制
+&lt;ul>
+&lt;li>jobs
+&lt;ul>
+&lt;li>&amp;amp; 符号&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">vim a.sh
+chmod u+x a.sh 用户执行权限&lt;span style="color:#f92672">(&lt;/span>脚本文件要再添加r权限&lt;span style="color:#f92672">)&lt;/span>
+ls -l a.sh
+id 查看当前用户的有效ID&lt;span style="color:#f92672">(&lt;/span>UID&lt;span style="color:#f92672">)&lt;/span>
+./a.sh
+top -p pid 查看a.sh运行状况默认ni为0
+nice -n &lt;span style="color:#ae81ff">10&lt;/span> ./a.sh 数字大，优先级低
+top -p pid a.sh优先级ni变化
+对已经运行的程序再次调低优先级
+另打开终端
+renice -n &lt;span style="color:#ae81ff">15&lt;/span> pid
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>a.sh内容&lt;/p>
+&lt;pre>&lt;code>#!/binbash
+echo $$
+while :
+do
+:
+done
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>每次打开很多终端不方便，我们可以进行前台后台的切换，也就是进程的作业控制&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">./a.sh &amp;amp; 程序就在后台运行
+jobs 查看后台程序
+fg &lt;span style="color:#ae81ff">1&lt;/span> jobs的编号1程序调回前台
+想把前台程序调回后台可以按CTRL+z程序会调回后台并停止
+想让程序再运行到前台
+fg &lt;span style="color:#ae81ff">1&lt;/span>
+再在后台并恢复运行
+bg &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>manjaro 不能直接使用jobs的编号，要直接使用程序名
+fg ./a.sh 这个样子&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="进程间通信">进程间通信&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>信号&lt;/strong>是进程间通信方式之一，典型用法：输入终端命令，通过信号机制停止某个程序&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>使用信号的常用快捷键和命令&lt;/p>
+&lt;ul>
+&lt;li>kill -l
+&lt;ul>
+&lt;li>SIGINT 通知前台进程组终止进程 Ctrl+c&lt;/li>
+&lt;li>SIGKILL 立即结束程序，不能被阻塞和处理kill -9 pid&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">./a.sh
+kill pid 结束进程
+kill -9 pid 无条件结束&lt;span style="color:#f92672">(&lt;/span>无视堵塞&lt;span style="color:#f92672">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="守护进程和系统日志">守护进程和系统日志&lt;/h3>
+&lt;h4 id="守护进程daemon">守护进程(daemon)&lt;/h4>
+&lt;ul>
+&lt;li>使用nohup 与&amp;amp;符号配合运行一个命令
+&lt;ul>
+&lt;li>nohup命令使进程忽略hangup(挂起)信号&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">nohup tail -f /var/log/lastlog &amp;amp;
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>守护进程和一般进程的差别&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>程序运行时会占用当前目录的，所以 daemon会切换为在根目录下运行,避免U盘等无法卸载的问题&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>孤儿进程 需要被其他进程接管&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>用户登录之前启动服务，类似于父进程创建子进程，然后结束父进程，子进程由1号进程接管,由于这些程序运行时没有终端,所以需要打印日志文件&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>nohup 和&amp;amp; 只是模拟守护进程，终端关掉程序也还会运行
+本该在终端输出的信息会在nohup.out文件里输出
+但是关机之后用这种方法启动的进程不会再次自动启动&lt;/p>
+&lt;/blockquote>
+&lt;p>proc目录&lt;/p>
+&lt;blockquote>
+&lt;pre>&lt;code>/proc/ 目录在硬盘中默认不存在的，是操作系统读取内存信息，然后以文件方式呈现的目录
+proc下有和进程号同名的目录
+例如./a.sh运行的进程号是13906
+ls /proc/13906
+ls -l cwd 当前运行位置
+ls -l fd 输入输出 0 输入 1,2,3,4 标准输出
+&lt;/code>&lt;/pre>&lt;/blockquote>
+&lt;ul>
+&lt;li>使用screen命令
+&lt;ul>
+&lt;li>screen 进入screen环境&lt;/li>
+&lt;li>ctrl+a d 退出(detached)screen环境&lt;/li>
+&lt;li>screen -ls 查看screen会话&lt;/li>
+&lt;li>screen -r sessionid 恢复会话&lt;/li>
+&lt;li>exit 退出screen&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="系统日志">系统日志&lt;/h4>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">cd /var/log/ 进入系统日志文件目录
+ls messages 系统常规日志&lt;span style="color:#f92672">(&lt;/span>manjaro没有，对应文件没找到&lt;span style="color:#f92672">)&lt;/span>
+tail -f dmesg 内核运行相关信息&lt;span style="color:#f92672">(&lt;/span>manjaro没有,对应文件没找到&lt;span style="color:#f92672">)&lt;/span>
+tail -f secure 系统的安全日志
+tail -f cron 周期性任务&lt;span style="color:#f92672">(&lt;/span>计划任务&lt;span style="color:#f92672">)&lt;/span>的日志信息
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="服务管理工具systemctl">服务管理工具systemctl&lt;/h3>
+&lt;ul>
+&lt;li>服务(提供常见功能的守护进程)集中管理工具
+&lt;ul>
+&lt;li>
+&lt;p>service(Centos6以前)&lt;/p>
+&lt;ul>
+&lt;li>执行简单，服务起停由自己编写脚本控制&lt;/li>
+&lt;li>服务控制脚本在/etc/init.d/&lt;/li>
+&lt;li>查看系统启动服务级别chkconfig &amp;ndash;list&lt;/li>
+&lt;li>init 0-6
+&lt;ul>
+&lt;li>0 关机&lt;/li>
+&lt;li>1 单用户&lt;/li>
+&lt;li>2 不带网络的多用户&lt;/li>
+&lt;li>3 多用户(字符模式)&lt;/li>
+&lt;li>4 图形模式&lt;/li>
+&lt;li>5 图形模式&lt;/li>
+&lt;li>6 重启&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>起停服务
+&lt;ul>
+&lt;li>service SericeName stop/start/restart&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>systemctl&lt;/p>
+&lt;ul>
+&lt;li>脚本复杂，服务起停简单&lt;/li>
+&lt;li>软件包安装的服务控制脚本在/usr/lib/systemd/system/&lt;/li>
+&lt;li>列出systemd服务 systemctl list-unit-files&lt;/li>
+&lt;li>起停服务
+&lt;ul>
+&lt;li>systemctl start|stop|restart|reload ServiceName 部分服务支持不重启重新加载配置(reload)&lt;/li>
+&lt;li>systemctl |enable|disable ServiceName 设置开机自启动&lt;/li>
+&lt;li>systemctl status ServiceName 查看服务状态&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>查看服务级别 cd /lib/systemd/system/
+&lt;ul>
+&lt;li>ls *.target -l 查看所有不同级别&lt;/li>
+&lt;li>ls -l runlevel*.target 查看系统启动级别&lt;/li>
+&lt;li>systemctl get-default 查看当前系统运行的级别&lt;/li>
+&lt;li>systemctl set-default multi-user.target 设置为字符界面启动&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>服务启动脚本 /lib/systemd/system/*.service
+&lt;ul>
+&lt;li>服务启动脚本编写在shell脚本里详解&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="selinux简介">SELinux简介&lt;/h3>
+&lt;blockquote>
+&lt;p>SELinux会降低性能&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;strong>安全增强的linux版本&lt;/strong>
+&lt;strong>以前：自主访问控制&amp;ndash;用户权限和文件权限控制安全&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>MAC(强制访问控制，进程用户和文件打上标签，标签一致就可以控制系统，不一致就允许访问)与DAC(自主访问控制)&lt;/li>
+&lt;li>查看SELinux的命令
+&lt;ul>
+&lt;li>getenforce 查看SELinux状态命令 /etc/selinux/config是Selinux配置文件&lt;/li>
+&lt;li>/usr/sbin/sestatus&lt;/li>
+&lt;li>ps -Z and ls -Z and id -Z&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>关闭SELinux
+&lt;ul>
+&lt;li>setenforce 0&lt;/li>
+&lt;li>/etc/selinux/sysconfig&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="内存与磁盘管理">内存与磁盘管理&lt;/h2>
+&lt;h3 id="内存和磁盘使用率查看">内存和磁盘使用率查看&lt;/h3>
+&lt;h4 id="内存使用率查看">内存使用率查看&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>常用命令介绍&lt;/p>
+&lt;ul>
+&lt;li>free 静态显示内存使用&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">free -m 按MB显示
+free -g 按GB显示
+看avaliable 和 total
+若没有swap 内存满时linux会随机杀掉内存占用最大的进程
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>top 动态查看内存使用&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="磁盘使用率查看">磁盘使用率查看&lt;/h4>
+&lt;ul>
+&lt;li>查看命令
+&lt;ul>
+&lt;li>fdisk&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">查看磁盘信息
+fdisk -l
+ls -l /dev/sd?
+parted -l
+&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code>* df fdisk的补充
+&lt;/code>&lt;/pre>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">df -h 看到分区和挂载的目录
+&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code>* du 实际占用空间
+&lt;/code>&lt;/pre>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">du /etc/passwd 不显示单位&lt;span style="color:#f92672">(&lt;/span>默认是KB&lt;span style="color:#f92672">)&lt;/span>
+du -h /etc/passwd 智能显示单位
+ls -lh /etc/passwd
+&lt;/code>&lt;/pre>&lt;/div>&lt;pre>&lt;code>* du和ls区别
+du查看的是物理机实际占用的空间，例如创建虚拟机，实际大小远远小于ls看到的
+文件有空洞，是有创建文件的开头和结尾，但是中间并没有那么多数据(空洞内容)，
+&lt;/code>&lt;/pre>
+&lt;blockquote>
+&lt;p>创建带空洞文件&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">dd &lt;span style="color:#66d9ef">if&lt;/span>&lt;span style="color:#f92672">=&lt;/span>afile bs&lt;span style="color:#f92672">=&lt;/span>4M count&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">10&lt;/span> of&lt;span style="color:#f92672">=&lt;/span>bfile 从a文件里读取4M数据并且读取10次 b--&amp;gt;40M
+dd &lt;span style="color:#66d9ef">if&lt;/span>&lt;span style="color:#f92672">=&lt;/span>/dev/zero bs&lt;span style="color:#f92672">=&lt;/span>4M count&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">10&lt;/span> of&lt;span style="color:#f92672">=&lt;/span>bfile 读取0 每次读取4M读取10次到b文件 b--&amp;gt;80M
+dd &lt;span style="color:#66d9ef">if&lt;/span>&lt;span style="color:#f92672">=&lt;/span>/dev/zero bs&lt;span style="color:#f92672">=&lt;/span>4M count&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">10&lt;/span> seek&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">20&lt;/span> of&lt;span style="color:#f92672">=&lt;/span>bfile 读取0到bfile，创建bfile开头，并跳过20块，再开始写入4M的0 10次
+这样用ls -lh bfile 是120M du -h bfile 是40M
+&lt;/code>&lt;/pre>&lt;/div>&lt;/blockquote>
+&lt;h3 id="ext4文件系统">ext4文件系统&lt;/h3>
+&lt;blockquote>
+&lt;p>linux 支持多种文件系统，常见的有ext4、xfs、NTFS(需要额外安装软件ntfs-3g，ntfs文件系统有版权)&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>
+&lt;p>ext4文件系统基本结构比较复杂&lt;/p>
+&lt;ul>
+&lt;li>超级块(记录整个系统包含的文件数、占用空间)&amp;ndash;df查看的是超级块信息&lt;/li>
+&lt;li>超级块副本 保证超级块丢失后可恢复&lt;/li>
+&lt;li>i节点(inode) 记录每一个文件的名称(类型?)、大小、编号和权限 ls查看的信息&lt;/li>
+&lt;li>数据块(datablock) 记录数据 du查看的信息(数据块为空)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>各种文件操作命令inode和datablock的操作&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">touch afile 只有i节点没有数据
+ls -li afile 查看i节点使用情况
+du -h afile
+echo &lt;span style="color:#ae81ff">123&lt;/span> &amp;gt; afile 写入123到afile
+ls -li afile 大小为4个字节
+du -h afile 大小为4K&lt;span style="color:#f92672">(&lt;/span>xfs ext4默认一个数据块的大小4K，所以有专门存小文件的文件系统&lt;span style="color:#f92672">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">cp afile afile2
+ls -li afile* i节点不同了，产生两个文件
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">mv afile2 afile3 改名
+ls -li afile* 文件名称变化，但是inode没有变化，即文件本身没有变化
+mv afile2 /afile3 移动
+如果移动到同一分区，速度很快，移动到不同分区，速度很慢
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">vim afile4 写入1234
+ls -li afile4 记住inode信息
+vim afile4 写入5678
+ls -li afile4 inode变化,即生成了新的文件
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">rm 删除文件--断开文件名和i节点的链接--不管删除多大文件都是一瞬间
+rm afile4 删除afile4
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">ls -li afile
+&lt;span style="color:#ae81ff">134493&lt;/span> -rw-r--r-- &lt;span style="color:#ae81ff">1&lt;/span> kamisama kamisama &lt;span style="color:#ae81ff">0&lt;/span> 6月 &lt;span style="color:#ae81ff">6&lt;/span> 22:42 afile
+1表示有一个文件名链接到这个inode
+ln afile bfile 链接bfile到afile的inode
+ls -li afile
+ls -li bfile 两个的inode一样，所以ln不额外增加磁盘占用
+ln是不能跨分区&lt;span style="color:#f92672">(&lt;/span>系统的&lt;span style="color:#f92672">)&lt;/span>，因为inode是存在文件系统上面的，
+跨越分区要用下面的软链接&lt;span style="color:#f92672">(&lt;/span>符号链接&lt;span style="color:#f92672">)&lt;/span>
+ls -li afile
+ln -s afile aafile 创建软链接
+ls -li afile aafile inode不一样,aafile记录的是目标文件的路径
+对链接所做的权限都会传递到链接的文件，
+符号链接&lt;span style="color:#f92672">(&lt;/span>ln -s&lt;span style="color:#f92672">)&lt;/span>可以跨系统&lt;span style="color:#f92672">(&lt;/span>分区使用&lt;span style="color:#f92672">)&lt;/span>，但是会创建新的文件，和链接&lt;span style="color:#f92672">(&lt;/span>ln&lt;span style="color:#f92672">)&lt;/span>是有区别的
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>文件访问控制列表facl&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">查看文件访问控制列表
+getfacl afile
+赋予权限
+setfacl -m u:user1:r afile 给user1用户只读权限
+ls -l afile
+-rw-r--r--+ &lt;span style="color:#ae81ff">2&lt;/span> kamisama kamisama &lt;span style="color:#ae81ff">0&lt;/span> 6月 &lt;span style="color:#ae81ff">6&lt;/span> 22:42 afile 加号表示除了标准权限外还有facl权限
+getfacl afile
+setfacl -m g:group1:r afile 给组赋予权限
+setfacl -x g:group1:r afile 收回赋予的权限
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="磁盘配额的使用">磁盘配额的使用&lt;/h3>
+&lt;ul>
+&lt;li>用户磁盘配额
+&lt;ul>
+&lt;li>xfs文件系统的用户磁盘配额 quota&lt;/li>
+&lt;li>mkfs.xfs /dev/sdb1&lt;/li>
+&lt;li>mkdir /mnt/disk1&lt;/li>
+&lt;li>mount -o uquota,gquota /dev/sdb1 /mnt/disk1&lt;/li>
+&lt;li>chmod 1777 /mnt/disk1&lt;/li>
+&lt;li>xfs_quota -x -c &amp;lsquo;report -ugibh&amp;rsquo; /mnt/disk1&lt;/li>
+&lt;li>xfs_quota -x -c &amp;lsquo;limit -u isoft=5 ihard=10 user1&amp;rsquo; /mnt/disk1&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">fdisk /dev/sdb
+n
+&lt;span style="color:#ae81ff">1&lt;/span>
+w
+mkfs.xfs /dev/sdb1
+mkdir -p /mnt/disk1 -p如果目录不存在就创建
+mount -o uquota,gquota /dev/sdb1 /mnt/dski1 下次也生效要更改fstab配置文件
+mount 查看
+chmod &lt;span style="color:#ae81ff">1777&lt;/span> /mnt/disk1
+xfs_quota 查看磁盘配额&lt;span style="color:#f92672">(&lt;/span>交互模式&lt;span style="color:#f92672">)&lt;/span>
+xfs_quota -x -c &lt;span style="color:#e6db74">&amp;#39;report -ugibh&amp;#39;&lt;/span> /mnt/disk1
+xfs_quota -x -c &lt;span style="color:#e6db74">&amp;#39;limit -u isoft=5 ihard=10 user1&amp;#39;&lt;/span> /mnt/disk1
+su - user1
+id
+cd /mnt/disk1
+touch &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span> &lt;span style="color:#ae81ff">3&lt;/span> &lt;span style="color:#ae81ff">4&lt;/span> &lt;span style="color:#ae81ff">5&lt;/span>
+touch &lt;span style="color:#ae81ff">6&lt;/span> 查看磁盘配额会显示宽限时间
+touch &lt;span style="color:#ae81ff">7&lt;/span> &lt;span style="color:#ae81ff">8&lt;/span> &lt;span style="color:#ae81ff">9&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>
+touch &lt;span style="color:#ae81ff">11&lt;/span> 显示超出磁盘配额
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="磁盘的分区和挂载">磁盘的分区和挂载&lt;/h3>
+&lt;ul>
+&lt;li>常用命令
+&lt;ul>
+&lt;li>fdisk 给磁盘创建分区&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">fdisk /dev/sdc
+m--获取帮助
+q--不保存更改并推出
+w--保存更改退出
+n--创建新分区
+p--创建主分区
+1--选择盘符1
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>mkfs 为分区创建文件系统(格式化)&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">mkfs.btrfs mkfs.ext2 mkfs.ext4 mkfs.minix mkfs.vfat
+mkfs.cramfs mkfs.ext3 mkfs.fat mkfs.msdos mkfs.xfs
+mkfs.ext4 /dev/sdc1
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>parted 给大于2T的磁盘分区&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">parted /dev/sdd
+help 获取帮助，类似fdisk
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>mount 挂载&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">mkdir /mnt/sdc1
+mount -t ext4 /dev/sdc1 /mnt/sdc1
+mount -t auto /dev/sdc1 /mnt/sdc1
+mount /dev/sdc1 /mnt/sdc1
+上面三个命令效果一样的
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>常用配置文件
+&lt;ul>
+&lt;li>/etc/fstab
+&lt;ul>
+&lt;li>上面的mount命令只是临时挂载设备，重启后失效&lt;/li>
+&lt;li>要自动挂载(固化)就要修改/etc/fstab配置文件&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>修改配置文件&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">vim /etc/fstab
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>添加要挂载的磁盘&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">/dev/sdc1 /mnt/sdc1 ext4 defaults &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="交换分区虚拟内存的查看与创建">交换分区(虚拟内存)的查看与创建&lt;/h3>
+&lt;ul>
+&lt;li>增加交换分区的大小
+&lt;ul>
+&lt;li>
+&lt;p>mkswap 标记分区为swap分区(类似格式化)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>swapon 启用swap分区&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">free -m
+ls -l /dev/sdd
+fdisk /dev/sdd
+ls /dev/sdd1
+mkswap /dev/sdd1
+swapon /dev/sdd1
+free -m
+swapoff /dev/sdd1
+free -m
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>使用文件制作交换分区
+&lt;ul>
+&lt;li>dd if=/dev/zero bs=4M count=1024 of=/swapfile&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">dd &lt;span style="color:#66d9ef">if&lt;/span>&lt;span style="color:#f92672">=&lt;/span>/dev/zero bs&lt;span style="color:#f92672">=&lt;/span>4M count&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1024&lt;/span> of&lt;span style="color:#f92672">=&lt;/span>/swapfile
+mkswap /swapfile
+ls -l /swapfile
+chmod &lt;span style="color:#ae81ff">600&lt;/span> /swapfile
+swapon /swapfile
+free -m
+vim /etc/fstab
+写入
+/swapfile swap swap defaults &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+第一个0选择要不要备份分区，第二个是开机时磁盘自检，检查顺序问题 默认都是0就可以了
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="软件raid的使用">软件RAID的使用&lt;/h3>
+&lt;p>&lt;em>RAID(磁盘阵列) 与RAID技术&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>RAID的常见级别和含义
+&lt;ul>
+&lt;li>RAID 0 striping 条带方式,提高单盘吞吐率&lt;/li>
+&lt;li>RAID 1 mirroring 镜像方式,提高可靠性&lt;/li>
+&lt;li>RAID 5 有奇偶校验 一个存数据一个存校验值&lt;/li>
+&lt;li>RAID 10 是RAID 1 和 RAID 0 的结合 &amp;ndash;金融相关(两个RAID1 再去做RAID0)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>软件RAID 的使用&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">mdadm命令&lt;span style="color:#f92672">(&lt;/span>没有需要安装&lt;span style="color:#f92672">)&lt;/span>
+/dev/sd* 大小相等 --使用大小相等的磁盘
+mdadm -C /dev/md0 -a yes -l1 -n2 /dev/sdb1 /dev/sdc1 RAID1 要两块硬盘
+mdadm -C /dev/md0 -a yes -l1 -n2 /dev/sd&lt;span style="color:#f92672">[&lt;/span>b,c&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> RAID1 要两块硬盘
+mdadm -D /dev/md0 查看RAID信息
+破坏RAID
+dd &lt;span style="color:#66d9ef">if&lt;/span>&lt;span style="color:#f92672">=&lt;/span>/dev/zero of&lt;span style="color:#f92672">=&lt;/span>/dev/sdc1 bs&lt;span style="color:#f92672">=&lt;/span>4M count&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>
+配置文件的设置
+echo DEVICE /dev/sd&lt;span style="color:#f92672">[&lt;/span>b,c&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> &amp;gt;&amp;gt; /etc/mdadm.conf
+mdadm -Evs &amp;gt;&amp;gt; /etc/mdadm.conf
+格式化RAID设备
+mkfs.xfs /dev/md0 格式化后可以挂载了
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="逻辑卷管理">逻辑卷管理&lt;/h3>
+&lt;ul>
+&lt;li>逻辑卷和文件系统的关系&lt;/li>
+&lt;li>为Linux创建逻辑卷&lt;/li>
+&lt;li>动态扩容逻辑卷&lt;/li>
+&lt;/ul>
+&lt;p>新建逻辑卷&amp;amp;&amp;amp;在线扩容&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">新建逻辑卷
+/dev/sdb1 /dev/sdc1 /dev/sdd1 三个硬盘
+pvcreate /dev/sdb1 /dev/sdc1 /dev/sdd1
+pvcreate /dev/sd&lt;span style="color:#f92672">[&lt;/span>b,c,d&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>
+报错因为之前sd&lt;span style="color:#f92672">[&lt;/span>b,c&lt;span style="color:#f92672">]&lt;/span>1创建了RAID卷
+停掉RAID卷，之后再创建就可以成功了
+mdadm --stop /dev/md0 停掉了还要摧毁RAID关系 应该只要下面两条命令就可以了
+dd &lt;span style="color:#66d9ef">if&lt;/span>&lt;span style="color:#f92672">=&lt;/span>/dev/zero of&lt;span style="color:#f92672">=&lt;/span>/dev/sdb1 bs&lt;span style="color:#f92672">=&lt;/span>1M count&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> 破掉超级块
+dd &lt;span style="color:#66d9ef">if&lt;/span>&lt;span style="color:#f92672">=&lt;/span>/dev/zero of&lt;span style="color:#f92672">=&lt;/span>/dev/sdc1 bs&lt;span style="color:#f92672">=&lt;/span>1M count&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> 破掉超级块
+pvcreate /dev/sd&lt;span style="color:#f92672">[&lt;/span>b,c,d&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>
+pvs 查看
+创建卷组&lt;span style="color:#f92672">(&lt;/span>VG&lt;span style="color:#f92672">)&lt;/span>
+vgcreate vg1 /dev/sdb1 /dev/sdc1
+一个PV不能同时加入两个卷组的
+pvs
+vgs 查看卷组
+创建逻辑卷&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#75715e">#LV)&lt;/span>
+lvcreate -L 100M -n lv1 vg1
+lvs 查看逻辑卷
+格式化并挂载
+mkdir /mnt/test
+mkfs.xfs /dev/vg1/lv1
+mount /dev/vg1/lv1 /mnt/test
+整个过程
+fdisk /dev/sd?? **pv vg1 lv1**可动态扩展 xfs文件方式操作 mount内存管理应用
+扩充容量
+扩充卷组
+vgextend centos /dev/sdd1
+pvs
+vgs
+lvs
+扩充逻辑卷
+lvextend -L +50G /dev/centos/root
+lvs
+df -h 发现分区并没有扩大，因为文件系统没有认识到自己的分区扩大了
+文件系统
+xfs_growfs /dev/centos/root
+文件系统扩大了
+df -h
+缩容也可以在lv上实现，但是实现会有风险，导致出错
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="系统综合状态查看">系统综合状态查看&lt;/h3>
+&lt;ul>
+&lt;li>使用sar 命令查看系统综合状态&lt;/li>
+&lt;li>使用第三方命令查看网络流量
+&lt;ul>
+&lt;li>yum install epel-release&lt;/li>
+&lt;li>yum install iftop&lt;/li>
+&lt;li>iftop -p&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sar -u &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span> 查看CPU 1s刷新，查看十次
+sar -r &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span> 查看内存
+sar -b &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span> 查看I/O
+sar -d &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span> 查看磁盘读写
+sar -q &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span> 查看进程使用
+iftop -p 查看网络命令 默认监听eth0
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="shell脚本">shell脚本&lt;/h3>
+&lt;h4 id="认识shell">认识shell&lt;/h4>
+&lt;ul>
+&lt;li>什么是shell
+&lt;ul>
+&lt;li>shell是命令解释器，用于解释用户对操作系统的操作&lt;/li>
+&lt;li>shell 有很多
+&lt;ul>
+&lt;li>cat /etc/shells&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>CentOS 7默认使用的shell是bash
+&lt;ul>
+&lt;li>基于bshell 重写了一遍&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>linux的启动过程(系统启动的shell脚本)
+&lt;ul>
+&lt;li>BIOS-MBR-BootLoader(grub)-Kernel-system-系统初始化-shell&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">
+BIOS
+开机时按F2&lt;span style="color:#f92672">(&lt;/span>各个电脑不一样&lt;span style="color:#f92672">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">MBR
+dd &lt;span style="color:#66d9ef">if&lt;/span>&lt;span style="color:#f92672">=&lt;/span>/dev/sda of&lt;span style="color:#f92672">=&lt;/span>mbr.bin bs&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">446&lt;/span> count&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>
+hexdump -c mbr.bin&lt;span style="color:#f92672">(&lt;/span>没有文件系统，不能用cat，可以用16进制查看 -C表示将可以显示为字符的显示为字符&lt;span style="color:#f92672">)&lt;/span>
+dd &lt;span style="color:#66d9ef">if&lt;/span>&lt;span style="color:#f92672">=&lt;/span>/dev/sda of&lt;span style="color:#f92672">=&lt;/span>mbr2.bin bs&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">512&lt;/span> count&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>
+hexdump -c mbr2.bin | more
+&lt;span style="color:#ae81ff">55&lt;/span> aa 标记表示可引导
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">GRUB
+cd /boot/grub2
+ls
+grub2-editenv list
+uname -r 查看使用内核
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">which init &lt;span style="color:#f92672">(&lt;/span>CentOS7 Systemd&lt;span style="color:#f92672">)&lt;/span>
+/usr/sbin/init
+top -p &lt;span style="color:#ae81ff">1&lt;/span>
+cd /etc/systmed/system/ 默认启动级别
+cd /usr/lib/systemd/system/ 读取各种service
+ls /etc/rc.d/ &lt;span style="color:#f92672">(&lt;/span>CentOs6系统脚本，激活RAID等初始化操作&lt;span style="color:#f92672">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>除了启动过程用到大量的shell脚本之外，linux命令也有很多在用shell脚本&lt;/p>
+&lt;p>例如grub-mkconfig命令&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">file /sbin/grub-mkconfig
+vim /sbin/grub-mkconfig
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>怎样编写一个shell
+&lt;ul>
+&lt;li>UNIX哲学：一条命令只做一件事&lt;/li>
+&lt;li>为了组合命令和多次执行，使用脚本文件来保存需要执行的命令&lt;/li>
+&lt;li>赋予该文件执行权限(chmod u+rx filename)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>二进制文件只需要赋予可执行文件，shell脚本文件还需要可读文件&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">进入到某个目录并查看有哪些文件
+cd /var ; ls
+显示当前目录路径
+cd /var ; ls ; pwd
+查看占用磁盘空间大小
+cd /var ; ls ; pwd ; du -sh
+cd /var ; ls ; pwd ; du -sh ; du -sh *
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>改成shell脚本&lt;/p>
+&lt;p>vim 1.sh&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">cd /var/
+ls
+pwd
+du -sh
+du -sh *
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>赋予可执行权限&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">chmod u+x 1.sh
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>执行脚本&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">./1.sh 使用默认命令解释器执行
+bash 1.sh 用bash解释器执行
+zsh 1.sh 用zsh解释器执行
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>脚本在其他环境下运行，如果默认命令解释器不是bash，可能会失败，所以需要一些声明&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#75715e">#!/bin/bash
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#75715e">#井号开头会被认为是注释，但当不指定命令解释器时(./1.sh)&lt;/span>
+&lt;span style="color:#75715e">#上面的命令就变成了告诉系统使用什么命令解释器的非注释&lt;/span>
+&lt;span style="color:#75715e">#demo--脚本做演示用&lt;/span>
+cd /var/
+ls
+pwd
+du -sh
+du -sh *
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>sehll脚本的执行方式
+&lt;ol>
+&lt;li>bash ./filename.sh 在当前终端下产生bash子进程，在bash子进程下运行&lt;/li>
+&lt;li>./filename.sh 也是产生子进程再运行&lt;/li>
+&lt;li>source ./filename.sh source命令是在当前进程下运行的&lt;/li>
+&lt;li>.filename.sh .就是source命令的另一种写法&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ul>
+&lt;p>1,2 不对当前运行环境产生影响
+3,4 对当前运行环境产生影响&lt;/p>
+&lt;p>vim 2.sh&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#75715e">#!/bin/bash
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#75715e">#!/usr/bin/python--用python&lt;/span>
+&lt;span style="color:#75715e"># demo 2&lt;/span>
+cd /tmp
+pwd
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">bash 2.sh
+未赋予可执行权限也能运行
+在脚本运行过程中进入tmp目录，脚本退出后回到原目录
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">./2.sh 提示权限不够
+chmod u+x 2.sh
+./2.sh
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">source ./2.sh
+直接进入tmp
+. ./2.sh
+直接进入tmp
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>内建命令和外部命令的区别&lt;/li>
+&lt;/ul>
+&lt;h4 id="管道与重定向">管道与重定向&lt;/h4>
+&lt;h5 id="管道与管道符">管道与管道符&lt;/h5>
+&lt;ul>
+&lt;li>管道和信号一样，也是进程通信的方式之一&lt;/li>
+&lt;li>匿名管道(管道符)是shell编程经常用到的通信工具&lt;/li>
+&lt;li>管道符是&amp;quot;|&amp;quot;,将前一个命令的执行结果传递给后面的命令
+&lt;ul>
+&lt;li>ps | cat
+&lt;ul>
+&lt;li>echo 123 | ps&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>管道符使用&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">ls -l |more
+ls -l 命令的执行结果传递给后面的命令
+再将后面命令&lt;span style="color:#f92672">(&lt;/span>more&lt;span style="color:#f92672">)&lt;/span>的执行结果当作最终执行结果
+&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>;和|
+; 隔开两条命令，| 将第一条命令的输出作为第二条命令的输入
+管道符是通过子进程运行的，所以要尽量别使用cd pwd等内建命令&lt;/p>
+&lt;/blockquote>
+&lt;h5 id="子进程与子shell">子进程与子shell&lt;/h5>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">cat | ps -f
+可以看到zsh&lt;span style="color:#f92672">(&lt;/span>bash&lt;span style="color:#f92672">)&lt;/span>的pid下有两个pid相邻的子进程cat 和ps
+若创建的子进程是shell脚本&lt;span style="color:#f92672">(&lt;/span>1.sh&lt;span style="color:#f92672">)&lt;/span>，通常称这种子进程叫子shell
+由于管道符是通过子进程方式运行的，所以如果使用了cd pwd等内部命令
+执行完成后，当前父进程是不会发生变化的
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">cat | ps -l
+新开终端
+cd /proc/14486 &lt;span style="color:#f92672">(&lt;/span>假设cat的PID为14486&lt;span style="color:#f92672">)&lt;/span>
+cd fd
+ls -l
+标准输入&lt;span style="color:#f92672">(&lt;/span>0&lt;span style="color:#f92672">)&lt;/span>/标准输出&lt;span style="color:#f92672">(&lt;/span>1&lt;span style="color:#f92672">)&lt;/span>/错误输出&lt;span style="color:#f92672">(&lt;/span>2&lt;span style="color:#f92672">)&lt;/span> 3个文件描述符
+可以看到 1是&lt;span style="color:#ae81ff">\&amp;#39;&lt;/span>pipe&lt;span style="color:#f92672">[&lt;/span>1234&lt;span style="color:#f92672">]&lt;/span>&lt;span style="color:#ae81ff">\&amp;#39;&lt;/span> 显示为管道符号
+&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="重定向符号">重定向符号&lt;/h5>
+&lt;ul>
+&lt;li>
+&lt;p>一个进程默认会打开标准输入、标准输出、错误输出三个文件描述符&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>输入重定向符号 &amp;ldquo;&amp;lt;&amp;rdquo;&lt;/p>
+&lt;ul>
+&lt;li>read var &amp;lt; /path/to/a/file&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>输出重定向符号 &amp;ldquo;&amp;gt;&amp;rdquo; &amp;ldquo;&amp;raquo;&amp;rdquo; &amp;ldquo;2&amp;gt;&amp;rdquo; &amp;ldquo;&amp;amp;&amp;gt;&amp;rdquo;&lt;/p>
+&lt;ul>
+&lt;li>echo 123 &amp;gt; /path/to/a/file&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>输入和输出重定向组合使用&lt;/p>
+&lt;ul>
+&lt;li>cat &amp;gt; /path/to/a/file &amp;laquo; EOF&lt;/li>
+&lt;li>I am $USER&lt;/li>
+&lt;li>EOF&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+- https://queenofbugs.github.io/posts/linux%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6/ -</description></item></channel></rss>
