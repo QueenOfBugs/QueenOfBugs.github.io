@@ -1,4 +1,78 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My New Hugo Site</title><link>https://queenofbugs.github.io/</link><description>Recent content on My New Hugo Site</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Wed, 02 Jun 2021 18:22:59 +0800</lastBuildDate><atom:link href="https://queenofbugs.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>test</title><link>https://queenofbugs.github.io/posts/1/</link><pubDate>Wed, 02 Jun 2021 18:22:59 +0800</pubDate><guid>https://queenofbugs.github.io/posts/1/</guid><description>My New Hugo Site https://queenofbugs.github.io/posts/1/ -&lt;p>#+draft&lt;/p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My New Hugo Site</title><link>https://queenofbugs.github.io/</link><description>Recent content on My New Hugo Site</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Thu, 03 Jun 2021 13:54:23 +0800</lastBuildDate><atom:link href="https://queenofbugs.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Org-mode</title><link>https://queenofbugs.github.io/notes/org-mode-notes/</link><pubDate>Thu, 03 Jun 2021 13:54:23 +0800</pubDate><guid>https://queenofbugs.github.io/notes/org-mode-notes/</guid><description>My New Hugo Site https://queenofbugs.github.io/notes/org-mode-notes/ -&lt;h2 id="config-org-mode">Config org-mode&lt;/h2>
+&lt;h3 id="configuring-todos">Configuring TODOS&lt;/h3>
+&lt;h4 id="workflow-states">Workflow states&lt;/h4>
+&lt;!-- raw HTML omitted -->
+&lt;ul>
+&lt;li>
+&lt;p>In the file itself:&lt;/p>
+&lt;p>Org mode files can be configured by adding workflow states to the beginning of the file,like so:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-org" data-lang="org">&lt;span style="color:#75715e">#+TODO&lt;/span>&lt;span style="color:#75715e">: TODO IN-PROGRESS WAITING DONE&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;ul>
+&lt;li>
+&lt;p>In the Emacs-configure file&lt;/p>
+&lt;p>Add the following after the (require &amp;lsquo;org) line:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-lisp" data-lang="lisp">(&lt;span style="color:#66d9ef">setq&lt;/span> org-todo-keywords
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>((&lt;span style="color:#a6e22e">sequence&lt;/span> &lt;span style="color:#e6db74">&amp;#34;TODO&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;IN-PROGRESS&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;WAITING&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;DONE&amp;#34;&lt;/span>)))
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>To activate the workflow states, restart Emacs.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="configuring-the-agenda-in-the-emacs-configuration-file">Configuring the agenda in the Emacs configuration file&lt;/h3>
+&lt;p>If you open up your emacs configuration file, after you have used &lt;strong>C-c [&lt;/strong>, you will see the following:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-lisp" data-lang="lisp">(custom-set-variables
+&lt;span style="color:#75715e">;; custom-set-variables was added by Custom.&lt;/span>
+&lt;span style="color:#75715e">;; If you edit it by hand, you could mess it up, so be careful.&lt;/span>
+&lt;span style="color:#75715e">;; Your init file should contain only one such instance.&lt;/span>
+&lt;span style="color:#75715e">;; If there is more than one, they won&amp;#39;t work right.&lt;/span>
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(evil-want-Y-yank-to-eol &lt;span style="color:#66d9ef">nil&lt;/span>)
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(org-agenda-files
+&lt;span style="color:#f92672">&amp;#39;&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;~/1.org&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;~/JsReverse/逆向.org&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;~/OrgTutorial.org&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;~/TODO.org&amp;#34;&lt;/span>))
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>For us, the important part is in the middle (lines 5 and 6), the line with org-agenda-files.
+There we see the list of files agenda uses to create its lists.
+For now we can just leave it there, but at least you know what it is, when you later look at your config-file.
+Further reading: &lt;a href="https://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.html">Custom agenda commands&lt;/a>&lt;/p>
+&lt;h3 id="configuring-tags">Configuring tags&lt;/h3>
+&lt;h4 id="in-the-file-itself">In the file itself&lt;/h4>
+&lt;p>To add tags, add the following to the top your document:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-org" data-lang="org">&lt;span style="color:#75715e">#+TAGS&lt;/span>&lt;span style="color:#75715e">: { @OFFICE(o) @HOME(h) } COMPUTER(c) PHONE(p) READING(r)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="in-the-emacs-configure-file">In the Emacs-configure file&lt;/h4>
+&lt;p>To add tags to the Emacs config-file, so it is available to all your documents, add the following.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-lisp" data-lang="lisp">(&lt;span style="color:#66d9ef">setq&lt;/span> org-tag-alist &lt;span style="color:#f92672">&amp;#39;&lt;/span>((&lt;span style="color:#e6db74">&amp;#34;@work&amp;#34;&lt;/span> &lt;span style="color:#f92672">.&lt;/span> ?w) (&lt;span style="color:#e6db74">&amp;#34;@home&amp;#34;&lt;/span> &lt;span style="color:#f92672">.&lt;/span> ?h) (&lt;span style="color:#e6db74">&amp;#34;laptop&amp;#34;&lt;/span> &lt;span style="color:#f92672">.&lt;/span> ?l)))
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="agendas">Agendas&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>C-c&lt;/strong> &lt;strong>a&lt;/strong> – agenda&lt;/li>
+&lt;li>&lt;strong>C-c&lt;/strong> &lt;strong>[&lt;/strong> – add document to the list of agenda files&lt;/li>
+&lt;li>&lt;strong>C-c&lt;/strong> &lt;strong>]&lt;/strong> – remove document from the list of agenda files&lt;/li>
+&lt;li>&lt;strong>C-c&lt;/strong> &lt;strong>.&lt;/strong> – add date&lt;/li>
+&lt;li>&lt;strong>C-u&lt;/strong> &lt;strong>C-c&lt;/strong> &lt;strong>.&lt;/strong> – add time and date&lt;/li>
+&lt;li>&lt;strong>C-g&lt;/strong> – stop doing what you are trying to do, escape&lt;/li>
+&lt;/ul>
+&lt;h3 id="creating-lists-of-all-active-todos">Creating lists of all active TODOS&lt;/h3>
+&lt;p>add a org file as agenda file, using &lt;strong>C-c [&lt;/strong>.
+After adding file into agenda file list, using &lt;strong>C-c a&lt;/strong>,then press &lt;strong>t&lt;/strong> you get a list of all your TODO items.
+If you want to remove a document from the list of agenda files, press &lt;strong>C-c ]&lt;/strong>&lt;/p>
+&lt;h3 id="appointments-and-deadlines">Appointments and deadlines&lt;/h3>
+&lt;p>When a task is time related, then we usually put it in our calendar.
+This can also be done in Org mode.
+And agenda can then show us a time-based list of all our TODOs.
+This is done in the following way.&lt;/p>
+&lt;p>&lt;strong>C-c .&lt;/strong> will add timestamp with date, &lt;strong>C-u C-c .&lt;/strong> will add timestamp with date and time.&lt;/p>
+&lt;h2 id="gtd">GTD&lt;/h2>
+&lt;p>Getting things done, is one of the most popular ways to organize oneself, with 4.3 miljon hits on Google.
+It is quite possible to use the same kind of setup in org mode, using tags.&lt;/p>
+&lt;p>Tags are used to organize different kind of TODO-entries, for example all tasks on the phone, reading, shopping, etc.&lt;/p>
+&lt;p>To add tags, add the following to the top your document:&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-org" data-lang="org">&lt;span style="color:#75715e">#+TAGS&lt;/span>&lt;span style="color:#75715e">: { @OFFICE(o) @HOME(h) } COMPUTER(c) PHONE(p) READING(r)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="export">Export&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>C-c C-e&lt;/strong> &amp;ndash; export menu&lt;/li>
+&lt;/ul>
+&lt;h2 id="using-help">Using Help&lt;/h2>
+&lt;p>The fastest way to read the ORG mode documentation right in Emacs, in the so-called info-browser.&lt;/p>
+&lt;p>To call the info browser, use C-h i, and use TAB to jump from hyperlink, to hyperlink.&lt;/p>
+- https://queenofbugs.github.io/notes/org-mode-notes/ -</description></item><item><title>test</title><link>https://queenofbugs.github.io/posts/1/</link><pubDate>Wed, 02 Jun 2021 18:22:59 +0800</pubDate><guid>https://queenofbugs.github.io/posts/1/</guid><description>My New Hugo Site https://queenofbugs.github.io/posts/1/ -&lt;p>#+draft&lt;/p>
 &lt;h2 id="config-org-mode">Config org-mode&lt;/h2>
 &lt;h3 id="configuring-todos">Configuring TODOS&lt;/h3>
 &lt;h4 id="workflow-states">Workflow states&lt;/h4>
