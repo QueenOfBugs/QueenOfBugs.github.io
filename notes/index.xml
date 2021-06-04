@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notes on 寒食居</title><link>https://queenofbugs.github.io/notes/</link><description>Recent content in Notes on 寒食居</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Thu, 03 Jun 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://queenofbugs.github.io/notes/index.xml" rel="self" type="application/rss+xml"/><item><title>Org-mode</title><link>https://queenofbugs.github.io/notes/org-mode-notes/</link><pubDate>Thu, 03 Jun 2021 00:00:00 +0800</pubDate><guid>https://queenofbugs.github.io/notes/org-mode-notes/</guid><description>Config org-modeConfiguring TODOSWorkflow states In the file itself:
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notes on 寒食居</title><link>https://queenofbugs.github.io/notes/</link><description>Recent content in Notes on 寒食居</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Thu, 03 Jun 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://queenofbugs.github.io/notes/index.xml" rel="self" type="application/rss+xml"/><item><title>Org-mode</title><link>https://queenofbugs.github.io/notes/org-mode-notes/</link><pubDate>Thu, 03 Jun 2021 00:00:00 +0800</pubDate><guid>https://queenofbugs.github.io/notes/org-mode-notes/</guid><description>Config org-mode Configuring TODOS Workflow states In the file itself:
 Org mode files can be configured by adding workflow states to the beginning of the file,like so:
 #+TODO: TODO IN-PROGRESS WAITING DONE In the Emacs-configure file
 Add the following after the (require &amp;lsquo;org) line:
 (setq org-todo-keywords &amp;#39;((sequence &amp;#34;TODO&amp;#34; &amp;#34;IN-PROGRESS&amp;#34; &amp;#34;WAITING&amp;#34; &amp;#34;DONE&amp;#34;))) To activate the workflow states, restart Emacs.
-Configuring the agenda in the Emacs configuration fileIf you open up your emacs configuration file, after you have used C-c [, you will see the following:</description></item><item><title>Org-mode</title><link>https://queenofbugs.github.io/notes/vim%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/</link><pubDate>Thu, 03 Jun 2021 00:00:00 +0800</pubDate><guid>https://queenofbugs.github.io/notes/vim%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/</guid><description>:vim 实用技巧: [TOC]
+Configuring the agenda in the Emacs configuration file If you open up your emacs configuration file, after you have used C-c [, you will see the following:</description></item><item><title>Org-mode</title><link>https://queenofbugs.github.io/notes/vim%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/</link><pubDate>Thu, 03 Jun 2021 00:00:00 +0800</pubDate><guid>https://queenofbugs.github.io/notes/vim%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/</guid><description>:vim 实用技巧: [TOC]
 启用高亮查找:set hlsearch 彻底禁用高亮查找:set nohlsearch 暂时关闭高亮查找:nohlsearch,高亮功能会一直关闭，直到执行新的或重复的查找命令 创建用于关闭高亮查找功能的快捷键 虽然:noh &amp;lt;CR&amp;gt;也可以暂时关闭高亮查找的功能，但是也会花费不少功夫，可以创建映射项来加速操作: 例如: noremap&amp;lt;silent&amp;gt; &amp;lt;C-l&amp;gt; :&amp;lt;C-u&amp;gt; nohlsearch&amp;lt;CR&amp;gt;&amp;lt;C-l&amp;gt; &amp;gt; &amp;lt;C-l&amp;gt;通常用于清除并重绘显示屏，上面的映射是在原有的基础上增加了暂时关闭查找高亮的功能
-第一章 Vim 解决问题的方式技巧1 &amp;lsquo;.&amp;rsquo; 命令;&amp;lsquo;.&amp;rsquo; 命令可以重复上一次的修改，'.'
+第一章 Vim 解决问题的方式 技巧1 &amp;lsquo;.&amp;rsquo; 命令; &amp;lsquo;.&amp;rsquo; 命令可以重复上一次的修改，'.'
 插入模式中移动光标也会重置修改状态.
-技巧30 指定范围内执行普通模式命令全文件的每一行末尾添加一个分号： :%normal A;
+技巧30 指定范围内执行普通模式命令 全文件的每一行末尾添加一个分号： :%normal A;
 为选中的区域执行'.&amp;lsquo;操作: :'&amp;lt;,'&amp;gt;normal .
 为指定范围的行执行&amp;rsquo;.&amp;lsquo;操作: :17,25normal .
 先执行 A;然后再为全文件每一行
-技巧2 不要自我重复减少无关移动要在行末尾添加&amp;rsquo;;':
+技巧2 不要自我重复 减少无关移动 要在行末尾添加&amp;rsquo;;':
 $a;ESC A;ESC 第二种方法比第一种少按一个按键.就是减少了不必要的移动操作$导致的，类似这样的例子很多。书中表:
 一箭双雕
-复合命令 等效的长命令 C c$ s cl S ^C I ^i A $a o A O ko 技巧3 以退为进(使操作可重复)使修改可重复下面的 JS 代码中连接字符串的代码不是很易读: var foo = &amp;quot;method(&amp;quot;+argument1+&amp;quot;,&amp;quot;+argument2+&amp;quot;)&amp;quot;;</description></item><item><title>Vim配置python开发环境</title><link>https://queenofbugs.github.io/notes/vim%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link><pubDate>Wed, 21 Apr 2021 00:00:00 +0800</pubDate><guid>https://queenofbugs.github.io/notes/vim%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid><description>功能:代码提示,代码补全,语法检查,snippet补全
+复合命令 等效的长命令 C c$ s cl S ^C I ^i A $a o A O ko 技巧3 以退为进(使操作可重复) 使修改可重复 下面的 JS 代码中连接字符串的代码不是很易读: var foo = &amp;quot;method(&amp;quot;+argument1+&amp;quot;,&amp;quot;+argument2+&amp;quot;)&amp;quot;;</description></item><item><title>Vim配置python开发环境</title><link>https://queenofbugs.github.io/notes/vim%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link><pubDate>Wed, 21 Apr 2021 00:00:00 +0800</pubDate><guid>https://queenofbugs.github.io/notes/vim%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid><description>功能:代码提示,代码补全,语法检查,snippet补全
 系统和软件版本:
 $ vim --version VIM - Vi IMproved 8.2 (2019 Dec 12, compiled Mar 26 2021 00:21:09) Included patches: 1-2653 Compiled by Arch Linux $ uname -a Linux kamisama-20e0a013cd 5.10.30-1-MANJARO #1 SMP Wed Apr 14 08:07:27 UTC 2021 x86_64 GNU/Linux 插件管理器Vim-Plug 通过命令行直接安装 Unix:
 这种方式可能需要代理才能使用，下载的网址貌似被墙,至少在我写这条记录的时候下载不了,墙对于gayhub的策略真是搞不懂
 $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 由于这种方式下载不了，所以官网推荐的自动安装的方法不适用
 手动下载安装: 将命令行里的网址复制到浏览器，访问并复制网页内容，保存为plug.vim文件，放置到`.vim/autoload/`目录
-插件安装(加载)~/.vimrc:
-call plug#begin(&amp;#39;~/.vim/plugged&amp;#39;)Plug &amp;#39;prabirshrestha/vim-lsp&amp;#39;Plug &amp;#39;mattn/vim-lsp-settings&amp;#39;Plug &amp;#39;prabirshrestha/asyncomplete.vim&amp;#39;Plug &amp;#39;prabirshrestha/asyncomplete-lsp.vim&amp;#39;Plug &amp;#39;prabirshrestha/asyncomplete-ultisnips.</description></item></channel></rss>
+插件安装(加载) ~/.vimrc:
+call plug#begin(&amp;#39;~/.vim/plugged&amp;#39;)Plug &amp;#39;prabirshrestha/vim-lsp&amp;#39;Plug &amp;#39;mattn/vim-lsp-settings&amp;#39;Plug &amp;#39;prabirshrestha/asyncomplete.</description></item></channel></rss>
