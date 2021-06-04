@@ -1,0 +1,8 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>VIM - Tag - 寒食居</title><link>https://queenofbugs.github.io/tags/vim/</link><description>VIM - Tag - 寒食居</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Wed, 21 Apr 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://queenofbugs.github.io/tags/vim/" rel="self" type="application/rss+xml"/><item><title>Vim配置python开发环境</title><link>https://queenofbugs.github.io/notes/vim%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link><pubDate>Wed, 21 Apr 2021 00:00:00 +0800</pubDate><author>[kamisama]</author><guid>https://queenofbugs.github.io/notes/vim%E9%85%8D%E7%BD%AEpython%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid><description><![CDATA[功能:代码提示,代码补全,语法检查,snippet补全
+系统和软件版本:
+$ vim --version VIM - Vi IMproved 8.2 (2019 Dec 12, compiled Mar 26 2021 00:21:09) Included patches: 1-2653 Compiled by Arch Linux $ uname -a Linux kamisama-20e0a013cd 5.10.30-1-MANJARO #1 SMP Wed Apr 14 08:07:27 UTC 2021 x86_64 GNU/Linux 插件管理器Vim-Plug 通过命令行直接安装  Unix:
+ 这种方式可能需要代理才能使用，下载的网址貌似被墙,至少在我写这条记录的时候下载不了,墙对于gayhub的策略真是搞不懂
+ $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim  由于这种方式下载不了，所以官网推荐的自动安装的方法不适用
+  手动下载安装:  将命令行里的网址复制到浏览器，访问并复制网页内容，保存为plug.vim文件，放置到`.vim/autoload/`目录
+插件安装(加载)~/.vimrc:
+call plug#begin(&#39;~/.vim/plugged&#39;)Plug &#39;prabirshrestha/vim-lsp&#39;Plug &#39;mattn/vim-lsp-settings&#39;Plug &#39;prabirshrestha/asyncomplete.vim&#39;Plug &#39;prabirshrestha/asyncomplete-lsp.vim&#39;Plug &#39;prabirshrestha/asyncomplete-ultisnips.]]></description></item></channel></rss>
