@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Hugo Theme MemE</title><link>https://example.com/</link><description>MemE is a powerful and highly customizable GoHugo theme for personal blogs.</description><generator>Hugo 0.83.1 https://gohugo.io/</generator><language>en</language><managingEditor>reuixiy@gmail.com (reuixiy)</managingEditor><webMaster>reuixiy@gmail.com (reuixiy)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright><lastBuildDate>Sun, 06 Jun 2021 12:45:34 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://example.com/rss.xml"/><item><title>test</title><link>https://example.com/post/blog/</link><guid isPermaLink="true">https://example.com/post/blog/</guid><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>reuixiy@gmail.com (reuixiy)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright><description>&lt;h2 id="vimhacking">VimHacking&lt;/h2>
+&lt;h3 id="vim配置python开发环境">Vim配置python开发环境&lt;/h3>
+&lt;p>:EXPORT_FILE_NAME: Vim配置python开发环境&lt;/p>
+&lt;p>功能:代码提示,代码补全,语法检查,snippet补全&lt;/p>
+&lt;p>系统和软件版本:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ vim --version
+VIM - Vi IMproved 8.2 &lt;span class="o">(&lt;/span>&lt;span class="m">2019&lt;/span> Dec 12, compiled Mar &lt;span class="m">26&lt;/span> &lt;span class="m">2021&lt;/span> 00:21:09&lt;span class="o">)&lt;/span>
+Included patches: 1-2653
+Compiled by Arch Linux
+$ uname -a
+Linux kamisama-20e0a013cd 5.10.30-1-MANJARO &lt;span class="c1">#1 SMP Wed Apr 14 08:07:27 UTC 2021 x86_64 GNU/Linux&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="插件管理器vim-plug">插件管理器Vim-Plug&lt;/h4>
+&lt;ul>
+&lt;li>通过命令行直接安装&lt;/li>
+&lt;/ul>
+&lt;p>Unix:&lt;/p>
+&lt;blockquote>
+&lt;p>这种方式可能需要代理才能使用，下载的网址貌似被墙,至少在我写这条记录的时候下载不了,墙对于gayhub的策略真是搞不懂&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs &lt;span class="se">\
+&lt;/span>&lt;span class="se">&lt;/span> https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;blockquote>
+&lt;p>由于这种方式下载不了，所以官网推荐的自动安装的方法不适用&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>手动下载安装:&lt;/li>
+&lt;/ul>
+&lt;p>将命令行里的网址复制到浏览器，访问并复制网页内容，保存为plug.vim文件，放置到`.vim/autoload/`目录&lt;/p>
+&lt;h4 id="插件安装--加载">插件安装(加载)&lt;/h4>
+&lt;p>~/.vimrc:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-vim" data-lang="vim">&lt;span class="nx">call&lt;/span> &lt;span class="nx">plug&lt;/span>#&lt;span class="nx">begin&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;~/.vim/plugged&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="nx">Plug&lt;/span> &lt;span class="s1">&amp;#39;prabirshrestha/vim-lsp&amp;#39;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="nx">Plug&lt;/span> &lt;span class="s1">&amp;#39;mattn/vim-lsp-settings&amp;#39;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="nx">Plug&lt;/span> &lt;span class="s1">&amp;#39;prabirshrestha/asyncomplete.vim&amp;#39;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="nx">Plug&lt;/span> &lt;span class="s1">&amp;#39;prabirshrestha/asyncomplete-lsp.vim&amp;#39;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="nx">Plug&lt;/span> &lt;span class="s1">&amp;#39;prabirshrestha/asyncomplete-ultisnips.vim&amp;#39;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="nx">Plug&lt;/span> &lt;span class="s1">&amp;#39;honza/vim-snippets&amp;#39;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="nx">Plug&lt;/span> &lt;span class="s1">&amp;#39;SirVer/ultisnips&amp;#39;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="nx">call&lt;/span> &lt;span class="nx">plug&lt;/span>#&lt;span class="nx">end&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>编辑完后保存`:w`,执行`:source %`重新加载vimrc文件,执行`:PlugInstall`下载插件&lt;/p>
+&lt;h4 id="插件配置">插件配置&lt;/h4>
+&lt;p>~/.vimrc:(配置放在插件加载之后)&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre class="chroma">&lt;code class="language-vim" data-lang="vim">&lt;span class="k">if&lt;/span> &amp;amp;&lt;span class="nx">runtimepath&lt;/span> &lt;span class="p">=~&lt;/span> &lt;span class="s1">&amp;#39;asyncomplete&amp;#39;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="c">&amp;#34; inoremap &amp;lt;expr&amp;gt; &amp;lt;Tab&amp;gt; pumvisible() ? &amp;#34;\&amp;lt;C-n&amp;gt;&amp;#34; : &amp;#34;\&amp;lt;Tab&amp;gt;&amp;#34;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="c">&amp;#34; inoremap &amp;lt;expr&amp;gt; &amp;lt;S-Tab&amp;gt; pumvisible() ? &amp;#34;\&amp;lt;C-p&amp;gt;&amp;#34; : &amp;#34;\&amp;lt;S-Tab&amp;gt;&amp;#34;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="c">&amp;#34; inoremap &amp;lt;expr&amp;gt; &amp;lt;cr&amp;gt; pumvisible() ? asyncomplete#close_popup() : &amp;#34;\&amp;lt;cr&amp;gt;&amp;#34;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="nx">inoremap&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nx">expr&lt;/span>&lt;span class="p">&amp;gt;&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nx">Tab&lt;/span>&lt;span class="p">&amp;gt;&lt;/span> &lt;span class="nx">pumvisible&lt;/span>&lt;span class="p">()&lt;/span> ? &lt;span class="s2">&amp;#34;\&amp;lt;C-n&amp;gt;&amp;#34;&lt;/span> : &lt;span class="s2">&amp;#34;\&amp;lt;Tab&amp;gt;&amp;#34;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="nx">inoremap&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nx">expr&lt;/span>&lt;span class="p">&amp;gt;&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nx">S&lt;/span>&lt;span class="p">-&lt;/span>&lt;span class="nx">Tab&lt;/span>&lt;span class="p">&amp;gt;&lt;/span> &lt;span class="nx">pumvisible&lt;/span>&lt;span class="p">()&lt;/span> ? &lt;span class="s2">&amp;#34;\&amp;lt;C-p&amp;gt;&amp;#34;&lt;/span> : &lt;span class="s2">&amp;#34;\&amp;lt;S-Tab&amp;gt;&amp;#34;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="nx">inoremap&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nx">expr&lt;/span>&lt;span class="p">&amp;gt;&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nx">cr&lt;/span>&lt;span class="p">&amp;gt;&lt;/span> &lt;span class="nx">pumvisible&lt;/span>&lt;span class="p">()&lt;/span> ? &lt;span class="s2">&amp;#34;\&amp;lt;C-y&amp;gt;&amp;#34;&lt;/span> : &lt;span class="s2">&amp;#34;\&amp;lt;cr&amp;gt;&amp;#34;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="nx">imap&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nx">c&lt;/span>&lt;span class="p">-&lt;/span>&lt;span class="nx">space&lt;/span>&lt;span class="p">&amp;gt;&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nx">Plug&lt;/span>&lt;span class="p">&amp;gt;(&lt;/span>&lt;span class="nx">asyncomplete_force_refresh&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="k">endif&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="k">if&lt;/span> &amp;amp;&lt;span class="nx">runtimepath&lt;/span> &lt;span class="p">=~&lt;/span> &lt;span class="s1">&amp;#39;asyncomplete-ultisnips&amp;#39;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="nx">has&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;python3&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="c"> &amp;#34; let g:UltiSnipsExpandTrigger=&amp;#34;&amp;lt;cr&amp;gt;&amp;#34;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="c"> &amp;#34; ctrl + e 触发snippet&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span> &lt;span class="k">let&lt;/span> &lt;span class="nx">g&lt;/span>:&lt;span class="nx">UltiSnipsExpandTrigger&lt;/span>&lt;span class="p">=&lt;/span>&lt;span class="s2">&amp;#34;&amp;lt;c-e&amp;gt;&amp;#34;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span> &lt;span class="k">let&lt;/span> &lt;span class="nx">g&lt;/span>:&lt;span class="nx">UltiSnipsJumpForwardTrigger&lt;/span>&lt;span class="p">=&lt;/span>&lt;span class="s2">&amp;#34;&amp;lt;c-b&amp;gt;&amp;#34;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span> &lt;span class="k">let&lt;/span> &lt;span class="nx">g&lt;/span>:&lt;span class="nx">UltiSnipsJumpBackwardTrigger&lt;/span>&lt;span class="p">=&lt;/span>&lt;span class="s2">&amp;#34;&amp;lt;c-z&amp;gt;&amp;#34;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span> &lt;span class="k">let&lt;/span> &lt;span class="nx">g&lt;/span>:&lt;span class="nx">UltiSnipsEditSplit&lt;/span>&lt;span class="p">=&lt;/span>&lt;span class="s2">&amp;#34;vertical&amp;#34;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span> &lt;span class="nx">call&lt;/span> &lt;span class="nx">asyncomplete&lt;/span>#&lt;span class="nx">register_source&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">asyncomplete&lt;/span>#&lt;span class="nx">sources&lt;/span>#&lt;span class="nx">ultisnips&lt;/span>#&lt;span class="nx">get_source_options&lt;/span>&lt;span class="p">(&lt;/span>{&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span> \ &lt;span class="s1">&amp;#39;name&amp;#39;&lt;/span>: &lt;span class="s1">&amp;#39;ultisnips&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span> \ &lt;span class="s1">&amp;#39;allowlist&amp;#39;&lt;/span>: [&lt;span class="s1">&amp;#39;*&amp;#39;&lt;/span>]&lt;span class="p">,&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span> \ &lt;span class="s1">&amp;#39;completor&amp;#39;&lt;/span>: &lt;span class="k">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;asyncomplete#sources#ultisnips#completor&amp;#39;&lt;/span>&lt;span class="p">),&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span> \ }&lt;span class="p">))&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span> &lt;span class="k">endif&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="k">endif&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="k">if&lt;/span> &amp;amp;&lt;span class="nx">runtimepath&lt;/span> &lt;span class="p">=~&lt;/span> &lt;span class="s1">&amp;#39;vim-lsp&amp;#39;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="nx">nmap&lt;/span> &lt;span class="nx">gd&lt;/span> :&lt;span class="nx">LspDefinition&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nx">cr&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="nx">nmap&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nx">leader&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;span class="nx">f&lt;/span> :&lt;span class="nx">LspDocumentFormat&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nx">cr&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="k">let&lt;/span> &lt;span class="nx">g&lt;/span>:&lt;span class="nx">lsp_diagnostics_float_cursor&lt;/span>&lt;span class="p">=&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="k">let&lt;/span> &lt;span class="nx">g&lt;/span>:&lt;span class="nx">lsp_diagnostics_virtual_text_enabled&lt;/span>&lt;span class="p">=&lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="err">
+&lt;/span>&lt;span class="err">&lt;/span>&lt;span class="k">endif&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>上面的配置就能实现类似pycharm的代码补全功能了&lt;/p>
+&lt;h4 id="插件详解">插件详解:&lt;/h4>
+&lt;ul>
+&lt;li>vim-lsp:vim的language server protocol插件&lt;/li>
+&lt;li>vim-lsp-setting:方便配置vim-lsp的插件&lt;/li>
+&lt;/ul>
+&lt;p>上面两个插件安装完后打开一个py文件，就会提示安装语言服务器,选择yes；或者执行`:LspInstallServer pyls-all`,pyls-all可以换成其他，在`LspInstallServer`后按`&lt;TAB>`就会切换可用的语言服务器&lt;/p>
+&lt;ul>
+&lt;li>asyncomplete:自动补全插件.&lt;/li>
+&lt;/ul>
+&lt;p>安装lsp后可以直接用lsp的补全功能，但是用的不是很方便，需要阅读文档后自己定制，没时间和耐心的就不合适了，所以使用自动补全插件&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>asyncomplete-lsp:让asyncomplete使用lsp的补全&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>vim-snippets:大量的snippet代码，不提供补全，所以需要补全引擎，例如:ultisnips&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ultisnips:snippet的补全引擎&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>asyncomplete-ultisnips:将ultisnips的补全集成到asyncomplete&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="效果图">效果图&lt;/h4>
+&lt;figure>&lt;img src="https://example.com/ox-hugo/snippets.gif"/>
+&lt;/figure>
+&lt;p>:smile:&lt;/p>
+&lt;p>🙈&lt;/p></description></item></channel></rss>
