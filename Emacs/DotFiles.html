@@ -1,0 +1,1461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>用org-mode配置所有dotfile</title>
+<meta name="generator" content="Org mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">用org-mode配置所有dotfile</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgcc7ccc4">用org-babel配置所有的dotfile</a>
+<ul>
+<li><a href="#orge67bad6">Org-babel</a></li>
+<li><a href="#org2a66cb1">将一个代码块的执行结果或返回值传递给另一个代码块</a></li>
+<li><a href="#org2e7ddb9">每次保存这个文件自动执行 <code>org-bable-tangle</code></a></li>
+</ul>
+</li>
+<li><a href="#org2143097">Emacs</a>
+<ul>
+<li><a href="#org0931e7f">显示emacs启动时间</a></li>
+<li><a href="#orgc6c84d4">Native Compilation</a></li>
+<li><a href="#orgf9d4279">包管理工具</a></li>
+<li><a href="#org5371884">默认编码格式</a></li>
+<li><a href="#org50121f1">Server Mode</a></li>
+<li><a href="#orgd95590e">查看启动过程耗时</a></li>
+<li><a href="#org0074ff5">基本的设置</a>
+<ul>
+<li><a href="#org92a57b2">取消初始界面的菜单,工具栏,滚动条等</a></li>
+<li><a href="#org1d19df6">优化滚动的表现</a></li>
+<li><a href="#orgc512fe7">窗口透明度和最大化</a></li>
+<li><a href="#org5850ea6">字体设置</a></li>
+<li><a href="#orgc4fdb41">状态栏设置</a>
+<ul>
+<li><a href="#org4f1f3af">Basic Customization</a></li>
+<li><a href="#orga38775d">Enable mode Diminishing</a></li>
+<li><a href="#org0388ed8">Smart mode line</a></li>
+<li><a href="#orgb790275">Doom modeline</a></li>
+</ul>
+</li>
+<li><a href="#org5d6b327">更好的括号展示</a></li>
+<li><a href="#org7f74b0a">doom主题</a></li>
+<li><a href="#org0afbe0e">行号设置</a></li>
+<li><a href="#orgdeb9ea9">Workspace</a></li>
+<li><a href="#org31b0667">NOtifications</a></li>
+<li><a href="#org1182510">Auto-Saving changed files</a></li>
+<li><a href="#org736d977">Auto-Reverting Changed Files</a></li>
+<li><a href="#orgd9a5d2f">UI Toggles</a></li>
+</ul>
+</li>
+<li><a href="#org6c752c1">按键设置</a>
+<ul>
+<li><a href="#orgc7d82ed">查看使用了哪些命令</a></li>
+<li><a href="#org9dfb884">取消ESC作为 <code>M-x</code> 的前缀按键,将其设置为和Vim类似的退出命令 <code>C-g</code></a></li>
+<li><a href="#org7209bfc">取消 <code>C-u</code> 作为 <code>[count]</code> 的作用,因为要使用Vim的 <code>C-u</code> 做翻页</a></li>
+<li><a href="#orga0a9a7c">Evil</a>
+<ul>
+<li><a href="#org8906d87">基本的Vim按键设置</a></li>
+<li><a href="#orgcdd3a9a">绑定"jk"退出插入模式</a></li>
+<li><a href="#orgb3fdff7">绑定&lt;leader&gt;s重新加载配置文件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org8b4b083">编辑设置</a>
+<ul>
+<li><a href="#org67e3d1e">Tab Width</a></li>
+<li><a href="#org37be659">Use spaces instead of tabs for indnetation</a></li>
+<li><a href="#org60f52db">Commenting Lines</a></li>
+<li><a href="#org8a25b0a">Automatically Clean whitespace</a></li>
+</ul>
+</li>
+<li><a href="#orgd43dffc">按键面板</a></li>
+<li><a href="#orgbf14b86">按键绑定</a>
+<ul>
+<li><a href="#org5c83df3">general.el 用来管理快捷键绑定</a></li>
+<li><a href="#orgcd11889">hydra 来绑定快捷键</a></li>
+<li><a href="#orgbd54ea7">Evil 快捷键绑定</a></li>
+</ul>
+</li>
+<li><a href="#org8d4ce4a">文件浏览器</a></li>
+<li><a href="#org3a55a7a">Minibuffer补全(Emacs 命令补全)</a></li>
+<li><a href="#org6f74b49">Development</a>
+<ul>
+<li><a href="#orge0a68f3">Lsp-mode</a>
+<ul>
+<li><a href="#org1a8a88a">Lsp</a></li>
+<li><a href="#org2ec7fae">Lsp for python</a></li>
+<li><a href="#org79a2863">LSP for Html</a></li>
+</ul>
+</li>
+<li><a href="#org3db1a21">Python<sub>settings</sub></a></li>
+<li><a href="#org63493cd">Format python code</a></li>
+<li><a href="#org38276ee">Format All</a></li>
+<li><a href="#org4507be6">Elpy &#x2013; IDE for py</a></li>
+</ul>
+</li>
+<li><a href="#org2aeb375">Orgmode</a>
+<ul>
+<li><a href="#orgb4f253d">CodeBlock模版</a></li>
+<li><a href="#org522802c">outline</a></li>
+<li><a href="#orgb97a94d">Org-roam</a></li>
+<li><a href="#orga329b9f">Org-mode</a>
+<ul>
+<li><a href="#orgf33903a">Init set up</a></li>
+<li><a href="#orgc14271e">Hide emphasis markers</a></li>
+<li><a href="#org1071462">org-drill</a></li>
+</ul>
+</li>
+<li><a href="#org54f1c8a">Pomodoro</a></li>
+<li><a href="#org50fa894">tracking habits</a></li>
+<li><a href="#orga6cbfc6">Auto insert newline</a></li>
+<li><a href="#org8cec4cf">org-capture-template</a></li>
+<li><a href="#org6db04d6">Encrypt</a></li>
+</ul>
+</li>
+<li><a href="#org3abb952">Productivity</a>
+<ul>
+<li><a href="#org400b093">括号补全</a></li>
+<li><a href="#org1e688aa">Snippet</a></li>
+</ul>
+</li>
+<li><a href="#orgec4409a">Ebook</a></li>
+<li><a href="#orgcf18011">Magit</a></li>
+<li><a href="#org956202e">Save Emacs Sessions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgcc7ccc4" class="outline-2">
+<h2 id="orgcc7ccc4">用org-babel配置所有的dotfile</h2>
+<div class="outline-text-2" id="text-orgcc7ccc4">
+</div>
+<div id="outline-container-orge67bad6" class="outline-3">
+<h3 id="orge67bad6">Org-babel</h3>
+<div class="outline-text-3" id="text-orge67bad6">
+<p>
+org-mode 可以执行代码块用的是org-babel的功能
+<code>org-babel-tangle(C-c C-v t)</code> 是一个macs内置的方法,用来将org文件中的代码块写入到指定的文件中,理论上可以利用这个方法配置一切基于文本文件配置的软件
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(message <span style="font-style: italic;">"some text "</span>)
+</pre>
+</div>
+
+<blockquote>
+<p>
+要让这个org文件能起到配置作用:
+</p>
+<ul class="org-ul">
+<li>头信息中配置好代码块tangle的目标文件</li>
+<li>想对其他语言的代码块也生效需要配置 <code>org-babel-do-load-languages</code></li>
+</ul>
+</blockquote>
+
+<p>
+上面的例子里在代码块的 <code>:tangle</code> 属性中设置了目标文件的位置，如果代码块很多，总不能每一个都手动去指定吧，这里就可以用到org文件的头信息，
+<code>#+PROPERTY: header-args:emacs-lisp :tangle ~/.emacs.d/init.el</code>,就像这个文件的头信息一样，将 emacs-lisp代码块的 <code>tangle</code> 属性设置为一个默认值，这个属性被所有 emacs-lisp 代码块继承.
+和OB思想一样，如果代码块另外指定了目标文件的位置，那就会使用指定的，而不是头信息的默认属性.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2a66cb1" class="outline-3">
+<h3 id="org2a66cb1">将一个代码块的执行结果或返回值传递给另一个代码块</h3>
+<div class="outline-text-3" id="text-org2a66cb1">
+<p>
+eamcs默认执行的只有emacs-lisp语言的代码块,开启其他语言的代码块执行功能需要添加配置:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (python . t)
+   (dot . t)
+   (shell . t)
+   <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(browser . t)</span>
+   (js . t)
+   ))
+(<span style="font-weight: bold;">push</span> '(<span style="font-style: italic;">"conf-unix"</span> . conf-unix) org-src-lang-modes)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#27599;&#27425;&#25191;&#34892;&#19981;&#20250;&#35810;&#38382;&#26159;&#21542;&#25191;&#34892;</span>
+(<span style="font-weight: bold;">setq</span> org-confirm-babel-evaluate nil)
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(message "hello")</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python" id="org5657715"><span style="font-weight: bold;">import</span> random
+<span style="font-weight: bold;">return</span> random.randint(0,100)
+</pre>
+</div>
+<p>
+上面的代码块有名字 <code>block_name</code>,下面载配置文件的过程就是执行一系列emacs-lisp的过程,所以有时候顺序很重要
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2e7ddb9" class="outline-3">
+<h3 id="org2e7ddb9">每次保存这个文件自动执行 <code>org-bable-tangle</code></h3>
+<div class="outline-text-3" id="text-org2e7ddb9">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">efs/org-babel-tangle-config</span>()
+  (<span style="font-weight: bold;">when</span> (string-equal (buffer-file-name)
+                      (expand-file-name <span style="font-style: italic;">"~/MyLife/Emacs/DotFiles.org"</span>))
+    (<span style="font-weight: bold;">let</span> ((org-confirm-babel-evaluate nil))
+      (org-babel-tangle))))
+(add-hook 'org-mode-hook (<span style="font-weight: bold;">lambda</span> () (add-hook 'after-save-hook #'efs/org-babel-tangle-config)))
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2143097" class="outline-2">
+<h2 id="org2143097">Emacs</h2>
+<div class="outline-text-2" id="text-org2143097">
+</div>
+<div id="outline-container-org0931e7f" class="outline-3">
+<h3 id="org0931e7f">显示emacs启动时间</h3>
+<div class="outline-text-3" id="text-org0931e7f">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">The default is 800 kilobytes.  Measured in bytes.</span>
+(<span style="font-weight: bold;">setq</span> gc-cons-threshold (* 50 1000 1000))
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Profile emacs startup</span>
+(add-hook 'emacs-startup-hook
+          (<span style="font-weight: bold;">lambda</span> ()
+            (message <span style="font-style: italic;">"*** Emacs loaded in %s with %d garbage collections."</span>
+                     (format <span style="font-style: italic;">"%.2f seconds"</span>
+                             (float-time
+                              (time-subtract after-init-time before-init-time)))
+                     gcs-done)))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc6c84d4" class="outline-3">
+<h3 id="orgc6c84d4">Native Compilation</h3>
+<div class="outline-text-3" id="text-orgc6c84d4">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Silence compiler warnings as they can be pretty disruptive</span>
+(<span style="font-weight: bold;">setq</span> comp-async-report-warnings-errors nil)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf9d4279" class="outline-3">
+<h3 id="orgf9d4279">包管理工具</h3>
+<div class="outline-text-3" id="text-orgf9d4279">
+<blockquote>
+<p>
+这是写给我自己记录用的,免得过些时候忘了写这个配置文件时候的这些想法,看到这里记得把这写碎碎念移到介绍emacs包管理工具或其他合适的地方.
+Emacs原生状态又丑由low,完全是上世纪的文本编辑器风格.那为啥会有那么多人用?还被成为是"神之编辑器"?我的使用感受是因为它有强大的社区支持和高度可定制.
+Vim也是可定制,但vimscript给我个人的感觉是真的难用,又像是语言又像是配置文件,但emacs不同,它的配置语言emacs-lisp是lisp方言,配置emacs感觉就像是
+在自己编写适合自己的编辑器的程序一样,怪不得之前看到一篇写lisp为什么现在不是热门语言的文章说lisp是一门创造其他编程语言的编程语言.基于这种强大的可定制能力,
+Emacs的社区成员为我们提供了许多强大的配置,这些配置被整合成一个个包放在Melpa,Elpa等仓库里,类似插件形式可供用户下载使用,Emacs自带的包管理工具我只用过图形界面的,也就是点点点来安装包,
+但用点点点的形式不能每次更换环境都靠点点点吧,看了下emacswiki,里面也有emacs自带的包管理工具的配置,好不好用不知道,反正我看的一些教程里都没用.网上emacs大神用的全是可再现的配置文件,跟着大神走总没错吧,在追求性价比这方面,搞编程(懒)的人总是有特殊的想法,
+大神的配置总是要达到一次配置,多次使用的目标.
+<a href="https://github.com/jwiegley/use-package">use-package</a>就是一位大神因为使用的包太多创建出来的一个包管理工具,尽管大神说这个是用来更好的配置他那80多个包的而不是一个包管理工具,但也是能当包管理工具使的.
+我这个配置文件是跟着<a href="https://github.com/daviwil">David Wilson</a>的系列直播视频和他的配置文件学的,尽管他的包管理工具已经换成 <a href="https://github.com/raxod502/straight.el#features">straight.el</a> 了, 但暂时我还是先用着 <code>use-package</code> 再说,而且看介绍, <code>straight.el</code> 是有 <code>use-package</code> 集成的,将来再换应该不难,看David的配置文件也只加了一点额外配置,其他基本没怎么变.
+上面是不正经的碎碎念,下面就是正经的配置文件
+</p>
+</blockquote>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#36825;&#20010;package &#23601;&#26159;emacs&#40664;&#35748;&#30340;&#21253;&#31649;&#29702;&#24037;&#20855;&#20102;(&#21543;)</span>
+(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">package</span>)   <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#36825;&#37324;&#30340;require &#23601;&#20687;&#26159;python&#37324;&#30340;import&#21543;,package&#23601;&#20687;&#26159;module</span>
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#35774;&#32622;&#21253;&#20179;&#24211;</span>
+(<span style="font-weight: bold;">setq</span> package-archives '((<span style="font-style: italic;">"malpa"</span> . <span style="font-style: italic;">"https://melpa.org/packages/"</span>)
+                         (<span style="font-style: italic;">"org"</span> . <span style="font-style: italic;">"https://orgmode.org/elpa/"</span>)
+                         (<span style="font-style: italic;">"elpa"</span> . <span style="font-style: italic;">"https://elpa.gnu.org/packages/"</span>)))
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#35774;&#32622;&#23436;&#20179;&#24211;&#21518;&#35201;&#21021;&#22987;&#21270;&#19968;&#19979;&#20179;&#24211;,&#20877;&#21435;&#25191;&#34892;&#19979;&#36733;&#21253;&#25110;&#32773;&#20854;&#20182;&#21160;&#20316;,&#20351;&#29992;&#36807;linux&#21253;&#31649;&#29702;&#24037;&#20855;&#30340;&#24212;&#35813;&#19981;&#38476;&#29983;</span>
+(package-initialize)
+(<span style="font-weight: bold;">unless</span> package-archive-contents   <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">&#22914;&#26524;&#28304;&#22836;&#20179;&#24211;&#30340;&#20449;&#24687;&#27809;&#26377;&#32531;&#23384;&#21040;&#26412;&#22320;&#23601;&#25191;&#34892;package-refresh-contents&#32531;&#23384;&#19968;&#19979;,&#30456;&#24403;&#19982;apt update&#21543;</span>
+  (package-refresh-contents))
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Initialize use-package on non-Linux platforms,&#36825;&#26159;&#22312;&#38750;linux&#24179;&#21488;&#19978;,&#21487;&#33021;use-package&#19981;&#26159;emacs&#20869;&#32622;&#30340;&#21253;,&#37027;&#23601;&#38656;&#35201;&#20808;&#19979;&#36733;&#25165;&#33021;&#20351;&#29992;</span>
+(<span style="font-weight: bold;">unless</span> (package-installed-p 'use-package) <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">&#26816;&#27979;&#19968;&#19979;use-package&#26159;&#21542;&#23433;&#35013;&#20102;,&#27809;&#35013;&#23601;&#35013;&#19968;&#19979;&#21591;</span>
+  (package-install 'use-package))
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#21040;&#36825;&#37324;&#23601;&#21487;&#20197;&#24320;&#22987;&#20351;&#29992; use-package &#20102;</span>
+(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">use-package</span>)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#40664;&#35748;&#21152;&#36733;&#27599;&#19968;&#20010;use-package&#31649;&#29702;&#30340;&#21253;,&#31561;&#20110;&#26159;&#27599;&#19968;&#20010;use-package&#37324;&#21152;&#19978;:ensure</span>
+(<span style="font-weight: bold;">setq</span> use-package-always-ensure t)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5371884" class="outline-3">
+<h3 id="org5371884">默认编码格式</h3>
+<div class="outline-text-3" id="text-org5371884">
+<p>
+避免windows上可能会出现的编码错误
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(set-default-coding-systems 'utf-8)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org50121f1" class="outline-3">
+<h3 id="org50121f1">Server Mode</h3>
+<div class="outline-text-3" id="text-org50121f1">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(server-start)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd95590e" class="outline-3">
+<h3 id="orgd95590e">查看启动过程耗时</h3>
+<div class="outline-text-3" id="text-orgd95590e">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package benchmark-init
+  <span style="font-weight: bold;">:ensure</span> t
+  <span style="font-weight: bold;">:config</span>
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">To disable collection of benchmark data after init is done.</span>
+  (add-hook 'after-init-hook 'benchmark-init/deactivate))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0074ff5" class="outline-3">
+<h3 id="org0074ff5">基本的设置</h3>
+<div class="outline-text-3" id="text-org0074ff5">
+</div>
+<div id="outline-container-org92a57b2" class="outline-4">
+<h4 id="org92a57b2">取消初始界面的菜单,工具栏,滚动条等</h4>
+<div class="outline-text-4" id="text-org92a57b2">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> inhibit-startup-message t)
+(scroll-bar-mode 0)              <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">Disable visible scrollbar</span>
+(tool-bar-mode 0)                <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">Disable the toolbar</span>
+(tooltip-mode 0)                 <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">Disable tooltips</span>
+(set-fringe-mode 10)             <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">Give some breathing room</span>
+(menu-bar-mode 0)                <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">Disale the menu bar</span>
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">set up the visible bell</span>
+(<span style="font-weight: bold;">setq</span> visible-bell t)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1d19df6" class="outline-4">
+<h4 id="org1d19df6">优化滚动的表现</h4>
+<div class="outline-text-4" id="text-org1d19df6">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> mouse-wheel-scroll-amount '(1 ((shift) . 1))) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">one line at a time</span>
+(<span style="font-weight: bold;">setq</span> mouse-wheel-progressive-speed nil) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">don't accelerate scrolling</span>
+(<span style="font-weight: bold;">setq</span> mouse-wheel-follow-mouse 't) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">scroll window under mouse</span>
+(<span style="font-weight: bold;">setq</span> scroll-step 1) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">keyboard scroll one line at a time</span>
+(<span style="font-weight: bold;">setq</span> use-dialog-box nil) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Disable dialog boxes since they weren't working in Mac OSX</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc512fe7" class="outline-4">
+<h4 id="orgc512fe7">窗口透明度和最大化</h4>
+<div class="outline-text-4" id="text-orgc512fe7">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(set-frame-parameter (selected-frame) 'alpha '(90 . 90))
+(add-to-list 'default-frame-alist '(alpha . (90 . 90)))
+(set-frame-parameter (selected-frame) 'fullscreen 'maximized)
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5850ea6" class="outline-4">
+<h4 id="org5850ea6">字体设置</h4>
+<div class="outline-text-4" id="text-org5850ea6">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">'han &#30340;&#33050;&#26412;&#31867;&#22411;&#23545;&#24212;CJK&#19977;&#31181;&#35821;&#35328;&#30340;&#23383;&#31526; 'latin &#23545;&#24212;&#33521;&#25991;&#23383;&#31526;</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(set-fontset-font "fontset-default" 'han "Xiaolai Mono SC")</span>
+
+(set-fontset-font <span style="font-style: italic;">"fontset-default"</span> 'han <span style="font-style: italic;">"AR PL UKai CN"</span>)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Ubuntu Mono &#23383;&#20307;&#33021;&#24456;&#22909;&#30340;&#21644;&#20013;&#25991;1:2&#31561;&#23485;,:font &#23646;&#24615;&#30340;&#20351;&#29992;&#21644;.Xresource &#37324;&#23383;&#20307;&#30340;&#20351;&#29992;&#26041;&#24335;&#19968;&#26679;,&#21482;&#19981;&#36807;&#19981;&#33021;&#25351;&#23450;&#22810;&#20010;&#23383;&#20307;</span>
+(set-face-attribute 'default nil <span style="font-weight: bold;">:font</span> <span style="font-style: italic;">"Ubuntu Mono:pixelsize=20"</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc4fdb41" class="outline-4">
+<h4 id="orgc4fdb41">状态栏设置</h4>
+<div class="outline-text-4" id="text-orgc4fdb41">
+</div>
+<div id="outline-container-org4f1f3af" class="outline-5">
+<h5 id="org4f1f3af">Basic Customization</h5>
+<div class="outline-text-5" id="text-org4f1f3af">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> display-time-format <span style="font-style: italic;">"%H:%M %p %Y-%m-%d %j"</span>
+      dispaly-time-default-load-average nil)
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(setq display-time-format "%l:%M %p %b %y"</span>
+<span style="font-weight: bold; font-style: italic;">;;       </span><span style="font-weight: bold; font-style: italic;">dispaly-time-default-load-average nil)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga38775d" class="outline-5">
+<h5 id="orga38775d">Enable mode Diminishing</h5>
+<div class="outline-text-5" id="text-orga38775d">
+<p>
+The diminish package hides pesky minor modes from the modelines.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package diminish)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0388ed8" class="outline-5">
+<h5 id="org0388ed8">Smart mode line</h5>
+<div class="outline-text-5" id="text-org0388ed8">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package smart-mode-line
+  <span style="font-weight: bold;">:disabled</span>
+  <span style="font-weight: bold;">:if</span> dw/is-termux
+  <span style="font-weight: bold;">:config</span>
+  (<span style="font-weight: bold;">setq</span> sml/no-confirm-load-theme t)
+  (sml/setup)
+  (sml/apply-theme 'respectful)  <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">Respect the theme colors</span>
+  (<span style="font-weight: bold;">setq</span> sml/mode-width 'right
+        sml/name-width 60)
+
+  (<span style="font-weight: bold;">setq-default</span> mode-line-format
+                `(<span style="font-style: italic;">"%e"</span>
+                  ,(<span style="font-weight: bold;">when</span> dw/exwm-enabled
+                     '(<span style="font-weight: bold;">:eval</span> (format <span style="font-style: italic;">"[%d] "</span> exwm-workspace-current-index)))
+                  mode-line-front-space
+                  evil-mode-line-tag
+                  mode-line-mule-info
+                  mode-line-client
+                  mode-line-modified
+                  mode-line-remote
+                  mode-line-frame-identification
+                  mode-line-buffer-identification
+                  sml/pos-id-separator
+                  (vc-mode vc-mode)
+                  <span style="font-style: italic;">" "</span>
+                                        <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">mode-line-position</span>
+                  sml/pre-modes-separator
+                  mode-line-modes
+                  <span style="font-style: italic;">" "</span>
+                  mode-line-misc-info))
+  (<span style="font-weight: bold;">setq</span> rm-excluded-modes
+        (mapconcat
+         'identity
+                                        <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">These names must start with a space!</span>
+         '(<span style="font-style: italic;">" GitGutter"</span> <span style="font-style: italic;">" MRev"</span> <span style="font-style: italic;">" company"</span>
+           <span style="font-style: italic;">" Helm"</span> <span style="font-style: italic;">" Undo-Tree"</span> <span style="font-style: italic;">" Projectile.*"</span> <span style="font-style: italic;">" Z"</span> <span style="font-style: italic;">" Ind"</span>
+           <span style="font-style: italic;">" Org-Agenda.*"</span> <span style="font-style: italic;">" ElDoc"</span> <span style="font-style: italic;">" SP/s"</span> <span style="font-style: italic;">" cider.*"</span>)
+         <span style="font-style: italic;">"</span><span style="font-weight: bold; font-style: italic;">\\</span><span style="font-weight: bold; font-style: italic;">|</span><span style="font-style: italic;">"</span>)))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb790275" class="outline-5">
+<h5 id="orgb790275">Doom modeline</h5>
+<div class="outline-text-5" id="text-orgb790275">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package minions           <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">&#38544;&#34255;&#24403;&#21069;&#21551;&#29992;&#20102;&#21738;&#20123;minor mode</span>
+  <span style="font-weight: bold;">:hook</span> (doom-modeline-mode . minions-mode))
+
+(use-package all-the-icons)    <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">modeline &#27491;&#24120;&#23637;&#31034;&#38656;&#35201;&#35768;&#22810;&#22270;&#26631;&#23383;&#20307;&#25903;&#25345;,&#23383;&#20307;&#38656;&#35201;&#20174;github&#19979;&#36733;&#23433;&#35013;</span>
+
+(use-package doom-modeline
+
+  <span style="font-weight: bold;">:init</span>
+  (doom-modeline-mode 1)
+  <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">:after eshell                ; &#30830;&#20445;&#21551;&#21160;eshell&#21518;&#21551;&#21160;doom-modeline,&#23613;&#31649;manjaro-i3&#19978;&#27491;&#20351;&#29992;&#30340;emacs&#19981;&#23384;&#22312;&#36825;&#20010;&#38382;&#39064;</span>
+  <span style="font-weight: bold;">:custom-face</span>
+  (mode-line ((t (<span style="font-weight: bold;">:height</span> 0.85))))
+  (mode-line-inactive ((t (<span style="font-weight: bold;">:height</span> 0.85))))
+  <span style="font-weight: bold;">:custom</span>
+  (doom-modeline-height 15)
+  (doom-modeline-bar-width 6)
+  (doom-modeline-lsp t)
+  (doom-modeline-github nil)
+  (doom-modeline-mu4e nil)
+  (doom-modeline-irc nil)
+  (doom-modeline-minor-modes t)
+  (doom-modeline-persp-name nil)
+  (doom-modeline-buffer-file-name-style 'truncate-except-project)
+  (doom-modeline-major-mode-icon nil)
+  )
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5d6b327" class="outline-4">
+<h4 id="org5d6b327">更好的括号展示</h4>
+<div class="outline-text-4" id="text-org5d6b327">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#25353;&#19981;&#21516;&#39068;&#33394;&#26174;&#31034;&#25104;&#23545;&#25324;&#21495;</span>
+(use-package rainbow-delimiters
+  <span style="font-weight: bold;">:hook</span> (prog-mode . rainbow-delimiters-mode))
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">&#39640;&#20142;&#24403;&#21069;&#20809;&#26631;&#19979;&#30340;&#25324;&#21495;&#23545;&#24212;&#30340;&#25324;&#21495;</span>
+(use-package paren
+  <span style="font-weight: bold;">:config</span>
+  (set-face-attribute 'show-paren-match-expression nil <span style="font-weight: bold;">:background</span> <span style="font-style: italic;">"#FFFFFF"</span>)
+  (show-paren-mode 1))
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7f74b0a" class="outline-4">
+<h4 id="org7f74b0a">doom主题</h4>
+<div class="outline-text-4" id="text-org7f74b0a">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package doom-themes
+  <span style="font-weight: bold;">:init</span>
+  (load-theme 'doom-palenight t)
+  <span style="font-weight: bold;">:config</span>
+  (doom-themes-visual-bell-config))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0afbe0e" class="outline-4">
+<h4 id="org0afbe0e">行号设置</h4>
+<div class="outline-text-4" id="text-org0afbe0e">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+(column-number-mode)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Disable line numbers for some modes</span>
+(<span style="font-weight: bold;">dolist</span> (mode '(term-mode-hook
+                shell-mode-hook
+                eshell-mode-hook
+                markdown-mode-hook
+                org-mode-hook))
+  (add-hook mode (<span style="font-weight: bold;">lambda</span> () (display-line-numbers-mode 0))))
+
+(<span style="font-weight: bold;">dolist</span> (mode '(text-mode-hook
+                prog-mode-hook
+                conf-mode-hook))
+  (add-hook mode (<span style="font-weight: bold;">lambda</span> () (display-line-numbers-mode 1))))
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdeb9ea9" class="outline-4">
+<h4 id="orgdeb9ea9">Workspace</h4>
+<div class="outline-text-4" id="text-orgdeb9ea9">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package perspective
+  <span style="font-weight: bold;">:demand</span> t
+  <span style="font-weight: bold;">:bind</span> ((<span style="font-style: italic;">"C-M-k"</span> . persp-switch)
+         (<span style="font-style: italic;">"C-M-n"</span> . persp-next)
+         (<span style="font-style: italic;">"C-x k"</span> . persp-kill-buffer*))
+  <span style="font-weight: bold;">:custom</span>
+  (persp-initial-frame-name <span style="font-style: italic;">"Main"</span>)
+  <span style="font-weight: bold;">:config</span>
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Running `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">persp-mode</span><span style="font-weight: bold; font-style: italic;">' multiple times resets the perspective list...</span>
+  (<span style="font-weight: bold;">unless</span> (equal persp-mode t)
+    (persp-mode)))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org31b0667" class="outline-4">
+<h4 id="org31b0667">NOtifications</h4>
+<div class="outline-text-4" id="text-org31b0667">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package alert
+  <span style="font-weight: bold;">:commands</span> alert
+  <span style="font-weight: bold;">:config</span>
+  (<span style="font-weight: bold;">setq</span> alert-default-style 'notifications))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org1182510" class="outline-4">
+<h4 id="org1182510">Auto-Saving changed files</h4>
+<div class="outline-text-4" id="text-org1182510">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package super-save
+  <span style="font-weight: bold;">:defer</span> 1
+  <span style="font-weight: bold;">:diminish</span> super-save-mode
+  <span style="font-weight: bold;">:config</span>
+  (super-save-mode +1)
+  (<span style="font-weight: bold;">setq</span> super-save-auto-save-when-idle t) )
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org736d977" class="outline-4">
+<h4 id="org736d977">Auto-Reverting Changed Files</h4>
+<div class="outline-text-4" id="text-org736d977">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> global-auto-revert-non-file-buffers t)
+(global-auto-revert-mode 1)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd9a5d2f" class="outline-4">
+<h4 id="orgd9a5d2f">UI Toggles</h4>
+<div class="outline-text-4" id="text-orgd9a5d2f">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org6c752c1" class="outline-3">
+<h3 id="org6c752c1">按键设置</h3>
+<div class="outline-text-3" id="text-org6c752c1">
+</div>
+<div id="outline-container-orgc7d82ed" class="outline-4">
+<h4 id="orgc7d82ed">查看使用了哪些命令</h4>
+<div class="outline-text-4" id="text-orgc7d82ed">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package command-log-mode)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9dfb884" class="outline-4">
+<h4 id="org9dfb884">取消ESC作为 <code>M-x</code> 的前缀按键,将其设置为和Vim类似的退出命令 <code>C-g</code></h4>
+<div class="outline-text-4" id="text-org9dfb884">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Make ESC quit prompts</span>
+(global-set-key (kbd <span style="font-style: italic;">"&lt;escape&gt;"</span>) 'keyboard-escape-quit)
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7209bfc" class="outline-4">
+<h4 id="org7209bfc">取消 <code>C-u</code> 作为 <code>[count]</code> 的作用,因为要使用Vim的 <code>C-u</code> 做翻页</h4>
+<div class="outline-text-4" id="text-org7209bfc">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(global-set-key (kbd <span style="font-style: italic;">"C-M-u"</span>) 'universal-argument)
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orga0a9a7c" class="outline-4">
+<h4 id="orga0a9a7c">Evil</h4>
+<div class="outline-text-4" id="text-orga0a9a7c">
+</div>
+<div id="outline-container-org8906d87" class="outline-5">
+<h5 id="org8906d87">基本的Vim按键设置</h5>
+<div class="outline-text-5" id="text-org8906d87">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package undo-tree
+  <span style="font-weight: bold;">:init</span>
+  (global-undo-tree-mode 1))
+
+(use-package evil
+  <span style="font-weight: bold;">:init</span>
+  (<span style="font-weight: bold;">setq</span> evil-want-integration t)
+  (<span style="font-weight: bold;">setq</span> evil-want-keybinding nil)
+  (<span style="font-weight: bold;">setq</span> evil-want-C-u-scroll t)
+  (<span style="font-weight: bold;">setq</span> evil-want-C-i-jump nil)
+  (<span style="font-weight: bold;">setq</span> evil-undo-system 'undo-tree)
+
+  <span style="font-weight: bold;">:config</span>
+  (evil-mode 1)
+  (define-key evil-insert-state-map (kbd <span style="font-style: italic;">"C-g"</span>) 'evil-normal-state)
+  (define-key evil-insert-state-map (kbd <span style="font-style: italic;">"C-h"</span>) 'evil-delete-backward-char-and-join)
+
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Use visual line motions even outside of visual-line-mode buffers</span>
+  <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(evil-global-set-key 'motion "j" 'evil-next-visual-line)</span>
+  <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(evil-global-set-key 'motion "k" 'evil-previous-visual-line)</span>
+
+  (evil-set-initial-state 'messages-buffer-mode 'normal)
+  (evil-set-initial-state 'dashboard-mode 'normal)
+  <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(evil-set-initial-state 'treemacs-mode 'evil-normal-state)</span>
+  )
+
+(use-package evil-collection
+  <span style="font-weight: bold;">:after</span> evil
+  <span style="font-weight: bold;">:config</span>
+  (evil-collection-init))
+
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgcdd3a9a" class="outline-5">
+<h5 id="orgcdd3a9a">绑定"jk"退出插入模式</h5>
+<div class="outline-text-5" id="text-orgcdd3a9a">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+(use-package evil-escape
+  <span style="font-weight: bold;">:config</span>
+  (evil-escape-mode 1)
+  (<span style="font-weight: bold;">setq-default</span> evil-escape-key-sequence <span style="font-style: italic;">"jk"</span>)
+  (<span style="font-weight: bold;">setq-default</span> evil-escape-delay 0.5))
+
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgb3fdff7" class="outline-5">
+<h5 id="orgb3fdff7">绑定&lt;leader&gt;s重新加载配置文件</h5>
+<div class="outline-text-5" id="text-orgb3fdff7">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(evil-set-leader 'normal (kbd "SPC"))</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">This buffer is for text that is not saved, and for Lisp evaluation.</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">To create a file, visit it with &lt;open&gt; and enter text in its buffer.</span>
+
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">reload-init-file</span> ()
+  (<span style="font-weight: bold;">interactive</span>)
+  (load-file <span style="font-style: italic;">"~/.emacs.d/init.el"</span>)
+  )
+(evil-define-key 'normal 'global (kbd <span style="font-style: italic;">"&lt;leader&gt;s"</span>) 'reload-init-file)
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org8b4b083" class="outline-3">
+<h3 id="org8b4b083">编辑设置</h3>
+<div class="outline-text-3" id="text-org8b4b083">
+</div>
+<div id="outline-container-org67e3d1e" class="outline-4">
+<h4 id="org67e3d1e">Tab Width</h4>
+<div class="outline-text-4" id="text-org67e3d1e">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq-default</span> tab-width 2)
+(<span style="font-weight: bold;">setq-default</span> evil-shift-width tab-width)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org37be659" class="outline-4">
+<h4 id="org37be659">Use spaces instead of tabs for indnetation</h4>
+<div class="outline-text-4" id="text-org37be659">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq-default</span> indent-tabs-mode nil)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org60f52db" class="outline-4">
+<h4 id="org60f52db">Commenting Lines</h4>
+<div class="outline-text-4" id="text-org60f52db">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package evil-nerd-commenter
+  <span style="font-weight: bold;">:bind</span> (<span style="font-style: italic;">"M-c"</span> . evilnc-comment-or-uncomment-lines))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org8a25b0a" class="outline-4">
+<h4 id="org8a25b0a">Automatically Clean whitespace</h4>
+<div class="outline-text-4" id="text-org8a25b0a">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package ws-butler
+  <span style="font-weight: bold;">:hook</span> ((text-mode . ws-butler-mode)
+         (prog-mode . ws-butler-mode)))
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd43dffc" class="outline-3">
+<h3 id="orgd43dffc">按键面板</h3>
+<div class="outline-text-3" id="text-orgd43dffc">
+<p>
+<a href="https://github.com/justbur/emacs-which-key">which-key</a> 根据当前按下的按键展示可用(能)的快捷键组合和对应命令
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+(use-package which-key
+  <span style="font-weight: bold;">:init</span> (which-key-mode)
+  <span style="font-weight: bold;">:diminish</span> which-key-mode
+  <span style="font-weight: bold;">:config</span>
+  (<span style="font-weight: bold;">setq</span> which-key-idle-delay 0.3)) <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">&#35774;&#32622;&#22810;&#23569;&#24310;&#36831;&#21518;&#35843;&#29992;which-key</span>
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbf14b86" class="outline-3">
+<h3 id="orgbf14b86">按键绑定</h3>
+<div class="outline-text-3" id="text-orgbf14b86">
+</div>
+<div id="outline-container-org5c83df3" class="outline-4">
+<h4 id="org5c83df3"><a href="https://github.com/noctuid/general.el">general.el</a> 用来管理快捷键绑定</h4>
+<div class="outline-text-4" id="text-org5c83df3">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package general
+  <span style="font-weight: bold;">:config</span>
+  (general-evil-setup t)
+  (general-create-definer rune/leader-keys
+                          <span style="font-weight: bold;">:keymaps</span> '(normal insert visual emacs)
+                          <span style="font-weight: bold;">:prefix</span> <span style="font-style: italic;">"SPC"</span>
+                          <span style="font-weight: bold;">:global-prefix</span> <span style="font-style: italic;">"C-SPC"</span>)
+
+  (rune/leader-keys
+   <span style="font-style: italic;">"t"</span>  '(<span style="font-weight: bold;">:ignore</span> t <span style="font-weight: bold;">:which-key</span> <span style="font-style: italic;">"toggles"</span>)
+   <span style="font-style: italic;">"tt"</span> '(counsel-load-theme <span style="font-weight: bold;">:which-key</span> <span style="font-style: italic;">"choose theme"</span>)
+   <span style="font-style: italic;">"f"</span>  '(<span style="font-weight: bold;">:ignore</span> t <span style="font-weight: bold;">:which-key</span> <span style="font-style: italic;">"file"</span>)
+   <span style="font-style: italic;">"ft"</span> '(treemacs <span style="font-weight: bold;">:which-key</span> <span style="font-style: italic;">"file tree"</span>)))
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcd11889" class="outline-4">
+<h4 id="orgcd11889">hydra 来绑定快捷键</h4>
+<div class="outline-text-4" id="text-orgcd11889">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package general
+  <span style="font-weight: bold;">:config</span>
+  (general-create-definer rune/leader-keys
+                          <span style="font-weight: bold;">:keymaps</span> '(normal insert visual emacs)
+                          <span style="font-weight: bold;">:prefix</span> <span style="font-style: italic;">"SPC"</span>
+                          <span style="font-weight: bold;">:global-prefix</span> <span style="font-style: italic;">"C-SPC"</span>))
+
+
+(defhydra hydra-files ()
+  <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(interactive)</span>
+  <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">("f" treemacs "file tree")</span>
+
+  (<span style="font-style: italic;">"t"</span> treemacs <span style="font-weight: bold;">:which-key</span> <span style="font-style: italic;">"file tre"</span>)
+  (<span style="font-style: italic;">"l"</span> text-scale-increase <span style="font-style: italic;">"out"</span>))
+(defhydra hydra-leader ()
+  (<span style="font-style: italic;">"f"</span> hydra-files/body <span style="font-style: italic;">"files"</span> <span style="font-weight: bold;">:exit</span> t))
+
+(rune/leader-keys
+ <span style="font-style: italic;">"f"</span> '(hydra-files/body <span style="font-weight: bold;">:which-key</span> <span style="font-style: italic;">"files"</span>)
+ )
+
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(global-set-key (kbd "SPC") 'hydra-leader/body)</span>
+<span style="font-weight: bold; font-style: italic;">;;     </span><span style="font-weight: bold; font-style: italic;">(define-key evil-normal-state-map (kbd "SPC") 'hydra-leader/body)</span>
+(defhydra hydra-zoom ()
+  <span style="font-style: italic;">"zoom"</span>
+  (<span style="font-style: italic;">"g"</span> text-scale-increase <span style="font-style: italic;">"in"</span>)
+  (<span style="font-style: italic;">"l"</span> text-scale-decrease <span style="font-style: italic;">"out"</span>))
+
+(global-set-key (kbd <span style="font-style: italic;">"C-c"</span>) 'hydra-zoom/body)
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbd54ea7" class="outline-4">
+<h4 id="orgbd54ea7">Evil 快捷键绑定</h4>
+<div class="outline-text-4" id="text-orgbd54ea7">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(add-hook 'special-mode-hook 'evil-normal-state)</span>
+(define-key evil-normal-state-map (kbd <span style="font-style: italic;">"&lt;SPC&gt;ft"</span>) '(<span style="font-style: italic;">"File tree"</span> . treemacs))
+(which-key-add-key-based-replacements
+  <span style="font-style: italic;">"&lt;SPC&gt;f"</span> <span style="font-style: italic;">"Files"</span>)
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(define-key evil-normal-state-map (kbd "&lt;SPC&gt;ft")'("File tree" . treemacs))</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8d4ce4a" class="outline-3">
+<h3 id="org8d4ce4a">文件浏览器</h3>
+<div class="outline-text-3" id="text-org8d4ce4a">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package treemacs
+  <span style="font-weight: bold;">:ensure</span> t
+  <span style="font-weight: bold;">:defer</span> t)
+(use-package treemacs-evil
+  <span style="font-weight: bold;">:after</span> (treemacs evil)
+  <span style="font-weight: bold;">:ensure</span> t)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3a55a7a" class="outline-3">
+<h3 id="org3a55a7a">Minibuffer补全(Emacs 命令补全)</h3>
+<div class="outline-text-3" id="text-org3a55a7a">
+<p>
+Emacs有两种类型的补全，一种是写代码或文本时的补全(text completion),另一种就是使用emacs 命令时的补全(Minibuffer completion).
+<a href="https://github.com/kenmcmil/ivy">Ivy</a> 是一个使用minibuffer的补全机制,提供针对emacs命令的各种补全功能,<a href="https://github.com/abo-abo/swiper">swpier</a> 是基于Ivy的更好用的 <code>Isearch</code> 工具, <a href="https://github.com/abo-abo/swiper#counsel">counsel</a> 是基于Ivy的 <code>execute-extended-command</code> (M-x) 增强版本,用正则更方便的选择emacs命令
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package ivy
+  <span style="font-weight: bold;">:diminish</span>
+  <span style="font-weight: bold;">:bind</span> ((<span style="font-style: italic;">"C-s"</span> . swiper)
+         <span style="font-weight: bold;">:map</span> ivy-minibuffer-map
+         (<span style="font-style: italic;">"TAB"</span> . ivy-alt-done)
+         (<span style="font-style: italic;">"C-l"</span> . ivy-alt-done)
+         (<span style="font-style: italic;">"C-j"</span> . ivy-next-line)
+         (<span style="font-style: italic;">"C-k"</span> . ivy-previous-line)
+         <span style="font-weight: bold;">:map</span> ivy-switch-buffer-map
+         (<span style="font-style: italic;">"C-k"</span> . ivy-previous-line)
+         (<span style="font-style: italic;">"C-l"</span> . ivy-done)
+         (<span style="font-style: italic;">"C-d"</span> . ivy-switch-buffer-kill)
+         <span style="font-weight: bold;">:map</span> ivy-reverse-i-search-map
+         (<span style="font-style: italic;">"C-k"</span> . ivy-previous-line)
+         (<span style="font-style: italic;">"C-d"</span> . ivy-reverse-i-search-kill))
+  <span style="font-weight: bold;">:config</span>
+  (ivy-mode 1))
+
+(use-package ivy-rich
+  <span style="font-weight: bold;">:init</span>
+  (ivy-rich-mode 1))
+
+(use-package counsel
+  <span style="font-weight: bold;">:bind</span> ((<span style="font-style: italic;">"M-x"</span> . counsel-M-x)
+         (<span style="font-style: italic;">"C-x b"</span> . counsel-ibuffer)
+         (<span style="font-style: italic;">"C-x C-f"</span> . counsel-find-file)
+         <span style="font-weight: bold;">:map</span> minibuffer-local-map
+         (<span style="font-style: italic;">"C-r"</span> . 'counsel-minibuffer-history)))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6f74b49" class="outline-3">
+<h3 id="org6f74b49">Development</h3>
+<div class="outline-text-3" id="text-org6f74b49">
+</div>
+<div id="outline-container-orge0a68f3" class="outline-4">
+<h4 id="orge0a68f3">Lsp-mode</h4>
+<div class="outline-text-4" id="text-orge0a68f3">
+</div>
+<div id="outline-container-org1a8a88a" class="outline-5">
+<h5 id="org1a8a88a">Lsp</h5>
+<div class="outline-text-5" id="text-org1a8a88a">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+
+(use-package lsp-mode
+  <span style="font-weight: bold;">:init</span>
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")</span>
+  (<span style="font-weight: bold;">setq</span> lsp-keymap-prefix <span style="font-style: italic;">"C-c l"</span>)
+  <span style="font-weight: bold;">:hook</span> (<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">replace XXX-mode with concrete major-mode(e. g. python-mode)</span>
+         (python-mode . lsp)
+         (json-mode .lsp)
+         (html-mode .lsp)
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">if you want which-key integration</span>
+         (lsp-mode . lsp-enable-which-key-integration))
+  <span style="font-weight: bold;">:commands</span> lsp lsp-deferred)
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">optionally</span>
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">company provide completion function</span>
+(use-package company)
+
+(use-package flycheck
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:init (global-flycheck-mode)</span>
+  )
+
+(use-package lsp-ui <span style="font-weight: bold;">:commands</span> lsp-ui-mode)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">if you are helm user</span>
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(use-package helm-lsp :commands helm-lsp-workspace-symbol)</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">if you are ivy user</span>
+(use-package lsp-ivy <span style="font-weight: bold;">:commands</span> lsp-ivy-workspace-symbol)
+(use-package lsp-treemacs <span style="font-weight: bold;">:commands</span> lsp-treemacs-errors-list)
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">optionally if you want to use debugger</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(use-package dap-mode</span>
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:defer)</span>
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(use-package dap-LANGUAGE) to load the dap adapter for your language</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(require 'dap-python)</span>
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">optional if you want which-key integration</span>
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(use-package which-key</span>
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">:config</span>
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(which-key-mode))</span>
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package lsp-mode
+  <span style="font-weight: bold;">:init</span>
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")</span>
+  (<span style="font-weight: bold;">setq</span> lsp-keymap-prefix <span style="font-style: italic;">"C-c l"</span>)
+  <span style="font-weight: bold;">:hook</span> (<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">replace XXX-mode with concrete major-mode(e. g. python-mode)</span>
+         (python-mode . lsp-defer)
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">if you want which-key integration</span>
+         (lsp-mode . lsp-enable-which-key-integration))
+  <span style="font-weight: bold;">:commands</span> lsp)
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">optionally</span>
+(use-package lsp-ui <span style="font-weight: bold;">:commands</span> lsp-ui-mode)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">if you are helm user</span>
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(use-package helm-lsp :commands helm-lsp-workspace-symbol)</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">if you are ivy user</span>
+(use-package lsp-ivy <span style="font-weight: bold;">:commands</span> lsp-ivy-workspace-symbol)
+(use-package lsp-treemacs <span style="font-weight: bold;">:commands</span> lsp-treemacs-errors-list)
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">optionally if you want to use debugger</span>
+(use-package dap-mode)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(use-package dap-LANGUAGE) to load the dap adapter for your language</span>
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">optional if you want which-key integration</span>
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(use-package which-key</span>
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">:config</span>
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(which-key-mode))</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2ec7fae" class="outline-5">
+<h5 id="org2ec7fae">Lsp for python</h5>
+<div class="outline-text-5" id="text-org2ec7fae">
+</div>
+<ul class="org-ul">
+<li><a id="org62b6297"></a>Pylsp<br />
+<div class="outline-text-6" id="text-org62b6297">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> lsp-pylsp-plugins-yapf-enabled t)
+(<span style="font-weight: bold;">setq</span> lsp-pylsp-plugins-jedi-use-pyenv-environment t)
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgdfb91c2"></a>Pyright<br />
+<div class="outline-text-6" id="text-orgdfb91c2">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package lsp-pyright
+  <span style="font-weight: bold;">:ensure</span> t
+  <span style="font-weight: bold;">:hook</span> (python-mode . (<span style="font-weight: bold;">lambda</span> ()
+                         (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">lsp-pyright</span>)
+                         (lsp))))  <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">or lsp-deferred</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(use-package company)</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org33abeb7"></a>Mspyls<br />
+<div class="outline-text-6" id="text-org33abeb7">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package lsp-python-ms
+  <span style="font-weight: bold;">:ensure</span> t
+  <span style="font-weight: bold;">:init</span> (<span style="font-weight: bold;">setq</span> lsp-python-ms-auto-install-server t)
+  <span style="font-weight: bold;">:hook</span> (python-mode . (<span style="font-weight: bold;">lambda</span> ()
+                         (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">lsp-python-ms</span>)
+                         (lsp))))  <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">lsp or lsp-deferred</span>
+
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org300a113"></a>jedi<br />
+<div class="outline-text-6" id="text-org300a113">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package lsp-jedi
+  <span style="font-weight: bold;">:ensure</span> t
+  <span style="font-weight: bold;">:config</span>
+  (<span style="font-weight: bold;">with-eval-after-load</span> <span style="font-style: italic;">"lsp-mode"</span>
+    (add-to-list 'lsp-disabled-clients 'pyls)
+    (add-to-list 'lsp-disabled-clients 'mspyls)
+    (add-to-list 'lsp-disabled-clients 'pylsp)
+    <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(add-to-list 'lsp-enabled-clients 'jedi)</span>
+    ))
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-org79a2863" class="outline-5">
+<h5 id="org79a2863">LSP for Html</h5>
+<div class="outline-text-5" id="text-org79a2863">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3db1a21" class="outline-4">
+<h4 id="org3db1a21">Python<sub>settings</sub></h4>
+<div class="outline-text-4" id="text-org3db1a21">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#35774;&#32622;&#32553;&#36827;&#20026;4</span>
+(<span style="font-weight: bold;">setq</span>
+ python-indent-offset 4
+ python-indent-guess-indent-offset nil)
+(add-hook 'python-mode-hook (electric-pair-mode 1))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org63493cd" class="outline-4">
+<h4 id="org63493cd">Format python code</h4>
+<div class="outline-text-4" id="text-org63493cd">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package yapfify
+  <span style="font-weight: bold;">:config</span>
+  (add-hook 'python-mode-hook 'yapf-mode))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org38276ee" class="outline-4">
+<h4 id="org38276ee">Format All</h4>
+<div class="outline-text-4" id="text-org38276ee">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package format-all)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4507be6" class="outline-4">
+<h4 id="org4507be6">Elpy &#x2013; IDE for py</h4>
+<div class="outline-text-4" id="text-org4507be6">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package elpy
+  <span style="font-weight: bold;">:ensure</span> t
+  <span style="font-weight: bold;">:init</span>
+  (elpy-enable))
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2aeb375" class="outline-3">
+<h3 id="org2aeb375">Orgmode</h3>
+<div class="outline-text-3" id="text-org2aeb375">
+</div>
+<div id="outline-container-orgb4f253d" class="outline-4">
+<h4 id="orgb4f253d">CodeBlock模版</h4>
+<div class="outline-text-4" id="text-orgb4f253d">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">org-tempo</span>)
+(add-to-list 'org-structure-template-alist '(<span style="font-style: italic;">"py"</span> . <span style="font-style: italic;">"src python :results output"</span>))
+(add-to-list 'org-structure-template-alist '(<span style="font-style: italic;">"el"</span> . <span style="font-style: italic;">"src emacs-lisp"</span>))
+(add-to-list 'org-structure-template-alist '(<span style="font-style: italic;">"ipy"</span> . <span style="font-style: italic;">"src ipython :session"</span>))
+(add-to-list 'org-structure-template-alist '(<span style="font-style: italic;">"bash"</span> . <span style="font-style: italic;">"src bash"</span>))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org522802c" class="outline-4">
+<h4 id="org522802c">outline</h4>
+<div class="outline-text-4" id="text-org522802c">
+<p>
+配置headline的项目符号(bullet point)
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package org-superstar
+  <span style="font-weight: bold;">:after</span> org
+  <span style="font-weight: bold;">:hook</span> (org-mode . org-superstar-mode)
+  <span style="font-weight: bold;">:config</span>
+  (<span style="font-weight: bold;">setq</span> org-superstar-leading-bullet  ?\s)
+
+  <span style="font-weight: bold;">:custom</span>
+  <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(org-superstar-remove-leading-stars t)</span>
+
+  (org-superstar-headline-bullets-list '(<span style="font-style: italic;">"&#9673;"</span> <span style="font-style: italic;">"&#9675;"</span> <span style="font-style: italic;">"&#9679;"</span> <span style="font-style: italic;">"&#9675;"</span> <span style="font-style: italic;">"&#9679;"</span> <span style="font-style: italic;">"&#9675;"</span> <span style="font-style: italic;">"&#9679;"</span>))
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(org-superstar-headline-bullets-list '("&#9775;" "&#9776;" "&#9777;" "&#9778;" "&#9779;" "&#9780;" "&#9781;" "&#9782;" "&#9783;"))</span>
+  )
+
+
+</pre>
+</div>
+
+<p>
+配置折叠后的省略号
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-ellipsis <span style="font-style: italic;">" &#9660; "</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb97a94d" class="outline-4">
+<h4 id="orgb97a94d">Org-roam</h4>
+<div class="outline-text-4" id="text-orgb97a94d">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">      <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(use-package org-roam</span>
+        <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">:ensure t</span>
+        <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">:init</span>
+        <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(setq org-roam-v2-ack t)</span>
+        <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">:custom</span>
+        <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(org-roam-directory "~/MyLife/org-roam")</span>
+        <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">:bind (("C-c n l" . org-roam-buffer-toggle)</span>
+               <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">("C-c n f" . org-roam-node-find)</span>
+               <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">("C-c n i" . org-roam-node-insert))</span>
+        <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">:config</span>
+        <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(org-roam-setup))</span>
+(use-package org-roam
+  <span style="font-weight: bold;">:ensure</span> t
+  <span style="font-weight: bold;">:init</span>
+  (<span style="font-weight: bold;">setq</span> org-roam-v2-ack t)
+  <span style="font-weight: bold;">:custom</span>
+  (org-roam-directory <span style="font-style: italic;">"~/MyLife/org-roam"</span>)
+  (org-roam-completion-everywhere t)
+  (org-roam-dailies-capture-templates
+    '((<span style="font-style: italic;">"d"</span> <span style="font-style: italic;">"default"</span> entry <span style="font-style: italic;">"* %&lt;%I:%M %p&gt;: %?"</span>
+       <span style="font-weight: bold;">:if-new</span> (file+head <span style="font-style: italic;">"%&lt;%Y-%m-%d&gt;.org"</span> <span style="font-style: italic;">"#+title: %&lt;%Y-%m-%d&gt;\n"</span>))))
+  <span style="font-weight: bold;">:bind</span> ((<span style="font-style: italic;">"C-c n l"</span> . org-roam-buffer-toggle)
+         (<span style="font-style: italic;">"C-c n f"</span> . org-roam-node-find)
+         (<span style="font-style: italic;">"C-c n i"</span> . org-roam-node-insert)
+         <span style="font-weight: bold;">:map</span> org-mode-map
+         (<span style="font-style: italic;">"C-M-i"</span> . completion-at-point)
+         <span style="font-weight: bold;">:map</span> org-roam-dailies-map
+         (<span style="font-style: italic;">"Y"</span> . org-roam-dailies-capture-yesterday)
+         (<span style="font-style: italic;">"T"</span> . org-roam-dailies-capture-tomorrow))
+  <span style="font-weight: bold;">:bind-keymap</span>
+  (<span style="font-style: italic;">"C-c n d"</span> . org-roam-dailies-map)
+  <span style="font-weight: bold;">:config</span>
+  (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">org-roam-dailies</span>) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Ensure the keymap is available</span>
+  (org-roam-db-autosync-mode))
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orga329b9f" class="outline-4">
+<h4 id="orga329b9f">Org-mode</h4>
+<div class="outline-text-4" id="text-orga329b9f">
+</div>
+<div id="outline-container-orgf33903a" class="outline-5">
+<h5 id="orgf33903a">Init set up</h5>
+<div class="outline-text-5" id="text-orgf33903a">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-directory <span style="font-style: italic;">"~/MyLife/org"</span>)
+(global-set-key (kbd <span style="font-style: italic;">"C-c l"</span>) 'org-store-link)
+(global-set-key (kbd <span style="font-style: italic;">"C-c a"</span>) 'org-agenda)
+(global-set-key (kbd <span style="font-style: italic;">"C-c c"</span>) 'org-capture)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc14271e" class="outline-5">
+<h5 id="orgc14271e">Hide emphasis markers</h5>
+<div class="outline-text-5" id="text-orgc14271e">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-hide-emphasis-markers t)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1071462" class="outline-5">
+<h5 id="org1071462">org-drill</h5>
+<div class="outline-text-5" id="text-org1071462">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package org-drill)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org54f1c8a" class="outline-4">
+<h4 id="org54f1c8a">Pomodoro</h4>
+<div class="outline-text-4" id="text-org54f1c8a">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package org-pomodoro
+  <span style="font-weight: bold;">:config</span>
+  (<span style="font-weight: bold;">setq</span> org-pomodoro-start-sound (expand-file-name <span style="font-style: italic;">"~/MyLife/Emacs/sounds/meditation_bell.wav"</span>))
+  (<span style="font-weight: bold;">setq</span> org-pomodoro-short-break-sound (expand-file-name <span style="font-style: italic;">"~/MyLife/Emacs/sounds/meditation_bell.wav"</span>))
+  (<span style="font-weight: bold;">setq</span> org-pomodoro-long-break-sound (expand-file-name <span style="font-style: italic;">"~/MyLife/Emacs/sounds/meditation_bell.wav"</span>))
+  (<span style="font-weight: bold;">setq</span> org-pomodoro-finished-sound (expand-file-name <span style="font-style: italic;">"~/MyLife/Emacs/sounds/meditation_bell.wav"</span>)))
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">org-pomodoro use sound-wav pavkage to play the sound</span>
+(use-package sound-wav)
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org50fa894" class="outline-4">
+<h4 id="org50fa894">tracking habits</h4>
+<div class="outline-text-4" id="text-org50fa894">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(add-to-list 'org-modules 'org-habit)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga6cbfc6" class="outline-4">
+<h4 id="orga6cbfc6">Auto insert newline</h4>
+<div class="outline-text-4" id="text-orga6cbfc6">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(add-hook 'org-mode-hook '(lambda () (<span style="font-weight: bold;">setq</span> fill-column 80)))
+(add-hook 'org-mode-hook 'auto-fill-mode)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8cec4cf" class="outline-4">
+<h4 id="org8cec4cf">org-capture-template</h4>
+<div class="outline-text-4" id="text-org8cec4cf">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-capture-templates
+'(
+  (<span style="font-style: italic;">"t"</span> <span style="font-style: italic;">"Tasks"</span>)
+  (<span style="font-style: italic;">"tt"</span> <span style="font-style: italic;">"TODO"</span> entry (file+headline <span style="font-style: italic;">"GTD.org"</span> <span style="font-style: italic;">"Tasks"</span>) <span style="font-style: italic;">"* TODO %?\n %i\n %a"</span>)
+  (<span style="font-style: italic;">"T"</span> <span style="font-style: italic;">"Thoughts"</span>)
+  (<span style="font-style: italic;">"TT"</span> <span style="font-style: italic;">"Thought  To be done"</span> entry (file+headline <span style="font-style: italic;">"GTD.org"</span> <span style="font-style: italic;">"&#26410;&#23454;&#29616;&#30340;&#24819;&#27861;"</span>) <span style="font-style: italic;">"* %?\n"</span> <span style="font-weight: bold;">:jump-to-captured</span> t)
+  (<span style="font-style: italic;">"d"</span> <span style="font-style: italic;">"Drills"</span>)
+  (<span style="font-style: italic;">"dE"</span> <span style="font-style: italic;">"Drills for English"</span> entry (file+headline <span style="font-style: italic;">"GTD.org"</span> <span style="font-style: italic;">"English"</span>)  <span style="font-style: italic;">"* %? :drill:"</span>)
+  (<span style="font-style: italic;">"dP"</span> <span style="font-style: italic;">"Drills for Python"</span> entry (file+headline <span style="font-style: italic;">"~/MyLife/Python/Learning_Python/README.org"</span> <span style="font-style: italic;">"&#32451;&#20064;&#39064;"</span>) <span style="font-style: italic;">"* %? :drill:\n** Answer\n** Note\n"</span> <span style="font-weight: bold;">:jump-to-captured</span> t)
+  )
+)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6db04d6" class="outline-4">
+<h4 id="org6db04d6">Encrypt</h4>
+<div class="outline-text-4" id="text-org6db04d6">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">org-crypt</span>)
+(org-crypt-use-before-save-magic)
+(<span style="font-weight: bold;">setq</span> org-tags-exclude-from-inheritance (<span style="font-weight: bold;">quote</span> (<span style="font-style: italic;">"crypt"</span>)))
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">GPG key to use for encryption</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Either the Key ID or set to nil to use symmetric encryption.</span>
+(<span style="font-weight: bold;">setq</span> org-crypt-key <span style="font-style: italic;">"kamisama"</span>)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org3abb952" class="outline-3">
+<h3 id="org3abb952">Productivity</h3>
+<div class="outline-text-3" id="text-org3abb952">
+<p>
+一些能提高编辑效率的配置
+</p>
+</div>
+
+<div id="outline-container-org400b093" class="outline-4">
+<h4 id="org400b093">括号补全</h4>
+<div class="outline-text-4" id="text-org400b093">
+<p>
+自动补全各种括号和引号
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(electric-pair-mode 1)</span>
+
+(use-package smartparens
+  <span style="font-weight: bold;">:hook</span>
+  (prog-mode . smartparens-mode)
+  (org-mode . smartparens-mode ))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1e688aa" class="outline-4">
+<h4 id="org1e688aa">Snippet</h4>
+<div class="outline-text-4" id="text-org1e688aa">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">snippet engine</span>
+(use-package yasnippet
+  <span style="font-weight: bold;">:defer</span>
+  <span style="font-weight: bold;">:hook</span> (prog-mode . yas-minor-mode)
+  <span style="font-weight: bold;">:config</span>
+  (yas-reload-all))
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">snippets</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(use-package yasnippet-snippets</span>
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:hook (prog-mode .))</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgec4409a" class="outline-3">
+<h3 id="orgec4409a">Ebook</h3>
+<div class="outline-text-3" id="text-orgec4409a">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package nov
+  <span style="font-weight: bold;">:config</span>
+  (add-to-list 'auto-mode-alist '(<span style="font-style: italic;">"\\.epub\\'"</span> . nov-mode)))
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcf18011" class="outline-3">
+<h3 id="orgcf18011">Magit</h3>
+<div class="outline-text-3" id="text-orgcf18011">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(use-package magit)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org956202e" class="outline-3">
+<h3 id="org956202e">Save Emacs Sessions</h3>
+<div class="outline-text-3" id="text-org956202e">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(desktop-save-mode 1)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.2 (<a href="https://orgmode.org">Org</a> mode 9.4.4)</p>
+</div>
+</body>
+</html>
