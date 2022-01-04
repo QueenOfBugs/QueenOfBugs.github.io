@@ -238,16 +238,43 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3f52a34">1. EmacsConfig</a></li>
-<li><a href="#org8957f2e">2. Publish org files to Github Pages</a></li>
+<li><a href="#orgf08755d">1. 使用Github遇到的问题记录</a>
+<ul>
+<li><a href="#org30e66e5">1.1. github actions</a>
+<ul>
+<li><a href="#orgd9ebe6c">1.1.1. git会记录文件状态</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3f52a34" class="outline-2">
-<h2 id="org3f52a34"><span class="section-number-2">1</span> <a href="DotFiles.html">EmacsConfig</a></h2>
+<div id="outline-container-orgf08755d" class="outline-2">
+<h2 id="orgf08755d"><span class="section-number-2">1</span> 使用Github遇到的问题记录</h2>
+<div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org8957f2e" class="outline-2">
-<h2 id="org8957f2e"><span class="section-number-2">2</span> <a href="publish2github.html">Publish org files to Github Pages</a></h2>
+<div id="outline-container-org30e66e5" class="outline-3">
+<h3 id="org30e66e5"><span class="section-number-3">1.1</span> github actions</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-orgd9ebe6c" class="outline-4">
+<h4 id="orgd9ebe6c"><span class="section-number-4">1.1.1</span> git会记录文件状态</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+使用 Emacs 编辑文件的情况下: 很容易一边编辑文件,另一边就打开了shell-mode 要
+对刚刚的更改进行提交.
+当一个文件在本地打开,没有保存时,他会处于被其他程序占用的状态,如果这时候进行
+了 git 提交的话,该文件的状态一样会被记录,当项目使用了 github action 并且进行
+的操作涉及到这个未保存的文件,那 action 就会失败,提示该文件被某个用户或程序锁
+定.
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org2b977ef"></a><span class="todo TODO">TODO</span> 测试其他文本编辑器是否会出现这种状况.<br /></li>
+</ol>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
