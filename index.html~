@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-01-04 Tue 15:16 -->
+<!-- 2022-01-04 Tue 23:10 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>Home page</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="kamisama" />
 <style type="text/css">
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
+    overflow: auto;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -52,7 +52,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -182,105 +195,71 @@
 </style>
 <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 </head>
 <body>
 <div id="org-div-home-and-up">
  <a accesskey="h" href="./index.html"> UP </a>
  |
- <a accesskey="H" href="../index.html"> HOME </a>
+ <a accesskey="H" href="./sitemap.html"> HOME </a>
 </div><div id="content">
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#org309de30">1. 使用Github遇到的问题记录</a>
-<ul>
-<li><a href="#org4918194">1.1. github actions</a>
-<ul>
-<li><a href="#org80a5d88">1.1.1. git会记录文件状态</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org309de30" class="outline-2">
-<h2 id="org309de30"><span class="section-number-2">1</span> 使用Github遇到的问题记录</h2>
+<h1 class="title">Home page</h1>
+
+<div id="outline-container-org04fd3bd" class="outline-2">
+<h2 id="org04fd3bd"><span class="section-number-2">1</span> links to all kinds of contents</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org4918194" class="outline-3">
-<h3 id="org4918194"><span class="section-number-3">1.1</span> github actions</h3>
+<div id="outline-container-orgfd77ed0" class="outline-3">
+<h3 id="orgfd77ed0"><span class="section-number-3">1.1</span> a link to img file</h3>
 <div class="outline-text-3" id="text-1-1">
-</div>
-<div id="outline-container-org80a5d88" class="outline-4">
-<h4 id="org80a5d88"><span class="section-number-4">1.1.1</span> git会记录文件状态</h4>
-<div class="outline-text-4" id="text-1-1-1">
 <p>
-使用 Emacs 编辑文件的情况下: 很容易一边编辑文件,另一边就打开了shell-mode 要
-对刚刚的更改进行提交.
-当一个文件在本地打开,没有保存时,他会处于被其他程序占用的状态,如果这时候进行
-了 git 提交的话,该文件的状态一样会被记录,当项目使用了 github action 并且进行
-的操作涉及到这个未保存的文件,那 action 就会失败,提示该文件被某个用户或程序锁
-定.
+<code>[[file:**.img][description]]</code>
 </p>
 </div>
-<ol class="org-ol">
-<li><a id="org2abaf3b"></a><span class="todo TODO">TODO</span> 测试其他文本编辑器是否会出现这种状况.<br /></li>
-</ol>
 </div>
+<div id="outline-container-org4776789" class="outline-3">
+<h3 id="org4776789"><span class="section-number-3">1.2</span> a link to remember.org file</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+<a href="remember.html">remember</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgb65501c" class="outline-3">
+<h3 id="orgb65501c"><span class="section-number-3">1.3</span> <a href="Emacs/index.html">Emacs</a></h3>
+</div>
+<div id="outline-container-org45a7f55" class="outline-3">
+<h3 id="org45a7f55"><span class="section-number-3">1.4</span> <a href="Github/index.html">Github</a></h3>
+</div>
+
+<div id="outline-container-org2c97780" class="outline-3">
+<h3 id="org2c97780"><span class="section-number-3">1.5</span> Journal</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-01-04 Tue 15:16</p>
-<p class="validation"></p>
+<p class="date">Created: 2022-01-04 Tue 23:10</p>
 </div>
 </body>
 </html>
