@@ -3,9 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
+<!-- 2022-01-04 Tue 13:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>publish org files to github pages</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="kamisama" />
 <style type="text/css">
@@ -233,20 +234,21 @@ for the JavaScript code in this tag.
  |
  <a accesskey="H" href="../index.html"> HOME </a>
 </div><div id="content">
+<h1 class="title">publish org files to github pages</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org48f4d3f">1. 用org-publish将内容发布到github-pages</a></li>
-<li><a href="#org4ed08af">2. 使用publish过程中收获记录</a></li>
+<li><a href="#org58409bc">1. 用org-publish将内容发布到github-pages</a></li>
+<li><a href="#org73e037c">2. 使用publish过程中收获记录</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org48f4d3f" class="outline-2">
-<h2 id="org48f4d3f"><span class="section-number-2">1</span> 用org-publish将内容发布到github-pages</h2>
+<div id="outline-container-org58409bc" class="outline-2">
+<h2 id="org58409bc"><span class="section-number-2">1</span> 用org-publish将内容发布到github-pages</h2>
 </div>
-<div id="outline-container-org4ed08af" class="outline-2">
-<h2 id="org4ed08af"><span class="section-number-2">2</span> 使用publish过程中收获记录</h2>
+<div id="outline-container-org73e037c" class="outline-2">
+<h2 id="org73e037c"><span class="section-number-2">2</span> 使用publish过程中收获记录</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 创建该文件时间: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-04 Tue 18:50&gt;</span></span>
@@ -258,13 +260,19 @@ for the JavaScript code in this tag.
 看了文档之后发现有两个 时间选项，一个是 date 一个是 timestamp，上面的结果是两
 个都是 t 的情况下产生的，将 date设置为 nil 之后 再次测试：Created: 2022-01-04
 Tue 11:23 同样很迷，将 timestamp 也设置为 nil之后 再次测试：很好，直接就没有
-Created了. 这次将timestamp设置为 nil ，date设置为 t, 测试：
+Created了. 这次将timestamp设置为 nil ，date设置为 t, 测试：仍然不显示创建时间.那
+么可以确定的是 timestamp 这个选项是用来显示创建时间的，但这个创建时间并不是我
+认为的org文件创建的时间，而是org文件导出为html文件时的时间，这个时间之所以和
+当前时间不一致是因为 github action 是使用github或者说是微软的服务器进行的生成
+文件的操作，这个服务器所在区域跟我们有7个小时左右的时差.
 </p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
+<p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-04 Tue&gt;</span></span> <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-04 Tue 21:17&gt;</span></span></p>
 <p class="author">Author: kamisama</p>
+<p class="date">Created: 2022-01-04 Tue 13:44</p>
 <p class="validation"></p>
 </div>
 </body>
