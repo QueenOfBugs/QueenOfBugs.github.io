@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-01-05 Wed 13:32 -->
+<!-- 2022-01-05 Wed 14:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: auto;
+    overflow: visible;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -52,7 +52,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
+  pre.src:hover:before { display: inline;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -161,19 +161,6 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -195,26 +182,50 @@
 </style>
 <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
 <script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
 <!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
 </script>
 </head>
 <body>
@@ -227,21 +238,66 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8ce8aef">1. EmacsConfig</a></li>
-<li><a href="#org8ae38b3">2. Publish org files to Github Pages</a></li>
+<li><a href="#org6204384">1. 导出(Exporting)</a>
+<ul>
+<li><a href="#orge22a0c8">1.1. The Export Dispatcher(The main interface.) 导出调度器</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8ce8aef" class="outline-2">
-<h2 id="org8ce8aef"><span class="section-number-2">1</span> <a href="DotFiles.html">EmacsConfig</a></h2>
+<div id="outline-container-org6204384" class="outline-2">
+<h2 id="org6204384"><span class="section-number-2">1</span> 导出(Exporting)</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+当需要将自己的 org 笔记打印出来,发布到网上,或是分享给不用 Org 的人.Orrg 可以将
+文档转化并导出为各种其他的格式,同时尽可能的保持文档结构和 markup (富文本标记内
+容).
+负责将 org 文件转换成其他格式的库叫做 <code>back-ends</code>.
+Org 自带对这些 <code>back-ends</code> 支持:
+</p>
+<ul class="org-ul">
+<li>ascii (ASCII format)</li>
+<li>beamer (LaTeX Beamer format)</li>
+<li>html (HTML format)</li>
+<li>icalendar (iCalendar format)</li>
+<li>latex (LaTeX format)</li>
+<li>md (Markdown format)</li>
+<li>odt (OpenDocument Text format)</li>
+<li>org (Org format)</li>
+<li>texinfo (Texinfo format)</li>
+<li>man (Man page format)</li>
+</ul>
+<p>
+我们还可以从 Emacs 包系统里安装导出为其他格式的库, 为了方便查找,这些包有通用的
+命名模式: <code>ox-NAME</code> , 例如 <code>ox-koma-letter</code> 就是 <code>koma-letter</code> 的 back-end. 更多的
+back-end 可以在 <code>org-contrib</code> 仓库中找到.
+</p>
+
+<p>
+Org 默认只加载这些 back-ends: ASCII, HTML, iCalendar, LaTeX, 和 ODT. 额外的
+back-ends 可以通过两种方式加载:
+</p>
+<ul class="org-ul">
+<li>修改 <code>org-export-backends</code></li>
+<li>在 Emacs Init 文件里请求相应的库:
+加载 Markdown 格式的 back-end, 在 Eamcs 配置文件里添加 <code>(require 'ox-md)</code></li>
+</ul>
 </div>
-<div id="outline-container-org8ae38b3" class="outline-2">
-<h2 id="org8ae38b3"><span class="section-number-2">2</span> <a href="publish2github.html">Publish org files to Github Pages</a></h2>
+<div id="outline-container-orge22a0c8" class="outline-3">
+<h3 id="orge22a0c8"><span class="section-number-3">1.1</span> The Export Dispatcher(The main interface.) 导出调度器</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+To Be Continued!
+</p>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-01-05 Wed 13:32</p>
+<p class="date">Created: 2022-01-05 Wed 14:43</p>
+<p class="validation"></p>
 </div>
 </body>
 </html>
