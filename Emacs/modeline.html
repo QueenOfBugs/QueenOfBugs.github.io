@@ -238,11 +238,12 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7d93a73">1. Python</a>
+<li><a href="#orga741055">1. Emacs Modeline 主题和设置</a>
 <ul>
-<li><a href="#org140fff9">1.1. 异步执行 python 代码</a>
+<li><a href="#org6078caf">1.1. telephone-line</a>
 <ul>
-<li><a href="#org98f1486">1.1.1. <span class="todo TODO">TODO</span> 因为需要下载不少东西,这个包也不在 Emacs 包管理系统中,所以没能试用,暂且记下.</a></li>
+<li><a href="#orgb5c81eb">1.1.1. 安装</a></li>
+<li><a href="#org3fbd4aa">1.1.2. 效果</a></li>
 </ul>
 </li>
 </ul>
@@ -250,45 +251,46 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-org7d93a73" class="outline-2">
-<h2 id="org7d93a73"><span class="section-number-2">1</span> Python</h2>
+<div id="outline-container-orga741055" class="outline-2">
+<h2 id="orga741055"><span class="section-number-2">1</span> Emacs Modeline 主题和设置</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org140fff9" class="outline-3">
-<h3 id="org140fff9"><span class="section-number-3">1.1</span> 异步执行 python 代码</h3>
+<div id="outline-container-org6078caf" class="outline-3">
+<h3 id="org6078caf"><span class="section-number-3">1.1</span> <a href="https://github.com/dbordak/telephone-line">telephone-line</a></h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
-正常情况下,执行下面的代码,Emacs 进程会直接挂起,直到代码执行完毕,也就是会卡死
-10秒.
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">import</span> time
-
-<span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> <span style="font-weight: bold;">range</span>(5):
-    <span style="font-weight: bold;">print</span>(i)
-    time.sleep(2)
-</pre>
-</div>
-
-<p>
-这是因为 Emacs 的单进程机制,想要在后台异步执行 Python 代码,就需要用到下面的库
-(需要自己下载):
-</p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">scimax-org-babel-python</span>)
-(add-to-list 'org-ctrl-c-ctrl-c-hook 'org-babel-async-execute:python)
-</pre>
-</div>
-<p>
-<a href="https://github.com/jkitchin/scimax/blob/org-9/scimax-org-babel-python.el">scimax-org-babel-python</a>
+Powerline 针对Emacs 的另一个实现.
 </p>
 </div>
-
-<div id="outline-container-org98f1486" class="outline-4">
-<h4 id="org98f1486"><span class="section-number-4">1.1.1</span> <span class="todo TODO">TODO</span> 因为需要下载不少东西,这个包也不在 Emacs 包管理系统中,所以没能试用,暂且记下.</h4>
+<div id="outline-container-orgb5c81eb" class="outline-4">
+<h4 id="orgb5c81eb"><span class="section-number-4">1.1.1</span> 安装</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
-<a href="https://kitchingroup.cheme.cmu.edu/blog/2016/11/09/New-and-improved-asynchronous-org-babel-python-blocks/">原文</a>
+Use package.el from MELPA.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">telephone-line</span>)
+(telephone-line-mode 1)
+</pre>
+</div>
+<p>
+use-package:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package telephone-line
+  <span style="font-weight: bold;">:config</span>
+  (telephone-line-mode 1)
+  )
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3fbd4aa" class="outline-4">
+<h4 id="org3fbd4aa"><span class="section-number-4">1.1.2</span> 效果</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+evil 的编辑模式倒是显示的很好, <code>display-battery-mode</code> 不能显示,鼠标当前位置,选
+中多少字符的功能也没有, 没有进一步配置的情况下不如 doom-modeline 好用.
 </p>
 </div>
 </div>
@@ -296,7 +298,7 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: 2022-01-06 Thu 20:57</p>
+<p class="date">Date: 2022-01-06 Thu 21:05</p>
 <p class="author">Author: kamisama</p>
 <p class="date">Created: 2022-01-06 Thu 13:21</p>
 <p class="validation"></p>
