@@ -238,11 +238,11 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4c5553a">1. 使用Github遇到的问题记录</a>
+<li><a href="#orgd682b3d">1. Python</a>
 <ul>
-<li><a href="#org1610103">1.1. github actions</a>
+<li><a href="#org9d057be">1.1. 异步执行 python 代码</a>
 <ul>
-<li><a href="#orgced6efe">1.1.1. git会记录文件状态</a></li>
+<li><a href="#org21ef6ab">1.1.1. <span class="todo TODO">TODO</span> 因为需要下载不少东西,这个包也不在 Emacs 包管理系统中,所以没能试用,暂且记下.</a></li>
 </ul>
 </li>
 </ul>
@@ -250,34 +250,53 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-org4c5553a" class="outline-2">
-<h2 id="org4c5553a"><span class="section-number-2">1</span> 使用Github遇到的问题记录</h2>
+<div id="outline-container-orgd682b3d" class="outline-2">
+<h2 id="orgd682b3d"><span class="section-number-2">1</span> Python</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org1610103" class="outline-3">
-<h3 id="org1610103"><span class="section-number-3">1.1</span> github actions</h3>
+<div id="outline-container-org9d057be" class="outline-3">
+<h3 id="org9d057be"><span class="section-number-3">1.1</span> 异步执行 python 代码</h3>
 <div class="outline-text-3" id="text-1-1">
-</div>
-<div id="outline-container-orgced6efe" class="outline-4">
-<h4 id="orgced6efe"><span class="section-number-4">1.1.1</span> git会记录文件状态</h4>
-<div class="outline-text-4" id="text-1-1-1">
 <p>
-使用 Emacs 编辑文件的情况下: 很容易一边编辑文件,另一边就打开了shell-mode 要
-对刚刚的更改进行提交.
-当一个文件在本地打开,没有保存时,他会处于被其他程序占用的状态,如果这时候进行
-了 git 提交的话,该文件的状态一样会被记录,当项目使用了 github action 并且进行
-的操作涉及到这个未保存的文件,那 action 就会失败,提示该文件被某个用户或程序锁
-定.
+正常情况下,执行下面的代码,Emacs 进程会直接挂起,直到代码执行完毕,也就是会卡死
+10秒.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">import</span> time
+
+<span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> <span style="font-weight: bold;">range</span>(5):
+    <span style="font-weight: bold;">print</span>(i)
+    time.sleep(2)
+</pre>
+</div>
+
+<p>
+这是因为 Emacs 的单进程机制,想要在后台异步执行 Python 代码,就需要用到下面的库
+(需要自己下载):
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">scimax-org-babel-python</span>)
+(add-to-list 'org-ctrl-c-ctrl-c-hook 'org-babel-async-execute:python)
+</pre>
+</div>
+<p>
+<a href="https://github.com/jkitchin/scimax/blob/org-9/scimax-org-babel-python.el">scimax-org-babel-python</a>
 </p>
 </div>
-<ol class="org-ol">
-<li><a id="org1e50291"></a><span class="todo TODO">TODO</span> 测试其他文本编辑器是否会出现这种状况.<br /></li>
-</ol>
+
+<div id="outline-container-org21ef6ab" class="outline-4">
+<h4 id="org21ef6ab"><span class="section-number-4">1.1.1</span> <span class="todo TODO">TODO</span> 因为需要下载不少东西,这个包也不在 Emacs 包管理系统中,所以没能试用,暂且记下.</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+<a href="https://kitchingroup.cheme.cmu.edu/blog/2016/11/09/New-and-improved-asynchronous-org-babel-python-blocks/">原文</a>
+</p>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
+<p class="date">Date: 2022-01-06 Thu 20:57</p>
 <p class="author">Author: kamisama</p>
 <p class="date">Created: 2022-01-06 Thu 12:59</p>
 <p class="validation"></p>
