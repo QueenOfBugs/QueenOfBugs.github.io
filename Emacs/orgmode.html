@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-01-06 Thu 13:23 -->
+<!-- 2022-01-07 Fri 14:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -238,17 +238,121 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org2af6fdb">导出(Exporting)</a>
+<li><a href="#org6cda24a"><span class="todo TODO">TODO</span> 文件结构(document structure)</a>
 <ul>
-<li><a href="#orgc87cd8a">The Export Dispatcher(The main interface.) 导出调度器</a></li>
+<li><a href="#orgac60621">标题(Headlines)</a></li>
+<li><a href="#orgd4400a5">标题可视性切换(Visibility Cycling)</a></li>
+<li><a href="#org38cd07c">跳转(Motion)</a></li>
+<li><a href="#org2695e95">编辑结构(Structure Editing)</a></li>
+<li><a href="#orgb4808c0">稀疏树(Sparse Trees)</a></li>
+<li><a href="#orgb587476">简单列表(Plain Lists)</a></li>
+<li><a href="#org755fd7a">抽屉 (Drawers)</a></li>
+<li><a href="#org5e0f9dd">块结构 (Blocks)</a></li>
+</ul>
+</li>
+<li><a href="#org0feeec0">导出(Exporting)</a>
+<ul>
+<li><a href="#org3a9bf44">The Export Dispatcher(The main interface.) 导出调度器</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org2af6fdb" class="outline-2">
-<h2 id="org2af6fdb">导出(Exporting)</h2>
-<div class="outline-text-2" id="text-org2af6fdb">
+
+
+<div id="outline-container-org6cda24a" class="outline-2">
+<h2 id="org6cda24a"><span class="todo TODO">TODO</span> 文件结构(document structure)</h2>
+<div class="outline-text-2" id="text-org6cda24a">
+<p>
+Org 是一个大纲编辑器. 大纲让文件以层次结构组织文本,是一种很好的记录笔记和想法
+的工具.层次结构的概述是以折叠的方式实现的,也就是隐藏文档的大部分内容,只展示大
+致的文本结构和当前正在编辑(阅读)的部分. Org 将整个显示和隐藏的功能压缩到一个命
+令: <code>org-cycle</code> 这极大地简化了大纲的使用,这个命令被绑定到 <code>&lt;TAB&gt;</code> 快捷键.
+如果打开这个笔记的 org 形式源文件,将光标移动到标题上,按下 <code>&lt;TAB&gt;</code> ,就可以看到这
+段文本都被隐藏,只显示这段内容的标题,
+</p>
+</div>
+
+<div id="outline-container-orgac60621" class="outline-3">
+<h3 id="orgac60621">标题(Headlines)</h3>
+<div class="outline-text-3" id="text-orgac60621">
+<blockquote>
+<p>
+这部分内容是关于如何排版 Org 标题树的.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgd4400a5" class="outline-3">
+<h3 id="orgd4400a5">标题可视性切换(Visibility Cycling)</h3>
+<div class="outline-text-3" id="text-orgd4400a5">
+<p>
+这部分是关于隐藏和显示 Org 大纲的.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org38cd07c" class="outline-3">
+<h3 id="org38cd07c">跳转(Motion)</h3>
+<div class="outline-text-3" id="text-org38cd07c">
+<p>
+这部分是关于跳转到其他标题的.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2695e95" class="outline-3">
+<h3 id="org2695e95">编辑结构(Structure Editing)</h3>
+<div class="outline-text-3" id="text-org2695e95">
+<p>
+这部分内容是如何改变标题的次序和层级.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb4808c0" class="outline-3">
+<h3 id="orgb4808c0">稀疏树(Sparse Trees)</h3>
+<div class="outline-text-3" id="text-orgb4808c0">
+<p>
+上下文匹配内嵌内容.(稀疏表示是降低表示的复杂度,或者说是减少参数稀疏)这里我理解
+的话就是通过正则等手段筛选符合条件的内容,隐藏不想看到的内容,只展示筛选的结果.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb587476" class="outline-3">
+<h3 id="orgb587476">简单列表(Plain Lists)</h3>
+<div class="outline-text-3" id="text-orgb587476">
+<p>
+在一个标题条目中,额外的结构.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org755fd7a" class="outline-3">
+<h3 id="org755fd7a">抽屉 (Drawers)</h3>
+<div class="outline-text-3" id="text-org755fd7a">
+<p>
+把文本'藏'起来,当你想写一些与当前条目有关的信息,但通常不想看到这些信息时就可
+以使用该功能.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5e0f9dd" class="outline-3">
+<h3 id="org5e0f9dd">块结构 (Blocks)</h3>
+<div class="outline-text-3" id="text-org5e0f9dd">
+<p>
+这部分讲可折叠的块结构.块结构可以用来容纳源代码,记录时间信息和其他许多功能.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0feeec0" class="outline-2">
+<h2 id="org0feeec0">导出(Exporting)</h2>
+<div class="outline-text-2" id="text-org0feeec0">
 <p>
 当需要将自己的 org 笔记打印出来,发布到网上,或是分享给不用 Org 的人.Orrg 可以将
 文档转化并导出为各种其他的格式,同时尽可能的保持文档结构和 markup (富文本标记内
@@ -284,9 +388,9 @@ back-ends 可以通过两种方式加载:
 加载 Markdown 格式的 back-end, 在 Eamcs 配置文件里添加 <code>(require 'ox-md)</code></li>
 </ul>
 </div>
-<div id="outline-container-orgc87cd8a" class="outline-3">
-<h3 id="orgc87cd8a">The Export Dispatcher(The main interface.) 导出调度器</h3>
-<div class="outline-text-3" id="text-orgc87cd8a">
+<div id="outline-container-org3a9bf44" class="outline-3">
+<h3 id="org3a9bf44">The Export Dispatcher(The main interface.) 导出调度器</h3>
+<div class="outline-text-3" id="text-org3a9bf44">
 <p>
 To Be Continued!
 </p>
@@ -296,7 +400,7 @@ To Be Continued!
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-01-06 Thu 13:23</p>
+<p class="date">Created: 2022-01-07 Fri 14:46</p>
 <p class="validation"></p>
 </div>
 </body>
