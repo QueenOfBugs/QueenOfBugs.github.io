@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-01-09 Sun 13:56 -->
+<!-- 2022-01-10 Mon 09:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -238,32 +238,32 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga91eb5b"><span class="todo TODO">TODO</span> 文件结构(document structure)</a>
+<li><a href="#org8fb933f"><span class="todo TODO">TODO</span> 文件结构(document structure)</a>
 <ul>
-<li><a href="#org973f338">标题(Headlines)</a>
+<li><a href="#org408ac73">标题(Headlines)</a>
 <ul>
-<li><a href="#org3513497"><span class="todo TODO">TODO</span> 跟读到 Clean View 这一部分后在这里做链接.</a></li>
-<li><a href="#org50452b2"><span class="todo TODO">TODO</span> 动态标题编号,链接.</a></li>
+<li><a href="#org4164125"><span class="todo TODO">TODO</span> 跟读到 Clean View 这一部分后在这里做链接.</a></li>
+<li><a href="#org62b9ea6"><span class="todo TODO">TODO</span> 动态标题编号,链接.</a></li>
 </ul>
 </li>
-<li><a href="#org35e78eb">标题可视性切换(Visibility Cycling)</a>
+<li><a href="#org3217738">标题可视性切换(Visibility Cycling)</a>
 <ul>
-<li><a href="#org8845f20">全局和部分切换(Global and local cycling)</a></li>
-<li><a href="#org1d76777">初始的可视性(Initial visibility)</a></li>
-<li><a href="#org99e5941">捕捉不经意的修改(Catching invisible edits)</a></li>
+<li><a href="#org6c32434">全局和部分切换(Global and local cycling)</a></li>
+<li><a href="#org8ea5f5e">初始的可视性(Initial visibility)</a></li>
+<li><a href="#org6a65c97">捕捉不经意的修改(Catching invisible edits)</a></li>
 </ul>
 </li>
-<li><a href="#org0f46a65">跳转(Motion)</a></li>
-<li><a href="#orgafd27c3">结构编辑(Structure Editing)</a></li>
-<li><a href="#orgb6f1cd6">稀疏树(Sparse Trees)</a></li>
-<li><a href="#org7924f3e">简单列表(Plain Lists)</a></li>
-<li><a href="#org1afaf19">抽屉 (Drawers)</a></li>
-<li><a href="#org64563da">块结构 (Blocks)</a></li>
+<li><a href="#org6ab3499">跳转(Motion)</a></li>
+<li><a href="#orgf9df04a">结构编辑(Structure Editing)</a></li>
+<li><a href="#orgfd86bd9">稀疏树(Sparse Trees)</a></li>
+<li><a href="#org3a20b27">简单列表(Plain Lists)</a></li>
+<li><a href="#org179ae44">抽屉 (Drawers)</a></li>
+<li><a href="#org0fae249">块结构 (Blocks)</a></li>
 </ul>
 </li>
-<li><a href="#orgf1dd810">导出(Exporting)</a>
+<li><a href="#org56227fc">导出(Exporting)</a>
 <ul>
-<li><a href="#org1cdf668">The Export Dispatcher(The main interface.) 导出调度器</a></li>
+<li><a href="#org71b4ef5">The Export Dispatcher(The main interface.) 导出调度器</a></li>
 </ul>
 </li>
 </ul>
@@ -271,9 +271,9 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-orga91eb5b" class="outline-2">
-<h2 id="orga91eb5b"><span class="todo TODO">TODO</span> 文件结构(document structure)</h2>
-<div class="outline-text-2" id="text-orga91eb5b">
+<div id="outline-container-org8fb933f" class="outline-2">
+<h2 id="org8fb933f"><span class="todo TODO">TODO</span> 文件结构(document structure)</h2>
+<div class="outline-text-2" id="text-org8fb933f">
 <p>
 Org 是一个大纲编辑器. 大纲让文件以层次结构组织文本,是一种很好的记录笔记和想法
 的工具.层次结构的概述是以折叠的方式实现的,也就是隐藏文档的大部分内容,只展示大
@@ -284,9 +284,9 @@ Org 是一个大纲编辑器. 大纲让文件以层次结构组织文本,是一�
 </p>
 </div>
 
-<div id="outline-container-org973f338" class="outline-3">
-<h3 id="org973f338">标题(Headlines)</h3>
-<div class="outline-text-3" id="text-org973f338">
+<div id="outline-container-org408ac73" class="outline-3">
+<h3 id="org408ac73">标题(Headlines)</h3>
+<div class="outline-text-3" id="text-org408ac73">
 <blockquote>
 <p>
 这部分内容是关于如何排版 Org 标题树的.
@@ -311,9 +311,9 @@ Org 是一个大纲编辑器. 大纲让文件以层次结构组织文本,是一�
 </p>
 </div>
 
-<div id="outline-container-org3513497" class="outline-4">
-<h4 id="org3513497"><span class="todo TODO">TODO</span> 跟读到 Clean View 这一部分后在这里做链接.</h4>
-<div class="outline-text-4" id="text-org3513497">
+<div id="outline-container-org4164125" class="outline-4">
+<h4 id="org4164125"><span class="todo TODO">TODO</span> 跟读到 Clean View 这一部分后在这里做链接.</h4>
+<div class="outline-text-4" id="text-org4164125">
 <p>
 标题是没有编号的,但是可以动态的对他们进行部分或全部编号.更具体可以查看
 Dynamic Headline Numbering 这一部分.
@@ -321,9 +321,9 @@ Dynamic Headline Numbering 这一部分.
 </div>
 </div>
 
-<div id="outline-container-org50452b2" class="outline-4">
-<h4 id="org50452b2"><span class="todo TODO">TODO</span> 动态标题编号,链接.</h4>
-<div class="outline-text-4" id="text-org50452b2">
+<div id="outline-container-org62b9ea6" class="outline-4">
+<h4 id="org62b9ea6"><span class="todo TODO">TODO</span> 动态标题编号,链接.</h4>
+<div class="outline-text-4" id="text-org62b9ea6">
 <p>
 一个标题子树内容中,最后一行的空白行会被当作该子树的一部分,在折叠时会被折叠.但如果
 最后有超过两行的空行,在折叠后标题之间就会有一行空行被保留,用来构成折叠视图.
@@ -342,18 +342,18 @@ Dynamic Headline Numbering 这一部分.
 </div>
 
 
-<div id="outline-container-org35e78eb" class="outline-3">
-<h3 id="org35e78eb">标题可视性切换(Visibility Cycling)</h3>
-<div class="outline-text-3" id="text-org35e78eb">
+<div id="outline-container-org3217738" class="outline-3">
+<h3 id="org3217738">标题可视性切换(Visibility Cycling)</h3>
+<div class="outline-text-3" id="text-org3217738">
 <blockquote>
 <p>
 这部分是关于隐藏和显示 Org 大纲的.标题可视性就是标题的折叠状态.
 </p>
 </blockquote>
 </div>
-<div id="outline-container-org8845f20" class="outline-4">
-<h4 id="org8845f20">全局和部分切换(Global and local cycling)</h4>
-<div class="outline-text-4" id="text-org8845f20">
+<div id="outline-container-org6c32434" class="outline-4">
+<h4 id="org6c32434">全局和部分切换(Global and local cycling)</h4>
+<div class="outline-text-4" id="text-org6c32434">
 <p>
 大纲功能可以隐藏当前缓冲区的部分文本. Org 只用两个命令去改变缓冲区文本的可视
 性,默认被绑定到 <code>&lt;TAB&gt;</code> 和 <code>S-&lt;TAB&gt;</code> 快捷键.
@@ -461,9 +461,9 @@ Dynamic Headline Numbering 这一部分.
 </div>
 </div>
 
-<div id="outline-container-org1d76777" class="outline-4">
-<h4 id="org1d76777">初始的可视性(Initial visibility)</h4>
-<div class="outline-text-4" id="text-org1d76777">
+<div id="outline-container-org8ea5f5e" class="outline-4">
+<h4 id="org8ea5f5e">初始的可视性(Initial visibility)</h4>
+<div class="outline-text-4" id="text-org8ea5f5e">
 <p>
 当 Emacs 第一次打开一个 Org 文件时, 全局状态被设置为显示所有
 ('showeverything'), 也就是说,文件的所有内容都会被显示. 这个行为可以通过配置
@@ -500,13 +500,13 @@ Dynamic Headline Numbering 这一部分.
 </div>
 
 <ul class="org-ul">
-<li><a id="org789b083"></a><span class="todo TODO">TODO</span> Speeding Up Your Agendas 需要链接.<br /></li>
+<li><a id="orgb7fd48b"></a><span class="todo TODO">TODO</span> Speeding Up Your Agendas 需要链接.<br /></li>
 </ul>
 </div>
 
-<div id="outline-container-org99e5941" class="outline-4">
-<h4 id="org99e5941">捕捉不经意的修改(Catching invisible edits)</h4>
-<div class="outline-text-4" id="text-org99e5941">
+<div id="outline-container-org6a65c97" class="outline-4">
+<h4 id="org6a65c97">捕捉不经意的修改(Catching invisible edits)</h4>
+<div class="outline-text-4" id="text-org6a65c97">
 <p>
 有时候, 当无意识地编辑了缓冲区中不可视的内容时,会遇到不知道到底什么被编辑了
 和怎么撤销错误的问题.
@@ -517,9 +517,9 @@ Dynamic Headline Numbering 这一部分.
 </div>
 </div>
 
-<div id="outline-container-org0f46a65" class="outline-3">
-<h3 id="org0f46a65">跳转(Motion)</h3>
-<div class="outline-text-3" id="text-org0f46a65">
+<div id="outline-container-org6ab3499" class="outline-3">
+<h3 id="org6ab3499">跳转(Motion)</h3>
+<div class="outline-text-3" id="text-org6ab3499">
 <blockquote>
 <p>
 这部分是关于跳转到其他标题的.
@@ -605,9 +605,9 @@ Dynamic Headline Numbering 这一部分.
 </div>
 
 
-<div id="outline-container-orgafd27c3" class="outline-3">
-<h3 id="orgafd27c3">结构编辑(Structure Editing)</h3>
-<div class="outline-text-3" id="text-orgafd27c3">
+<div id="outline-container-orgf9df04a" class="outline-3">
+<h3 id="orgf9df04a">结构编辑(Structure Editing)</h3>
+<div class="outline-text-3" id="text-orgf9df04a">
 <blockquote>
 <p>
 这部分内容是如何改变标题的次序和层级.
@@ -717,18 +717,60 @@ Dynamic Headline Numbering 这一部分.
 将当前子树的位置下移,就是和同级的下一个标题交换位置.
 </p></li>
 
-<li><code>C-c @</code></li>
+<li><p>
+<code>C-c @</code> &#x2013; <code>(org-mark-subtree)</code>:
+</p>
+
+<p>
+标记当前所在子树.重复使用会标记同级的下一个子树.就是选中整个子树.
+</p></li>
+
+<li><p>
+<code>C-c C-x C-w</code> &#x2013; <code>(org-cut-subtree)</code>:
+</p>
+
+<p>
+剪切当前子树,就是将当前子树的内容从缓冲区中移除到剪切板.加上数字前缀 N 使用
+可以移除包括当前子树在内的连续的 N 个子树.
+</p></li>
+
+<li><p>
+<code>C-c C-x M-w</code> &#x2013; <code>(org-copy-subtree)</code>:
+</p>
+
+<p>
+复制当前子树的内容到剪切板, 加上数字前缀参数 N 使用,会复制包括当前子树在内
+的连续的 N 个子树.
+</p></li>
+
+<li><p>
+<code>C-c C-x C-y</code> &#x2013; <code>(org-paste-subtree)</code>:
+</p>
+
+<p>
+从剪切板中粘贴子树内容到光标位置. 这个操作会改变被粘贴的内容的层级结构,以便
+其能够和粘贴位置的层级相对应. 粘贴的层级可以通过数字前缀参数来改变,也可以在
+标题标记星号后面粘贴来决定层级,比如在 <code>****</code> 后面粘贴,粘贴内容层级会自动调整.
+</p></li>
+
+<li><p>
+<code>C-y</code> &#x2013; <code>(org-yank)</code>:
+</p>
+
+<p>
+这个命令的表现取决于两个变量: <code>org-yank-adjusted-subtrees</code> 和
+<code>org-yank-folded-subtrees</code>,Org 的内置粘贴命令会像上一个命令一样智能的处理标题
+的层级和折叠. 默认设置里,被粘贴出的内容不会改变层级,但是会被折叠起来,除非折
+叠会影响到之前能看见的文本内容.与任何的前缀参数一起使用就会执行普通的粘贴命
+令.
+</p></li>
 </ul>
 </div>
 </div>
 
-
-
-
-
-<div id="outline-container-orgb6f1cd6" class="outline-3">
-<h3 id="orgb6f1cd6">稀疏树(Sparse Trees)</h3>
-<div class="outline-text-3" id="text-orgb6f1cd6">
+<div id="outline-container-orgfd86bd9" class="outline-3">
+<h3 id="orgfd86bd9">稀疏树(Sparse Trees)</h3>
+<div class="outline-text-3" id="text-orgfd86bd9">
 <p>
 上下文匹配内嵌内容.(稀疏表示是降低表示的复杂度,或者说是减少参数稀疏)这里我理解
 的话就是通过正则等手段筛选符合条件的内容,隐藏不想看到的内容,只展示筛选的结果.
@@ -736,18 +778,19 @@ Dynamic Headline Numbering 这一部分.
 </div>
 </div>
 
-<div id="outline-container-org7924f3e" class="outline-3">
-<h3 id="org7924f3e">简单列表(Plain Lists)</h3>
-<div class="outline-text-3" id="text-org7924f3e">
+
+<div id="outline-container-org3a20b27" class="outline-3">
+<h3 id="org3a20b27">简单列表(Plain Lists)</h3>
+<div class="outline-text-3" id="text-org3a20b27">
 <p>
 在一个标题条目中,额外的结构.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org1afaf19" class="outline-3">
-<h3 id="org1afaf19">抽屉 (Drawers)</h3>
-<div class="outline-text-3" id="text-org1afaf19">
+<div id="outline-container-org179ae44" class="outline-3">
+<h3 id="org179ae44">抽屉 (Drawers)</h3>
+<div class="outline-text-3" id="text-org179ae44">
 <p>
 把文本'藏'起来,当你想写一些与当前条目有关的信息,但通常不想看到这些信息时就可
 以使用该功能.
@@ -755,9 +798,9 @@ Dynamic Headline Numbering 这一部分.
 </div>
 </div>
 
-<div id="outline-container-org64563da" class="outline-3">
-<h3 id="org64563da">块结构 (Blocks)</h3>
-<div class="outline-text-3" id="text-org64563da">
+<div id="outline-container-org0fae249" class="outline-3">
+<h3 id="org0fae249">块结构 (Blocks)</h3>
+<div class="outline-text-3" id="text-org0fae249">
 <p>
 这部分讲可折叠的块结构.块结构可以用来容纳源代码,记录时间信息和其他许多功能.
 </p>
@@ -767,9 +810,9 @@ Dynamic Headline Numbering 这一部分.
 
 
 
-<div id="outline-container-orgf1dd810" class="outline-2">
-<h2 id="orgf1dd810">导出(Exporting)</h2>
-<div class="outline-text-2" id="text-orgf1dd810">
+<div id="outline-container-org56227fc" class="outline-2">
+<h2 id="org56227fc">导出(Exporting)</h2>
+<div class="outline-text-2" id="text-org56227fc">
 <p>
 当需要将自己的 org 笔记打印出来,发布到网上,或是分享给不用 Org 的人.Orrg 可以将
 文档转化并导出为各种其他的格式,同时尽可能的保持文档结构和 markup (富文本标记内
@@ -805,9 +848,9 @@ back-ends 可以通过两种方式加载:
 加载 Markdown 格式的 back-end, 在 Eamcs 配置文件里添加 <code>(require 'ox-md)</code></li>
 </ul>
 </div>
-<div id="outline-container-org1cdf668" class="outline-3">
-<h3 id="org1cdf668">The Export Dispatcher(The main interface.) 导出调度器</h3>
-<div class="outline-text-3" id="text-org1cdf668">
+<div id="outline-container-org71b4ef5" class="outline-3">
+<h3 id="org71b4ef5">The Export Dispatcher(The main interface.) 导出调度器</h3>
+<div class="outline-text-3" id="text-org71b4ef5">
 <p>
 To Be Continued!
 </p>
@@ -817,7 +860,7 @@ To Be Continued!
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-01-09 Sun 13:56</p>
+<p class="date">Created: 2022-01-10 Mon 09:43</p>
 <p class="validation"></p>
 </div>
 </body>
