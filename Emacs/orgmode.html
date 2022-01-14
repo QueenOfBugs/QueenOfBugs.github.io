@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-01-13 Thu 07:45 -->
+<!-- 2022-01-14 Fri 14:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -238,46 +238,61 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf2fe34d"><span class="todo TODO">TODO</span> 文件结构(document structure)</a>
+<li><a href="#org9ea94df"><span class="todo TODO">TODO</span> 文件结构(document structure)</a>
 <ul>
-<li><a href="#orgce6b249">标题(Headlines)</a>
+<li><a href="#org305beaa">标题(Headlines)</a>
 <ul>
-<li><a href="#orgb25d825"><span class="todo TODO">TODO</span> 跟读到 Clean View 这一部分后在这里做链接.</a></li>
-<li><a href="#orge032f83"><span class="todo TODO">TODO</span> 动态标题编号,链接.</a></li>
+<li><a href="#org5b7a6b1"><span class="todo TODO">TODO</span> 跟读到 Clean View 这一部分后在这里做链接.</a></li>
+<li><a href="#orgd8f1a92"><span class="todo TODO">TODO</span> 动态标题编号,链接.</a></li>
 </ul>
 </li>
-<li><a href="#org85043b0">标题可视性切换(Visibility Cycling)</a>
+<li><a href="#orgd9c3824">标题可视性切换(Visibility Cycling)</a>
 <ul>
-<li><a href="#orgc227848">全局和部分切换(Global and local cycling)</a></li>
-<li><a href="#org070b2e7">初始的可视性(Initial visibility)</a></li>
-<li><a href="#org276df0e">捕捉不经意的修改(Catching invisible edits)</a></li>
+<li><a href="#orgd6d292f">全局和部分切换(Global and local cycling)</a></li>
+<li><a href="#org0500039">初始的可视性(Initial visibility)</a></li>
+<li><a href="#org1d3ff52">捕捉不经意的修改(Catching invisible edits)</a></li>
 </ul>
 </li>
-<li><a href="#orge19b04b">跳转(Motion)</a></li>
-<li><a href="#org3c7340b">结构编辑(Structure Editing)</a></li>
-<li><a href="#org65cddc0">稀疏树(Sparse Trees)</a></li>
-<li><a href="#orga0258d8">简单列表(Plain Lists)</a></li>
-<li><a href="#org001b0cc">抽屉 (Drawers)</a>
+<li><a href="#orgedee7b5">跳转(Motion)</a></li>
+<li><a href="#orgc94065d">结构编辑(Structure Editing)</a></li>
+<li><a href="#org6042b8c">稀疏树(Sparse Trees)</a></li>
+<li><a href="#org04f52a5">简单列表(Plain Lists)</a></li>
+<li><a href="#orgff78200">抽屉 (Drawers)</a>
 <ul>
-<li><a href="#org38fc355"><span class="todo TODO">TODO</span> <code>C-c C-z</code> 添加一个带时间戳的笔记到 <code>LOGBOOK</code> drawer. 写完这里,我执行了快捷键,在</a></li>
+<li><a href="#org3842fad"><span class="todo TODO">TODO</span> <code>C-c C-z</code> 添加一个带时间戳的笔记到 <code>LOGBOOK</code> drawer. 写完这里,我执行了快捷键,在</a></li>
 </ul>
 </li>
-<li><a href="#org2df13f5">块结构 (Blocks)</a></li>
+<li><a href="#orge511a72">块结构 (Blocks)</a></li>
 </ul>
 </li>
-<li><a href="#orgdbf55bc">表格(Tables)</a></li>
-<li><a href="#org4bbd24c">导出(Exporting)</a>
+<li><a href="#org4b11990">表格(Tables)</a>
 <ul>
-<li><a href="#org3d71bb9">The Export Dispatcher(The main interface.) 导出调度器</a></li>
+<li><a href="#orga82a8f9">内置表格编辑器(Built-in Table Editor)</a>
+<ul>
+<li><a href="#orge575c07">创建和转化表格(Creation and conversion)</a></li>
+<li><a href="#org85cb1ea">重对齐和字段移动(re-align and field motion)</a></li>
+<li><a href="#org39548ce">编辑列和行(Column and row editing)</a></li>
+</ul>
+</li>
+<li><a href="#org9154571">列宽和对齐(Column Width and Alignment)</a></li>
+<li><a href="#org877ba22">列组(Column Groups)</a></li>
+<li><a href="#orge356b5b">Orgtbl Mode</a></li>
+<li><a href="#orgcfd1613">电子表格(The Spreadsheet)</a></li>
+<li><a href="#orgc35b603">Org 绘图(Org Plot)</a></li>
+</ul>
+</li>
+<li><a href="#orgd358446">导出(Exporting)</a>
+<ul>
+<li><a href="#org9a1a932">The Export Dispatcher(The main interface.) 导出调度器</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgf2fe34d" class="outline-2">
-<h2 id="orgf2fe34d"><span class="todo TODO">TODO</span> 文件结构(document structure)</h2>
-<div class="outline-text-2" id="text-orgf2fe34d">
+<div id="outline-container-org9ea94df" class="outline-2">
+<h2 id="org9ea94df"><span class="todo TODO">TODO</span> 文件结构(document structure)</h2>
+<div class="outline-text-2" id="text-org9ea94df">
 <p>
 Org 是一个大纲编辑器. 大纲让文件以层次结构组织文本,是一种很好的记录笔记和想法
 的工具.层次结构的概述是以折叠的方式实现的,也就是隐藏文档的大部分内容,只展示大
@@ -288,9 +303,9 @@ Org 是一个大纲编辑器. 大纲让文件以层次结构组织文本,是一�
 </p>
 </div>
 
-<div id="outline-container-orgce6b249" class="outline-3">
-<h3 id="orgce6b249">标题(Headlines)</h3>
-<div class="outline-text-3" id="text-orgce6b249">
+<div id="outline-container-org305beaa" class="outline-3">
+<h3 id="org305beaa">标题(Headlines)</h3>
+<div class="outline-text-3" id="text-org305beaa">
 <blockquote>
 <p>
 这部分内容是关于如何排版 Org 标题树的.
@@ -315,9 +330,9 @@ Org 是一个大纲编辑器. 大纲让文件以层次结构组织文本,是一�
 </p>
 </div>
 
-<div id="outline-container-orgb25d825" class="outline-4">
-<h4 id="orgb25d825"><span class="todo TODO">TODO</span> 跟读到 Clean View 这一部分后在这里做链接.</h4>
-<div class="outline-text-4" id="text-orgb25d825">
+<div id="outline-container-org5b7a6b1" class="outline-4">
+<h4 id="org5b7a6b1"><span class="todo TODO">TODO</span> 跟读到 Clean View 这一部分后在这里做链接.</h4>
+<div class="outline-text-4" id="text-org5b7a6b1">
 <p>
 标题是没有编号的,但是可以动态的对他们进行部分或全部编号.更具体可以查看
 Dynamic Headline Numbering 这一部分.
@@ -325,9 +340,9 @@ Dynamic Headline Numbering 这一部分.
 </div>
 </div>
 
-<div id="outline-container-orge032f83" class="outline-4">
-<h4 id="orge032f83"><span class="todo TODO">TODO</span> 动态标题编号,链接.</h4>
-<div class="outline-text-4" id="text-orge032f83">
+<div id="outline-container-orgd8f1a92" class="outline-4">
+<h4 id="orgd8f1a92"><span class="todo TODO">TODO</span> 动态标题编号,链接.</h4>
+<div class="outline-text-4" id="text-orgd8f1a92">
 <p>
 一个标题子树内容中,最后一行的空白行会被当作该子树的一部分,在折叠时会被折叠.但如果
 最后有超过两行的空行,在折叠后标题之间就会有一行空行被保留,用来构成折叠视图.
@@ -346,18 +361,18 @@ Dynamic Headline Numbering 这一部分.
 </div>
 
 
-<div id="outline-container-org85043b0" class="outline-3">
-<h3 id="org85043b0">标题可视性切换(Visibility Cycling)</h3>
-<div class="outline-text-3" id="text-org85043b0">
+<div id="outline-container-orgd9c3824" class="outline-3">
+<h3 id="orgd9c3824">标题可视性切换(Visibility Cycling)</h3>
+<div class="outline-text-3" id="text-orgd9c3824">
 <blockquote>
 <p>
 这部分是关于隐藏和显示 Org 大纲的.标题可视性就是标题的折叠状态.
 </p>
 </blockquote>
 </div>
-<div id="outline-container-orgc227848" class="outline-4">
-<h4 id="orgc227848">全局和部分切换(Global and local cycling)</h4>
-<div class="outline-text-4" id="text-orgc227848">
+<div id="outline-container-orgd6d292f" class="outline-4">
+<h4 id="orgd6d292f">全局和部分切换(Global and local cycling)</h4>
+<div class="outline-text-4" id="text-orgd6d292f">
 <p>
 大纲功能可以隐藏当前缓冲区的部分文本. Org 只用两个命令去改变缓冲区文本的可视
 性,默认被绑定到 <code>&lt;TAB&gt;</code> 和 <code>S-&lt;TAB&gt;</code> 快捷键.
@@ -465,9 +480,9 @@ Dynamic Headline Numbering 这一部分.
 </div>
 </div>
 
-<div id="outline-container-org070b2e7" class="outline-4">
-<h4 id="org070b2e7">初始的可视性(Initial visibility)</h4>
-<div class="outline-text-4" id="text-org070b2e7">
+<div id="outline-container-org0500039" class="outline-4">
+<h4 id="org0500039">初始的可视性(Initial visibility)</h4>
+<div class="outline-text-4" id="text-org0500039">
 <p>
 当 Emacs 第一次打开一个 Org 文件时, 全局状态被设置为显示所有
 ('showeverything'), 也就是说,文件的所有内容都会被显示. 这个行为可以通过配置
@@ -504,13 +519,13 @@ Dynamic Headline Numbering 这一部分.
 </div>
 
 <ul class="org-ul">
-<li><a id="orgff02e3f"></a><span class="todo TODO">TODO</span> Speeding Up Your Agendas 需要链接.<br /></li>
+<li><a id="org98b53c9"></a><span class="todo TODO">TODO</span> Speeding Up Your Agendas 需要链接.<br /></li>
 </ul>
 </div>
 
-<div id="outline-container-org276df0e" class="outline-4">
-<h4 id="org276df0e">捕捉不经意的修改(Catching invisible edits)</h4>
-<div class="outline-text-4" id="text-org276df0e">
+<div id="outline-container-org1d3ff52" class="outline-4">
+<h4 id="org1d3ff52">捕捉不经意的修改(Catching invisible edits)</h4>
+<div class="outline-text-4" id="text-org1d3ff52">
 <p>
 有时候, 当无意识地编辑了缓冲区中不可视的内容时,会遇到不知道到底什么被编辑了
 和怎么撤销错误的问题.
@@ -521,9 +536,9 @@ Dynamic Headline Numbering 这一部分.
 </div>
 </div>
 
-<div id="outline-container-orge19b04b" class="outline-3">
-<h3 id="orge19b04b">跳转(Motion)</h3>
-<div class="outline-text-3" id="text-orge19b04b">
+<div id="outline-container-orgedee7b5" class="outline-3">
+<h3 id="orgedee7b5">跳转(Motion)</h3>
+<div class="outline-text-3" id="text-orgedee7b5">
 <blockquote>
 <p>
 这部分是关于跳转到其他标题的.
@@ -609,9 +624,9 @@ Dynamic Headline Numbering 这一部分.
 </div>
 
 
-<div id="outline-container-org3c7340b" class="outline-3">
-<h3 id="org3c7340b">结构编辑(Structure Editing)</h3>
-<div class="outline-text-3" id="text-org3c7340b">
+<div id="outline-container-orgc94065d" class="outline-3">
+<h3 id="orgc94065d">结构编辑(Structure Editing)</h3>
+<div class="outline-text-3" id="text-orgc94065d">
 <blockquote>
 <p>
 这部分内容是如何改变标题的次序和层级.
@@ -834,9 +849,9 @@ Dynamic Headline Numbering 这一部分.
 </div>
 </div>
 
-<div id="outline-container-org65cddc0" class="outline-3">
-<h3 id="org65cddc0">稀疏树(Sparse Trees)</h3>
-<div class="outline-text-3" id="text-org65cddc0">
+<div id="outline-container-org6042b8c" class="outline-3">
+<h3 id="org6042b8c">稀疏树(Sparse Trees)</h3>
+<div class="outline-text-3" id="text-org6042b8c">
 <blockquote>
 <p>
 上下文匹配内嵌内容.(稀疏表示是降低表示的复杂度,或者说是减少参数稀疏)这里我理解
@@ -922,9 +937,9 @@ Org 有几个用来创建这样的树的命令,这些命令可以通过一个调
 </p>
 </div>
 </div>
-<div id="outline-container-orga0258d8" class="outline-3">
-<h3 id="orga0258d8">简单列表(Plain Lists)</h3>
-<div class="outline-text-3" id="text-orga0258d8">
+<div id="outline-container-org04f52a5" class="outline-3">
+<h3 id="org04f52a5">简单列表(Plain Lists)</h3>
+<div class="outline-text-3" id="text-org04f52a5">
 <blockquote>
 <p>
 在一个标题条目中,额外的结构.
@@ -1049,9 +1064,9 @@ Org 支持这些列表的转化,填充和包裹操作的命令,也支持正确�
 </div>
 
 
-<div id="outline-container-org001b0cc" class="outline-3">
-<h3 id="org001b0cc">抽屉 (Drawers)</h3>
-<div class="outline-text-3" id="text-org001b0cc">
+<div id="outline-container-orgff78200" class="outline-3">
+<h3 id="orgff78200">抽屉 (Drawers)</h3>
+<div class="outline-text-3" id="text-orgff78200">
 <ul class="org-ul">
 <li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2022-01-13 Thu 15:14] </span></span> <br />
 快速记录一个带时间戳的笔记.</li>
@@ -1096,9 +1111,9 @@ drawer 也可以用来记录状态变化的笔记和记录时间信息(<code>LOG
 </p>
 </div>
 
-<div id="outline-container-org38fc355" class="outline-4">
-<h4 id="org38fc355"><span class="todo TODO">TODO</span> <code>C-c C-z</code> 添加一个带时间戳的笔记到 <code>LOGBOOK</code> drawer. 写完这里,我执行了快捷键,在</h4>
-<div class="outline-text-4" id="text-org38fc355">
+<div id="outline-container-org3842fad" class="outline-4">
+<h4 id="org3842fad"><span class="todo TODO">TODO</span> <code>C-c C-z</code> 添加一个带时间戳的笔记到 <code>LOGBOOK</code> drawer. 写完这里,我执行了快捷键,在</h4>
+<div class="outline-text-4" id="text-org3842fad">
 <p>
 抽屉这一小结添加了一条带时间戳的笔记,虽然文档里写的是导出到 <code>LOGBOOK</code> 抽屉,但
 是实际操作后发现笔记没有记录到 <code>LOGBOOK</code> 类型的抽屉里, <code>Clocking Work Time</code>
@@ -1113,9 +1128,9 @@ drawer 也可以用来记录状态变化的笔记和记录时间信息(<code>LOG
 
 
 
-<div id="outline-container-org2df13f5" class="outline-3">
-<h3 id="org2df13f5">块结构 (Blocks)</h3>
-<div class="outline-text-3" id="text-org2df13f5">
+<div id="outline-container-orge511a72" class="outline-3">
+<h3 id="orge511a72">块结构 (Blocks)</h3>
+<div class="outline-text-3" id="text-orge511a72">
 <blockquote>
 <p>
 这部分讲可折叠的块结构.块结构可以用来容纳源代码,记录时间信息和其他许多功能.
@@ -1134,13 +1149,210 @@ Org 用 <code>#+BEGIN ... #+END</code> 做源代码(<code>Literal Examples</code
 
 
 
-<div id="outline-container-orgdbf55bc" class="outline-2">
-<h2 id="orgdbf55bc">表格(Tables)</h2>
+<div id="outline-container-org4b11990" class="outline-2">
+<h2 id="org4b11990">表格(Tables)</h2>
+<div class="outline-text-2" id="text-org4b11990">
+<p>
+Org 自带快速和直观的表格编辑器.电子表格程序类似的计算器功能通过使用 Emacs 的 Calc
+</p>
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> 包也是支持的(<code>GNU Emacs Calculator Manual</code>). 坑+1, 有空再看,感觉会很有用.</li>
+</ul>
 </div>
 
-<div id="outline-container-org4bbd24c" class="outline-2">
-<h2 id="org4bbd24c">导出(Exporting)</h2>
-<div class="outline-text-2" id="text-org4bbd24c">
+
+<div id="outline-container-orga82a8f9" class="outline-3">
+<h3 id="orga82a8f9">内置表格编辑器(Built-in Table Editor)</h3>
+<div class="outline-text-3" id="text-orga82a8f9">
+<blockquote>
+<p>
+简单表格.
+</p>
+</blockquote>
+<p>
+Org 能很容易的格式化纯 ASCII 格式的表格.任何一行以 <code>|</code> 作为第一个非空字符的行都
+被视作一个表格的一部分. <code>|</code> 也是列分隔符. 此外,一行以 <code>|-</code> 开始的行是一个水平分割
+线. 它将显示分割表格的行.在第一个水平分割线之前的所有行都是标题行. 一个表格可
+能长这样:
+</p>
+<pre class="example">
+| Name  | Phone | Age |
+|-------+-------+-----|
+| Peter |  1234 |  17 |
+| Anna  |  4321 |  25 |
+</pre>
+
+<p>
+在表格内部,每一次按 <code>&lt;TAB&gt;</code>, <code>&lt;RET&gt;</code> 或者 <code>C-c C-c</code> ,这个表格都会自动地被重新对
+齐. <code>&lt;TAB&gt;</code> 也会移动到下一个字段, <code>&lt;RET&gt;</code> 会移动到下一行,如果光标在表格的最后一行
+或者在分割线之前的行,那就会同时创建一个新的表格行.整个表格的缩进由表格的第一
+行决定.水平分割线在每次对齐时都会自动填充为整个表格的宽度.所以,为了创建上面例
+子的表格,只需要输入:
+</p>
+<pre class="example">
+| Name  | Phone | Age |
+|-
+</pre>
+<p>
+然后按 <code>&lt;TAB&gt;</code> 键调整表格,开始填表.更快的做法是键入 <code>|Name|Phone|Age</code> 然后按 <code>C-c
+   &lt;RET&gt;</code>.
+</p>
+
+<p>
+当输入文本到表格中时, Org 将 <code>DEL</code> , <code>Backspace</code> 和所有的字符键都区别对待,从而使
+插入和删除操作不会影响到其他字段.此外,在键入 <code>&lt;TAB&gt;</code> , <code>S-&lt;TAB&gt;</code> 或 <code>&lt;RET&gt;</code> 后,光标
+会立即移动到下一个的字段,这个字段将自动变为空白.如果这个行为对你来说太不可预
+测,可以配置变量 <code>org-table-auto-blank-field</code> 来禁用这一行为,实际操作发现,当移动
+到下一字段,并且其中有内容,内容并不会被立即清除,只有键入新的内容之后才会被消除.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-table-auto-blank-field t)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orge575c07" class="outline-4">
+<h4 id="orge575c07">创建和转化表格(Creation and conversion)</h4>
+<div class="outline-text-4" id="text-orge575c07">
+<dl class="org-dl">
+<dt><code>C-c |</code> &#x2013; <code>(org-table-create-or-convert-from-region)</code></dt><dd>将选中区域转化为表格.
+如果每行都包含至少一个 <code>&lt;TAB&gt;</code> 字符,这个方法会假定表格是由制表符分隔的,如果
+每行都包含一个逗号(comma), 则假定是 CSV(comma-separated values) 格式的数据
+转化成表格.如果都不是,那么将会用空白符来做分隔符转化成表格.也可以使用前缀
+参数来强制指定分隔符: <code>C-u</code> 指定 CSV, <code>C-u C-u</code> 指定 <code>&lt;TAB&gt;</code>, <code>C-u C-u C-u</code> 请求输
+入正则表达式来匹配分隔符, 而使用数字参数 N 表明使用至少 N 个连续的空白作为
+分隔符,如果没有找到符合条件的空格,则使用 <code>&lt;TAB&gt;</code> 作为分隔符.
+如果没有选中区域,这个命令会创建一个空的表格,但是像键入
+<code>|Name|Phone|Age&lt;RET&gt;|-&lt;TAB&gt;</code> 或 <code>|Name|Phone|Age</code> 这种方法创建表格会更容易.</dd>
+</dl>
+</div>
+</div>
+
+
+<div id="outline-container-org85cb1ea" class="outline-4">
+<h4 id="org85cb1ea">重对齐和字段移动(re-align and field motion)</h4>
+<div class="outline-text-4" id="text-org85cb1ea">
+<dl class="org-dl">
+<dt><code>C-c C-c</code> &#x2013; <code>(org-table-align)</code></dt><dd>重新排列表格,不移动光标.</dd>
+<dt><code>&lt;TAB&gt;</code> &#x2013; <code>(org-table-next-field)</code></dt><dd>重排表格,并移动光标到下一字段,如果有必要
+会创建新的一行.</dd>
+<dt><code>C-c &lt;SPC&gt;</code>  &#x2013; <code>(org-table-blank-field)</code></dt><dd>将光标所在字段的内容变为空白.</dd>
+<dt><code>S-&lt;TAB&gt;</code> &#x2013; <code>(org-table-previous-field)</code></dt><dd>重排表格,并移动光标到上一字段.</dd>
+<dt><code>&lt;RET&gt;</code> &#x2013; <code>(org-table-next-row)</code></dt><dd>重排表格,并向下移动到下一行,如果有必要会
+创建新的一行,在一行的最后或开头使用, <code>&lt;RET&gt;</code> 也会插入新的一行,所以也可以用来
+分割表格.</dd>
+<dt><code>M-a</code> &#x2013; <code>(org-table-beginning-of-field)</code></dt><dd>移动光标到当前表格字段的开头,或移
+动光标到上一个字段.</dd>
+<dt><code>M-e</code> &#x2013; <code>(org-table-end-of-field)</code></dt><dd>移动光标到当前表格字段的最后,或移动到下
+一个字段.</dd>
+</dl>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="outline-container-org39548ce" class="outline-4">
+<h4 id="org39548ce">编辑列和行(Column and row editing)</h4>
+<div class="outline-text-4" id="text-org39548ce">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Name</th>
+<th scope="col" class="org-right">Phone</th>
+<th scope="col" class="org-right">Age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">1234</td>
+<td class="org-right">17</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">4321</td>
+<td class="org-right">25</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-org9154571" class="outline-3">
+<h3 id="org9154571">列宽和对齐(Column Width and Alignment)</h3>
+<div class="outline-text-3" id="text-org9154571">
+<blockquote>
+<p>
+否定自动设置.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org877ba22" class="outline-3">
+<h3 id="org877ba22">列组(Column Groups)</h3>
+<div class="outline-text-3" id="text-org877ba22">
+<blockquote>
+<p>
+分组以触发(生成)竖线
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orge356b5b" class="outline-3">
+<h3 id="orge356b5b">Orgtbl Mode</h3>
+<div class="outline-text-3" id="text-orge356b5b">
+<blockquote>
+<p>
+将表格编辑器设置为副模式
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgcfd1613" class="outline-3">
+<h3 id="orgcfd1613">电子表格(The Spreadsheet)</h3>
+<div class="outline-text-3" id="text-orgcfd1613">
+<blockquote>
+<p>
+Org 表格编辑器有电子表格程序的功能
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgc35b603" class="outline-3">
+<h3 id="orgc35b603">Org 绘图(Org Plot)</h3>
+<div class="outline-text-3" id="text-orgc35b603">
+<blockquote>
+<p>
+根据 Org 表格数据绘图
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd358446" class="outline-2">
+<h2 id="orgd358446">导出(Exporting)</h2>
+<div class="outline-text-2" id="text-orgd358446">
 <p>
 当需要将自己的 org 笔记打印出来,发布到网上,或是分享给不用 Org 的人.Orrg 可以将
 文档转化并导出为各种其他的格式,同时尽可能的保持文档结构和 markup (富文本标记内
@@ -1176,9 +1388,9 @@ back-ends 可以通过两种方式加载:
 加载 Markdown 格式的 back-end, 在 Eamcs 配置文件里添加 <code>(require 'ox-md)</code></li>
 </ul>
 </div>
-<div id="outline-container-org3d71bb9" class="outline-3">
-<h3 id="org3d71bb9">The Export Dispatcher(The main interface.) 导出调度器</h3>
-<div class="outline-text-3" id="text-org3d71bb9">
+<div id="outline-container-org9a1a932" class="outline-3">
+<h3 id="org9a1a932">The Export Dispatcher(The main interface.) 导出调度器</h3>
+<div class="outline-text-3" id="text-org9a1a932">
 <p>
 To Be Continued!
 </p>
@@ -1188,7 +1400,7 @@ To Be Continued!
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-01-13 Thu 07:45</p>
+<p class="date">Created: 2022-01-14 Fri 14:09</p>
 <p class="validation"></p>
 </div>
 </body>
