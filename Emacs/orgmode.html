@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-01-18 Tue 15:51 -->
+<!-- 2022-01-22 Sat 16:19 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -238,77 +238,95 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8ec87ed"><span class="todo TODO">TODO</span> 文件结构(document structure)</a>
+<li><a href="#org87df368"><span class="todo TODO">TODO</span> 文件结构(document structure)</a>
 <ul>
-<li><a href="#orge1e29cd">标题(Headlines)</a>
+<li><a href="#orgde0b6ba">标题(Headlines)</a>
 <ul>
-<li><a href="#orge512e22"><span class="todo TODO">TODO</span> 跟读到 Clean View 这一部分后在这里做链接.</a></li>
-<li><a href="#org564c7e4"><span class="todo TODO">TODO</span> 动态标题编号,链接.</a></li>
+<li><a href="#orgd91be27"><span class="todo TODO">TODO</span> 跟读到 Clean View 这一部分后在这里做链接.</a></li>
+<li><a href="#org81d2be4"><span class="todo TODO">TODO</span> 动态标题编号,链接.</a></li>
 </ul>
 </li>
-<li><a href="#org196d8a7">标题可视性切换(Visibility Cycling)</a>
+<li><a href="#org2b4df39">标题可视性切换(Visibility Cycling)</a>
 <ul>
-<li><a href="#org797b70d">全局和部分切换(Global and local cycling)</a></li>
-<li><a href="#org7c64558">初始的可视性(Initial visibility)</a></li>
-<li><a href="#org4003890">捕捉不经意的修改(Catching invisible edits)</a></li>
+<li><a href="#org606ff2b">全局和部分切换(Global and local cycling)</a></li>
+<li><a href="#org80f25ab">初始的可视性(Initial visibility)</a></li>
+<li><a href="#org9c51a31">捕捉不经意的修改(Catching invisible edits)</a></li>
 </ul>
 </li>
-<li><a href="#orgbdca0b4">跳转(Motion)</a></li>
-<li><a href="#org03c3dce">结构编辑(Structure Editing)</a></li>
-<li><a href="#org24cd51d">稀疏树(Sparse Trees)</a></li>
-<li><a href="#org56244c3">简单列表(Plain Lists)</a></li>
-<li><a href="#org105d5ff">抽屉 (Drawers)</a>
+<li><a href="#orge32fbe9">跳转(Motion)</a></li>
+<li><a href="#orgdcdd481">结构编辑(Structure Editing)</a></li>
+<li><a href="#org6e99400">稀疏树(Sparse Trees)</a></li>
+<li><a href="#orgb83f5da">简单列表(Plain Lists)</a></li>
+<li><a href="#org47015a0">抽屉 (Drawers)</a>
 <ul>
-<li><a href="#org0501e04"><span class="todo TODO">TODO</span> <code>C-c C-z</code> 添加一个带时间戳的笔记到 <code>LOGBOOK</code> drawer. 写完这里,我执行了快捷键,在</a></li>
+<li><a href="#org0233adc"><span class="todo TODO">TODO</span> <code>C-c C-z</code> 添加一个带时间戳的笔记到 <code>LOGBOOK</code> drawer. 写完这里,我执行了快捷键,在</a></li>
 </ul>
 </li>
-<li><a href="#org5d35f92">块结构 (Blocks)</a></li>
+<li><a href="#org3693fb6">块结构 (Blocks)</a></li>
 </ul>
 </li>
-<li><a href="#org5c1a379">表格(Tables)</a>
+<li><a href="#orgea8190c">表格(Tables)</a>
 <ul>
-<li><a href="#orgedcc5dc">内置表格编辑器(Built-in Table Editor)</a>
+<li><a href="#org504a27c">内置表格编辑器(Built-in Table Editor)</a>
 <ul>
-<li><a href="#org8347802">创建和转化表格(Creation and conversion)</a></li>
-<li><a href="#orgd7a0e35">重对齐和字段移动(re-align and field motion)</a></li>
-<li><a href="#org1b4a290">编辑列和行(Column and row editing)</a></li>
-<li><a href="#orgbfc5194">区域操作(Regions)</a></li>
-<li><a href="#orgc2f5207">计算(Calculations)</a></li>
-<li><a href="#org098a35c">杂项(Miscellaneous)</a></li>
+<li><a href="#org18dca75">创建和转化表格(Creation and conversion)</a></li>
+<li><a href="#org8a6efcd">重对齐和字段移动(re-align and field motion)</a></li>
+<li><a href="#org67b26c4">编辑列和行(Column and row editing)</a></li>
+<li><a href="#org495fc6d">区域操作(Regions)</a></li>
+<li><a href="#org51359fd">计算(Calculations)</a></li>
+<li><a href="#org0af8e5c">杂项(Miscellaneous)</a></li>
 </ul>
 </li>
-<li><a href="#orga408792">列宽和对齐(Column Width and Alignment)</a></li>
-<li><a href="#orgfce0c11">列组(Column Groups)</a></li>
-<li><a href="#orge08e8cf">Orgtbl Mode</a></li>
-<li><a href="#org0d94c92">电子表格(The Spreadsheet)</a>
+<li><a href="#org8a64ad0">列宽和对齐(Column Width and Alignment)</a></li>
+<li><a href="#orgf5cebc6">列组(Column Groups)</a></li>
+<li><a href="#orged7624f">Orgtbl Mode</a></li>
+<li><a href="#orgf593805">电子表格(The Spreadsheet)</a>
 <ul>
-<li><a href="#orgf7a499b">引用(Reference)</a></li>
-<li><a href="#org71bdae2">Calc 的公式语法(Formula syntax for Calc)</a></li>
-<li><a href="#org3501e44">Lisp 的公式语法(Formula syntax for Lisp)</a></li>
-<li><a href="#org1656bac">持续时间和时间值(Durations and time values)</a></li>
-<li><a href="#org907611a">字段和范围公式(Field and range formulas)</a></li>
-<li><a href="#org2d636e6">列公式(Column formulas)</a></li>
-<li><a href="#org618d4f7">查找函数(Lookup functions)</a></li>
-<li><a href="#org576f94f">编辑和调试公式(Editing and debugging formulas)</a></li>
-<li><a href="#orgec98161">更新表格(Updating the table)</a></li>
-<li><a href="#orga6f0926">高级功能(Advanced features)</a></li>
+<li><a href="#org0d8abc4">引用(Reference)</a></li>
+<li><a href="#org6a0da60">Calc 的公式语法(Formula syntax for Calc)</a></li>
+<li><a href="#orgaffad2b">Lisp 的公式语法(Formula syntax for Lisp)</a></li>
+<li><a href="#orgb0a8d4e">持续时间和时间值(Durations and time values)</a></li>
+<li><a href="#org2e3efd7">字段和范围公式(Field and range formulas)</a></li>
+<li><a href="#orgd26f083">列公式(Column formulas)</a></li>
+<li><a href="#org05b0a98">查找函数(Lookup functions)</a></li>
+<li><a href="#org362aeb5">编辑和调试公式(Editing and debugging formulas)</a></li>
+<li><a href="#org7a0aa5b">更新表格(Updating the table)</a></li>
+<li><a href="#orgac072d8">高级功能(Advanced features)</a></li>
 </ul>
 </li>
-<li><a href="#org79bba18">Org 绘图(Org Plot)</a></li>
+<li><a href="#orgf61cf4b">Org 绘图(Org Plot)</a>
+<ul>
+<li><a href="#orgc0073c4">使用 Gnuplot 的图形绘图(Graphical plots using Gnuplot)</a></li>
 </ul>
 </li>
-<li><a href="#orga1ea788">导出(Exporting)</a>
+</ul>
+</li>
+<li><a href="#org799bd71">超链接(Hyperlinks)</a>
 <ul>
-<li><a href="#org7beac47">The Export Dispatcher(The main interface.) 导出调度器</a></li>
+<li><a href="#org71b26d2">链接格式(Link Format)</a></li>
+<li><a href="#org00d006e">内部链接(Internal Links)</a></li>
+<li><a href="#org7eddd9d">无线电目标(Radio Targets)</a></li>
+<li><a href="#org2a1ae9a">外部链接(External Links)</a></li>
+<li><a href="#org28c5848">处理链接(Handling Links)</a></li>
+</ul>
+</li>
+<li><a href="#org38e7ae5">富文本的标记(Markup for Rich Contents)</a>
+<ul>
+<li><a href="#orgf9d9b9f">创建脚注(Creating Footnotes)</a></li>
+</ul>
+</li>
+<li><a href="#orgaa2bcfa">导出(Exporting)</a>
+<ul>
+<li><a href="#orge4bc96d">The Export Dispatcher(The main interface.) 导出调度器</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org8ec87ed" class="outline-2">
-<h2 id="org8ec87ed"><span class="todo TODO">TODO</span> 文件结构(document structure)</h2>
-<div class="outline-text-2" id="text-org8ec87ed">
+<div id="outline-container-org87df368" class="outline-2">
+<h2 id="org87df368"><span class="todo TODO">TODO</span> 文件结构(document structure)</h2>
+<div class="outline-text-2" id="text-org87df368">
 <p>
 Org 是一个大纲编辑器. 大纲让文件以层次结构组织文本,是一种很好的记录笔记和想法
 的工具.层次结构的概述是以折叠的方式实现的,也就是隐藏文档的大部分内容,只展示大
@@ -319,9 +337,9 @@ Org 是一个大纲编辑器. 大纲让文件以层次结构组织文本,是一�
 </p>
 </div>
 
-<div id="outline-container-orge1e29cd" class="outline-3">
-<h3 id="orge1e29cd">标题(Headlines)</h3>
-<div class="outline-text-3" id="text-orge1e29cd">
+<div id="outline-container-orgde0b6ba" class="outline-3">
+<h3 id="orgde0b6ba">标题(Headlines)</h3>
+<div class="outline-text-3" id="text-orgde0b6ba">
 <blockquote>
 <p>
 这部分内容是关于如何排版 Org 标题树的.
@@ -346,9 +364,9 @@ Org 是一个大纲编辑器. 大纲让文件以层次结构组织文本,是一�
 </p>
 </div>
 
-<div id="outline-container-orge512e22" class="outline-4">
-<h4 id="orge512e22"><span class="todo TODO">TODO</span> 跟读到 Clean View 这一部分后在这里做链接.</h4>
-<div class="outline-text-4" id="text-orge512e22">
+<div id="outline-container-orgd91be27" class="outline-4">
+<h4 id="orgd91be27"><span class="todo TODO">TODO</span> 跟读到 Clean View 这一部分后在这里做链接.</h4>
+<div class="outline-text-4" id="text-orgd91be27">
 <p>
 标题是没有编号的,但是可以动态的对他们进行部分或全部编号.更具体可以查看
 Dynamic Headline Numbering 这一部分.
@@ -356,9 +374,9 @@ Dynamic Headline Numbering 这一部分.
 </div>
 </div>
 
-<div id="outline-container-org564c7e4" class="outline-4">
-<h4 id="org564c7e4"><span class="todo TODO">TODO</span> 动态标题编号,链接.</h4>
-<div class="outline-text-4" id="text-org564c7e4">
+<div id="outline-container-org81d2be4" class="outline-4">
+<h4 id="org81d2be4"><span class="todo TODO">TODO</span> 动态标题编号,链接.</h4>
+<div class="outline-text-4" id="text-org81d2be4">
 <p>
 一个标题子树内容中,最后一行的空白行会被当作该子树的一部分,在折叠时会被折叠.但如果
 最后有超过两行的空行,在折叠后标题之间就会有一行空行被保留,用来构成折叠视图.
@@ -377,18 +395,18 @@ Dynamic Headline Numbering 这一部分.
 </div>
 
 
-<div id="outline-container-org196d8a7" class="outline-3">
-<h3 id="org196d8a7">标题可视性切换(Visibility Cycling)</h3>
-<div class="outline-text-3" id="text-org196d8a7">
+<div id="outline-container-org2b4df39" class="outline-3">
+<h3 id="org2b4df39">标题可视性切换(Visibility Cycling)</h3>
+<div class="outline-text-3" id="text-org2b4df39">
 <blockquote>
 <p>
 这部分是关于隐藏和显示 Org 大纲的.标题可视性就是标题的折叠状态.
 </p>
 </blockquote>
 </div>
-<div id="outline-container-org797b70d" class="outline-4">
-<h4 id="org797b70d">全局和部分切换(Global and local cycling)</h4>
-<div class="outline-text-4" id="text-org797b70d">
+<div id="outline-container-org606ff2b" class="outline-4">
+<h4 id="org606ff2b">全局和部分切换(Global and local cycling)</h4>
+<div class="outline-text-4" id="text-org606ff2b">
 <p>
 大纲功能可以隐藏当前缓冲区的部分文本. Org 只用两个命令去改变缓冲区文本的可视
 性,默认被绑定到 <code>&lt;TAB&gt;</code> 和 <code>S-&lt;TAB&gt;</code> 快捷键.
@@ -496,9 +514,9 @@ Dynamic Headline Numbering 这一部分.
 </div>
 </div>
 
-<div id="outline-container-org7c64558" class="outline-4">
-<h4 id="org7c64558">初始的可视性(Initial visibility)</h4>
-<div class="outline-text-4" id="text-org7c64558">
+<div id="outline-container-org80f25ab" class="outline-4">
+<h4 id="org80f25ab">初始的可视性(Initial visibility)</h4>
+<div class="outline-text-4" id="text-org80f25ab">
 <p>
 当 Emacs 第一次打开一个 Org 文件时, 全局状态被设置为显示所有
 ('showeverything'), 也就是说,文件的所有内容都会被显示. 这个行为可以通过配置
@@ -535,13 +553,13 @@ Dynamic Headline Numbering 这一部分.
 </div>
 
 <ul class="org-ul">
-<li><a id="org39a1469"></a><span class="todo TODO">TODO</span> Speeding Up Your Agendas 需要链接.<br /></li>
+<li><a id="orgae6ad5e"></a><span class="todo TODO">TODO</span> Speeding Up Your Agendas 需要链接.<br /></li>
 </ul>
 </div>
 
-<div id="outline-container-org4003890" class="outline-4">
-<h4 id="org4003890">捕捉不经意的修改(Catching invisible edits)</h4>
-<div class="outline-text-4" id="text-org4003890">
+<div id="outline-container-org9c51a31" class="outline-4">
+<h4 id="org9c51a31">捕捉不经意的修改(Catching invisible edits)</h4>
+<div class="outline-text-4" id="text-org9c51a31">
 <p>
 有时候, 当无意识地编辑了缓冲区中不可视的内容时,会遇到不知道到底什么被编辑了
 和怎么撤销错误的问题.
@@ -552,9 +570,9 @@ Dynamic Headline Numbering 这一部分.
 </div>
 </div>
 
-<div id="outline-container-orgbdca0b4" class="outline-3">
-<h3 id="orgbdca0b4">跳转(Motion)</h3>
-<div class="outline-text-3" id="text-orgbdca0b4">
+<div id="outline-container-orge32fbe9" class="outline-3">
+<h3 id="orge32fbe9">跳转(Motion)</h3>
+<div class="outline-text-3" id="text-orge32fbe9">
 <blockquote>
 <p>
 这部分是关于跳转到其他标题的.
@@ -640,9 +658,9 @@ Dynamic Headline Numbering 这一部分.
 </div>
 
 
-<div id="outline-container-org03c3dce" class="outline-3">
-<h3 id="org03c3dce">结构编辑(Structure Editing)</h3>
-<div class="outline-text-3" id="text-org03c3dce">
+<div id="outline-container-orgdcdd481" class="outline-3">
+<h3 id="orgdcdd481">结构编辑(Structure Editing)</h3>
+<div class="outline-text-3" id="text-orgdcdd481">
 <blockquote>
 <p>
 这部分内容是如何改变标题的次序和层级.
@@ -865,9 +883,9 @@ Dynamic Headline Numbering 这一部分.
 </div>
 </div>
 
-<div id="outline-container-org24cd51d" class="outline-3">
-<h3 id="org24cd51d">稀疏树(Sparse Trees)</h3>
-<div class="outline-text-3" id="text-org24cd51d">
+<div id="outline-container-org6e99400" class="outline-3">
+<h3 id="org6e99400">稀疏树(Sparse Trees)</h3>
+<div class="outline-text-3" id="text-org6e99400">
 <blockquote>
 <p>
 上下文匹配内嵌内容.(稀疏表示是降低表示的复杂度,或者说是减少参数稀疏)这里我理解
@@ -953,9 +971,9 @@ Org 有几个用来创建这样的树的命令,这些命令可以通过一个调
 </p>
 </div>
 </div>
-<div id="outline-container-org56244c3" class="outline-3">
-<h3 id="org56244c3">简单列表(Plain Lists)</h3>
-<div class="outline-text-3" id="text-org56244c3">
+<div id="outline-container-orgb83f5da" class="outline-3">
+<h3 id="orgb83f5da">简单列表(Plain Lists)</h3>
+<div class="outline-text-3" id="text-orgb83f5da">
 <blockquote>
 <p>
 在一个标题条目中,额外的结构.
@@ -1080,9 +1098,9 @@ Org 支持这些列表的转化,填充和包裹操作的命令,也支持正确�
 </div>
 
 
-<div id="outline-container-org105d5ff" class="outline-3">
-<h3 id="org105d5ff">抽屉 (Drawers)</h3>
-<div class="outline-text-3" id="text-org105d5ff">
+<div id="outline-container-org47015a0" class="outline-3">
+<h3 id="org47015a0">抽屉 (Drawers)</h3>
+<div class="outline-text-3" id="text-org47015a0">
 <ul class="org-ul">
 <li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2022-01-13 Thu 15:14] </span></span> <br />
 快速记录一个带时间戳的笔记.</li>
@@ -1127,9 +1145,9 @@ drawer 也可以用来记录状态变化的笔记和记录时间信息(<code>LOG
 </p>
 </div>
 
-<div id="outline-container-org0501e04" class="outline-4">
-<h4 id="org0501e04"><span class="todo TODO">TODO</span> <code>C-c C-z</code> 添加一个带时间戳的笔记到 <code>LOGBOOK</code> drawer. 写完这里,我执行了快捷键,在</h4>
-<div class="outline-text-4" id="text-org0501e04">
+<div id="outline-container-org0233adc" class="outline-4">
+<h4 id="org0233adc"><span class="todo TODO">TODO</span> <code>C-c C-z</code> 添加一个带时间戳的笔记到 <code>LOGBOOK</code> drawer. 写完这里,我执行了快捷键,在</h4>
+<div class="outline-text-4" id="text-org0233adc">
 <p>
 抽屉这一小结添加了一条带时间戳的笔记,虽然文档里写的是导出到 <code>LOGBOOK</code> 抽屉,但
 是实际操作后发现笔记没有记录到 <code>LOGBOOK</code> 类型的抽屉里, <code>Clocking Work Time</code>
@@ -1144,9 +1162,9 @@ drawer 也可以用来记录状态变化的笔记和记录时间信息(<code>LOG
 
 
 
-<div id="outline-container-org5d35f92" class="outline-3">
-<h3 id="org5d35f92">块结构 (Blocks)</h3>
-<div class="outline-text-3" id="text-org5d35f92">
+<div id="outline-container-org3693fb6" class="outline-3">
+<h3 id="org3693fb6">块结构 (Blocks)</h3>
+<div class="outline-text-3" id="text-org3693fb6">
 <blockquote>
 <p>
 这部分讲可折叠的块结构.块结构可以用来容纳源代码,记录时间信息和其他许多功能.
@@ -1165,9 +1183,9 @@ Org 用 <code>#+BEGIN ... #+END</code> 做源代码(<code>Literal Examples</code
 
 
 
-<div id="outline-container-org5c1a379" class="outline-2">
-<h2 id="org5c1a379">表格(Tables)</h2>
-<div class="outline-text-2" id="text-org5c1a379">
+<div id="outline-container-orgea8190c" class="outline-2">
+<h2 id="orgea8190c">表格(Tables)</h2>
+<div class="outline-text-2" id="text-orgea8190c">
 <p>
 Org 自带快速和直观的表格编辑器.电子表格程序类似的计算器功能通过使用 Emacs 的 Calc
 </p>
@@ -1177,9 +1195,9 @@ Org 自带快速和直观的表格编辑器.电子表格程序类似的计算器
 </div>
 
 
-<div id="outline-container-orgedcc5dc" class="outline-3">
-<h3 id="orgedcc5dc">内置表格编辑器(Built-in Table Editor)</h3>
-<div class="outline-text-3" id="text-orgedcc5dc">
+<div id="outline-container-org504a27c" class="outline-3">
+<h3 id="org504a27c">内置表格编辑器(Built-in Table Editor)</h3>
+<div class="outline-text-3" id="text-org504a27c">
 <blockquote>
 <p>
 简单表格.
@@ -1227,9 +1245,9 @@ Org 能很容易的格式化纯 ASCII 格式的表格.任何一行以 <code>|</c
 </div>
 </div>
 
-<div id="outline-container-org8347802" class="outline-4">
-<h4 id="org8347802">创建和转化表格(Creation and conversion)</h4>
-<div class="outline-text-4" id="text-org8347802">
+<div id="outline-container-org18dca75" class="outline-4">
+<h4 id="org18dca75">创建和转化表格(Creation and conversion)</h4>
+<div class="outline-text-4" id="text-org18dca75">
 <dl class="org-dl">
 <dt><code>C-c |</code> &#x2013; <code>(org-table-create-or-convert-from-region)</code></dt><dd>将选中区域转化为表格.
 如果每行都包含至少一个 <code>&lt;TAB&gt;</code> 字符,这个方法会假定表格是由制表符分隔的,如果
@@ -1245,9 +1263,9 @@ Org 能很容易的格式化纯 ASCII 格式的表格.任何一行以 <code>|</c
 </div>
 
 
-<div id="outline-container-orgd7a0e35" class="outline-4">
-<h4 id="orgd7a0e35">重对齐和字段移动(re-align and field motion)</h4>
-<div class="outline-text-4" id="text-orgd7a0e35">
+<div id="outline-container-org8a6efcd" class="outline-4">
+<h4 id="org8a6efcd">重对齐和字段移动(re-align and field motion)</h4>
+<div class="outline-text-4" id="text-org8a6efcd">
 <dl class="org-dl">
 <dt><code>C-c C-c</code> &#x2013; <code>(org-table-align)</code></dt><dd>重新排列表格,不移动光标.</dd>
 <dt><code>&lt;TAB&gt;</code> &#x2013; <code>(org-table-next-field)</code></dt><dd>重排表格,并移动光标到下一字段,如果有必要
@@ -1267,9 +1285,9 @@ Org 能很容易的格式化纯 ASCII 格式的表格.任何一行以 <code>|</c
 
 
 
-<div id="outline-container-org1b4a290" class="outline-4">
-<h4 id="org1b4a290">编辑列和行(Column and row editing)</h4>
-<div class="outline-text-4" id="text-org1b4a290">
+<div id="outline-container-org67b26c4" class="outline-4">
+<h4 id="org67b26c4">编辑列和行(Column and row editing)</h4>
+<div class="outline-text-4" id="text-org67b26c4">
 <dl class="org-dl">
 <dt><code>M-&lt;LEFT&gt;</code> &#x2013; <code>(org-table-move-column-left)</code></dt><dd>将当前列左移.</dd>
 
@@ -1323,9 +1341,9 @@ Org 能很容易的格式化纯 ASCII 格式的表格.任何一行以 <code>|</c
 </div>
 
 
-<div id="outline-container-orgbfc5194" class="outline-4">
-<h4 id="orgbfc5194">区域操作(Regions)</h4>
-<div class="outline-text-4" id="text-orgbfc5194">
+<div id="outline-container-org495fc6d" class="outline-4">
+<h4 id="org495fc6d">区域操作(Regions)</h4>
+<div class="outline-text-4" id="text-org495fc6d">
 <dl class="org-dl">
 <dt><code>C-c C-x M-w</code> &#x2013; <code>(org-table-copy-region)</code></dt><dd>将表格的"矩形区域"选区复制到特殊的剪贴
 板.如果没有选中区域,只复制当前单元格内的字段.这个操作无视水平分割线.</dd>
@@ -1346,9 +1364,9 @@ Org 能很容易的格式化纯 ASCII 格式的表格.任何一行以 <code>|</c
 </div>
 </div>
 
-<div id="outline-container-orgc2f5207" class="outline-4">
-<h4 id="orgc2f5207">计算(Calculations)</h4>
-<div class="outline-text-4" id="text-orgc2f5207">
+<div id="outline-container-org51359fd" class="outline-4">
+<h4 id="org51359fd">计算(Calculations)</h4>
+<div class="outline-text-4" id="text-org51359fd">
 <dl class="org-dl">
 <dt><code>C-c +</code> &#x2013; <code>(org-table-sum)</code></dt><dd>将当前列或有选区定义的矩形区域的数字求和.求和
 结果会在显示区域(echo area) 显示并且可以通过 <code>C-y</code> 粘贴.</dd>
@@ -1362,9 +1380,9 @@ Org 能很容易的格式化纯 ASCII 格式的表格.任何一行以 <code>|</c
 </div>
 </div>
 
-<div id="outline-container-org098a35c" class="outline-4">
-<h4 id="org098a35c">杂项(Miscellaneous)</h4>
-<div class="outline-text-4" id="text-org098a35c">
+<div id="outline-container-org0af8e5c" class="outline-4">
+<h4 id="org0af8e5c">杂项(Miscellaneous)</h4>
+<div class="outline-text-4" id="text-org0af8e5c">
 <dl class="org-dl">
 <dt><code>C-c `</code> &#x2013; <code>(org-table-edit-field)</code></dt><dd>打开一个独立窗口来编辑当前字段.这在字段
 不是完全可见时很有用(见下节的 Column Width and Alignment). 当与前缀参数
@@ -1404,9 +1422,9 @@ Org 能很容易的格式化纯 ASCII 格式的表格.任何一行以 <code>|</c
 
 
 
-<div id="outline-container-orga408792" class="outline-3">
-<h3 id="orga408792">列宽和对齐(Column Width and Alignment)</h3>
-<div class="outline-text-3" id="text-orga408792">
+<div id="outline-container-org8a64ad0" class="outline-3">
+<h3 id="org8a64ad0">列宽和对齐(Column Width and Alignment)</h3>
+<div class="outline-text-3" id="text-org8a64ad0">
 <blockquote>
 <p>
 否定自动设置.
@@ -1558,9 +1576,9 @@ Org 能很容易的格式化纯 ASCII 格式的表格.任何一行以 <code>|</c
 </div>
 </div>
 
-<div id="outline-container-orgfce0c11" class="outline-3">
-<h3 id="orgfce0c11">列组(Column Groups)</h3>
-<div class="outline-text-3" id="text-orgfce0c11">
+<div id="outline-container-orgf5cebc6" class="outline-3">
+<h3 id="orgf5cebc6">列组(Column Groups)</h3>
+<div class="outline-text-3" id="text-orgf5cebc6">
 <blockquote>
 <p>
 分组以触发(生成)竖线
@@ -1726,9 +1744,9 @@ Org 能很容易的格式化纯 ASCII 格式的表格.任何一行以 <code>|</c
 </div>
 </div>
 
-<div id="outline-container-orge08e8cf" class="outline-3">
-<h3 id="orge08e8cf">Orgtbl Mode</h3>
-<div class="outline-text-3" id="text-orge08e8cf">
+<div id="outline-container-orged7624f" class="outline-3">
+<h3 id="orged7624f">Orgtbl Mode</h3>
+<div class="outline-text-3" id="text-orged7624f">
 <blockquote>
 <p>
 将表格编辑器设置为副模式
@@ -1752,9 +1770,9 @@ Org 能很容易的格式化纯 ASCII 格式的表格.任何一行以 <code>|</c
 </div>
 
 
-<div id="outline-container-org0d94c92" class="outline-3">
-<h3 id="org0d94c92">电子表格(The Spreadsheet)</h3>
-<div class="outline-text-3" id="text-org0d94c92">
+<div id="outline-container-orgf593805" class="outline-3">
+<h3 id="orgf593805">电子表格(The Spreadsheet)</h3>
+<div class="outline-text-3" id="text-orgf593805">
 <blockquote>
 <p>
 Org 表格编辑器有电子表格程序的功能
@@ -1768,9 +1786,9 @@ Lisp 公式,以从其他字段派生字段.尽管功能齐全,但是Org功能的
 与公式中引用相关的字段的特性,可以通过方向键移动这些引用.
 </p>
 </div>
-<div id="outline-container-orgf7a499b" class="outline-4">
-<h4 id="orgf7a499b">引用(Reference)</h4>
-<div class="outline-text-4" id="text-orgf7a499b">
+<div id="outline-container-org0d8abc4" class="outline-4">
+<h4 id="org0d8abc4">引用(Reference)</h4>
+<div class="outline-text-4" id="text-org0d8abc4">
 <blockquote>
 <p>
 如何引用另一个字段或范围.
@@ -1784,8 +1802,8 @@ Lisp 公式,以从其他字段派生字段.尽管功能齐全,但是Org功能的
 </div>
 
 <ul class="org-ul">
-<li><a id="orgce84864"></a>字段引用(Field references)<br />
-<div class="outline-text-5" id="text-orgce84864">
+<li><a id="org4d527b0"></a>字段引用(Field references)<br />
+<div class="outline-text-5" id="text-org4d527b0">
 <p>
 公式可以用两种方式引用其他字段中的值.和其他电子表格程序一样,你可以使用字母
 和数字的组合像 <code>B3</code> 这样来引用字段,意思是第三行的第二个字段.然而,Org 更倾向使
@@ -1838,116 +1856,1466 @@ Org 的无符号数字引用是固定引用,即如果在公式中对两个不同
 </li>
 
 
-<li><a id="org5df00ef"></a>范围引用(Range references)<br /></li>
+<li><a id="org83184f4"></a>范围引用(Range references)<br />
+<div class="outline-text-5" id="text-org83184f4">
+<p>
+你可以通过指定两个用点 <code>..</code> 连接的字段引用来引用一个字段的矩形区域. 结束的字
+段包含在引用范围之内. 如果两个字段都在当前行,你可以简单的使用 <code>$2..$7</code> ,但如
+果至少有一个字段在不同行,你至少需要在第一个字段使用通用的 <code>@ROW$COLUMN</code> 格式,
+也就是说引用必须以 <code>@</code> 开始以便能被正确理解.例子:
+</p>
+
+<ul class="org-ul">
+<li><code>$1..$3</code> : 当前行的第1到第3列字段.</li>
+<li><code>$P..$Q</code> : 使用列名的引用(查看高级特性 <code>Advanced features</code> 一节)</li>
+<li><code>$&lt;&lt;&lt;..$&gt;&gt;</code> :从第3列开始,一直到最后一列.</li>
+<li><code>@2$1..@4$3</code> :位于两个字段之间的九个字段(<code>A2..C4</code>)</li>
+<li><code>@-1$-2..@-1</code> :从左边2列开始,到当前行之上的三个字段,</li>
+<li><code>@I..II</code> : 第一和第二个水平分割线之间的字段, <code>@I..@II</code> 的简写.</li>
+</ul>
+
+<p>
+范围引用返回值的向量,这个向量可以输入到 Calc 的向量函数.范围中的空字段通常
+会被删除,所以向量中只包含非空字段.至于其他的模式开关 <code>E</code> , <code>N</code> 和示例的选项,参
+见 <a href="#org6a0da60">Calc 的公式语法(Formula syntax for Calc)</a>.也就是下一节.
+</p>
+</div>
+</li>
+
+
+<li><a id="org582a085"></a>公式中的字段座标(Field coordinates in formulas)<br />
+<div class="outline-text-5" id="text-org582a085">
+<p>
+Calc 公式和 Lisp 公式在计算中的第一个行为是用当前计算结果要填充的字段的行或
+列号替换公式中的 <code>@#</code> 和 <code>$#</code>.传统的 Lisp 公式结果是 <code>org-table-current-dline</code> 和
+<code>org-table-current-column</code> 的,查看这两个方法的文档来获取详细信息.例子:
+</p>
+
+<dl class="org-dl">
+<dt><code>if(@# % 2, $#, string(""))</code></dt><dd>在基数行插入列号,将偶数行字段设置为空.</dd>
+
+<dt><code>$2 = '(identity remote(FOO, @@#$1))</code></dt><dd>将表格FOO 中每一行的第一列的文
+本或值复制到当前表格的第二列中.</dd>
+
+<dt><code>@3 = 2 * remote(FOO, @1$$#)</code></dt><dd>将表格FOO 中的第一行中的每一列的值的两
+倍插入到当前表格的第三行.</dd>
+</dl>
+
+<p>
+对于第二和第三个例子,表格 FOO 必须至少有和当前表格一样多的行或列.注意:这对大
+量的行来说是无效的.因为表格FOO被解析为每个要被复制的字段,所以计算时间规模是
+<code>O(N^2)</code>.<a href="https://www.gnu.org/software/emacs/manual/html_mono/org.html#References">info:org#References</a> 这里的翻译可能有问题,所以留下原手册链接.
+</p>
+</div>
+</li>
+
+
+<li><a id="org6155e0f"></a>名称引用(Named references)<br />
+<div class="outline-text-5" id="text-org6155e0f">
+<p>
+<code>$name</code> 被解释为列,参数或常量的名字. 常量通过变量 <code>org-table-formula-constants</code>
+全局范围内定义,通过这样一行在本地或文件范围内定义:
+</p>
+<pre class="example">
+#+CONSTANTS: c=299792458. pi=3.14 eps=2.4e-6
+</pre>
+<p>
+此外,属性也可以在表格里用作常量: 属性 <code>Xyz</code> 可以用 <code>$PROP_Xyz</code> 作为名称引用,属
+性值会在当前大纲项目和其层级之上的项目中搜索. 如果你使用了 <code>constants.el</code> 包,
+这个包也会用来处理常量,包括像普朗克常量 <code>$h</code> 这样的自然常量,像千米 <code>$km</code> 这样的
+单位.这些都在下面的 高级特性里描述(<a href="#orgac072d8">高级功能(Advanced features)</a>) . 所有的名称都必须以字
+母开始,剩下的由字母和数字组成.
+</p>
+
+<p>
+文件 <code>constants.el</code> 能够用两种单位系统支持常量的值: <code>SI</code> 和 <code>cgs</code>. 使用哪一个单位
+系统取决于变量 <code>constants-unit-system</code> 的值.你也可以用 <code>STARTUP</code> 选项 <code>constSI</code>
+和 <code>constcgs</code> 来设置当前缓冲区中的这个值.
+</p>
+</div>
+</li>
+
+<li><a id="orge3941aa"></a>外部引用(Remote references)<br />
+<div class="outline-text-5" id="text-orge3941aa">
+<p>
+你可以从当前文件甚至是从其他文件的不同的表格中引用常量,字段和范围.语法是:
+</p>
+<pre class="example">
+remote(NAME,REF)
+</pre>
+<p>
+<code>NAME</code> 可以是当前文件里,在表格之前的行中 <code>#+NAME:</code> 这样的行里设置的表格名,也可
+以是一个条目的 <code>ID</code> ,即使是在不同的文件中,引用会指向该条目中的第一个表格.
+<code>REF</code> 是一个像上面描述的绝对定位的字段或范围引用: <code>@3$3</code> 或 <code>$somename</code> 在引用的
+表中有效的的表示.
+</p>
+
+<p>
+当 <code>NAME</code> 有 <code>@ROW$COLUMN</code> 的格式时,这部分会被替换成当前表格的这个字段的名字或
+ID. 例如 <code>remote($1, @@&gt;$2)</code> ⇒ <code>remote(year_2013, @@&gt;$1)</code>. <code>B3</code> 这种格式不被支持,
+因为这种格式不能与一个表的名字或ID 区分开.
+</p>
+</div>
+</li>
 </ul>
 </div>
 
-<div id="outline-container-org71bdae2" class="outline-4">
-<h4 id="org71bdae2">Calc 的公式语法(Formula syntax for Calc)</h4>
-<div class="outline-text-4" id="text-org71bdae2">
+<div id="outline-container-org6a0da60" class="outline-4">
+<h4 id="org6a0da60">Calc 的公式语法(Formula syntax for Calc)</h4>
+<div class="outline-text-4" id="text-org6a0da60">
 <blockquote>
 <p>
 用 <code>Calc</code> 来进行计算.
 </p>
 </blockquote>
+
+<p>
+一个公式可以是任何Emacs Calc 包理解的代数表达式. 注意 Calc 的 <code>/</code> 操作符有着非
+标准的约定: <code>/</code> 的优先级低于 <code>*</code>, 所以 <code>a/b*c</code> 会被解释成 <code>(a/(b*c))</code>. 在 <code>calc-eval</code>
+(Calling Calc from Your Lisp Programs(calc)TODO)执行的计算之前,变量会根据上面描
+述的规则进行替换.
+</p>
+
+<p>
+范围向量会直接输入到 Calc 的向量函数,比如 <code>vmean</code> 和 <code>vsum</code>.
+</p>
+
+<p>
+一个公式可以在一个分号之后包含可选的模式字符串.这个字符串由在执行期间影响
+Calc 和其他模式的标签组成.默认情况下,Org 使用标准的 Calc 模式(精度12,角单位
+度,分数和符号模式关闭).然而,为了保持表格紧凑,显示的格式被改变成了 <code>(float
+    8)</code>.默认的设置可以通过变量 <code>org-calc-default-modes</code> 配置.
+模式字符串:
+</p>
+
+<dl class="org-dl">
+<dt><code>p20</code></dt><dd>将 Calc 内部的计算精度设置为20位.</dd>
+
+<dt><code>n3, s3, e2 , f4</code></dt><dd>Calc 传递回 Org 的结果的格式:普通,科学,工程或固定格
+式.只要Calc 计算的精度够大,Calc 的格式在精度上是无限的.</dd>
+
+<dt><code>D, R</code></dt><dd>Calc 的角度或弧度模式.</dd>
+
+<dt><code>F, S</code></dt><dd>Calc 的小数和符号模式.</dd>
+
+<dt><code>T, t, U</code></dt><dd>Calc 或 Lisp 的持续时间计算, 查看 <a href="#orgb0a8d4e">持续时间和时间值(Durations and time values)</a>.</dd>
+
+<dt><code>E</code></dt><dd>如何处理空字段.没有 <code>E</code> ,范围引用中的空字段会被删除,以便 Calc 向量或
+Lisp 列表只包含非空字段.带上 <code>E</code> ,空字段会被保留.对于范围引用中的空字段或
+者空的字段引用,值 <code>nan</code> (不是数字) 被用在 Calc 公式里, 空字符串被用在 Lisp
+公式里.如果添加了 <code>N</code> 模式字符串,会在两种公式里使用数字 0.因为对于字段值,模式 <code>N</code> 比 <code>E</code>
+有比模式 <code>E</code> 更高的优先级.</dd>
+
+<dt><code>N</code></dt><dd>将所有的字段视为数字处理,对非数字视为 <code>0</code>.查看下一节来看看这在Lisp公
+式里对计算有多重要.在 Calc 公式里,这个模式只是偶尔使用,因为即使没有 <code>N</code>,数
+字字符串已经被解释为数字了</dd>
+
+<dt><code>L</code></dt><dd>Literal, 只针对Lisp 公式,查看下一节 <a href="#orgaffad2b">Lisp 的公式语法(Formula syntax for Lisp)</a>.</dd>
+</dl>
+
+<p>
+除非你要用很大的整数或高精度的计算而且要展示浮点数,你可能选择性的需要使用
+<code>printf</code> 格式化指示符来重新格式化 Calcd 的传递回 Org 的计算结果,而不是让
+Calc 进行格式化的工作. <code>printf</code> 重新格式化被限制在精度方面,因为传递给它的值
+被转换成了整数或双精度浮点数.整数的大小通过截断有符号数到32位来限制,双精度
+浮点数的精度被限制为64位,这大概保留了16位有效的十进制数.
+</p>
+
+<p>
+一些例子:
+</p>
+<ul class="org-ul">
+<li><code>$1+$2</code> : 将第一和第二个字段相加.</li>
+<li><code>$1+$2;%.2f</code> : 和上面结果相同,但将结果格式化到两位十进制数.</li>
+<li><code>exp($2)+exp($1)</code> : 数学函数也能使用.</li>
+<li><code>$0;%.1f</code> : 重新格式化当前单元格到一位数.</li>
+<li><code>($3-32)*5/9</code> : 温度华氏度到摄氏度的转换.</li>
+<li><code>$c/$1/$cm</code> : Hz → cm 转换,使用了 <code>constants.el</code> 包.</li>
+<li><code>tan($1);Dp3s1</code> : 计算角度,精度3,科学表示精度1.</li>
+<li><code>sin($1);Dp3%.1e</code> : 和上面类似,但是用 <code>printf</code> 说明符指定显示格式.</li>
+<li><code>vmean($2..$7)</code> : 用向量函数计算列范围的中值.</li>
+<li><code>vmean($2..$7);EN</code> : 和上面类似,但是将空字段视为0.</li>
+<li><code>taylor($3,x=7,2)</code> : 第三列的当x=7, 级数为2的泰勒级数.</li>
+</ul>
+
+
+<p>
+Calc 页包含一套完整的逻辑操作.例如:
+</p>
+
+<dl class="org-dl">
+<dt><code>if($1 &lt; 20, teen, string(""))</code></dt><dd>如果年龄 <code>$1</code> 小于 20,设置为 <code>teen</code>, 否则
+Org 表格结果字段被设置为空字符串.</dd>
+<dt><code>if("$1" == "nan" || "$2" == "nan", string(""), $1 + $2); E f-1</code></dt><dd>将前两列
+相加. 如果至少有一个字段是空字段,Org 表格的结果字段会被设置为空. <code>E</code> 是为
+了不将空字段转换为0而需要的. <code>f-1</code> 是Calc 的可选格式字符串,类似与 <code>%.1f</code> 但
+是保留空结果为空.</dd>
+<dt><code>if(typeof(vmean($1..$7)) == 12, string(""), vmean($1..$7); E</code></dt><dd>除非有任
+何空字段,不然返回范围的中值. 范围中的每个空字段被 <code>nan</code> 替换,会使 <code>vmean</code> 的
+结果为 <code>nan</code> .然后 <code>typeof() == 12</code> 是为了从 <code>vmean</code> 结果检测 <code>nan</code> 值.如果检测
+到空值,表格的结果字段被设置为空.当样本集预计不存在缺失值时用这个例子.</dd>
+</dl>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(calc-eval <span style="font-style: italic;">"typeof(nan)"</span>)
+</pre>
+</div>
+<dl class="org-dl">
+<dt><code>if("$1..$7" == "[]", string(""), vmean($1..$7))</code></dt><dd>跳过空字段的范围的中值.在
+范围内的每个空字段都会被跳过.当范围内所有字段都是空值时,中值是未定义的,Org
+表格的结果字段也会被设置为空值.当样本集可以有一个可变的大小时使用.</dd>
+<dt><code>vmean($1..$7); EN</code></dt><dd>完成之前的例子:范围的中值,将空字段按值0计数.当需要用
+0填充不完全的样本集时使用这种.</dd>
+</dl>
+
+<p>
+你可以用 Emacs Lisp 的 <code>defmath</code> 定义 Calc 函数,并将他们应用在Calc 的公式语法
+中.
+</p>
 </div>
 </div>
-<div id="outline-container-org3501e44" class="outline-4">
-<h4 id="org3501e44">Lisp 的公式语法(Formula syntax for Lisp)</h4>
-<div class="outline-text-4" id="text-org3501e44">
+
+<div id="outline-container-orgaffad2b" class="outline-4">
+<h4 id="orgaffad2b">Lisp 的公式语法(Formula syntax for Lisp)</h4>
+<div class="outline-text-4" id="text-orgaffad2b">
 <blockquote>
 <p>
 用 Emacs Lisp 写公式.
 </p>
 </blockquote>
+<p>
+用 Emacs Lisp 写公式也是可以的.如果 Calc 的功能不够的话,这在字符串操作和控制
+结构时很有用.
+</p>
+
+<p>
+如果一个公式由单引号加开括号开始(<code>'(</code>),这个公式被当作 Lisp 公式计算.计算结果会
+返回字符串或数字.和 Calc 公式一样,你可以指定模式并在分号后使用 <code>printf</code> 格式化.
+</p>
+
+<p>
+使用Emacs Lisp 公式,你需要了解字段插入到公式的方式.默认情况下,一个引用是作为
+一个包含字段的Lisp 字符串被插入(用双引号包裹).如果使用了 <code>N</code> 模式开关,所有没有
+数字的数字字段会被作为Lisp 数字0插入到公式(没有引号).如果使用了 <code>L</code> 标签,所有
+字段会被不加引号地逐字插入.例如,如果你想要一个引用被Lisp 公式解释为字符串,将
+引用操作符包裹在双引号中(<code>"$3"</code>).范围是作为空格分隔的字段被插入的,所以你可以将
+他们嵌入到列表或向量语法中.
+</p>
+
+<p>
+这里有一些当我们使用 <code>N</code> 模式的Lisp 计算的例子:
+</p>
+<dl class="org-dl">
+<dt><code>'(concat (substring $1 1 2) (substring $1 0 1) (substring $1 2))</code></dt><dd>交换第
+一行文本的前两个字符.</dd>
+
+<dt><code>'(+ $1 $2);N</code></dt><dd>将第一和第二列相加,相当于 Calc 的 <code>$1+$2</code>.</dd>
+
+<dt><code>'(apply '+ '($1..$4));N</code></dt><dd>计算第一到第四列的求和,就像Calc 的 <code>vsum($1..$4)</code></dd>
+</dl>
 </div>
 </div>
-<div id="outline-container-org1656bac" class="outline-4">
-<h4 id="org1656bac">持续时间和时间值(Durations and time values)</h4>
-<div class="outline-text-4" id="text-org1656bac">
+
+<div id="outline-container-orgb0a8d4e" class="outline-4">
+<h4 id="orgb0a8d4e">持续时间和时间值(Durations and time values)</h4>
+<div class="outline-text-4" id="text-orgb0a8d4e">
 <blockquote>
 <p>
 如何计算持续时间和时间值.
 </p>
 </blockquote>
+<p>
+如果你想在Calc 公式或 Elisp 公式里计算时间值,使用 <code>T</code> , <code>t</code> 或 <code>U</code> 标示:
+</p>
+<pre class="example">
+|  Task 1 |   Task 2 |    Total |
+|---------+----------+----------|
+|    2:12 |     1:47 |          |
+|    2:12 |     1:47 |          |
+| 3:02:20 | -2:07:00 |          |
+#+TBLFM: @2$3=$1+$2;T::@3$3=$1+$2;U::@4$3=$1+$2;t
+
+</pre>
+
+<p>
+计算结果:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Task 1</th>
+<th scope="col" class="org-right">Task 2</th>
+<th scope="col" class="org-right">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">2:12</td>
+<td class="org-right">1:471</td>
+<td class="org-right">03:59:00</td>
+</tr>
+
+<tr>
+<td class="org-right">2:12</td>
+<td class="org-right">1:47</td>
+<td class="org-right">03:59</td>
+</tr>
+
+<tr>
+<td class="org-right">3:02:20</td>
+<td class="org-right">-2:07:00</td>
+<td class="org-right">0.92</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+输入持续时间值必须使用 <code>HH:MM[:SS]</code> 的格式,其中秒是可选的. 使用 <code>T</code> 标示,计算持
+续时间值的结果用 <code>HH:MM:SS</code> 展示,上面例子的第一个公式.使用 <code>U</code> 标示,秒被略去,所
+以结果只有 <code>HH:MM</code> ,上面例子的第二个公式.小时字段的零填充取决于变量
+<code>org-table-duration-hour-zero-padding</code> 的值.
+</p>
+
+<p>
+使用 <code>t</code> 标示,计算出的持续时间值会根据 <code>org-table-duration-custom-format</code> 变量的
+值来展示, 默认的值是 <code>hours</code> ,即将结果展示为小时的小数形式,就是上面的第三个公
+式的形式.
+</p>
+
+<p>
+负数的持续时间值也可以被操作,整数在加和减的操作中被视作秒来计算.
+</p>
 </div>
 </div>
-<div id="outline-container-org907611a" class="outline-4">
-<h4 id="org907611a">字段和范围公式(Field and range formulas)</h4>
-<div class="outline-text-4" id="text-org907611a">
+
+<div id="outline-container-org2e3efd7" class="outline-4">
+<h4 id="org2e3efd7">字段和范围公式(Field and range formulas)</h4>
+<div class="outline-text-4" id="text-org2e3efd7">
 <blockquote>
 <p>
 特定字段(字段范围)的公式.
 </p>
 </blockquote>
+<p>
+要将公式赋值给特定字段, 直接在字段里输入公式,放在 <code>:=</code> 之后.例如
+<code>:=vsum(@II..III)</code>. 当光标在字段里时,按 <code>&lt;TAB&gt;</code> 或 <code>&lt;RET&gt;</code> 或 <code>C-c C-c</code>, 这个字段的
+公式会被存储,计算,当前字段会被替换成计算结果.
+</p>
+
+<p>
+公式会被存储到表格正下方的特殊关键字 <code>TBLFM</code> 里.如果你在表格第三个数据行的第四个字
+段里输入公式,存储的公式会是像这样的: <code>@3$4=$1+$2</code>.当使用恰当的命令插入/删除/交
+换 行或列的时候保存的公式里的绝对引用也会跟着改变,以便仍然指向相同的字段.要
+想避免这一行为的发生,特别是在范围引用里,用表格边界固定范围(用 <code>@&lt;,@&gt;,$&lt;,$&gt;</code>)或
+用水平分割线(<code>@I</code>)标记.如果使用普通的编辑命令修改表格的结构,公式里引用的自动调
+整是不会发生的,你必须要自己调整公式.
+</p>
+
+<p>
+你也可以使用下面的命令,而不是在字段中键入公式:
+</p>
+
+<dl class="org-dl">
+<dt><code>C-u C-c =</code> &#x2013; <code>(org-table-eval-formula)</code></dt><dd>在当前字段插入新的公式.这个命令提
+示输入默认取自 <code>TBLFM</code> 关键词的公式,并将其应用到当前字段,存储到 <code>TBLFM</code> 里. 公
+式的左边也可以是赋值公式到若干其他字段的特殊表达式. 要添加这样的公式, 使用
+公式编辑器或直接编辑 <code>TBLFM</code> 宽肩字,因为没有输入这样的公式的快捷键.</dd>
+
+<dt><code>$2=</code></dt><dd>列公式,对整个列有效. 因为这种用法的需求很常见,所以Org 将这一类公式
+特殊处理,详情见下面 Column formulas 一节.</dd>
+
+<dt><code>@3=</code></dt><dd>行公式,应用到指定行的所有字段. <code>@&gt;=</code> 意味着最后一行.</dd>
+
+<dt><code>@1$2..@4$3=</code></dt><dd>范围公式,应用到给定矩形范围的所有字段. 这也可以用来给一行中
+的某些单不是所有字段赋值.</dd>
+
+<dt><code>$NAME=</code></dt><dd>命名字段,详情查看高级功能(Advanced features).</dd>
+</dl>
 </div>
 </div>
-<div id="outline-container-org2d636e6" class="outline-4">
-<h4 id="org2d636e6">列公式(Column formulas)</h4>
-<div class="outline-text-4" id="text-org2d636e6">
+
+<div id="outline-container-orgd26f083" class="outline-4">
+<h4 id="orgd26f083">列公式(Column formulas)</h4>
+<div class="outline-text-4" id="text-orgd26f083">
 <blockquote>
 <p>
 对整列有效的公式.
 </p>
 </blockquote>
+<p>
+当将公式给简单的列引用(<code>$3=</code>)赋值时,相同的公式会被应用到那一列的所有字段,但有
+以下非常方便的例外情况:(i) 如果表格的上面和下面的行包括了水平分割线,在第一个
+水平分割线之前的所有行都被视为表头,表头不会被列公式改变.因此当你使用了列公式
+并系那个要用水平分割线将行分组时,表头时必须有的.例如,将底部的合计行与上面的
+汇总行分开. (ii) 那些已经由字段/范围公式赋值的字段,列公式也不会进行赋值.这些
+条件使得列公式非常容易使用.
+</p>
+
+<p>
+要用公式给一列赋值,直接在列中任意字段输入跟在一个等号后面的公式,例如
+<code>=$1+$2</code>.当光标仍在字段中时,你按 <code>&lt;TAB&gt;</code> 或 <code>&lt;RET&gt;</code> 或 <code>C-c C-c</code> ,对当前列的公式会被
+保存,当前字段会被公式的计算结果替换.如果字段里只有 <code>=</code> ,那么之前保存的这一列的
+公式会被使用.对每一列来讲说,Org 只会记得最近使用的公式.在 <code>TBLFM</code> 关键字里,列
+公式就像 <code>$4=$1+$2</code> 这样.列公式的左边不能是列的名字,必须是数字形式的列引用或 <code>$&gt;</code>
+</p>
+
+<p>
+你也可以使用下面的命令,而不是在字段中输入公式:
+</p>
+<dl class="org-dl">
+<dt><code>C-c =</code> &#x2013; <code>(org-table-eval-formula)</code></dt><dd>为当前列插入新的公式,并将当前字段都替
+换成公式的结果. 命令会提示输入一个公式,默认公式是从 <code>TBLFM</code> 里取出的上一次应
+用并保存的公式,然后会将公式应用到当前字段并保存.当结合数字前缀参数使用,例
+如 <code>C-5 C-c =</code>,命令会将公式应用到当前列的前5个连续字段.</dd>
+</dl>
 </div>
 </div>
-<div id="outline-container-org618d4f7" class="outline-4">
-<h4 id="org618d4f7">查找函数(Lookup functions)</h4>
-<div class="outline-text-4" id="text-org618d4f7">
+
+<div id="outline-container-org05b0a98" class="outline-4">
+<h4 id="org05b0a98">查找函数(Lookup functions)</h4>
+<div class="outline-text-4" id="text-org05b0a98">
 <blockquote>
 <p>
 用于搜索表格的查找函数.
 </p>
 </blockquote>
+
+<p>
+Org 有三个预定义的 Emacs Lisp 函数,用来在表格中进行查找.
+</p>
+
+<dl class="org-dl">
+<dt><code>(org-lookup-first VAL S-LIST R-LIST &amp;optional PREDICATE)</code></dt><dd>在 S-LIST 里查
+找符合 (PREDICATE VAL S) 的第一个元素 S ; 返回列表 R-LIST 里对应位置
+的值. 默认的 PREDICATE(断言)是 <code>equal</code>. 要注意的是, VAL 和 S 是按照他们出现
+的顺序传递到 PREDICATE 里的.如果 R-LIST 是 <code>nil</code> 那么就会返回 S-LIST 里匹配
+的元素 S.</dd>
+
+<dt><code>(org-lookup-last VAL S-LIST R-LIST &amp;optional PREDICATE)</code></dt><dd>和上面类似,但是
+是查找符合条件的最后一个元素 S.</dd>
+
+<dt><code>(org-lookup-all VAL S-LIST R-LIST &amp;optional PREDICATE)</code></dt><dd><p>
+和查找第一个元素
+类似,但是是查找所有符合条件的元素,并且返回所有相应的值.这个函数在公式里不
+能单独使用,因为它返回的是一个值列表.然而,这个函数和其他 Emacs Lisp 函数结
+合起来可以构建强大的查找功能.
+</p>
+
+<p>
+如果这些函数里使用的范围包含空字段,公式的 <code>E</code> 模式通常需要被指定,不然的话空
+字段不会在S-LIST 或 R-LIST 里包括的,这就可能导致函数结果返回错误的从
+R-LIST 到 S-LIST的相关映射.
+</p>
+
+<p>
+这三个函数可以用于实现关联数组,计数匹配单元格,排序结果,组合数据等.有关实际
+的例子,请查看Worg 的教程:
+(<a href="https://orgmode.org/worg/org-tutorials/org-lookups.html">https://orgmode.org/worg/org-tutorials/org-lookups.html</a>)
+</p></dd>
+</dl>
 </div>
 </div>
-<div id="outline-container-org576f94f" class="outline-4">
-<h4 id="org576f94f">编辑和调试公式(Editing and debugging formulas)</h4>
-<div class="outline-text-4" id="text-org576f94f">
+
+<div id="outline-container-org362aeb5" class="outline-4">
+<h4 id="org362aeb5">编辑和调试公式(Editing and debugging formulas)</h4>
+<div class="outline-text-4" id="text-org362aeb5">
 <blockquote>
 <p>
 修正公式.
 </p>
 </blockquote>
+<p>
+你可以在minibuffer里编辑单个公式,也可以直接在字段里编辑公式. Org 还可以为一
+个表格的所有有效公式准备一个特殊的缓冲区.在提供公式进行编辑时,如果可能, Org
+会将引用转换成标准格式(如 <code>B3</code> 或 <code>D&amp;</code>). 如果你更喜欢只使用内部的格式(如 <code>@3$2</code>
+或 <code>$4</code>),配置变量 <code>org-table-use-standard-references</code>
+</p>
+
+<dl class="org-dl">
+<dt><code>C-c =</code> 或 <code>C-u C-c =</code> &#x2013; <code>(org-table-eval-formula)</code></dt><dd>在minibuffer里编辑与当前
+列/字段关联的公式. 查看 <code>Column formulas</code> 和 <code>Field and range formula</code> 部分.</dd>
+
+<dt><code>C-u C-u C-c =</code> &#x2013; <code>(org-table-eval-formula)</code></dt><dd>将有效公式(字段公式或列公式)
+重新插入到当前字段,以便你可以直接在字段中编辑它.和在minibuffer 里编辑相比,
+它的优点是可以使用 <code>C-c ?</code> 命令.</dd>
+
+<dt><code>C-c ?</code> &#x2013; <code>(org-table-field-info)</code></dt><dd>当在表格字段里编辑一个公式时,高亮显示
+公式中光标位置的引用所引用的字段.</dd>
+
+<dt><code>C-c }</code> &#x2013; <code>(org-table-toggle-coordinate-overlays)</code></dt><dd>切换以覆盖方式显示的表
+格的行号和列号.每次表格重新对齐时,显示会被更新;你也可以使用 <code>C-c C-c</code> 强制更
+新.</dd>
+
+<dt><code>C-c {</code> &#x2013; <code>(org-table-toggle-formula-debugger)</code></dt><dd>切换表格编辑器的开关.更多
+信息查看下面的内容.</dd>
+
+<dt><code>C-c '</code> &#x2013; <code>(org-table-edit-formulas)</code></dt><dd>在特殊的缓冲区编辑当前表格的所有公式,缓
+冲区里每行一个公式.如果当前字段有一个有效公式,公式编辑器会用光标标记该公式.在
+这个特殊缓冲区里,Org 会自动高亮光标位置的任意字段或范围的引用.你可以用下面
+命令编辑,删除和添加公式:
+<dl class="org-dl">
+<dt><code>C-c C-c</code> 或 <code>C-x C-s</code> &#x2013; <code>(org-table-field-finish)</code></dt><dd>退出公式编辑器并保存公
+式修改.加上 <code>C-u</code> 前缀使用,会同时将新公式应用到整个表格.</dd>
+
+<dt><code>C-c C-q</code> &#x2013; <code>(org-table-fedit-abort)</code></dt><dd>退出公式编辑器,并丢弃更改.</dd>
+
+<dt><code>C-c C-r</code> &#x2013; <code>(org-table-fedit-toggle-ref-type)</code></dt><dd>在公式编辑器里切换引用的
+标准(<code>B3</code>) 和内部(<code>@3$2</code>) 格式.</dd>
+
+<dt><code>&lt;TAB&gt;</code> &#x2013; <code>(org-table-fedit-lisp-indent)</code></dt><dd>美化光标处的显示或缩进.当一行
+里有一个Lisp 公式时,根据Emacs Lisp 规则格式化表格.再次使用 <code>&lt;TAB&gt;</code> 会将公
+式还原.在打开的公式中, <code>&lt;TAB&gt;</code> 会像在 Emacs Lisp 模式里一样重新缩进.</dd>
+
+<dt><code>M-&lt;TAB&gt;</code> &#x2013; <code>(lisp-complete-symbol)</code></dt><dd>补全Lisp symbols, 就像在 Emacs Lisp
+模式里一样.</dd>
+
+<dt><code>S-&lt;UP&gt;,S-&lt;DOWN&gt;,S-&lt;LEFT&gt;,S-&lt;RIGHT&gt;</code></dt><dd>调整光标处的引用.一如,如果引用是
+<code>B3</code> 然后你按了 <code>S-&lt;RIGHT&gt;</code> ,引用会变成 <code>C3</code>. 这种调整对相对定位的引用和水平分
+割线的引用也有效.</dd>
+
+<dt><code>M-S-&lt;UP&gt;</code> &#x2013; <code>(org-table-fedit-line-up)</code></dt><dd>将列公式的测试行在Org文件缓冲区
+里上移.</dd>
+
+<dt><code>M-S-&lt;DOWN&gt;</code> &#x2013; <code>(org-table-fedit-line-down)</code></dt><dd>将Org文件缓冲区里的列公式的
+测试行下移.</dd>
+
+<dt><code>M-&lt;UP&gt;</code> &#x2013; <code>(org-table-fedit-scroll-up)</code></dt><dd>将显示表格的窗口上移.</dd>
+
+<dt><code>M-&lt;DOWN&gt;</code> &#x2013; <code>(org-table-fedit-scroll-down)</code></dt><dd>将显示表格的窗口下移</dd>
+
+<dt><code>C-c }</code></dt><dd>关掉表格的座标网格.</dd>
+</dl></dd>
+</dl>
+
+
+<p>
+清空一个表格的字段内容不会删除相关字段的公式,因为公式是存储在不同的一行
+<code>TBLFM</code> 关键字行里的. 在下一次重新计算时,这个字段会被重新填充.要删除一个字段的
+公式,你必须在提示输入公式时给定一个空的值,或者在 <code>TBLFM</code> 关键词里编辑.
+你可以直接在 <code>TBLFM</code> 关键词里编辑然后在那一行使用 <code>C-c C-c</code> 或在表格里使用普通的
+重计算命令来应用这些更改过的公式.
+</p>
 </div>
+
+
+
+
+<ul class="org-ul">
+<li><a id="org5763d02"></a>使用多个 <code>TBLFM</code> 行(Using multiple TBLFM lines)<br />
+<div class="outline-text-5" id="text-org5763d02">
+<p>
+你可能想要暂时应用某个公式. 这在你想要切换应用到表格里的公式时很有用.将多个
+<code>TBLFM</code> 关键词直接放在表格之后,然后在公式上按 <code>C-c C-c</code>. 下面是使用的例子:
+</p>
+<pre class="example">
+
+| x | y |
+|---+---|
+| 1 |   |
+| 2 |   |
+#+TBLFM: $2=$1*1
+#+TBLFM: $2=$1*2
+</pre>
+<p>
+当光标在 <code>#+TBLFM: $2=$1*2</code> 一行时,按 <code>C-c C-c</code>:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">x</th>
+<th scope="col" class="org-right">y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">4</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+如果你使用 <code>C-u C-c *</code> 重新计算表格,还是上面的例子,你会得到只应用第一个 <code>TBLFM</code>
+关键词的结果:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">x</th>
+<th scope="col" class="org-right">y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="outline-container-orgec98161" class="outline-4">
-<h4 id="orgec98161">更新表格(Updating the table)</h4>
-<div class="outline-text-4" id="text-orgec98161">
+</li>
+
+<li><a id="org34fe3df"></a>调试公式(Debugging formulas)<br />
+<div class="outline-text-5" id="text-org34fe3df">
+<p>
+当公式的计算发生了错误时,字段的内容会变成字符串 "#ERROR". 如果你想查看在变
+量替换和计算的过程中发生了什么,以便找出bug, 在Tbl 菜单里打开公式调试,然后重
+新计算,例如,在字段里按 <code>C-u C-u C-c = &lt;RET&gt;</code>. 详细的信息就会显示出来.
+(menu-bar-mode 1)
+</p>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-org7a0aa5b" class="outline-4">
+<h4 id="org7a0aa5b">更新表格(Updating the table)</h4>
+<div class="outline-text-4" id="text-org7a0aa5b">
 <blockquote>
 <p>
 重新计算所有相关字段.
 </p>
 </blockquote>
+
+<p>
+表格的重新计算通常不是自动进行的,这一过程需要某个命令来触发. 要使重新计算至
+少半自动,查看高级功能部分.
+</p>
+
+<p>
+要重新计算表格的一行或整个表格,使用下面的命令:
+</p>
+
+<dl class="org-dl">
+<dt><code>C-c *</code> &#x2013; <code>(org-table-recalculate)</code></dt><dd>通过先从左到右应用存储的列公式,然后再应用
+字段或范围公式到当前的行来重新计算当前行.</dd>
+
+<dt><code>C-u C-c *</code> 或 <code>C-u C-c C-c</code></dt><dd>一行一行地重新计算整个表格,任何在第一个水平分
+割线之前的行都不受影响,因为这些行被视作表头的一部分.</dd>
+
+<dt><code>C-u C-u C-c *</code> 或 <code>C-u C-u C-c C-c</code> &#x2013; <code>(org-table-iterate)</code></dt><dd>通过重新计算表
+格,直到有新的变化生成来迭代表格.如果有些要计算的字段需要使用在计算序列中靠
+后计算的其他字段的值时,则可能需要这样做.</dd>
+
+<dt><code>M-x org-table-recalculate-buffer-tables</code></dt><dd>重新计算当前缓冲区中所有表格.</dd>
+
+<dt><code>M-x org-table-recalculate-buffer-tables</code></dt><dd>迭代当前缓冲区中的所有表格,以聚
+合表到表的依赖关系.</dd>
+</dl>
 </div>
 </div>
-<div id="outline-container-orga6f0926" class="outline-4">
-<h4 id="orga6f0926">高级功能(Advanced features)</h4>
-<div class="outline-text-4" id="text-orga6f0926">
+
+<div id="outline-container-orgac072d8" class="outline-4">
+<h4 id="orgac072d8">高级功能(Advanced features)</h4>
+<div class="outline-text-4" id="text-orgac072d8">
 <blockquote>
 <p>
 字段和列名,自动重计算等等.
 </p>
 </blockquote>
+
+<p>
+如果你想要字段自动进行重计算,或者如果你想要能够给字段和列赋值名字,那么你需要
+为特殊标记字符保留表格的第一列.
+</p>
+
+<dl class="org-dl">
+<dt><code>C-#</code> &#x2013; <code>(org-table-rotate-recalc-marks)</code></dt><dd><p>
+将第一列中的计算标志旋转到状态
+<code>#,*,!,$</code>.当有选中区域时,改变区域内的所有标志
+</p>
+
+<p>
+这有一个收集学生考试结果的表格示例,并且利用了这些功能.
+</p>
+
+<pre class="example">
+
+|---+---------+--------+--------+--------+-------+------|
+|   | Student | Prob 1 | Prob 2 | Prob 3 | Total | Note |
+|---+---------+--------+--------+--------+-------+------|
+| ! |         |     P1 |     P2 |     P3 |   Tot |      |
+| # | Maximum |     10 |     15 |     25 |    50 | 10.0 |
+| ^ |         |     m1 |     m2 |     m3 |    mt |      |
+|---+---------+--------+--------+--------+-------+------|
+| # | Peter   |     10 |      8 |     23 |    41 |  8.2 |
+| # | Sam     |      2 |      4 |      3 |       |  1.8 |
+|---+---------+--------+--------+--------+-------+------|
+|   | Average |        |        |        |  25.0 |      |
+| ^ |         |        |        |        |    at |      |
+| $ | max=50  |        |        |        |       |      |
+|---+---------+--------+--------+--------+-------+------|
+#+TBLFM: $6=vsum($P1..$P3)::$7=10*$Tot/$max;%.1f::$at=vmean(@-II..@-I);%.1f
+</pre>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Student</th>
+<th scope="col" class="org-right">Prob 1</th>
+<th scope="col" class="org-right">Prob 2</th>
+<th scope="col" class="org-right">Prob 3</th>
+<th scope="col" class="org-right">Total</th>
+<th scope="col" class="org-right">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Maximum</td>
+<td class="org-right">10</td>
+<td class="org-right">15</td>
+<td class="org-right">25</td>
+<td class="org-right">50</td>
+<td class="org-right">10.0</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Peter</td>
+<td class="org-right">10</td>
+<td class="org-right">8</td>
+<td class="org-right">23</td>
+<td class="org-right">41</td>
+<td class="org-right">8.2</td>
+</tr>
+
+<tr>
+<td class="org-left">Sam</td>
+<td class="org-right">2</td>
+<td class="org-right">4</td>
+<td class="org-right">3</td>
+<td class="org-right">9</td>
+<td class="org-right">1.8</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Average</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">25.0</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+重要事项:请注意,对这些特殊表格来讲,使用 <code>C-u C-c *</code> 重新计算表格,只影响被 <code>#</code>
+或 <code>#</code> 标记的行,和那些有公式赋值的字段.列公式不会在有空字段的行生效.
+</p></dd>
+</dl>
+
+
+<p>
+标志字符及其含义:
+</p>
+<dl class="org-dl">
+<dt><code>!</code></dt><dd>这一行定义列名,以便你能使用 <code>$Tot</code> 而不是 <code>$6</code> 来引用第六列.</dd>
+<dt><code>^</code></dt><dd>这一行定义上一行字段的名字.用这种定义,表格的任何公式可以使用 <code>$m1</code> 来引
+用值 <code>10</code>.此外,你也可以将公式赋值给命名字段,它会被存储成这样: <code>$name = ...</code> .</dd>
+<dt><code>_</code></dt><dd>和 <code>^</code> 类似,不过是定义下一行的字段名.</dd>
+<dt><code>$</code></dt><dd>这一行的字段能定义公式里的参数.例如,如果 <code>$</code> 行的某一字段包含 <code>max=50</code>,
+然后这个表格的公式可以使用 <code>$max</code> 引用50这个值.参数和常量一样使用,只不过参数
+是基于每个表定义的.</dd>
+<dt><code>#</code></dt><dd>在这一行里按 <code>&lt;TAB&gt;</code> 或 <code>&lt;RET&gt;</code> 或 <code>S-&lt;TAB&gt;</code> 时,这一行的字段会自动进行重新
+计算.此外,这一行在使用 <code>C-u C-c *</code> 进行全局重计算时也会被选中.未标记的行不会
+被该命令选中.</dd>
+<dt><code>*</code></dt><dd>使用 <code>C-u C-c *</code> 进行全局计算时选中改行,但是不会进行自动的重新计算.当自
+动重新计算使编辑速度过慢时,请使用这一标志.</dd>
+<dt><code>/</code></dt><dd>不导出此行.在包含收缩标记 <code>&lt;N&gt;</code> 或列分组标记的行里很有用.</dd>
+</dl>
+
+
+<p>
+最后,为了激起你对奇妙的 Calc 包能做什么的兴趣,这里有一个表格,用来计算两个函
+数在 x 位置的 n 阶泰勒级数.
+</p>
+<pre class="example">
+|---+-------------+---+-----+--------------------------------------|
+|   | Func        | n | x   | Result                               |
+|---+-------------+---+-----+--------------------------------------|
+| # | exp(x)      | 1 | x   | 1 + x                                |
+| # | exp(x)      | 2 | x   | 1 + x + x^2 / 2                      |
+| # | exp(x)      | 3 | x   | 1 + x + x^2 / 2 + x^3 / 6            |
+| # | x^2+sqrt(x) | 2 | x=0 | x*(0.5 / 0) + x^2 (2 - 0.25 / 0) / 2 |
+| # | x^2+sqrt(x) | 2 | x=1 | 2 + 2.5 x - 2.5 + 0.875 (x - 1)^2    |
+| * | tan(x)      | 3 | x   | 0.0175 x + 1.77e-6 x^3               |
+|---+-------------+---+-----+--------------------------------------|
+#+TBLFM: $5=taylor($2,$4,$3);n3
+</pre>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Func</th>
+<th scope="col" class="org-right">n</th>
+<th scope="col" class="org-left">x</th>
+<th scope="col" class="org-left">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">exp(x)</td>
+<td class="org-right">1</td>
+<td class="org-left">x</td>
+<td class="org-left">1 + x</td>
+</tr>
+
+<tr>
+<td class="org-left">exp(x)</td>
+<td class="org-right">2</td>
+<td class="org-left">x</td>
+<td class="org-left">1 + x + x<sup>2</sup> / 2</td>
+</tr>
+
+<tr>
+<td class="org-left">exp(x)</td>
+<td class="org-right">3</td>
+<td class="org-left">x</td>
+<td class="org-left">1 + x + x<sup>2</sup> / 2 + x<sup>3</sup> / 6</td>
+</tr>
+
+<tr>
+<td class="org-left">x<sup>2</sup>+sqrt(x)</td>
+<td class="org-right">2</td>
+<td class="org-left">x=0</td>
+<td class="org-left">x*(0.5 / 0) + x<sup>2</sup> (2 - 0.25 / 0) / 2</td>
+</tr>
+
+<tr>
+<td class="org-left">x<sup>2</sup>+sqrt(x)</td>
+<td class="org-right">2</td>
+<td class="org-left">x=1</td>
+<td class="org-left">2 + 2.5 x - 2.5 + 0.875 (x - 1)<sup>2</sup></td>
+</tr>
+
+<tr>
+<td class="org-left">tan(x)</td>
+<td class="org-right">3</td>
+<td class="org-left">x</td>
+<td class="org-left">0.0175 x + 1.77e-6 x<sup>3</sup></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
-<div id="outline-container-org79bba18" class="outline-3">
-<h3 id="org79bba18">Org 绘图(Org Plot)</h3>
-<div class="outline-text-3" id="text-org79bba18">
+<div id="outline-container-orgf61cf4b" class="outline-3">
+<h3 id="orgf61cf4b">Org 绘图(Org Plot)</h3>
+<div class="outline-text-3" id="text-orgf61cf4b">
 <blockquote>
 <p>
 根据 Org 表格数据绘图
 </p>
 </blockquote>
+<p>
+Org Plot 可以生成存储在Org 表格里的信息的图像,可以是图片形式,也可以是 ASCII
+形式
+</p>
+</div>
+<div id="outline-container-orgc0073c4" class="outline-4">
+<h4 id="orgc0073c4">使用 Gnuplot 的图形绘图(Graphical plots using Gnuplot)</h4>
+<div class="outline-text-4" id="text-orgc0073c4">
+<p>
+Org Plot 可以使用Gnuplot(<a href="http://www.gnuplot.info/">http://www.gnuplot.info/</a>) 和
+Gnuplot(<a href="http://cars9.uchicago.edu/~ravel/software/gnuplot-mode.html">http://cars9.uchicago.edu/~ravel/software/gnuplot-mode.html</a>) 生成Org
+表格存储的信息的 2D 和 3D 图形.要看到这一操作,请确保你在你的系统里同时安装了
+Gnuplot 和 Gnuplot mode. 然后在下面的表格里调用 <code>C-c " g</code> 或 <code>M-x
+    org-plot/gnuplot</code> :
+</p>
+
+<pre class="example">
+#+PLOT: title:"Citas" ind:1 deps:(3) type:2d with:histograms set:"yrange [0:]"
+| Sede      | Max cites | H-index |
+|-----------+-----------+---------|
+| Chile     |    257.72 |   21.39 |
+| Leeds     |    165.77 |   19.68 |
+| Sao Paolo |     71.00 |   11.50 |
+| Stockholm |    134.19 |   14.33 |
+| Morelia   |    257.56 |   17.67 |
+
+</pre>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Sede</th>
+<th scope="col" class="org-right">Max cites</th>
+<th scope="col" class="org-right">H-index</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Chile</td>
+<td class="org-right">257.72</td>
+<td class="org-right">21.39</td>
+</tr>
+
+<tr>
+<td class="org-left">Leeds</td>
+<td class="org-right">165.77</td>
+<td class="org-right">19.68</td>
+</tr>
+
+<tr>
+<td class="org-left">Sao Paolo</td>
+<td class="org-right">71.00</td>
+<td class="org-right">11.50</td>
+</tr>
+
+<tr>
+<td class="org-left">Stockholm</td>
+<td class="org-right">134.19</td>
+<td class="org-right">14.33</td>
+</tr>
+
+<tr>
+<td class="org-left">Morelia</td>
+<td class="org-right">257.56</td>
+<td class="org-right">17.67</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+注意,Org Plot 足够智能,可以将表格的头信息(不是表头)应用为图形标签.可以通过表
+前的 <code>PLOT</code> 关键词进一步控制绘图的标签,内容,类型和外观.完整的Org Plot 选项列表
+在下面.更多的信息和例子请查看 Org Plot 教程
+(<a href="https://orgmode.org/worg/org-tutorials/org-plot.html">https://orgmode.org/worg/org-tutorials/org-plot.html</a>).
+</p>
+</div>
+
+
+
+
+<ul class="org-ul">
+<li><a id="org4493b9e"></a>绘图选项(Plot options)<br />
+<div class="outline-text-5" id="text-org4493b9e">
+<dl class="org-dl">
+<dt><code>set</code></dt><dd>指定绘图时要设置的Gnuplot选项.</dd>
+<dt><code>title</code></dt><dd>指定绘图的标题.</dd>
+<dt><code>ind</code></dt><dd>指定表格的哪一行作为 <code>x</code> 轴使用.</dd>
+<dt><code>deps</code></dt><dd>如同 Lisp 风格的列表一样指定要绘制的列,用括号包围,并用空格分隔,例
+如 <code>dep:(3 4)</code> 来绘制第三和第四列.默认绘制除了 <code>ind</code> 列之外的所有列</dd>
+<dt><code>type</code></dt><dd>指定绘图是 <code>2d</code> , <code>3d</code> 还是 <code>grid</code> .</dd>
+<dt><code>with</code></dt><dd>为要绘制的每一列指定要插入的 <code>with</code> 选项.例如 <code>lines</code>, <code>points</code>, <code>boxes</code>,
+<code>impulses</code>. 默认值是 <code>lines</code>.</dd>
+<dt><code>file</code></dt><dd>如果想要绘制到文件,指定其为 <code>"path/to/desired/output-file"</code>.</dd>
+<dt><code>labels</code></dt><dd>用于 <code>deps</code> 的标签列表.默认是列的头信息(如果有的话).</dd>
+<dt><code>line</code></dt><dd>指定要插入到 Gnuplot 脚本的一整行.</dd>
+<dt><code>map</code></dt><dd>当绘制 <code>3d</code> 或 <code>gtid</code> 类型时,设置该选项为 <code>t</code>, 来绘制平面贴图而不是 <code>3d</code>
+坡度图.</dd>
+<dt><code>timefmt</code></dt><dd>指定Org mode 的时间戳在传递给Gnuplot 时的格式.默认是
+<code>%Y-%m-%d-%H:%M:%S</code>.</dd>
+<dt><code>script</code></dt><dd>如果你想要完全控制绘图过程,你可以指定一个绘图时使用的脚本文件&#x2013;
+将文件名放置在双引号之间.在绘图之前,指定脚本文件中的每一个 <code>$datafile</code> 实例
+都会被生成的数据文件的路径替换.注意:即使你设置了这个选项,也可能需要指定绘
+图类型,因为这可能影响数据文件的内容.</dd>
+</dl>
+</div>
+</li>
+
+<li><a id="org00523de"></a>ASCII 条形图(ASCII bar plots)<br />
+<div class="outline-text-5" id="text-org00523de">
+<p>
+当光标在一列上时,使用 <code>C-c " a</code> 或 <code>M-x orgtbl-ascii-plot</code> 来创造一个包含ASCII
+艺术的条形绘图(条形码?)的新列.这个绘图是通过常规的列公式实现的.当根源列改变
+时,条状绘图可以通过刷新表格来更新.例如使用 <code>C-u C-c *</code>.
+</p>
+
+<pre class="example">
+| Sede          | Max cites |              |
+|---------------+-----------+--------------|
+| Chile         |    257.72 | WWWWWWWWWWWW |
+| Leeds         |    165.77 | WWWWWWWh     |
+| Sao Paolo     |     71.00 | WWW;         |
+| Stockholm     |    134.19 | WWWWWW:      |
+| Morelia       |    257.56 | WWWWWWWWWWWW |
+| Rochefourchat |      0.00 |              |
+#+TBLFM: $3='(orgtbl-ascii-draw $2 0.0 257.72 12)
+
+</pre>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Sede</th>
+<th scope="col" class="org-right">Max cites</th>
+<th scope="col" class="org-left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Chile</td>
+<td class="org-right">257.72</td>
+<td class="org-left">WWWWWWWWWWWW</td>
+</tr>
+
+<tr>
+<td class="org-left">Leeds</td>
+<td class="org-right">165.77</td>
+<td class="org-left">WWWWWWWh</td>
+</tr>
+
+<tr>
+<td class="org-left">Sao Paolo</td>
+<td class="org-right">71.00</td>
+<td class="org-left">WWW;</td>
+</tr>
+
+<tr>
+<td class="org-left">Stockholm</td>
+<td class="org-right">134.19</td>
+<td class="org-left">WWWWWW:</td>
+</tr>
+
+<tr>
+<td class="org-left">Morelia</td>
+<td class="org-right">257.56</td>
+<td class="org-left">WWWWWWWWWWWW</td>
+</tr>
+
+<tr>
+<td class="org-left">Rochefourchat</td>
+<td class="org-right">0.00</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+上面例子里的公式是 Elisp 调用.
+</p>
+<dl class="org-dl">
+<dt><code>(orgtbl-ascii-draw VALUE MIN MAX &amp;optional WIDTH CHARACTERS)</code></dt><dd>该函数会
+在表格里绘制一个 ASCII 条状图. VALUE 是要绘制的值,它确定了要绘制的条状图
+的宽度.MIN 是将显示为空的值(零宽度栏).MAX 是将绘制填充所有宽度的值,不在这
+个范围(min2max)的值会被展示为 <code>too small</code> 或 ~too large.WIDTH 是从 MIN 到 MAX 的字符
+跨度,就是条形图的最大字符数量,默认值是12. CHARACTERS 是一个用来构成条形图
+的字符串,带有从纯白到纯黑的灰色阴影,它 默认为10个字符的常规ASCII字符字符
+串.</dd>
+</dl>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orga1ea788" class="outline-2">
-<h2 id="orga1ea788">导出(Exporting)</h2>
-<div class="outline-text-2" id="text-orga1ea788">
+
+<div id="outline-container-org799bd71" class="outline-2">
+<h2 id="org799bd71">超链接(Hyperlinks)</h2>
+<div class="outline-text-2" id="text-org799bd71">
+<p>
+像 HTML 一样,Org 提供了对文件内部的链接,其他文件的外部链接,新闻文章,邮件等的支
+持.
+</p>
+</div>
+
+<div id="outline-container-org71b26d2" class="outline-3">
+<h3 id="org71b26d2">链接格式(Link Format)</h3>
+<div class="outline-text-3" id="text-org71b26d2">
+<blockquote>
+<p>
+Org 里的链接是怎样的格式.
+</p>
+</blockquote>
+<p>
+Org 能识别普通URI, 可能会被尖括号包围.而且可以将其作为可点击链接激活.
+普通URI只能在定义良好的一组模式,见(<code>External Links</code> TODO). 与 URI 语法不同,他们
+不能包含括号,也不能包含空格.尖括号里使用 URI 没有这些限制.
+</p>
+
+<p>
+但是,常规的链接格式如下:
+</p>
+<pre class="example">
+[[LINK][DESCRIPTION]]
+</pre>
+<p>
+或者这样:
+</p>
+<pre class="example">
+[[LINK]]
+</pre>
+<p>
+LINK 部分的有些 <code>\</code> , <code>[</code> 和 <code>]</code> 字符需要被转义,也就是要在之前加一个 <code>\</code> 字符.更特殊
+的是,下面的字符,也只有下面的字符,是必须被转义的:
+</p>
+<ol class="org-ol">
+<li>所有 <code>[</code> 和 <code>]</code> 字符.</li>
+<li>在 <code>[</code> 或 <code>]</code> 之前的每个 <code>\</code> 字符.</li>
+<li>在链接最后的每个 <code>\</code> 字符.</li>
+</ol>
+
+
+<p>
+插入链接的函数(Handling Links)会正确地转义不明确的字符.当你直接在方括号里插入
+或粘贴URI时,只需要考虑上面的规则.当不是很确定时,你可以使用函数
+<code>org-link-escape</code>, 它会将链接字符串转换成其转义后的形式.
+</p>
+
+<p>
+一旦缓冲区里的一个链接完成了(所有括号都存在),Org 会更改其显示,以便显示
+<code>DESCRIPTION</code> 而不是 <code>[[LINK][DESCRIPTION]]</code>, 显示 <code>LINK</code> 而不是 <code>[[LINK]]</code>. 链接会使
+用 <code>org-link</code> 特征(face) 来高亮,默认情况下,是一个下划线的特征.
+</p>
+
+<p>
+你可以直接编辑链接的可视部分,如果没有描述部分,那就编辑的是链接,反之,则编辑的
+是描述部分.想要编辑链接的不可见部分,光标在链接上时使用 <code>C-c C-l</code> (Handling
+Links).
+</p>
+
+<p>
+如果当光标在链接可见部分的开头或最后之后按 <code>&lt;BS&gt;</code> ,你会删除那个位置的不可见的括
+号(更准确地说,确切的行为取决于光标是如何到达该位置的,参见 <code>Invisible Text</code>
+(elisp)TODO).这会使链接变得不完整,然后链接内部会重新作为普通文本显现出来.插入缺
+失的括号会将链接重新隐藏.要显示所有链接的内部结构,使用菜单: Org → Hyperlink →
+Literal links.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org00d006e" class="outline-3">
+<h3 id="org00d006e">内部链接(Internal Links)</h3>
+<div class="outline-text-3" id="text-org00d006e">
+<blockquote>
+<p>
+链接到当前文件的其他地方.
+</p>
+</blockquote>
+<p>
+一个不像URL(不是以任何一个已知的scheme或文件名开头)的链接,引用当前文件.当光标
+位于链接上时,你可以使用 <code>C-c C-o</code> 或鼠标点击来打开链接(Handling Links).
+</p>
+
+<p>
+Org 对文档内部的导航提供了一些改进.最值得注意的是,一个像 <code>[[#my-custom-id]]</code> 这
+样的构造专门针对 <code>CUSTOM_ID</code> 属性设置为 <code>my-custom-id</code> 的条目.此外,一个像这样:
+<code>[[*Some section]]</code> 的内部链接指向一个名字是 <code>Some section</code> 的标题.要插入指向标题
+的链接,缓冲区补全可以使用.只需键入一个星号再加上几个可选的字母到缓冲区,然后按
+<code>M-&lt;TAB&gt;</code>. 当前缓冲区的所有标题项都可由补全提供.
+</p>
+
+<p>
+当一个链接不属于上述的任一情况时,Org 会查找专用目标:使用双尖括号的相同字符串,
+例如 <code>&lt;&lt;My Target&gt;&gt;</code>.
+<a href="#org2a1ae9a">外部链接(External Links)</a>
+</p>
+
+<p>
+如果没有专用目标存在,链接会试图匹配缓冲区里元素的确切名称.命名,不出意料地,是
+用 <code>NAME</code> 关键字完成的,它必须放在它引用的元素之前的行中,如下面的示例：
+</p>
+<pre class="example">
+#+NAME: My Target
+| a  | table      |
+|----+------------|
+| of | four cells |
+</pre>
+
+<p>
+最后,如果上面的情况没有一个成功的,Org 会查找含有有链接文本而且加上 TODO 关键字和
+标签的标题,或者根据 <code>org-link-search-must-match-exact-headline</code> 的值开始纯文本
+查找.
+</p>
+
+<p>
+注意,你必须保证自定义ID, 特殊目标和名字在整个文档里是独一无二的.Org 提供了一
+个 linter 来帮助你完成这一过程,如果你需要的话.查看Org语法(Org Syntax)TODO.
+</p>
+
+<p>
+在导出时,内部链接用于标记对象和给他们赋值一个编号.标记后的对象随后由指向他们
+的链接引用.特别的,没有描述的链接显示为指定给标记对象的编号(当指向一个 <code>NAME</code> 关
+键字时, <code>CAPTION</code> 关键字是必须有的,因为要得到正确的编号).在下面的Org 缓冲区片段
+中:
+</p>
+<pre class="example">
+1. one item
+2. &lt;&lt;target&gt;&gt;another item
+Here we refer to item [[target]].
+</pre>
+<p>
+最后一句在导出时会展示为 <code>Here we refer to item 2</code>:
+</p>
+<ol class="org-ol">
+<li>one item</li>
+<li><a id="org6ae6852"></a>another item</li>
+</ol>
+<p>
+Here we refer to item <a href="#org6ae6852">2</a>.
+</p>
+
+<p>
+在非Org文件里,查找会找寻链接文本里的内容.在上面的例子里,查找的内容是 <code>target</code>.
+</p>
+
+<p>
+点击链接会在Org 自己的标记环上加上一个标记.你能通过 <code>C-c &amp;</code> 来返回到上一位置.直
+接连续多次使用这个命令,可以返回到先前记录的位置.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org7eddd9d" class="outline-3">
+<h3 id="org7eddd9d">无线电目标(Radio Targets)</h3>
+<div class="outline-text-3" id="text-org7eddd9d">
+<p>
+Org 可以自动将普通文本里出现的某些目标名称转换为链接.因此,在不显式创建链接的
+情况下,文本将链接到目标,并标记其位置.Radio 目标由三个尖括号包围.例如, 目标
+<code>&lt;&lt;&lt;My Target&gt;&gt;&gt;</code> 会导致正常文本中出现的每一个 <code>my target</code> 都作为链接激活.只有当
+文件首次加载到 Emacs 里时,才会自动扫描Org 文件里的 radio 目标.要在编辑时更新
+目标的列表,在光标位于目标上时,按 <code>C-c C-c</code> 即可. my target , My Target.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2a1ae9a" class="outline-3">
+<h3 id="org2a1ae9a">外部链接(External Links)</h3>
+</div>
+
+
+<div id="outline-container-org28c5848" class="outline-3">
+<h3 id="org28c5848">处理链接(Handling Links)</h3>
+<div class="outline-text-3" id="text-org28c5848">
+<p>
+Org 提供了使用正确语法创建链接,插入链接和打开链接的方法.
+</p>
+
+<p>
+最主要的方法是 <code>org-store-link</code>, 使用 <code>M-x org-store-link</code> 调用.因为其重要性,我们
+建议将其绑定为常用快捷键(*Activation TODO). 这个命令会保存光标所在位置的一个
+链接.这个链接是为了之后插入到Org 缓冲区而保存的(下面内容).创造的链接的类型取
+决于当前的缓冲区:
+</p>
+
+<dl class="org-dl">
+<dt>Org 模式缓冲区</dt><dd>对于Org 文件,如果光标处有一个 <code>&lt;&lt;target&gt;&gt;</code>, 链接会指向这个
+target. 没有,则链接会指向当前的标题(也是链接的描述内容).注意,如果标题包含有
+时间戳,时间戳会在链接里被删除,这会导致一个错误的链接,所以你应该避免在标题里
+使用时间戳.
+如果标题有 <code>CUSTOM_ID</code> 属性,会使用这个自定义的ID 来保存链接.此外,可选的是,根
+据 <code>org-id-link-to-org-use-id</code> 的值,来为链接创造全局唯一的 <code>ID</code> 属性(Org 的 ID
+库必须要先被加载,要么通过 <code>org-customize</code> 方法,要么在 <code>org-modules</code> 启用 <code>id</code> 模
+块,要么就在Emacs init 文件里添加 <code>require 'org-id</code>). 所以,在Org 缓冲区里使用
+这个命令可能会创造两个链接:一种使用自定义ID的人类可读的链接,另一种是全局唯
+一的即使条目从一个文件移动到另一个文件也有效的链接.在稍后插入链接时,你需要
+决定使用那一种链接.</dd>
+
+<dt>邮件/新闻客户端:VM,Rmail,Wanderlust,MH-E,Gnus </dt><dd>几乎所有的Emacs 邮件客户
+端都支持.指向当前文章的链接,或者在某些 Gnus 缓冲区里,指向组的链接.描述部分
+是根据变量 <code>org-link-email-description-format</code> 来构建的.默认情况下,链接指向收
+件人和主题.</dd>
+
+<dt>网页浏览器:W3,W3M 和 EWW</dt><dd>在这里,链接就是当前的URL, 页面标题就是描述部分.</dd>
+
+<dt>联系人(Contacts):BBDB</dt><dd>BBDB 缓冲区里创造的链接指向当前条目.</dd>
+
+<dt>聊天(Chat):IRC</dt><dd>对于IRC 链接,如果 <code>org-irc-link-to-logs</code> 变量非空,则创建
+<code>file</code> 类型的链接,指向光标在当前对话的日志文件的位置.若为空,则保存一个 <code>irc</code> 类
+型的链接,指向光标所在的用户/频道/服务器.</dd>
+
+<dt>其他文件</dt><dd>对于其他类型文件,链接指向文件,加上指向当前行内容的搜索字符串(见
+Search Options TODO). 如果存在选区,选中的文本组成搜索字符串.你可以编写自定
+义的Lisp 函数来选择搜索字符串和针对特定文件类型执行搜索(见 Custom Searches
+TODO). 你也可以定义指向其他文件的特定链接(见 Adding Hyperlink Types TODO).</dd>
+
+<dt>Agenda 视图</dt><dd>当光标位于 Agenda(日程) 视图时,创造的链接会指向光标所在当前
+行引用的条目.</dd>
+</dl>
+
+
+<p>
+在Org 缓冲区中,下面的命令创建,浏览或者更通俗地讲,对链接进行操作:
+</p>
+
+<dl class="org-dl">
+<dt><code>C-c C-l</code> &#x2013; <code>(org-insert-link)</code></dt><dd>插入一个链接<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.会提示输入要
+被插入到缓冲区的链接.你可以通过键入内部链接的文本,或者上面例子里提到的链接
+类型来插入一个链接.如果这时有文本被选中,文本会成为默认的链接描述.
+<dl class="org-dl">
+<dt>插入保存的链接</dt><dd>在当前会话中所有保存的链接都会作为提示输入的历史记录的
+一部分,所以你可以使用 <code>&lt;UP&gt;</code> 和 <code>&lt;DOWN&gt;</code> (<code>M-p</code> , <code>M-n</code>) 来获取这些链接.</dd>
+<dt>补全支持</dt><dd>用 <code>&lt;TAB&gt;</code> 触发补全可以帮助你插入有效的链接前缀(像 <code>http</code> 或
+<code>ftp</code>), 甚至包括通过链接缩写(见TODO[*链接缩写(Link Abbreviations)]])定义的
+缩写.如果你在只插入前缀之后按 <code>&lt;RET&gt;</code>,Org 会提供这些链接类型的特定的补全支
+持.例如, 如果你键入 <code>file&lt;RET&gt;</code> 或者使用 <code>C-u C-c C-l</code> 看接下来会发生什么,Org
+会提供文 件名补全.键入 <code>bbdb&lt;RET&gt;</code> 提供联系人名字补全.</dd>
+</dl></dd>
+
+<dt><code>C-u C-c C-l</code></dt><dd>当上面的命令加上 <code>C-u</code> 前缀参数一起使用时,插入一个链接到文件
+的链接.你可以使用文件名补全来选择文件的类型.如果链接文件在当前目录或当前目录的子目录,或者路径是使用相对
+路径格式 <code>../</code>, 那么插入的文件路径是相对路径;否则,就会使用绝对路径.如果可能,
+使用 <code>~/</code> 来标示家目录.可以使用两个 <code>C-u C-u</code> 来强制使用绝对路径.</dd>
+
+<dt><code>C-c C-l</code> (光标在链接上)</dt><dd>当光标在链接上时,该命令允许你编辑链接的链接和描述
+部分.</dd>
+
+<dt><code>C-c C-o</code> &#x2013; <code>(org-open-at-point)</code></dt><dd>打开光标处链接.链接是URL,该命令会打开网页浏览
+器(使用 <code>browse-url-at-point</code> 方法);如果是相应链接,会运行
+VM/MH-E/Wanderlust/Rmail/Gnus/BBDBc 程序;如果是脚本链接,会执行脚本.当光标处
+是内部链接时,命令会运行相应查找操作.当光标位于标题的标签(tag)部分,命令会创
+建一个响应的标签视图.</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="outline-container-org38e7ae5" class="outline-2">
+<h2 id="org38e7ae5">富文本的标记(Markup for Rich Contents)</h2>
+<div class="outline-text-2" id="text-org38e7ae5">
+</div>
+<div id="outline-container-orgf9d9b9f" class="outline-3">
+<h3 id="orgf9d9b9f">创建脚注(Creating Footnotes)</h3>
+<div class="outline-text-3" id="text-orgf9d9b9f">
+<p>
+脚注从第0列方括号中的脚注标记开始,不允许由缩进,到下一个脚注的定义,下一个
+标题或连续两个空白行后结束.脚注引用只是文本里方括号中的标记.标记总是以 <code>fn:</code> 开
+头,例如:
+</p>
+<pre class="example">
+The Org homepage[fn:1] now looks a lot better than it used to.
+...
+[fn:1] The link is: https://orgmode.org
+</pre>
+
+<p>
+Org 模式将基于数字的语法扩展到命名脚注和可选的内联定义.以下是有效的参考资料:
+</p>
+
+<dl class="org-dl">
+<dt><code>[fn:NAME]</code></dt><dd>一种命名脚注引用. 其中 NAME 是一个唯一的标签词,或者为了便于自
+动创建,是一个数字.</dd>
+
+<dt><code>[fn:: This is the inline definition of this footnote]</code></dt><dd>一个直接在引用处给
+出定义的脚注.</dd>
+
+<dt><code>[fn:NAME: a definition]</code></dt><dd>一个脚注的内联定义,同时也指定注释的名称.因为 Org
+允许多个引用指向同一个注释,所以,你可以使用 <code>[fn:NAME]</code> 来创建额外的引用.</dd>
+</dl>
+
+
+<p>
+脚注标签可以自动创建,你也可以自己创建名称.这一行为是由变量
+<code>org-footnote-auto-label</code> <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.和其对应的 <code>STARTUP</code> 关键字处理.查看该变量的文档字符串
+来获取详细信息.
+</p>
+
+<p>
+下面的命令用来处理脚注:
+</p>
+
+<dl class="org-dl">
+<dt><code>C-c C-x f</code></dt><dd>脚注操作命令.当光标在脚注引用上时,跳转到定义.当在定义上时,跳转
+到第一个引用的位置 <code>[fn:2]</code>. 既不在脚注的引用,也不在其定义上时,就创建一个新的
+脚注.取决于变量 <code>org-footnote-define-inline</code> 的值,脚注的定义会被放在文本里作
+为引用的一部分.或者单独放置在变量 <code>org-footnote-section</code> 决定的位置上.
+当这个命令加上前缀参数一起调用时,将提供一个附加选项的菜单:
+<code>s</code> : 根据引用序列排序脚注.
+<code>r</code> : 重新编码简单的 <code>fn:N</code> 脚注.
+<code>S</code> : 先 <code>r</code> 重编码,后 <code>s</code> 排序的操作的简写.
+<code>n</code> : 重命名所有脚注到 <code>fn:1</code> .. <code>fn:n</code> 的序列.
+<code>d</code> : 删除当前脚注,包括定义和引用.
+根据变量 <code>org-footnote-auto-adjust</code> <sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> 的值,重排序和重编号可以在插入和删除脚注之
+后自动进行.</dd>
+
+<dt><code>C-c C-c</code></dt><dd>当光标位于一个脚注引用位置时,跳转到定义位置.如果光标在定义位置,
+跳转回到引用位置.当在脚注位置时加上前缀参数调用,会提供和 <code>C-c C-x f</code> 一样的菜
+单.</dd>
+
+<dt><code>C-c C-o</code> 或 <code>mouse-1/2</code></dt><dd>脚注标签也是指向相应定义或引用的链接,你也可以使用普
+通的命令打开这些链接.</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgaa2bcfa" class="outline-2">
+<h2 id="orgaa2bcfa">导出(Exporting)</h2>
+<div class="outline-text-2" id="text-orgaa2bcfa">
 <p>
 当需要将自己的 org 笔记打印出来,发布到网上,或是分享给不用 Org 的人.Orrg 可以将
 文档转化并导出为各种其他的格式,同时尽可能的保持文档结构和 markup (富文本标记内
@@ -1983,19 +3351,35 @@ back-ends 可以通过两种方式加载:
 加载 Markdown 格式的 back-end, 在 Eamcs 配置文件里添加 <code>(require 'ox-md)</code></li>
 </ul>
 </div>
-<div id="outline-container-org7beac47" class="outline-3">
-<h3 id="org7beac47">The Export Dispatcher(The main interface.) 导出调度器</h3>
-<div class="outline-text-3" id="text-org7beac47">
+<div id="outline-container-orge4bc96d" class="outline-3">
+<h3 id="orge4bc96d">The Export Dispatcher(The main interface.) 导出调度器</h3>
+<div class="outline-text-3" id="text-orge4bc96d">
 <p>
 To Be Continued!
 </p>
 </div>
 </div>
 </div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara">注意,你不是必须使用这个命
+令插入链接,Org 的链接时纯文本,你可以直接键入或粘贴他们到缓冲区里.使用这个命
+令,链接会自动用双括号包围,并且你会被要求输入可选的描述性文本</div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara">相应的缓冲区设置是: '#+STARTUP: fninline' 或
+'#+STARTUP: nofninline'</div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara">相应的缓冲区设置是 '#+STARTUP:
+fninline' 或 '#+STARTUP: nofninline'</div></div>
+
+
 </div>
+</div></div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-01-18 Tue 15:51</p>
+<p class="date">Created: 2022-01-22 Sat 16:19</p>
 <p class="validation"></p>
 </div>
 </body>
