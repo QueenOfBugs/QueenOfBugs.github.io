@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-01-24 Mon 06:38 -->
+<!-- 2022-01-24 Mon 06:55 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>用org-mode配置所有dotfile</title>
@@ -240,108 +240,108 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8687c07">用org-babel配置所有的dotfile</a>
+<li><a href="#org3b05ba7">用org-babel配置所有的dotfile</a>
 <ul>
-<li><a href="#orge05da5e">Org-babel</a></li>
-<li><a href="#orge1859fe">将一个代码块的执行结果或返回值传递给另一个代码块</a></li>
-<li><a href="#orgc7f3925">每次保存这个文件自动执行 <code>org-bable-tangle</code></a></li>
+<li><a href="#org5e6f544">Org-babel</a></li>
+<li><a href="#orgca94702">将一个代码块的执行结果或返回值传递给另一个代码块</a></li>
+<li><a href="#org45a1f3b">每次保存这个文件自动执行 <code>org-bable-tangle</code></a></li>
 </ul>
 </li>
-<li><a href="#orgc069a93">Emacs</a>
+<li><a href="#org0201221">Emacs</a>
 <ul>
-<li><a href="#orgefc18df">显示emacs启动时间</a></li>
-<li><a href="#org50f1c23">Native Compilation</a></li>
-<li><a href="#org941da21">包管理工具</a></li>
-<li><a href="#orgabb04fd">默认编码格式</a></li>
-<li><a href="#org91f25e5">Server Mode</a></li>
-<li><a href="#orgcf0a976">查看启动过程耗时</a></li>
-<li><a href="#org13f5dc5">基本的设置</a>
+<li><a href="#org6d73e3e">显示emacs启动时间</a></li>
+<li><a href="#org64f52bf">Native Compilation</a></li>
+<li><a href="#orga38a6a0">包管理工具</a></li>
+<li><a href="#org63a56a1">默认编码格式</a></li>
+<li><a href="#org05a2990">Server Mode</a></li>
+<li><a href="#org1e8f2b9">查看启动过程耗时</a></li>
+<li><a href="#orgd557cad">基本的设置</a>
 <ul>
-<li><a href="#org9096786">取消初始界面的菜单,工具栏,滚动条等</a></li>
-<li><a href="#org36d932e">优化滚动的表现</a></li>
-<li><a href="#org052f88f">窗口透明度和最大化</a></li>
-<li><a href="#org5be5371">字体设置</a></li>
-<li><a href="#org284743a">状态栏设置</a></li>
-<li><a href="#orgf406ac3">更好的括号展示</a></li>
-<li><a href="#org069dfd1">doom主题</a></li>
-<li><a href="#org22a7fda">行号设置</a></li>
-<li><a href="#org0f888de">Workspace</a></li>
-<li><a href="#org0fd5347">NOtifications</a></li>
-<li><a href="#orgf876065">Auto-Saving changed files</a></li>
-<li><a href="#org4ba924a">Auto-Reverting Changed Files</a></li>
-<li><a href="#org18e3972">UI Toggles</a></li>
+<li><a href="#org48579c9">取消初始界面的菜单,工具栏,滚动条等</a></li>
+<li><a href="#orgec46703">优化滚动的表现</a></li>
+<li><a href="#org2382147">窗口透明度和最大化</a></li>
+<li><a href="#orgff105db">字体设置</a></li>
+<li><a href="#orgdb8f235">状态栏设置</a></li>
+<li><a href="#org6976f28">更好的括号展示</a></li>
+<li><a href="#orga104526">doom主题</a></li>
+<li><a href="#org382df90">行号设置</a></li>
+<li><a href="#org75d1da9">Workspace</a></li>
+<li><a href="#orgf6bf59a">NOtifications</a></li>
+<li><a href="#org1ff86b9">Auto-Saving changed files</a></li>
+<li><a href="#orgf8f66e5">Auto-Reverting Changed Files</a></li>
+<li><a href="#org7442091">UI Toggles</a></li>
 </ul>
 </li>
-<li><a href="#orgbfa209e">按键设置</a>
+<li><a href="#org44916bd">按键设置</a>
 <ul>
-<li><a href="#orgd466553">查看使用了哪些命令</a></li>
-<li><a href="#orge41c2dc">取消ESC作为 <code>M-x</code> 的前缀按键,将其设置为和Vim类似的退出命令 <code>C-g</code></a></li>
-<li><a href="#orgb963f6a">取消 <code>C-u</code> 作为 <code>[count]</code> 的作用,因为要使用Vim的 <code>C-u</code> 做翻页</a></li>
-<li><a href="#orgbb5fe04">Evil</a></li>
+<li><a href="#orgfe4b8b9">查看使用了哪些命令</a></li>
+<li><a href="#org90e7a9f">取消ESC作为 <code>M-x</code> 的前缀按键,将其设置为和Vim类似的退出命令 <code>C-g</code></a></li>
+<li><a href="#orgb78c31a">取消 <code>C-u</code> 作为 <code>[count]</code> 的作用,因为要使用Vim的 <code>C-u</code> 做翻页</a></li>
+<li><a href="#org703737b">Evil</a></li>
 </ul>
 </li>
-<li><a href="#org08bc464">编辑设置</a>
+<li><a href="#org4daa352">编辑设置</a>
 <ul>
-<li><a href="#org048bd97">Tab Width</a></li>
-<li><a href="#orge231b83">Use spaces instead of tabs for indnetation</a></li>
-<li><a href="#org8c3bb2a">Commenting Lines</a></li>
-<li><a href="#org81a31d8">Automatically Clean whitespace</a></li>
+<li><a href="#org0a90904">Tab Width</a></li>
+<li><a href="#org5db39aa">Use spaces instead of tabs for indnetation</a></li>
+<li><a href="#org9efa86a">Commenting Lines</a></li>
+<li><a href="#orgd8f0b43">Automatically Clean whitespace</a></li>
 </ul>
 </li>
-<li><a href="#org8444ef7">按键面板</a></li>
-<li><a href="#orgeac9e35">按键绑定</a>
+<li><a href="#orgec3bd30">按键面板</a></li>
+<li><a href="#org69c37e4">按键绑定</a>
 <ul>
-<li><a href="#org259c339">general.el 用来管理快捷键绑定</a></li>
-<li><a href="#orgff8a683">hydra 来绑定快捷键</a></li>
-<li><a href="#org9f070c6">Evil 快捷键绑定</a></li>
+<li><a href="#org9537496">general.el 用来管理快捷键绑定</a></li>
+<li><a href="#orgf5a02d7">hydra 来绑定快捷键</a></li>
+<li><a href="#org65a90e6">Evil 快捷键绑定</a></li>
 </ul>
 </li>
-<li><a href="#orgeeed5a5">文件浏览器</a></li>
-<li><a href="#orgb0f505e">Minibuffer补全(Emacs 命令补全)</a></li>
-<li><a href="#orgd629012">Development</a>
+<li><a href="#org2c6dc83">文件浏览器</a></li>
+<li><a href="#orgfc540e8">Minibuffer补全(Emacs 命令补全)</a></li>
+<li><a href="#orgc1379cb">Development</a>
 <ul>
-<li><a href="#org9567676">Lsp-mode</a></li>
-<li><a href="#orgceb1a2e">Python<sub>settings</sub></a></li>
-<li><a href="#org3938557">Format python code</a></li>
-<li><a href="#org9ed631c">Format All</a></li>
-<li><a href="#orgee7c319">Elpy &#x2013; IDE for py</a></li>
+<li><a href="#orgedbb014">Lsp-mode</a></li>
+<li><a href="#org2eac3d6">Python<sub>settings</sub></a></li>
+<li><a href="#org5dcad9d">Format python code</a></li>
+<li><a href="#org508c198">Format All</a></li>
+<li><a href="#org9a6e46b">Elpy &#x2013; IDE for py</a></li>
 </ul>
 </li>
-<li><a href="#orgd8ce8f8">Orgmode</a>
+<li><a href="#org55a43b8">Orgmode</a>
 <ul>
-<li><a href="#org5dbaf20">CodeBlock模版</a></li>
-<li><a href="#org6514859">outline</a></li>
-<li><a href="#org5643a86">Org-roam</a></li>
-<li><a href="#org539f6dc">Org-mode</a></li>
-<li><a href="#orgde42ff4">Pomodoro</a></li>
-<li><a href="#orgcadcb60">tracking habits</a></li>
-<li><a href="#org502fb4c">Auto insert newline</a></li>
-<li><a href="#orgcea6561">org-capture-template</a></li>
-<li><a href="#org24555a5">Encrypt</a></li>
+<li><a href="#orgcec651b">CodeBlock模版</a></li>
+<li><a href="#org7c6d1fb">outline</a></li>
+<li><a href="#orgef2cdfe">Org-roam</a></li>
+<li><a href="#orgd4bfba4">Org-mode</a></li>
+<li><a href="#org839c044">Pomodoro</a></li>
+<li><a href="#orgcf26ff7">tracking habits</a></li>
+<li><a href="#org2279651">Auto insert newline</a></li>
+<li><a href="#orgd0bf308">org-capture-template</a></li>
+<li><a href="#orgbd9b74f">Encrypt</a></li>
 </ul>
 </li>
-<li><a href="#org4c533c6">Productivity</a>
+<li><a href="#org8aa0b91">Productivity</a>
 <ul>
-<li><a href="#org92f9e69">括号补全</a></li>
-<li><a href="#orgeef4407">Snippet</a></li>
+<li><a href="#org506a496">括号补全</a></li>
+<li><a href="#org0bae42f">Snippet</a></li>
 </ul>
 </li>
-<li><a href="#orgcd06583">Ebook</a></li>
-<li><a href="#orgce68961">Magit</a></li>
-<li><a href="#org8c8ce7c">Save Emacs Sessions</a></li>
+<li><a href="#org10a2789">Ebook</a></li>
+<li><a href="#org337d98b">Magit</a></li>
+<li><a href="#orge9a016b">Save Emacs Sessions</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org8687c07" class="outline-2">
-<h2 id="org8687c07">用org-babel配置所有的dotfile</h2>
-<div class="outline-text-2" id="text-org8687c07">
+<div id="outline-container-org3b05ba7" class="outline-2">
+<h2 id="org3b05ba7">用org-babel配置所有的dotfile</h2>
+<div class="outline-text-2" id="text-org3b05ba7">
 </div>
-<div id="outline-container-orge05da5e" class="outline-3">
-<h3 id="orge05da5e">Org-babel</h3>
-<div class="outline-text-3" id="text-orge05da5e">
+<div id="outline-container-org5e6f544" class="outline-3">
+<h3 id="org5e6f544">Org-babel</h3>
+<div class="outline-text-3" id="text-org5e6f544">
 <p>
 org-mode 可以执行代码块用的是org-babel的功能
 <code>org-babel-tangle(C-c C-v t)</code> 是一个macs内置的方法,用来将org文件中的代码块写入到指定的文件中,理论上可以利用这个方法配置一切基于文本文件配置的软件
@@ -369,9 +369,9 @@ org-mode 可以执行代码块用的是org-babel的功能
 </div>
 </div>
 
-<div id="outline-container-orge1859fe" class="outline-3">
-<h3 id="orge1859fe">将一个代码块的执行结果或返回值传递给另一个代码块</h3>
-<div class="outline-text-3" id="text-orge1859fe">
+<div id="outline-container-orgca94702" class="outline-3">
+<h3 id="orgca94702">将一个代码块的执行结果或返回值传递给另一个代码块</h3>
+<div class="outline-text-3" id="text-orgca94702">
 <p>
 eamcs默认执行的只有emacs-lisp语言的代码块,开启其他语言的代码块执行功能需要添加配置:
 </p>
@@ -393,7 +393,7 @@ eamcs默认执行的只有emacs-lisp语言的代码块,开启其他语言的代�
 </div>
 
 <div class="org-src-container">
-<pre class="src src-python" id="orgc4cd168"><span style="font-weight: bold;">import</span> random
+<pre class="src src-python" id="orgfc45746"><span style="font-weight: bold;">import</span> random
 <span style="font-weight: bold;">return</span> random.randint(0,100)
 </pre>
 </div>
@@ -403,9 +403,9 @@ eamcs默认执行的只有emacs-lisp语言的代码块,开启其他语言的代�
 </div>
 </div>
 
-<div id="outline-container-orgc7f3925" class="outline-3">
-<h3 id="orgc7f3925">每次保存这个文件自动执行 <code>org-bable-tangle</code></h3>
-<div class="outline-text-3" id="text-orgc7f3925">
+<div id="outline-container-org45a1f3b" class="outline-3">
+<h3 id="org45a1f3b">每次保存这个文件自动执行 <code>org-bable-tangle</code></h3>
+<div class="outline-text-3" id="text-org45a1f3b">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">efs/org-babel-tangle-config</span>()
   (<span style="font-weight: bold;">when</span> (string-equal (buffer-file-name)
@@ -419,13 +419,13 @@ eamcs默认执行的只有emacs-lisp语言的代码块,开启其他语言的代�
 </div>
 </div>
 
-<div id="outline-container-orgc069a93" class="outline-2">
-<h2 id="orgc069a93">Emacs</h2>
-<div class="outline-text-2" id="text-orgc069a93">
+<div id="outline-container-org0201221" class="outline-2">
+<h2 id="org0201221">Emacs</h2>
+<div class="outline-text-2" id="text-org0201221">
 </div>
-<div id="outline-container-orgefc18df" class="outline-3">
-<h3 id="orgefc18df">显示emacs启动时间</h3>
-<div class="outline-text-3" id="text-orgefc18df">
+<div id="outline-container-org6d73e3e" class="outline-3">
+<h3 id="org6d73e3e">显示emacs启动时间</h3>
+<div class="outline-text-3" id="text-org6d73e3e">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">The default is 800 kilobytes.  Measured in bytes.</span>
 (<span style="font-weight: bold;">setq</span> gc-cons-threshold (* 50 1000 1000))
@@ -443,9 +443,9 @@ eamcs默认执行的只有emacs-lisp语言的代码块,开启其他语言的代�
 </div>
 </div>
 
-<div id="outline-container-org50f1c23" class="outline-3">
-<h3 id="org50f1c23">Native Compilation</h3>
-<div class="outline-text-3" id="text-org50f1c23">
+<div id="outline-container-org64f52bf" class="outline-3">
+<h3 id="org64f52bf">Native Compilation</h3>
+<div class="outline-text-3" id="text-org64f52bf">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Silence compiler warnings as they can be pretty disruptive</span>
 (<span style="font-weight: bold;">setq</span> comp-async-report-warnings-errors nil)
@@ -454,9 +454,9 @@ eamcs默认执行的只有emacs-lisp语言的代码块,开启其他语言的代�
 </div>
 </div>
 
-<div id="outline-container-org941da21" class="outline-3">
-<h3 id="org941da21">包管理工具</h3>
-<div class="outline-text-3" id="text-org941da21">
+<div id="outline-container-orga38a6a0" class="outline-3">
+<h3 id="orga38a6a0">包管理工具</h3>
+<div class="outline-text-3" id="text-orga38a6a0">
 <blockquote>
 <p>
 这是写给我自己记录用的,免得过些时候忘了写这个配置文件时候的这些想法,看到这里记得把这写碎碎念移到介绍emacs包管理工具或其他合适的地方.
@@ -498,9 +498,9 @@ Emacs的社区成员为我们提供了许多强大的配置,这些配置被整�
 </div>
 </div>
 
-<div id="outline-container-orgabb04fd" class="outline-3">
-<h3 id="orgabb04fd">默认编码格式</h3>
-<div class="outline-text-3" id="text-orgabb04fd">
+<div id="outline-container-org63a56a1" class="outline-3">
+<h3 id="org63a56a1">默认编码格式</h3>
+<div class="outline-text-3" id="text-org63a56a1">
 <p>
 避免windows上可能会出现的编码错误
 </p>
@@ -510,18 +510,18 @@ Emacs的社区成员为我们提供了许多强大的配置,这些配置被整�
 </div>
 </div>
 </div>
-<div id="outline-container-org91f25e5" class="outline-3">
-<h3 id="org91f25e5">Server Mode</h3>
-<div class="outline-text-3" id="text-org91f25e5">
+<div id="outline-container-org05a2990" class="outline-3">
+<h3 id="org05a2990">Server Mode</h3>
+<div class="outline-text-3" id="text-org05a2990">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(server-start)
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgcf0a976" class="outline-3">
-<h3 id="orgcf0a976">查看启动过程耗时</h3>
-<div class="outline-text-3" id="text-orgcf0a976">
+<div id="outline-container-org1e8f2b9" class="outline-3">
+<h3 id="org1e8f2b9">查看启动过程耗时</h3>
+<div class="outline-text-3" id="text-org1e8f2b9">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package benchmark-init
   <span style="font-weight: bold;">:ensure</span> t
@@ -533,13 +533,13 @@ Emacs的社区成员为我们提供了许多强大的配置,这些配置被整�
 </div>
 </div>
 
-<div id="outline-container-org13f5dc5" class="outline-3">
-<h3 id="org13f5dc5">基本的设置</h3>
-<div class="outline-text-3" id="text-org13f5dc5">
+<div id="outline-container-orgd557cad" class="outline-3">
+<h3 id="orgd557cad">基本的设置</h3>
+<div class="outline-text-3" id="text-orgd557cad">
 </div>
-<div id="outline-container-org9096786" class="outline-4">
-<h4 id="org9096786">取消初始界面的菜单,工具栏,滚动条等</h4>
-<div class="outline-text-4" id="text-org9096786">
+<div id="outline-container-org48579c9" class="outline-4">
+<h4 id="org48579c9">取消初始界面的菜单,工具栏,滚动条等</h4>
+<div class="outline-text-4" id="text-org48579c9">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> inhibit-startup-message t)
 (scroll-bar-mode 0)              <span style="font-weight: bold; font-style: italic;">;</span><span style="font-weight: bold; font-style: italic;">Disable visible scrollbar</span>
@@ -554,9 +554,9 @@ Emacs的社区成员为我们提供了许多强大的配置,这些配置被整�
 </div>
 </div>
 
-<div id="outline-container-org36d932e" class="outline-4">
-<h4 id="org36d932e">优化滚动的表现</h4>
-<div class="outline-text-4" id="text-org36d932e">
+<div id="outline-container-orgec46703" class="outline-4">
+<h4 id="orgec46703">优化滚动的表现</h4>
+<div class="outline-text-4" id="text-orgec46703">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> mouse-wheel-scroll-amount '(1 ((shift) . 1))) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">one line at a time</span>
 (<span style="font-weight: bold;">setq</span> mouse-wheel-progressive-speed nil) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">don't accelerate scrolling</span>
@@ -568,9 +568,9 @@ Emacs的社区成员为我们提供了许多强大的配置,这些配置被整�
 </div>
 </div>
 
-<div id="outline-container-org052f88f" class="outline-4">
-<h4 id="org052f88f">窗口透明度和最大化</h4>
-<div class="outline-text-4" id="text-org052f88f">
+<div id="outline-container-org2382147" class="outline-4">
+<h4 id="org2382147">窗口透明度和最大化</h4>
+<div class="outline-text-4" id="text-org2382147">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(set-frame-parameter (selected-frame) 'alpha '(90 . 90))
 (add-to-list 'default-frame-alist '(alpha . (90 . 90)))
@@ -581,9 +581,9 @@ Emacs的社区成员为我们提供了许多强大的配置,这些配置被整�
 </div>
 </div>
 
-<div id="outline-container-org5be5371" class="outline-4">
-<h4 id="org5be5371">字体设置</h4>
-<div class="outline-text-4" id="text-org5be5371">
+<div id="outline-container-orgff105db" class="outline-4">
+<h4 id="orgff105db">字体设置</h4>
+<div class="outline-text-4" id="text-orgff105db">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">'han &#30340;&#33050;&#26412;&#31867;&#22411;&#23545;&#24212;CJK&#19977;&#31181;&#35821;&#35328;&#30340;&#23383;&#31526; 'latin &#23545;&#24212;&#33521;&#25991;&#23383;&#31526;</span>
 <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(set-fontset-font "fontset-default" 'han "Xiaolai Mono SC")</span>
@@ -596,13 +596,13 @@ Emacs的社区成员为我们提供了许多强大的配置,这些配置被整�
 </div>
 </div>
 
-<div id="outline-container-org284743a" class="outline-4">
-<h4 id="org284743a">状态栏设置</h4>
-<div class="outline-text-4" id="text-org284743a">
+<div id="outline-container-orgdb8f235" class="outline-4">
+<h4 id="orgdb8f235">状态栏设置</h4>
+<div class="outline-text-4" id="text-orgdb8f235">
 </div>
 <ul class="org-ul">
-<li><a id="orge392daf"></a>Basic Customization<br />
-<div class="outline-text-5" id="text-orge392daf">
+<li><a id="org78629a5"></a>Basic Customization<br />
+<div class="outline-text-5" id="text-org78629a5">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> display-time-format <span style="font-style: italic;">"%H:%M %p %Y-%m-%d %j"</span>
       dispaly-time-default-load-average nil)
@@ -613,8 +613,8 @@ Emacs的社区成员为我们提供了许多强大的配置,这些配置被整�
 </div>
 </li>
 
-<li><a id="org39556b4"></a>Enable mode Diminishing<br />
-<div class="outline-text-5" id="text-org39556b4">
+<li><a id="orge607818"></a>Enable mode Diminishing<br />
+<div class="outline-text-5" id="text-orge607818">
 <p>
 The diminish package hides pesky minor modes from the modelines.
 </p>
@@ -625,8 +625,8 @@ The diminish package hides pesky minor modes from the modelines.
 </div>
 </li>
 
-<li><a id="org53d5e53"></a>Smart mode line<br />
-<div class="outline-text-5" id="text-org53d5e53">
+<li><a id="orge29db65"></a>Smart mode line<br />
+<div class="outline-text-5" id="text-orge29db65">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package smart-mode-line
   <span style="font-weight: bold;">:disabled</span>
@@ -670,8 +670,8 @@ The diminish package hides pesky minor modes from the modelines.
 </div>
 </div>
 </li>
-<li><a id="orgac02aa0"></a>Doom modeline<br />
-<div class="outline-text-5" id="text-orgac02aa0">
+<li><a id="org185b56f"></a>Doom modeline<br />
+<div class="outline-text-5" id="text-org185b56f">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package minions           <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">&#38544;&#34255;&#24403;&#21069;&#21551;&#29992;&#20102;&#21738;&#20123;minor mode</span>
   <span style="font-weight: bold;">:hook</span> (doom-modeline-mode . minions-mode))
@@ -705,9 +705,9 @@ The diminish package hides pesky minor modes from the modelines.
 </ul>
 </div>
 
-<div id="outline-container-orgf406ac3" class="outline-4">
-<h4 id="orgf406ac3">更好的括号展示</h4>
-<div class="outline-text-4" id="text-orgf406ac3">
+<div id="outline-container-org6976f28" class="outline-4">
+<h4 id="org6976f28">更好的括号展示</h4>
+<div class="outline-text-4" id="text-org6976f28">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#25353;&#19981;&#21516;&#39068;&#33394;&#26174;&#31034;&#25104;&#23545;&#25324;&#21495;</span>
 (use-package rainbow-delimiters
@@ -723,9 +723,9 @@ The diminish package hides pesky minor modes from the modelines.
 </div>
 </div>
 
-<div id="outline-container-org069dfd1" class="outline-4">
-<h4 id="org069dfd1">doom主题</h4>
-<div class="outline-text-4" id="text-org069dfd1">
+<div id="outline-container-orga104526" class="outline-4">
+<h4 id="orga104526">doom主题</h4>
+<div class="outline-text-4" id="text-orga104526">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package doom-themes
   <span style="font-weight: bold;">:init</span>
@@ -737,9 +737,9 @@ The diminish package hides pesky minor modes from the modelines.
 </div>
 </div>
 
-<div id="outline-container-org22a7fda" class="outline-4">
-<h4 id="org22a7fda">行号设置</h4>
-<div class="outline-text-4" id="text-org22a7fda">
+<div id="outline-container-org382df90" class="outline-4">
+<h4 id="org382df90">行号设置</h4>
+<div class="outline-text-4" id="text-org382df90">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 (column-number-mode)
@@ -761,9 +761,9 @@ The diminish package hides pesky minor modes from the modelines.
 </div>
 </div>
 
-<div id="outline-container-org0f888de" class="outline-4">
-<h4 id="org0f888de">Workspace</h4>
-<div class="outline-text-4" id="text-org0f888de">
+<div id="outline-container-org75d1da9" class="outline-4">
+<h4 id="org75d1da9">Workspace</h4>
+<div class="outline-text-4" id="text-org75d1da9">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package perspective
   <span style="font-weight: bold;">:demand</span> t
@@ -780,9 +780,9 @@ The diminish package hides pesky minor modes from the modelines.
 </div>
 </div>
 </div>
-<div id="outline-container-org0fd5347" class="outline-4">
-<h4 id="org0fd5347">NOtifications</h4>
-<div class="outline-text-4" id="text-org0fd5347">
+<div id="outline-container-orgf6bf59a" class="outline-4">
+<h4 id="orgf6bf59a">NOtifications</h4>
+<div class="outline-text-4" id="text-orgf6bf59a">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package alert
   <span style="font-weight: bold;">:commands</span> alert
@@ -792,9 +792,9 @@ The diminish package hides pesky minor modes from the modelines.
 </div>
 </div>
 </div>
-<div id="outline-container-orgf876065" class="outline-4">
-<h4 id="orgf876065">Auto-Saving changed files</h4>
-<div class="outline-text-4" id="text-orgf876065">
+<div id="outline-container-org1ff86b9" class="outline-4">
+<h4 id="org1ff86b9">Auto-Saving changed files</h4>
+<div class="outline-text-4" id="text-org1ff86b9">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package super-save
   <span style="font-weight: bold;">:defer</span> 1
@@ -806,9 +806,9 @@ The diminish package hides pesky minor modes from the modelines.
 </div>
 </div>
 </div>
-<div id="outline-container-org4ba924a" class="outline-4">
-<h4 id="org4ba924a">Auto-Reverting Changed Files</h4>
-<div class="outline-text-4" id="text-org4ba924a">
+<div id="outline-container-orgf8f66e5" class="outline-4">
+<h4 id="orgf8f66e5">Auto-Reverting Changed Files</h4>
+<div class="outline-text-4" id="text-orgf8f66e5">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> global-auto-revert-non-file-buffers t)
 (global-auto-revert-mode 1)
@@ -816,9 +816,9 @@ The diminish package hides pesky minor modes from the modelines.
 </div>
 </div>
 </div>
-<div id="outline-container-org18e3972" class="outline-4">
-<h4 id="org18e3972">UI Toggles</h4>
-<div class="outline-text-4" id="text-org18e3972">
+<div id="outline-container-org7442091" class="outline-4">
+<h4 id="org7442091">UI Toggles</h4>
+<div class="outline-text-4" id="text-org7442091">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 </pre>
@@ -826,13 +826,13 @@ The diminish package hides pesky minor modes from the modelines.
 </div>
 </div>
 </div>
-<div id="outline-container-orgbfa209e" class="outline-3">
-<h3 id="orgbfa209e">按键设置</h3>
-<div class="outline-text-3" id="text-orgbfa209e">
+<div id="outline-container-org44916bd" class="outline-3">
+<h3 id="org44916bd">按键设置</h3>
+<div class="outline-text-3" id="text-org44916bd">
 </div>
-<div id="outline-container-orgd466553" class="outline-4">
-<h4 id="orgd466553">查看使用了哪些命令</h4>
-<div class="outline-text-4" id="text-orgd466553">
+<div id="outline-container-orgfe4b8b9" class="outline-4">
+<h4 id="orgfe4b8b9">查看使用了哪些命令</h4>
+<div class="outline-text-4" id="text-orgfe4b8b9">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package command-log-mode)
 </pre>
@@ -840,9 +840,9 @@ The diminish package hides pesky minor modes from the modelines.
 </div>
 </div>
 
-<div id="outline-container-orge41c2dc" class="outline-4">
-<h4 id="orge41c2dc">取消ESC作为 <code>M-x</code> 的前缀按键,将其设置为和Vim类似的退出命令 <code>C-g</code></h4>
-<div class="outline-text-4" id="text-orge41c2dc">
+<div id="outline-container-org90e7a9f" class="outline-4">
+<h4 id="org90e7a9f">取消ESC作为 <code>M-x</code> 的前缀按键,将其设置为和Vim类似的退出命令 <code>C-g</code></h4>
+<div class="outline-text-4" id="text-org90e7a9f">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Make ESC quit prompts</span>
 (global-set-key (kbd <span style="font-style: italic;">"&lt;escape&gt;"</span>) 'keyboard-escape-quit)
@@ -852,9 +852,9 @@ The diminish package hides pesky minor modes from the modelines.
 </div>
 </div>
 
-<div id="outline-container-orgb963f6a" class="outline-4">
-<h4 id="orgb963f6a">取消 <code>C-u</code> 作为 <code>[count]</code> 的作用,因为要使用Vim的 <code>C-u</code> 做翻页</h4>
-<div class="outline-text-4" id="text-orgb963f6a">
+<div id="outline-container-orgb78c31a" class="outline-4">
+<h4 id="orgb78c31a">取消 <code>C-u</code> 作为 <code>[count]</code> 的作用,因为要使用Vim的 <code>C-u</code> 做翻页</h4>
+<div class="outline-text-4" id="text-orgb78c31a">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(global-set-key (kbd <span style="font-style: italic;">"C-M-u"</span>) 'universal-argument)
 </pre>
@@ -863,13 +863,13 @@ The diminish package hides pesky minor modes from the modelines.
 </div>
 
 
-<div id="outline-container-orgbb5fe04" class="outline-4">
-<h4 id="orgbb5fe04">Evil</h4>
-<div class="outline-text-4" id="text-orgbb5fe04">
+<div id="outline-container-org703737b" class="outline-4">
+<h4 id="org703737b">Evil</h4>
+<div class="outline-text-4" id="text-org703737b">
 </div>
 <ul class="org-ul">
-<li><a id="orgcc72358"></a>基本的Vim按键设置<br />
-<div class="outline-text-5" id="text-orgcc72358">
+<li><a id="orgfb4821c"></a>基本的Vim按键设置<br />
+<div class="outline-text-5" id="text-orgfb4821c">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package undo-tree
   <span style="font-weight: bold;">:init</span>
@@ -908,8 +908,8 @@ The diminish package hides pesky minor modes from the modelines.
 </li>
 
 
-<li><a id="org5f60046"></a>绑定"jk"退出插入模式<br />
-<div class="outline-text-5" id="text-org5f60046">
+<li><a id="org9efcceb"></a>绑定"jk"退出插入模式<br />
+<div class="outline-text-5" id="text-org9efcceb">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 (use-package evil-escape
@@ -924,8 +924,8 @@ The diminish package hides pesky minor modes from the modelines.
 </li>
 
 
-<li><a id="org8dda419"></a>绑定&lt;leader&gt;s重新加载配置文件<br />
-<div class="outline-text-5" id="text-org8dda419">
+<li><a id="org5d09de6"></a>绑定&lt;leader&gt;s重新加载配置文件<br />
+<div class="outline-text-5" id="text-org5d09de6">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(evil-set-leader 'normal (kbd "SPC"))</span>
 <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">This buffer is for text that is not saved, and for Lisp evaluation.</span>
@@ -944,13 +944,13 @@ The diminish package hides pesky minor modes from the modelines.
 </ul>
 </div>
 </div>
-<div id="outline-container-org08bc464" class="outline-3">
-<h3 id="org08bc464">编辑设置</h3>
-<div class="outline-text-3" id="text-org08bc464">
+<div id="outline-container-org4daa352" class="outline-3">
+<h3 id="org4daa352">编辑设置</h3>
+<div class="outline-text-3" id="text-org4daa352">
 </div>
-<div id="outline-container-org048bd97" class="outline-4">
-<h4 id="org048bd97">Tab Width</h4>
-<div class="outline-text-4" id="text-org048bd97">
+<div id="outline-container-org0a90904" class="outline-4">
+<h4 id="org0a90904">Tab Width</h4>
+<div class="outline-text-4" id="text-org0a90904">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq-default</span> tab-width 2)
 (<span style="font-weight: bold;">setq-default</span> evil-shift-width tab-width)
@@ -958,18 +958,18 @@ The diminish package hides pesky minor modes from the modelines.
 </div>
 </div>
 </div>
-<div id="outline-container-orge231b83" class="outline-4">
-<h4 id="orge231b83">Use spaces instead of tabs for indnetation</h4>
-<div class="outline-text-4" id="text-orge231b83">
+<div id="outline-container-org5db39aa" class="outline-4">
+<h4 id="org5db39aa">Use spaces instead of tabs for indnetation</h4>
+<div class="outline-text-4" id="text-org5db39aa">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq-default</span> indent-tabs-mode nil)
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org8c3bb2a" class="outline-4">
-<h4 id="org8c3bb2a">Commenting Lines</h4>
-<div class="outline-text-4" id="text-org8c3bb2a">
+<div id="outline-container-org9efa86a" class="outline-4">
+<h4 id="org9efa86a">Commenting Lines</h4>
+<div class="outline-text-4" id="text-org9efa86a">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package evil-nerd-commenter
   <span style="font-weight: bold;">:bind</span> (<span style="font-style: italic;">"M-c"</span> . evilnc-comment-or-uncomment-lines))
@@ -977,9 +977,9 @@ The diminish package hides pesky minor modes from the modelines.
 </div>
 </div>
 </div>
-<div id="outline-container-org81a31d8" class="outline-4">
-<h4 id="org81a31d8">Automatically Clean whitespace</h4>
-<div class="outline-text-4" id="text-org81a31d8">
+<div id="outline-container-orgd8f0b43" class="outline-4">
+<h4 id="orgd8f0b43">Automatically Clean whitespace</h4>
+<div class="outline-text-4" id="text-orgd8f0b43">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package ws-butler
   <span style="font-weight: bold;">:hook</span> ((text-mode . ws-butler-mode)
@@ -991,9 +991,9 @@ The diminish package hides pesky minor modes from the modelines.
 </div>
 </div>
 
-<div id="outline-container-org8444ef7" class="outline-3">
-<h3 id="org8444ef7">按键面板</h3>
-<div class="outline-text-3" id="text-org8444ef7">
+<div id="outline-container-orgec3bd30" class="outline-3">
+<h3 id="orgec3bd30">按键面板</h3>
+<div class="outline-text-3" id="text-orgec3bd30">
 <p>
 <a href="https://github.com/justbur/emacs-which-key">which-key</a> 根据当前按下的按键展示可用(能)的快捷键组合和对应命令
 </p>
@@ -1010,13 +1010,13 @@ The diminish package hides pesky minor modes from the modelines.
 </div>
 </div>
 
-<div id="outline-container-orgeac9e35" class="outline-3">
-<h3 id="orgeac9e35">按键绑定</h3>
-<div class="outline-text-3" id="text-orgeac9e35">
+<div id="outline-container-org69c37e4" class="outline-3">
+<h3 id="org69c37e4">按键绑定</h3>
+<div class="outline-text-3" id="text-org69c37e4">
 </div>
-<div id="outline-container-org259c339" class="outline-4">
-<h4 id="org259c339"><a href="https://github.com/noctuid/general.el">general.el</a> 用来管理快捷键绑定</h4>
-<div class="outline-text-4" id="text-org259c339">
+<div id="outline-container-org9537496" class="outline-4">
+<h4 id="org9537496"><a href="https://github.com/noctuid/general.el">general.el</a> 用来管理快捷键绑定</h4>
+<div class="outline-text-4" id="text-org9537496">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package general
   <span style="font-weight: bold;">:config</span>
@@ -1037,9 +1037,9 @@ The diminish package hides pesky minor modes from the modelines.
 </div>
 </div>
 
-<div id="outline-container-orgff8a683" class="outline-4">
-<h4 id="orgff8a683">hydra 来绑定快捷键</h4>
-<div class="outline-text-4" id="text-orgff8a683">
+<div id="outline-container-orgf5a02d7" class="outline-4">
+<h4 id="orgf5a02d7">hydra 来绑定快捷键</h4>
+<div class="outline-text-4" id="text-orgf5a02d7">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package general
   <span style="font-weight: bold;">:config</span>
@@ -1076,9 +1076,9 @@ The diminish package hides pesky minor modes from the modelines.
 </div>
 </div>
 
-<div id="outline-container-org9f070c6" class="outline-4">
-<h4 id="org9f070c6">Evil 快捷键绑定</h4>
-<div class="outline-text-4" id="text-org9f070c6">
+<div id="outline-container-org65a90e6" class="outline-4">
+<h4 id="org65a90e6">Evil 快捷键绑定</h4>
+<div class="outline-text-4" id="text-org65a90e6">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 
@@ -1093,9 +1093,9 @@ The diminish package hides pesky minor modes from the modelines.
 </div>
 </div>
 
-<div id="outline-container-orgeeed5a5" class="outline-3">
-<h3 id="orgeeed5a5">文件浏览器</h3>
-<div class="outline-text-3" id="text-orgeeed5a5">
+<div id="outline-container-org2c6dc83" class="outline-3">
+<h3 id="org2c6dc83">文件浏览器</h3>
+<div class="outline-text-3" id="text-org2c6dc83">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package treemacs
   <span style="font-weight: bold;">:ensure</span> t
@@ -1108,9 +1108,9 @@ The diminish package hides pesky minor modes from the modelines.
 </div>
 </div>
 
-<div id="outline-container-orgb0f505e" class="outline-3">
-<h3 id="orgb0f505e">Minibuffer补全(Emacs 命令补全)</h3>
-<div class="outline-text-3" id="text-orgb0f505e">
+<div id="outline-container-orgfc540e8" class="outline-3">
+<h3 id="orgfc540e8">Minibuffer补全(Emacs 命令补全)</h3>
+<div class="outline-text-3" id="text-orgfc540e8">
 <p>
 Emacs有两种类型的补全，一种是写代码或文本时的补全(text completion),另一种就是使用emacs 命令时的补全(Minibuffer completion).
 <a href="https://github.com/kenmcmil/ivy">Ivy</a> 是一个使用minibuffer的补全机制,提供针对emacs命令的各种补全功能,<a href="https://github.com/abo-abo/swiper">swpier</a> 是基于Ivy的更好用的 <code>Isearch</code> 工具, <a href="https://github.com/abo-abo/swiper#counsel">counsel</a> 是基于Ivy的 <code>execute-extended-command</code> (M-x) 增强版本,用正则更方便的选择emacs命令
@@ -1150,17 +1150,17 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 </div>
 
-<div id="outline-container-orgd629012" class="outline-3">
-<h3 id="orgd629012">Development</h3>
-<div class="outline-text-3" id="text-orgd629012">
+<div id="outline-container-orgc1379cb" class="outline-3">
+<h3 id="orgc1379cb">Development</h3>
+<div class="outline-text-3" id="text-orgc1379cb">
 </div>
-<div id="outline-container-org9567676" class="outline-4">
-<h4 id="org9567676">Lsp-mode</h4>
-<div class="outline-text-4" id="text-org9567676">
+<div id="outline-container-orgedbb014" class="outline-4">
+<h4 id="orgedbb014">Lsp-mode</h4>
+<div class="outline-text-4" id="text-orgedbb014">
 </div>
 <ul class="org-ul">
-<li><a id="orga5e91a5"></a>Lsp<br />
-<div class="outline-text-5" id="text-orga5e91a5">
+<li><a id="org26e86b2"></a>Lsp<br />
+<div class="outline-text-5" id="text-org26e86b2">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 
@@ -1239,10 +1239,10 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 </li>
 
-<li><a id="org97802d4"></a>Lsp for python<br />
+<li><a id="orgf71b3ad"></a>Lsp for python<br />
 <ul class="org-ul">
-<li><a id="orge165f08"></a>Pylsp<br />
-<div class="outline-text-6" id="text-orge165f08">
+<li><a id="org4da48a4"></a>Pylsp<br />
+<div class="outline-text-6" id="text-org4da48a4">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> lsp-pylsp-plugins-yapf-enabled t)
 (<span style="font-weight: bold;">setq</span> lsp-pylsp-plugins-jedi-use-pyenv-environment t)
@@ -1250,8 +1250,8 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 </div>
 </li>
-<li><a id="orgbc352d0"></a>Pyright<br />
-<div class="outline-text-6" id="text-orgbc352d0">
+<li><a id="org574bfcb"></a>Pyright<br />
+<div class="outline-text-6" id="text-org574bfcb">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package lsp-pyright
   <span style="font-weight: bold;">:ensure</span> t
@@ -1263,8 +1263,8 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 </div>
 </li>
-<li><a id="orgd672dcc"></a>Mspyls<br />
-<div class="outline-text-6" id="text-orgd672dcc">
+<li><a id="orgbf9b67c"></a>Mspyls<br />
+<div class="outline-text-6" id="text-orgbf9b67c">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package lsp-python-ms
   <span style="font-weight: bold;">:ensure</span> t
@@ -1277,8 +1277,8 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 </div>
 </li>
-<li><a id="org5446046"></a>jedi<br />
-<div class="outline-text-6" id="text-org5446046">
+<li><a id="orgcfa2623"></a>jedi<br />
+<div class="outline-text-6" id="text-orgcfa2623">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package lsp-jedi
   <span style="font-weight: bold;">:ensure</span> t
@@ -1296,8 +1296,8 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </ul>
 </li>
 
-<li><a id="org0080e0d"></a>LSP for Html<br />
-<div class="outline-text-5" id="text-org0080e0d">
+<li><a id="org83448c9"></a>LSP for Html<br />
+<div class="outline-text-5" id="text-org83448c9">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 </pre>
@@ -1307,9 +1307,9 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </ul>
 </div>
 
-<div id="outline-container-orgceb1a2e" class="outline-4">
-<h4 id="orgceb1a2e">Python<sub>settings</sub></h4>
-<div class="outline-text-4" id="text-orgceb1a2e">
+<div id="outline-container-org2eac3d6" class="outline-4">
+<h4 id="org2eac3d6">Python<sub>settings</sub></h4>
+<div class="outline-text-4" id="text-org2eac3d6">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#35774;&#32622;&#32553;&#36827;&#20026;4</span>
 (<span style="font-weight: bold;">setq</span>
@@ -1321,9 +1321,9 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 </div>
 
-<div id="outline-container-org3938557" class="outline-4">
-<h4 id="org3938557">Format python code</h4>
-<div class="outline-text-4" id="text-org3938557">
+<div id="outline-container-org5dcad9d" class="outline-4">
+<h4 id="org5dcad9d">Format python code</h4>
+<div class="outline-text-4" id="text-org5dcad9d">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package yapfify
   <span style="font-weight: bold;">:config</span>
@@ -1333,18 +1333,18 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 </div>
 
-<div id="outline-container-org9ed631c" class="outline-4">
-<h4 id="org9ed631c">Format All</h4>
-<div class="outline-text-4" id="text-org9ed631c">
+<div id="outline-container-org508c198" class="outline-4">
+<h4 id="org508c198">Format All</h4>
+<div class="outline-text-4" id="text-org508c198">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package format-all)
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgee7c319" class="outline-4">
-<h4 id="orgee7c319">Elpy &#x2013; IDE for py</h4>
-<div class="outline-text-4" id="text-orgee7c319">
+<div id="outline-container-org9a6e46b" class="outline-4">
+<h4 id="org9a6e46b">Elpy &#x2013; IDE for py</h4>
+<div class="outline-text-4" id="text-org9a6e46b">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package elpy
   <span style="font-weight: bold;">:ensure</span> t
@@ -1356,13 +1356,13 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 </div>
 
-<div id="outline-container-orgd8ce8f8" class="outline-3">
-<h3 id="orgd8ce8f8">Orgmode</h3>
-<div class="outline-text-3" id="text-orgd8ce8f8">
+<div id="outline-container-org55a43b8" class="outline-3">
+<h3 id="org55a43b8">Orgmode</h3>
+<div class="outline-text-3" id="text-org55a43b8">
 </div>
-<div id="outline-container-org5dbaf20" class="outline-4">
-<h4 id="org5dbaf20">CodeBlock模版</h4>
-<div class="outline-text-4" id="text-org5dbaf20">
+<div id="outline-container-orgcec651b" class="outline-4">
+<h4 id="orgcec651b">CodeBlock模版</h4>
+<div class="outline-text-4" id="text-orgcec651b">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">org-tempo</span>)
 (add-to-list 'org-structure-template-alist '(<span style="font-style: italic;">"py"</span> . <span style="font-style: italic;">"src python :results output"</span>))
@@ -1374,9 +1374,9 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 </div>
 
-<div id="outline-container-org6514859" class="outline-4">
-<h4 id="org6514859">outline</h4>
-<div class="outline-text-4" id="text-org6514859">
+<div id="outline-container-org7c6d1fb" class="outline-4">
+<h4 id="org7c6d1fb">outline</h4>
+<div class="outline-text-4" id="text-org7c6d1fb">
 <p>
 配置headline的项目符号(bullet point)
 </p>
@@ -1408,9 +1408,9 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 </div>
 
-<div id="outline-container-org5643a86" class="outline-4">
-<h4 id="org5643a86">Org-roam</h4>
-<div class="outline-text-4" id="text-org5643a86">
+<div id="outline-container-orgef2cdfe" class="outline-4">
+<h4 id="orgef2cdfe">Org-roam</h4>
+<div class="outline-text-4" id="text-orgef2cdfe">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">      <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(use-package org-roam</span>
         <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">:ensure t</span>
@@ -1451,13 +1451,13 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 </div>
 </div>
-<div id="outline-container-org539f6dc" class="outline-4">
-<h4 id="org539f6dc">Org-mode</h4>
-<div class="outline-text-4" id="text-org539f6dc">
+<div id="outline-container-orgd4bfba4" class="outline-4">
+<h4 id="orgd4bfba4">Org-mode</h4>
+<div class="outline-text-4" id="text-orgd4bfba4">
 </div>
 <ul class="org-ul">
-<li><a id="org2e3f38e"></a>Init set up<br />
-<div class="outline-text-5" id="text-org2e3f38e">
+<li><a id="org6b6682d"></a>Init set up<br />
+<div class="outline-text-5" id="text-org6b6682d">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-directory <span style="font-style: italic;">"~/MyLife/org"</span>)
 (global-set-key (kbd <span style="font-style: italic;">"C-c l"</span>) 'org-store-link)
@@ -1468,8 +1468,8 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 </li>
 
-<li><a id="orgc096f2b"></a>Hide emphasis markers<br />
-<div class="outline-text-5" id="text-orgc096f2b">
+<li><a id="orga119efa"></a>Hide emphasis markers<br />
+<div class="outline-text-5" id="text-orga119efa">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-hide-emphasis-markers t)
 </pre>
@@ -1477,8 +1477,8 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 </li>
 
-<li><a id="org526a404"></a>org-drill<br />
-<div class="outline-text-5" id="text-org526a404">
+<li><a id="org6c8c608"></a>org-drill<br />
+<div class="outline-text-5" id="text-org6c8c608">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package org-drill)
 </pre>
@@ -1488,9 +1488,9 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </ul>
 </div>
 
-<div id="outline-container-orgde42ff4" class="outline-4">
-<h4 id="orgde42ff4">Pomodoro</h4>
-<div class="outline-text-4" id="text-orgde42ff4">
+<div id="outline-container-org839c044" class="outline-4">
+<h4 id="org839c044">Pomodoro</h4>
+<div class="outline-text-4" id="text-org839c044">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package org-pomodoro
   <span style="font-weight: bold;">:config</span>
@@ -1506,9 +1506,9 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 </div>
 
-<div id="outline-container-orgcadcb60" class="outline-4">
-<h4 id="orgcadcb60">tracking habits</h4>
-<div class="outline-text-4" id="text-orgcadcb60">
+<div id="outline-container-orgcf26ff7" class="outline-4">
+<h4 id="orgcf26ff7">tracking habits</h4>
+<div class="outline-text-4" id="text-orgcf26ff7">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(add-to-list 'org-modules 'org-habit)
 </pre>
@@ -1516,9 +1516,9 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 </div>
 
-<div id="outline-container-org502fb4c" class="outline-4">
-<h4 id="org502fb4c">Auto insert newline</h4>
-<div class="outline-text-4" id="text-org502fb4c">
+<div id="outline-container-org2279651" class="outline-4">
+<h4 id="org2279651">Auto insert newline</h4>
+<div class="outline-text-4" id="text-org2279651">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(add-hook 'org-mode-hook '(lambda () (<span style="font-weight: bold;">setq</span> fill-column 80)))
 (add-hook 'org-mode-hook 'auto-fill-mode)
@@ -1527,9 +1527,9 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 </div>
 
-<div id="outline-container-orgcea6561" class="outline-4">
-<h4 id="orgcea6561">org-capture-template</h4>
-<div class="outline-text-4" id="text-orgcea6561">
+<div id="outline-container-orgd0bf308" class="outline-4">
+<h4 id="orgd0bf308">org-capture-template</h4>
+<div class="outline-text-4" id="text-orgd0bf308">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-capture-templates
 '(
@@ -1547,9 +1547,9 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 </div>
 
-<div id="outline-container-org24555a5" class="outline-4">
-<h4 id="org24555a5">Encrypt</h4>
-<div class="outline-text-4" id="text-org24555a5">
+<div id="outline-container-orgbd9b74f" class="outline-4">
+<h4 id="orgbd9b74f">Encrypt</h4>
+<div class="outline-text-4" id="text-orgbd9b74f">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">org-crypt</span>)
 (org-crypt-use-before-save-magic)
@@ -1565,17 +1565,17 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 
 
 
-<div id="outline-container-org4c533c6" class="outline-3">
-<h3 id="org4c533c6">Productivity</h3>
-<div class="outline-text-3" id="text-org4c533c6">
+<div id="outline-container-org8aa0b91" class="outline-3">
+<h3 id="org8aa0b91">Productivity</h3>
+<div class="outline-text-3" id="text-org8aa0b91">
 <p>
 一些能提高编辑效率的配置
 </p>
 </div>
 
-<div id="outline-container-org92f9e69" class="outline-4">
-<h4 id="org92f9e69">括号补全</h4>
-<div class="outline-text-4" id="text-org92f9e69">
+<div id="outline-container-org506a496" class="outline-4">
+<h4 id="org506a496">括号补全</h4>
+<div class="outline-text-4" id="text-org506a496">
 <p>
 自动补全各种括号和引号
 </p>
@@ -1592,9 +1592,9 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 </div>
 
-<div id="outline-container-orgeef4407" class="outline-4">
-<h4 id="orgeef4407">Snippet</h4>
-<div class="outline-text-4" id="text-orgeef4407">
+<div id="outline-container-org0bae42f" class="outline-4">
+<h4 id="org0bae42f">Snippet</h4>
+<div class="outline-text-4" id="text-org0bae42f">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">snippet engine</span>
 (use-package yasnippet
@@ -1611,9 +1611,9 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 </div>
 
-<div id="outline-container-orgcd06583" class="outline-3">
-<h3 id="orgcd06583">Ebook</h3>
-<div class="outline-text-3" id="text-orgcd06583">
+<div id="outline-container-org10a2789" class="outline-3">
+<h3 id="org10a2789">Ebook</h3>
+<div class="outline-text-3" id="text-org10a2789">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package nov
   <span style="font-weight: bold;">:config</span>
@@ -1624,9 +1624,9 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 </div>
 
-<div id="outline-container-orgce68961" class="outline-3">
-<h3 id="orgce68961">Magit</h3>
-<div class="outline-text-3" id="text-orgce68961">
+<div id="outline-container-org337d98b" class="outline-3">
+<h3 id="org337d98b">Magit</h3>
+<div class="outline-text-3" id="text-org337d98b">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(use-package magit)</span>
 </pre>
@@ -1634,9 +1634,9 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 </div>
 
-<div id="outline-container-org8c8ce7c" class="outline-3">
-<h3 id="org8c8ce7c">Save Emacs Sessions</h3>
-<div class="outline-text-3" id="text-org8c8ce7c">
+<div id="outline-container-orge9a016b" class="outline-3">
+<h3 id="orge9a016b">Save Emacs Sessions</h3>
+<div class="outline-text-3" id="text-orge9a016b">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(desktop-save-mode 1)
 </pre>
@@ -1647,7 +1647,7 @@ Emacs有两种类型的补全，一种是写代码或文本时的补全(text com
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-01-24 Mon 06:38</p>
+<p class="date">Created: 2022-01-24 Mon 06:55</p>
 <p class="validation"></p>
 </div>
 </body>
