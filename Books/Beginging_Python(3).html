@@ -6,7 +6,7 @@
 <!-- 2022-01-26 Wed 14:02 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>Beginning<sub>Python</sub>(3)</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="kamisama" />
 <style type="text/css">
@@ -233,69 +233,72 @@ for the JavaScript code in this tag.
  |
  <a accesskey="H" href="../index.html"> HOME </a>
 </div><div id="content">
+<h1 class="title">Beginning<sub>Python</sub>(3)</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgeb924e7">Python</a>
+<li><a href="#org3905f47">第一章 快速上手:基础知识</a>
 <ul>
-<li><a href="#org5ba595f">异步执行 python 代码</a>
-<ul>
-<li><a href="#org38de238"><span class="todo TODO">TODO</span> 因为需要下载不少东西,这个包也不在 Emacs 包管理系统中,所以没能试用,暂且记下.</a></li>
-</ul>
-</li>
+<li><a href="#orgdd6e5ed">交互式解释器</a></li>
+<li><a href="#orgfcc1d78">算法是什么</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgeb924e7" class="outline-2">
-<h2 id="orgeb924e7">Python</h2>
-<div class="outline-text-2" id="text-orgeb924e7">
+<div id="outline-container-org3905f47" class="outline-2">
+<h2 id="org3905f47">第一章 快速上手:基础知识</h2>
+<div class="outline-text-2" id="text-org3905f47">
 </div>
-<div id="outline-container-org5ba595f" class="outline-3">
-<h3 id="org5ba595f">异步执行 python 代码</h3>
-<div class="outline-text-3" id="text-org5ba595f">
+<div id="outline-container-orgdd6e5ed" class="outline-3">
+<h3 id="orgdd6e5ed">交互式解释器</h3>
+<div class="outline-text-3" id="text-orgdd6e5ed">
 <p>
-正常情况下,执行下面的代码,Emacs 进程会直接挂起,直到代码执行完毕,也就是会卡死
-10秒.
+编程就是让计算机按照人类的意愿去执行一些人力成本较高的工作,而计算机能识别(读
+懂)的语言只有机器语言(01010101010&#x2026;.),早期程序员用打孔的纸带来表示0和
+1,这就是直接使用机器语言对计算机编程.但机器语言对于人类来说是可读性非常差的,
+而且这种方式编写的程序代码不容易找错(没人想在一连串的01中找到可能出错的某一
+个),于是前辈们发明了高级编程语言,用一种人类更容易理解和阅读的语言来对计算机
+进行编程,而实际上计算机仍然使用的是01的机器语言,只不过高级编程语言会将代码转
+换成机器语言.所以高级编程语言就是人类和计算机之间的翻译器.翻译的方式有两种,
+一种是编译型,就是将高级语言编写的程序编译成二进制程序(机器语言程序).另一种就
+是解释型,解释型是先运行一个解释器程序,而这个程序的作用是执行高级语言程序指令,
+这里解释器的作用就是一个中间人,负责沟通人和机器双方,人只需要和解释器沟通,剩下
+的执行就交给解释器和机器沟通了,这个过程中人不必在意解释器和机器沟通的过程,这
+些都交给解释器处理了,这里和编译型的就有很大不同了,在linux和windows上都写过C
+程序的可能有印象,对于某些库的使用标准在两个系统上是不一样的.
 </p>
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">import</span> time
 
-<span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> <span style="font-weight: bold;">range</span>(5):
-    <span style="font-weight: bold;">print</span>(i)
-    time.sleep(2)
-</pre>
-</div>
+<p>
+编译器相当于翻译工作中的笔译，将高级编程语言的源程序翻译成二进制程序，这个程
+序再由计算机执行；
+解释器相当于同声传译(大概吧),解释器直接执行高级编程语言的指令,解释器会根据这
+些指令告诉计算机需要执行什么操作.
+</p>
 
 <p>
-这是因为 Emacs 的单进程机制,想要在后台异步执行 Python 代码,就需要用到下面的库
-(需要自己下载):
+用翻译的例子就能知道编程语言的语法是很重要的，因为你说的话连译者都不懂，那译
+者就不可能把你的意思转达给计算机.
 </p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">scimax-org-babel-python</span>)
-(add-to-list 'org-ctrl-c-ctrl-c-hook 'org-babel-async-execute:python)
-</pre>
 </div>
+</div>
+<div id="outline-container-orgfcc1d78" class="outline-3">
+<h3 id="orgfcc1d78">算法是什么</h3>
+<div class="outline-text-3" id="text-orgfcc1d78">
 <p>
-<a href="https://github.com/jkitchin/scimax/blob/org-9/scimax-org-babel-python.el">scimax-org-babel-python</a>
+计算机多才多艺,但不能思考.计算机的工作本质就是计算,我们能看到的电脑展现出来的
+图形图像,音乐影像,我们能使用的各种电子产品都是计算机与各个学科,各个行业结合的
+产物.各种学科领域都是人类对世界某一角的认知,当人们认知某一未知事物时,除了需要
+给其一定的概念定义,还需要能对其进行衡量,概念定义取决于人们当时的认知水平,从神
+鬼妖魔到抽象总结;对事物衡量的方法从人类开始进行生产生活就一直在发展演变,最终
+形成的一门叫数学的学科,
 </p>
-</div>
-
-<div id="outline-container-org38de238" class="outline-4">
-<h4 id="org38de238"><span class="todo TODO">TODO</span> 因为需要下载不少东西,这个包也不在 Emacs 包管理系统中,所以没能试用,暂且记下.</h4>
-<div class="outline-text-4" id="text-org38de238">
-<p>
-<a href="https://kitchingroup.cheme.cmu.edu/blog/2016/11/09/New-and-improved-asynchronous-org-babel-python-blocks/">原文</a>
-</p>
-</div>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: 2022-01-06 Thu 20:57</p>
 <p class="author">Author: kamisama</p>
 <p class="date">Created: 2022-01-26 Wed 14:02</p>
 <p class="validation"></p>
