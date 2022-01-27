@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-01-26 Wed 14:02 -->
+<!-- 2022-01-27 Thu 15:57 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Beginning<sub>Python</sub>(3)</title>
@@ -238,22 +238,23 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3905f47">第一章 快速上手:基础知识</a>
+<li><a href="#org6423f4e">第一章 快速上手:基础知识</a>
 <ul>
-<li><a href="#orgdd6e5ed">交互式解释器</a></li>
-<li><a href="#orgfcc1d78">算法是什么</a></li>
+<li><a href="#orgb2e62e9">交互式解释器</a></li>
+<li><a href="#org82418dd">算法是什么</a></li>
+<li><a href="#orgd016095">数和表达式</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3905f47" class="outline-2">
-<h2 id="org3905f47">第一章 快速上手:基础知识</h2>
-<div class="outline-text-2" id="text-org3905f47">
+<div id="outline-container-org6423f4e" class="outline-2">
+<h2 id="org6423f4e">第一章 快速上手:基础知识</h2>
+<div class="outline-text-2" id="text-org6423f4e">
 </div>
-<div id="outline-container-orgdd6e5ed" class="outline-3">
-<h3 id="orgdd6e5ed">交互式解释器</h3>
-<div class="outline-text-3" id="text-orgdd6e5ed">
+<div id="outline-container-orgb2e62e9" class="outline-3">
+<h3 id="orgb2e62e9">交互式解释器</h3>
+<div class="outline-text-3" id="text-orgb2e62e9">
 <p>
 编程就是让计算机按照人类的意愿去执行一些人力成本较高的工作,而计算机能识别(读
 懂)的语言只有机器语言(01010101010&#x2026;.),早期程序员用打孔的纸带来表示0和
@@ -283,24 +284,168 @@ for the JavaScript code in this tag.
 </p>
 </div>
 </div>
-<div id="outline-container-orgfcc1d78" class="outline-3">
-<h3 id="orgfcc1d78">算法是什么</h3>
-<div class="outline-text-3" id="text-orgfcc1d78">
+<div id="outline-container-org82418dd" class="outline-3">
+<h3 id="org82418dd">算法是什么</h3>
+<div class="outline-text-3" id="text-org82418dd">
 <p>
 计算机多才多艺,但不能思考.计算机的工作本质就是计算,我们能看到的电脑展现出来的
 图形图像,音乐影像,我们能使用的各种电子产品都是计算机与各个学科,各个行业结合的
 产物.各种学科领域都是人类对世界某一角的认知,当人们认知某一未知事物时,除了需要
 给其一定的概念定义,还需要能对其进行衡量,概念定义取决于人们当时的认知水平,从神
 鬼妖魔到抽象总结;对事物衡量的方法从人类开始进行生产生活就一直在发展演变,最终
-形成的一门叫数学的学科,
+形成的一门叫数学的学科,在我看来,数学是人类对自然规律的总结和发展的产物.所以小
+时侯数学课上老师说的生活中处处都有数学这句话我到现在还记得. 数学在计算机里较
+为间接的体现就是算法了(直接体现就是编程语言里对应的算术运算).算法这个词是翻译
+过来的(应该说大部分编程术语都是翻译过来的),计算+方法,反正第一次听说这个词我是
+这么理解的,记得老师解释说算法是解决问题的流程.维基百科的定义:
 </p>
+<blockquote>
+<p>
+In mathematics and computer science, an algorithm (<i>ˈælɡərɪðəm</i> ) is a finite
+sequence of well-defined instructions, typically used to solve a class of
+specific problems or to perform a computation.
+自翻:在数学和计算机科学领域,算法是有明确定义的指令组成的有限序列,通常用来解决
+一类特定的问题或进行计算.
+</p>
+</blockquote>
+<p>
+而我们学习算法总是会和数据结构结合起来,这是为啥?上面的定义里说了,算法是一连串
+的指令,是用来解决问题或进行计算的,数学在生活中可以帮助我们算算那个该死的
+一边加水一边放水的池子能不放空,能不能加满,或需要多少时间加满/放空,解决这个问
+题时我们会用两个数表示单位时间内进水和放水的量,比较这两个数就可以知道能不能加
+满/放空的问题,再用上两个数表示原池子里的水量和池子的容量计算,就可以得出加满/
+放空的时间.这里使用的四个数,就是数学对这个蛋疼的池子问题的抽象,其中进行的计算
+就是对加水放水的模拟.类比到计算机里,数据结构就是对问题抽象,更准确的说是对客观
+事物的抽象,毕竟只要你是客观事物,你必定有可以衡量其存在的质量,外形等等可以抽象
+的特质;算法,就是对解决客观事物(问题)的模拟了.
+还是原书里的例子好,菜谱是某个菜的做法,想要做菜,需要原料和做法,原料就是菜,做法
+就是对菜的一系列操作,有的操作必须按顺序:得先过水,再加调料;有的操作要重复多次:
+每分钟翻炒N下.在Python里,原料就是对象,做法就是一系列操作(语句).
+</p>
+
+<p>
+一句话: Python里的算法体现就是为了解决实际问题而对Python对象执行的一系列语句.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd016095" class="outline-3">
+<h3 id="orgd016095">数和表达式</h3>
+<div class="outline-text-3" id="text-orgd016095">
+<p>
+交互式Python解释器可以当作一个功能强大的计算器.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">运算符</th>
+<th scope="col" class="org-left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>+</code></td>
+<td class="org-left">加法(求和)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>-</code></td>
+<td class="org-left">减法(求负)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>*</code></td>
+<td class="org-left">乘法</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>/</code></td>
+<td class="org-left">除法</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>//</code></td>
+<td class="org-left">整除</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>%</code></td>
+<td class="org-left">求余</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>**</code></td>
+<td class="org-left">乘方(求幂)</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>Python 的整除操作是除法的结果向下取整(floor(1.1)=1,floor(-1.1)=-2).</li>
+<li>求余操作是整除时余下的部分: <code>x % y</code> 等价于 <code>x - ((x // y) * y)</code></li>
+<li>乘方(<code>**</code>) 的优先级要比求负要高,因此 <code>-3**2</code> 等价于 <code>-(3**2)</code>,要计算 <code>-3</code> 的平方,应
+写作 <code>(-3)**2</code>.</li>
+</ul>
+
+
+<p>
+Python 里数的进制表示.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">十进制</th>
+<th scope="col" class="org-right">十六进制</th>
+<th scope="col" class="org-right">八进制</th>
+<th scope="col" class="org-left">二进制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">175</td>
+<td class="org-right">0xAF</td>
+<td class="org-right">0257</td>
+<td class="org-left">0b175</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-right">0x8</td>
+<td class="org-right">010</td>
+<td class="org-left">0b8</td>
+</tr>
+
+<tr>
+<td class="org-right">722</td>
+<td class="org-right">0x2D2</td>
+<td class="org-right">01322</td>
+<td class="org-left">0b722</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-01-26 Wed 14:02</p>
+<p class="date">Created: 2022-01-27 Thu 15:57</p>
 <p class="validation"></p>
 </div>
 </body>
