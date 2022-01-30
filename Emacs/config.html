@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-01-30 Sun 12:01 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Org 文件配置Emacs</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="kamisama" />
+<meta name="keywords" content=" Emacs" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="./index.html"> UP </a>
+ |
+ <a accesskey="H" href="../index.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">Org 文件配置Emacs</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org3a52852">Org-babel</a>
+<ul>
+<li><a href="#orgaccadf3">启用Org-babel</a></li>
+<li><a href="#org5aeac56">ob-tangle</a></li>
+<li><a href="#org921aa88">自动执行 org-babel-tangle</a></li>
+<li><a href="#orgfc48f6e">为其他语言启用org-babel支持</a></li>
+<li><a href="#orgde1ce84">取消执行前的询问</a></li>
+</ul>
+</li>
+<li><a href="#org59ff28a">包管理器:use-package</a>
+<ul>
+<li><a href="#org343d9f5">启用Emacs内置包管理器package 安装 use-package</a></li>
+</ul>
+</li>
+<li><a href="#org1acfc7f">分析启动耗时</a></li>
+<li><a href="#org1904381">显示emacs启动时间 + 设置初始界面</a></li>
+<li><a href="#orgbc5f5bf">Evil</a></li>
+<li><a href="#org8f73324">ws-butler 自动清除空格</a></li>
+<li><a href="#org2c542bd">treemacs 文件管理</a></li>
+<li><a href="#org7413c62">翻译 bing-dict</a></li>
+<li><a href="#org72487c0">counsel &#x2013; better input completion</a></li>
+<li><a href="#org3b6a6ae">Text completion</a>
+<ul>
+<li><a href="#org441bb0b">括号补全</a></li>
+</ul>
+</li>
+<li><a href="#org54fd1fa">Org mode</a>
+<ul>
+<li><a href="#org0f39c1d">Org bullets</a></li>
+</ul>
+</li>
+<li><a href="#orgb5c1a51">Org drill &#x2013; flashcards</a></li>
+<li><a href="#orgaa900db">Org roam</a></li>
+<li><a href="#org7358b56">Basic UI</a></li>
+<li><a href="#orgc4bf773">modeline</a>
+<ul>
+<li><a href="#org161284b">doom-modeline</a></li>
+</ul>
+</li>
+<li><a href="#org8e8b875">theme</a>
+<ul>
+<li><a href="#org6337e98">doom-themes</a></li>
+</ul>
+</li>
+<li><a href="#org07113fc">input-method</a>
+<ul>
+<li><a href="#orgd054282">rime</a></li>
+<li><a href="#orgc9866ad">pyim</a></li>
+</ul>
+</li>
+<li><a href="#orge58caea">Programming</a>
+<ul>
+<li><a href="#orgf0f05af">Lsp common settings</a></li>
+<li><a href="#org680c75e">Lsp setting for Py</a></li>
+<li><a href="#org5245675">Python Templates</a></li>
+</ul>
+</li>
+<li><a href="#org79d2654">自动备份</a></li>
+<li><a href="#orge9a49f1">Parenthesis 括号显示</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3a52852" class="outline-2">
+<h2 id="org3a52852">Org-babel</h2>
+<div class="outline-text-2" id="text-org3a52852">
+<p>
+第一次用Emacs 打开这个文件,按 <code>C-c C-v t</code>,就可以把文件里的配置导出到 <code>init.el</code> 文件
+</p>
+<blockquote>
+<p>
+这并不是Org-babel 的详细教程,只涉及使用它导出源代码的部分.
+</p>
+</blockquote>
+</div>
+<div id="outline-container-orgaccadf3" class="outline-3">
+<h3 id="orgaccadf3">启用Org-babel</h3>
+<div class="outline-text-3" id="text-orgaccadf3">
+<p>
+Org mode 是默认启用了Org-babel 功能的,只不过只是默认支持了Elisp(emacs-lisp),
+所以第一步不需要进一步配置Org-babel.
+</p>
+</div>
+</div>
+<div id="outline-container-org5aeac56" class="outline-3">
+<h3 id="org5aeac56">ob-tangle</h3>
+<div class="outline-text-3" id="text-org5aeac56">
+<p>
+ob-tangle 库用来将Org 文件里的源代码提取出来.
+</p>
+
+<dl class="org-dl">
+<dt><code>(org-babel-tangle &amp;optional ARG TARGET-FILE LANG-RE)</code></dt><dd>该命令将代码块写入
+到特定的源代码文件.默认绑定的快捷键是 <code>C-c C-v t</code> 和 <code>C-c C-v C-t</code>. 代码块头信
+息参数可以设置该函数的参数.</dd>
+</dl>
+
+<p>
+在Org 文件里加入下面文本,并在代码块处按 <code>C-c C-v t</code> ,会将代码块导出到当前目录下
+的 <code>test.el</code> 文件.
+</p>
+<pre class="example">
+#+begin_src emacs-lisp :tangle ./test.el
+(message "This line is a test line")
+#+end_src
+</pre>
+<p>
+当代码块多了之后,每个代码块都要设置 <code>:tangle</code> 参数就很麻烦,可以在文件的开头设置
+全局属性来为所有代码块设置参数.(单独为代码块设置的参数会覆盖全局设置)
+</p>
+<pre class="example">
+#+property: header-args:emacs-lisp :tangle ~/.emacs.d/init.el
+</pre>
+</div>
+</div>
+<div id="outline-container-org921aa88" class="outline-3">
+<h3 id="org921aa88">自动执行 org-babel-tangle</h3>
+<div class="outline-text-3" id="text-org921aa88">
+<p>
+每次修改这个文件的代码块后,想要将配置文件导出到 <code>init.el</code> 文件,都需要执行
+<code>(org-babel-tangle)</code> 或者按 <code>C-c C-v t</code>. 这个操作也是可以自动化的.加入下面的代码,
+可以在每次修改了这个文件之后自动导出到配置文件.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">efs/org-babel-tangle-config</span>()
+  (<span style="font-weight: bold;">when</span> (string-equal (buffer-file-name)
+                      (expand-file-name <span style="font-style: italic;">"~/MyLife/blog_source/content/Emacs/config.org"</span>))
+    (<span style="font-weight: bold;">let</span> ((org-confirm-babel-evaluate nil))
+      (org-babel-tangle))))
+(add-hook 'org-mode-hook (<span style="font-weight: bold;">lambda</span> () (add-hook 'after-save-hook #'efs/org-babel-tangle-config)))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfc48f6e" class="outline-3">
+<h3 id="orgfc48f6e">为其他语言启用org-babel支持</h3>
+<div class="outline-text-3" id="text-orgfc48f6e">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (python . t)
+   (shell . t)
+   ))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgde1ce84" class="outline-3">
+<h3 id="orgde1ce84">取消执行前的询问</h3>
+<div class="outline-text-3" id="text-orgde1ce84">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-confirm-babel-evaluate nil)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org59ff28a" class="outline-2">
+<h2 id="org59ff28a">包管理器:use-package</h2>
+<div class="outline-text-2" id="text-org59ff28a">
+<p>
+我使用 use-package 安装和管理插件.
+</p>
+</div>
+<div id="outline-container-org343d9f5" class="outline-3">
+<h3 id="org343d9f5">启用Emacs内置包管理器package 安装 use-package</h3>
+<div class="outline-text-3" id="text-org343d9f5">
+<p>
+因为是使用use-package, 它暂时还不是 emacs 的内置包,所以需要先使用内置的
+package 包来下载use-package, 再使用use-package 管理包.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">package</span>)   <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#36825;&#37324;&#30340;require &#23601;&#20687;&#26159;python&#37324;&#30340;import&#21543;,package&#23601;&#20687;&#26159;module</span>
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#35774;&#32622;&#21253;&#20179;&#24211;(&#21253;&#20174;&#21738;&#37324;&#19979;&#36733;)</span>
+(<span style="font-weight: bold;">setq</span> package-archives '((<span style="font-style: italic;">"malpa"</span> . <span style="font-style: italic;">"https://melpa.org/packages/"</span>)
+                         <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">("org" . "https://orgmode.org/elpa/") ;; org &#26368;&#26032;&#29256;(&gt;9.6)&#19981;&#20877;orgmode.org &#37324;&#25552;&#20379;&#19979;&#36733;&#20102;.</span>
+                         (<span style="font-style: italic;">"elpa"</span> . <span style="font-style: italic;">"https://elpa.gnu.org/packages/"</span>)))
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#35774;&#32622;&#23436;&#20179;&#24211;&#21518;&#35201;&#21021;&#22987;&#21270;&#19968;&#19979;&#20179;&#24211;,&#20877;&#21435;&#25191;&#34892;&#19979;&#36733;&#21253;&#25110;&#32773;&#20854;&#20182;&#21160;&#20316;,&#20351;&#29992;&#36807;linux&#21253;&#31649;&#29702;&#24037;&#20855;&#30340;&#24212;&#35813;&#19981;&#38476;&#29983;</span>
+(package-initialize)
+(<span style="font-weight: bold;">unless</span> package-archive-contents   <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">&#22914;&#26524;&#28304;&#22836;&#20179;&#24211;&#30340;&#20449;&#24687;&#27809;&#26377;&#32531;&#23384;&#21040;&#26412;&#22320;&#23601;&#25191;&#34892;package-refresh-contents&#32531;&#23384;&#19968;&#19979;,&#30456;&#24403;&#19982;apt update&#21543;</span>
+  (package-refresh-contents))
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Initialize use-package on non-Linux platforms,&#36825;&#26159;&#22312;&#38750;linux&#24179;&#21488;&#19978;,&#21487;&#33021;use-package&#19981;&#26159;emacs&#20869;&#32622;&#30340;&#21253;,&#37027;&#23601;&#38656;&#35201;&#20808;&#19979;&#36733;&#25165;&#33021;&#20351;&#29992;</span>
+(<span style="font-weight: bold;">unless</span> (package-installed-p 'use-package) <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">&#26816;&#27979;&#19968;&#19979;use-package&#26159;&#21542;&#23433;&#35013;&#20102;,&#27809;&#35013;&#23601;&#35013;&#19968;&#19979;&#21591;</span>
+  (package-install 'use-package))
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#21040;&#36825;&#37324;&#23601;&#21487;&#20197;&#24320;&#22987;&#20351;&#29992; use-package &#20102;</span>
+(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">use-package</span>)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#40664;&#35748;&#19979;&#36733;&#27599;&#19968;&#20010;use-package&#31649;&#29702;&#30340;&#21253;,&#31561;&#20110;&#26159;&#27599;&#19968;&#20010;use-package&#37324;&#21152;&#19978;:ensure</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#21482;&#26159;&#40664;&#35748;&#19979;&#36733;,&#20294;&#24182;&#19981;&#20250;&#20445;&#25345;&#26368;&#26032;,&#22914;&#26524;&#24819;&#35201;&#33258;&#21160;&#26356;&#26032;&#21253;,&#21487;&#20197;&#20351;&#29992;auto-package-update &#36825;&#20010;&#21253;.</span>
+(<span style="font-weight: bold;">setq</span> use-package-always-ensure t)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org1acfc7f" class="outline-2">
+<h2 id="org1acfc7f">分析启动耗时</h2>
+<div class="outline-text-2" id="text-org1acfc7f">
+<p>
+发现启动时长异常时可以使用这个包
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package benchmark-init
+  <span style="font-weight: bold;">:ensure</span> t
+  <span style="font-weight: bold;">:config</span>
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">To disable collection of benchmark data after init is done.</span>
+  (add-hook 'after-init-hook 'benchmark-init/deactivate))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org1904381" class="outline-2">
+<h2 id="org1904381">显示emacs启动时间 + 设置初始界面</h2>
+<div class="outline-text-2" id="text-org1904381">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package dashboard
+  <span style="font-weight: bold;">:config</span>
+  (<span style="font-weight: bold;">setq</span> dashboard-startup-banner 'logo)
+  (dashboard-setup-startup-hook))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbc5f5bf" class="outline-2">
+<h2 id="orgbc5f5bf">Evil</h2>
+<div class="outline-text-2" id="text-orgbc5f5bf">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package undo-tree
+  <span style="font-weight: bold;">:init</span>
+  (global-undo-tree-mode 1))
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Vim Emulation</span>
+(use-package evil
+  <span style="font-weight: bold;">:init</span> <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">This is optional since it's already set to t by default.</span>
+  (<span style="font-weight: bold;">setq</span> evil-want-keybinding nil)
+  <span style="font-weight: bold;">:config</span>
+  (evil-mode 1)
+
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Make ESC quit prompts</span>
+  (global-set-key (kbd <span style="font-style: italic;">"&lt;escape&gt;"</span>) 'keyboard-escape-quit)
+  )
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Configurations for Evil</span>
+(use-package evil-collection
+  <span style="font-weight: bold;">:after</span> evil
+  <span style="font-weight: bold;">:config</span> (evil-collection-init))
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Use jk to escape</span>
+(use-package evil-escape
+  <span style="font-weight: bold;">:config</span> (evil-escape-mode 1)
+  (<span style="font-weight: bold;">setq-default</span> evil-escape-key-sequence <span style="font-style: italic;">"jk"</span>)
+  (<span style="font-weight: bold;">setq-default</span> evil-escape-delay 0.5))
+
+(use-package evil-nerd-commenter
+  <span style="font-weight: bold;">:bind</span> (<span style="font-style: italic;">"M-c"</span> . evilnc-comment-or-uncomment-lines))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8f73324" class="outline-2">
+<h2 id="org8f73324">ws-butler 自动清除空格</h2>
+<div class="outline-text-2" id="text-org8f73324">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package ws-butler
+  <span style="font-weight: bold;">:hook</span> ((text-mode . ws-butler-mode)
+         (prog-mode . ws-butler-mode)))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2c542bd" class="outline-2">
+<h2 id="org2c542bd">treemacs 文件管理</h2>
+<div class="outline-text-2" id="text-org2c542bd">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+(use-package treemacs
+  <span style="font-weight: bold;">:defer</span> t)
+(use-package treemacs-evil
+  <span style="font-weight: bold;">:after</span> (treemacs evil)
+  )
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7413c62" class="outline-2">
+<h2 id="org7413c62">翻译 bing-dict</h2>
+<div class="outline-text-2" id="text-org7413c62">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package
+  bing-dict
+  <span style="font-weight: bold;">:config</span> (global-set-key (kbd <span style="font-style: italic;">"C-c d"</span>) 'bing-dict-brief))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org72487c0" class="outline-2">
+<h2 id="org72487c0">counsel &#x2013; better input completion</h2>
+<div class="outline-text-2" id="text-org72487c0">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">counsel</span>
+(use-package counsel
+  <span style="font-weight: bold;">:demand</span> t
+  <span style="font-weight: bold;">:bind</span> ((<span style="font-style: italic;">"M-x"</span> . counsel-M-x)
+         (<span style="font-style: italic;">"C-x b"</span> . counsel-ibuffer)
+         (<span style="font-style: italic;">"C-x C-f"</span> . counsel-find-file)
+         <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">("C-M-j" . counsel-switch-buffer)</span>
+         (<span style="font-style: italic;">"C-M-l"</span> . counsel-imenu)
+         <span style="font-weight: bold;">:map</span> minibuffer-local-map
+         (<span style="font-style: italic;">"C-r"</span> . 'counsel-minibuffer-history))
+  <span style="font-weight: bold;">:custom</span>
+  (counsel-linux-app-format-function #'counsel-linux-app-format-function-name-only))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3b6a6ae" class="outline-2">
+<h2 id="org3b6a6ae">Text completion</h2>
+<div class="outline-text-2" id="text-org3b6a6ae">
+</div>
+<div id="outline-container-org441bb0b" class="outline-3">
+<h3 id="org441bb0b">括号补全</h3>
+<div class="outline-text-3" id="text-org441bb0b">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package smartparens
+  <span style="font-weight: bold;">:hook</span>
+  (prog-mode . smartparens-mode)
+  (org-mode . smartparens-mode ))
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org54fd1fa" class="outline-2">
+<h2 id="org54fd1fa">Org mode</h2>
+<div class="outline-text-2" id="text-org54fd1fa">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">Orgmode</span>
+(use-package org
+  <span style="font-weight: bold;">:pin</span> elpa
+  <span style="font-weight: bold;">:config</span>
+  (<span style="font-weight: bold;">setq</span> org-directory <span style="font-style: italic;">"~/MyLife/org"</span>)
+  (<span style="font-weight: bold;">setq</span> org-hide-emphasis-markers t)
+  (global-set-key (kbd <span style="font-style: italic;">"C-c l"</span>) 'org-store-link)
+  (global-set-key (kbd <span style="font-style: italic;">"C-c a"</span>) 'org-agenda)
+  (global-set-key (kbd <span style="font-style: italic;">"C-c c"</span>) 'org-capture)
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">org-modules</span>
+  (<span style="font-weight: bold;">with-eval-after-load</span> 'org (add-to-list 'org-modules 'org-habit t))
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(message "Org required")</span>
+  (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">org-tempo</span>)
+
+  (add-to-list 'org-structure-template-alist '(<span style="font-style: italic;">"sh"</span> . <span style="font-style: italic;">"src sh"</span>))
+  (add-to-list 'org-structure-template-alist '(<span style="font-style: italic;">"el"</span> . <span style="font-style: italic;">"src emacs-lisp"</span>))
+  (add-to-list 'org-structure-template-alist '(<span style="font-style: italic;">"li"</span> . <span style="font-style: italic;">"src lisp"</span>))
+  (add-to-list 'org-structure-template-alist '(<span style="font-style: italic;">"sc"</span> . <span style="font-style: italic;">"src scheme"</span>))
+  (add-to-list 'org-structure-template-alist '(<span style="font-style: italic;">"ts"</span> . <span style="font-style: italic;">"src typescript"</span>))
+  (add-to-list 'org-structure-template-alist '(<span style="font-style: italic;">"py"</span> . <span style="font-style: italic;">"src python"</span>))
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(add-to-list 'org-structure-template-alist '("ipy" . "src jupyter-python"))</span>
+  (add-to-list 'org-structure-template-alist '(<span style="font-style: italic;">"go"</span> . <span style="font-style: italic;">"src go"</span>))
+  (add-to-list 'org-structure-template-alist '(<span style="font-style: italic;">"yaml"</span> . <span style="font-style: italic;">"src yaml"</span>))
+  (add-to-list 'org-structure-template-alist '(<span style="font-style: italic;">"json"</span> . <span style="font-style: italic;">"src json"</span>))
+
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#27599;&#27425;&#25191;&#34892;&#19981;&#20250;&#35810;&#38382;&#26159;&#21542;&#25191;&#34892;</span>
+  (<span style="font-weight: bold;">setq</span> org-confirm-babel-evaluate nil)
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#35774;&#32622;org-mode&#33258;&#21160;&#25442;&#34892;</span>
+  (add-hook 'org-mode-hook '(lambda ()
+                              (<span style="font-weight: bold;">setq</span> fill-column 80)))
+  (add-hook 'org-mode-hook 'auto-fill-mode)
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">org encrypt :crypt</span>
+  (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">org-crypt</span>)
+  (org-crypt-use-before-save-magic)
+  (<span style="font-weight: bold;">setq</span> org-tags-exclude-from-inheritance (<span style="font-weight: bold;">quote</span> (<span style="font-style: italic;">"crypt"</span>)))
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">GPG key to use for encryption</span>
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Either the Key ID or set to nil to use symmetric encryption.</span>
+  (<span style="font-weight: bold;">setq</span> org-crypt-key <span style="font-style: italic;">"kamisama"</span>)
+  )
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org0f39c1d" class="outline-3">
+<h3 id="org0f39c1d">Org bullets</h3>
+<div class="outline-text-3" id="text-org0f39c1d">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package org-superstar
+  <span style="font-weight: bold;">:after</span> org
+  <span style="font-weight: bold;">:hook</span> (org-mode . org-superstar-mode)
+  <span style="font-weight: bold;">:config</span> (<span style="font-weight: bold;">setq</span> org-superstar-leading-bullet  ?\s)
+  <span style="font-weight: bold;">:custom</span>
+  <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(org-superstar-remove-leading-stars t)</span>
+  (org-superstar-headline-bullets-list '(<span style="font-style: italic;">"&#9673;"</span> <span style="font-style: italic;">"&#9675;"</span> <span style="font-style: italic;">"&#9679;"</span> <span style="font-style: italic;">"&#9675;"</span> <span style="font-style: italic;">"&#9679;"</span> <span style="font-style: italic;">"&#9675;"</span> <span style="font-style: italic;">"&#9679;"</span>))
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(org-superstar-headline-bullets-list '("&#9775;" "&#9776;" "&#9777;" "&#9778;" "&#9779;" "&#9780;" "&#9781;" "&#9782;" "&#9783;"))</span>
+  )
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb5c1a51" class="outline-2">
+<h2 id="orgb5c1a51">Org drill &#x2013; flashcards</h2>
+<div class="outline-text-2" id="text-orgb5c1a51">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package org-drill
+  <span style="font-weight: bold;">:after</span> org)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgaa900db" class="outline-2">
+<h2 id="orgaa900db">Org roam</h2>
+<div class="outline-text-2" id="text-orgaa900db">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Org-roam</span>
+(use-package
+  org-roam
+  <span style="font-weight: bold;">:ensure</span> t
+  <span style="font-weight: bold;">:init</span> (<span style="font-weight: bold;">setq</span> org-roam-v2-ack t)
+  <span style="font-weight: bold;">:custom</span> (org-roam-directory <span style="font-style: italic;">"~/MyLife/org-roam"</span>)
+  (org-roam-completion-everywhere t)
+  (org-roam-dailies-capture-templates '((<span style="font-style: italic;">"d"</span> <span style="font-style: italic;">"default"</span> entry <span style="font-style: italic;">"* %&lt;%I:%M %p&gt;: %?"</span>
+                                         <span style="font-weight: bold;">:if-new</span> (file+head <span style="font-style: italic;">"%&lt;%Y-%m-%d&gt;.org"</span>
+                                                            <span style="font-style: italic;">"#+title: %&lt;%Y-%m-%d&gt;\n"</span>))))
+  <span style="font-weight: bold;">:bind</span> ((<span style="font-style: italic;">"C-c n l"</span> . org-roam-buffer-toggle)
+         (<span style="font-style: italic;">"C-c n f"</span> . org-roam-node-find)
+         (<span style="font-style: italic;">"C-c n i"</span> . org-roam-node-insert)
+         <span style="font-weight: bold;">:map</span> org-mode-map
+         (<span style="font-style: italic;">"C-M-i"</span> . completion-at-point)
+         <span style="font-weight: bold;">:map</span> org-roam-dailies-map (<span style="font-style: italic;">"Y"</span> . org-roam-dailies-capture-yesterday)
+         (<span style="font-style: italic;">"T"</span> . org-roam-dailies-capture-tomorrow))
+  <span style="font-weight: bold;">:bind-keymap</span> (<span style="font-style: italic;">"C-c n d"</span> . org-roam-dailies-map)
+  <span style="font-weight: bold;">:config</span> (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">org-roam-dailies</span>) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Ensure the keymap is available</span>
+  (org-roam-db-autosync-mode))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7358b56" class="outline-2">
+<h2 id="org7358b56">Basic UI</h2>
+<div class="outline-text-2" id="text-org7358b56">
+<p>
+不需要任何其他包的 UI 设置
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(modify-all-frames-parameters '((alpha . (95 . 95) ) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#36879;&#26126;&#24230;&#35774;&#32622;</span>
+                                (menu-bar-lines . 0) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#21462;&#28040;&#33756;&#21333;&#26639;</span>
+                                (tool-bar-lines . 0) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#21462;&#28040;&#24037;&#20855;&#26639;</span>
+                                <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(background-color . "#66CCFF")</span>
+                                (vertical-scroll-bars . nil) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#21462;&#28040;&#20391;&#36793;&#28378;&#21160;&#26465;</span>
+                                (left-fringe . 2)
+                                (right-fringe . 2)
+                                (modeline . nil)
+                                (background-color . <span style="font-style: italic;">"#232530"</span>)
+                                (background-mode . dark)
+                                (display-type . color)
+                                (font . <span style="font-style: italic;">"Wenquanyi Zen Hei Mono-12"</span>)
+                                ))
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#21462;&#28040;&#23631;&#24149;&#38378;&#28865;&#20316;&#20026;&#38083;&#22768;</span>
+
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">set up the visible bell</span>
+(<span style="font-weight: bold;">setq-default</span> visible-bell nil)
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">eliminate the bell entirely</span>
+(<span style="font-weight: bold;">setq-default</span> ring-bell-function #'ignore)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc4bf773" class="outline-2">
+<h2 id="orgc4bf773">modeline</h2>
+<div class="outline-text-2" id="text-orgc4bf773">
+</div>
+<div id="outline-container-org161284b" class="outline-3">
+<h3 id="org161284b">doom-modeline</h3>
+<div class="outline-text-3" id="text-org161284b">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">modeline</span>
+(use-package
+  doom-modeline
+  <span style="font-weight: bold;">:init</span> (doom-modeline-mode 1)
+  <span style="font-weight: bold;">:config</span>
+  (set-face-attribute 'mode-line nil <span style="font-weight: bold;">:family</span> <span style="font-style: italic;">"Fira Mono"</span>)
+)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8e8b875" class="outline-2">
+<h2 id="org8e8b875">theme</h2>
+<div class="outline-text-2" id="text-org8e8b875">
+</div>
+<div id="outline-container-org6337e98" class="outline-3">
+<h3 id="org6337e98">doom-themes</h3>
+<div class="outline-text-3" id="text-org6337e98">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package
+  doom-themes
+  <span style="font-weight: bold;">:config</span> (load-theme 'doom-palenight t)
+  <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(load-theme 'doom-plain-dark t)</span>
+  )
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org07113fc" class="outline-2">
+<h2 id="org07113fc">input-method</h2>
+<div class="outline-text-2" id="text-org07113fc">
+<p>
+rime 不能在 vim 的 Search mode 里面使用,经过测试跟 rime-show-candidate 没有关
+系缺点: 不能在 isearch 和 vim 的 Search mode 里面使用
+</p>
+</div>
+<div id="outline-container-orgd054282" class="outline-3">
+<h3 id="orgd054282">rime</h3>
+<div class="outline-text-3" id="text-orgd054282">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package rime
+  <span style="font-weight: bold;">:config</span>
+  (<span style="font-weight: bold;">setq</span> default-input-method <span style="font-style: italic;">"rime"</span>)
+  (<span style="font-weight: bold;">setq</span> rime-cursor <span style="font-style: italic;">"|"</span>)
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#26029;&#35328;&#35774;&#32622;,&#21487;&#20197;&#33258;&#21160;&#20999;&#25442;&#36755;&#20837;&#33521;&#25991;</span>
+  (<span style="font-weight: bold;">setq</span> rime-disable-predicates <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#26029;&#35328;&#21015;&#34920;,&#20854;&#20013;&#20219;&#24847;&#19968;&#20010;&#19981;&#20026; nil &#26102;&#20250;&#33258;&#21160;&#20351;&#29992;&#33521;&#25991;.</span>
+        '(rime-predicate-evil-mode-p <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">evil mode &#38750; insert mode &#26102;&#20026;t</span>
+          rime-predicate-after-alphabet-char-p <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#33521;&#25991;&#23383;&#31526;&#20018;&#20043;&#21518;&#20026; t</span>
+          rime-predicate-space-after-cc-p <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#20013;&#25991;&#20043;&#21518;&#21152;&#19978;&#31354;&#26684;&#23601;&#20250;&#20351;&#29992;&#33521;&#25991; asdf &#27979;&#35797;</span>
+          rime-predicate-prog-in-code-p <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#22312; prog-mode &#37324;&#21482;&#35201;&#19981;&#26159;&#22312;&#27880;&#37322;&#21644;&#23383;&#31526;&#20018;&#20013;&#37117;&#20351;&#29992;&#33521;&#25991;&#36755;&#20837;</span>
+          rime-predicate-current-input-punctuation-p <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#24403;&#35201;&#36755;&#20837;&#30340;&#26159;&#31526;&#21495;&#26102; t</span>
+          <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">rime-predicate-auto-english-p</span>
+          ))
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(setq mode-line-mule-info '((:eval (rime-lighter))))</span>
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#20505;&#36873;&#26694;&#20351;&#29992;&#20160;&#20040;&#23454;&#29616;: popup &#29992;&#36215;&#26469;&#24863;&#35273;&#26377;&#28857;&#21345;,&#32780;&#19988;&#30028;&#38754;&#19981;&#26159;&#24456;&#25972;&#40784;, posframe &#24863;&#35273;&#19981;&#38169;</span>
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">sidewindow &#20250;&#29983;&#25104;&#19968;&#20010;&#26032;&#31383;&#21475;,&#23548;&#33268;&#21407;&#26469;&#30340;&#31383;&#21475;&#21040;&#22788;&#36339;&#21160;,&#19981;&#26159;&#24456;&#21916;&#27426;</span>
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">minibuffer &#26159;&#40664;&#35748;&#36873;&#39033;,&#20294;&#20250;&#34987;&#20854;&#20182;&#38656;&#35201;&#26174;&#31034;&#30340;&#28040;&#24687;&#36974;&#25377;</span>
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">nil &#21017;&#19981;&#20250;&#26174;&#31034;&#20505;&#36873;&#26694;.</span>
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">message &#23558;&#20505;&#36873;&#26694;&#36755;&#20986;&#21040; Message &#21069;&#25552;&#26159;&#20320;&#22312; modeline &#37324;&#20351;&#29992; minibuffer</span>
+  <span style="font-weight: bold; font-style: italic;">;;</span>
+  (<span style="font-weight: bold;">setq</span> rime-show-candidate 'posframe)
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(setq rime-user-data-dir "~/.local/share/fcitx5/rime/")</span>
+  )
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc9866ad" class="outline-3">
+<h3 id="orgc9866ad">pyim</h3>
+<div class="outline-text-3" id="text-orgc9866ad">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package
+  pyim
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">:config</span>
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(require 'pyim-basedict)</span>
+  )
+(use-package
+  pyim-basedict
+  <span style="font-weight: bold;">:config</span> (pyim-basedict-enable)
+  (<span style="font-weight: bold;">setq</span> default-input-method <span style="font-style: italic;">"pyim"</span>)
+  (<span style="font-weight: bold;">setq</span> pyim-default-scheme <span style="font-style: italic;">"rime"</span>))
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orge58caea" class="outline-2">
+<h2 id="orge58caea">Programming</h2>
+<div class="outline-text-2" id="text-orge58caea">
+</div>
+<div id="outline-container-orgf0f05af" class="outline-3">
+<h3 id="orgf0f05af">Lsp common settings</h3>
+<div class="outline-text-3" id="text-orgf0f05af">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Lsp common setting.</span>
+(use-package
+  lsp-mode
+  <span style="font-weight: bold;">:init</span> (<span style="font-weight: bold;">setq</span> lsp-keymap-prefix <span style="font-style: italic;">"C-c l"</span>)
+  <span style="font-weight: bold;">:hook</span> (
+         (python-mode . lsp-deferred)
+         (lsp-mode . lsp-enable-which-key-integration))
+  <span style="font-weight: bold;">:commands</span> (lsp lsp-deferred)
+  <span style="font-weight: bold;">:config</span>
+  (add-to-list 'lsp-disabled-clients 'pyls)
+  )
+
+                                        <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">completion</span>
+(use-package company
+  <span style="font-weight: bold;">:after</span> lsp-mode
+  <span style="font-weight: bold;">:hook</span> (lsp-mode . company-mode)
+  <span style="font-weight: bold;">:bind</span> (<span style="font-weight: bold;">:map</span> company-active-map
+              (<span style="font-style: italic;">"&lt;tab&gt;"</span> . company-complete-selection))
+  (<span style="font-weight: bold;">:map</span> lsp-mode-map
+        (<span style="font-style: italic;">"&lt;tab&gt;"</span> . company-indent-or-complete-common))
+  <span style="font-weight: bold;">:custom</span>
+  (company-minimum-prefix-length 1)
+  (company-idle-delay 0.0))
+
+(use-package company-box
+  <span style="font-weight: bold;">:hook</span> (company-mode . company-box-mode))
+
+(use-package yasnippet
+  <span style="font-weight: bold;">:hook</span> (company-mode . yas-minor-mode))
+(use-package lsp-ui
+  <span style="font-weight: bold;">:commands</span> (lsp-ui-mode))
+(use-package
+  flycheck
+  <span style="font-weight: bold;">:hook</span> (prog-mode . flycheck-mode))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org680c75e" class="outline-3">
+<h3 id="org680c75e">Lsp setting for Py</h3>
+<div class="outline-text-3" id="text-org680c75e">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span>
+ lsp-pylsp-plugins-jedi-use-pyenv-environment t
+ lsp-pylsp-plugins-yapf-enabled t)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5245675" class="outline-3">
+<h3 id="org5245675">Python Templates</h3>
+<div class="outline-text-3" id="text-org5245675">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+(auto-insert-mode 1)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">File Templates</span>
+(define-auto-insert '(<span style="font-style: italic;">"\\.py\\'"</span> . <span style="font-style: italic;">"Python Init File"</span>)
+  '( <span style="font-style: italic;">"New Python file template:"</span>
+     <span style="font-style: italic;">"\"\"\""</span> str <span style="font-style: italic;">".\"\"\""</span>
+     \n
+     <span style="font-style: italic;">"# Author :"</span>
+     (<span style="font-weight: bold;">progn</span> user-full-name) \n
+     <span style="font-style: italic;">"# Email :"</span>
+     (<span style="font-weight: bold;">progn</span> user-mail-address)
+     \n \n \n
+     <span style="font-style: italic;">"if __name__ == \"__main__\":"</span>
+     \n
+     &gt; _ <span style="font-style: italic;">"pass"</span> \n))
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org79d2654" class="outline-2">
+<h2 id="org79d2654">自动备份</h2>
+<div class="outline-text-2" id="text-org79d2654">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#33258;&#21160;&#22791;&#20221;&#35774;&#32622;:</span>
+(<span style="font-weight: bold;">setq</span> backup-by-copying t               <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">&#33258;&#21160;&#22791;&#20221;</span>
+      backup-directory-alist '((<span style="font-style: italic;">"."</span> . <span style="font-style: italic;">"~/MyLife/Emacs/.em_backup"</span>)) <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">&#33258;&#21160;&#22791;&#20221;&#22312;&#30446;&#24405;"~/.em_backup"&#19979;</span>
+      delete-old-versions t             <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">&#33258;&#21160;&#21024;&#38500;&#26087;&#30340;&#22791;&#20221;&#25991;&#20214;</span>
+      kept-new-versions 3               <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">&#20445;&#30041;&#26368;&#36817;&#30340;3&#20010;&#22791;&#20221;&#25991;&#20214;</span>
+      kept-old-versions 1               <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">&#20445;&#30041;&#26368;&#26089;&#30340;1&#20010;&#22791;&#20221;&#25991;&#20214;</span>
+      version-control t)                <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">&#22810;&#27425;&#22791;&#20221;</span>
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge9a49f1" class="outline-2">
+<h2 id="orge9a49f1">Parenthesis 括号显示</h2>
+<div class="outline-text-2" id="text-orge9a49f1">
+<p>
+emacs 自带的显示成对括号.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(show-paren-mode 1)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2022-01-30 Sun 07:03</p>
+<p class="author">Author: kamisama</p>
+<p class="date">Created: 2022-01-30 Sun 12:01</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>
