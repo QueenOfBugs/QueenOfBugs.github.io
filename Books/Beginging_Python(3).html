@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-02-02 Wed 12:43 -->
+<!-- 2022-02-04 Fri 14:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Beginning<sub>Python</sub>(3)</title>
@@ -238,25 +238,26 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org79890c7">第一章 快速上手:基础知识</a>
+<li><a href="#orgde29080">第一章 快速上手:基础知识</a>
 <ul>
-<li><a href="#org3b90419">交互式解释器</a></li>
-<li><a href="#org9ba80d3">算法是什么</a></li>
-<li><a href="#org73d233c">数和表达式</a></li>
-<li><a href="#orga4c0ce8">变量</a></li>
-<li><a href="#orgedb77b6">语句</a></li>
+<li><a href="#org87f39b6">交互式解释器</a></li>
+<li><a href="#org09ede9d">算法是什么</a></li>
+<li><a href="#org97d7312">数和表达式</a></li>
+<li><a href="#orgf1b79a0">变量</a></li>
+<li><a href="#orgd911fe6">语句</a></li>
+<li><a href="#org887a1d4">获取用户输入</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org79890c7" class="outline-2">
-<h2 id="org79890c7">第一章 快速上手:基础知识</h2>
-<div class="outline-text-2" id="text-org79890c7">
+<div id="outline-container-orgde29080" class="outline-2">
+<h2 id="orgde29080">第一章 快速上手:基础知识</h2>
+<div class="outline-text-2" id="text-orgde29080">
 </div>
-<div id="outline-container-org3b90419" class="outline-3">
-<h3 id="org3b90419">交互式解释器</h3>
-<div class="outline-text-3" id="text-org3b90419">
+<div id="outline-container-org87f39b6" class="outline-3">
+<h3 id="org87f39b6">交互式解释器</h3>
+<div class="outline-text-3" id="text-org87f39b6">
 <p>
 编程就是让计算机按照人类的意愿去执行一些人力成本较高的工作,而计算机能识别(读
 懂)的语言只有机器语言(01010101010&#x2026;.),早期程序员用打孔的纸带来表示0和
@@ -286,9 +287,9 @@ for the JavaScript code in this tag.
 </p>
 </div>
 </div>
-<div id="outline-container-org9ba80d3" class="outline-3">
-<h3 id="org9ba80d3">算法是什么</h3>
-<div class="outline-text-3" id="text-org9ba80d3">
+<div id="outline-container-org09ede9d" class="outline-3">
+<h3 id="org09ede9d">算法是什么</h3>
+<div class="outline-text-3" id="text-org09ede9d">
 <p>
 计算机多才多艺,但不能思考.计算机的工作本质就是计算,我们能看到的电脑展现出来的
 图形图像,音乐影像,我们能使用的各种电子产品都是计算机与各个学科,各个行业结合的
@@ -330,9 +331,9 @@ specific problems or to perform a computation.
 </p>
 </div>
 </div>
-<div id="outline-container-org73d233c" class="outline-3">
-<h3 id="org73d233c">数和表达式</h3>
-<div class="outline-text-3" id="text-org73d233c">
+<div id="outline-container-org97d7312" class="outline-3">
+<h3 id="org97d7312">数和表达式</h3>
+<div class="outline-text-3" id="text-org97d7312">
 <p>
 交互式Python解释器可以当作一个功能强大的计算器.
 </p>
@@ -443,9 +444,9 @@ Python 里数的进制表示.
 </table>
 </div>
 </div>
-<div id="outline-container-orga4c0ce8" class="outline-3">
-<h3 id="orga4c0ce8">变量</h3>
-<div class="outline-text-3" id="text-orga4c0ce8">
+<div id="outline-container-orgf1b79a0" class="outline-3">
+<h3 id="orgf1b79a0">变量</h3>
+<div class="outline-text-3" id="text-orgf1b79a0">
 <p>
 Python 里变量是表示或指向特定值的名称.例如想用 x 表示 3,执行代码: <code>x = 3</code>,这称
 为赋值(assignment), 这个语句把值3赋给了变量x, 赋值就是将值(对象)与变量名关联
@@ -456,20 +457,50 @@ Python 里变量是表示或指向特定值的名称.例如想用 x 表示 3,执
 </p>
 </div>
 </div>
-<div id="outline-container-orgedb77b6" class="outline-3">
-<h3 id="orgedb77b6">语句</h3>
-<div class="outline-text-3" id="text-orgedb77b6">
+<div id="outline-container-orgd911fe6" class="outline-3">
+<h3 id="orgd911fe6">语句</h3>
+<div class="outline-text-3" id="text-orgd911fe6">
 <p>
 前面用了很多和数学表达式类似的表达式,相当于菜谱中的原料,语句就是菜谱里的操作.
-上面的只是一种不准确的便于理解的说法.表达式是可以被求值的,语句并不总是
+上面的只是一种不准确的便于理解的说法.语句和表达式的行为很像,因此他们的界限可
+能不是十分明确.表达式是一些东西,语句是做一些事情.
+</p>
+
+<p>
+交互式解释器总是会将表达式的值打印出来(打印 repr 表示的内容),因此 <code>2 * 2</code> 和
+<code>print(2 * 2)</code> 在解释器里的结果没有差别.
+</p>
+
+<p>
+不使用解释器运行的程序里, <code>2 * 2</code> 不会有任何作用(这个表达式确实会执行一些操作,
+计算2和2的乘积,但既不会保存结果,也不会打印结果显示给用户,所以除了执行计算之
+外,没有任何作用)
+</p>
+
+<p>
+注意: <code>print</code> 实际上是一个函数,因此 print 语句实际上是函数调用,在Python2.x
+里,print 是一条语句,因此,无需将打印的内容作为参数放在圆括号里.
+</p>
+
+<p>
+在涉及赋值时,语句和表达式的界限更明显,因为赋值语句不是表达式,因此,交互式解释
+器不会打印它的值.
+</p>
+
+<p>
+可以说,一个语句的根本特征是:执行修改操作.例如,赋值语句改变变量,print 语句改变
+屏幕外观.
 </p>
 </div>
+</div>
+<div id="outline-container-org887a1d4" class="outline-3">
+<h3 id="org887a1d4">获取用户输入</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-02-02 Wed 12:43</p>
+<p class="date">Created: 2022-02-04 Fri 14:43</p>
 <p class="validation"></p>
 </div>
 </body>

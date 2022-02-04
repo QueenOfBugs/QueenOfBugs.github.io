@@ -6,7 +6,7 @@
 <!-- 2022-02-04 Fri 14:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>发现的乐趣 &#x2013; 理查德·费曼的演讲和访谈文章</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="kamisama" />
 <style type="text/css">
@@ -233,69 +233,112 @@ for the JavaScript code in this tag.
  |
  <a accesskey="H" href="../index.html"> HOME </a>
 </div><div id="content">
+<h1 class="title">发现的乐趣 &#x2013; 理查德·费曼的演讲和访谈文章</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb2606a2">Python</a>
+<li><a href="#org29c6b93">发现的乐趣</a>
 <ul>
-<li><a href="#orga73fe3c">异步执行 python 代码</a>
-<ul>
-<li><a href="#org165a4cf"><span class="todo TODO">TODO</span> 因为需要下载不少东西,这个包也不在 Emacs 包管理系统中,所以没能试用,暂且记下.</a></li>
+<li><a href="#org8cc7ca2">科学家眼中的花之美</a></li>
+<li><a href="#orgcec53de">关于偏科</a></li>
+<li><a href="#orgab47bd2">父亲教育我的方式</a></li>
+<li><a href="#org8b9b8fe">实干家如何学习</a></li>
 </ul>
 </li>
 </ul>
-</li>
+</div>
+</div>
+
+<div id="outline-container-org29c6b93" class="outline-2">
+<h2 id="org29c6b93">发现的乐趣</h2>
+<div class="outline-text-2" id="text-org29c6b93">
+<ul class="org-ul">
+<li>为什么仅仅知道一个事物的名字其实等同于对其一无所知</li>
+<li>当广岛人收原子弹荼毒之际,为什么曼哈顿计划的原子物理学家们,费曼和他的同事,能
+狂欢痛饮,庆贺胜利.</li>
 </ul>
 </div>
-</div>
-<div id="outline-container-orgb2606a2" class="outline-2">
-<h2 id="orgb2606a2">Python</h2>
-<div class="outline-text-2" id="text-orgb2606a2">
-</div>
-<div id="outline-container-orga73fe3c" class="outline-3">
-<h3 id="orga73fe3c">异步执行 python 代码</h3>
-<div class="outline-text-3" id="text-orga73fe3c">
-<p>
-正常情况下,执行下面的代码,Emacs 进程会直接挂起,直到代码执行完毕,也就是会卡死
-10秒.
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">import</span> time
 
-<span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> <span style="font-weight: bold;">range</span>(5):
-    <span style="font-weight: bold;">print</span>(i)
-    time.sleep(2)
-</pre>
-</div>
+<div id="outline-container-org8cc7ca2" class="outline-3">
+<h3 id="org8cc7ca2">科学家眼中的花之美</h3>
+<div class="outline-text-3" id="text-org8cc7ca2">
+<p>
+美不尽然只存在与花朵的方寸之间,美也存在于更小的微观世界,花的内部构造也很美.
+</p>
 
 <p>
-这是因为 Emacs 的单进程机制,想要在后台异步执行 Python 代码,就需要用到下面的库
-(需要自己下载):
+细胞体内复杂的反应也有一种美感.
 </p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">scimax-org-babel-python</span>)
-(add-to-list 'org-ctrl-c-ctrl-c-hook 'org-babel-async-execute:python)
-</pre>
-</div>
+
 <p>
-<a href="https://github.com/jkitchin/scimax/blob/org-9/scimax-org-babel-python.el">scimax-org-babel-python</a>
+一些进化过程也很有意思,比如,一些花开始有了颜色,就是为了吸引昆虫为自己授粉;这
+就意味着昆虫也能看到颜色.这就带来了一个问题:低级动物也能感受到美吗? 为什么能
+称之为"审美体验"呢? 所有这些有趣的问题都说明了一件事:科学知识只会增加花的美感
+和神秘感,人们对花更加兴趣盎然,惊叹不已.
 </p>
+</div>
 </div>
 
-<div id="outline-container-org165a4cf" class="outline-4">
-<h4 id="org165a4cf"><span class="todo TODO">TODO</span> 因为需要下载不少东西,这个包也不在 Emacs 包管理系统中,所以没能试用,暂且记下.</h4>
-<div class="outline-text-4" id="text-org165a4cf">
+<div id="outline-container-orgcec53de" class="outline-3">
+<h3 id="orgcec53de">关于偏科</h3>
+<div class="outline-text-3" id="text-orgcec53de">
 <p>
-<a href="https://kitchingroup.cheme.cmu.edu/blog/2016/11/09/New-and-improved-asynchronous-org-babel-python-blocks/">原文</a>
+早些年,我几乎把所有精力都投入到学习自然学科上面.我几乎没有时间,也没有耐心去学
+习所谓人文学科,即便是大学里那些必修的课程.
+</p>
+
+<p>
+总的来说,我还是偏科很厉害的一个人,我知道的东西也很有限.我的智慧有限,我只把它
+用在一个特定的地方.
 </p>
 </div>
 </div>
+
+<div id="outline-container-orgab47bd2" class="outline-3">
+<h3 id="orgab47bd2">父亲教育我的方式</h3>
+<div class="outline-text-3" id="text-orgab47bd2">
+<p>
+凡是我们一起度过的内容,爸爸都会尽量用现实生活中的食物来解释. 就这样,我学到了
+一个方法&#x2013;无论我读到什么内容,我总要通过这种思考方式,弄明白它到底在说些什么.
+</p>
+
+<p>
+"你知道这鸟的名字,就算你会用世界上所有的语言去称呼它,你其实对这鸟还是一无所知.你
+所知道的,仅仅是不同地方的人怎么称呼这种鸟而已.现在,我们来好好看看这只鸟."
+</p>
+
+<p>
+通过这些事,父亲教导我要去"观察"事物.
+</p>
+
+<p>
+"爸,我发现了,当我拉着车往前走,球就会往后滚;我突然停下来,球就会向前滚,这是怎么
+回事?"
+"一般来说,运动的物体会继续运动下去;静止的东西也会保持不懂,除非你用力去推它们."
+"这就叫做惯性,没有人知道怎么回事." 这就需要深入理解这种现象了.
+"如果你仔细观察,就会发现球并没有向后滚,而是你拉着车向小球移动;那小球是静止不
+动的,或是由于摩擦力的作用向前移动,而不是向后移动."
+</p>
+
+<p>
+他没有光告诉我一个物理概念,他很清楚:知道一个概念和真正懂得这个概念有很大区别,
+而我很早也知道这一点.
+</p>
+
+<p>
+这就是我爸爸教育我的方式,活生生的例子,接着是讨论问题,这个过程毫无压力,都是些
+轻松有趣的讨论.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8b9b8fe" class="outline-3">
+<h3 id="org8b9b8fe">实干家如何学习</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: 2022-01-06 Thu 20:57</p>
 <p class="author">Author: kamisama</p>
 <p class="date">Created: 2022-02-04 Fri 14:43</p>
 <p class="validation"></p>
