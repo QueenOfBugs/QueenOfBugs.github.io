@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-02-04 Fri 14:43 -->
+<!-- 2022-02-05 Sat 11:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Beginning<sub>Python</sub>(3)</title>
@@ -238,26 +238,34 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgde29080">第一章 快速上手:基础知识</a>
+<li><a href="#org99ddade">第一章 快速上手:基础知识</a>
 <ul>
-<li><a href="#org87f39b6">交互式解释器</a></li>
-<li><a href="#org09ede9d">算法是什么</a></li>
-<li><a href="#org97d7312">数和表达式</a></li>
-<li><a href="#orgf1b79a0">变量</a></li>
-<li><a href="#orgd911fe6">语句</a></li>
-<li><a href="#org887a1d4">获取用户输入</a></li>
+<li><a href="#orgbda999d">交互式解释器</a></li>
+<li><a href="#orgaa27f72">算法是什么</a></li>
+<li><a href="#org802b8dd">数和表达式</a></li>
+<li><a href="#orge545c00">变量</a></li>
+<li><a href="#orgc6676a4">语句</a></li>
+<li><a href="#orgdf2d514">获取用户输入</a></li>
+<li><a href="#org74ce6ae">函数</a></li>
+<li><a href="#org69209b6">模块</a>
+<ul>
+<li><a href="#org6b2915b">cmath 和复数</a></li>
+<li><a href="#org4fc8e9a">回到未来</a></li>
+</ul>
+</li>
+<li><a href="#org4df1c13">保存并执行程序</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgde29080" class="outline-2">
-<h2 id="orgde29080">第一章 快速上手:基础知识</h2>
-<div class="outline-text-2" id="text-orgde29080">
+<div id="outline-container-org99ddade" class="outline-2">
+<h2 id="org99ddade">第一章 快速上手:基础知识</h2>
+<div class="outline-text-2" id="text-org99ddade">
 </div>
-<div id="outline-container-org87f39b6" class="outline-3">
-<h3 id="org87f39b6">交互式解释器</h3>
-<div class="outline-text-3" id="text-org87f39b6">
+<div id="outline-container-orgbda999d" class="outline-3">
+<h3 id="orgbda999d">交互式解释器</h3>
+<div class="outline-text-3" id="text-orgbda999d">
 <p>
 编程就是让计算机按照人类的意愿去执行一些人力成本较高的工作,而计算机能识别(读
 懂)的语言只有机器语言(01010101010&#x2026;.),早期程序员用打孔的纸带来表示0和
@@ -287,9 +295,9 @@ for the JavaScript code in this tag.
 </p>
 </div>
 </div>
-<div id="outline-container-org09ede9d" class="outline-3">
-<h3 id="org09ede9d">算法是什么</h3>
-<div class="outline-text-3" id="text-org09ede9d">
+<div id="outline-container-orgaa27f72" class="outline-3">
+<h3 id="orgaa27f72">算法是什么</h3>
+<div class="outline-text-3" id="text-orgaa27f72">
 <p>
 计算机多才多艺,但不能思考.计算机的工作本质就是计算,我们能看到的电脑展现出来的
 图形图像,音乐影像,我们能使用的各种电子产品都是计算机与各个学科,各个行业结合的
@@ -331,9 +339,9 @@ specific problems or to perform a computation.
 </p>
 </div>
 </div>
-<div id="outline-container-org97d7312" class="outline-3">
-<h3 id="org97d7312">数和表达式</h3>
-<div class="outline-text-3" id="text-org97d7312">
+<div id="outline-container-org802b8dd" class="outline-3">
+<h3 id="org802b8dd">数和表达式</h3>
+<div class="outline-text-3" id="text-org802b8dd">
 <p>
 交互式Python解释器可以当作一个功能强大的计算器.
 </p>
@@ -444,9 +452,9 @@ Python 里数的进制表示.
 </table>
 </div>
 </div>
-<div id="outline-container-orgf1b79a0" class="outline-3">
-<h3 id="orgf1b79a0">变量</h3>
-<div class="outline-text-3" id="text-orgf1b79a0">
+<div id="outline-container-orge545c00" class="outline-3">
+<h3 id="orge545c00">变量</h3>
+<div class="outline-text-3" id="text-orge545c00">
 <p>
 Python 里变量是表示或指向特定值的名称.例如想用 x 表示 3,执行代码: <code>x = 3</code>,这称
 为赋值(assignment), 这个语句把值3赋给了变量x, 赋值就是将值(对象)与变量名关联
@@ -457,9 +465,9 @@ Python 里变量是表示或指向特定值的名称.例如想用 x 表示 3,执
 </p>
 </div>
 </div>
-<div id="outline-container-orgd911fe6" class="outline-3">
-<h3 id="orgd911fe6">语句</h3>
-<div class="outline-text-3" id="text-orgd911fe6">
+<div id="outline-container-orgc6676a4" class="outline-3">
+<h3 id="orgc6676a4">语句</h3>
+<div class="outline-text-3" id="text-orgc6676a4">
 <p>
 前面用了很多和数学表达式类似的表达式,相当于菜谱中的原料,语句就是菜谱里的操作.
 上面的只是一种不准确的便于理解的说法.语句和表达式的行为很像,因此他们的界限可
@@ -493,14 +501,206 @@ Python 里变量是表示或指向特定值的名称.例如想用 x 表示 3,执
 </p>
 </div>
 </div>
-<div id="outline-container-org887a1d4" class="outline-3">
-<h3 id="org887a1d4">获取用户输入</h3>
+<div id="outline-container-orgdf2d514" class="outline-3">
+<h3 id="orgdf2d514">获取用户输入</h3>
+<div class="outline-text-3" id="text-orgdf2d514">
+<p>
+<code>input</code> 函数能获取标准输入,并将用户输入的信息以字符串的方式返回.
+</p>
+<pre class="example">
+&gt;&gt;&gt; x = input("x: ")
+x: 1
+&gt;&gt;&gt; y = input("y: ")
+y: 3
+&gt;&gt;&gt; print(int(x) * int(y))
+3
+&gt;&gt;&gt;
+</pre>
+
+<p>
+注意: 将程序存储在独立文件中,让其他用户能够执行时,这种获取输入的方式将有用很
+多.<a href="#org69209b6">模块</a> 一节将介绍如何这样做.
+</p>
+</div>
+</div>
+<div id="outline-container-org74ce6ae" class="outline-3">
+<h3 id="org74ce6ae">函数</h3>
+<div class="outline-text-3" id="text-org74ce6ae">
+<p>
+<a href="#org802b8dd">数和表达式</a> 一节里介绍了乘方运算符(<code>**</code>)来执行幂运算.实际上,可以不适用这个运算
+符,而使用函数 <code>pow</code>.
+</p>
+<pre class="example">
+&gt;&gt;&gt; 2 ** 3
+8
+&gt;&gt;&gt; pow(2, 3)
+8
+&gt;&gt;&gt;
+</pre>
+<p>
+函数就像小型程序,可以用来执行特定的操作. Python 提供了很多函数,来完成很多神奇
+的任务,事实上,你可以自己编写函数,因此,我们将 <code>pow</code> 等标准函数称为 <code>内置函数</code>.
+上面的示例一样使用函数叫 <code>函数调用</code> :给函数提供参数,函数返回一个值. 因为函数会
+返回一个值,因此他们也是表达式,函数的调用也可以作为语句,但是这种情况时会忽略函
+数的返回值.
+</p>
+<pre class="example">
+&gt;&gt;&gt; 10 + pow(2, 3 * 5) / 3.0
+10932.666666666666
+</pre>
+<p>
+有多个内置的函数可以用于编写数值表达式.
+<code>abs</code> 计算绝对值, <code>round</code> 将浮点数圆整到与之最为接近的整数.
+</p>
+<pre class="example">
+&gt;&gt;&gt; abs(-1)
+1
+&gt;&gt;&gt; 2 // 3
+0
+&gt;&gt;&gt; round(2/3)
+1
+</pre>
+<p>
+注意最后两个表达式,整除总是向下圆整,而 <code>round</code> 圆整到最近的整数,在两个整数一样
+近时圆整到偶数.注意,这里说的是圆整到整数(integer)
+事实上,对浮点数,也就是我们常说的小数进行 <code>round</code> 操作,结果可能出乎意料,例如
+<code>round(2.675, 2)</code> 的结果是 <code>2.67</code> 而不是 <code>2.68</code> , 这一结果是因为大多数十进制小数实
+际上都不能以浮点数精确表示.想要精确执行四舍五入操作可以参考 <a href="https://docs.python.org/zh-cn/3.8/library/decimal.html#module-decimal">decimal 模块</a>.
+如果想让某个数向下圆整,可以怎么做呢? 受上面例子的启发,我们可以使用整除1来将该
+数向下圆整: <code>32.9 // 1</code>,但只要表达式里有浮点数,结果也会自动转换为浮点数,所以结
+果为 <code>32.0</code>,因此我们可以使用 <code>int</code> 函数将浮点数强制转换为整数 <code>int(32.9 // 1)</code>,结果
+为 <code>32</code>. 事实上,python 提供了完成这样操作的函数 <code>floor</code> ,但你不能直接使用他,因为
+它和其他很多有用的函数一样,它被包含在模块中.
+</p>
+</div>
+</div>
+<div id="outline-container-org69209b6" class="outline-3">
+<h3 id="org69209b6">模块</h3>
+<div class="outline-text-3" id="text-org69209b6">
+<p>
+模块可视为插件或扩展,通过将其导入可以扩展Python 的功能.
+要导入模块,需要使用 <code>import</code> 命令.前一节提到的 <code>floor</code> 函数包含在模块 <code>math</code> 中.
+</p>
+<pre class="example">
+&gt;&gt;&gt; import math
+&gt;&gt;&gt; math.floor(32.9)
+32
+</pre>
+<p>
+使用 import 导入模块,再使用 module.function 的方式使用(调用)模块中的函数.这里
+的例子可以像前面处理 input 的返回值那样,将数字直接转换为整数:
+</p>
+<pre class="example">
+&gt;&gt;&gt; int(32.9)
+32
+</pre>
+<blockquote>
+<p>
+还有一些类似的函数,也用于转换类型,如 str 和 float. 实际上,他们并不是函数,而是
+类.
+</p>
+</blockquote>
+<p>
+math 模块还包含几个有用的函数.ceil 和 floor 相反,返回大于或等于给定数的最小整
+数.
+</p>
+<pre class="example">
+&gt;&gt;&gt; math.ceil(32.1)
+33
+&gt;&gt;&gt; math.ceil(32)
+32
+</pre>
+<p>
+如果确定不会从不同模块中导入同名函数,可以使用 import 的变种:
+</p>
+<pre class="example">
+&gt;&gt;&gt; from math import sqrt
+&gt;&gt;&gt; sqrt(9)
+3.0
+</pre>
+<p>
+import 的变种: from module import function 可以在调用函数时不指定模块前缀.
+事实上,可以使用变量来引用函数(以及其他大部分Python元素). 执行赋值语句: <code>foo =
+   math.sqrt</code> 之后,就可以使用 <code>foo</code> 来计算平方根.
+</p>
+<pre class="example">
+&gt;&gt;&gt; foo = math.sqrt
+&gt;&gt;&gt; foo(9)
+3.0
+&gt;&gt;&gt; foo(4)
+2.0
+</pre>
+</div>
+
+<div id="outline-container-org6b2915b" class="outline-4">
+<h4 id="org6b2915b">cmath 和复数</h4>
+<div class="outline-text-4" id="text-org6b2915b">
+<p>
+当处理的数不再局限于实数时,sqrt 能继续处理吗?
+</p>
+<pre class="example">
+&gt;&gt;&gt; sqrt(-1)
+Traceback (most recent call last):
+File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+ValueError: math domain error
+</pre>
+<p>
+我的 Manjaro-i3 上报错了,有的系统可能会是
+</p>
+<pre class="example">
+&gt;&gt;&gt; sqrt(-1)
+nan
+</pre>
+<p>
+<code>nan</code> 有特殊意义,表示非数值(not a number)
+Python 的标准库提供了一个专门处理复数的模块:
+</p>
+<pre class="example">
+&gt;&gt;&gt; import cmath
+&gt;&gt;&gt; cmath.sqrt(-1)
+1j
+</pre>
+<p>
+这里使用了 module.function 的常规import 用法,因为前面已经使用变种用法导入了
+math.sqrt, 再使用变种就会导致cmath 和 math 的 sqrt 冲突,只有最后一个导入的
+sqrt 能正常使用.
+1j 是个虚数,虚数都是以 j(J) 结尾.看下面的例子
+</p>
+<pre class="example">
+&gt;&gt;&gt; (1+3j)*(9 + 4j)
+(-3+31j)
+</pre>
+<p>
+由结果可以得知,Python 本身提供了对复数的支持
+</p>
+<blockquote>
+<p>
+Python 没有专门表示虚数的类型,而将虚数视为实部为零的复数
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org4fc8e9a" class="outline-4">
+<h4 id="org4fc8e9a">回到未来</h4>
+<div class="outline-text-4" id="text-org4fc8e9a">
+<p>
+据说Python 之父 Guido van Rossum 有一台时光机,对于Python 当前不支持,但未来将
+成为标准组成部分的功能,可以使用神奇的 <code>__future__</code> 模块导入.如果是使用
+Python2.x, 可能会经常遇到,但3.x 目前没有遇到太多这种问题,等遇到了再回来看看.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4df1c13" class="outline-3">
+<h3 id="org4df1c13">保存并执行程序</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-02-04 Fri 14:43</p>
+<p class="date">Created: 2022-02-05 Sat 11:54</p>
 <p class="validation"></p>
 </div>
 </body>
