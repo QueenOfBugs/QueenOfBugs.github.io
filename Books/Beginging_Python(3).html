@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-02-05 Sat 11:54 -->
+<!-- 2022-02-06 Sun 13:06 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Beginning<sub>Python</sub>(3)</title>
@@ -238,34 +238,41 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org99ddade">第一章 快速上手:基础知识</a>
+<li><a href="#orgb41081c">第一章 快速上手:基础知识</a>
 <ul>
-<li><a href="#orgbda999d">交互式解释器</a></li>
-<li><a href="#orgaa27f72">算法是什么</a></li>
-<li><a href="#org802b8dd">数和表达式</a></li>
-<li><a href="#orge545c00">变量</a></li>
-<li><a href="#orgc6676a4">语句</a></li>
-<li><a href="#orgdf2d514">获取用户输入</a></li>
-<li><a href="#org74ce6ae">函数</a></li>
-<li><a href="#org69209b6">模块</a>
+<li><a href="#orgdb00bb5">交互式解释器</a></li>
+<li><a href="#org811d406">算法是什么</a></li>
+<li><a href="#org531547d">数和表达式</a></li>
+<li><a href="#orgee946fc">变量</a></li>
+<li><a href="#org150f39a">语句</a></li>
+<li><a href="#org9de763f">获取用户输入</a></li>
+<li><a href="#orgdd3f4b7">函数</a></li>
+<li><a href="#org57704e8">模块</a>
 <ul>
-<li><a href="#org6b2915b">cmath 和复数</a></li>
-<li><a href="#org4fc8e9a">回到未来</a></li>
+<li><a href="#orgec30ca6">cmath 和复数</a></li>
+<li><a href="#orgaaf5fc8">回到未来</a></li>
 </ul>
 </li>
-<li><a href="#org4df1c13">保存并执行程序</a></li>
+<li><a href="#org111cb15">保存并执行程序</a>
+<ul>
+<li><a href="#org0fd7f79">从命令提示符运行Python脚本</a></li>
+<li><a href="#org015ff80">让脚本像普通程序一样</a></li>
+<li><a href="#orgb2d9fc9">注释</a></li>
+</ul>
+</li>
+<li><a href="#orgf28d748">字符串</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org99ddade" class="outline-2">
-<h2 id="org99ddade">第一章 快速上手:基础知识</h2>
-<div class="outline-text-2" id="text-org99ddade">
+<div id="outline-container-orgb41081c" class="outline-2">
+<h2 id="orgb41081c">第一章 快速上手:基础知识</h2>
+<div class="outline-text-2" id="text-orgb41081c">
 </div>
-<div id="outline-container-orgbda999d" class="outline-3">
-<h3 id="orgbda999d">交互式解释器</h3>
-<div class="outline-text-3" id="text-orgbda999d">
+<div id="outline-container-orgdb00bb5" class="outline-3">
+<h3 id="orgdb00bb5">交互式解释器</h3>
+<div class="outline-text-3" id="text-orgdb00bb5">
 <p>
 编程就是让计算机按照人类的意愿去执行一些人力成本较高的工作,而计算机能识别(读
 懂)的语言只有机器语言(01010101010&#x2026;.),早期程序员用打孔的纸带来表示0和
@@ -295,9 +302,9 @@ for the JavaScript code in this tag.
 </p>
 </div>
 </div>
-<div id="outline-container-orgaa27f72" class="outline-3">
-<h3 id="orgaa27f72">算法是什么</h3>
-<div class="outline-text-3" id="text-orgaa27f72">
+<div id="outline-container-org811d406" class="outline-3">
+<h3 id="org811d406">算法是什么</h3>
+<div class="outline-text-3" id="text-org811d406">
 <p>
 计算机多才多艺,但不能思考.计算机的工作本质就是计算,我们能看到的电脑展现出来的
 图形图像,音乐影像,我们能使用的各种电子产品都是计算机与各个学科,各个行业结合的
@@ -339,9 +346,9 @@ specific problems or to perform a computation.
 </p>
 </div>
 </div>
-<div id="outline-container-org802b8dd" class="outline-3">
-<h3 id="org802b8dd">数和表达式</h3>
-<div class="outline-text-3" id="text-org802b8dd">
+<div id="outline-container-org531547d" class="outline-3">
+<h3 id="org531547d">数和表达式</h3>
+<div class="outline-text-3" id="text-org531547d">
 <p>
 交互式Python解释器可以当作一个功能强大的计算器.
 </p>
@@ -452,9 +459,9 @@ Python 里数的进制表示.
 </table>
 </div>
 </div>
-<div id="outline-container-orge545c00" class="outline-3">
-<h3 id="orge545c00">变量</h3>
-<div class="outline-text-3" id="text-orge545c00">
+<div id="outline-container-orgee946fc" class="outline-3">
+<h3 id="orgee946fc">变量</h3>
+<div class="outline-text-3" id="text-orgee946fc">
 <p>
 Python 里变量是表示或指向特定值的名称.例如想用 x 表示 3,执行代码: <code>x = 3</code>,这称
 为赋值(assignment), 这个语句把值3赋给了变量x, 赋值就是将值(对象)与变量名关联
@@ -465,9 +472,9 @@ Python 里变量是表示或指向特定值的名称.例如想用 x 表示 3,执
 </p>
 </div>
 </div>
-<div id="outline-container-orgc6676a4" class="outline-3">
-<h3 id="orgc6676a4">语句</h3>
-<div class="outline-text-3" id="text-orgc6676a4">
+<div id="outline-container-org150f39a" class="outline-3">
+<h3 id="org150f39a">语句</h3>
+<div class="outline-text-3" id="text-org150f39a">
 <p>
 前面用了很多和数学表达式类似的表达式,相当于菜谱中的原料,语句就是菜谱里的操作.
 上面的只是一种不准确的便于理解的说法.语句和表达式的行为很像,因此他们的界限可
@@ -501,9 +508,9 @@ Python 里变量是表示或指向特定值的名称.例如想用 x 表示 3,执
 </p>
 </div>
 </div>
-<div id="outline-container-orgdf2d514" class="outline-3">
-<h3 id="orgdf2d514">获取用户输入</h3>
-<div class="outline-text-3" id="text-orgdf2d514">
+<div id="outline-container-org9de763f" class="outline-3">
+<h3 id="org9de763f">获取用户输入</h3>
+<div class="outline-text-3" id="text-org9de763f">
 <p>
 <code>input</code> 函数能获取标准输入,并将用户输入的信息以字符串的方式返回.
 </p>
@@ -519,15 +526,15 @@ y: 3
 
 <p>
 注意: 将程序存储在独立文件中,让其他用户能够执行时,这种获取输入的方式将有用很
-多.<a href="#org69209b6">模块</a> 一节将介绍如何这样做.
+多.<a href="#org57704e8">模块</a> 一节将介绍如何这样做.
 </p>
 </div>
 </div>
-<div id="outline-container-org74ce6ae" class="outline-3">
-<h3 id="org74ce6ae">函数</h3>
-<div class="outline-text-3" id="text-org74ce6ae">
+<div id="outline-container-orgdd3f4b7" class="outline-3">
+<h3 id="orgdd3f4b7">函数</h3>
+<div class="outline-text-3" id="text-orgdd3f4b7">
 <p>
-<a href="#org802b8dd">数和表达式</a> 一节里介绍了乘方运算符(<code>**</code>)来执行幂运算.实际上,可以不适用这个运算
+<a href="#org531547d">数和表达式</a> 一节里介绍了乘方运算符(<code>**</code>)来执行幂运算.实际上,可以不适用这个运算
 符,而使用函数 <code>pow</code>.
 </p>
 <pre class="example">
@@ -574,9 +581,9 @@ y: 3
 </p>
 </div>
 </div>
-<div id="outline-container-org69209b6" class="outline-3">
-<h3 id="org69209b6">模块</h3>
-<div class="outline-text-3" id="text-org69209b6">
+<div id="outline-container-org57704e8" class="outline-3">
+<h3 id="org57704e8">模块</h3>
+<div class="outline-text-3" id="text-org57704e8">
 <p>
 模块可视为插件或扩展,通过将其导入可以扩展Python 的功能.
 要导入模块,需要使用 <code>import</code> 命令.前一节提到的 <code>floor</code> 函数包含在模块 <code>math</code> 中.
@@ -632,9 +639,9 @@ import 的变种: from module import function 可以在调用函数时不指定�
 </pre>
 </div>
 
-<div id="outline-container-org6b2915b" class="outline-4">
-<h4 id="org6b2915b">cmath 和复数</h4>
-<div class="outline-text-4" id="text-org6b2915b">
+<div id="outline-container-orgec30ca6" class="outline-4">
+<h4 id="orgec30ca6">cmath 和复数</h4>
+<div class="outline-text-4" id="text-orgec30ca6">
 <p>
 当处理的数不再局限于实数时,sqrt 能继续处理吗?
 </p>
@@ -681,9 +688,9 @@ Python 没有专门表示虚数的类型,而将虚数视为实部为零的复数
 </div>
 </div>
 
-<div id="outline-container-org4fc8e9a" class="outline-4">
-<h4 id="org4fc8e9a">回到未来</h4>
-<div class="outline-text-4" id="text-org4fc8e9a">
+<div id="outline-container-orgaaf5fc8" class="outline-4">
+<h4 id="orgaaf5fc8">回到未来</h4>
+<div class="outline-text-4" id="text-orgaaf5fc8">
 <p>
 据说Python 之父 Guido van Rossum 有一台时光机,对于Python 当前不支持,但未来将
 成为标准组成部分的功能,可以使用神奇的 <code>__future__</code> 模块导入.如果是使用
@@ -693,14 +700,125 @@ Python2.x, 可能会经常遇到,但3.x 目前没有遇到太多这种问题,等
 </div>
 </div>
 
-<div id="outline-container-org4df1c13" class="outline-3">
-<h3 id="org4df1c13">保存并执行程序</h3>
+<div id="outline-container-org111cb15" class="outline-3">
+<h3 id="org111cb15">保存并执行程序</h3>
+<div class="outline-text-3" id="text-org111cb15">
+<p>
+新建一个文本文件,将后缀名(文件扩展名)改为 <code>py</code>, 文件里一行放置一条代码.如果使用
+的是IDE 编辑文件,会有许多提示或按钮方便你编辑和运行程序.
+</p>
+
+<ul class="org-ul">
+<li>海龟绘图法</li>
+</ul>
+<p>
+在文本文件里键入下面内容,保存后运行该文件,就可以演示如何绘制一个三角形:
+</p>
+<pre class="example">
+from turtle import *
+forward(100)
+left(120)
+forward(100)
+left(120)
+forward(100)
+
+</pre>
+<p>
+运行代码后,会出现一个新的窗口,其中有个箭头不断移动,并留下移动轨迹.
+</p>
+</div>
+
+<div id="outline-container-org0fd7f79" class="outline-4">
+<h4 id="org0fd7f79">从命令提示符运行Python脚本</h4>
+<div class="outline-text-4" id="text-org0fd7f79">
+<p>
+实际上,运行程序的方式有很多种.打开windows DOS 窗口或者 UNIX shell, 运行
+<code>python hello.py</code> 命名为 hello.py 的python 程序就会运行.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org015ff80" class="outline-4">
+<h4 id="org015ff80">让脚本像普通程序一样</h4>
+<div class="outline-text-4" id="text-org015ff80">
+<p>
+在有些情况下,你想要像执行其他程序一样执行Python脚本,而无需显示使用Python 解
+释器.UNIX 提供实现这种方式的标准方式:让脚本的地一行以字符序列 <code>#!</code> (pound bang
+或 shebang) 开始,并在它后面指定用于对脚本进行执行/解释的程序(这里指Python)的
+绝对路径. 如果不理解这一点,只需要知道将下列代码加入到脚本文件的第一行,就可以
+在UNIX 中运行脚本:
+</p>
+<pre class="example">
+#!/usr/bin/env python
+</pre>
+<p>
+linux 系统可以使用 <code>whereis</code> 命令查看Python 的绝对路径:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">whereis python
+</pre>
+</div>
+
+<pre class="example">
+python: /usr/bin/python /home/kamisama/.pyenv/shims/python /usr/share/man/man1/python.1.gz
+
+</pre>
+<p>
+结果告诉我们 <code>/usr/bin/python</code> 为Python 的绝对路径,我们将 <code>#!/usr/bin/python</code> 添
+加到文件第一行,也能和上面的例子达到一样的效果.当然,在UNIX 系统里,权限是很重
+要的,想要像普通程序一样运行Python 脚本,需要给脚本文件可执行权限:
+</p>
+<pre class="example">
+$chmod a+x hello.py
+</pre>
+<p>
+现在就可以使用 <code>hello.py</code> 来执行 hello.py 脚本文件(如果当前目录在执行路径中).如
+果直接键入文件名不起作用,可以使用 <code>./hello.py</code> 来执行文件(这在当前目录不在执行
+目录中也管用).执行路径的问题涉及到操作系统的知识,这里先不讨论.留下一个 TODO
+以后涉及到这里了再来补个链接.
+</p>
+
+<p>
+Windows 系统里如果正确安装了Python, 双击编写好的Python文件, 就可以执行了.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb2d9fc9" class="outline-4">
+<h4 id="orgb2d9fc9">注释</h4>
+<div class="outline-text-4" id="text-orgb2d9fc9">
+<p>
+Python中, 井号(<code>#</code>) 比较特殊,在代码中,井号后面一直到行尾的所有内容都会被忽略.注
+释让程序更容易理解,不管是对于自己还是他人都是如此.编写程序首要的戒律就是 <code>汝
+    应注释</code> ,但也有一些程序员的座右铭是 "如果写起来难,理解起来必然也难."
+注释必须言而有物,不要重复去讲通过代码就很容易获取的信息,无用且重复的注释不如
+没有.例如下面的注释就是多余的:
+</p>
+<pre class="example">
+# 获取用户的名字
+user_name = input("What is your name?")
+</pre>
+<p>
+此外,在任何情况下,都应该确保代码即便没有注释也易于理解,所幸Python 是一种卓越
+的语言,很容易写出自注释的程序.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf28d748" class="outline-3">
+<h3 id="orgf28d748">字符串</h3>
+<div class="outline-text-3" id="text-orgf28d748">
+<p>
+几乎所有的编程教程都以类似的程序开篇: <code>print("Hello, World!")</code>
+</p>
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-02-05 Sat 11:54</p>
+<p class="date">Created: 2022-02-06 Sun 13:06</p>
 <p class="validation"></p>
 </div>
 </body>
