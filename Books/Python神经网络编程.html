@@ -1,0 +1,1009 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-03-02 Wed 14:32 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Python 神经网络编程 &#x2013; 深度学习系列 神经网络入门</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="kamisama" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<style> .figure p {text-align: left;}</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="./index.html"> UP </a>
+ |
+ <a accesskey="H" href="../index.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">Python 神经网络编程 &#x2013; 深度学习系列 神经网络入门</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgbef4dbc">神经网络是如何工作的?</a>
+<ul>
+<li><a href="#orge8227ad">尺有所长,寸有所短</a></li>
+<li><a href="#orga2d38bc">一台简单的预测机</a></li>
+<li><a href="#org23f2914">分类器与预测器并无太大差别</a></li>
+<li><a href="#org9efc027">训练简单的分类器</a></li>
+<li><a href="#orgfb31c1c">有时候一个分类器不足以求解问题</a></li>
+<li><a href="#orgcb9f54e">神经元&#x2013;大自然的计算器</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbef4dbc" class="outline-2">
+<h2 id="orgbef4dbc">神经网络是如何工作的?</h2>
+<div class="outline-text-2" id="text-orgbef4dbc">
+</div>
+<div id="outline-container-orge8227ad" class="outline-3">
+<h3 id="orge8227ad">尺有所长,寸有所短</h3>
+<div class="outline-text-3" id="text-orge8227ad">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Q</th>
+<th scope="col" class="org-left">计算机</th>
+<th scope="col" class="org-left">人类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">快速对成千上万的大数字进行乘法运算</td>
+<td class="org-left">简单</td>
+<td class="org-left">困难</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">在一大群人的照片里查找面孔</td>
+<td class="org-left">困难</td>
+<td class="org-left">简单</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>有些人无,对传统计算机而言很容易,对人类却很难.例如,对百万个数字进行乘法运算.</li>
+<li>另一方面,有些任务对传统的计算机而言很难,对人类却很容易.例如,从一群人的照片
+中识别出面孔.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga2d38bc" class="outline-3">
+<h3 id="orga2d38bc">一台简单的预测机</h3>
+<div class="outline-text-3" id="text-orga2d38bc">
+<p>
+先从构建超级简单的机器开始了解神经网络中的学习过程.
+</p>
+
+<p>
+想象一下,一台基本的机器,接受一个问题,做了一些"思考",并输出了一个答案.这和人
+类识别照片时进行的操作一样,我们从眼睛输入图片,使用大脑分析场景,并得出场景中
+有哪些物体的结论.那这台机器看起来可能是这样的:
+</p>
+<div class="org-src-container">
+<pre class="src src-dot">digraph G{
+
+rankdir = <span style="font-style: italic;">"LR"</span>;
+input [label=<span style="font-style: italic;">"&#38382;&#39064;"</span>, shape=plaintext];
+machine [label=<span style="font-style: italic;">"&#24605;&#32771;"</span>, shape=circle,width=0.75, height=0.75, fixedsize=true];
+output [label=<span style="font-style: italic;">"&#31572;&#26696;"</span>, shape=plaintext];
+input -&gt; machine -&gt; output;
+}
+
+</pre>
+</div>
+
+<p>
+但是计算机并不能真正的思考,所以更确切的表述应该是这样的:
+</p>
+<div class="org-src-container">
+<pre class="src src-dot">digraph G{
+rankdir = <span style="font-style: italic;">"LR"</span>;
+input [label=<span style="font-style: italic;">"&#36755;&#20837;"</span>, shape=plaintext];
+machine [label=<span style="font-style: italic;">"&#27969;&#31243;\n(&#35745;&#31639;)"</span>, shape=circle,width=0.75, height=0.75, fixedsize=true];
+output [label=<span style="font-style: italic;">"&#36755;&#20986;"</span>, shape=plaintext];
+input -&gt; machine -&gt; output;
+}
+</pre>
+</div>
+
+<p>
+以计算乘法 "3 × 4" 为例:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-dot">digraph G{
+rankdir = <span style="font-style: italic;">"LR"</span>;
+node [width=0.75, height=0.75, fixedsize=true];
+input [label=<span style="font-style: italic;">"&#36755;&#20837;\n3&#215;4"</span>, shape=plaintext];
+machine [label=<span style="font-style: italic;">"&#35745;&#31639;\n4+4+4"</span>, shape=circle,width=0.75, height=0.75, fixedsize=true];
+output [label=<span style="font-style: italic;">"&#36755;&#20986;\n12"</span>, shape=plaintext];
+input -&gt; machine -&gt; output;
+}
+</pre>
+</div>
+
+<p>
+再增加点复杂度,在我们不知道千米和英里转换公式的前提下,要设计一台机器,能够根
+据给定的数据将千米转化为英里:
+    <img src="imgs/00045.gif" alt="00045.gif" />
+</p>
+
+<p>
+现有条件:
+</p>
+<ul class="org-ul">
+<li>我们知道千米和英里之间的关系是线性的.千米数加倍,表示相同距离的英里数也加
+倍.即这种关系的形式应为: "英里=千米×C"</li>
+<li><p>
+我们有正确的千米和英里匹配的数据:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">真实示例</td>
+<td class="org-right">千米</td>
+<td class="org-right">英里</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">100</td>
+<td class="org-right">62.137</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+
+<p>
+根据条件,我们计算出常数C, 就能将千米转换成英里.
+我们先假设C=0.5, 然后让机器试试:
+</p>
+
+
+<div class="figure">
+<p><img src="imgs/00141.gif" alt="00141.gif" />
+</p>
+</div>
+
+<p>
+这里我们得出了一个误差为 62.137-50 = 12.137 的结果.不算太差.
+</p>
+
+<p>
+\(error = truth - calculated\\=62.137 - 50\\=12.137\)
+</p>
+
+
+<div class="figure">
+<p><img src="imgs/00061.jpeg" alt="00061.jpeg" />
+</p>
+</div>
+
+
+<p>
+我们得出了一个不准确的结果,但是不要灰心,我们可以使用这个结果的误差来指导
+我们得出更准确的C的猜测值.
+误差值是12.137,由于公式是线性的,所以增加C就可以增加输出,减小误差.
+那我们就将 C 从0.5增加到0.6, 得到英里=千米 × 0.6 = 60. 现在,误差值为
+2.137,明显变得更小了.
+</p>
+
+
+<div class="figure">
+<p><img src="imgs/00144.jpeg" alt="00144.jpeg" />
+</p>
+</div>
+
+<p>
+这里重点在于,我们是如何使用误差值的大小指导改变 C 的值.我们希望输出值从
+50增大一点,所以稍微增加了C 的值.我们不需要使用代数方法计算出 C 需要改变
+的确切量.我们可以继续使用刚刚的方法改进 C 值.
+</p>
+<blockquote>
+<p>
+如果实在是想要计算出确切的 C 值,那就要考虑一下,实际上遇到的更多的问题都
+是无法使用一个简单的数学公式将输出和输入关联起来的.这就是我们需要使用诸
+如神经网络这样相对成熟而复杂的方法的原因.
+</p>
+</blockquote>
+
+<p>
+那让我们继续调整 C 的值,既然0.6还是太小,我们可以将其调整到0.7:
+</p>
+
+
+<div class="figure">
+<p><img src="imgs/00078.jpeg" alt="00078.jpeg" />
+</p>
+</div>
+
+<p>
+结果超过了正确答案,误差值为-7.863(真实值-计算值=62.137-70),这个负号告诉我们,C
+的调整已经太过了,我们通常称参数的这种调整过度现象叫 <code>超调</code>.如此看来,0.6比0.7要
+好,那我们可以就此结束,接受C=0.6 带来的小误差,但是,我们也可以使用一个更小的量,来
+调整 C ,之前我们都是以 \(10^{-1}\) 的量级来调整,现在我们使用 \(10^{-2}\) 的量级
+来调整,我们选 C = 0.61来看看结果如何?
+</p>
+
+
+<div class="figure">
+<p><img src="imgs/00148.jpeg" alt="00148.jpeg" />
+</p>
+</div>
+
+<p>
+这次比前面的答案都要好,得到输出值61,误差值仅为1.137.
+</p>
+
+<p>
+最后这次尝试能告诉我们的是,应该适度调整 C 的值,并且,随着输出值越来越接近正确
+答案,即误差值越来越小,我们就不必使用大的调整,这样,就可以避免像先前那样 <code>超调</code> .
+</p>
+
+<p>
+这么多尝试的步骤,都只是为了体现一个持续细化误差值的思想,事实上,我们都会建议
+修正值取误差值的百分之几来进行调整.  直觉上,我们这样做是对的,因为,大的误差意
+味着需要大的修正值,小误差意味着我们只需要小小地微调.
+</p>
+
+<p>
+实际上,神经网络中"学习" 的核心过程就是刚才我们所做的事情. 我们训练机器,让其
+输出值越来越接近正确的答案.
+</p>
+
+<p>
+上面我们并未使用学校里解决数学问题时一步到位,精确求解问题,而是尝试直接得到答
+案,并多次改进答案,这是一种非常不同的方法,有人称之为 <code>迭代</code> ,意思是持续地,一点
+点地改进答案.
+</p>
+
+<ul class="org-ul">
+<li>所有计算机系统都有输入和输出,并在输入和输出之间进行某种计算.神经网络也是一
+样.</li>
+<li>当我们不能精确知道事情如何运作(公式?)时,我们可以尝试使用模型来估计其运作方
+式,在模型里,包括了我们可以调整的参数.就像我们不知道如何将千米转化为英里,我
+们使用线性函数作为模型,并且使用可调节的梯度(斜率C)作为参数.</li>
+<li>改进模型的 <code>一种</code> 好方法是, <span class="underline">基于模型和已知真实示例之间的比较,得到模型偏移的误
+差值,再根据误差值调整参数</span> .</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org23f2914" class="outline-3">
+<h3 id="org23f2914">分类器与预测器并无太大差别</h3>
+<div class="outline-text-3" id="text-org23f2914">
+<p>
+上面的简单机器接受了一个输入,并作出应有的预测,输出结果,我们将其称为预测器.根
+据结果与已知真实示例进行比较所得出的误差,调整内部参数,使得预测更加精确.
+现在,我们来看看两种小虫子的宽度和长度:
+</p>
+
+
+<div class="figure">
+<p><img src="imgs/00095.jpeg" alt="00095.jpeg" />
+</p>
+</div>
+
+<p>
+红色的是毛虫,细而长,绿色的是瓢虫,宽而短.回想上面试图找到正确英里数的预测器,其
+核心是一个可调节的线性函数.当绘制函数图像时,线型函数输出的是直线,可调参数 C
+改变直线的斜率.
+如果我们在这个虫子的长宽关系图里画一条直线,会发生什么呢?
+</p>
+
+
+<div class="figure">
+<p><img src="imgs/00153.jpeg" alt="00153.jpeg" />
+</p>
+</div>
+
+<p>
+如果上图的直线能将毛虫和瓢虫划分开,那么这条直线就可以根据测量值来对未知的小虫
+子进行分类.单由于一半的毛虫和瓢虫在分界线的同一侧,因此上图中的直线并不能做到
+这一点.
+我们再次调整斜率:
+</p>
+
+
+<div class="figure">
+<p><img src="imgs/00155.jpeg" alt="00155.jpeg" />
+</p>
+</div>
+
+<p>
+这次的结果更差,完全没有区分.
+那就再来试一次:
+</p>
+
+
+<div class="figure">
+<p><img src="imgs/00157.jpeg" alt="00157.jpeg" />
+</p>
+</div>
+
+<p>
+这一条直线就好多了,可以整齐的将瓢虫和毛虫区分开来.那么,我们就可以将这条直线作
+为小虫的分类器.
+</p>
+
+<p>
+我们假设没有其他类型的虫子(只有毛虫和瓢虫),因为我们只是借此说明构建一台简单分
+类器的思路.
+</p>
+
+<p>
+设想下,当计算机使用机械臂抓起一只新的小虫子,测量其宽度和长度之后,就可以使用上
+面最后一个分界线,来将虫子归类为毛虫或瓢虫.就像下图所示:
+</p>
+
+
+<div class="figure">
+<p><img src="imgs/00158.gif" alt="00158.gif" />
+</p>
+</div>
+
+<p>
+我们已经看到了在简单的预测器里,使用线性函数来对未知的数据进行分类.
+但是最重要的一点, <span class="underline">是我们如何得到正确的斜率呢?</span> 根据之前的思想,我们该如何改进分
+界线,才能更好的划分这两种小虫呢?
+</p>
+
+<p>
+这个问题的答案就是神经网络学习的核心. 让我们继续.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9efc027" class="outline-3">
+<h3 id="org9efc027">训练简单的分类器</h3>
+<div class="outline-text-3" id="text-org9efc027">
+<p>
+上一节我们构思了一种线性分类器,能够正确分类瓢虫和毛虫,根据上节图示,我们可以观
+察到,想要实现这样一种分类器,重点在于调整分界线的斜率,使其能够基于小虫的宽度和
+长度将两组点划分开来.
+</p>
+
+<p>
+我们不能上来就使用最前沿的先进数学理论,让我们先试着摸石头过河,这样我们可以更
+好的了解数学.
+</p>
+
+<p>
+我们也确实需要一些实例来训练.为了使这次练习简单点,下表只包含了两个实例:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">实例</td>
+<td class="org-right">宽度</td>
+<td class="org-right">长度</td>
+<td class="org-left">小虫</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">3.0</td>
+<td class="org-right">1.0</td>
+<td class="org-left">瓢虫</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">1.0</td>
+<td class="org-right">3.0</td>
+<td class="org-left">毛虫</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+这组数据是正确的.这些实例帮助我们调整分类函数的斜率. <span class="underline">用来训练预测器或分类器的
+真实实例</span> ,我们称之为 <code>训练数据</code>
+</p>
+
+<p>
+通过数字和表格不容易理解和感知数据,而可视化数据有助于我们做到这一点,因此让我
+们先根据表格绘制出训练数据的图像:
+</p>
+
+
+<div class="figure">
+<p><img src="imgs/00159.jpeg" alt="00159.jpeg" />
+</p>
+</div>
+
+<p>
+和千米转英里的例子类似,这里的分界线也是一条直线,我们进行类似的处理:
+</p>
+
+<p>
+\(y=Ax\)
+</p>
+
+<p>
+这条直线严格来说不是预测器,因此没有使用宽度和长度,而是用y,x. 这条直线是一条分
+界线,这是一台分类器.
+这里给出的直线形式也比直线的一般形式 \(y=Ax+b\) 要简单,这是因为这里刻意使分类小
+虫的场景简化了.也就是我们假定在该场景直线不过座标原点的情况没有意义,毕竟这是
+演示用,不是真实情景.
+</p>
+
+<p>
+好了,我们可以开始操作了,之前我们就知道,参数A是控制直线的斜率的,较大的A对应较
+大斜率.
+</p>
+
+<p>
+让我们和之前一样先尝试给 A 赋值. 令 A = 0.25,即 \(y=0.25x\). 让我们绘制出他的图
+像,来看看效果如何.
+</p>
+
+
+<div class="figure">
+<p><img src="imgs/00160.jpeg" alt="00160.jpeg" />
+</p>
+</div>
+
+<p>
+不用计算就可以直接观察出,这条直线并不能将两种类型虫子区分开.毛虫和瓢虫代表的
+点都处于直线之上.所以我们不能得出"如果小虫在直线之上,那么它就是毛虫"这样的结
+论.
+</p>
+
+<p>
+直觉告诉我们,我们需要将直线向上移动一点,但是我们不能这样做,我们不能通过观察就
+画出一条适合的直线,毕竟我们最终的目的是找到一种可以重复的方法,通过计算机指令
+来达到这个目标,计算机科学家将这一系列计算机指令称之为算法. 通俗的讲,我们是要
+教会计算机去找出这条直线,而不是通过我们的"直觉"或观察来画出直线.
+</p>
+
+<p>
+我们来观察第一个样本数据,宽为3.0,长为1.0 的瓢虫,如果我们使用尝试的第一个分界
+线函数: \(y=0.25x\) ,我们会得到 \(y=0.25*3.0=0.75\), 表示对于宽3.0的小虫,长度应该
+为0.75, 但是训练数据告诉我们,真实的长度应该为 1.0, 我们就知道这个数字太小了.现
+在,我们有了误差了,根据前面的经验,我们可以根据误差来搞清楚如何调整参数A.
+</p>
+
+<p>
+调整 A 之前,我们要先考虑下 y 应该是什么值,如果 y 为 1.0 那分界线会经过该点
+\((x, y)= (3.0, 1.0)\) . 但是实际上,我们不希望出现这样的点,因为这条分界线是用来
+给两种虫子分类的,我们希望直线能将两种虫子分开,而不是虫子代表的点出现在直线上.代
+表虫子的点出现在直线上是训练一个给定小虫宽度,预测小虫长度的预测器时希望出现的
+情况.
+根据之前的图示,我们希望代表瓢虫的点能在直线下方,因此当 \(x=3.0\) 时,我们希望 y
+能比1.0大一点, 那我们就先选取 y=1.1 来试一下.我们选1.1是因为它真的只比1.0大一
+点,我们还可以选1.2或1.3,单我们不希望使用50,100这样的大数字,因为这会使直线在所
+有虫子上方,导致这个分类器没有作用.
+</p>
+
+<p>
+因此,当 \(x=3.0\) 时,我们的期望值 \(y=1.1\) 实际输出值 \(y=0.75\), 那么:
+</p>
+
+<p>
+\(误差值E=(期望目标值-实际输出值)=1.1-0.75=0.35\)
+</p>
+
+<p>
+我们先暂停一下,将误差值,期望值,和计算值的意义在图里表示出来:
+</p>
+
+
+<div class="figure">
+<p><img src="imgs/00161.jpeg" alt="00161.jpeg" />
+</p>
+</div>
+
+
+<p>
+通过之前的实验,我们得出了要使用误差值来指导参数的调整的思想,之前的调整我们都
+是凭直觉来进行较大或较小的调整.到了这里我们就要更近一步了,找出参数 A 的修正值
+和误差值之间的关系,找到了二者的关联,我们就可以理解一个值如何影响另一个值了.
+</p>
+
+<p>
+先从分类器的函数开始:
+</p>
+
+<p>
+\(y=Ax\)
+</p>
+
+<p>
+我们给定A的初始猜测值,计算出了错误的 y 的计算值,而实际正确的 y 值是基于样本数
+据的.我们将正确的期望值 t 称之为目标值,为了得到 t 的值,我们需要稍微调整 A 的
+值.数学上使用增量符号 \(\Delta\) 表示"微小的变化量". 那么 t 就可以表示成:
+</p>
+
+<p>
+\(t=(A + \Delta{A})x\)
+</p>
+
+<p>
+将其绘制成图像更容易理解:
+</p>
+
+
+<div class="figure">
+<p><img src="imgs/00164.jpeg" alt="00164.jpeg" />
+</p>
+</div>
+
+<p>
+再次重申,误差值是期望值减去计算值计算出来的差值,也就是说 E 等于 t-y:
+</p>
+
+<p>
+\(t-y=(A + \Delta{A})x - Ax=\Delta{A}x\)
+</p>
+
+<p>
+所以, \(E=\Delta{A}x\).
+</p>
+
+<p>
+既然我们想知道的是根据误差值如何指导参数的修正,那么将方程调整一下,得到:
+</p>
+
+<p>
+\(\Delta{A}=E/x\)
+</p>
+
+<p>
+有个这个表达式,我们就可以根据误差值E, 得到参数所需要的调整值 \(\Delta{A}\) 了.
+</p>
+
+<p>
+Let's do it!
+</p>
+
+<p>
+误差值为 0.35,x 为3.0,那么 \(\Delta{A}=E/x=0.35/3.0=0.1167\). 也就是说,当前的
+A=0.25 需要加上 0.1167,那么修正后的 \(A=A + \Delta{A}=0.25+0.1167=0.3667\), 使
+用这个 A 值,进行计算,得到的 y 值为1.1,这就是我们所期望的目标值.
+</p>
+
+<p>
+现在我们完成了一个实例训练,让我们再根据下一个实例训练学习.此时,我们已知正确的
+x=1.0,y=3.0, 更新后的A=0.3667.
+</p>
+
+<p>
+当把 x=1.0 带入线性函数中去,我们观察结果.此时我们得到 y=0.3667, 与样本数据中
+y=3.0 差了很多,根据先前相同的推理,我们希望直线不经过点,而是稍高或稍低于数据点,我
+们将期望值设置为 \(y=2.9\). 这样,毛虫的样本点就位于直线上方,而不是直线上. 基于
+此,误差值 \(E=2.9-0.3667=2.5333\).
+</p>
+
+<p>
+和第一次相比,这个误差值更大,但仔细想想,到现在为止,我们都只使用了一个单一的样
+本对线性函数进行训练,很明显,这使得直线每次都偏向于这个单一的样本.
+</p>
+
+<p>
+那我们还是继续改进 A. \(\Delta{A}=E/x=2.5333/1.0=2.5333\), 那么
+\(A=0.3667+2.5333=2.9\). 这意味着,对于 \(x=1.0\), 函数得出2.9的答案,这就是我们期
+望的值.
+</p>
+
+<p>
+让我们来看看已经取得的训练成果:
+</p>
+
+
+<div class="figure">
+<p><img src="imgs/00165.jpeg" alt="00165.jpeg" />
+</p>
+</div>
+
+<p>
+发现了啥?直线并没有像我们希望的那样整齐的划分出毛虫和瓢虫.每次修正后的分界线
+都偏向于修正时用到的样本数据点.这是为什么呢?
+</p>
+
+<p>
+我们使用了所有训练数据样本来进行改进,但是我们上面的做法会让每一次改进的结果都
+和最后一次训练数据样本点非常匹配,发现了吗?每次的改进都与其他的样本点无关,因为
+我们根本就没用到其他训练数据样本点,有人可能会想,第二次 A 的初始值不就是第一次
+的改进结果吗?那我们想想第一次 A 的初始值是怎么来的?我们只是随机选择了一个数,
+而第二次的训练只不过是重复第一次的改进操作.也就是说,我们每次改进的结果,都抛弃
+了之前的训练成果,而只是对最近一次实例数据进行了学习训练.
+</p>
+
+<p>
+这个问题如何解决呢?
+</p>
+
+<p>
+答案很简单! 机器学习里,一个重要的思路就是:我们要进行 <span class="underline">适度改进(moderate)</span>, 也就
+是说,我们不要过于激烈地改进.
+</p>
+
+<p>
+让我们使用 \(\Delta{A}\) 几分之一的变化值,而不是采用整个 \(\Delta{A}\), 每次都跳
+跃到一个新的值.
+</p>
+
+<p>
+使用这种方法,我们可以小心谨慎地向训练样本所只是的方向移动,并且在训练中保持了
+先前训练迭代周期中所得到值的一部分. 千米和英里的转换的预测器中,我们就意识到了
+这种有节制的调整,我们小心翼翼地调整参数,使其只是实际误差值的几分之几.
+</p>
+
+<p>
+这种有节制的调整,还带来了一个非常强大的 "副作用".那就是在训练数据本身并不能保
+证完全正确,或者包含现实世界中测量普遍会出现的错误或噪声时,这种适度改进可以抑
+制这些错误或噪声的影响. <span class="underline">这种方法使得错误或噪声得到了调解和缓和</span>.
+</p>
+
+<p>
+我们来改进下修正值的公式,原本的公式: \(\Delta{A}=E/x\), 改进后: \(\Delta{A}=L(E/x)\).
+这种调节系数通常被称为 <code>学习率(learning rate)</code>, 这里,我们把它叫做L.
+</p>
+
+<p>
+我们先挑一个 \(L=0.5\) 来做为一个合理的系数开始学习的过程,简单地说,就是每次更新
+原更新值的一半.
+</p>
+
+<p>
+使用添加了学习率的公式来重新训练分类器. 初始值 \(A=0.25\), 使用第一个训练样本点,
+\(y=0.25 * 3.0=0.75\) ,期望值 \(t=1.1\), 误差值
+\(E=1.1-0.75=0.35\). \(\Delta{A}=L(E/x)=0.5*(0.35/3.0)=0.0583\). 那么更新后的
+\(A=0.25+0.0583=0.3083\).
+尝试使用新的 A 值来计算下第一个训练样本点, \(x=3.0,y=0.3083 * 3.0=0.9250\). 现
+在,这个值小于1,因此,直线落在样本点错误的一边,但是,如果把这视为后续众多调整步
+骤中的第一步,则这个结果并不算太差,因为和初始的直线相比,这条直线确实是向正确的
+方向在移动.
+</p>
+
+<p>
+使用新的 A 值来继续训练,第二个样本点, \(y=0.3083* 1.0 = 0.3083\), 期望值
+\(t=2.9\), 误差值
+\(E=t-y=2.9-0.3083=2.5917\). \(\Delta{A}=L(E/x)=0.5*(2.5917/1.0)=1.2958\). 那么
+第二个更新后的 \(A=0.3083+1.2958=1.6042\).
+</p>
+
+
+<ul class="org-ul">
+<li>TODO 我们再次观察添加了学习率之后进行的训练结果的图像:</li>
+</ul>
+
+<p>
+即使使用两个简单的训练样本,利用带有调节学习速率的一种相对简单的改进方法,我们
+也迅速地得到了一条很好的分界线 \(y=Ax,A=1.6042\)
+</p>
+
+<ul class="org-ul">
+<li>我们知道了在何种程度上调整斜率,可以消除输出误差.</li>
+<li>使用朴素的调整方法会导致改进后的模型只与最后一次训练的样本最匹配,忽略了所
+有以前的训练样本.解决问题就是使用 <span class="underline">学习率</span>,调节改进速率,这样就可以使单一的训
+练样本不能主导整个学习过程.</li>
+<li>真实世界的训练样本可能充满噪声或包含错误,适度改进(moderate) 可以限制这些错
+误样本的影响.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfb31c1c" class="outline-3">
+<h3 id="orgfb31c1c">有时候一个分类器不足以求解问题</h3>
+<div class="outline-text-3" id="text-orgfb31c1c">
+<ul class="org-ul">
+<li>如果数据本身不是由单一线性过程支配,那么一个简单的线性分类器不能对数据进行划
+分.例如由逻辑 XOR 运算符支配的数据.</li>
+<li>解决方法就是使用多个线性分类器划分由单一直线无法分离的数据.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcb9f54e" class="outline-3">
+<h3 id="orgcb9f54e">神经元&#x2013;大自然的计算器</h3>
+<div class="outline-text-3" id="text-orgcb9f54e">
+<p>
+计算机有大量电子计算元件,巨大存储空间,并且计算机的运行频率比生物大脑要快得多,
+但即使是像鸽子一样小的大脑,能力也远大于电子计算机.
+传统计算机的按照严格的串行顺序,相当准确具体地处理数据.对计算机来说,不存在模糊
+性和不确定性.另一方面,生物大脑虽然看起来运行得慢得多,但似乎是以并行方式处理信
+号, <span class="underline">模糊性</span> 是其计算的一种特征.
+神经元图像:
+神经元有各种形式,但所有神经元都是将电信号从一端传输到另一端,沿着轴突,将电信号
+从树突传到树突.这些电信号从一个神经元传送到另一个神经元,这就是身体感知光,声,
+热等信号的机制.专门的感觉神经元的信号沿着神经系统,传输到大脑,而大脑本身也主要
+是由神经元构成的.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: kamisama</p>
+<p class="date">Created: 2022-03-02 Wed 14:32</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

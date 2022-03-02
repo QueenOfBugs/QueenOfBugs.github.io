@@ -6,7 +6,7 @@
 <!-- 2022-03-02 Wed 14:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>树莓派相关笔记</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="kamisama" />
 <style type="text/css">
@@ -233,71 +233,95 @@ for the JavaScript code in this tag.
  |
  <a accesskey="H" href="../index.html"> HOME </a>
 </div><div id="content">
+<h1 class="title">树莓派相关笔记</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd3ab892">Emacs Modeline 主题和设置</a>
+<li><a href="#orgdf1036c">配置无头树莓派</a>
 <ul>
-<li><a href="#org2f08919">telephone-line</a>
+<li><a href="#orgc228f87">设置无线网</a></li>
+<li><a href="#orgf2cfaa3">设置ssh连接</a></li>
+</ul>
+</li>
+<li><a href="#org52b82c3">在树莓派上部署自己的Git服务器</a>
 <ul>
-<li><a href="#orgcb245f1">安装</a></li>
-<li><a href="#orgc526a75">效果</a></li>
+<li><a href="#orged1d329">安装Git</a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 </div>
 </div>
-<div id="outline-container-orgd3ab892" class="outline-2">
-<h2 id="orgd3ab892">Emacs Modeline 主题和设置</h2>
-<div class="outline-text-2" id="text-orgd3ab892">
-</div>
-<div id="outline-container-org2f08919" class="outline-3">
-<h3 id="org2f08919"><a href="https://github.com/dbordak/telephone-line">telephone-line</a></h3>
-<div class="outline-text-3" id="text-org2f08919">
+
+<div id="outline-container-orgdf1036c" class="outline-2">
+<h2 id="orgdf1036c">配置无头树莓派</h2>
+<div class="outline-text-2" id="text-orgdf1036c">
 <p>
-Powerline 针对Emacs 的另一个实现.
+如果不使用键盘或显示器来运行树莓派,也就是无界面(无头)形式的树莓派,我们可以通过
+设置其无线网络然后通过 ssh 来连接和操作它.
+在系统镜像烧录到SD卡中后,将SD卡插入到读卡器并连接到电脑上,可以在文件管理器中找
+到SD卡的 <code>boot</code> 分区(文件夹)
 </p>
 </div>
-<div id="outline-container-orgcb245f1" class="outline-4">
-<h4 id="orgcb245f1">安装</h4>
-<div class="outline-text-4" id="text-orgcb245f1">
+<div id="outline-container-orgc228f87" class="outline-3">
+<h3 id="orgc228f87">设置无线网</h3>
+<div class="outline-text-3" id="text-orgc228f87">
 <p>
-Use package.el from MELPA.
+在 <code>boot</code> 分区里创建一个名为 <code>wpa_supplicant.conf</code> 的文件.当树莓派第一次启动时,会
+将这个文件复制到linux 根文件系统(/root)的正确位置,然后根据文件里的设置来启动
+无线网络的连接.
 </p>
-<div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">telephone-line</span>)
-(telephone-line-mode 1)
+<blockquote>
+<p>
+树莓派通电后,确保等上几分钟(不超过5min)来让机器能启动并注册好网络.
+</p>
+</blockquote>
+<p>
+一个 <code>wpa_supplicant.conf</code> 文件例子:
+</p>
+<pre class="example">
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+country=&lt;Insert 2 letter ISO 3166-1 country code here&gt;
+update_config=1
+
+network={
+ssid="&lt;Name of your wireless LAN&gt;"
+psk="&lt;Password for your wireless LAN&gt;"
+}
 </pre>
-</div>
 <p>
-use-package:
+<code>ctrl_interface</code> 那一行不用改, <code>country</code> 那一行设置为 <code>country=CN</code> , <code>update_config</code>
+也不用管, <code>ssid</code> 是无线网的名字, <code>psk</code> 是密码.
 </p>
+</div>
+</div>
+<div id="outline-container-orgf2cfaa3" class="outline-3">
+<h3 id="orgf2cfaa3">设置ssh连接</h3>
+<div class="outline-text-3" id="text-orgf2cfaa3">
+<p>
+因为没有显示器或键盘,我们只能通过其他方式来远程连接到无头树莓派.在无头树莓派
+的设置阶段,我们可以通过在 <code>boot</code> 分区里创建一个文件名是 <code>ssh</code> 的文件,文件名就叫
+<code>ssh</code> ,不带任何文件扩展名. 然后就可以启用树莓派的 ssh 服务了.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org52b82c3" class="outline-2">
+<h2 id="org52b82c3">在树莓派上部署自己的Git服务器</h2>
+<div class="outline-text-2" id="text-org52b82c3">
+</div>
+<div id="outline-container-orged1d329" class="outline-3">
+<h3 id="orged1d329">安装Git</h3>
+<div class="outline-text-3" id="text-orged1d329">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(use-package telephone-line
-  <span style="font-weight: bold;">:config</span>
-  (telephone-line-mode 1)
-  )
+<pre class="src src-sh">sudo apt-get install wget git
 </pre>
-</div>
-</div>
-</div>
-<div id="outline-container-orgc526a75" class="outline-4">
-<h4 id="orgc526a75">效果</h4>
-<div class="outline-text-4" id="text-orgc526a75">
-<p>
-evil 的编辑模式倒是显示的很好, <code>display-battery-mode</code> 不能显示,鼠标当前位置,选
-中多少字符的功能也没有, 没有进一步配置的情况下不如 doom-modeline 好用.
-</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: 2022-01-06 Thu 21:05</p>
 <p class="author">Author: kamisama</p>
 <p class="date">Created: 2022-03-02 Wed 14:32</p>
 <p class="validation"></p>
