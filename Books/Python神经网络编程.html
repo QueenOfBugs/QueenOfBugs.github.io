@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-03-08 Tue 08:23 -->
+<!-- 2022-03-08 Tue 15:11 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Python 神经网络编程 &#x2013; 深度学习系列 神经网络入门</title>
@@ -261,26 +261,26 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgfbfebd8">神经网络是如何工作的?</a>
+<li><a href="#org6a9701c">神经网络是如何工作的?</a>
 <ul>
-<li><a href="#org9cd0f76">尺有所长,寸有所短</a></li>
-<li><a href="#org07a8bc8">一台简单的预测机</a></li>
-<li><a href="#org76d86d4">分类器与预测器并无太大差别</a></li>
-<li><a href="#org18fe3b7">训练简单的分类器</a></li>
-<li><a href="#orgdd421e9">有时候一个分类器不足以求解问题</a></li>
-<li><a href="#org01af63f">神经元&#x2013;大自然的计算器</a></li>
+<li><a href="#orge6fbccf">尺有所长,寸有所短</a></li>
+<li><a href="#org38902e3">一台简单的预测机</a></li>
+<li><a href="#org262b75d">分类器与预测器并无太大差别</a></li>
+<li><a href="#orgc1bc3f4">训练简单的分类器</a></li>
+<li><a href="#orgea5f1c5">有时候一个分类器不足以求解问题</a></li>
+<li><a href="#org48a6169">神经元&#x2013;大自然的计算器</a></li>
 </ul>
 </li>
-<li><a href="#orgedd30ba">使用Python进行DIY</a>
+<li><a href="#org5e03d33">使用Python进行DIY</a>
 <ul>
-<li><a href="#org054e224">测试 emacs-jupyter</a></li>
-<li><a href="#org10a6f5b">开始制作神经网络</a>
+<li><a href="#org2bd3ed7">测试 emacs-jupyter</a></li>
+<li><a href="#org0d989c2">开始制作神经网络</a>
 <ul>
-<li><a href="#orgb4964da">框架代码</a></li>
-<li><a href="#org85eccca">初始化网络</a></li>
-<li><a href="#orgfd358d0">权重&#x2013;网络的核心</a></li>
-<li><a href="#org3af4734">可选: 较复杂的权重</a></li>
-<li><a href="#org645f5db">查询网络</a></li>
+<li><a href="#org73e2305">框架代码</a></li>
+<li><a href="#org6760638">初始化网络</a></li>
+<li><a href="#orgbfd618b">权重&#x2013;网络的核心</a></li>
+<li><a href="#org637741b">可选: 较复杂的权重</a></li>
+<li><a href="#orgf9d0024">查询网络</a></li>
 </ul>
 </li>
 </ul>
@@ -288,13 +288,13 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgfbfebd8" class="outline-2">
-<h2 id="orgfbfebd8">神经网络是如何工作的?</h2>
-<div class="outline-text-2" id="text-orgfbfebd8">
+<div id="outline-container-org6a9701c" class="outline-2">
+<h2 id="org6a9701c">神经网络是如何工作的?</h2>
+<div class="outline-text-2" id="text-org6a9701c">
 </div>
-<div id="outline-container-org9cd0f76" class="outline-3">
-<h3 id="org9cd0f76">尺有所长,寸有所短</h3>
-<div class="outline-text-3" id="text-org9cd0f76">
+<div id="outline-container-orge6fbccf" class="outline-3">
+<h3 id="orge6fbccf">尺有所长,寸有所短</h3>
+<div class="outline-text-3" id="text-orge6fbccf">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -339,9 +339,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org07a8bc8" class="outline-3">
-<h3 id="org07a8bc8">一台简单的预测机</h3>
-<div class="outline-text-3" id="text-org07a8bc8">
+<div id="outline-container-org38902e3" class="outline-3">
+<h3 id="org38902e3">一台简单的预测机</h3>
+<div class="outline-text-3" id="text-org38902e3">
 <p>
 先从构建超级简单的机器开始了解神经网络中的学习过程.
 </p>
@@ -555,9 +555,9 @@ input -&gt; machine -&gt; output;
 </div>
 </div>
 
-<div id="outline-container-org76d86d4" class="outline-3">
-<h3 id="org76d86d4">分类器与预测器并无太大差别</h3>
-<div class="outline-text-3" id="text-org76d86d4">
+<div id="outline-container-org262b75d" class="outline-3">
+<h3 id="org262b75d">分类器与预测器并无太大差别</h3>
+<div class="outline-text-3" id="text-org262b75d">
 <p>
 上面的简单机器接受了一个输入,并作出应有的预测,输出结果,我们将其称为预测器.根
 据结果与已知真实示例进行比较所得出的误差,调整内部参数,使得预测更加精确.
@@ -640,9 +640,9 @@ input -&gt; machine -&gt; output;
 </div>
 </div>
 
-<div id="outline-container-org18fe3b7" class="outline-3">
-<h3 id="org18fe3b7">训练简单的分类器</h3>
-<div class="outline-text-3" id="text-org18fe3b7">
+<div id="outline-container-orgc1bc3f4" class="outline-3">
+<h3 id="orgc1bc3f4">训练简单的分类器</h3>
+<div class="outline-text-3" id="text-orgc1bc3f4">
 <p>
 上一节我们构思了一种线性分类器,能够正确分类瓢虫和毛虫,根据上节图示,我们可以观
 察到,想要实现这样一种分类器,重点在于调整分界线的斜率,使其能够基于小虫的宽度和
@@ -983,9 +983,9 @@ y=3.0 差了很多,根据先前相同的推理,我们希望直线不经过点,�
 </div>
 </div>
 
-<div id="outline-container-orgdd421e9" class="outline-3">
-<h3 id="orgdd421e9">有时候一个分类器不足以求解问题</h3>
-<div class="outline-text-3" id="text-orgdd421e9">
+<div id="outline-container-orgea5f1c5" class="outline-3">
+<h3 id="orgea5f1c5">有时候一个分类器不足以求解问题</h3>
+<div class="outline-text-3" id="text-orgea5f1c5">
 <ul class="org-ul">
 <li>如果数据本身不是由单一线性过程支配,那么一个简单的线性分类器不能对数据进行划
 分.例如由逻辑 XOR 运算符支配的数据.</li>
@@ -994,9 +994,9 @@ y=3.0 差了很多,根据先前相同的推理,我们希望直线不经过点,�
 </div>
 </div>
 
-<div id="outline-container-org01af63f" class="outline-3">
-<h3 id="org01af63f">神经元&#x2013;大自然的计算器</h3>
-<div class="outline-text-3" id="text-org01af63f">
+<div id="outline-container-org48a6169" class="outline-3">
+<h3 id="org48a6169">神经元&#x2013;大自然的计算器</h3>
+<div class="outline-text-3" id="text-org48a6169">
 <p>
 计算机有大量电子计算元件,巨大存储空间,并且计算机的运行频率比生物大脑要快得多,
 但即使是像鸽子一样小的大脑,能力也远大于电子计算机.
@@ -1014,13 +1014,13 @@ y=3.0 差了很多,根据先前相同的推理,我们希望直线不经过点,�
 </div>
 
 
-<div id="outline-container-orgedd30ba" class="outline-2">
-<h2 id="orgedd30ba">使用Python进行DIY</h2>
-<div class="outline-text-2" id="text-orgedd30ba">
+<div id="outline-container-org5e03d33" class="outline-2">
+<h2 id="org5e03d33">使用Python进行DIY</h2>
+<div class="outline-text-2" id="text-org5e03d33">
 </div>
-<div id="outline-container-org054e224" class="outline-3">
-<h3 id="org054e224">测试 emacs-jupyter</h3>
-<div class="outline-text-3" id="text-org054e224">
+<div id="outline-container-org2bd3ed7" class="outline-3">
+<h3 id="org2bd3ed7">测试 emacs-jupyter</h3>
+<div class="outline-text-3" id="text-org2bd3ed7">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">import</span> sys
 <span style="font-weight: bold;">print</span>(sys.version)
@@ -1044,17 +1044,17 @@ print(sys.version)
 </div>
 </div>
 
-<div id="outline-container-org10a6f5b" class="outline-3">
-<h3 id="org10a6f5b">开始制作神经网络</h3>
-<div class="outline-text-3" id="text-org10a6f5b">
+<div id="outline-container-org0d989c2" class="outline-3">
+<h3 id="org0d989c2">开始制作神经网络</h3>
+<div class="outline-text-3" id="text-org0d989c2">
 <p>
 从小处开始,然后让程序慢慢长大,这好似构建中等复杂度计算机代码的一种明智的方式.
 </p>
 </div>
 
-<div id="outline-container-orgb4964da" class="outline-4">
-<h4 id="orgb4964da">框架代码</h4>
-<div class="outline-text-4" id="text-orgb4964da">
+<div id="outline-container-org73e2305" class="outline-4">
+<h4 id="org73e2305">框架代码</h4>
+<div class="outline-text-4" id="text-org73e2305">
 <p>
 神经网络类应该至少有三个函数:
 </p>
@@ -1084,9 +1084,9 @@ print(sys.version)
 </div>
 </div>
 
-<div id="outline-container-org85eccca" class="outline-4">
-<h4 id="org85eccca">初始化网络</h4>
-<div class="outline-text-4" id="text-org85eccca">
+<div id="outline-container-org6760638" class="outline-4">
+<h4 id="org6760638">初始化网络</h4>
+<div class="outline-text-4" id="text-org6760638">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">initialize the neutral network</span>
 <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>(<span style="font-weight: bold;">self</span>, inputnodes, hiddennodes, outputnodes, learningrate):
@@ -1120,9 +1120,9 @@ print(sys.version)
 </div>
 </div>
 
-<div id="outline-container-orgfd358d0" class="outline-4">
-<h4 id="orgfd358d0">权重&#x2013;网络的核心</h4>
-<div class="outline-text-4" id="text-orgfd358d0">
+<div id="outline-container-orgbfd618b" class="outline-4">
+<h4 id="orgbfd618b">权重&#x2013;网络的核心</h4>
+<div class="outline-text-4" id="text-orgbfd618b">
 <p>
 前面我们知道使用矩阵可以简明地表达权重.所以我们可以创建:
 </p>
@@ -1203,9 +1203,9 @@ array([[-0.38037314, -0.47892486, -0.13405653],
 </div>
 </div>
 
-<div id="outline-container-org3af4734" class="outline-4">
-<h4 id="org3af4734">可选: 较复杂的权重</h4>
-<div class="outline-text-4" id="text-org3af4734">
+<div id="outline-container-org637741b" class="outline-4">
+<h4 id="org637741b">可选: 较复杂的权重</h4>
+<div class="outline-text-4" id="text-org637741b">
 <p>
 我们可以选择一种简单却流行的优化初始权重的方式.
 </p>
@@ -1230,9 +1230,9 @@ normal 函数第一个参数是正态分布的中心,第二个参数是标准方
 </div>
 </div>
 
-<div id="outline-container-org645f5db" class="outline-4">
-<h4 id="org645f5db">查询网络</h4>
-<div class="outline-text-4" id="text-org645f5db">
+<div id="outline-container-orgf9d0024" class="outline-4">
+<h4 id="orgf9d0024">查询网络</h4>
+<div class="outline-text-4" id="text-orgf9d0024">
 <p>
 根据逻辑,我们因该开始填充 train() 函数.让我们先推迟一下这一步,来先编写简单的
 query() 函数,这会给我们更多时间来逐步建立信心,获得使用Python 和神经网络对象
@@ -1253,6 +1253,41 @@ query() 函数接受神经网络的输入,返回网络的输出.
 <pre class="src src-python"><span style="font-weight: bold; font-style: italic;">hidden_inputs</span> = numpy.dot(<span style="font-weight: bold;">self</span>.wih, inputs)
 </pre>
 </div>
+<p>
+将激活函数应用到隐藏层节点的输入信号上,得到隐藏层的输出信号矩阵:
+\({O}_{hidden} = sigmoid({X}_{hidden})\)
+激活函数 sigmoid 在python Scipy 库里已经实现,但是函数名是 expit.
+导入 expit():
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> scipy.special <span style="font-weight: bold;">import</span> expit
+</pre>
+</div>
+<p>
+由于我们可能会对激活函数进行调整或者完全改变激活函数,因此,当神经网络对象初始
+化时,在神经网络对象内部只定义一次激活函数是有道理的,不然我们就要在代码的多处
+进行修改了.
+下面定义了希望使用的激活函数:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">self</span>.activation_function = <span style="font-weight: bold;">lambda</span> x: expit(x)
+</pre>
+</div>
+<p>
+这里解释下lambda,lambda 就是Python 的语法糖,是定义函数的一种简写形式,这里就是
+定义了一个函数,接受参数 x ,返回 expit(x). 用 lambda 创建的函数是没有名字的,所
+以一般叫这种函数为匿名函数,但是这里给它分配了一个名字
+self.activation<sub>function</sub>, 所以我们可以通过 self.activation<sub>function</sub>() 来调用
+这个函数.
+回到给隐藏层节点的输入信号应用激活函数生成隐藏层的输出信号:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">hidden_outputs</span> = <span style="font-weight: bold;">self</span>.activation_function(hidden_inputs)
+</pre>
+</div>
+<p>
+信号成功到达隐藏层并生成输出信号,而信号从隐藏层传递到最终输出层
+</p>
 </div>
 </div>
 </div>
@@ -1260,7 +1295,7 @@ query() 函数接受神经网络的输入,返回网络的输出.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-03-08 Tue 08:23</p>
+<p class="date">Created: 2022-03-08 Tue 15:11</p>
 <p class="validation"></p>
 </div>
 </body>
