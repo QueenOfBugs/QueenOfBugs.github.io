@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-03-02 Wed 14:32 -->
+<!-- 2022-03-08 Tue 08:23 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Python 神经网络编程 &#x2013; 深度学习系列 神经网络入门</title>
@@ -261,26 +261,40 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgbef4dbc">神经网络是如何工作的?</a>
+<li><a href="#orgfbfebd8">神经网络是如何工作的?</a>
 <ul>
-<li><a href="#orge8227ad">尺有所长,寸有所短</a></li>
-<li><a href="#orga2d38bc">一台简单的预测机</a></li>
-<li><a href="#org23f2914">分类器与预测器并无太大差别</a></li>
-<li><a href="#org9efc027">训练简单的分类器</a></li>
-<li><a href="#orgfb31c1c">有时候一个分类器不足以求解问题</a></li>
-<li><a href="#orgcb9f54e">神经元&#x2013;大自然的计算器</a></li>
+<li><a href="#org9cd0f76">尺有所长,寸有所短</a></li>
+<li><a href="#org07a8bc8">一台简单的预测机</a></li>
+<li><a href="#org76d86d4">分类器与预测器并无太大差别</a></li>
+<li><a href="#org18fe3b7">训练简单的分类器</a></li>
+<li><a href="#orgdd421e9">有时候一个分类器不足以求解问题</a></li>
+<li><a href="#org01af63f">神经元&#x2013;大自然的计算器</a></li>
+</ul>
+</li>
+<li><a href="#orgedd30ba">使用Python进行DIY</a>
+<ul>
+<li><a href="#org054e224">测试 emacs-jupyter</a></li>
+<li><a href="#org10a6f5b">开始制作神经网络</a>
+<ul>
+<li><a href="#orgb4964da">框架代码</a></li>
+<li><a href="#org85eccca">初始化网络</a></li>
+<li><a href="#orgfd358d0">权重&#x2013;网络的核心</a></li>
+<li><a href="#org3af4734">可选: 较复杂的权重</a></li>
+<li><a href="#org645f5db">查询网络</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbef4dbc" class="outline-2">
-<h2 id="orgbef4dbc">神经网络是如何工作的?</h2>
-<div class="outline-text-2" id="text-orgbef4dbc">
+<div id="outline-container-orgfbfebd8" class="outline-2">
+<h2 id="orgfbfebd8">神经网络是如何工作的?</h2>
+<div class="outline-text-2" id="text-orgfbfebd8">
 </div>
-<div id="outline-container-orge8227ad" class="outline-3">
-<h3 id="orge8227ad">尺有所长,寸有所短</h3>
-<div class="outline-text-3" id="text-orge8227ad">
+<div id="outline-container-org9cd0f76" class="outline-3">
+<h3 id="org9cd0f76">尺有所长,寸有所短</h3>
+<div class="outline-text-3" id="text-org9cd0f76">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -325,9 +339,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orga2d38bc" class="outline-3">
-<h3 id="orga2d38bc">一台简单的预测机</h3>
-<div class="outline-text-3" id="text-orga2d38bc">
+<div id="outline-container-org07a8bc8" class="outline-3">
+<h3 id="org07a8bc8">一台简单的预测机</h3>
+<div class="outline-text-3" id="text-org07a8bc8">
 <p>
 先从构建超级简单的机器开始了解神经网络中的学习过程.
 </p>
@@ -339,7 +353,6 @@ for the JavaScript code in this tag.
 </p>
 <div class="org-src-container">
 <pre class="src src-dot">digraph G{
-
 rankdir = <span style="font-style: italic;">"LR"</span>;
 input [label=<span style="font-style: italic;">"&#38382;&#39064;"</span>, shape=plaintext];
 machine [label=<span style="font-style: italic;">"&#24605;&#32771;"</span>, shape=circle,width=0.75, height=0.75, fixedsize=true];
@@ -542,9 +555,9 @@ input -&gt; machine -&gt; output;
 </div>
 </div>
 
-<div id="outline-container-org23f2914" class="outline-3">
-<h3 id="org23f2914">分类器与预测器并无太大差别</h3>
-<div class="outline-text-3" id="text-org23f2914">
+<div id="outline-container-org76d86d4" class="outline-3">
+<h3 id="org76d86d4">分类器与预测器并无太大差别</h3>
+<div class="outline-text-3" id="text-org76d86d4">
 <p>
 上面的简单机器接受了一个输入,并作出应有的预测,输出结果,我们将其称为预测器.根
 据结果与已知真实示例进行比较所得出的误差,调整内部参数,使得预测更加精确.
@@ -627,9 +640,9 @@ input -&gt; machine -&gt; output;
 </div>
 </div>
 
-<div id="outline-container-org9efc027" class="outline-3">
-<h3 id="org9efc027">训练简单的分类器</h3>
-<div class="outline-text-3" id="text-org9efc027">
+<div id="outline-container-org18fe3b7" class="outline-3">
+<h3 id="org18fe3b7">训练简单的分类器</h3>
+<div class="outline-text-3" id="text-org18fe3b7">
 <p>
 上一节我们构思了一种线性分类器,能够正确分类瓢虫和毛虫,根据上节图示,我们可以观
 察到,想要实现这样一种分类器,重点在于调整分界线的斜率,使其能够基于小虫的宽度和
@@ -970,9 +983,9 @@ y=3.0 差了很多,根据先前相同的推理,我们希望直线不经过点,�
 </div>
 </div>
 
-<div id="outline-container-orgfb31c1c" class="outline-3">
-<h3 id="orgfb31c1c">有时候一个分类器不足以求解问题</h3>
-<div class="outline-text-3" id="text-orgfb31c1c">
+<div id="outline-container-orgdd421e9" class="outline-3">
+<h3 id="orgdd421e9">有时候一个分类器不足以求解问题</h3>
+<div class="outline-text-3" id="text-orgdd421e9">
 <ul class="org-ul">
 <li>如果数据本身不是由单一线性过程支配,那么一个简单的线性分类器不能对数据进行划
 分.例如由逻辑 XOR 运算符支配的数据.</li>
@@ -981,9 +994,9 @@ y=3.0 差了很多,根据先前相同的推理,我们希望直线不经过点,�
 </div>
 </div>
 
-<div id="outline-container-orgcb9f54e" class="outline-3">
-<h3 id="orgcb9f54e">神经元&#x2013;大自然的计算器</h3>
-<div class="outline-text-3" id="text-orgcb9f54e">
+<div id="outline-container-org01af63f" class="outline-3">
+<h3 id="org01af63f">神经元&#x2013;大自然的计算器</h3>
+<div class="outline-text-3" id="text-org01af63f">
 <p>
 计算机有大量电子计算元件,巨大存储空间,并且计算机的运行频率比生物大脑要快得多,
 但即使是像鸽子一样小的大脑,能力也远大于电子计算机.
@@ -999,10 +1012,255 @@ y=3.0 差了很多,根据先前相同的推理,我们希望直线不经过点,�
 </div>
 </div>
 </div>
+
+
+<div id="outline-container-orgedd30ba" class="outline-2">
+<h2 id="orgedd30ba">使用Python进行DIY</h2>
+<div class="outline-text-2" id="text-orgedd30ba">
+</div>
+<div id="outline-container-org054e224" class="outline-3">
+<h3 id="org054e224">测试 emacs-jupyter</h3>
+<div class="outline-text-3" id="text-org054e224">
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">import</span> sys
+<span style="font-weight: bold;">print</span>(sys.version)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python">#import matplotlib.pyplot
+#import numpy
+import sys
+print(sys.version)
+#a = numpy.zeros([3,2])
+#a[0,0]=1
+#a[0,1]=2
+#a[1,0]=9
+#a[2,1]=12
+#matplotlib.pyplot.imshow(a,interpolation="nearest")
+#print(a)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org10a6f5b" class="outline-3">
+<h3 id="org10a6f5b">开始制作神经网络</h3>
+<div class="outline-text-3" id="text-org10a6f5b">
+<p>
+从小处开始,然后让程序慢慢长大,这好似构建中等复杂度计算机代码的一种明智的方式.
+</p>
+</div>
+
+<div id="outline-container-orgb4964da" class="outline-4">
+<h4 id="orgb4964da">框架代码</h4>
+<div class="outline-text-4" id="text-orgb4964da">
+<p>
+神经网络类应该至少有三个函数:
+</p>
+<dl class="org-dl">
+<dt>初始化函数</dt><dd>设定输入层节点,隐藏层节点和输出层节点的数量.</dd>
+<dt>训练</dt><dd>学习给定训练集样本后,优化权重.</dd>
+<dt>查询</dt><dd>给定输入,从输出节点给出答案.</dd>
+</dl>
+
+<p>
+代码框架:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">neural network class definition</span>
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">neuralNetwork</span>:
+    <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">initialize the neutral network.</span>
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>():
+        <span style="font-weight: bold;">pass</span>
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">train the neural network</span>
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">train</span>():
+        <span style="font-weight: bold;">pass</span>
+    <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">query the neural network</span>
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">query</span>():
+        <span style="font-weight: bold;">pass</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org85eccca" class="outline-4">
+<h4 id="org85eccca">初始化网络</h4>
+<div class="outline-text-4" id="text-org85eccca">
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">initialize the neutral network</span>
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>(<span style="font-weight: bold;">self</span>, inputnodes, hiddennodes, outputnodes, learningrate):
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">set number of nodes in each input,hidden,output layer</span>
+    <span style="font-weight: bold;">self</span>.inodes = inputnodes
+    <span style="font-weight: bold;">self</span>.hnodes = hiddennodes
+    <span style="font-weight: bold;">self</span>.onodes = outputnodes
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">learning rate</span>
+    <span style="font-weight: bold;">self</span>.lr = learningrate
+    <span style="font-weight: bold;">pass</span>
+</pre>
+</div>
+
+<p>
+使用定义的神经网络类,创建每层 3个节点, 学习率为0.5 的小型神经网络对象.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">number of input hidden and output nodes</span>
+<span style="font-weight: bold; font-style: italic;">input_nodes</span> = 3
+<span style="font-weight: bold; font-style: italic;">hidden_nodes</span> = 3
+<span style="font-weight: bold; font-style: italic;">output_nodes</span> = 3
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">learning rate is 0.5</span>
+<span style="font-weight: bold; font-style: italic;">learning_rate</span> = 0.5
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">create instance of neutral network</span>
+<span style="font-weight: bold; font-style: italic;">n</span> = neuralNetwork(input_nodes, hiddennodes, output_nodes, learning_rate)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfd358d0" class="outline-4">
+<h4 id="orgfd358d0">权重&#x2013;网络的核心</h4>
+<div class="outline-text-4" id="text-orgfd358d0">
+<p>
+前面我们知道使用矩阵可以简明地表达权重.所以我们可以创建:
+</p>
+<ul class="org-ul">
+<li>输入层和隐藏层之间的链接权重矩阵 \(W_{input_hidden}\), 大小为hidden<sub>nodes</sub> 乘
+以 output<sub>nodes</sub>.</li>
+<li>隐藏层和输出层之间的链接权重矩阵为 \(W_{hidden_output}\), 大小为
+hidden<sub>nodes</sub> 乘以 output<sub>nodes</sub>.</li>
+</ul>
+
+
+<p>
+链接权重的初始值应该较小,并且是随机的.
+使用 <code>numpy</code> 的函数生成一个数组,数组重元素为 0-1 的随机值,数组大小为row乘以
+columns.
+</p>
+<div class="org-src-container">
+<pre class="src src-python">numpy.random.rand(rows,columns)
+</pre>
+</div>
+<p>
+numpy 函数的使用手册可以在互联网上查找.
+</p>
+
+<p>
+下面显示了生成3×3的numpy数组.数组中每个值都是 0-1的随机值.
+</p>
+<div class="org-src-container">
+<pre class="src src-jupyter-python">import numpy
+numpy.random.rand(3, 3)
+</pre>
+</div>
+
+<pre class="example">
+array([[0.89201918, 0.37893307, 0.3509575 ],
+       [0.81494134, 0.40866014, 0.81253467],
+       [0.27823627, 0.26021284, 0.31133589]])
+
+</pre>
+
+<p>
+上面没有考虑权重可以为正数,也可以为负数的情况,权重范围可以在 -1.0 到 +1.0 之
+间.为了简单起见,我们在上面数组的每个值里都减去0.5,这样,让数组中每个值都是-0.5到
++0.5之间的随机值
+</p>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python">import numpy
+numpy.random.rand(3, 3) - 0.5
+</pre>
+</div>
+
+<pre class="example">
+array([[-0.38037314, -0.47892486, -0.13405653],
+       [ 0.44163758,  0.2625298 ,  0.19114613],
+       [-0.18986603, -0.30814275, -0.13159751]])
+
+</pre>
+
+<p>
+权重是神经网络的固有部分.不会随着函数的调用结束消失,所以权重也必须是初始化的
+一部分,并且可以使用其他函数来访问(训练函数和查询函数).
+下面是创建链接权重矩阵的实例代码:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">link weight matrices, with and who weights inside the arrays are  w_i_j, where link is from node i to node j in the next layer</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">w11 w21</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">w12 w22 etc.</span>
+<span style="font-weight: bold;">self</span>.wih = (numpy.random.rand(<span style="font-weight: bold;">self</span>.hnodes, <span style="font-weight: bold;">self</span>.inodes) - 0.5)
+<span style="font-weight: bold;">self</span>.who = (numpy.random.rand(<span style="font-weight: bold;">self</span>.hnodes, <span style="font-weight: bold;">self</span>.onodes) - 0.5)
+</pre>
+</div>
+
+<p>
+到这里，我们就准备好了神经网络的核心,链接权重矩阵.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3af4734" class="outline-4">
+<h4 id="org3af4734">可选: 较复杂的权重</h4>
+<div class="outline-text-4" id="text-org3af4734">
+<p>
+我们可以选择一种简单却流行的优化初始权重的方式.
+</p>
+
+<p>
+有些人更喜欢使用稍微复杂的方式来创建初始随机权重.他们使用正态概率分布采样权
+重,其中,平均值为0,标准方差为节点传入链接数目的开放,即 \(\frac{1}{\sqrt{传入
+    链接数目}}\).
+numpy 库可以帮助我们实现这点. <code>numpy.random.normal()</code> 函数可以帮助我们以正态分
+布的方式采样.因为我们需要的是随机矩阵,而不是单一数字,因此采用分布中心值,标准
+方差和numpy 数组的大小最为参数.
+此外,我们使用下一层的节点数的开方最为标准方差来初始化权重.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">self</span>.wih = numpy.random.normal(0.0, <span style="font-weight: bold;">pow</span>(<span style="font-weight: bold;">self</span>.hnodes, -5), (<span style="font-weight: bold;">self</span>.hnodes, <span style="font-weight: bold;">self</span>.inodes))
+<span style="font-weight: bold;">self</span>.who = numpy.random.normal(0.0, <span style="font-weight: bold;">pow</span>(<span style="font-weight: bold;">self</span>.onodes, -5), (<span style="font-weight: bold;">self</span>.hnodes, <span style="font-weight: bold;">self</span>.onodes))
+</pre>
+</div>
+<p>
+normal 函数第一个参数是正态分布的中心,第二个参数是标准方差,第三个是数组大小.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org645f5db" class="outline-4">
+<h4 id="org645f5db">查询网络</h4>
+<div class="outline-text-4" id="text-org645f5db">
+<p>
+根据逻辑,我们因该开始填充 train() 函数.让我们先推迟一下这一步,来先编写简单的
+query() 函数,这会给我们更多时间来逐步建立信心,获得使用Python 和神经网络对象
+内部权重矩阵的实践经验.
+query() 函数接受神经网络的输入,返回网络的输出.
+也就是说,我们要传递来自输入层节点的输入信号,通过隐藏层,最后从输出层输出.当信
+号传送到给定的隐藏节点或输出层节点时,我们使用链接权重调节信号,并应用S激活函
+数来抑制这些节点的信号.
+如果有很多节点,那我们就要为每一个节点写出Python 代码,来进行权重调节,信号求和,
+应用激活函数.节点越多,代码越多.
+好在我们之前就讨论过使用矩阵形式写出这些指令,例如输入层和隐藏层之间的链接权
+重矩阵与输入矩阵相乘,得到隐藏层节点的输入信号:
+\(X_{hidden} = W_{input\_hidden}\cdot{I}\)
+这样可以更容易书写,而Python 也可以理解矩阵.
+下面是python代码完成上面的矩阵乘法:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">hidden_inputs</span> = numpy.dot(<span style="font-weight: bold;">self</span>.wih, inputs)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-03-02 Wed 14:32</p>
+<p class="date">Created: 2022-03-08 Tue 08:23</p>
 <p class="validation"></p>
 </div>
 </body>
