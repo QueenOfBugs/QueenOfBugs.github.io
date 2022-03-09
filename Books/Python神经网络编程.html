@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-03-08 Tue 21:27 -->
+<!-- 2022-03-09 Wed 14:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Python 神经网络编程 &#x2013; 深度学习系列 神经网络入门</title>
@@ -261,35 +261,40 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgae08607">神经网络是如何工作的?</a>
+<li><a href="#org68f4475">神经网络是如何工作的?</a>
 <ul>
-<li><a href="#org49fcb41">尺有所长,寸有所短</a></li>
-<li><a href="#org43cebc5">一台简单的预测机</a></li>
-<li><a href="#org201e3d6">分类器与预测器并无太大差别</a></li>
-<li><a href="#org279318e">训练简单的分类器</a></li>
-<li><a href="#orgbc0ec50">有时候一个分类器不足以求解问题</a></li>
-<li><a href="#orge794e66">神经元&#x2013;大自然的计算器</a></li>
+<li><a href="#org1260b9d">尺有所长,寸有所短</a></li>
+<li><a href="#orgb3f585f">一台简单的预测机</a></li>
+<li><a href="#org7d91b64">分类器与预测器并无太大差别</a></li>
+<li><a href="#orgc874d1e">训练简单的分类器</a></li>
+<li><a href="#org51bdc2c">有时候一个分类器不足以求解问题</a></li>
+<li><a href="#org8b21a63">神经元&#x2013;大自然的计算器</a></li>
 </ul>
 </li>
-<li><a href="#org7f689f5">使用Python进行DIY</a>
+<li><a href="#org2603341">使用Python进行DIY</a>
 <ul>
-<li><a href="#org3488800">测试 emacs-jupyter</a></li>
-<li><a href="#orgbf9fbe8">开始制作神经网络</a>
+<li><a href="#org96d4a4b">测试 emacs-jupyter</a></li>
+<li><a href="#org8119875">开始制作神经网络</a>
 <ul>
-<li><a href="#org8b515b4">框架代码</a></li>
-<li><a href="#org6733023">初始化网络</a></li>
-<li><a href="#org933ffeb">权重&#x2013;网络的核心</a></li>
-<li><a href="#org9e552f9">可选: 较复杂的权重</a></li>
-<li><a href="#org1de125f">查询网络</a></li>
-<li><a href="#orgca5fd2a">目前为止的所有代码</a></li>
-<li><a href="#org6c57449">训练网络</a></li>
-<li><a href="#org82736d2">完整的神经网络代码</a></li>
+<li><a href="#org633a18f">框架代码</a></li>
+<li><a href="#orgb8aa4bf">初始化网络</a></li>
+<li><a href="#org24e71a0">权重&#x2013;网络的核心</a></li>
+<li><a href="#org7541b05">可选: 较复杂的权重</a></li>
+<li><a href="#org1cb06f3">查询网络</a></li>
+<li><a href="#orgedac323">目前为止的所有代码</a></li>
+<li><a href="#org0619828">训练网络</a></li>
+<li><a href="#org0f094ac">完整的神经网络代码</a></li>
 </ul>
 </li>
-<li><a href="#org35db17b">手写数字的数据集MNIST</a>
+<li><a href="#org58d5197">手写数字的数据集MNIST</a>
 <ul>
-<li><a href="#orgfbdd67c">准备MNIST训练数据</a></li>
-<li><a href="#orgb4f7b10">测试网络</a></li>
+<li><a href="#org4d2d777">准备MNIST训练数据</a></li>
+<li><a href="#org4315dbc">测试网络</a></li>
+<li><a href="#orgb6f6e71">使用完整的数据集进行训练和测试</a></li>
+<li><a href="#org50dc73f">一些改进:调整学习率</a></li>
+<li><a href="#org9e4ed17">一些改进:多次运行</a></li>
+<li><a href="#org332dc44">改变网络形状</a></li>
+<li><a href="#org18852d1">大功告成!</a></li>
 </ul>
 </li>
 </ul>
@@ -297,13 +302,13 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgae08607" class="outline-2">
-<h2 id="orgae08607">神经网络是如何工作的?</h2>
-<div class="outline-text-2" id="text-orgae08607">
+<div id="outline-container-org68f4475" class="outline-2">
+<h2 id="org68f4475">神经网络是如何工作的?</h2>
+<div class="outline-text-2" id="text-org68f4475">
 </div>
-<div id="outline-container-org49fcb41" class="outline-3">
-<h3 id="org49fcb41">尺有所长,寸有所短</h3>
-<div class="outline-text-3" id="text-org49fcb41">
+<div id="outline-container-org1260b9d" class="outline-3">
+<h3 id="org1260b9d">尺有所长,寸有所短</h3>
+<div class="outline-text-3" id="text-org1260b9d">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -348,9 +353,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org43cebc5" class="outline-3">
-<h3 id="org43cebc5">一台简单的预测机</h3>
-<div class="outline-text-3" id="text-org43cebc5">
+<div id="outline-container-orgb3f585f" class="outline-3">
+<h3 id="orgb3f585f">一台简单的预测机</h3>
+<div class="outline-text-3" id="text-orgb3f585f">
 <p>
 先从构建超级简单的机器开始了解神经网络中的学习过程.
 </p>
@@ -564,9 +569,9 @@ input -&gt; machine -&gt; output;
 </div>
 </div>
 
-<div id="outline-container-org201e3d6" class="outline-3">
-<h3 id="org201e3d6">分类器与预测器并无太大差别</h3>
-<div class="outline-text-3" id="text-org201e3d6">
+<div id="outline-container-org7d91b64" class="outline-3">
+<h3 id="org7d91b64">分类器与预测器并无太大差别</h3>
+<div class="outline-text-3" id="text-org7d91b64">
 <p>
 上面的简单机器接受了一个输入,并作出应有的预测,输出结果,我们将其称为预测器.根
 据结果与已知真实示例进行比较所得出的误差,调整内部参数,使得预测更加精确.
@@ -649,9 +654,9 @@ input -&gt; machine -&gt; output;
 </div>
 </div>
 
-<div id="outline-container-org279318e" class="outline-3">
-<h3 id="org279318e">训练简单的分类器</h3>
-<div class="outline-text-3" id="text-org279318e">
+<div id="outline-container-orgc874d1e" class="outline-3">
+<h3 id="orgc874d1e">训练简单的分类器</h3>
+<div class="outline-text-3" id="text-orgc874d1e">
 <p>
 上一节我们构思了一种线性分类器,能够正确分类瓢虫和毛虫,根据上节图示,我们可以观
 察到,想要实现这样一种分类器,重点在于调整分界线的斜率,使其能够基于小虫的宽度和
@@ -992,9 +997,9 @@ y=3.0 差了很多,根据先前相同的推理,我们希望直线不经过点,�
 </div>
 </div>
 
-<div id="outline-container-orgbc0ec50" class="outline-3">
-<h3 id="orgbc0ec50">有时候一个分类器不足以求解问题</h3>
-<div class="outline-text-3" id="text-orgbc0ec50">
+<div id="outline-container-org51bdc2c" class="outline-3">
+<h3 id="org51bdc2c">有时候一个分类器不足以求解问题</h3>
+<div class="outline-text-3" id="text-org51bdc2c">
 <ul class="org-ul">
 <li>如果数据本身不是由单一线性过程支配,那么一个简单的线性分类器不能对数据进行划
 分.例如由逻辑 XOR 运算符支配的数据.</li>
@@ -1003,9 +1008,9 @@ y=3.0 差了很多,根据先前相同的推理,我们希望直线不经过点,�
 </div>
 </div>
 
-<div id="outline-container-orge794e66" class="outline-3">
-<h3 id="orge794e66">神经元&#x2013;大自然的计算器</h3>
-<div class="outline-text-3" id="text-orge794e66">
+<div id="outline-container-org8b21a63" class="outline-3">
+<h3 id="org8b21a63">神经元&#x2013;大自然的计算器</h3>
+<div class="outline-text-3" id="text-org8b21a63">
 <p>
 计算机有大量电子计算元件,巨大存储空间,并且计算机的运行频率比生物大脑要快得多,
 但即使是像鸽子一样小的大脑,能力也远大于电子计算机.
@@ -1023,13 +1028,13 @@ y=3.0 差了很多,根据先前相同的推理,我们希望直线不经过点,�
 </div>
 
 
-<div id="outline-container-org7f689f5" class="outline-2">
-<h2 id="org7f689f5">使用Python进行DIY</h2>
-<div class="outline-text-2" id="text-org7f689f5">
+<div id="outline-container-org2603341" class="outline-2">
+<h2 id="org2603341">使用Python进行DIY</h2>
+<div class="outline-text-2" id="text-org2603341">
 </div>
-<div id="outline-container-org3488800" class="outline-3">
-<h3 id="org3488800">测试 emacs-jupyter</h3>
-<div class="outline-text-3" id="text-org3488800">
+<div id="outline-container-org96d4a4b" class="outline-3">
+<h3 id="org96d4a4b">测试 emacs-jupyter</h3>
+<div class="outline-text-3" id="text-org96d4a4b">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">import</span> sys
 <span style="font-weight: bold;">print</span>(sys.version)
@@ -1054,17 +1059,17 @@ print(sys.version)
 </div>
 </div>
 
-<div id="outline-container-orgbf9fbe8" class="outline-3">
-<h3 id="orgbf9fbe8">开始制作神经网络</h3>
-<div class="outline-text-3" id="text-orgbf9fbe8">
+<div id="outline-container-org8119875" class="outline-3">
+<h3 id="org8119875">开始制作神经网络</h3>
+<div class="outline-text-3" id="text-org8119875">
 <p>
 从小处开始,然后让程序慢慢长大,这好似构建中等复杂度计算机代码的一种明智的方式.
 </p>
 </div>
 
-<div id="outline-container-org8b515b4" class="outline-4">
-<h4 id="org8b515b4">框架代码</h4>
-<div class="outline-text-4" id="text-org8b515b4">
+<div id="outline-container-org633a18f" class="outline-4">
+<h4 id="org633a18f">框架代码</h4>
+<div class="outline-text-4" id="text-org633a18f">
 <p>
 神经网络类应该至少有三个函数:
 </p>
@@ -1094,9 +1099,9 @@ print(sys.version)
 </div>
 </div>
 
-<div id="outline-container-org6733023" class="outline-4">
-<h4 id="org6733023">初始化网络</h4>
-<div class="outline-text-4" id="text-org6733023">
+<div id="outline-container-orgb8aa4bf" class="outline-4">
+<h4 id="orgb8aa4bf">初始化网络</h4>
+<div class="outline-text-4" id="text-orgb8aa4bf">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">initialize the neutral network</span>
 <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>(<span style="font-weight: bold;">self</span>, inputnodes, hiddennodes, outputnodes, learningrate):
@@ -1130,9 +1135,9 @@ print(sys.version)
 </div>
 </div>
 
-<div id="outline-container-org933ffeb" class="outline-4">
-<h4 id="org933ffeb">权重&#x2013;网络的核心</h4>
-<div class="outline-text-4" id="text-org933ffeb">
+<div id="outline-container-org24e71a0" class="outline-4">
+<h4 id="org24e71a0">权重&#x2013;网络的核心</h4>
+<div class="outline-text-4" id="text-org24e71a0">
 <p>
 前面我们知道使用矩阵可以简明地表达权重.所以我们可以创建:
 </p>
@@ -1213,9 +1218,9 @@ array([[-0.38037314, -0.47892486, -0.13405653],
 </div>
 </div>
 
-<div id="outline-container-org9e552f9" class="outline-4">
-<h4 id="org9e552f9">可选: 较复杂的权重</h4>
-<div class="outline-text-4" id="text-org9e552f9">
+<div id="outline-container-org7541b05" class="outline-4">
+<h4 id="org7541b05">可选: 较复杂的权重</h4>
+<div class="outline-text-4" id="text-org7541b05">
 <p>
 我们可以选择一种简单却流行的优化初始权重的方式.
 </p>
@@ -1240,9 +1245,9 @@ normal 函数第一个参数是正态分布的中心,第二个参数是标准方
 </div>
 </div>
 
-<div id="outline-container-org1de125f" class="outline-4">
-<h4 id="org1de125f">查询网络</h4>
-<div class="outline-text-4" id="text-org1de125f">
+<div id="outline-container-org1cb06f3" class="outline-4">
+<h4 id="org1cb06f3">查询网络</h4>
+<div class="outline-text-4" id="text-org1cb06f3">
 <p>
 根据逻辑,我们因该开始填充 train() 函数.让我们先推迟一下这一步,来先编写简单的
 query() 函数,这会给我们更多时间来逐步建立信心,获得使用Python 和神经网络对象
@@ -1317,9 +1322,9 @@ self.activation<sub>function</sub>, 所以我们可以通过 self.activation<sub
 </div>
 </div>
 
-<div id="outline-container-orgca5fd2a" class="outline-4">
-<h4 id="orgca5fd2a">目前为止的所有代码</h4>
-<div class="outline-text-4" id="text-orgca5fd2a">
+<div id="outline-container-orgedac323" class="outline-4">
+<h4 id="orgedac323">目前为止的所有代码</h4>
+<div class="outline-text-4" id="text-orgedac323">
 <p>
 让我们检查一下已经构建好的代码:
 </p>
@@ -1373,9 +1378,9 @@ print(n.query([1.0, 0.5, -1.5]))
 </div>
 </div>
 
-<div id="outline-container-org6c57449" class="outline-4">
-<h4 id="org6c57449">训练网络</h4>
-<div class="outline-text-4" id="text-org6c57449">
+<div id="outline-container-org0619828" class="outline-4">
+<h4 id="org0619828">训练网络</h4>
+<div class="outline-text-4" id="text-org0619828">
 <p>
 现在来填充较为复杂的训练任务,训练任务分为两个部分:
 </p>
@@ -1460,9 +1465,9 @@ ok 完成了更新矩阵的计算.
 </div>
 </div>
 
-<div id="outline-container-org82736d2" class="outline-4">
-<h4 id="org82736d2">完整的神经网络代码</h4>
-<div class="outline-text-4" id="text-org82736d2">
+<div id="outline-container-org0f094ac" class="outline-4">
+<h4 id="org0f094ac">完整的神经网络代码</h4>
+<div class="outline-text-4" id="text-org0f094ac">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">neural network class definition</span>
 <span style="font-weight: bold;">import</span> numpy
@@ -1525,9 +1530,9 @@ ok 完成了更新矩阵的计算.
 </div>
 </div>
 
-<div id="outline-container-org35db17b" class="outline-3">
-<h3 id="org35db17b">手写数字的数据集MNIST</h3>
-<div class="outline-text-3" id="text-org35db17b">
+<div id="outline-container-org58d5197" class="outline-3">
+<h3 id="org58d5197">手写数字的数据集MNIST</h3>
+<div class="outline-text-3" id="text-org58d5197">
 <p>
 手写数字的MNIST 数据集可以在网站 <a href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a> 里获得.
 这个网页也列出了在学习和正确识别手写字符方面,新旧想法的表现如何.
@@ -1642,9 +1647,9 @@ numpy.asfarray() 函数将文本字符串转换成实数,并创建这些数字�
 </p>
 </div>
 
-<div id="outline-container-orgfbdd67c" class="outline-4">
-<h4 id="orgfbdd67c">准备MNIST训练数据</h4>
-<div class="outline-text-4" id="text-orgfbdd67c">
+<div id="outline-container-org4d2d777" class="outline-4">
+<h4 id="org4d2d777">准备MNIST训练数据</h4>
+<div class="outline-text-4" id="text-org4d2d777">
 <p>
 我们已经指导如何获取和拆开 MNIST 数据文件中的数据,并理解和可视化这些数据.我
 们要使用这些数据训练神经网络之前,需要想想,我们应该如何准备数据.
@@ -1806,12 +1811,16 @@ for record in training_data_list:
 </div>
 </div>
 
-<div id="outline-container-orgb4f7b10" class="outline-4">
-<h4 id="orgb4f7b10">测试网络</h4>
-<div class="outline-text-4" id="text-orgb4f7b10">
+<div id="outline-container-org4315dbc" class="outline-4">
+<h4 id="org4315dbc">测试网络</h4>
+<div class="outline-text-4" id="text-org4315dbc">
 <p>
 上面的代码已经使用了较小的子集数据(100条)来训练网络,我们来使用测试数据的10条
 记录来测试神经网络
+</p>
+
+<p>
+加载测试数据,并获取第一条数据标签:
 </p>
 <div class="org-src-container">
 <pre class="src src-jupyter-python"># load the mnist test data CSV file in to a list
@@ -1830,6 +1839,10 @@ print(all_values[0])
 
 </pre>
 
+<p>
+查看第一条测试数据的图像:
+</p>
+
 <div class="org-src-container">
 <pre class="src src-jupyter-python">image_array = numpy.asfarray(all_values[1:]).reshape((28,28))
 matplotlib.pyplot.imshow(image_array, cmap="Greys", interpolation="None")
@@ -1837,7 +1850,7 @@ matplotlib.pyplot.imshow(image_array, cmap="Greys", interpolation="None")
 </div>
 
 <pre class="example">
-&lt;matplotlib.image.AxesImage at 0x7f3874ceaad0&gt;
+&lt;matplotlib.image.AxesImage at 0x7f3874a31ea0&gt;
 
 </pre>
 
@@ -1845,14 +1858,1157 @@ matplotlib.pyplot.imshow(image_array, cmap="Greys", interpolation="None")
 <p><img src="./.ob-jupyter/783eb55c55f0ee77e2904757086b26102293c1a5.png" alt="783eb55c55f0ee77e2904757086b26102293c1a5.png" />
 </p>
 </div>
+
+<p>
+使用训练后的网络查询识别结果:
+</p>
+<div class="org-src-container">
+<pre class="src src-jupyter-python">n.query((numpy.asfarray(all_values[1:])/ 255.0 * 0.99) + 0.01)
+</pre>
 </div>
+
+<pre class="example">
+array([[0.006904  ],
+       [0.00218566],
+       [0.09688954],
+       [0.0140386 ],
+       [0.0125424 ],
+       [0.0067416 ],
+       [0.00838635],
+       [0.71919368],
+       [0.00743467],
+       [0.00100871]])
+
+</pre>
+
+<p>
+我们使用100条训练记录训练了神经网络,并用训练后的网络识别了测试记录的第一条数
+据,可以看到输出的数据矩阵中,第七个输出,也就是代表标签7的输出是所有输出里最大
+的,那就表示我们这一次识别是成功的.
+</p>
+
+<p>
+我们只用了100条记录训练神经网络,虽然测试结果有一定效果,但这就像我们掌握某项
+技能一样,熟能生巧,练习100次的熟练度肯定没有练习10000次的熟练度高.我们可以开
+始使用完整数据集训练,在此之前,我们先改写一下代码,使得代码可以对神经网络训练
+成果的成功率进行记录,就像是打游戏一样记录游戏分数.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python"># test the neural network
+# scorecard for how well the network performs, initially empty.
+scorecard = []
+# go through all the records in the test data set
+for record in test_data_list:
+    # split the record by the '.' commas
+    all_values = record.split(',')
+    # correct answer is first value
+    correct_label = int(all_values[0])
+    print(correct_label, "correct label")
+    # scale and shift the inputs
+    inputs = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
+    # query the network
+    outputs = n.query(inputs)
+    # the index of the highest value corresponds to the label
+    label = numpy.argmax(outputs)
+    print(label, "network's answer")
+    # append correct or in correct to list
+    if (label == correct_label):
+	# network's answer matches correct answer, add 1 to scorecard
+	scorecard.append(1)
+    else:
+	# network's answer doesn't match correct answer, add 0 to scorecard
+	scorecard.append(0)
+	pass
+    pass
+
+</pre>
+</div>
+
+<pre class="example">
+7 correct label
+7 network's answer
+2 correct label
+2 network's answer
+1 correct label
+7 network's answer
+0 correct label
+7 network's answer
+4 correct label
+7 network's answer
+1 correct label
+7 network's answer
+4 correct label
+7 network's answer
+9 correct label
+7 network's answer
+5 correct label
+7 network's answer
+9 correct label
+7 network's answer
+</pre>
+
+<p>
+查看下计分卡的内容:
+</p>
+<div class="org-src-container">
+<pre class="src src-jupyter-python">print(scorecard)
+</pre>
+</div>
+
+<pre class="example">
+[1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+
+</pre>
+
+<p>
+这次的结果就不理想了,得分很糟糕,但考虑到训练集很小,所以也不算太糟糕.失败了,
+但没有完全失败.
+</p>
+
+<p>
+看列表形式的计分板不是很好,数据多了就不好观察了,我们可以将结果转换成准确率:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python"># calculate the performance score, the fraction of correct answers
+scorecard_array = numpy.asarray(scorecard)
+print("performance = ", scorecard_array.sum()/scorecard_array.size)
+</pre>
+</div>
+
+<pre class="example">
+performance =  0.1
+
+</pre>
+
+<p>
+可以观察到训练成果并不是很理想,但是我们已经有了一个可以调整数据集,观察训练结
+果的代码了,完整的代码如下:
+</p>
+<div class="org-src-container">
+<pre class="src src-jupyter-python"># neural network class definition
+import matplotlib.pyplot
+import numpy
+from scipy.special import expit
+class neuralNetwork:
+    #initialize the neutral network.
+    def __init__(self, inputnodes, hiddennodes, outputnodes, learningrate):
+	# set number of nodes in each input,hidden,output layer
+	self.inodes = inputnodes
+	self.hnodes = hiddennodes
+	self.onodes = outputnodes
+	# learning rate
+	self.lr = learningrate
+	self.wih = numpy.random.normal(0.0, pow(self.hnodes, -0.5), (self.hnodes, self.inodes))
+	self.who = numpy.random.normal(0.0, pow(self.onodes, -0.5), (self.onodes, self.hnodes))
+	self.activation_function = lambda x: expit(x)
+	pass
+    # train the neural network
+    def train(self, input_list, targets_list):
+	# convert input list to 2d array
+	inputs = numpy.array(input_list, ndmin=2).T
+	targets = numpy.array(targets_list, ndmin=2).T
+	# calculate signals into hidden layer
+	hidden_inputs = numpy.dot(self.wih, inputs)
+	# calculate signals emerging from hidden layer
+	hidden_outputs = self.activation_function(hidden_inputs)
+	# calculate signals into final output layer
+	final_inputs = numpy.dot(self.who, hidden_inputs)
+	# calculate signals emerging from final output layer
+	final_outputs = self.activation_function(final_inputs)
+
+	# error is the (target - actual)
+	output_errors = targets - final_outputs
+
+	# hidden layer error is the output_errors, split by weights, recombined at hidden nodes
+	hidden_errors = numpy.dot(self.who.T, output_errors)
+
+	# update the weights for the links between the hidden and output layers
+	self.who += self.lr * numpy.dot((output_errors * final_outputs * (1.0 - final_outputs)), numpy.transpose(hidden_outputs))
+	# update the weights for the links between the hidden and output layers
+	self.wih += self.lr * numpy.dot((hidden_errors * hidden_outputs * (1.0 - hidden_outputs)), numpy.transpose(inputs))
+	pass
+
+    #query the neural network
+    def query(self, inputs_list):
+	# convert inputs list to 2d array
+	inputs = numpy.array(inputs_list, ndmin=2).T
+	# calculate signals into hidden layer
+	hidden_inputs = numpy.dot(self.wih, inputs)
+	# calculate the signals emerging form hidden layer
+	hidden_outputs = self.activation_function(hidden_inputs)
+	# calculate the signals into final output layer
+	final_inputs = numpy.dot(self.who, hidden_outputs)
+	# calculate the signals emerging from final output layer
+	final_outputs = self.activation_function(final_inputs)
+	return final_outputs
+
+# number of input hidden and output nodes
+input_nodes = 784
+hidden_nodes = 100
+output_nodes = 10
+
+# learning rate is 0.3
+learning_rate = 0.3
+
+# create instance of neural network
+n = neuralNetwork(input_nodes, hidden_nodes, output_nodes, learning_rate)
+
+# load the mnist training data CSV file into a list
+training_data_file = open("/home/kamisama/Downloads/mnist_train_100.csv", 'r')
+training_data_list = training_data_file.readlines()
+training_data_file.close()
+
+# train the neural network
+# go through all records in the training data set
+for record in training_data_list:
+    # split the record by the ',' commas
+    all_values = record.split(',')
+    # scale and shift the inputs
+    inputs = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
+    # create the target output values (all 0.01, except the desired label which is 0.99)
+    targets = numpy.zeros(output_nodes) + 0.01
+    # all_values[0] is the target label for this record
+    targets[int(all_values[0])] = 0.99
+    n.train(inputs, targets)
+
+# test the neural network
+# scorecard for how well the network performs, initially empty.
+scorecard = []
+# go through all the records in the test data set
+for record in test_data_list:
+    # split the record by the '.' commas
+    all_values = record.split(',')
+    # correct answer is first value
+    correct_label = int(all_values[0])
+    print(correct_label, "correct label")
+    # scale and shift the inputs
+    inputs = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
+    # query the network
+    outputs = n.query(inputs)
+    # the index of the highest value corresponds to the label
+    label = numpy.argmax(outputs)
+    print(label, "network's answer")
+    # append correct or in correct to list
+    if (label == correct_label):
+	# network's answer matches correct answer, add 1 to scorecard
+	scorecard.append(1)
+    else:
+	# network's answer doesn't match correct answer, add 0 to scorecard
+	scorecard.append(0)
+	pass
+    pass
+
+# calculate the performance score, the fraction of correct answers
+scorecard_array = numpy.asarray(scorecard)
+print("performance = ", scorecard_array.sum()/scorecard_array.size)
+</pre>
+</div>
+
+<pre class="example">
+7 correct label
+7 network's answer
+2 correct label
+0 network's answer
+1 correct label
+4 network's answer
+0 correct label
+7 network's answer
+4 correct label
+4 network's answer
+1 correct label
+4 network's answer
+4 correct label
+4 network's answer
+9 correct label
+4 network's answer
+5 correct label
+4 network's answer
+9 correct label
+4 network's answer
+performance =  0.3
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgb6f6e71" class="outline-4">
+<h4 id="orgb6f6e71">使用完整的数据集进行训练和测试</h4>
+<div class="outline-text-4" id="text-orgb6f6e71">
+<p>
+上一节最后的代码已经包含了训练和测试网络性能的代码了,此时改变文件名,就可以使
+用完整的训练数据集和测试数据集进行训练了.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python"># neural network class definition
+import matplotlib.pyplot
+import numpy
+from scipy.special import expit
+class neuralNetwork:
+    #initialize the neutral network.
+    def __init__(self, inputnodes, hiddennodes, outputnodes, learningrate):
+	# set number of nodes in each input,hidden,output layer
+	self.inodes = inputnodes
+	self.hnodes = hiddennodes
+	self.onodes = outputnodes
+	# learning rate
+	self.lr = learningrate
+	self.wih = numpy.random.normal(0.0, pow(self.hnodes, -0.5), (self.hnodes, self.inodes))
+	self.who = numpy.random.normal(0.0, pow(self.onodes, -0.5), (self.onodes, self.hnodes))
+	self.activation_function = lambda x: expit(x)
+	pass
+    # train the neural network
+    def train(self, input_list, targets_list):
+	# convert input list to 2d array
+	inputs = numpy.array(input_list, ndmin=2).T
+	targets = numpy.array(targets_list, ndmin=2).T
+	# calculate signals into hidden layer
+	hidden_inputs = numpy.dot(self.wih, inputs)
+	# calculate signals emerging from hidden layer
+	hidden_outputs = self.activation_function(hidden_inputs)
+	# calculate signals into final output layer
+	final_inputs = numpy.dot(self.who, hidden_outputs)
+	# calculate signals emerging from final output layer
+	final_outputs = self.activation_function(final_inputs)
+
+	# error is the (target - actual)
+	output_errors = targets - final_outputs
+
+	# hidden layer error is the output_errors, split by weights, recombined at hidden nodes
+	hidden_errors = numpy.dot(self.who.T, output_errors)
+
+	# update the weights for the links between the hidden and output layers
+	self.who += self.lr * numpy.dot((output_errors * final_outputs * (1.0 - final_outputs)), numpy.transpose(hidden_outputs))
+	# update the weights for the links between the hidden and output layers
+	self.wih += self.lr * numpy.dot((hidden_errors * hidden_outputs * (1.0 - hidden_outputs)), numpy.transpose(inputs))
+	pass
+
+    #query the neural network
+    def query(self, inputs_list):
+	# convert inputs list to 2d array
+	inputs = numpy.array(inputs_list, ndmin=2).T
+	# calculate signals into hidden layer
+	hidden_inputs = numpy.dot(self.wih, inputs)
+	# calculate the signals emerging form hidden layer
+	hidden_outputs = self.activation_function(hidden_inputs)
+	# calculate the signals into final output layer
+	final_inputs = numpy.dot(self.who, hidden_outputs)
+	# calculate the signals emerging from final output layer
+	final_outputs = self.activation_function(final_inputs)
+	return final_outputs
+
+# number of input hidden and output nodes
+input_nodes = 784
+hidden_nodes = 100
+output_nodes = 10
+
+# learning rate is 0.3
+learning_rate = 0.3
+
+# create instance of neural network
+n = neuralNetwork(input_nodes, hidden_nodes, output_nodes, learning_rate)
+
+# load the mnist training data CSV file into a list
+training_data_file = open("/home/kamisama/Downloads/mnist_train.csv", 'r')
+training_data_list = training_data_file.readlines()
+training_data_file.close()
+
+# train the neural network
+# go through all records in the training data set
+for record in training_data_list:
+    # split the record by the ',' commas
+    all_values = record.split(',')
+    # scale and shift the inputs
+    inputs = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
+    # create the target output values (all 0.01, except the desired label which is 0.99)
+    targets = numpy.zeros(output_nodes) + 0.01
+    # all_values[0] is the target label for this record
+    targets[int(all_values[0])] = 0.99
+    n.train(inputs, targets)
+
+# test the neural network
+test_data_file = open("/home/kamisama/Downloads/mnist_test.csv", 'r')
+test_data_list = test_data_file.readlines()
+test_data_file.close()
+# scorecard for how well the network performs, initially empty.
+scorecard = []
+# go through all the records in the test data set
+for record in test_data_list:
+    # split the record by the '.' commas
+    all_values = record.split(',')
+    # correct answer is first value
+    correct_label = int(all_values[0])
+    # print(correct_label, "correct label")
+    # scale and shift the inputs
+    inputs = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
+    # query the network
+    outputs = n.query(inputs)
+    # the index of the highest value corresponds to the label
+    label = numpy.argmax(outputs)
+    # print(label, "network's answer")
+    # append correct or in correct to list
+    if (label == correct_label):
+	# network's answer matches correct answer, add 1 to scorecard
+	scorecard.append(1)
+    else:
+	# network's answer doesn't match correct answer, add 0 to scorecard
+	scorecard.append(0)
+	pass
+    pass
+
+# calculate the performance score, the fraction of correct answers
+scorecard_array = numpy.asarray(scorecard)
+print("performance = ", scorecard_array.sum()/scorecard_array.size)
+</pre>
+</div>
+
+<pre class="example">
+performance =  0.9495
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org50dc73f" class="outline-4">
+<h4 id="org50dc73f">一些改进:调整学习率</h4>
+<div class="outline-text-4" id="text-org50dc73f">
+<p>
+完成的第一个神经网络,只用了简单的思路,简单的代码,就可以在 MNIST 数据集上获得
+准确率大致为95%的性能分数,那我们看看是否可以进行一些简单的改进.
+第一个尝试的改进是调整学习率,第一部分里学习率的作用是让神经网络进行适度调整,
+决定梯度下降时下降过程的幅度.
+</p>
+
+<p>
+我们上面直接使用了学习率为0.3进行训练,下面试试学习率设置为0.6,看看性能如何:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python"># neural network class definition
+import matplotlib.pyplot
+import numpy
+from scipy.special import expit
+class neuralNetwork:
+    #initialize the neutral network.
+    def __init__(self, inputnodes, hiddennodes, outputnodes, learningrate):
+	# set number of nodes in each input,hidden,output layer
+	self.inodes = inputnodes
+	self.hnodes = hiddennodes
+	self.onodes = outputnodes
+	# learning rate
+	self.lr = learningrate
+	self.wih = numpy.random.normal(0.0, pow(self.hnodes, -0.5), (self.hnodes, self.inodes))
+	self.who = numpy.random.normal(0.0, pow(self.onodes, -0.5), (self.onodes, self.hnodes))
+	self.activation_function = lambda x: expit(x)
+	pass
+    # train the neural network
+    def train(self, input_list, targets_list):
+	# convert input list to 2d array
+	inputs = numpy.array(input_list, ndmin=2).T
+	targets = numpy.array(targets_list, ndmin=2).T
+	# calculate signals into hidden layer
+	hidden_inputs = numpy.dot(self.wih, inputs)
+	# calculate signals emerging from hidden layer
+	hidden_outputs = self.activation_function(hidden_inputs)
+	# calculate signals into final output layer
+	final_inputs = numpy.dot(self.who, hidden_outputs)
+	# calculate signals emerging from final output layer
+	final_outputs = self.activation_function(final_inputs)
+
+	# error is the (target - actual)
+	output_errors = targets - final_outputs
+
+	# hidden layer error is the output_errors, split by weights, recombined at hidden nodes
+	hidden_errors = numpy.dot(self.who.T, output_errors)
+
+	# update the weights for the links between the hidden and output layers
+	self.who += self.lr * numpy.dot((output_errors * final_outputs * (1.0 - final_outputs)), numpy.transpose(hidden_outputs))
+	# update the weights for the links between the hidden and output layers
+	self.wih += self.lr * numpy.dot((hidden_errors * hidden_outputs * (1.0 - hidden_outputs)), numpy.transpose(inputs))
+	pass
+
+    #query the neural network
+    def query(self, inputs_list):
+	# convert inputs list to 2d array
+	inputs = numpy.array(inputs_list, ndmin=2).T
+	# calculate signals into hidden layer
+	hidden_inputs = numpy.dot(self.wih, inputs)
+	# calculate the signals emerging form hidden layer
+	hidden_outputs = self.activation_function(hidden_inputs)
+	# calculate the signals into final output layer
+	final_inputs = numpy.dot(self.who, hidden_outputs)
+	# calculate the signals emerging from final output layer
+	final_outputs = self.activation_function(final_inputs)
+	return final_outputs
+
+# number of input hidden and output nodes
+input_nodes = 784
+hidden_nodes = 100
+output_nodes = 10
+
+# learning rate is 0.3
+learning_rate = 0.6
+
+# create instance of neural network
+n = neuralNetwork(input_nodes, hidden_nodes, output_nodes, learning_rate)
+
+# load the mnist training data CSV file into a list
+training_data_file = open("/home/kamisama/Downloads/mnist_train.csv", 'r')
+training_data_list = training_data_file.readlines()
+training_data_file.close()
+
+# train the neural network
+# go through all records in the training data set
+for record in training_data_list:
+    # split the record by the ',' commas
+    all_values = record.split(',')
+    # scale and shift the inputs
+    inputs = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
+    # create the target output values (all 0.01, except the desired label which is 0.99)
+    targets = numpy.zeros(output_nodes) + 0.01
+    # all_values[0] is the target label for this record
+    targets[int(all_values[0])] = 0.99
+    n.train(inputs, targets)
+
+# test the neural network
+test_data_file = open("/home/kamisama/Downloads/mnist_test.csv", 'r')
+test_data_list = test_data_file.readlines()
+test_data_file.close()
+# scorecard for how well the network performs, initially empty.
+scorecard = []
+# go through all the records in the test data set
+for record in test_data_list:
+    # split the record by the '.' commas
+    all_values = record.split(',')
+    # correct answer is first value
+    correct_label = int(all_values[0])
+    # print(correct_label, "correct label")
+    # scale and shift the inputs
+    inputs = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
+    # query the network
+    outputs = n.query(inputs)
+    # the index of the highest value corresponds to the label
+    label = numpy.argmax(outputs)
+    # print(label, "network's answer")
+    # append correct or in correct to list
+    if (label == correct_label):
+	# network's answer matches correct answer, add 1 to scorecard
+	scorecard.append(1)
+    else:
+	# network's answer doesn't match correct answer, add 0 to scorecard
+	scorecard.append(0)
+	pass
+    pass
+
+# calculate the performance score, the fraction of correct answers
+scorecard_array = numpy.asarray(scorecard)
+print("performance = ", scorecard_array.sum()/scorecard_array.size)
+</pre>
+</div>
+
+<pre class="example">
+performance =  0.8944
+
+</pre>
+
+<p>
+再使用0.1的学习率试一次:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python"># neural network class definition
+import matplotlib.pyplot
+import numpy
+from scipy.special import expit
+class neuralNetwork:
+    #initialize the neutral network.
+    def __init__(self, inputnodes, hiddennodes, outputnodes, learningrate):
+	# set number of nodes in each input,hidden,output layer
+	self.inodes = inputnodes
+	self.hnodes = hiddennodes
+	self.onodes = outputnodes
+	# learning rate
+	self.lr = learningrate
+	self.wih = numpy.random.normal(0.0, pow(self.hnodes, -0.5), (self.hnodes, self.inodes))
+	self.who = numpy.random.normal(0.0, pow(self.onodes, -0.5), (self.onodes, self.hnodes))
+	self.activation_function = lambda x: expit(x)
+	pass
+    # train the neural network
+    def train(self, input_list, targets_list):
+	# convert input list to 2d array
+	inputs = numpy.array(input_list, ndmin=2).T
+	targets = numpy.array(targets_list, ndmin=2).T
+	# calculate signals into hidden layer
+	hidden_inputs = numpy.dot(self.wih, inputs)
+	# calculate signals emerging from hidden layer
+	hidden_outputs = self.activation_function(hidden_inputs)
+	# calculate signals into final output layer
+	final_inputs = numpy.dot(self.who, hidden_outputs)
+	# calculate signals emerging from final output layer
+	final_outputs = self.activation_function(final_inputs)
+
+	# error is the (target - actual)
+	output_errors = targets - final_outputs
+
+	# hidden layer error is the output_errors, split by weights, recombined at hidden nodes
+	hidden_errors = numpy.dot(self.who.T, output_errors)
+
+	# update the weights for the links between the hidden and output layers
+	self.who += self.lr * numpy.dot((output_errors * final_outputs * (1.0 - final_outputs)), numpy.transpose(hidden_outputs))
+	# update the weights for the links between the hidden and output layers
+	self.wih += self.lr * numpy.dot((hidden_errors * hidden_outputs * (1.0 - hidden_outputs)), numpy.transpose(inputs))
+	pass
+
+    #query the neural network
+    def query(self, inputs_list):
+	# convert inputs list to 2d array
+	inputs = numpy.array(inputs_list, ndmin=2).T
+	# calculate signals into hidden layer
+	hidden_inputs = numpy.dot(self.wih, inputs)
+	# calculate the signals emerging form hidden layer
+	hidden_outputs = self.activation_function(hidden_inputs)
+	# calculate the signals into final output layer
+	final_inputs = numpy.dot(self.who, hidden_outputs)
+	# calculate the signals emerging from final output layer
+	final_outputs = self.activation_function(final_inputs)
+	return final_outputs
+
+# number of input hidden and output nodes
+input_nodes = 784
+hidden_nodes = 100
+output_nodes = 10
+
+# learning rate is 0.3
+learning_rate = 0.1
+
+# create instance of neural network
+n = neuralNetwork(input_nodes, hidden_nodes, output_nodes, learning_rate)
+
+# load the mnist training data CSV file into a list
+training_data_file = open("/home/kamisama/Downloads/mnist_train.csv", 'r')
+training_data_list = training_data_file.readlines()
+training_data_file.close()
+
+# train the neural network
+# go through all records in the training data set
+for record in training_data_list:
+    # split the record by the ',' commas
+    all_values = record.split(',')
+    # scale and shift the inputs
+    inputs = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
+    # create the target output values (all 0.01, except the desired label which is 0.99)
+    targets = numpy.zeros(output_nodes) + 0.01
+    # all_values[0] is the target label for this record
+    targets[int(all_values[0])] = 0.99
+    n.train(inputs, targets)
+
+# test the neural network
+test_data_file = open("/home/kamisama/Downloads/mnist_test.csv", 'r')
+test_data_list = test_data_file.readlines()
+test_data_file.close()
+# scorecard for how well the network performs, initially empty.
+scorecard = []
+# go through all the records in the test data set
+for record in test_data_list:
+    # split the record by the '.' commas
+    all_values = record.split(',')
+    # correct answer is first value
+    correct_label = int(all_values[0])
+    # print(correct_label, "correct label")
+    # scale and shift the inputs
+    inputs = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
+    # query the network
+    outputs = n.query(inputs)
+    # the index of the highest value corresponds to the label
+    label = numpy.argmax(outputs)
+    # print(label, "network's answer")
+    # append correct or in correct to list
+    if (label == correct_label):
+	# network's answer matches correct answer, add 1 to scorecard
+	scorecard.append(1)
+    else:
+	# network's answer doesn't match correct answer, add 0 to scorecard
+	scorecard.append(0)
+	pass
+    pass
+
+# calculate the performance score, the fraction of correct answers
+scorecard_array = numpy.asarray(scorecard)
+print("performance = ", scorecard_array.sum()/scorecard_array.size)
+</pre>
+</div>
+
+<pre class="example">
+performance =  0.9537
+
+</pre>
+
+<p>
+用0.2呢? :
+</p>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python"># neural network class definition
+import matplotlib.pyplot
+import numpy
+from scipy.special import expit
+class neuralNetwork:
+    #initialize the neutral network.
+    def __init__(self, inputnodes, hiddennodes, outputnodes, learningrate):
+	# set number of nodes in each input,hidden,output layer
+	self.inodes = inputnodes
+	self.hnodes = hiddennodes
+	self.onodes = outputnodes
+	# learning rate
+	self.lr = learningrate
+	self.wih = numpy.random.normal(0.0, pow(self.hnodes, -0.5), (self.hnodes, self.inodes))
+	self.who = numpy.random.normal(0.0, pow(self.onodes, -0.5), (self.onodes, self.hnodes))
+	self.activation_function = lambda x: expit(x)
+	pass
+    # train the neural network
+    def train(self, input_list, targets_list):
+	# convert input list to 2d array
+	inputs = numpy.array(input_list, ndmin=2).T
+	targets = numpy.array(targets_list, ndmin=2).T
+	# calculate signals into hidden layer
+	hidden_inputs = numpy.dot(self.wih, inputs)
+	# calculate signals emerging from hidden layer
+	hidden_outputs = self.activation_function(hidden_inputs)
+	# calculate signals into final output layer
+	final_inputs = numpy.dot(self.who, hidden_outputs)
+	# calculate signals emerging from final output layer
+	final_outputs = self.activation_function(final_inputs)
+
+	# error is the (target - actual)
+	output_errors = targets - final_outputs
+
+	# hidden layer error is the output_errors, split by weights, recombined at hidden nodes
+	hidden_errors = numpy.dot(self.who.T, output_errors)
+
+	# update the weights for the links between the hidden and output layers
+	self.who += self.lr * numpy.dot((output_errors * final_outputs * (1.0 - final_outputs)), numpy.transpose(hidden_outputs))
+	# update the weights for the links between the hidden and output layers
+	self.wih += self.lr * numpy.dot((hidden_errors * hidden_outputs * (1.0 - hidden_outputs)), numpy.transpose(inputs))
+	pass
+
+    #query the neural network
+    def query(self, inputs_list):
+	# convert inputs list to 2d array
+	inputs = numpy.array(inputs_list, ndmin=2).T
+	# calculate signals into hidden layer
+	hidden_inputs = numpy.dot(self.wih, inputs)
+	# calculate the signals emerging form hidden layer
+	hidden_outputs = self.activation_function(hidden_inputs)
+	# calculate the signals into final output layer
+	final_inputs = numpy.dot(self.who, hidden_outputs)
+	# calculate the signals emerging from final output layer
+	final_outputs = self.activation_function(final_inputs)
+	return final_outputs
+
+# number of input hidden and output nodes
+input_nodes = 784
+hidden_nodes = 100
+output_nodes = 10
+
+# learning rate is 0.3
+learning_rate = 0.2
+
+# create instance of neural network
+n = neuralNetwork(input_nodes, hidden_nodes, output_nodes, learning_rate)
+
+# load the mnist training data CSV file into a list
+training_data_file = open("/home/kamisama/Downloads/mnist_train.csv", 'r')
+training_data_list = training_data_file.readlines()
+training_data_file.close()
+
+# train the neural network
+# go through all records in the training data set
+for record in training_data_list:
+    # split the record by the ',' commas
+    all_values = record.split(',')
+    # scale and shift the inputs
+    inputs = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
+    # create the target output values (all 0.01, except the desired label which is 0.99)
+    targets = numpy.zeros(output_nodes) + 0.01
+    # all_values[0] is the target label for this record
+    targets[int(all_values[0])] = 0.99
+    n.train(inputs, targets)
+
+# test the neural network
+test_data_file = open("/home/kamisama/Downloads/mnist_test.csv", 'r')
+test_data_list = test_data_file.readlines()
+test_data_file.close()
+# scorecard for how well the network performs, initially empty.
+scorecard = []
+# go through all the records in the test data set
+for record in test_data_list:
+    # split the record by the '.' commas
+    all_values = record.split(',')
+    # correct answer is first value
+    correct_label = int(all_values[0])
+    # print(correct_label, "correct label")
+    # scale and shift the inputs
+    inputs = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
+    # query the network
+    outputs = n.query(inputs)
+    # the index of the highest value corresponds to the label
+    label = numpy.argmax(outputs)
+    # print(label, "network's answer")
+    # append correct or in correct to list
+    if (label == correct_label):
+	# network's answer matches correct answer, add 1 to scorecard
+	scorecard.append(1)
+    else:
+	# network's answer doesn't match correct answer, add 0 to scorecard
+	scorecard.append(0)
+	pass
+    pass
+
+# calculate the performance score, the fraction of correct answers
+scorecard_array = numpy.asarray(scorecard)
+print("performance = ", scorecard_array.sum()/scorecard_array.size)
+</pre>
+</div>
+
+<pre class="example">
+performance =  0.9561
+
+</pre>
+
+<p>
+使用更小的0.01呢?
+</p>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python"># neural network class definition
+import matplotlib.pyplot
+import numpy
+from scipy.special import expit
+class neuralNetwork:
+    #initialize the neutral network.
+    def __init__(self, inputnodes, hiddennodes, outputnodes, learningrate):
+	# set number of nodes in each input,hidden,output layer
+	self.inodes = inputnodes
+	self.hnodes = hiddennodes
+	self.onodes = outputnodes
+	# learning rate
+	self.lr = learningrate
+	self.wih = numpy.random.normal(0.0, pow(self.hnodes, -0.5), (self.hnodes, self.inodes))
+	self.who = numpy.random.normal(0.0, pow(self.onodes, -0.5), (self.onodes, self.hnodes))
+	self.activation_function = lambda x: expit(x)
+	pass
+    # train the neural network
+    def train(self, input_list, targets_list):
+	# convert input list to 2d array
+	inputs = numpy.array(input_list, ndmin=2).T
+	targets = numpy.array(targets_list, ndmin=2).T
+	# calculate signals into hidden layer
+	hidden_inputs = numpy.dot(self.wih, inputs)
+	# calculate signals emerging from hidden layer
+	hidden_outputs = self.activation_function(hidden_inputs)
+	# calculate signals into final output layer
+	final_inputs = numpy.dot(self.who, hidden_outputs)
+	# calculate signals emerging from final output layer
+	final_outputs = self.activation_function(final_inputs)
+
+	# error is the (target - actual)
+	output_errors = targets - final_outputs
+
+	# hidden layer error is the output_errors, split by weights, recombined at hidden nodes
+	hidden_errors = numpy.dot(self.who.T, output_errors)
+
+	# update the weights for the links between the hidden and output layers
+	self.who += self.lr * numpy.dot((output_errors * final_outputs * (1.0 - final_outputs)), numpy.transpose(hidden_outputs))
+	# update the weights for the links between the hidden and output layers
+	self.wih += self.lr * numpy.dot((hidden_errors * hidden_outputs * (1.0 - hidden_outputs)), numpy.transpose(inputs))
+	pass
+
+    #query the neural network
+    def query(self, inputs_list):
+	# convert inputs list to 2d array
+	inputs = numpy.array(inputs_list, ndmin=2).T
+	# calculate signals into hidden layer
+	hidden_inputs = numpy.dot(self.wih, inputs)
+	# calculate the signals emerging form hidden layer
+	hidden_outputs = self.activation_function(hidden_inputs)
+	# calculate the signals into final output layer
+	final_inputs = numpy.dot(self.who, hidden_outputs)
+	# calculate the signals emerging from final output layer
+	final_outputs = self.activation_function(final_inputs)
+	return final_outputs
+
+# number of input hidden and output nodes
+input_nodes = 784
+hidden_nodes = 100
+output_nodes = 10
+
+# learning rate is 0.3
+learning_rate = 0.01
+
+# create instance of neural network
+n = neuralNetwork(input_nodes, hidden_nodes, output_nodes, learning_rate)
+
+# load the mnist training data CSV file into a list
+training_data_file = open("/home/kamisama/Downloads/mnist_train.csv", 'r')
+training_data_list = training_data_file.readlines()
+training_data_file.close()
+
+# train the neural network
+# go through all records in the training data set
+for record in training_data_list:
+    # split the record by the ',' commas
+    all_values = record.split(',')
+    # scale and shift the inputs
+    inputs = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
+    # create the target output values (all 0.01, except the desired label which is 0.99)
+    targets = numpy.zeros(output_nodes) + 0.01
+    # all_values[0] is the target label for this record
+    targets[int(all_values[0])] = 0.99
+    n.train(inputs, targets)
+
+# test the neural network
+test_data_file = open("/home/kamisama/Downloads/mnist_test.csv", 'r')
+test_data_list = test_data_file.readlines()
+test_data_file.close()
+# scorecard for how well the network performs, initially empty.
+scorecard = []
+# go through all the records in the test data set
+for record in test_data_list:
+    # split the record by the '.' commas
+    all_values = record.split(',')
+    # correct answer is first value
+    correct_label = int(all_values[0])
+    # print(correct_label, "correct label")
+    # scale and shift the inputs
+    inputs = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
+    # query the network
+    outputs = n.query(inputs)
+    # the index of the highest value corresponds to the label
+    label = numpy.argmax(outputs)
+    # print(label, "network's answer")
+    # append correct or in correct to list
+    if (label == correct_label):
+	# network's answer matches correct answer, add 1 to scorecard
+	scorecard.append(1)
+    else:
+	# network's answer doesn't match correct answer, add 0 to scorecard
+	scorecard.append(0)
+	pass
+    pass
+
+# calculate the performance score, the fraction of correct answers
+scorecard_array = numpy.asarray(scorecard)
+print("performance = ", scorecard_array.sum()/scorecard_array.size)
+</pre>
+</div>
+
+<pre class="example">
+performance =  0.9238
+
+</pre>
+
+<p>
+我们会发现过大或过小的学习率都会导致性能下降,用梯度下降的图解释就是下降的步
+长过大或过小都会影响学习效果.
+</p>
+
+<p>
+实验过程会发现学习率是存在一个甜蜜点的,在这个点附近的学习率能在当前数据集和
+神经网络中取得较好的训练效果.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9e4ed17" class="outline-4">
+<h4 id="org9e4ed17"><a id="ID-1fc7cf6a-7091-4982-86a7-cc899026f806"></a>一些改进:多次运行</h4>
+<div class="outline-text-4" id="text-org9e4ed17">
+<p>
+接下来的改进是可以使用数据集进行重复多次的训练.
+有些人把训练一次称为一个世代,因此,10个世代的训练,意味着整个训练数据集运行程
+序10次.这样的做法就是让梯度下降时有更多的爬下斜坡的机会.
+试一下使用2个世代,只需要在训练代码外围添加额外的循环即可.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">train the neural network</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">go through all records in the training data set</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">epochs is the number of times the training data set is used for training.</span>
+<span style="font-weight: bold; font-style: italic;">epochs</span> = 2
+<span style="font-weight: bold;">for</span> e <span style="font-weight: bold;">in</span> <span style="font-weight: bold;">range</span>(epochs):
+    <span style="font-weight: bold;">for</span> record <span style="font-weight: bold;">in</span> training_data_list:
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">split the record by the ',' commas</span>
+        <span style="font-weight: bold; font-style: italic;">all_values</span> = record.split(<span style="font-style: italic;">','</span>)
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">scale and shift the inputs</span>
+        <span style="font-weight: bold; font-style: italic;">inputs</span> = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">create the target output values (all 0.01, except the desired label which is 0.99)</span>
+        <span style="font-weight: bold; font-style: italic;">targets</span> = numpy.zeros(output_nodes) + 0.01
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">all_values[0] is the target label for this record</span>
+        targets[<span style="font-weight: bold;">int</span>(all_values[0])] = 0.99
+        n.train(inputs, targets)
+</pre>
+</div>
+
+<p>
+修改后的网络得到的性能:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python"># neural network class definition
+import matplotlib.pyplot
+import numpy
+from scipy.special import expit
+class neuralNetwork:
+    #initialize the neutral network.
+    def __init__(self, inputnodes, hiddennodes, outputnodes, learningrate):
+	# set number of nodes in each input,hidden,output layer
+	self.inodes = inputnodes
+	self.hnodes = hiddennodes
+	self.onodes = outputnodes
+	# learning rate
+	self.lr = learningrate
+	self.wih = numpy.random.normal(0.0, pow(self.hnodes, -0.5), (self.hnodes, self.inodes))
+	self.who = numpy.random.normal(0.0, pow(self.onodes, -0.5), (self.onodes, self.hnodes))
+	self.activation_function = lambda x: expit(x)
+	pass
+    # train the neural network
+    def train(self, input_list, targets_list):
+	# convert input list to 2d array
+	inputs = numpy.array(input_list, ndmin=2).T
+	targets = numpy.array(targets_list, ndmin=2).T
+	# calculate signals into hidden layer
+	hidden_inputs = numpy.dot(self.wih, inputs)
+	# calculate signals emerging from hidden layer
+	hidden_outputs = self.activation_function(hidden_inputs)
+	# calculate signals into final output layer
+	final_inputs = numpy.dot(self.who, hidden_outputs)
+	# calculate signals emerging from final output layer
+	final_outputs = self.activation_function(final_inputs)
+
+	# error is the (target - actual)
+	output_errors = targets - final_outputs
+
+	# hidden layer error is the output_errors, split by weights, recombined at hidden nodes
+	hidden_errors = numpy.dot(self.who.T, output_errors)
+
+	# update the weights for the links between the hidden and output layers
+	self.who += self.lr * numpy.dot((output_errors * final_outputs * (1.0 - final_outputs)), numpy.transpose(hidden_outputs))
+	# update the weights for the links between the hidden and output layers
+	self.wih += self.lr * numpy.dot((hidden_errors * hidden_outputs * (1.0 - hidden_outputs)), numpy.transpose(inputs))
+	pass
+
+    #query the neural network
+    def query(self, inputs_list):
+	# convert inputs list to 2d array
+	inputs = numpy.array(inputs_list, ndmin=2).T
+	# calculate signals into hidden layer
+	hidden_inputs = numpy.dot(self.wih, inputs)
+	# calculate the signals emerging form hidden layer
+	hidden_outputs = self.activation_function(hidden_inputs)
+	# calculate the signals into final output layer
+	final_inputs = numpy.dot(self.who, hidden_outputs)
+	# calculate the signals emerging from final output layer
+	final_outputs = self.activation_function(final_inputs)
+	return final_outputs
+
+# number of input hidden and output nodes
+input_nodes = 784
+hidden_nodes = 100
+output_nodes = 10
+
+# learning rate is 0.3
+learning_rate = 0.3
+
+# create instance of neural network
+n = neuralNetwork(input_nodes, hidden_nodes, output_nodes, learning_rate)
+
+# load the mnist training data CSV file into a list
+training_data_file = open("/home/kamisama/Downloads/mnist_train.csv", 'r')
+training_data_list = training_data_file.readlines()
+training_data_file.close()
+
+# train the neural network
+# go through all records in the training data set
+# epochs is the number of times the training data set is used for training.
+epochs = 2
+for e in range(epochs):
+    for record in training_data_list:
+	# split the record by the ',' commas
+	all_values = record.split(',')
+	# scale and shift the inputs
+	inputs = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
+	# create the target output values (all 0.01, except the desired label which is 0.99)
+	targets = numpy.zeros(output_nodes) + 0.01
+	# all_values[0] is the target label for this record
+	targets[int(all_values[0])] = 0.99
+	n.train(inputs, targets)
+
+# test the neural network
+test_data_file = open("/home/kamisama/Downloads/mnist_test.csv", 'r')
+test_data_list = test_data_file.readlines()
+test_data_file.close()
+# scorecard for how well the network performs, initially empty.
+scorecard = []
+# go through all the records in the test data set
+for record in test_data_list:
+    # split the record by the '.' commas
+    all_values = record.split(',')
+    # correct answer is first value
+    correct_label = int(all_values[0])
+    # print(correct_label, "correct label")
+    # scale and shift the inputs
+    inputs = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
+    # query the network
+    outputs = n.query(inputs)
+    # the index of the highest value corresponds to the label
+    label = numpy.argmax(outputs)
+    # print(label, "network's answer")
+    # append correct or in correct to list
+    if (label == correct_label):
+	# network's answer matches correct answer, add 1 to scorecard
+	scorecard.append(1)
+    else:
+	# network's answer doesn't match correct answer, add 0 to scorecard
+	scorecard.append(0)
+	pass
+    pass
+
+# calculate the performance score, the fraction of correct answers
+scorecard_array = numpy.asarray(scorecard)
+print("performance = ", scorecard_array.sum()/scorecard_array.size)
+</pre>
+</div>
+
+<pre class="example">
+performance =  0.9546
+
+</pre>
+
+<p>
+在学习率为0.3使用1个世代的神经网络里,得到的性能是 <a href="#orgb6f6e71">使用完整的数据集进行训练和
+测试</a> 只提高了一点点.
+</p>
+
+<p>
+像调整学习率一样,使用几个不同的世代进行实验,直觉告诉我们,训练越多,性能越好,
+但实验告诉我们,太多训练会过犹不及,因为网络过度拟合训练数据,因此网络在没有见
+过的新数据上表现不佳.
+</p>
+</div>
+</div>
+<div id="outline-container-org332dc44" class="outline-4">
+<h4 id="org332dc44">改变网络形状</h4>
+</div>
+
+<div id="outline-container-org18852d1" class="outline-4">
+<h4 id="org18852d1">大功告成!</h4>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-03-08 Tue 21:27</p>
+<p class="date">Created: 2022-03-09 Wed 14:45</p>
 <p class="validation"></p>
 </div>
 </body>
