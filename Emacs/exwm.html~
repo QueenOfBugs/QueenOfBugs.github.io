@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-03-11 Fri 10:55 -->
+<!-- 2022-03-11 Fri 18:52 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>配置 Exwm 作为窗口管理器</title>
+<title> 配置 Exwm 作为窗口管理器</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="kamisama" />
 <style type="text/css">
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
+    overflow: auto;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -52,7 +52,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -181,50 +194,26 @@
   /*]]>*/-->
 </style>
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 </head>
 <body>
@@ -233,29 +222,29 @@ for the JavaScript code in this tag.
  |
  <a accesskey="H" href="../index.html"> HOME </a>
 </div><div id="content">
-<h1 class="title">配置 Exwm 作为窗口管理器</h1>
+<h1 class="title"> 配置 Exwm 作为窗口管理器</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org65ed9ae">开机boot 进入Emacs</a></li>
-<li><a href="#org4cfb332">配置 Exwm</a></li>
-<li><a href="#orgf350174">Panel(Polybar)</a>
+<li><a href="#org59025d3">开机boot 进入Emacs</a></li>
+<li><a href="#org9921725">配置 Exwm</a></li>
+<li><a href="#org1dda0d8">Panel(Polybar)</a>
 <ul>
-<li><a href="#org6f24055">配置 Polybar</a></li>
+<li><a href="#orga83a11e">配置 Polybar</a></li>
 </ul>
 </li>
-<li><a href="#org18a3c94">david 的Exwm 系列</a></li>
+<li><a href="#org25fa89d">david 的Exwm 系列</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org65ed9ae" class="outline-2">
-<h2 id="org65ed9ae">开机boot 进入Emacs</h2>
-<div class="outline-text-2" id="text-org65ed9ae">
+<div id="outline-container-org59025d3" class="outline-2">
+<h2 id="org59025d3">开机boot 进入Emacs</h2>
+<div class="outline-text-2" id="text-org59025d3">
 <p>
 manjaro-i3 的desktop文件:
 </p>
-<pre class="example">
+<pre class="example" id="org6557370">
 [Desktop Entry]
 Name=i3
 Comment=improved dynamic tiling window manager
@@ -270,7 +259,7 @@ Keywords=tiling;wm;windowmanager;window;manager;
 下面代码放进 .emacs.d/exwm/exwm.desktop 文件.注意Exec 一行的 kamisama 要换成自
 己的用户名.
 </p>
-<pre class="example">
+<pre class="example" id="org9481519">
 [Desktop Entry]
 Name=EXWM
 Comment=Emacs Window Manager
@@ -324,9 +313,9 @@ Xorg 窗口,进入终端模式还是别的什么情况?先记下,试过再来.�
 </p>
 </div>
 </div>
-<div id="outline-container-org4cfb332" class="outline-2">
-<h2 id="org4cfb332">配置 Exwm</h2>
-<div class="outline-text-2" id="text-org4cfb332">
+<div id="outline-container-org9921725" class="outline-2">
+<h2 id="org9921725">配置 Exwm</h2>
+<div class="outline-text-2" id="text-org9921725">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 (<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">efs/exwm-update-class</span> ()
@@ -404,13 +393,13 @@ Xorg 窗口,进入终端模式还是别的什么情况?先记下,试过再来.�
 </div>
 </div>
 </div>
-<div id="outline-container-orgf350174" class="outline-2">
-<h2 id="orgf350174">Panel(Polybar)</h2>
-<div class="outline-text-2" id="text-orgf350174">
+<div id="outline-container-org1dda0d8" class="outline-2">
+<h2 id="org1dda0d8">Panel(Polybar)</h2>
+<div class="outline-text-2" id="text-org1dda0d8">
 </div>
-<div id="outline-container-org6f24055" class="outline-3">
-<h3 id="org6f24055">配置 Polybar</h3>
-<div class="outline-text-3" id="text-org6f24055">
+<div id="outline-container-orga83a11e" class="outline-3">
+<h3 id="orga83a11e">配置 Polybar</h3>
+<div class="outline-text-3" id="text-orga83a11e">
 <div class="org-src-container">
 <pre class="src src-conf">
 ; Docs: https://github.com/polybar/polybar
@@ -553,9 +542,9 @@ Xorg 窗口,进入终端模式还是别的什么情况?先记下,试过再来.�
 </div>
 </div>
 
-<div id="outline-container-org18a3c94" class="outline-2">
-<h2 id="org18a3c94">david 的Exwm 系列</h2>
-<div class="outline-text-2" id="text-org18a3c94">
+<div id="outline-container-org25fa89d" class="outline-2">
+<h2 id="org25fa89d">david 的Exwm 系列</h2>
+<div class="outline-text-2" id="text-org25fa89d">
 <ul class="org-ul">
 <li>Notes:
 <ul class="org-ul">
@@ -568,8 +557,7 @@ Xorg 窗口,进入终端模式还是别的什么情况?先记下,试过再来.�
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-03-11 Fri 10:55</p>
-<p class="validation"></p>
+<p class="date">Created: 2022-03-11 Fri 18:52</p>
 </div>
 </body>
 </html>

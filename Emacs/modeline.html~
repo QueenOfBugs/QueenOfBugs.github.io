@@ -226,50 +226,67 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org314732b">使用Github遇到的问题记录</a>
+<li><a href="#org6633ab7">Emacs Modeline 主题和设置</a>
 <ul>
-<li><a href="#org649f58f">github actions</a>
+<li><a href="#orgf13d84e">telephone-line</a>
 <ul>
-<li><a href="#org627ee8e">git会记录文件状态</a></li>
+<li><a href="#org90cb3b8">安装</a></li>
+<li><a href="#org68c1ebc">效果</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orga55ded6">生成和添加 SSH keys 到github</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org314732b" class="outline-2">
-<h2 id="org314732b">使用Github遇到的问题记录</h2>
-<div class="outline-text-2" id="text-org314732b">
+<div id="outline-container-org6633ab7" class="outline-2">
+<h2 id="org6633ab7">Emacs Modeline 主题和设置</h2>
+<div class="outline-text-2" id="text-org6633ab7">
 </div>
-<div id="outline-container-org649f58f" class="outline-3">
-<h3 id="org649f58f">github actions</h3>
-<div class="outline-text-3" id="text-org649f58f">
-</div>
-<div id="outline-container-org627ee8e" class="outline-4">
-<h4 id="org627ee8e">git会记录文件状态</h4>
-<div class="outline-text-4" id="text-org627ee8e">
+<div id="outline-container-orgf13d84e" class="outline-3">
+<h3 id="orgf13d84e"><a href="https://github.com/dbordak/telephone-line">telephone-line</a></h3>
+<div class="outline-text-3" id="text-orgf13d84e">
 <p>
-使用 Emacs 编辑文件的情况下: 很容易一边编辑文件,另一边就打开了shell-mode 要
-对刚刚的更改进行提交.
-当一个文件在本地打开,没有保存时,他会处于被其他程序占用的状态,如果这时候进行
-了 git 提交的话,该文件的状态一样会被记录,当项目使用了 github action 并且进行
-的操作涉及到这个未保存的文件,那 action 就会失败,提示该文件被某个用户或程序锁
-定.
+Powerline 针对Emacs 的另一个实现.
 </p>
 </div>
-<ul class="org-ul">
-<li><a id="org9ccecaa"></a><span class="todo TODO">TODO</span> 测试其他文本编辑器是否会出现这种状况.<br /></li>
-</ul>
+<div id="outline-container-org90cb3b8" class="outline-4">
+<h4 id="org90cb3b8">安装</h4>
+<div class="outline-text-4" id="text-org90cb3b8">
+<p>
+Use package.el from MELPA.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">telephone-line</span>)
+(telephone-line-mode 1)
+</pre>
+</div>
+<p>
+use-package:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package telephone-line
+  <span style="font-weight: bold;">:config</span>
+  (telephone-line-mode 1)
+  )
+</pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orga55ded6" class="outline-2">
-<h2 id="orga55ded6">生成和添加 SSH keys 到github</h2>
+<div id="outline-container-org68c1ebc" class="outline-4">
+<h4 id="org68c1ebc">效果</h4>
+<div class="outline-text-4" id="text-org68c1ebc">
+<p>
+evil 的编辑模式倒是显示的很好, <code>display-battery-mode</code> 不能显示,鼠标当前位置,选
+中多少字符的功能也没有, 没有进一步配置的情况下不如 doom-modeline 好用.
+</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
+<p class="date">Date: 2022-01-06 Thu 21:05</p>
 <p class="author">Author: kamisama</p>
 <p class="date">Created: 2022-03-11 Fri 18:52</p>
 </div>
