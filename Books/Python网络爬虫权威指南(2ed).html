@@ -1,0 +1,1079 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-03-24 Thu 20:31 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Python网络权威指南(第二版)</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="kamisama" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="./index.html"> UP </a>
+ |
+ <a accesskey="H" href="../index.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">Python网络权威指南(第二版)</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org087ba74">初见网络爬虫</a>
+<ul>
+<li><a href="#org4aa0bfd">网络连接</a></li>
+<li><a href="#orgee49f50">BeautifulSoup 简介</a>
+<ul>
+<li><a href="#org0ef8ba0">安装BeautifulSoup</a></li>
+<li><a href="#org63cd279">运行BeautifulSoup</a></li>
+<li><a href="#orgbe9de79">可靠的网络连接以及异常的处理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgf59b5c9">复杂 HTML 解析</a>
+<ul>
+<li><a href="#org0524832">不是一直都要用锤子</a></li>
+<li><a href="#orgc4acb7b">再端一碗 BeautifulSoup (Another Serving of BeautifulSoup)</a>
+<ul>
+<li><a href="#org843c573">BeautifulSoup 的 find() 和 find_all()</a></li>
+<li><a href="#orgaa3f5a3">其他 BeautifulSoup 对象</a></li>
+<li><a href="#org0ce955e">导航树</a></li>
+</ul>
+</li>
+<li><a href="#org563d326">正则表达式</a></li>
+<li><a href="#orgf4b9862">正则表达式和 BeautifulSoup</a></li>
+<li><a href="#org3b5192d">获取属性</a></li>
+<li><a href="#org6e7b1aa">Lambda 表达式</a></li>
+</ul>
+</li>
+<li><a href="#org9590ca6">避开抓取陷阱</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org087ba74" class="outline-2">
+<h2 id="org087ba74">初见网络爬虫</h2>
+<div class="outline-text-2" id="text-org087ba74">
+</div>
+<div id="outline-container-org4aa0bfd" class="outline-3">
+<h3 id="org4aa0bfd">网络连接</h3>
+<div class="outline-text-3" id="text-org4aa0bfd">
+<p>
+当一台机器(客户端)想要与另一台机器(服务端)对话时,会发生下面的行为:
+</p>
+<ol class="org-ol">
+<li>客户端发送一串0和1比特值,表示电路上的高低电压,这些比特构成一种信息,包括请
+求头和请求体.请求头包含客户端的本地路由器 MAC 地址和服务端的 IP 地址.消息
+体包含客户端对服务端应用的请求.</li>
+<li>客户端的本地路由器收到所有的0,1比特值,把他们理解成一个数据包(packet),从客
+户端自己的MAC地址"寄送"到服务端的 IP 地址.客户端的路由器把数据"盖上"自己的
+IP 地址作为 "发件" 地址,然后通过互联网发送出去.</li>
+<li>客户端的数据包游历了一些中介服务器,沿着正确的物理/电路路径前进,到了服务端.</li>
+<li>服务端的服务器在它的 IP 地址收到了数据包.</li>
+<li>服务端的服务器读取数据包请求头里的目标端口,然后把它传递到对应的应用&#x2013;网络
+服务器应用.目标端口通常是网络应用的80端口,可以理解成数据包的房间号,IP 地址
+就是 "街道地址".</li>
+<li>网络服务器应用从服务器处理器收到一串数据,数据是这样的:
+<ul class="org-ul">
+<li>这是一个 GET 请求</li>
+<li>请求文件 index.html</li>
+</ul></li>
+<li>网络服务器找到对应的 HTML 文件,把它打包成一个新的数据包准备发送给客户端,然
+后通过它的本地路由器发出去,使用同样的过程回传给客户端.</li>
+</ol>
+
+
+<p>
+这就是互联网的数据交换.这个过程是没有浏览器参与的,在互联网的历史中,浏览器是一
+个比较新的发明,始于1900年的 Nexus 浏览器.
+</p>
+
+<p>
+Web 浏览器是一个非常有用的应用,它创建信息的数据包,命令操作系统发送他们,然后把
+获取到的数据解释成漂亮的图片,声音,视频和文字. 但是, Web 浏览器就是代码,而代码
+可以分解成许多基本组建, 可重写,重用,以及做成我们想要的任何东西.
+</p>
+
+<p>
+Web 浏览器可以让处理器将数据发送到那些对接无线(或有线)网络接口的应用上,但你也
+可以使用Python 代码来实现这些功能:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> urllib.request <span style="font-weight: bold;">import</span> urlopen
+<span style="font-weight: bold; font-style: italic;">html</span> = urlopen(<span style="font-style: italic;">'http://pythonscraping.com/pages/page1.html'</span>)
+<span style="font-weight: bold;">print</span>(html.read())
+</pre>
+</div>
+
+<pre class="example">
+b'&lt;html&gt;\n&lt;head&gt;\n&lt;title&gt;A Useful Page&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n&lt;h1&gt;An Interesting Title&lt;/h1&gt;\n&lt;div&gt;\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n&lt;/div&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n'
+
+</pre>
+
+<p>
+这段代码可以输出 <a href="http://pythonscraping.com/pages/page1.html">http://pythonscraping.com/pages/page1.html</a> 网页的全部HTML 代
+码.更准确地说,这会输出在域名为 <a href="http://pythonscraping.com">http://pythonscraping.com</a> 服务器上 &lt;网络应用根
+地址&gt;/pages 文件夹里的 HTML 文件page1.html 的源代码.
+</p>
+
+<p>
+将这些地址理解成 "文件" 而不是 "页面" 非常关键.因为现在大多数网页需要加载许多
+相关的资源文件,可能是图像文件,JavaScript 文件,CSS 文件,或者你需要连接的其他各
+种网页内容,比如 &lt;img src="cuteKitten.jpg"&gt; 会像服务器发起另一个请求,来获取
+cuteKitten.jpg 文件中的数据来为用户充分渲染网页.
+</p>
+
+<p>
+当然,上面的 Python 程序并没有返回并向服务器请求多个文件的逻辑,它只能读取直接
+请求的单个 HTML 文件.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> urllib.request <span style="font-weight: bold;">import</span> urlopen
+</pre>
+</div>
+
+<p>
+上面的代码查找Python 代码的 requests 模块(在urllib库里),只导入urlopen 函数.
+</p>
+
+<p>
+urllib 是Python 的标准库(不用额外安装就可以运行的),包含了从网页请求数据,处理
+cookie,甚至改变请求头和用户代理这些元数据的函数. 这本书里广泛使用了urllib库.
+</p>
+
+<p>
+urlopen 用来打开并读取一个从网络获取的远程对象,因为他是一个非常通用的函数(轻
+松读取HTML文件,图片文件,或者其他任何文件流),所以本书也频繁地使用它.
+</p>
+</div>
+</div>
+<div id="outline-container-orgee49f50" class="outline-3">
+<h3 id="orgee49f50">BeautifulSoup 简介</h3>
+<div class="outline-text-3" id="text-orgee49f50">
+<p>
+BeautifulSoup 库的名字取自刘易斯·卡罗尔在《爱丽丝梦游仙境》里的同名诗歌.
+</p>
+
+<p>
+它通过定位 HTML 标签来格式化和组织复杂的网页信息,用简单易用 的Python 对象为我
+们展现 XML 结构信息.
+</p>
+</div>
+<div id="outline-container-org0ef8ba0" class="outline-4">
+<h4 id="org0ef8ba0">安装BeautifulSoup</h4>
+<div class="outline-text-4" id="text-org0ef8ba0">
+<p>
+由于 BeautifulSoup 库不是Python 标准库,因此需要独立安装.
+pip 安装:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">pip3 install beautifulsoup4
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org63cd279" class="outline-4">
+<h4 id="org63cd279">运行BeautifulSoup</h4>
+<div class="outline-text-4" id="text-org63cd279">
+<p>
+BeautifulSoup 库最常用的对象恰好就是 BeautifulSoup 对象.调整 <a href="#org4aa0bfd">网络连接</a> 里的例
+子再运行下看看:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> urllib.request <span style="font-weight: bold;">import</span> urlopen
+<span style="font-weight: bold;">from</span> bs4 <span style="font-weight: bold;">import</span> BeautifulSoup
+<span style="font-weight: bold; font-style: italic;">html</span> = urlopen(<span style="font-style: italic;">'http://pythonscraping.com/pages/page1.html'</span>)
+<span style="font-weight: bold; font-style: italic;">bs</span> = BeautifulSoup(html.read(), <span style="font-style: italic;">'html.parser'</span>)
+<span style="font-weight: bold;">print</span>(bs.h1)
+</pre>
+</div>
+<pre class="example">
+None
+
+</pre>
+
+<p>
+这里仅仅返回了页面上的第一个 h1 标签实例.通常情况下, 一个页面也只有一个 h1 标
+签,但在 Web 中,这个惯例经常被打破,因此你应该意识到这里仅仅检索了该标签的第一
+个实例,而不一定是你要找到的那个.
+</p>
+
+<p>
+和前面一样,导入 urlopen 函数,然后用 html.read() 获取网页的 HTML 内容. 除了文
+本字符串,BeautifulSoup 还可以使用 urlopen 直接返回的文件对象,而不需要先调用
+read() 函数.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">bs</span> = BeautifulSoup(html, <span style="font-style: italic;">'html.parser'</span>)
+</pre>
+</div>
+
+<p>
+这样就可以把 HTML 内容传到 BeautifulSoup 对象,转换成下面的结构:
+</p>
+<pre class="example">
+⏺ html → &lt;html&gt;&lt;head&gt;...&lt;/head&gt;&lt;body&gt;...&lt;/body&gt;&lt;/html&gt;
+     ⏺ head → &lt;head&gt;&lt;title&gt;A Useful Page&lt;/title&gt;&lt;/head&gt;
+	   ⏹ title → &lt;title&gt;A Useful Page&lt;/title&gt;
+     ⏺ body → &lt;body&gt;&lt;h1&gt;An Int...&lt;/h1&gt;&lt;div&gt;Lorem ip...&lt;/div&gt;&lt;/body&gt;
+	   ⏹ h1 → &lt;h1&gt;An Interesting Title&lt;/h1&gt;
+	   ⏹ div → &lt;div&gt;Lorem Ipsum dolor...&lt;/div&gt;
+</pre>
+<p>
+我们可以看到,网页中提取的 &lt;h1&gt; 标签被嵌在 BeautifulSoup 对象结构的第二层(html
+→ body → h1). 但是, 我们从对象里提取 h1 标签的时候,我们可以直接调用它:
+</p>
+<pre class="example">
+bs.h1
+</pre>
+<p>
+其实,虾米那所有的函数调用都可以产生相同的结果:
+</p>
+<div class="org-src-container">
+<pre class="src src-python">bs.html.body.h1
+bs.body.h1
+bs.html.h1
+</pre>
+</div>
+
+<p>
+当创建一个 BeautifulSoup 对象时,需要传入两个参数:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">bs</span> = BeautifulSoup(html.read(), <span style="font-style: italic;">'html.parser'</span>)
+</pre>
+</div>
+
+<p>
+第一个参数是该对象所基于的 HTML 文件, 第二个参数指定了希望 BeautifulSoup 用来
+创建对象的解析器. 在大多数情况下, 你选择任何一个解析器都差别不大.
+</p>
+
+<p>
+html.parser 是 Python3 中的一个解析器,不需要单独安装. 如果不是特殊场景的需要,
+书里都会使用这个解析器.
+</p>
+
+<p>
+另一个常用的解析器是 lxml, 可以用 pip 安装:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">pip3 install lxml
+</pre>
+</div>
+
+<p>
+BeautifulSoup 使用 lxml 解析器时,只需要改变解析器参数:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">bs</span> = BeautifulSoup(html.read(), <span style="font-style: italic;">'lxml'</span>)
+</pre>
+</div>
+
+<p>
+和 html.parser 相比, lxml 的优点在于解析"杂乱"或者包含错误语法的 HTML 代码的
+性能更优一些,它可以容忍并修正一些问题,例如未闭合的标签,未正确嵌套的标齐那,以
+及确实的 head 标签或 body 标签. lxml 也比 html.parser 更快,但是考虑到网络本身
+的速度将总是最大的瓶颈, 在网页抓取中, 速度并不是一个必备的优势.
+</p>
+
+<p>
+lxml 的一个缺点是必须独立安装,并且依赖于第三方的 C 语言库. 相对于 html.parser
+来说,这可能会导致可移植性和易用性的问题.
+</p>
+
+<p>
+另一个常用的 HTML 解析器是 html5lib. 和 lxml 一样, html5lib 也是一个有容错性
+的解析器. 它甚至可以容忍语法更糟糕的 HTML. 它也依赖于外部依赖, 并且比 lxml 和
+html.parser 都慢. 尽管如此, 如果你处理的都是一些杂乱或手写的 HTML 网站, 那该
+解析器可能是一个不错的选择.
+</p>
+
+<p>
+可以通过安装并将 html5lib 字符串传递给 BeautifulSoup 对象来使用它:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">bs</span> = BeautifulSoup(html.read(), <span style="font-style: italic;">'html5lib'</span>)
+</pre>
+</div>
+
+<p>
+其实,任何 HTML(或XML) 文件的任意节点信息都可以被提取出来, 只要目标信息的旁边
+或附近有标签就行 <a href="#orgf59b5c9">复杂 HTML 解析</a> 将会进一步探讨更复杂的 BeautifulSoup 函数,还
+会介绍正则表达式,以及如何把正则表达式用于 BeautifulSoup 以提取网站信息.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbe9de79" class="outline-4">
+<h4 id="orgbe9de79">可靠的网络连接以及异常的处理</h4>
+<div class="outline-text-4" id="text-orgbe9de79">
+<p>
+Web 是十分复杂的. 网络数据格式不友好,网站服务器死机,目标数据标签找不到,都是
+很麻烦的事情. 网页抓取最痛苦的遭遇之一,就是爬虫运行的时候你洗洗睡了,第二天醒
+来发现某种数据格式异常导致爬行运行错误, 在你不再盯着屏幕去睡觉之后,没一会儿
+爬虫就不再运行了.那个时候,你可能想骂发明网站(以及那些奇葩网络数据格式)的人,
+但是你真正应该斥责的是自己,为什么一开始不估计可能会出现的异常!
+</p>
+
+<p>
+看看这行代码:
+</p>
+<pre class="example">
+html = urlopen('http://pythonscraping.com/pages/page1.html')
+</pre>
+<p>
+这行代码主要会发生两种异常:
+</p>
+<ul class="org-ul">
+<li>网页在服务器上不存在(或者获取网页的时候出现错误)</li>
+<li>服务器不存在</li>
+</ul>
+
+<p>
+发生第一种错误时,程序会返回 HTTP 错误. HTTP 错误可能是 "404 Page Not Found"
+"500 Internal Server Error" 等.
+对于所有类似情形, urlopen 函数都会抛出 HTTPError 异常. 我们能用下面的方式处
+理这种异常:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> urllib.request <span style="font-weight: bold;">import</span> urlopen
+<span style="font-weight: bold;">from</span> urllib.error <span style="font-weight: bold;">import</span> HTTPError
+
+<span style="font-weight: bold;">try</span>:
+    <span style="font-weight: bold; font-style: italic;">html</span> = urlopen(<span style="font-style: italic;">'http://www.pythonscraping.com/pages/page1.html'</span>)
+<span style="font-weight: bold;">except</span> HTTPError <span style="font-weight: bold;">as</span> e:
+    <span style="font-weight: bold;">print</span>(e)
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#36820;&#22238;&#31354;&#20540;,&#20013;&#26029;&#31243;&#24207;,&#25110;&#32773;&#25191;&#34892;&#21478;&#19968;&#20010;&#26041;&#26696;</span>
+<span style="font-weight: bold;">else</span>:
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#31243;&#24207;&#32487;&#32493;. &#22914;&#26524;&#22312;&#19978;&#38754;&#30340;&#24322;&#24120;&#25429;&#25417;&#37324; return &#25110;&#32773; break, &#36825;&#37324;&#23601;&#19981;&#38656;&#35201;&#20351;&#29992; else &#35821;&#21477;,&#22240;&#20026;&#36825;&#27573;&#20195;&#30721;&#19981;&#20250;&#25191;&#34892;&#20102;</span>
+</pre>
+</div>
+
+<p>
+如果程序返回 HTTP 错误代码,程序就会显示错误内容,不再执行 else 语句后面的代码.
+</p>
+
+<p>
+如果服务器不存在,就是说链接 <a href="http://pythonscraping.com">http://pythonscraping.com</a> 打不开,或者是URL 链接
+写错了, urlopen 就会抛出一个 URLError 异常. 这就意味着获取不到服务器, 并且由
+于远程服务器负责返回 HTTP 状态代码, 所以不能抛出 HTTPError 异常, 而且还应该
+捕捉到更严重的 URLError 异常.可以增加下面的检查代码:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> urllib.request <span style="font-weight: bold;">import</span> urlopen
+<span style="font-weight: bold;">from</span> urllib.error <span style="font-weight: bold;">import</span> HTTPError
+<span style="font-weight: bold;">from</span> urllib.eror <span style="font-weight: bold;">import</span> URLError
+
+<span style="font-weight: bold;">try</span>:
+    <span style="font-weight: bold; font-style: italic;">html</span> = urlopen(<span style="font-style: italic;">'http://www.pythonscraping.com/pages/page1.html'</span>)
+<span style="font-weight: bold;">except</span> HTTPError <span style="font-weight: bold;">as</span> e:
+    <span style="font-weight: bold;">print</span>(e)
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#36820;&#22238;&#31354;&#20540;,&#20013;&#26029;&#31243;&#24207;,&#25110;&#32773;&#25191;&#34892;&#21478;&#19968;&#20010;&#26041;&#26696;</span>
+<span style="font-weight: bold;">except</span> URLError <span style="font-weight: bold;">as</span> e:
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'The server could not be found!'</span>)
+<span style="font-weight: bold;">else</span>:
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'It Worked!'</span>)
+    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#31243;&#24207;&#32487;&#32493;. &#22914;&#26524;&#22312;&#19978;&#38754;&#30340;&#24322;&#24120;&#25429;&#25417;&#37324; return &#25110;&#32773; break, &#36825;&#37324;&#23601;&#19981;&#38656;&#35201;&#20351;&#29992; else &#35821;&#21477;,&#22240;&#20026;&#36825;&#27573;&#20195;&#30721;&#19981;&#20250;&#25191;&#34892;&#20102;</span>
+</pre>
+</div>
+
+
+<p>
+当然,即使从服务器成功获取网页,如果网页上的内容并非完全是我们期望的那样,仍然
+可能会出现异常. 每当你调用 BeautifulSoup 对象里的一个标签时,增加一个检查条件
+确保标签确实存在是很聪明的做法. 当要调用的标签不存在时, BeautifulSoup 会返回
+None 对象.不过, 如果再调用这个 None 对象下面的子标签,就会发生 AttributeError
+错误.
+下面的代码会返回一个 None 对象(nonExistentTag 是虚拟的标签,BeautifulSoup 对
+象里实际没有).
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">print</span>(bs.nonExistentTag)
+</pre>
+</div>
+
+
+<p>
+处理和检查这个对象是十分必要的,如果不检查,直接调用这个 None 对象的子标签,就
+会有麻烦, 如下:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">print</span>(bs.nonExistentTag.someTag)
+</pre>
+</div>
+
+<p>
+就会返回异常:
+</p>
+<pre class="example">
+AttributeError: 'NoneType' object has no attribute 'someTag'
+</pre>
+
+<p>
+避免这两种情形的异常最简单的方式就是对两种情形进行检查:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">try</span>:
+    <span style="font-weight: bold; font-style: italic;">badContent</span> = bs.nonExistentTag.anotherTag
+<span style="font-weight: bold;">except</span> <span style="font-weight: bold; text-decoration: underline;">AttributeError</span> <span style="font-weight: bold;">as</span> e:
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'Tag was not found'</span>)
+<span style="font-weight: bold;">else</span>:
+    <span style="font-weight: bold;">if</span> badContent == <span style="font-weight: bold; text-decoration: underline;">None</span>:
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'Tag was not found'</span>)
+    <span style="font-weight: bold;">else</span>:
+        <span style="font-weight: bold;">print</span>(badContent)
+</pre>
+</div>
+<p>
+这些检查与处理错误的代码可能看着有点累赘,但是我们可以重新简单组织一下,让它们
+不那么难写(难读).例如下面的代码就是上面爬虫的另一种写法:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> urllib.request <span style="font-weight: bold;">import</span> urlopen
+<span style="font-weight: bold;">from</span> urllib.error <span style="font-weight: bold;">import</span> HTTPError
+<span style="font-weight: bold;">from</span> urllib.error <span style="font-weight: bold;">import</span> URLError
+<span style="font-weight: bold;">from</span> bs4 <span style="font-weight: bold;">import</span> BeautifulSoup
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">getTitle</span>(url):
+    <span style="font-weight: bold;">try</span>:
+        <span style="font-weight: bold; font-style: italic;">html</span> = urlopen(url)
+    <span style="font-weight: bold;">except</span> HTTPError <span style="font-weight: bold;">as</span> e:
+        <span style="font-weight: bold;">return</span> <span style="font-weight: bold; text-decoration: underline;">None</span>
+    <span style="font-weight: bold;">except</span> URLError <span style="font-weight: bold;">as</span> e:
+        <span style="font-weight: bold;">return</span> <span style="font-weight: bold; text-decoration: underline;">None</span>
+    <span style="font-weight: bold;">try</span>:
+        <span style="font-weight: bold; font-style: italic;">bs</span> = BeautifulSoup(html.read(), <span style="font-style: italic;">'html.parser'</span>)
+        <span style="font-weight: bold; font-style: italic;">title</span> = bs.body.h1
+    <span style="font-weight: bold;">except</span> <span style="font-weight: bold; text-decoration: underline;">AttributeError</span> <span style="font-weight: bold;">as</span> e:
+        <span style="font-weight: bold;">return</span> <span style="font-weight: bold; text-decoration: underline;">None</span>
+    <span style="font-weight: bold;">return</span> title
+
+<span style="font-weight: bold; font-style: italic;">title</span> = getTitle(<span style="font-style: italic;">'http://www.pythonscraping.com/pages/page1.html'</span>)
+
+<span style="font-weight: bold;">if</span> title <span style="font-weight: bold;">is</span> <span style="font-weight: bold; text-decoration: underline;">None</span>:
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'Title could not be found!'</span>)
+    <span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">type</span>(title))
+<span style="font-weight: bold;">else</span>:
+    <span style="font-weight: bold;">print</span>(title)
+
+</pre>
+</div>
+
+<p>
+这个例子里,我们创建了 getTitle 函数,返回网页的标题,如果获取网页的时候出现问
+题就返回 None 对象. 在 getTitle 函数里,我们检查了由于 URL 输入错误引起的
+URLError, 还像前面那样检查了 HTTPError, 然后把两行 BeautifulSoup 代码封装在
+一个 try 语句里.这两行任意一行有问题,都会抛出 AttributeError. 实际上,我们可
+以在 try 语句里放置任意多行代码,或者调用一个在任意位置都可以抛出
+AttributeError 的函数.
+</p>
+
+<p>
+在写爬虫的时候, 思考代码的总体格局,让代码既可以捕捉异常又容易阅读,这是很重要
+的.如果希望重用大量代码,那么像 getSiteHtml 和 getTitle 这样的通用函数会让快
+速,稳定的抓取网页变得简单易行.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgf59b5c9" class="outline-2">
+<h2 id="orgf59b5c9">复杂 HTML 解析</h2>
+<div class="outline-text-2" id="text-orgf59b5c9">
+<p>
+这一部分将介绍如何解析复杂的 HTML 页面,从中提取出所需的信息.
+</p>
+</div>
+
+<div id="outline-container-org0524832" class="outline-3">
+<h3 id="org0524832">不是一直都要用锤子</h3>
+<div class="outline-text-3" id="text-org0524832">
+<p>
+面对页面解析的难题时,很容易不假思索直接写几行代码来提取信息.但是,这样鲁莽使用
+技术,只会让程序变得难以调试或脆弱不堪,甚至二者兼具.在开始解析网页之前,让我们
+看一些可以避免解析复杂 HTML 页面的方式.
+</p>
+
+<p>
+如果你却定了目标内容,可能是一个名字,一组数据或者一段文字. 你的目标内容可能隐
+藏在一个 HTML "烂泥堆" 的第20层标签里,带有许多没用的标签或 HTML 属性.
+</p>
+
+<p>
+假如你不经过考虑就写出下面这样的代码来提取内容:
+</p>
+<pre class="example">
+bs.find_all('table')[4].find_all('tr')[2].find('td').find_all('div')[1].find('a')
+</pre>
+<p>
+虽然可以达到目标,但是这样看起来并不是很好. 除了代码欠缺美感之外,还有一个问题
+是, 只要网站管理员对页面稍作修改,这行代码就会失效,甚至可能毁掉整个网络爬虫.比
+如网站管理员增加了一张表格或增加一列数据,又或者在页面顶部增加一个组件(一些
+div), 该怎么做呢? 上面的代码是不安全的,它依赖于网站的结构永远不变.
+</p>
+
+<p>
+下面就是我们可以采取的一些方法:
+</p>
+<ul class="org-ul">
+<li>寻找 "打印此页" 的链接,或者看看网站有没有 HTML 样式更友好的移动版(把请求头
+设置成处于移动设备的状态,然后接受网站移动版,更多内容在 <a href="#org9590ca6">避开抓取陷阱</a> 介绍)</li>
+<li>寻找隐藏在 JavaScript 文件里的信息,实现这一点,需要查看网页加载的 JavaScript
+文件.</li>
+<li>虽然网页标题经常会用到,但是这个信息也许可以从网页的 URL 链接里获取.</li>
+<li>如果要找的信息只存在于一个网站上,没有别处,那只能说运气不佳,如果不限于一个网
+站,那么可以找找其他数据源,看看其他网站是否也显示了同样的数据?网站上显示的数
+据是不是从其他网站上抓取后攒出来的? &#x2013; 这个很典型的例子是盗版小说网站,很多
+盗版小说站就是你爬我我爬你,估计只有少数几个网站是直接爬正版站</li>
+</ul>
+
+
+<p>
+尤其是在面对隐藏很深或者格式不友好的数据时,千万不要不经思考就写代码,要三思而
+后行.
+</p>
+
+<p>
+如果确定不能另辟蹊径,那接下来的部分就是抓取数据的具体内容了.
+</p>
+
+<p>
+下面将介绍基于  <span class="underline">位置</span> , <span class="underline">上下文</span>, <span class="underline">属性</span> 和内容选择标签的标准方式和创新方式.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc4acb7b" class="outline-3">
+<h3 id="orgc4acb7b">再端一碗 BeautifulSoup (Another Serving of BeautifulSoup)</h3>
+<div class="outline-text-3" id="text-orgc4acb7b">
+<p>
+第一部分(<a href="#org63cd279">运行BeautifulSoup</a>)使用了选择对象的解析方式
+这一节介绍通过属性查找标签的方法,标签组的使用,以及标签解析书的导航过程.
+</p>
+
+<p>
+基本上,每个网站都有层叠样式表(cascading style sheet, CSS).CSS 可以让 HTML 元
+素呈现差异化,使那些具有完全相同修饰的元素呈现不同的样式.比如:
+</p>
+<pre class="example">
+&lt;span class="green"&gt;&lt;/span&gt;
+</pre>
+<p>
+有的标签长这样:
+</p>
+<pre class="example">
+&lt;span class="red"&gt;&lt;/span&gt;
+</pre>
+
+<p>
+网络爬虫可以通过 class 属性的值,轻松区分上边两种标签. 例如,使用 BeautifulSoup
+抓取网页上所有的红色文字,而绿色文字一个都不抓取. 因为 CSS 通过属性准确地呈现
+网站的样式,所以不用担心遇到没有 CSS 的网站, 大多数现代的网站上都会使用大量的
+class 和 id 的属性.
+</p>
+
+<p>
+下面创建一个爬虫来抓取 <a href="http://www.pythonscraping.com/pages/warandpeace.html">http://www.pythonscraping.com/pages/warandpeace.html</a>
+这个页面.
+这个页面里,小说人物的对话内容都是红色的,人物名称都是绿色的. 网页源代码里的
+span 标签引用了对应的 CSS 属性:
+</p>
+<pre class="example">
+&lt;span class="red"&gt;Heavens! what a virulent attack!&lt;/span&gt; replied
+&lt;span class="green"&gt;the prince&lt;/span&gt;, not in the least disconcerted
+by this reception.
+</pre>
+<p>
+使用和 <a href="#org63cd279">运行BeautifulSoup</a> 里类似的程序抓取整个页面并创建一个 BeautifulSoup 对
+象:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> urllib.request <span style="font-weight: bold;">import</span> urlopen
+<span style="font-weight: bold;">from</span> bs4 <span style="font-weight: bold;">import</span> BeautifulSoup
+
+<span style="font-weight: bold; font-style: italic;">html</span> = urlopen(<span style="font-style: italic;">'http://www.pythonscraping.com/pages/warandpeace.html'</span>)
+<span style="font-weight: bold; font-style: italic;">bs</span> = BeautifulSoup(html.read(), <span style="font-style: italic;">'html.parser'</span>)
+</pre>
+</div>
+
+<p>
+通过 BeautifulSoup 对象,我们可以使用 find_all 函数提取只包含在 &lt;span
+class="green"&gt;&lt;/span&gt; 标签里的文字.这样就可以得到一个人物名称列表(find_all 是
+非常灵活的函数, 后面也经常使用它):
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">nameList</span> = bs.find_all(<span style="font-style: italic;">'span'</span>, {<span style="font-style: italic;">'class'</span>: <span style="font-style: italic;">'green'</span>})
+<span style="font-weight: bold;">for</span> name <span style="font-weight: bold;">in</span> nameList:
+    <span style="font-weight: bold;">print</span>(name.get_text(), end=<span style="font-style: italic;">''</span>)
+</pre>
+</div>
+<p>
+代码执行后会按照文章中人物出现顺序显示人名.
+</p>
+<pre class="example">
+Anna
+Pavlovna SchererEmpress Marya
+FedorovnaPrince Vasili KuraginAnna PavlovnaSt. Petersburgthe princeAnna PavlovnaAnna Pavlovnathe princethe princethe princePrince VasiliAnna PavlovnaAnna Pavlovnathe princeWintzingerodeKing of Prussiale Vicomte de MortemartMontmorencysRohansAbbe Moriothe Emperorthe princePrince VasiliDowager Empress Marya Fedorovnathe baronAnna Pavlovnathe Empressthe EmpressAnna Pavlovna'sHer MajestyBaron
+FunkeThe princeAnna
+Pavlovnathe EmpressThe princeAnatolethe princeThe princeAnna
+PavlovnaAnna Pavlovna
+
+</pre>
+<p>
+之前用 bs.tagName 只能获取页面中指定的第一个标签.现在,使用
+bs.find_all(tagName, tagAttributes) 可以获取页面中所有指定的标签,不再只是第一
+个了.
+获取人名列表后,使用 name.get_text() 就可以获取标签种的内容了.
+</p>
+
+<blockquote>
+<p>
+什么时候使用 get_text()? 什么时候应该保留标签?
+.get_text() 会清除正在处理的 HTML 文档中的所有标签,然后返回一个只包含文字的
+Unicode 字符串. 如果你正在处理一个包含许多超链接,段落和其他标签的大段文本,那
+么 .get_text() 会把这些超链接,段落和标签全部清除,只剩下一串不带标签的文字.
+用 BeautifulSoup 对象查找想要的信息,比直接在 HTML 文本里查找信息要简单的多.
+通常只有在准备打印,存储和操作最终数据时,才应该最后使用 .get_text(). 一般情况
+下,都应该尽可能保留 HTML 文档的标签结构.
+</p>
+</blockquote>
+</div>
+
+<div id="outline-container-org843c573" class="outline-4">
+<h4 id="org843c573">BeautifulSoup 的 find() 和 find_all()</h4>
+<div class="outline-text-4" id="text-org843c573">
+<p>
+BeautifulSoup 里的 find() 和 find_all() 可能是最常用的两个函数. 使用它们,可
+以通过标签的不同属性轻松过滤 HTML 页面, 查找需要的标签组或者单个标签.
+</p>
+
+<p>
+这两个函数非常类似, BeautifulSoup 文档里的定义就是这样:
+<a href="https://beautiful-soup-4.readthedocs.io/en/latest/index.html?highlight=find_all#find-all">find_all</a>:
+</p>
+<pre class="example">
+find_all(name, attrs, recursive, string, limit, **kwargs)
+</pre>
+<p>
+<a href="https://beautiful-soup-4.readthedocs.io/en/latest/index.html?highlight=find_all#find">find</a>:
+</p>
+<pre class="example">
+find(name, attrs, recursive, string, **kwargs)
+</pre>
+<p>
+多数时候,都只需要使用前两个参数 name(tagname) 和 attrs(attributes)
+name 是标签名称或多个标签名称组成的 PYthon 列表:
+</p>
+<pre class="example">
+# 返回一个包含 HTML 文档种所有标题标签的列表
+.find_all(['h1','h2','h3,'h4,'h5,'h6'])
+</pre>
+<p>
+attrs 是一个用 Python 字典封装的一个标签的若干属性和对应属性值:
+</p>
+<pre class="example">
+# 返回 HTML 文档里红色和绿色两种颜色的 span 标签.
+.find_all('span', {'class':{'green', 'red'}})
+</pre>
+<p>
+recursive 递归参数是一个布尔变量. 如果 recursive 设置为 True, find_all 就会
+查找标签参数的所有子标签,以及子标签的子标签.如果 recursive 为 False,
+find_all 只是查找文档的一级标签. find_all 默认支持递归查找(recursive 默认 True).
+</p>
+
+<p>
+string 文本参数有点不同, 它是用标签的文本内容取匹配, 而不是用标签的属性.例如
+想要查找网页种包含 "the prince" 内容的标签数量,就可以使用下面代码:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">nameList</span> = bs.find_all(text=<span style="font-style: italic;">'the prince'</span>)
+<span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">len</span>(nameList))
+</pre>
+</div>
+
+<p>
+输出结果为 7
+</p>
+<pre class="example">
+7
+
+</pre>
+<p>
+可选参数 limit 限制范围,只适用于 find_all 方法. find 实际等价于 limit 参数设
+置为1 的find_all 方法.
+另一个关键词参数 keyword 可选择具有指定属性的标签:
+</p>
+<pre class="example">
+# 返回第一个在 class_ 属性中包含 text 并且在 id 属性中包含 title 的标签.
+title = bs.find_all(id='title', class_='text')
+</pre>
+<p>
+事实上,按照惯例, 页面中每个 id 的属性只能被使用一次,因此上面的代码并不实用,
+下面代码可以达到相同效果:
+</p>
+<pre class="example">
+title = bs.find(id='title')
+</pre>
+
+<blockquote>
+<p>
+<b>关键词参数和"类"的注意事项</b>
+虽然关键词参数 keyword 在一些场景中很有用,但实际上是一个冗余的 BeautifulSoup
+功能. 任何用关键词参数能完成的人物,也可以用后面的技术解决(见 <a href="#org563d326">正则表达式</a> 和 <a href="#org6e7b1aa">Lambda 表达式</a>)
+例如,下面两行代码效果完全相同:
+bs.find_all(id='text')
+bs.find_all('', {'id', 'text'})
+另外,使用 keyword 偶尔会出现问题,尤其是在用 class 属性查找标签的时候,因为
+class 是 Python 种受保护的关键字(保留字). 假如使用下面的代码,就会因为用了
+class 保留字而产生语法错误:
+bs.find_all(class='green')
+不过可以使用 BeautifulSoup 提供的方案,使用 class_ 表示按照 class 属性查找:
+bs.find_all(class_='green')
+另外,可以使用属性参数把 class 用引号包起来:
+bs.find_all('', {'class', 'green'})
+</p>
+</blockquote>
+
+<p>
+使用标签参数 name 把标签列表传到 .find_all() 里获取一组标签,其实是一个 '或'
+关系的过滤器,如果标签列表很长,就需要花很长时间才能写完,而关键词参数 keyword
+可以增加一个 "与" 关系的过滤器来简化工作.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgaa3f5a3" class="outline-4">
+<h4 id="orgaa3f5a3">其他 BeautifulSoup 对象</h4>
+<div class="outline-text-4" id="text-orgaa3f5a3">
+<dl class="org-dl">
+<dt>BeautifulSoupd 对象</dt><dd>前面代码实例种的 bs.</dd>
+<dt>标签 Tag 对象</dt><dd><p>
+BeautifulSoup 对象通过 find 或 find_all 或者直接调用子标
+签获取的一列对象或单个对象:
+</p>
+<pre class="example">
+bs.div.h1
+</pre></dd>
+<dt>NavigableString 对象</dt><dd>用来表示标签里的文字,而不是标签本身(有些函数可以操
+作和生成 NavigableString 对象,而不是标签对象)</dd>
+<dt>Comment 对象</dt><dd>用来查找 HTML 文档的注释标签, &lt;!&#x2013; like this &#x2013;&gt;.</dd>
+</dl>
+
+
+<p>
+这四个对象是使用 BeautifulSoup 库时会与到的所有对象(作者写书的时候).
+实际上现在也是: <a href="https://beautiful-soup-4.readthedocs.io/en/latest/index.html?highlight=find_all#kinds-of-objects">官方文档: Kinds of objects</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org0ce955e" class="outline-4">
+<h4 id="org0ce955e">导航树</h4>
+<div class="outline-text-4" id="text-org0ce955e">
+<p>
+find_all 函数通过标签的名称和属性来查找标签. 但是如果需要通过标签在文档种的
+位置来查找标签,该怎么办?
+</p>
+
+<p>
+这里就要用到导航树(navigating trees) 了.
+第一章使用过单一方向进行 BeautifulSoup 标签树导航:
+</p>
+<pre class="example">
+bs.tag.subTag.anotherSubTag
+</pre>
+
+<p>
+现在使用虚拟的购物网站: <a href="https://www.pythonscraping.com/pages/page3.html">https://www.pythonscraping.com/pages/page3.html</a> 作为
+示例网页. 演示 HTML 导航树的纵向和横向导航.
+<img src="imgs/wsp2_0201.png" alt="wsp2_0201.png" />
+</p>
+
+<p>
+这个 HTML 页面可以映射成一棵树.
+</p>
+<pre class="example">
+    ⚫ HTML
+        ⚫ body
+	    ▪ div.wrapper
+	    ⚬ h1
+	    ⚬ div.content
+	    ⚬ table#giftList
+	        ⚬ tr
+	   	    ⚬ th
+	   	    ⚬ th
+	   	    ⚬ th
+	   	    ⚬ th
+	        ⚬ tr.gift#gift1
+	   	    ⚬ td
+	   	    ⚬ td
+	   	        ⚬ span.excitingNote
+	   	    ⚬ td
+	   	    ⚬ td
+	   	    ⚬ img
+	   	⚬ ...table rows continue...
+	    ⚬ div.footer
+</pre>
+<p>
+后面的几节内容也以这个标签结构为例
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org69320d3"></a>处理子标签和其后代标签<br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org563d326" class="outline-3">
+<h3 id="org563d326">正则表达式</h3>
+</div>
+
+<div id="outline-container-orgf4b9862" class="outline-3">
+<h3 id="orgf4b9862">正则表达式和 BeautifulSoup</h3>
+</div>
+
+<div id="outline-container-org3b5192d" class="outline-3">
+<h3 id="org3b5192d">获取属性</h3>
+</div>
+
+<div id="outline-container-org6e7b1aa" class="outline-3">
+<h3 id="org6e7b1aa">Lambda 表达式</h3>
+</div>
+</div>
+
+<div id="outline-container-org9590ca6" class="outline-2">
+<h2 id="org9590ca6">避开抓取陷阱</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: kamisama</p>
+<p class="date">Created: 2022-03-24 Thu 20:31</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>
