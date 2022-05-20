@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-05-18 Wed 21:53 -->
+<!-- 2022-05-20 Fri 09:14 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -237,35 +237,36 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org54546f6">使用Github遇到的问题记录</a>
+<li><a href="#orge8d2f32">使用Github遇到的问题记录</a>
 <ul>
-<li><a href="#orgaa9e032">github actions</a>
+<li><a href="#org0f3212c">github actions</a>
 <ul>
-<li><a href="#org1baacb7">git会记录文件状态</a></li>
+<li><a href="#org4260705">git会记录文件状态</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orge11b8dc">生成和添加 SSH keys 到github</a></li>
-<li><a href="#org1336c3b">Github.io 踩坑</a>
+<li><a href="#org8de9b22">生成和添加 SSH keys 到github</a></li>
+<li><a href="#orgd43e76f">Github.io 踩坑</a>
 <ul>
-<li><a href="#org2444881">路径含有隐藏文件夹时url访问失败</a></li>
+<li><a href="#org4b3e7a9">路径含有隐藏文件夹时url访问失败</a></li>
 </ul>
 </li>
+<li><a href="#org941d155">远程仓库强制覆盖本地仓库.</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org54546f6" class="outline-2">
-<h2 id="org54546f6">使用Github遇到的问题记录</h2>
-<div class="outline-text-2" id="text-org54546f6">
+<div id="outline-container-orge8d2f32" class="outline-2">
+<h2 id="orge8d2f32">使用Github遇到的问题记录</h2>
+<div class="outline-text-2" id="text-orge8d2f32">
 </div>
-<div id="outline-container-orgaa9e032" class="outline-3">
-<h3 id="orgaa9e032">github actions</h3>
-<div class="outline-text-3" id="text-orgaa9e032">
+<div id="outline-container-org0f3212c" class="outline-3">
+<h3 id="org0f3212c">github actions</h3>
+<div class="outline-text-3" id="text-org0f3212c">
 </div>
-<div id="outline-container-org1baacb7" class="outline-4">
-<h4 id="org1baacb7">git会记录文件状态</h4>
-<div class="outline-text-4" id="text-org1baacb7">
+<div id="outline-container-org4260705" class="outline-4">
+<h4 id="org4260705">git会记录文件状态</h4>
+<div class="outline-text-4" id="text-org4260705">
 <p>
 使用 Emacs 编辑文件的情况下: 很容易一边编辑文件,另一边就打开了shell-mode 要
 对刚刚的更改进行提交.
@@ -276,31 +277,51 @@ for the JavaScript code in this tag.
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="orgaa518fd"></a><span class="todo TODO">TODO</span> 测试其他文本编辑器是否会出现这种状况.<br /></li>
+<li><a id="org2e11683"></a><span class="todo TODO">TODO</span> 测试其他文本编辑器是否会出现这种状况.<br /></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-orge11b8dc" class="outline-2">
-<h2 id="orge11b8dc">生成和添加 SSH keys 到github</h2>
+<div id="outline-container-org8de9b22" class="outline-2">
+<h2 id="org8de9b22">生成和添加 SSH keys 到github</h2>
 </div>
-<div id="outline-container-org1336c3b" class="outline-2">
-<h2 id="org1336c3b">Github.io 踩坑</h2>
-<div class="outline-text-2" id="text-org1336c3b">
+<div id="outline-container-orgd43e76f" class="outline-2">
+<h2 id="orgd43e76f">Github.io 踩坑</h2>
+<div class="outline-text-2" id="text-orgd43e76f">
 </div>
-<div id="outline-container-org2444881" class="outline-3">
-<h3 id="org2444881">路径含有隐藏文件夹时url访问失败</h3>
-<div class="outline-text-3" id="text-org2444881">
+<div id="outline-container-org4b3e7a9" class="outline-3">
+<h3 id="org4b3e7a9">路径含有隐藏文件夹时url访问失败</h3>
+<div class="outline-text-3" id="text-org4b3e7a9">
 <p>
 如果网页资源的某个文件路径中有隐藏文件(夹)，那该资源就会访问失败.
 </p>
 </div>
 </div>
 </div>
+<div id="outline-container-org941d155" class="outline-2">
+<h2 id="org941d155">远程仓库强制覆盖本地仓库.</h2>
+<div class="outline-text-2" id="text-org941d155">
+<p>
+适用于本地未提交的修改,但远端仓库已经从另一台机器提交了新的修改.如果本地未提交的
+修改并不重要,可以删除,那么就使用这种方法:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">git fetch --all
+git reset --hard origin/main
+git pull
+</pre>
+</div>
+<p>
+fetch 从远程下载最新代码,但不执行合并或rebase 等操作.
+reset 将主分支重置为 fetch 下载的内容. hard 选项更改工作树中所有文件以匹配
+origin/main 中的文件.
+</p>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-05-18 Wed 21:53</p>
+<p class="date">Created: 2022-05-20 Fri 09:14</p>
 <p class="validation"></p>
 </div>
 </body>
