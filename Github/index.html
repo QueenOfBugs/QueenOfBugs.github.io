@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-05-20 Fri 09:14 -->
+<!-- 2022-05-24 Tue 18:34 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -237,36 +237,49 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge8d2f32">使用Github遇到的问题记录</a>
+<li><a href="#orgee57c2d">使用Github遇到的问题记录</a>
 <ul>
-<li><a href="#org0f3212c">github actions</a>
+<li><a href="#org3dd1b32">github actions</a>
 <ul>
-<li><a href="#org4260705">git会记录文件状态</a></li>
+<li><a href="#org96d1942">git会记录文件状态</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org8de9b22">生成和添加 SSH keys 到github</a></li>
-<li><a href="#orgd43e76f">Github.io 踩坑</a>
+<li><a href="#org0e8e06b">生成和添加 SSH keys 到github</a>
 <ul>
-<li><a href="#org4b3e7a9">路径含有隐藏文件夹时url访问失败</a></li>
+<li><a href="#orgec7378b">生成新的 SHH 密钥</a></li>
+<li><a href="#org5df1c5d">添加 SSH 密钥到 ssh-agent</a>
+<ul>
+<li><a href="#orgab73e2f">后台启动 ssh 代理</a></li>
+<li><a href="#org0072b8a">将 ssh 私钥添加到代理</a></li>
+<li><a href="#orgfda45b8">将 SSH 密钥添加到 Github 帐号</a></li>
 </ul>
 </li>
-<li><a href="#org941d155">远程仓库强制覆盖本地仓库.</a></li>
+<li><a href="#org10e2dbf">测试 SSH 连接</a></li>
+<li><a href="#org92b6b7f">通过代理连接 SSH</a></li>
+</ul>
+</li>
+<li><a href="#orgf9c18ab">Github.io 踩坑</a>
+<ul>
+<li><a href="#org6bdc16c">路径含有隐藏文件夹时url访问失败</a></li>
+</ul>
+</li>
+<li><a href="#org92094c5">远程仓库强制覆盖本地仓库.</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge8d2f32" class="outline-2">
-<h2 id="orge8d2f32">使用Github遇到的问题记录</h2>
-<div class="outline-text-2" id="text-orge8d2f32">
+<div id="outline-container-orgee57c2d" class="outline-2">
+<h2 id="orgee57c2d">使用Github遇到的问题记录</h2>
+<div class="outline-text-2" id="text-orgee57c2d">
 </div>
-<div id="outline-container-org0f3212c" class="outline-3">
-<h3 id="org0f3212c">github actions</h3>
-<div class="outline-text-3" id="text-org0f3212c">
+<div id="outline-container-org3dd1b32" class="outline-3">
+<h3 id="org3dd1b32">github actions</h3>
+<div class="outline-text-3" id="text-org3dd1b32">
 </div>
-<div id="outline-container-org4260705" class="outline-4">
-<h4 id="org4260705">git会记录文件状态</h4>
-<div class="outline-text-4" id="text-org4260705">
+<div id="outline-container-org96d1942" class="outline-4">
+<h4 id="org96d1942">git会记录文件状态</h4>
+<div class="outline-text-4" id="text-org96d1942">
 <p>
 使用 Emacs 编辑文件的情况下: 很容易一边编辑文件,另一边就打开了shell-mode 要
 对刚刚的更改进行提交.
@@ -277,30 +290,132 @@ for the JavaScript code in this tag.
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="org2e11683"></a><span class="todo TODO">TODO</span> 测试其他文本编辑器是否会出现这种状况.<br /></li>
+<li><a id="org3ae6540"></a><span class="todo TODO">TODO</span> 测试其他文本编辑器是否会出现这种状况.<br /></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-org8de9b22" class="outline-2">
-<h2 id="org8de9b22">生成和添加 SSH keys 到github</h2>
+<div id="outline-container-org0e8e06b" class="outline-2">
+<h2 id="org0e8e06b">生成和添加 SSH keys 到github</h2>
+<div class="outline-text-2" id="text-org0e8e06b">
 </div>
-<div id="outline-container-orgd43e76f" class="outline-2">
-<h2 id="orgd43e76f">Github.io 踩坑</h2>
-<div class="outline-text-2" id="text-orgd43e76f">
+<div id="outline-container-orgec7378b" class="outline-3">
+<h3 id="orgec7378b">生成新的 SHH 密钥</h3>
+<div class="outline-text-3" id="text-orgec7378b">
+<div class="org-src-container">
+<pre class="src src-sh">ssh-keygen -t ed25519 -C <span style="font-style: italic;">"wj915614874@163.com"</span>
+</pre>
 </div>
-<div id="outline-container-org4b3e7a9" class="outline-3">
-<h3 id="org4b3e7a9">路径含有隐藏文件夹时url访问失败</h3>
-<div class="outline-text-3" id="text-org4b3e7a9">
+</div>
+</div>
+
+<div id="outline-container-org5df1c5d" class="outline-3">
+<h3 id="org5df1c5d">添加 SSH 密钥到 ssh-agent</h3>
+<div class="outline-text-3" id="text-org5df1c5d">
+</div>
+<div id="outline-container-orgab73e2f" class="outline-4">
+<h4 id="orgab73e2f">后台启动 ssh 代理</h4>
+<div class="outline-text-4" id="text-orgab73e2f">
+<div class="org-src-container">
+<pre class="src src-sh"><span style="font-weight: bold;">eval</span> <span style="font-style: italic;">"$(ssh-agent -s)"</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0072b8a" class="outline-4">
+<h4 id="org0072b8a">将 ssh 私钥添加到代理</h4>
+<div class="outline-text-4" id="text-org0072b8a">
+<div class="org-src-container">
+<pre class="src src-sh">ssh-add ~/.ssh/id_ed25519
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfda45b8" class="outline-4">
+<h4 id="orgfda45b8">将 SSH 密钥添加到 Github 帐号</h4>
+<div class="outline-text-4" id="text-orgfda45b8">
+<p>
+将下面命令的结果复制到 <a href="https://github.com/settings/ssh/new">https://github.com/settings/ssh/new</a> 里的 Key 表单中.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">cat ~/.ssh/id_ed25519.pub
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org10e2dbf" class="outline-3">
+<h3 id="org10e2dbf">测试 SSH 连接</h3>
+<div class="outline-text-3" id="text-org10e2dbf">
+<div class="org-src-container">
+<pre class="src src-sh">ssh -T git@github.com
+</pre>
+</div>
+
+<p>
+如果前面都设置正常的,应该会提示你验证公钥是否正确,输入 yes 后会看到类似下面的信
+息:
+</p>
+<pre class="example">
+Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org92b6b7f" class="outline-3">
+<h3 id="org92b6b7f">通过代理连接 SSH</h3>
+<div class="outline-text-3" id="text-org92b6b7f">
+<p>
+因为经常被墙的原因,使用代理连接 SSH 是很有必要的.这里去分一下 git 命令里设置的走
+代理, git 里设置的代理是用来 clone 下载文件的,走的是 http/https 协议,因为下载文
+件的网址也时不时被墙,或者直连下载极慢,所以需要走代理;而这里使用的 SSH 协议是用来
+验证我们自己的账户,保证账户安全的,还可以方便我们对自己的仓库进行操作,  这两个是
+不同的,所以不要以为设置了 git 的代理就可以使用代理进行 ssh 连接了.
+openssh 自身是不带代理功能的(网上说的,具体是不是没有翻文档),需要使用另外的工具来
+实现代理,这里需要的是 nc(netcat) ,这是一个强大的网络工具,但 gnu-netcat 这个版本
+的并没有提供代理功能,我的 Manjaro-i3 已经安装了 nc, 不过是 gnu-netcat 版的,实验
+多次还以为哪里有问题,直到看到这篇博文 <a href="https://tech.he-sb.top/posts/ssh-connecting-through-proxy/#linux-%E7%B3%BB%E7%BB%9F">通过代理连接 SSH</a> 里提到 openbsd-netcat 版
+本的netcat才有代理功能,才爬出这个坑.具体步骤就不再详细写了,那篇博文写的很清楚了,
+记录下使用的命令和配置:
+</p>
+<ul class="org-ul">
+<li><p>
+使用命令完成代理:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">ssh user@server -o <span style="font-style: italic;">"ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p"</span>
+</pre>
+</div></li>
+<li><p>
+使用 ".ssh/config" 配置文件:
+</p>
+<pre class="example">
+Host *
+  ProxyCommand=nc -x 127.0.0.1:1080 %h %p
+</pre></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf9c18ab" class="outline-2">
+<h2 id="orgf9c18ab">Github.io 踩坑</h2>
+<div class="outline-text-2" id="text-orgf9c18ab">
+</div>
+<div id="outline-container-org6bdc16c" class="outline-3">
+<h3 id="org6bdc16c">路径含有隐藏文件夹时url访问失败</h3>
+<div class="outline-text-3" id="text-org6bdc16c">
 <p>
 如果网页资源的某个文件路径中有隐藏文件(夹)，那该资源就会访问失败.
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org941d155" class="outline-2">
-<h2 id="org941d155">远程仓库强制覆盖本地仓库.</h2>
-<div class="outline-text-2" id="text-org941d155">
+<div id="outline-container-org92094c5" class="outline-2">
+<h2 id="org92094c5">远程仓库强制覆盖本地仓库.</h2>
+<div class="outline-text-2" id="text-org92094c5">
 <p>
 适用于本地未提交的修改,但远端仓库已经从另一台机器提交了新的修改.如果本地未提交的
 修改并不重要,可以删除,那么就使用这种方法:
@@ -321,7 +436,7 @@ origin/main 中的文件.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-05-20 Fri 09:14</p>
+<p class="date">Created: 2022-05-24 Tue 18:34</p>
 <p class="validation"></p>
 </div>
 </body>
