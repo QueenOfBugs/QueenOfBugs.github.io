@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-05-24 Tue 18:38 -->
+<!-- 2022-05-25 Wed 01:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Org 手册通读+翻译</title>
@@ -260,282 +260,385 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb78f545"><span class="todo TODO">TODO</span> 简介(Introduction)</a>
+<li><a href="#orgfcc10af"><span class="todo TODO">TODO</span> 简介(Introduction)</a>
 <ul>
-<li><a href="#org523498a">总结(Summary)</a></li>
-<li><a href="#orgcf96491">安装(Installation)</a></li>
-<li><a href="#org8440852">激活(Activation)</a></li>
-</ul>
-</li>
-<li><a href="#org27279de">文件结构(document structure)</a>
+<li><a href="#orgdeeb732">概要(Summary)</a></li>
+<li><a href="#orgf7b44d3">安装(Installation)</a></li>
+<li><a href="#org926e004">激活(Activation)</a></li>
+<li><a href="#org6b41f16">反馈(Feedback)</a></li>
+<li><a href="#org7b18098"><span class="done DONE">DONE</span> 惯例(Conventions)</a>
 <ul>
-<li><a href="#orgf84e4b3">标题(Headlines)</a>
-<ul>
-<li><a href="#org3251341"><span class="todo TODO">TODO</span> 跟读到 Clean View 这一部分后在这里做链接.</a></li>
-<li><a href="#orgd397816"><span class="todo TODO">TODO</span> 动态标题编号,链接.</a></li>
-</ul>
-</li>
-<li><a href="#orgf1ebbfb">标题可视性切换(Visibility Cycling)</a>
-<ul>
-<li><a href="#org86265db">全局和部分切换(Global and local cycling)</a></li>
-<li><a href="#org59a300a">初始的可视性(Initial visibility)</a></li>
-<li><a href="#org54a3367">捕捉不经意的修改(Catching invisible edits)</a></li>
-</ul>
-</li>
-<li><a href="#orge06e341">跳转(Motion)</a></li>
-<li><a href="#orgb8660e3">结构编辑(Structure Editing)</a></li>
-<li><a href="#org908ec40">稀疏树(Sparse Trees)</a></li>
-<li><a href="#org43ab869">简单列表(Plain Lists)</a></li>
-<li><a href="#org0865ad6">抽屉 (Drawers)</a>
-<ul>
-<li><a href="#orged16dda"><span class="todo TODO">TODO</span> <code>C-c C-z</code> 添加一个带时间戳的笔记到 <code>LOGBOOK</code> drawer. 写完这里,我执行了快捷键,在</a></li>
-</ul>
-</li>
-<li><a href="#org3f7aea8">块结构 (Blocks)</a></li>
-</ul>
-</li>
-<li><a href="#org43c3395">表格(Tables)</a>
-<ul>
-<li><a href="#org3e3972b">内置表格编辑器(Built-in Table Editor)</a>
-<ul>
-<li><a href="#org852bff5">创建和转化表格(Creation and conversion)</a></li>
-<li><a href="#orgbdb0b42">重对齐和字段移动(re-align and field motion)</a></li>
-<li><a href="#org0c93254">编辑列和行(Column and row editing)</a></li>
-<li><a href="#org4ed1011">区域操作(Regions)</a></li>
-<li><a href="#orgd355385">计算(Calculations)</a></li>
-<li><a href="#org6451373">杂项(Miscellaneous)</a></li>
-</ul>
-</li>
-<li><a href="#org8dabae3">列宽和对齐(Column Width and Alignment)</a></li>
-<li><a href="#org906ea4b">列组(Column Groups)</a></li>
-<li><a href="#orga2c7bb7">Orgtbl Mode</a></li>
-<li><a href="#orge61c5f1">电子表格(The Spreadsheet)</a>
-<ul>
-<li><a href="#org9376342">引用(Reference)</a></li>
-<li><a href="#orgc90dc3a">Calc 的公式语法(Formula syntax for Calc)</a></li>
-<li><a href="#org7512263">Lisp 的公式语法(Formula syntax for Lisp)</a></li>
-<li><a href="#orgda48852">持续时间和时间值(Durations and time values)</a></li>
-<li><a href="#org01068ff">字段和范围公式(Field and range formulas)</a></li>
-<li><a href="#org68d0a1f">列公式(Column formulas)</a></li>
-<li><a href="#org8ef2c6d">查找函数(Lookup functions)</a></li>
-<li><a href="#orgbcdee26">编辑和调试公式(Editing and debugging formulas)</a></li>
-<li><a href="#org3ea952b">更新表格(Updating the table)</a></li>
-<li><a href="#orgfa0f377">高级功能(Advanced features)</a></li>
-</ul>
-</li>
-<li><a href="#orgd9e5931">Org 绘图(Org Plot)</a>
-<ul>
-<li><a href="#org7e29c74">使用 Gnuplot 的图形绘图(Graphical plots using Gnuplot)</a></li>
+<li><a href="#orgf66f33a"><span class="done DONE">DONE</span> <code>TODO</code> 关键字,标签,属性等等.</a></li>
+<li><a href="#org4efc737"><span class="done DONE">DONE</span> 快捷键绑定和命令</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgccbd367">超链接(Hyperlinks)</a>
+<li><a href="#orgaab4795">文件结构(document structure)</a>
 <ul>
-<li><a href="#org8f3266e">链接格式(Link Format)</a></li>
-<li><a href="#org8a7ca49">内部链接(Internal Links)</a></li>
-<li><a href="#org5be580a">无线电目标(Radio Targets)</a></li>
-<li><a href="#org21f0367">外部链接(External Links)</a></li>
-<li><a href="#org92c78a9">处理链接(Handling Links)</a></li>
-<li><a href="#org6ae9069">Org 文件外部使用链接(Using Links Outside Org)</a></li>
-<li><a href="#org03191db">链接缩写(Link Abbreviations)</a></li>
-<li><a href="#org3e58984">搜索选项(Search Options)</a>
+<li><a href="#org986a361">标题(Headlines)</a>
 <ul>
-<li><a href="#org9bf7256">文件链接的搜索选项(Search Options in File Links)</a></li>
+<li><a href="#org9551008"><span class="todo TODO">TODO</span> 跟读到 Clean View 这一部分后在这里做链接.</a></li>
+<li><a href="#org6870146"><span class="todo TODO">TODO</span> 动态标题编号,链接.</a></li>
 </ul>
 </li>
-<li><a href="#org17d52c3">自定义搜索(Custom Searches)</a></li>
+<li><a href="#org89758a4">标题可视性切换(Visibility Cycling)</a>
+<ul>
+<li><a href="#org9950460">全局和部分切换(Global and local cycling)</a></li>
+<li><a href="#org6eb7b9e">初始的可视性(Initial visibility)</a></li>
+<li><a href="#org35021a0">捕捉不经意的修改(Catching invisible edits)</a></li>
 </ul>
 </li>
-<li><a href="#orga14f4e0"><code>TODO</code> 条目(TODO Items)</a>
+<li><a href="#org3ba40f7">跳转(Motion)</a></li>
+<li><a href="#orgc444565">结构编辑(Structure Editing)</a></li>
+<li><a href="#org6e7529a">稀疏树(Sparse Trees)</a></li>
+<li><a href="#orgf40a947">简单列表(Plain Lists)</a></li>
+<li><a href="#org68052e8">抽屉 (Drawers)</a>
 <ul>
-<li><a href="#orge98a9b6"><code>TODO</code> 基础(TODO Basics)</a>
-<ul>
-<li><a href="#org1204356">基本的 TODO 功能(Basic TODO Functionality)</a></li>
+<li><a href="#org3d1ba80"><span class="todo TODO">TODO</span> <code>C-c C-z</code> 添加一个带时间戳的笔记到 <code>LOGBOOK</code> drawer. 写完这里,我执行了快捷键,在</a></li>
 </ul>
 </li>
-<li><a href="#org7f27be9"><code>TODO</code> 扩展(TODO Extensions)</a>
-<ul>
-<li><a href="#org1915644">工作流状态(Workflow states)</a></li>
-<li><a href="#org3ea0fd0"><code>TODO</code> 类型(TODO types)</a></li>
-<li><a href="#org933ccf0">多套关键字(Multiple sets in one file)</a></li>
-<li><a href="#org696de4c">快速访问 TODO 状态(Fast access to TODO states)</a></li>
-<li><a href="#org27e463c">单文件关键字(Per-file keywords)</a></li>
-<li><a href="#org93d31b6"><code>TODO</code> 关键字的外观(Faces for TODO keywords)</a></li>
-<li><a href="#org228d498"><code>TODO</code> 依赖项(TODO dependencies)</a></li>
+<li><a href="#orge1a5f36">块结构 (Blocks)</a></li>
 </ul>
 </li>
-<li><a href="#org598a18e">进度记录(Progress Logging)</a>
+<li><a href="#org1311b67">表格(Tables)</a>
 <ul>
-<li><a href="#org50e0423">关闭条目(Closing items)</a></li>
-<li><a href="#org2768e24">跟踪待办状态改变(Tracking TODO state changes)</a></li>
-<li><a href="#org069b289">跟踪你的习惯</a></li>
+<li><a href="#orga033480">内置表格编辑器(Built-in Table Editor)</a>
+<ul>
+<li><a href="#orgd9468dc">创建和转化表格(Creation and conversion)</a></li>
+<li><a href="#org800f665">重对齐和字段移动(re-align and field motion)</a></li>
+<li><a href="#org9b1083b">编辑列和行(Column and row editing)</a></li>
+<li><a href="#org4dada75">区域操作(Regions)</a></li>
+<li><a href="#org810b675">计算(Calculations)</a></li>
+<li><a href="#orgd1936d9">杂项(Miscellaneous)</a></li>
 </ul>
 </li>
-<li><a href="#org8d94f6e">优先级(Priorities)</a></li>
-<li><a href="#orgd6f53b0">分解任务(Breaking Down Tasks)</a></li>
-<li><a href="#org7b9c5ef">复选框(Checkboxes)</a></li>
+<li><a href="#orgb59bfe8">列宽和对齐(Column Width and Alignment)</a></li>
+<li><a href="#org4996f0e">列组(Column Groups)</a></li>
+<li><a href="#org7232ab8">Orgtbl Mode</a></li>
+<li><a href="#orgadb85e6">电子表格(The Spreadsheet)</a>
+<ul>
+<li><a href="#orgb4d5364">引用(Reference)</a></li>
+<li><a href="#orgdeab2d5">Calc 的公式语法(Formula syntax for Calc)</a></li>
+<li><a href="#orgb67767d">Lisp 的公式语法(Formula syntax for Lisp)</a></li>
+<li><a href="#org3e6819a">持续时间和时间值(Durations and time values)</a></li>
+<li><a href="#orgf211622">字段和范围公式(Field and range formulas)</a></li>
+<li><a href="#orgf749f3c">列公式(Column formulas)</a></li>
+<li><a href="#org77dae1f">查找函数(Lookup functions)</a></li>
+<li><a href="#org91543a4">编辑和调试公式(Editing and debugging formulas)</a></li>
+<li><a href="#org273caa9">更新表格(Updating the table)</a></li>
+<li><a href="#org0cfc2cd">高级功能(Advanced features)</a></li>
 </ul>
 </li>
-<li><a href="#orge1c04e5">标签(Tags)</a>
+<li><a href="#orge15606b">Org 绘图(Org Plot)</a>
 <ul>
-<li><a href="#org4a8b661">标签继承(Tag Inheritance)</a></li>
-<li><a href="#org895aba0">设置标签(Setting Tags)</a></li>
-<li><a href="#org60bee40">标签层级(Tag Hierarchy)</a></li>
-<li><a href="#org38f1c78">标签搜索(Tag Searches)</a></li>
-</ul>
-</li>
-<li><a href="#org7649e45">属性和列(Properties and Columns)</a>
-<ul>
-<li><a href="#org71159e7">属性语法(Property Syntax)</a></li>
-<li><a href="#orgd3faeef">特殊属性(Special Properties)</a></li>
-<li><a href="#orge37363c">属性搜索(Property Searches)</a></li>
-<li><a href="#orga2a2303">属性继承(Property Inheritance)</a></li>
-<li><a href="#org3d19e06">列视图(Column View)</a>
-<ul>
-<li><a href="#org6bac82b">定义列(Defining columns)</a></li>
-<li><a href="#org9385965">使用列视图(Using column view)</a></li>
-<li><a href="#orgd96789e">捕获列视图(Capturing column view)</a></li>
+<li><a href="#org2420b22">使用 Gnuplot 的图形绘图(Graphical plots using Gnuplot)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org8d413cf">日期和时间(Dates and Times)</a>
+<li><a href="#org40995e6">超链接(Hyperlinks)</a>
 <ul>
-<li><a href="#org89405ad">时间戳(Timestamps)</a></li>
-<li><a href="#orgfbf9778">创建时间戳(Creating Timestamps)</a>
+<li><a href="#org7cf1443">链接格式(Link Format)</a></li>
+<li><a href="#org706d5c1">内部链接(Internal Links)</a></li>
+<li><a href="#org4a28d50">无线电目标(Radio Targets)</a></li>
+<li><a href="#orgc880ab3">外部链接(External Links)</a></li>
+<li><a href="#org269dead">处理链接(Handling Links)</a></li>
+<li><a href="#orgc850bf7">Org 文件外部使用链接(Using Links Outside Org)</a></li>
+<li><a href="#org26dd074">链接缩写(Link Abbreviations)</a></li>
+<li><a href="#org8374d12">搜索选项(Search Options)</a>
 <ul>
-<li><a href="#org407ff8f">日期/时间提示(The date/time prompt)</a></li>
-<li><a href="#org83a12a7">自定义时间格式(Custom time format)</a></li>
+<li><a href="#orgdd6eb31">文件链接的搜索选项(Search Options in File Links)</a></li>
 </ul>
 </li>
-<li><a href="#org0e51213">截止时间和日程安排(Deadlines and Scheduling)</a>
-<ul>
-<li><a href="#org71ebcdb">插入截止日期/日程安排(Inserting deadline/schedule)</a></li>
-<li><a href="#orge867522">重复的任务(Repeated tasks)</a></li>
+<li><a href="#org8448aaf">自定义搜索(Custom Searches)</a></li>
 </ul>
 </li>
-<li><a href="#orgf648755">计时工作时间(Clocking Work Time)</a>
+<li><a href="#org3ac2fdd"><code>TODO</code> 条目(TODO Items)</a>
 <ul>
-<li><a href="#org6f98aed">计时命令(Clocking commands)</a></li>
-<li><a href="#org990d7f9">计时表格(The clock table)</a></li>
-<li><a href="#org14d8b0b">解决空闲时间(Resolving idle time)</a></li>
+<li><a href="#org8913f0b"><code>TODO</code> 基础(TODO Basics)</a>
+<ul>
+<li><a href="#orgb514a69">基本的 TODO 功能(Basic TODO Functionality)</a></li>
 </ul>
 </li>
-<li><a href="#org0a1a4c8">工作量估算(Effort Estimates)</a></li>
-<li><a href="#org7494c74">计时器(Times)</a></li>
+<li><a href="#org4628d55"><code>TODO</code> 扩展(TODO Extensions)</a>
+<ul>
+<li><a href="#org2f0c095">工作流状态(Workflow states)</a></li>
+<li><a href="#orgce1e604"><code>TODO</code> 类型(TODO types)</a></li>
+<li><a href="#org0f6cbaa">多套关键字(Multiple sets in one file)</a></li>
+<li><a href="#orgf8cc670">快速访问 TODO 状态(Fast access to TODO states)</a></li>
+<li><a href="#orgc27c155">单文件关键字(Per-file keywords)</a></li>
+<li><a href="#orgedc68d7"><code>TODO</code> 关键字的外观(Faces for TODO keywords)</a></li>
+<li><a href="#org6cb95a9"><code>TODO</code> 依赖项(TODO dependencies)</a></li>
 </ul>
 </li>
-<li><a href="#orgee2cc76">重新归档和存档(Refiling and Archiving)</a>
+<li><a href="#org1b0bf83">进度记录(Progress Logging)</a>
 <ul>
-<li><a href="#org42a5838">重新归档和复制(Refile and Copy)</a></li>
-<li><a href="#org7b7033a">存档(Archiving)</a>
+<li><a href="#org9b79e35">关闭条目(Closing items)</a></li>
+<li><a href="#orgf074593">跟踪待办状态改变(Tracking TODO state changes)</a></li>
+<li><a href="#org538d5d7">跟踪你的习惯</a></li>
+</ul>
+</li>
+<li><a href="#org598ed26">优先级(Priorities)</a></li>
+<li><a href="#org02277e6">分解任务(Breaking Down Tasks)</a></li>
+<li><a href="#org2443411">复选框(Checkboxes)</a></li>
+</ul>
+</li>
+<li><a href="#orgde513a9">标签(Tags)</a>
 <ul>
-<li><a href="#orga5444f0">移动子树(Moving subtrees)</a></li>
-<li><a href="#orgd46813e">内部存档(Internal archiving)</a></li>
+<li><a href="#org4be0b11">标签继承(Tag Inheritance)</a></li>
+<li><a href="#org75429e0">设置标签(Setting Tags)</a></li>
+<li><a href="#orgcd80846">标签层级(Tag Hierarchy)</a></li>
+<li><a href="#orga21b4bb">标签搜索(Tag Searches)</a></li>
+</ul>
+</li>
+<li><a href="#orgbc2e3ce">属性和列(Properties and Columns)</a>
+<ul>
+<li><a href="#org66718b9">属性语法(Property Syntax)</a></li>
+<li><a href="#orga8d6737">特殊属性(Special Properties)</a></li>
+<li><a href="#org6506e96">属性搜索(Property Searches)</a></li>
+<li><a href="#org45b0f2f">属性继承(Property Inheritance)</a></li>
+<li><a href="#orgee8f6fd">列视图(Column View)</a>
+<ul>
+<li><a href="#org481b8e4">定义列(Defining columns)</a></li>
+<li><a href="#org16b1356">使用列视图(Using column view)</a></li>
+<li><a href="#org40b0424">捕获列视图(Capturing column view)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgf278ea1"><span class="done DONE">DONE</span> 捕获和附件(Capture and Attachments)</a>
+<li><a href="#org4c5498c">日期和时间(Dates and Times)</a>
 <ul>
-<li><a href="#org6af6025">捕获(Capture)</a>
+<li><a href="#org0281924">时间戳(Timestamps)</a></li>
+<li><a href="#orgd2564b7">创建时间戳(Creating Timestamps)</a>
 <ul>
-<li><a href="#org263eca5">设置捕获(Setting up capture)</a></li>
-<li><a href="#org45de975">使用捕获(Using capture)</a></li>
-<li><a href="#orgb3191f3">捕获模版(Capture templates)</a></li>
+<li><a href="#orgd26d67a">日期/时间提示(The date/time prompt)</a></li>
+<li><a href="#org3387ebf">自定义时间格式(Custom time format)</a></li>
 </ul>
 </li>
-<li><a href="#org07b0834">附件(Attachments)</a>
+<li><a href="#org7b86a21">截止时间和日程安排(Deadlines and Scheduling)</a>
 <ul>
-<li><a href="#org9dc8abe">附件默认设置和调度程序(Attachment defaults and dispatcher)</a></li>
-<li><a href="#org2f04bd5">附件选项(Attachment options)</a></li>
-<li><a href="#org6d63aae">附件链接(Attachment links)</a></li>
-<li><a href="#org4fe26f1">使用 Git 进行自动版本控制(Automatic version-control with Git)</a></li>
-<li><a href="#org5089ea2">从 Dired 附加(Attach from Dired)</a></li>
+<li><a href="#orgff7727f">插入截止日期/日程安排(Inserting deadline/schedule)</a></li>
+<li><a href="#orged3cac4">重复的任务(Repeated tasks)</a></li>
 </ul>
 </li>
-<li><a href="#orgb4f43fb">RSS 订阅(RSS Feads)</a>
+<li><a href="#org76e8bc8">计时工作时间(Clocking Work Time)</a>
 <ul>
-<li><a href="#org9d233ec">测试</a></li>
+<li><a href="#orgf812f03">计时命令(Clocking commands)</a></li>
+<li><a href="#orgea38b70">计时表格(The clock table)</a></li>
+<li><a href="#orgc3fbe51">解决空闲时间(Resolving idle time)</a></li>
+</ul>
+</li>
+<li><a href="#org43813c4">工作量估算(Effort Estimates)</a></li>
+<li><a href="#orga1b18b7">计时器(Times)</a></li>
+</ul>
+</li>
+<li><a href="#orgd1a3988">重新归档和存档(Refiling and Archiving)</a>
+<ul>
+<li><a href="#org72144fb">重新归档和复制(Refile and Copy)</a></li>
+<li><a href="#org0eec6c2">存档(Archiving)</a>
+<ul>
+<li><a href="#orge99cd7e">移动子树(Moving subtrees)</a></li>
+<li><a href="#org6e34315">内部存档(Internal archiving)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgd1a3739"><span class="todo TODO">TODO</span> Agenda Views</a>
+<li><a href="#org227dfad"><span class="done DONE">DONE</span> 捕获和附件(Capture and Attachments)</a>
 <ul>
-<li><a href="#org6f5f55d">Weekly/daily agenda</a></li>
-<li><a href="#orgbca39f1">Agenda Commands</a></li>
-<li><a href="#orgd8d202e">Built-in Agenda Views</a>
+<li><a href="#orgbb46cf2">捕获(Capture)</a>
 <ul>
-<li><a href="#orgdb95050">匹配标签和属性(Matching tags and properties)</a></li>
+<li><a href="#orgc975166">设置捕获(Setting up capture)</a></li>
+<li><a href="#orgf187096">使用捕获(Using capture)</a></li>
+<li><a href="#org755b79d">捕获模版(Capture templates)</a></li>
 </ul>
 </li>
-<li><a href="#org12208c8">Agenda Column View</a></li>
+<li><a href="#org0431815">附件(Attachments)</a>
+<ul>
+<li><a href="#orgcf93f1a">附件默认设置和调度程序(Attachment defaults and dispatcher)</a></li>
+<li><a href="#org135f6d5">附件选项(Attachment options)</a></li>
+<li><a href="#org66b9310">附件链接(Attachment links)</a></li>
+<li><a href="#org173b705">使用 Git 进行自动版本控制(Automatic version-control with Git)</a></li>
+<li><a href="#orgd29ac21">从 Dired 附加(Attach from Dired)</a></li>
 </ul>
 </li>
-<li><a href="#org5ba4821"><span class="todo TODO">TODO</span> 富文本的标记(Markup for Rich Contents)</a>
+<li><a href="#org6e72fc5">RSS 订阅(RSS Feads)</a>
 <ul>
-<li><a href="#orgbf95e14">创建脚注(Creating Footnotes)</a></li>
+<li><a href="#org1399533">测试</a></li>
 </ul>
 </li>
-<li><a href="#org18197d1"><span class="todo TODO">TODO</span> 导出(Exporting)</a>
-<ul>
-<li><a href="#orgb7f455a">The Export Dispatcher(The main interface.) 导出调度器</a></li>
-<li><a href="#orgfe8ddd9">HTML Export</a></li>
 </ul>
 </li>
-<li><a href="#org270ae5d"><span class="todo TODO">TODO</span> 发布(Publishing)</a></li>
-<li><a href="#org3777b31"><span class="todo TODO">TODO</span> 引用处理(Citation handling)</a></li>
-<li><a href="#orgbb5e63f"><span class="todo TODO">TODO</span> 使用源代码(Working with Source Code)</a></li>
-<li><a href="#orga923c59"><span class="todo TODO">TODO</span> 杂项(Miscellaneous)</a>
+<li><a href="#org36657f7"><span class="todo TODO">TODO</span> Agenda Views</a>
 <ul>
-<li><a href="#org90c51c4">Conflicts</a></li>
-<li><a href="#orga941051">Protocols</a></li>
+<li><a href="#org8022a2b">Agenda Files</a></li>
+<li><a href="#orgd5ff3ea">Agenda Dispatcher</a></li>
+<li><a href="#org24c484c">Built-in Agenda Views</a>
+<ul>
+<li><a href="#org7aa83c1">Weekly/daily agenda</a></li>
+<li><a href="#orge14b0c9">Global TODO list</a></li>
+<li><a href="#org8014bd2">匹配标签和属性(Matching tags and properties)</a></li>
+<li><a href="#orgfe44925">Search view</a></li>
+<li><a href="#orge2d452b">Stuck projects</a></li>
 </ul>
 </li>
-<li><a href="#orgc41c205"><span class="todo TODO">TODO</span> Hacking</a>
+<li><a href="#org9c00ef6">Presentation and Sorting</a>
 <ul>
-<li><a href="#orgd9b0ec0">Dynamic Blocks</a></li>
-<li><a href="#orgc6c60dc">Adding Hyperlink Types</a></li>
+<li><a href="#org5eed72a">种类(Categories)</a></li>
+<li><a href="#org49ffd9e">Time-of-day specifications</a></li>
+<li><a href="#orga0b55fe">agenda 条目排序(Sorting og agenda items)</a></li>
+<li><a href="#org134aba9">过滤/限制 agenda 条目(Filtering/limiting agenda items)</a></li>
 </ul>
 </li>
-<li><a href="#org51275f4"><span class="todo TODO">TODO</span> History and Acknowledgments</a></li>
-<li><a href="#org68869aa"><span class="todo TODO">TODO</span> GNU Free Documentation License</a></li>
-<li><a href="#orge3bd835"><span class="todo TODO">TODO</span> Main Index</a></li>
-<li><a href="#orge061632"><span class="todo TODO">TODO</span> Key Index</a></li>
-<li><a href="#orgb59920a"><span class="todo TODO">TODO</span> Command and Function Index</a></li>
-<li><a href="#orgebea538"><span class="todo TODO">TODO</span> Variable Index</a></li>
-<li><a href="#orgb544b20"><span class="todo TODO">TODO</span> 正则表达式(Regular Expressions)</a></li>
-<li><a href="#org4ad09fc"><span class="todo TODO">TODO</span> Unfinished task</a></li>
-<li><a href="#orgb7f0b5d"><span class="todo TODO">TODO</span> Questions &amp; Answers</a>
+<li><a href="#orgbae7b23">Agenda Commands</a></li>
+<li><a href="#org06a94df">Custom Agenda Views</a>
 <ul>
-<li><a href="#org46c305f">orgmode '#STARTUP: hideblocks' doesn't work</a></li>
+<li><a href="#org03fe384">保存搜索(Storing searches)</a></li>
+<li><a href="#orgfdd9e21">Block agenda</a></li>
+<li><a href="#orgdc59097">设置选项(Setting options)</a></li>
+</ul>
+</li>
+<li><a href="#org3ea1e57">Exporting Agenda Views</a></li>
+<li><a href="#orgcbbdcc6">Agenda Column View</a></li>
+</ul>
+</li>
+<li><a href="#orgc248931"><span class="todo TODO">TODO</span> 富文本的标记(Markup for Rich Contents)</a>
+<ul>
+<li><a href="#org79926c9">创建脚注(Creating Footnotes)</a></li>
+</ul>
+</li>
+<li><a href="#org851df39"><span class="todo TODO">TODO</span> 导出(Exporting)</a>
+<ul>
+<li><a href="#org8ab1d9c">The Export Dispatcher(The main interface.) 导出调度器</a></li>
+<li><a href="#orgc9c0569">HTML Export</a></li>
+</ul>
+</li>
+<li><a href="#org3683e21"><span class="todo TODO">TODO</span> 发布(Publishing)</a></li>
+<li><a href="#org4406b6e"><span class="todo TODO">TODO</span> 引用处理(Citation handling)</a></li>
+<li><a href="#orgc429867"><span class="todo TODO">TODO</span> 使用源代码(Working with Source Code)</a></li>
+<li><a href="#org67ee481"><span class="todo TODO">TODO</span> 杂项(Miscellaneous)</a>
+<ul>
+<li><a href="#orgda692b8">Conflicts</a></li>
+<li><a href="#orgad5ad9e">Protocols</a></li>
+</ul>
+</li>
+<li><a href="#org06f2c41"><span class="todo TODO">TODO</span> Hacking</a>
+<ul>
+<li><a href="#orgc2ee90c">Dynamic Blocks</a></li>
+<li><a href="#org8762893">Adding Hyperlink Types</a></li>
+</ul>
+</li>
+<li><a href="#org5c490fe"><span class="todo TODO">TODO</span> History and Acknowledgments</a></li>
+<li><a href="#orge9b7c57"><span class="todo TODO">TODO</span> GNU Free Documentation License</a></li>
+<li><a href="#org535ea82"><span class="todo TODO">TODO</span> Main Index</a></li>
+<li><a href="#orgf1cfa0c"><span class="todo TODO">TODO</span> Key Index</a></li>
+<li><a href="#org9250911"><span class="todo TODO">TODO</span> Command and Function Index</a></li>
+<li><a href="#org1caa887"><span class="todo TODO">TODO</span> Variable Index</a></li>
+<li><a href="#orgd860e6b"><span class="todo TODO">TODO</span> 正则表达式(Regular Expressions)</a></li>
+<li><a href="#org3ce4e34"><span class="todo TODO">TODO</span> Unfinished task</a></li>
+<li><a href="#org2264fc3"><span class="todo TODO">TODO</span> Questions &amp; Answers</a>
+<ul>
+<li><a href="#org05c0da3">orgmode '#STARTUP: hideblocks' doesn't work</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgb78f545" class="outline-2">
-<h2 id="orgb78f545"><span class="todo TODO">TODO</span> 简介(Introduction)</h2>
-<div class="outline-text-2" id="text-orgb78f545">
+<div id="outline-container-orgfcc10af" class="outline-2">
+<h2 id="orgfcc10af"><span class="todo TODO">TODO</span> 简介(Introduction)</h2>
+<div class="outline-text-2" id="text-orgfcc10af">
 </div>
-<div id="outline-container-org523498a" class="outline-3">
-<h3 id="org523498a">总结(Summary)</h3>
+<div id="outline-container-orgdeeb732" class="outline-3">
+<h3 id="orgdeeb732">概要(Summary)</h3>
+<div class="outline-text-3" id="text-orgdeeb732">
+<p>
+Org 能做什么的概要.
+</p>
+
+<p>
+Org 是一个模式,它用快速高效的纯文本标记语言来记录笔记,维护待办列表和项目计划.它
+也是一个创作系统,对文学式编程和可复现的研究具有独特支持.
+</p>
+
+<p>
+Org 是在大纲模式的基础上实现的,这使得它能保持大型文件的结构良好.可视性循环和结构
+编辑有助于使用树结构.使用内置的表格编辑器很容易创建表格.纯文本URL链接连接到网
+站,邮件,新闻消息,BBDB 条目和任何与项目关联的文件.
+</p>
+
+<p>
+Org
+</p>
 </div>
-<div id="outline-container-orgcf96491" class="outline-3">
-<h3 id="orgcf96491">安装(Installation)</h3>
 </div>
-<div id="outline-container-org8440852" class="outline-3">
-<h3 id="org8440852">激活(Activation)</h3>
+<div id="outline-container-orgf7b44d3" class="outline-3">
+<h3 id="orgf7b44d3">安装(Installation)</h3>
+<div class="outline-text-3" id="text-orgf7b44d3">
+<p>
+安装 Org.
+</p>
+</div>
+</div>
+<div id="outline-container-org926e004" class="outline-3">
+<h3 id="org926e004">激活(Activation)</h3>
+<div class="outline-text-3" id="text-org926e004">
+<p>
+如何在特定缓冲区里激活 Org.
+</p>
+</div>
+</div>
+<div id="outline-container-org6b41f16" class="outline-3">
+<h3 id="org6b41f16">反馈(Feedback)</h3>
+<div class="outline-text-3" id="text-org6b41f16">
+<p>
+报告 Bug, 想法和补丁等等.
+</p>
+</div>
+</div>
+<div id="outline-container-org7b18098" class="outline-3">
+<h3 id="org7b18098"><span class="done DONE">DONE</span> 惯例(Conventions)</h3>
+<div class="outline-text-3" id="text-org7b18098">
+<p>
+本手册中使用的习惯用语.
+</p>
+</div>
+<div id="outline-container-orgf66f33a" class="outline-4">
+<h4 id="orgf66f33a"><span class="done DONE">DONE</span> <code>TODO</code> 关键字,标签,属性等等.</h4>
+<div class="outline-text-4" id="text-orgf66f33a">
+<p>
+Org 使用各种语法元素: TODO 关键字, 标签(tags), 属性名称, 关键字, 块等等.在这个手
+册里,我们使用下面的约定:
+</p>
+<dl class="org-dl">
+<dt><code>TODO</code> , <code>WAITING</code></dt><dd>TODO 关键字所有字母使用大写,即使他们是用户自定义的.</dd>
+<dt><code>boss</code> , <code>ARCHIVE</code></dt><dd>标签是大小写敏感的.用户自定义的标签通常是小写的;内置的有特殊
+意义的标签按其在文档中显示的方式书写,通常是所有字母大写.</dd>
+<dt><code>Release</code> , <code>PRIORITY</code></dt><dd>用户定义的属性是首字母大写的,内置的有特殊意义的属性是全
+部大写的.</dd>
+<dt><code>TITLE</code> , <code>BEGIN ... END</code></dt><dd>关键字和块结构是使用大写形式书写来增加其可读性,但是你
+也可以在你的 Org 文件里使用小写形式.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org4efc737" class="outline-4">
+<h4 id="org4efc737"><span class="done DONE">DONE</span> 快捷键绑定和命令</h4>
+<div class="outline-text-4" id="text-org4efc737">
+<p>
+手册列出了访问功能的快捷键和相应的命令. Org mode 经常对不同的方法(命令)使用相同
+的快捷键,这取决于上下文.被这样的快捷键绑定的命令有一个通用名称,比如
+<code>org-metaright</code>. 在手册中,我们会尽可能给出通用命令在内部调用的函数.例如,在文档结构
+的章节, <code>M-&lt;RIGHT&gt;</code> 将会展示为调用 <code>org-do-demote</code>, 然而在表格的章节,它会被列出以调
+用 <code>org-table-move-column-right</code>.
+</p>
+</div>
+</div>
 </div>
 </div>
 
-
-<div id="outline-container-org27279de" class="outline-2">
-<h2 id="org27279de">文件结构(document structure)</h2>
-<div class="outline-text-2" id="text-org27279de">
+<div id="outline-container-orgaab4795" class="outline-2">
+<h2 id="orgaab4795">文件结构(document structure)</h2>
+<div class="outline-text-2" id="text-orgaab4795">
 <p>
 Org 是一个大纲编辑器. 大纲让文件以层次结构组织文本,是一种很好的记录笔记和想法
 的工具.层次结构的概述是以折叠的方式实现的,也就是隐藏文档的大部分内容,只展示大
@@ -546,9 +649,9 @@ Org 是一个大纲编辑器. 大纲让文件以层次结构组织文本,是一�
 </p>
 </div>
 
-<div id="outline-container-orgf84e4b3" class="outline-3">
-<h3 id="orgf84e4b3">标题(Headlines)</h3>
-<div class="outline-text-3" id="text-orgf84e4b3">
+<div id="outline-container-org986a361" class="outline-3">
+<h3 id="org986a361">标题(Headlines)</h3>
+<div class="outline-text-3" id="text-org986a361">
 <blockquote>
 <p>
 这部分内容是关于如何排版 Org 标题树的.
@@ -573,9 +676,9 @@ Org 是一个大纲编辑器. 大纲让文件以层次结构组织文本,是一�
 </p>
 </div>
 
-<div id="outline-container-org3251341" class="outline-4">
-<h4 id="org3251341"><span class="todo TODO">TODO</span> 跟读到 Clean View 这一部分后在这里做链接.</h4>
-<div class="outline-text-4" id="text-org3251341">
+<div id="outline-container-org9551008" class="outline-4">
+<h4 id="org9551008"><span class="todo TODO">TODO</span> 跟读到 Clean View 这一部分后在这里做链接.</h4>
+<div class="outline-text-4" id="text-org9551008">
 <p>
 标题是没有编号的,但是可以动态的对他们进行部分或全部编号.更具体可以查看
 Dynamic Headline Numbering 这一部分.
@@ -583,9 +686,9 @@ Dynamic Headline Numbering 这一部分.
 </div>
 </div>
 
-<div id="outline-container-orgd397816" class="outline-4">
-<h4 id="orgd397816"><span class="todo TODO">TODO</span> 动态标题编号,链接.</h4>
-<div class="outline-text-4" id="text-orgd397816">
+<div id="outline-container-org6870146" class="outline-4">
+<h4 id="org6870146"><span class="todo TODO">TODO</span> 动态标题编号,链接.</h4>
+<div class="outline-text-4" id="text-org6870146">
 <p>
 一个标题子树内容中,最后一行的空白行会被当作该子树的一部分,在折叠时会被折叠.但如果
 最后有超过两行的空行,在折叠后标题之间就会有一行空行被保留,用来构成折叠视图.
@@ -604,18 +707,18 @@ Dynamic Headline Numbering 这一部分.
 </div>
 
 
-<div id="outline-container-orgf1ebbfb" class="outline-3">
-<h3 id="orgf1ebbfb">标题可视性切换(Visibility Cycling)</h3>
-<div class="outline-text-3" id="text-orgf1ebbfb">
+<div id="outline-container-org89758a4" class="outline-3">
+<h3 id="org89758a4">标题可视性切换(Visibility Cycling)</h3>
+<div class="outline-text-3" id="text-org89758a4">
 <blockquote>
 <p>
 这部分是关于隐藏和显示 Org 大纲的.标题可视性就是标题的折叠状态.
 </p>
 </blockquote>
 </div>
-<div id="outline-container-org86265db" class="outline-4">
-<h4 id="org86265db">全局和部分切换(Global and local cycling)</h4>
-<div class="outline-text-4" id="text-org86265db">
+<div id="outline-container-org9950460" class="outline-4">
+<h4 id="org9950460">全局和部分切换(Global and local cycling)</h4>
+<div class="outline-text-4" id="text-org9950460">
 <p>
 大纲功能可以隐藏当前缓冲区的部分文本. Org 只用两个命令去改变缓冲区文本的可视
 性,默认被绑定到 <code>&lt;TAB&gt;</code> 和 <code>S-&lt;TAB&gt;</code> 快捷键.
@@ -723,9 +826,9 @@ Dynamic Headline Numbering 这一部分.
 </div>
 </div>
 
-<div id="outline-container-org59a300a" class="outline-4">
-<h4 id="org59a300a">初始的可视性(Initial visibility)</h4>
-<div class="outline-text-4" id="text-org59a300a">
+<div id="outline-container-org6eb7b9e" class="outline-4">
+<h4 id="org6eb7b9e">初始的可视性(Initial visibility)</h4>
+<div class="outline-text-4" id="text-org6eb7b9e">
 <p>
 当 Emacs 第一次打开一个 Org 文件时, 全局状态被设置为显示所有
 ('showeverything'), 也就是说,文件的所有内容都会被显示. 这个行为可以通过配置
@@ -762,13 +865,13 @@ Dynamic Headline Numbering 这一部分.
 </div>
 
 <ul class="org-ul">
-<li><a id="org75da7ba"></a><span class="todo TODO">TODO</span> Speeding Up Your Agendas 需要链接.<br /></li>
+<li><a id="org852a505"></a><span class="todo TODO">TODO</span> Speeding Up Your Agendas 需要链接.<br /></li>
 </ul>
 </div>
 
-<div id="outline-container-org54a3367" class="outline-4">
-<h4 id="org54a3367">捕捉不经意的修改(Catching invisible edits)</h4>
-<div class="outline-text-4" id="text-org54a3367">
+<div id="outline-container-org35021a0" class="outline-4">
+<h4 id="org35021a0">捕捉不经意的修改(Catching invisible edits)</h4>
+<div class="outline-text-4" id="text-org35021a0">
 <p>
 有时候, 当无意识地编辑了缓冲区中不可视的内容时,会遇到不知道到底什么被编辑了
 和怎么撤销错误的问题.
@@ -779,9 +882,9 @@ Dynamic Headline Numbering 这一部分.
 </div>
 </div>
 
-<div id="outline-container-orge06e341" class="outline-3">
-<h3 id="orge06e341">跳转(Motion)</h3>
-<div class="outline-text-3" id="text-orge06e341">
+<div id="outline-container-org3ba40f7" class="outline-3">
+<h3 id="org3ba40f7">跳转(Motion)</h3>
+<div class="outline-text-3" id="text-org3ba40f7">
 <blockquote>
 <p>
 这部分是关于跳转到其他标题的.
@@ -867,9 +970,9 @@ Dynamic Headline Numbering 这一部分.
 </div>
 
 
-<div id="outline-container-orgb8660e3" class="outline-3">
-<h3 id="orgb8660e3">结构编辑(Structure Editing)</h3>
-<div class="outline-text-3" id="text-orgb8660e3">
+<div id="outline-container-orgc444565" class="outline-3">
+<h3 id="orgc444565">结构编辑(Structure Editing)</h3>
+<div class="outline-text-3" id="text-orgc444565">
 <blockquote>
 <p>
 这部分内容是如何改变标题的次序和层级.
@@ -1092,9 +1195,9 @@ Dynamic Headline Numbering 这一部分.
 </div>
 </div>
 
-<div id="outline-container-org908ec40" class="outline-3">
-<h3 id="org908ec40">稀疏树(Sparse Trees)</h3>
-<div class="outline-text-3" id="text-org908ec40">
+<div id="outline-container-org6e7529a" class="outline-3">
+<h3 id="org6e7529a">稀疏树(Sparse Trees)</h3>
+<div class="outline-text-3" id="text-org6e7529a">
 <blockquote>
 <p>
 上下文匹配内嵌内容.(稀疏表示是降低表示的复杂度,或者说是减少参数稀疏)这里我理解
@@ -1180,9 +1283,9 @@ Org 有几个用来创建这样的树的命令,这些命令可以通过一个调
 </p>
 </div>
 </div>
-<div id="outline-container-org43ab869" class="outline-3">
-<h3 id="org43ab869">简单列表(Plain Lists)</h3>
-<div class="outline-text-3" id="text-org43ab869">
+<div id="outline-container-orgf40a947" class="outline-3">
+<h3 id="orgf40a947">简单列表(Plain Lists)</h3>
+<div class="outline-text-3" id="text-orgf40a947">
 <blockquote>
 <p>
 在一个标题条目中,额外的结构.
@@ -1307,9 +1410,9 @@ Org 支持这些列表的转化,填充和包裹操作的命令,也支持正确�
 </div>
 
 
-<div id="outline-container-org0865ad6" class="outline-3">
-<h3 id="org0865ad6">抽屉 (Drawers)</h3>
-<div class="outline-text-3" id="text-org0865ad6">
+<div id="outline-container-org68052e8" class="outline-3">
+<h3 id="org68052e8">抽屉 (Drawers)</h3>
+<div class="outline-text-3" id="text-org68052e8">
 <ul class="org-ul">
 <li>Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2022-01-13 Thu 15:14] </span></span> <br />
 快速记录一个带时间戳的笔记.</li>
@@ -1354,9 +1457,9 @@ drawer 也可以用来记录状态变化的笔记和记录时间信息(<code>LOG
 </p>
 </div>
 
-<div id="outline-container-orged16dda" class="outline-4">
-<h4 id="orged16dda"><span class="todo TODO">TODO</span> <code>C-c C-z</code> 添加一个带时间戳的笔记到 <code>LOGBOOK</code> drawer. 写完这里,我执行了快捷键,在</h4>
-<div class="outline-text-4" id="text-orged16dda">
+<div id="outline-container-org3d1ba80" class="outline-4">
+<h4 id="org3d1ba80"><span class="todo TODO">TODO</span> <code>C-c C-z</code> 添加一个带时间戳的笔记到 <code>LOGBOOK</code> drawer. 写完这里,我执行了快捷键,在</h4>
+<div class="outline-text-4" id="text-org3d1ba80">
 <p>
 抽屉这一小结添加了一条带时间戳的笔记,虽然文档里写的是导出到 <code>LOGBOOK</code> 抽屉,但
 是实际操作后发现笔记没有记录到 <code>LOGBOOK</code> 类型的抽屉里, <code>Clocking Work Time</code>
@@ -1371,9 +1474,9 @@ drawer 也可以用来记录状态变化的笔记和记录时间信息(<code>LOG
 
 
 
-<div id="outline-container-org3f7aea8" class="outline-3">
-<h3 id="org3f7aea8">块结构 (Blocks)</h3>
-<div class="outline-text-3" id="text-org3f7aea8">
+<div id="outline-container-orge1a5f36" class="outline-3">
+<h3 id="orge1a5f36">块结构 (Blocks)</h3>
+<div class="outline-text-3" id="text-orge1a5f36">
 <blockquote>
 <p>
 这部分讲可折叠的块结构.块结构可以用来容纳源代码,记录时间信息和其他许多功能.
@@ -1381,7 +1484,7 @@ drawer 也可以用来记录状态变化的笔记和记录时间信息(<code>LOG
 </blockquote>
 <p>
 Org 用 <code>#+BEGIN ... #+END</code> 做源代码(<code>Literal Examples</code>),引用文本或时间记录
-(<a href="#orgf648755">计时工作时间(Clocking Work Time)</a>)等多种用途.当光标在 <code>#+BEGIN</code> 行时可以用
+(<a href="#org76e8bc8">计时工作时间(Clocking Work Time)</a>)等多种用途.当光标在 <code>#+BEGIN</code> 行时可以用
 <code>&lt;TAB&gt;</code> 进行折叠.可以设置变量 <code>org-hide-block-startup</code> 来让块结构在一开始处于折
 叠或展开状态.也可以在每个文件都设置 <code>#+STARTUP: hideblocks</code> 或 <code>#+STARTUP:
     nohideblocks</code> 来为每个文件设置块结构的初始折叠状态.文件里的设置是会覆盖变量设
@@ -1390,9 +1493,9 @@ Org 用 <code>#+BEGIN ... #+END</code> 做源代码(<code>Literal Examples</code
 </div>
 </div>
 </div>
-<div id="outline-container-org43c3395" class="outline-2">
-<h2 id="org43c3395">表格(Tables)</h2>
-<div class="outline-text-2" id="text-org43c3395">
+<div id="outline-container-org1311b67" class="outline-2">
+<h2 id="org1311b67">表格(Tables)</h2>
+<div class="outline-text-2" id="text-org1311b67">
 <p>
 Org 自带快速和直观的表格编辑器.电子表格程序类似的计算器功能通过使用 Emacs 的 Calc
 </p>
@@ -1402,9 +1505,9 @@ Org 自带快速和直观的表格编辑器.电子表格程序类似的计算器
 </div>
 
 
-<div id="outline-container-org3e3972b" class="outline-3">
-<h3 id="org3e3972b">内置表格编辑器(Built-in Table Editor)</h3>
-<div class="outline-text-3" id="text-org3e3972b">
+<div id="outline-container-orga033480" class="outline-3">
+<h3 id="orga033480">内置表格编辑器(Built-in Table Editor)</h3>
+<div class="outline-text-3" id="text-orga033480">
 <blockquote>
 <p>
 简单表格.
@@ -1452,9 +1555,9 @@ Org 能很容易的格式化纯 ASCII 格式的表格.任何一行以 <code>|</c
 </div>
 </div>
 
-<div id="outline-container-org852bff5" class="outline-4">
-<h4 id="org852bff5">创建和转化表格(Creation and conversion)</h4>
-<div class="outline-text-4" id="text-org852bff5">
+<div id="outline-container-orgd9468dc" class="outline-4">
+<h4 id="orgd9468dc">创建和转化表格(Creation and conversion)</h4>
+<div class="outline-text-4" id="text-orgd9468dc">
 <dl class="org-dl">
 <dt><code>C-c |</code> &#x2013; <code>(org-table-create-or-convert-from-region)</code></dt><dd>将选中区域转化为表格.
 如果每行都包含至少一个 <code>&lt;TAB&gt;</code> 字符,这个方法会假定表格是由制表符分隔的,如果
@@ -1470,9 +1573,9 @@ Org 能很容易的格式化纯 ASCII 格式的表格.任何一行以 <code>|</c
 </div>
 
 
-<div id="outline-container-orgbdb0b42" class="outline-4">
-<h4 id="orgbdb0b42">重对齐和字段移动(re-align and field motion)</h4>
-<div class="outline-text-4" id="text-orgbdb0b42">
+<div id="outline-container-org800f665" class="outline-4">
+<h4 id="org800f665">重对齐和字段移动(re-align and field motion)</h4>
+<div class="outline-text-4" id="text-org800f665">
 <dl class="org-dl">
 <dt><code>C-c C-c</code> &#x2013; <code>(org-table-align)</code></dt><dd>重新排列表格,不移动光标.</dd>
 <dt><code>&lt;TAB&gt;</code> &#x2013; <code>(org-table-next-field)</code></dt><dd>重排表格,并移动光标到下一字段,如果有必要
@@ -1492,9 +1595,9 @@ Org 能很容易的格式化纯 ASCII 格式的表格.任何一行以 <code>|</c
 
 
 
-<div id="outline-container-org0c93254" class="outline-4">
-<h4 id="org0c93254">编辑列和行(Column and row editing)</h4>
-<div class="outline-text-4" id="text-org0c93254">
+<div id="outline-container-org9b1083b" class="outline-4">
+<h4 id="org9b1083b">编辑列和行(Column and row editing)</h4>
+<div class="outline-text-4" id="text-org9b1083b">
 <dl class="org-dl">
 <dt><code>M-&lt;LEFT&gt;</code> &#x2013; <code>(org-table-move-column-left)</code></dt><dd>将当前列左移.</dd>
 
@@ -1548,9 +1651,9 @@ Org 能很容易的格式化纯 ASCII 格式的表格.任何一行以 <code>|</c
 </div>
 
 
-<div id="outline-container-org4ed1011" class="outline-4">
-<h4 id="org4ed1011">区域操作(Regions)</h4>
-<div class="outline-text-4" id="text-org4ed1011">
+<div id="outline-container-org4dada75" class="outline-4">
+<h4 id="org4dada75">区域操作(Regions)</h4>
+<div class="outline-text-4" id="text-org4dada75">
 <dl class="org-dl">
 <dt><code>C-c C-x M-w</code> &#x2013; <code>(org-table-copy-region)</code></dt><dd>将表格的"矩形区域"选区复制到特殊的剪贴
 板.如果没有选中区域,只复制当前单元格内的字段.这个操作无视水平分割线.</dd>
@@ -1571,9 +1674,9 @@ Org 能很容易的格式化纯 ASCII 格式的表格.任何一行以 <code>|</c
 </div>
 </div>
 
-<div id="outline-container-orgd355385" class="outline-4">
-<h4 id="orgd355385">计算(Calculations)</h4>
-<div class="outline-text-4" id="text-orgd355385">
+<div id="outline-container-org810b675" class="outline-4">
+<h4 id="org810b675">计算(Calculations)</h4>
+<div class="outline-text-4" id="text-org810b675">
 <dl class="org-dl">
 <dt><code>C-c +</code> &#x2013; <code>(org-table-sum)</code></dt><dd>将当前列或有选区定义的矩形区域的数字求和.求和
 结果会在显示区域(echo area) 显示并且可以通过 <code>C-y</code> 粘贴.</dd>
@@ -1587,9 +1690,9 @@ Org 能很容易的格式化纯 ASCII 格式的表格.任何一行以 <code>|</c
 </div>
 </div>
 
-<div id="outline-container-org6451373" class="outline-4">
-<h4 id="org6451373">杂项(Miscellaneous)</h4>
-<div class="outline-text-4" id="text-org6451373">
+<div id="outline-container-orgd1936d9" class="outline-4">
+<h4 id="orgd1936d9">杂项(Miscellaneous)</h4>
+<div class="outline-text-4" id="text-orgd1936d9">
 <dl class="org-dl">
 <dt><code>C-c `</code> &#x2013; <code>(org-table-edit-field)</code></dt><dd>打开一个独立窗口来编辑当前字段.这在字段
 不是完全可见时很有用(见下节的 Column Width and Alignment). 当与前缀参数
@@ -1628,9 +1731,9 @@ Org 能很容易的格式化纯 ASCII 格式的表格.任何一行以 <code>|</c
 
 
 
-<div id="outline-container-org8dabae3" class="outline-3">
-<h3 id="org8dabae3">列宽和对齐(Column Width and Alignment)</h3>
-<div class="outline-text-3" id="text-org8dabae3">
+<div id="outline-container-orgb59bfe8" class="outline-3">
+<h3 id="orgb59bfe8">列宽和对齐(Column Width and Alignment)</h3>
+<div class="outline-text-3" id="text-orgb59bfe8">
 <blockquote>
 <p>
 否定自动设置.
@@ -1782,9 +1885,9 @@ Org 能很容易的格式化纯 ASCII 格式的表格.任何一行以 <code>|</c
 </div>
 </div>
 
-<div id="outline-container-org906ea4b" class="outline-3">
-<h3 id="org906ea4b">列组(Column Groups)</h3>
-<div class="outline-text-3" id="text-org906ea4b">
+<div id="outline-container-org4996f0e" class="outline-3">
+<h3 id="org4996f0e">列组(Column Groups)</h3>
+<div class="outline-text-3" id="text-org4996f0e">
 <blockquote>
 <p>
 分组以触发(生成)竖线
@@ -1950,9 +2053,9 @@ Org 能很容易的格式化纯 ASCII 格式的表格.任何一行以 <code>|</c
 </div>
 </div>
 
-<div id="outline-container-orga2c7bb7" class="outline-3">
-<h3 id="orga2c7bb7">Orgtbl Mode</h3>
-<div class="outline-text-3" id="text-orga2c7bb7">
+<div id="outline-container-org7232ab8" class="outline-3">
+<h3 id="org7232ab8">Orgtbl Mode</h3>
+<div class="outline-text-3" id="text-org7232ab8">
 <blockquote>
 <p>
 将表格编辑器设置为副模式
@@ -1976,9 +2079,9 @@ Org 能很容易的格式化纯 ASCII 格式的表格.任何一行以 <code>|</c
 </div>
 
 
-<div id="outline-container-orge61c5f1" class="outline-3">
-<h3 id="orge61c5f1">电子表格(The Spreadsheet)</h3>
-<div class="outline-text-3" id="text-orge61c5f1">
+<div id="outline-container-orgadb85e6" class="outline-3">
+<h3 id="orgadb85e6">电子表格(The Spreadsheet)</h3>
+<div class="outline-text-3" id="text-orgadb85e6">
 <blockquote>
 <p>
 Org 表格编辑器有电子表格程序的功能
@@ -1992,9 +2095,9 @@ Lisp 公式,以从其他字段派生字段.尽管功能齐全,但是Org功能的
 与公式中引用相关的字段的特性,可以通过方向键移动这些引用.
 </p>
 </div>
-<div id="outline-container-org9376342" class="outline-4">
-<h4 id="org9376342">引用(Reference)</h4>
-<div class="outline-text-4" id="text-org9376342">
+<div id="outline-container-orgb4d5364" class="outline-4">
+<h4 id="orgb4d5364">引用(Reference)</h4>
+<div class="outline-text-4" id="text-orgb4d5364">
 <blockquote>
 <p>
 如何引用另一个字段或范围.
@@ -2008,8 +2111,8 @@ Lisp 公式,以从其他字段派生字段.尽管功能齐全,但是Org功能的
 </div>
 
 <ul class="org-ul">
-<li><a id="org46b2f7c"></a>字段引用(Field references)<br />
-<div class="outline-text-5" id="text-org46b2f7c">
+<li><a id="org965fc57"></a>字段引用(Field references)<br />
+<div class="outline-text-5" id="text-org965fc57">
 <p>
 公式可以用两种方式引用其他字段中的值.和其他电子表格程序一样,你可以使用字母
 和数字的组合像 <code>B3</code> 这样来引用字段,意思是第三行的第二个字段.然而,Org 更倾向使
@@ -2062,8 +2165,8 @@ Org 的无符号数字引用是固定引用,即如果在公式中对两个不同
 </li>
 
 
-<li><a id="org870703a"></a>范围引用(Range references)<br />
-<div class="outline-text-5" id="text-org870703a">
+<li><a id="org79d8e5c"></a>范围引用(Range references)<br />
+<div class="outline-text-5" id="text-org79d8e5c">
 <p>
 你可以通过指定两个用点 <code>..</code> 连接的字段引用来引用一个字段的矩形区域. 结束的字
 段包含在引用范围之内. 如果两个字段都在当前行,你可以简单的使用 <code>$2..$7</code> ,但如
@@ -2083,14 +2186,14 @@ Org 的无符号数字引用是固定引用,即如果在公式中对两个不同
 <p>
 范围引用返回值的向量,这个向量可以输入到 Calc 的向量函数.范围中的空字段通常
 会被删除,所以向量中只包含非空字段.至于其他的模式开关 <code>E</code> , <code>N</code> 和示例的选项,参
-见 <a href="#orgc90dc3a">Calc 的公式语法(Formula syntax for Calc)</a>.也就是下一节.
+见 <a href="#orgdeab2d5">Calc 的公式语法(Formula syntax for Calc)</a>.也就是下一节.
 </p>
 </div>
 </li>
 
 
-<li><a id="org7bdf24c"></a>公式中的字段座标(Field coordinates in formulas)<br />
-<div class="outline-text-5" id="text-org7bdf24c">
+<li><a id="org4599a80"></a>公式中的字段座标(Field coordinates in formulas)<br />
+<div class="outline-text-5" id="text-org4599a80">
 <p>
 Calc 公式和 Lisp 公式在计算中的第一个行为是用当前计算结果要填充的字段的行或
 列号替换公式中的 <code>@#</code> 和 <code>$#</code>.传统的 Lisp 公式结果是 <code>org-table-current-dline</code> 和
@@ -2116,8 +2219,8 @@ Calc 公式和 Lisp 公式在计算中的第一个行为是用当前计算结果
 </li>
 
 
-<li><a id="org326e4c6"></a>名称引用(Named references)<br />
-<div class="outline-text-5" id="text-org326e4c6">
+<li><a id="org6331d52"></a>名称引用(Named references)<br />
+<div class="outline-text-5" id="text-org6331d52">
 <p>
 <code>$name</code> 被解释为列,参数或常量的名字. 常量通过变量 <code>org-table-formula-constants</code>
 全局范围内定义,通过这样一行在本地或文件范围内定义:
@@ -2129,7 +2232,7 @@ Calc 公式和 Lisp 公式在计算中的第一个行为是用当前计算结果
 此外,属性也可以在表格里用作常量: 属性 <code>Xyz</code> 可以用 <code>$PROP_Xyz</code> 作为名称引用,属
 性值会在当前大纲项目和其层级之上的项目中搜索. 如果你使用了 <code>constants.el</code> 包,
 这个包也会用来处理常量,包括像普朗克常量 <code>$h</code> 这样的自然常量,像千米 <code>$km</code> 这样的
-单位.这些都在下面的 高级特性里描述(<a href="#orgfa0f377">高级功能(Advanced features)</a>) . 所有的名称都必须以字
+单位.这些都在下面的 高级特性里描述(<a href="#org0cfc2cd">高级功能(Advanced features)</a>) . 所有的名称都必须以字
 母开始,剩下的由字母和数字组成.
 </p>
 
@@ -2141,8 +2244,8 @@ Calc 公式和 Lisp 公式在计算中的第一个行为是用当前计算结果
 </div>
 </li>
 
-<li><a id="orgfa0c8ab"></a>外部引用(Remote references)<br />
-<div class="outline-text-5" id="text-orgfa0c8ab">
+<li><a id="org0844f98"></a>外部引用(Remote references)<br />
+<div class="outline-text-5" id="text-org0844f98">
 <p>
 你可以从当前文件甚至是从其他文件的不同的表格中引用常量,字段和范围.语法是:
 </p>
@@ -2166,9 +2269,9 @@ ID. 例如 <code>remote($1, @@&gt;$2)</code> ⇒ <code>remote(year_2013, @@&gt;$
 </ul>
 </div>
 
-<div id="outline-container-orgc90dc3a" class="outline-4">
-<h4 id="orgc90dc3a">Calc 的公式语法(Formula syntax for Calc)</h4>
-<div class="outline-text-4" id="text-orgc90dc3a">
+<div id="outline-container-orgdeab2d5" class="outline-4">
+<h4 id="orgdeab2d5">Calc 的公式语法(Formula syntax for Calc)</h4>
+<div class="outline-text-4" id="text-orgdeab2d5">
 <blockquote>
 <p>
 用 <code>Calc</code> 来进行计算.
@@ -2204,7 +2307,7 @@ Calc 和其他模式的标签组成.默认情况下,Org 使用标准的 Calc 模
 
 <dt><code>F, S</code></dt><dd>Calc 的小数和符号模式.</dd>
 
-<dt><code>T, t, U</code></dt><dd>Calc 或 Lisp 的持续时间计算, 查看 <a href="#orgda48852">持续时间和时间值(Durations and time values)</a>.</dd>
+<dt><code>T, t, U</code></dt><dd>Calc 或 Lisp 的持续时间计算, 查看 <a href="#org3e6819a">持续时间和时间值(Durations and time values)</a>.</dd>
 
 <dt><code>E</code></dt><dd>如何处理空字段.没有 <code>E</code> ,范围引用中的空字段会被删除,以便 Calc 向量或
 Lisp 列表只包含非空字段.带上 <code>E</code> ,空字段会被保留.对于范围引用中的空字段或
@@ -2216,7 +2319,7 @@ Lisp 列表只包含非空字段.带上 <code>E</code> ,空字段会被保留.�
 式里对计算有多重要.在 Calc 公式里,这个模式只是偶尔使用,因为即使没有 <code>N</code>,数
 字字符串已经被解释为数字了</dd>
 
-<dt><code>L</code></dt><dd>Literal, 只针对Lisp 公式,查看下一节 <a href="#org7512263">Lisp 的公式语法(Formula syntax for Lisp)</a>.</dd>
+<dt><code>L</code></dt><dd>Literal, 只针对Lisp 公式,查看下一节 <a href="#orgb67767d">Lisp 的公式语法(Formula syntax for Lisp)</a>.</dd>
 </dl>
 
 <p>
@@ -2280,9 +2383,9 @@ Org 表格结果字段被设置为空字符串.</dd>
 </div>
 </div>
 
-<div id="outline-container-org7512263" class="outline-4">
-<h4 id="org7512263">Lisp 的公式语法(Formula syntax for Lisp)</h4>
-<div class="outline-text-4" id="text-org7512263">
+<div id="outline-container-orgb67767d" class="outline-4">
+<h4 id="orgb67767d">Lisp 的公式语法(Formula syntax for Lisp)</h4>
+<div class="outline-text-4" id="text-orgb67767d">
 <blockquote>
 <p>
 用 Emacs Lisp 写公式.
@@ -2321,9 +2424,9 @@ Org 表格结果字段被设置为空字符串.</dd>
 </div>
 </div>
 
-<div id="outline-container-orgda48852" class="outline-4">
-<h4 id="orgda48852">持续时间和时间值(Durations and time values)</h4>
-<div class="outline-text-4" id="text-orgda48852">
+<div id="outline-container-org3e6819a" class="outline-4">
+<h4 id="org3e6819a">持续时间和时间值(Durations and time values)</h4>
+<div class="outline-text-4" id="text-org3e6819a">
 <blockquote>
 <p>
 如何计算持续时间和时间值.
@@ -2402,9 +2505,9 @@ Org 表格结果字段被设置为空字符串.</dd>
 </div>
 </div>
 
-<div id="outline-container-org01068ff" class="outline-4">
-<h4 id="org01068ff">字段和范围公式(Field and range formulas)</h4>
-<div class="outline-text-4" id="text-org01068ff">
+<div id="outline-container-orgf211622" class="outline-4">
+<h4 id="orgf211622">字段和范围公式(Field and range formulas)</h4>
+<div class="outline-text-4" id="text-orgf211622">
 <blockquote>
 <p>
 特定字段(字段范围)的公式.
@@ -2448,9 +2551,9 @@ Org 表格结果字段被设置为空字符串.</dd>
 </div>
 </div>
 
-<div id="outline-container-org68d0a1f" class="outline-4">
-<h4 id="org68d0a1f">列公式(Column formulas)</h4>
-<div class="outline-text-4" id="text-org68d0a1f">
+<div id="outline-container-orgf749f3c" class="outline-4">
+<h4 id="orgf749f3c">列公式(Column formulas)</h4>
+<div class="outline-text-4" id="text-orgf749f3c">
 <blockquote>
 <p>
 对整列有效的公式.
@@ -2485,9 +2588,9 @@ Org 表格结果字段被设置为空字符串.</dd>
 </div>
 </div>
 
-<div id="outline-container-org8ef2c6d" class="outline-4">
-<h4 id="org8ef2c6d">查找函数(Lookup functions)</h4>
-<div class="outline-text-4" id="text-org8ef2c6d">
+<div id="outline-container-org77dae1f" class="outline-4">
+<h4 id="org77dae1f">查找函数(Lookup functions)</h4>
+<div class="outline-text-4" id="text-org77dae1f">
 <blockquote>
 <p>
 用于搜索表格的查找函数.
@@ -2530,9 +2633,9 @@ R-LIST 到 S-LIST的相关映射.
 </div>
 </div>
 
-<div id="outline-container-orgbcdee26" class="outline-4">
-<h4 id="orgbcdee26">编辑和调试公式(Editing and debugging formulas)</h4>
-<div class="outline-text-4" id="text-orgbcdee26">
+<div id="outline-container-org91543a4" class="outline-4">
+<h4 id="org91543a4">编辑和调试公式(Editing and debugging formulas)</h4>
+<div class="outline-text-4" id="text-org91543a4">
 <blockquote>
 <p>
 修正公式.
@@ -2615,8 +2718,8 @@ R-LIST 到 S-LIST的相关映射.
 
 
 <ul class="org-ul">
-<li><a id="org081e7a2"></a>使用多个 <code>TBLFM</code> 行(Using multiple TBLFM lines)<br />
-<div class="outline-text-5" id="text-org081e7a2">
+<li><a id="orgfbec1cc"></a>使用多个 <code>TBLFM</code> 行(Using multiple TBLFM lines)<br />
+<div class="outline-text-5" id="text-orgfbec1cc">
 <p>
 你可能想要暂时应用某个公式. 这在你想要切换应用到表格里的公式时很有用.将多个
 <code>TBLFM</code> 关键词直接放在表格之后,然后在公式上按 <code>C-c C-c</code>. 下面是使用的例子:
@@ -2695,8 +2798,8 @@ R-LIST 到 S-LIST的相关映射.
 </div>
 </li>
 
-<li><a id="orgd3d6c24"></a>调试公式(Debugging formulas)<br />
-<div class="outline-text-5" id="text-orgd3d6c24">
+<li><a id="orgf93a6b1"></a>调试公式(Debugging formulas)<br />
+<div class="outline-text-5" id="text-orgf93a6b1">
 <p>
 当公式的计算发生了错误时,字段的内容会变成字符串 "#ERROR". 如果你想查看在变
 量替换和计算的过程中发生了什么,以便找出bug, 在Tbl 菜单里打开公式调试,然后重
@@ -2708,9 +2811,9 @@ R-LIST 到 S-LIST的相关映射.
 </ul>
 </div>
 
-<div id="outline-container-org3ea952b" class="outline-4">
-<h4 id="org3ea952b">更新表格(Updating the table)</h4>
-<div class="outline-text-4" id="text-org3ea952b">
+<div id="outline-container-org273caa9" class="outline-4">
+<h4 id="org273caa9">更新表格(Updating the table)</h4>
+<div class="outline-text-4" id="text-org273caa9">
 <blockquote>
 <p>
 重新计算所有相关字段.
@@ -2745,9 +2848,9 @@ R-LIST 到 S-LIST的相关映射.
 </div>
 </div>
 
-<div id="outline-container-orgfa0f377" class="outline-4">
-<h4 id="orgfa0f377">高级功能(Advanced features)</h4>
-<div class="outline-text-4" id="text-orgfa0f377">
+<div id="outline-container-org0cfc2cd" class="outline-4">
+<h4 id="org0cfc2cd">高级功能(Advanced features)</h4>
+<div class="outline-text-4" id="text-org0cfc2cd">
 <blockquote>
 <p>
 字段和列名,自动重计算等等.
@@ -2967,9 +3070,9 @@ R-LIST 到 S-LIST的相关映射.
 </div>
 </div>
 </div>
-<div id="outline-container-orgd9e5931" class="outline-3">
-<h3 id="orgd9e5931">Org 绘图(Org Plot)</h3>
-<div class="outline-text-3" id="text-orgd9e5931">
+<div id="outline-container-orge15606b" class="outline-3">
+<h3 id="orge15606b">Org 绘图(Org Plot)</h3>
+<div class="outline-text-3" id="text-orge15606b">
 <blockquote>
 <p>
 根据 Org 表格数据绘图
@@ -2980,9 +3083,9 @@ Org Plot 可以生成存储在Org 表格里的信息的图像,可以是图片形
 形式
 </p>
 </div>
-<div id="outline-container-org7e29c74" class="outline-4">
-<h4 id="org7e29c74">使用 Gnuplot 的图形绘图(Graphical plots using Gnuplot)</h4>
-<div class="outline-text-4" id="text-org7e29c74">
+<div id="outline-container-org2420b22" class="outline-4">
+<h4 id="org2420b22">使用 Gnuplot 的图形绘图(Graphical plots using Gnuplot)</h4>
+<div class="outline-text-4" id="text-org2420b22">
 <p>
 Org Plot 可以使用Gnuplot(<a href="http://www.gnuplot.info/">http://www.gnuplot.info/</a>) 和
 Gnuplot(<a href="http://cars9.uchicago.edu/~ravel/software/gnuplot-mode.html">http://cars9.uchicago.edu/~ravel/software/gnuplot-mode.html</a>) 生成Org
@@ -3065,8 +3168,8 @@ Gnuplot 和 Gnuplot mode. 然后在下面的表格里调用 <code>C-c " g</code>
 
 
 <ul class="org-ul">
-<li><a id="orge5d1eca"></a>绘图选项(Plot options)<br />
-<div class="outline-text-5" id="text-orge5d1eca">
+<li><a id="org63023d1"></a>绘图选项(Plot options)<br />
+<div class="outline-text-5" id="text-org63023d1">
 <dl class="org-dl">
 <dt><code>set</code></dt><dd>指定绘图时要设置的Gnuplot选项.</dd>
 <dt><code>title</code></dt><dd>指定绘图的标题.</dd>
@@ -3091,8 +3194,8 @@ Gnuplot 和 Gnuplot mode. 然后在下面的表格里调用 <code>C-c " g</code>
 </div>
 </li>
 
-<li><a id="org49c6c1d"></a>ASCII 条形图(ASCII bar plots)<br />
-<div class="outline-text-5" id="text-org49c6c1d">
+<li><a id="org32d1803"></a>ASCII 条形图(ASCII bar plots)<br />
+<div class="outline-text-5" id="text-org32d1803">
 <p>
 当光标在一列上时,使用 <code>C-c " a</code> 或 <code>M-x orgtbl-ascii-plot</code> 来创造一个包含ASCII
 艺术的条形绘图(条形码?)的新列.这个绘图是通过常规的列公式实现的.当根源列改变
@@ -3187,18 +3290,18 @@ Gnuplot 和 Gnuplot mode. 然后在下面的表格里调用 <code>C-c " g</code>
 </div>
 </div>
 
-<div id="outline-container-orgccbd367" class="outline-2">
-<h2 id="orgccbd367">超链接(Hyperlinks)</h2>
-<div class="outline-text-2" id="text-orgccbd367">
+<div id="outline-container-org40995e6" class="outline-2">
+<h2 id="org40995e6">超链接(Hyperlinks)</h2>
+<div class="outline-text-2" id="text-org40995e6">
 <p>
 像 HTML 一样,Org 提供了对文件内部的链接,其他文件的外部链接,新闻文章,邮件等的支
 持.
 </p>
 </div>
 
-<div id="outline-container-org8f3266e" class="outline-3">
-<h3 id="org8f3266e">链接格式(Link Format)</h3>
-<div class="outline-text-3" id="text-org8f3266e">
+<div id="outline-container-org7cf1443" class="outline-3">
+<h3 id="org7cf1443">链接格式(Link Format)</h3>
+<div class="outline-text-3" id="text-org7cf1443">
 <blockquote>
 <p>
 Org 里的链接是怎样的格式.
@@ -3261,9 +3364,9 @@ Literal links.
 </div>
 </div>
 
-<div id="outline-container-org8a7ca49" class="outline-3">
-<h3 id="org8a7ca49">内部链接(Internal Links)</h3>
-<div class="outline-text-3" id="text-org8a7ca49">
+<div id="outline-container-org706d5c1" class="outline-3">
+<h3 id="org706d5c1">内部链接(Internal Links)</h3>
+<div class="outline-text-3" id="text-org706d5c1">
 <blockquote>
 <p>
 链接到当前文件的其他地方.
@@ -3285,7 +3388,7 @@ Org 对文档内部的导航提供了一些改进.最值得注意的是,一个�
 <p>
 当一个链接不属于上述的任一情况时,Org 会查找专用目标:使用双尖括号的相同字符串,
 例如 <code>&lt;&lt;My Target&gt;&gt;</code>.
-<a href="#org21f0367">外部链接(External Links)</a>
+<a href="#orgc880ab3">外部链接(External Links)</a>
 </p>
 
 <p>
@@ -3326,10 +3429,10 @@ Here we refer to item [[target]].
 </p>
 <ol class="org-ol">
 <li>one item</li>
-<li><a id="org95d11c1"></a>another item</li>
+<li><a id="org95faf21"></a>another item</li>
 </ol>
 <p>
-Here we refer to item <a href="#org95d11c1">2</a>.
+Here we refer to item <a href="#org95faf21">2</a>.
 </p>
 
 <p>
@@ -3343,9 +3446,9 @@ Here we refer to item <a href="#org95d11c1">2</a>.
 </div>
 </div>
 
-<div id="outline-container-org5be580a" class="outline-3">
-<h3 id="org5be580a">无线电目标(Radio Targets)</h3>
-<div class="outline-text-3" id="text-org5be580a">
+<div id="outline-container-org4a28d50" class="outline-3">
+<h3 id="org4a28d50">无线电目标(Radio Targets)</h3>
+<div class="outline-text-3" id="text-org4a28d50">
 <p>
 Org 可以自动将普通文本里出现的某些目标名称转换为链接.因此,在不显式创建链接的
 情况下,文本将链接到目标,并标记其位置.Radio 目标由三个尖括号包围.例如, 目标
@@ -3356,9 +3459,9 @@ Org 可以自动将普通文本里出现的某些目标名称转换为链接.因
 </div>
 </div>
 
-<div id="outline-container-org21f0367" class="outline-3">
-<h3 id="org21f0367">外部链接(External Links)</h3>
-<div class="outline-text-3" id="text-org21f0367">
+<div id="outline-container-orgc880ab3" class="outline-3">
+<h3 id="orgc880ab3">外部链接(External Links)</h3>
+<div class="outline-text-3" id="text-orgc880ab3">
 <blockquote>
 <p>
 链接到世界的类似 URL 的链接.
@@ -3380,7 +3483,7 @@ Org 支持链接到文件,网站,新闻论坛和邮件消息,BBDB 数据库条�
 者是代码引用.
 作为一个特殊的情况,如果文件名是完整的.例如,文件名以 <code>./</code> 或 <code>/</code> 开头."file"前缀
 可以被省略.</dd>
-<dt><code>attachment</code></dt><dd>和文件链接一样,但适用于附加到当前节点的文件和文件夹(见 <a href="#org07b0834">附件(Attachments)</a>). 附件链接和文件链接的作用完全相同,但是适用于相对于附件目录的
+<dt><code>attachment</code></dt><dd>和文件链接一样,但适用于附加到当前节点的文件和文件夹(见 <a href="#org0431815">附件(Attachments)</a>). 附件链接和文件链接的作用完全相同,但是适用于相对于附件目录的
 文件.</dd>
 <dt><code>bbdb</code></dt><dd>链接到一个 BBDB 记录,带有可能的正则补全.</dd>
 <dt><code>docview</code></dt><dd>连接到使用 DOCView 模式打开的文本.你可以指定页码.</dd>
@@ -3602,7 +3705,7 @@ Org 支持链接到文件,网站,新闻论坛和邮件消息,BBDB 数据库条�
 
 <p>
 #+end_example
-除了这些内置链接类型之外,还可以通过 <code>contrib/</code> (见<a href="#orgcf96491">安装(Installation)</a>)目录使
+除了这些内置链接类型之外,还可以通过 <code>contrib/</code> (见<a href="#orgf7b44d3">安装(Installation)</a>)目录使
 用其他类型链接). 例如.当你从 <code>contrib/</code> 目录里加载相应库时,你可以链接到 VM
 或 Wanderlust 消息:
 </p>
@@ -3620,7 +3723,7 @@ Org 支持链接到文件,网站,新闻论坛和邮件消息,BBDB 数据库条�
 </p>
 
 <p>
-链接应该用双括号括起来,并且可能包含要展示的描述性文本,而不是URL(见 <a href="#org8f3266e">链接格式(Link Format)</a>).例如：
+链接应该用双括号括起来,并且可能包含要展示的描述性文本,而不是URL(见 <a href="#org7cf1443">链接格式(Link Format)</a>).例如：
 </p>
 <pre class="example">
 [[http://www.gnu.org/software/emacs/][GNU Emacs]]
@@ -3628,7 +3731,7 @@ Org 支持链接到文件,网站,新闻论坛和邮件消息,BBDB 数据库条�
 <p>
 效果:
 <a href="http://www.gnu.org/software/emacs/">GNU Emacs</a>
-如果描述是一个指向图片的文件名或URL,HTML 导出(见 <a href="#orgfe8ddd9">HTML Export</a>) 会将图片以可
+如果描述是一个指向图片的文件名或URL,HTML 导出(见 <a href="#orgc9c0569">HTML Export</a>) 会将图片以可
 点击的按钮形式内联导出.如果链接指向一个图片,而且没有任何的描述,改图片会直接
 内联到导出的HTML 文件里.
 </p>
@@ -3641,9 +3744,9 @@ Org 还识别普通文本里的外部链接,并将他们激活为链接.如果�
 </div>
 </div>
 
-<div id="outline-container-org92c78a9" class="outline-3">
-<h3 id="org92c78a9">处理链接(Handling Links)</h3>
-<div class="outline-text-3" id="text-org92c78a9">
+<div id="outline-container-org269dead" class="outline-3">
+<h3 id="org269dead">处理链接(Handling Links)</h3>
+<div class="outline-text-3" id="text-org269dead">
 <p>
 Org 提供了使用正确语法创建链接,插入链接和打开链接的方法.
 </p>
@@ -3759,9 +3862,9 @@ VM/MH-E/Wanderlust/Rmail/Gnus/BBDBc 程序;如果是脚本链接,会执行脚本
 </div>
 </div>
 
-<div id="outline-container-org6ae9069" class="outline-3">
-<h3 id="org6ae9069">Org 文件外部使用链接(Using Links Outside Org)</h3>
-<div class="outline-text-3" id="text-org6ae9069">
+<div id="outline-container-orgc850bf7" class="outline-3">
+<h3 id="orgc850bf7">Org 文件外部使用链接(Using Links Outside Org)</h3>
+<div class="outline-text-3" id="text-orgc850bf7">
 <p>
 你不只可以在Org 文件里使用Org 语法插入和打开链接,你还可以在任意的Emacs 缓冲区里
 使用.针对这个,Org 提供了两个函数: <code>org-insert-link-golobal</code> 和
@@ -3774,9 +3877,9 @@ VM/MH-E/Wanderlust/Rmail/Gnus/BBDBc 程序;如果是脚本链接,会执行脚本
 </div>
 </div>
 
-<div id="outline-container-org03191db" class="outline-3">
-<h3 id="org03191db">链接缩写(Link Abbreviations)</h3>
-<div class="outline-text-3" id="text-org03191db">
+<div id="outline-container-org26dd074" class="outline-3">
+<h3 id="org26dd074">链接缩写(Link Abbreviations)</h3>
+<div class="outline-text-3" id="text-org26dd074">
 <p>
 原始链接(长链接)的键入可能很麻烦,而且文档中通常需要许多类似的链接.为此,你可以
 使用链接缩写.一个缩写链接长这样:
@@ -3840,9 +3943,9 @@ VM/MH-E/Wanderlust/Rmail/Gnus/BBDBc 程序;如果是脚本链接,会执行脚本
 </div>
 </div>
 
-<div id="outline-container-org3e58984" class="outline-3">
-<h3 id="org3e58984">搜索选项(Search Options)</h3>
-<div class="outline-text-3" id="text-org3e58984">
+<div id="outline-container-org8374d12" class="outline-3">
+<h3 id="org8374d12">搜索选项(Search Options)</h3>
+<div class="outline-text-3" id="text-org8374d12">
 <blockquote>
 <p>
 链接到特定的位置.
@@ -3850,12 +3953,12 @@ VM/MH-E/Wanderlust/Rmail/Gnus/BBDBc 程序;如果是脚本链接,会执行脚本
 </blockquote>
 </div>
 
-<div id="outline-container-org9bf7256" class="outline-4">
-<h4 id="org9bf7256">文件链接的搜索选项(Search Options in File Links)</h4>
-<div class="outline-text-4" id="text-org9bf7256">
+<div id="outline-container-orgdd6eb31" class="outline-4">
+<h4 id="orgdd6eb31">文件链接的搜索选项(Search Options in File Links)</h4>
+<div class="outline-text-4" id="text-orgdd6eb31">
 <p>
 文件链接可以包含额外的信息,来使Emacs 打开链接时跳转打文件的特定位置.特定位置
-可以是行号或在双冒号之后的搜索选项<sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup>.例如,当 <code>org-store-link</code> 创建一个链文件(见 <a href="#org92c78a9">处理链接(Handling Links)</a> 链接
+可以是行号或在双冒号之后的搜索选项<sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup>.例如,当 <code>org-store-link</code> 创建一个链文件(见 <a href="#org269dead">处理链接(Handling Links)</a> 链接
 时,该命令会将当前行的文本编码为搜索字符串(search string), 可以用于在以后使用
 <code>C-c C-o</code> 打开链接时查找到这一行.
 </p>
@@ -3880,7 +3983,7 @@ VM/MH-E/Wanderlust/Rmail/Gnus/BBDBc 程序;如果是脚本链接,会执行脚本
 <dl class="org-dl">
 <dt><code>255</code></dt><dd>跳转到第255行.</dd>
 <dt><code>My Target</code></dt><dd>查找链接目标 <code>&lt;&lt;My Target&gt;&gt;</code> 或者进行文本 <code>my target</code> 的查找,和内
-部链接的查找相似(见 <a href="#org8a7ca49">内部链接(Internal Links)</a>). 在HTML导出时(见 <a href="#orgfe8ddd9">HTML Export</a>), 这样的文件链接会成为一个指向链接文件里相应命名锚点的HTML 引用.</dd>
+部链接的查找相似(见 <a href="#org706d5c1">内部链接(Internal Links)</a>). 在HTML导出时(见 <a href="#orgc9c0569">HTML Export</a>), 这样的文件链接会成为一个指向链接文件里相应命名锚点的HTML 引用.</dd>
 <dt><code>*My Target</code></dt><dd>在Org 文件里,将搜索限制到标题.</dd>
 <dt><code>#my-custom-id</code></dt><dd>链接到有 <code>CUSTOM_ID</code> 属性的标题.</dd>
 <dt><code>/REGEXP/</code></dt><dd>进行一次 <code>REGEXP</code> 的正则表达式查找. 这使用 Emacs 命令 <code>occur</code> 来在
@@ -3898,9 +4001,9 @@ VM/MH-E/Wanderlust/Rmail/Gnus/BBDBc 程序;如果是脚本链接,会执行脚本
 </div>
 
 
-<div id="outline-container-org17d52c3" class="outline-3">
-<h3 id="org17d52c3">自定义搜索(Custom Searches)</h3>
-<div class="outline-text-3" id="text-org17d52c3">
+<div id="outline-container-org8448aaf" class="outline-3">
+<h3 id="org8448aaf">自定义搜索(Custom Searches)</h3>
+<div class="outline-text-3" id="text-org8448aaf">
 <blockquote>
 <p>
 当默认搜索功能不够用时.
@@ -3924,9 +4027,9 @@ VM/MH-E/Wanderlust/Rmail/Gnus/BBDBc 程序;如果是脚本链接,会执行脚本
 </div>
 </div>
 
-<div id="outline-container-orga14f4e0" class="outline-2">
-<h2 id="orga14f4e0"><code>TODO</code> 条目(TODO Items)</h2>
-<div class="outline-text-2" id="text-orga14f4e0">
+<div id="outline-container-org3ac2fdd" class="outline-2">
+<h2 id="org3ac2fdd"><code>TODO</code> 条目(TODO Items)</h2>
+<div class="outline-text-2" id="text-org3ac2fdd">
 <p>
 Org mode 并不把 TODO 项目当成独立的文档维护<sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup>,相反的, TODO 项目被视作笔记文件的
 一个组成部分, 因为 TODO 项目通常在作笔记时出现(使用)! 在 Org mode 下,只需要将
@@ -3940,17 +4043,17 @@ mode 提供了一些方法来让你对你必须要做的事情有一个总览视
 </p>
 </div>
 
-<div id="outline-container-orge98a9b6" class="outline-3">
-<h3 id="orge98a9b6"><code>TODO</code> 基础(TODO Basics)</h3>
-<div class="outline-text-3" id="text-orge98a9b6">
+<div id="outline-container-org8913f0b" class="outline-3">
+<h3 id="org8913f0b"><code>TODO</code> 基础(TODO Basics)</h3>
+<div class="outline-text-3" id="text-org8913f0b">
 <p>
 标记和展示 TODO 条目.
 </p>
 </div>
 
-<div id="outline-container-org1204356" class="outline-4">
-<h4 id="org1204356">基本的 TODO 功能(Basic TODO Functionality)</h4>
-<div class="outline-text-4" id="text-org1204356">
+<div id="outline-container-orgb514a69" class="outline-4">
+<h4 id="orgb514a69">基本的 TODO 功能(Basic TODO Functionality)</h4>
+<div class="outline-text-4" id="text-orgb514a69">
 <p>
 任何以 'TODO' 开头的标题都会称为一个 TODO 条目, 例如:
 </p>
@@ -3974,11 +4077,11 @@ mode 提供了一些方法来让你对你必须要做的事情有一个总览视
 同样的状态改变可以通过在 agenda 缓冲区使用 <code>t</code> 命令键完成(TODO[[]]).
 </p></dd>
 <dt>S-&lt;RIGHT&gt; S-&lt;LEFT&gt;</dt><dd>选择上一个或下一个 TODO 状态, 和循环类似.如果可能有
-两个以上的 TODO 状态,则最有用(<a href="#org7f27be9"><code>TODO</code> 扩展(TODO Extensions)</a>). 又见
+两个以上的 TODO 状态,则最有用(<a href="#org4628d55"><code>TODO</code> 扩展(TODO Extensions)</a>). 又见
 TODO *Conflicts]] 有关用shift选择来进行交互的讨论. 另见变量
 <code>org-treat-S-cursor-todo-selection-as-state-change</code> 的文档.</dd>
 <dt>C-c / t &#x2013; (org-show-todo-tree)</dt><dd>在稀疏树中查看TODO条目(参见
-<a href="#org908ec40">稀疏树(Sparse Trees)</a>).这会折叠整个缓冲区,但只显示所有未完成状态的 TODO 条目,以及
+<a href="#org6e7529a">稀疏树(Sparse Trees)</a>).这会折叠整个缓冲区,但只显示所有未完成状态的 TODO 条目,以及
 他们上层的标题. 带上前缀参数使用,或者用 <code>C-c / T</code>, 可以查找特定的 TODO 条目,
 你会被提示输入关键字,而且你会看到一个像这样的关键字列表 <code>‘KWD1|KWD2|...’</code> 来
 展示列表中任何一个与你的输入匹配的条目. 带上数字前缀参数 N 使用时,会展示变
@@ -4001,9 +4104,9 @@ Org Agenda mode(模式),并提供了可以在这个新缓冲区里检查和处�
 </div>
 </div>
 
-<div id="outline-container-org7f27be9" class="outline-3">
-<h3 id="org7f27be9"><code>TODO</code> 扩展(TODO Extensions)</h3>
-<div class="outline-text-3" id="text-org7f27be9">
+<div id="outline-container-org4628d55" class="outline-3">
+<h3 id="org4628d55"><code>TODO</code> 扩展(TODO Extensions)</h3>
+<div class="outline-text-3" id="text-org4628d55">
 <p>
 工作流和工作分配.
 默认情况下, 标记为 TODO 的条目只有两种状态中的一个: TODO 和 DONE. Org mode 允
@@ -4016,9 +4119,9 @@ Org Agenda mode(模式),并提供了可以在这个新缓冲区里检查和处�
 </p>
 </div>
 
-<div id="outline-container-org1915644" class="outline-4">
-<h4 id="org1915644">工作流状态(Workflow states)</h4>
-<div class="outline-text-4" id="text-org1915644">
+<div id="outline-container-org2f0c095" class="outline-4">
+<h4 id="org2f0c095">工作流状态(Workflow states)</h4>
+<div class="outline-text-4" id="text-org2f0c095">
 <p>
 一步步从待办(TODO)到完成(DONE).
 </p>
@@ -4043,7 +4146,7 @@ VERIFY 最后到 DONE 和 DELEGATED 里循环切换. 你也可以使用数字前
 择特定状态.例如 <code>C-3 C-c C-t</code> 会将状态立即切换成 VERIFY. 或者你也可以使用
 <code>S-&lt;RIGTH&gt;</code> 和 <code>S-&lt;LEFT&gt;</code> 来向前或向后遍历状态. 如果你定义了许多关键字,你可以使
 用缓冲区补全(见 Completion[[]]) 或者特殊的一键选择模式(见
-<a href="#org696de4c">快速访问 TODO 状态(Fast access to TODO states)</a> 来将这些关键字插入到缓冲区.改
+<a href="#orgf8cc670">快速访问 TODO 状态(Fast access to TODO states)</a> 来将这些关键字插入到缓冲区.改
 变一个 TODO 状态可以记录一个时间戳, 更多信息查看 [[* Tracking TODO state changes
 </p>
 </div>
@@ -4051,9 +4154,9 @@ VERIFY 最后到 DONE 和 DELEGATED 里循环切换. 你也可以使用数字前
 
 
 
-<div id="outline-container-org3ea0fd0" class="outline-4">
-<h4 id="org3ea0fd0"><code>TODO</code> 类型(TODO types)</h4>
-<div class="outline-text-4" id="text-org3ea0fd0">
+<div id="outline-container-orgce1e604" class="outline-4">
+<h4 id="orgce1e604"><code>TODO</code> 类型(TODO types)</h4>
+<div class="outline-text-4" id="text-orgce1e604">
 <p>
 我做这部分,张三做剩下的.
 </p>
@@ -4088,9 +4191,9 @@ VERIFY 最后到 DONE 和 DELEGATED 里循环切换. 你也可以使用数字前
 </div>
 </div>
 
-<div id="outline-container-org933ccf0" class="outline-4">
-<h4 id="org933ccf0">多套关键字(Multiple sets in one file)</h4>
-<div class="outline-text-4" id="text-org933ccf0">
+<div id="outline-container-org0f6cbaa" class="outline-4">
+<h4 id="org0f6cbaa">多套关键字(Multiple sets in one file)</h4>
+<div class="outline-text-4" id="text-org0f6cbaa">
 <p>
 所有都混合在一起,但仍然能够找到&#x2026;(Mixing it all, still finding your way.)
 </p>
@@ -4128,9 +4231,9 @@ shift-selection 的交互的讨论,参见[[Conflicts.</dd>
 </div>
 </div>
 
-<div id="outline-container-org696de4c" class="outline-4">
-<h4 id="org696de4c">快速访问 TODO 状态(Fast access to TODO states)</h4>
-<div class="outline-text-4" id="text-org696de4c">
+<div id="outline-container-orgf8cc670" class="outline-4">
+<h4 id="orgf8cc670">快速访问 TODO 状态(Fast access to TODO states)</h4>
+<div class="outline-text-4" id="text-orgf8cc670">
 <p>
 使用单个字母选择状态.
 </p>
@@ -4157,9 +4260,9 @@ shift-selection 的交互的讨论,参见[[Conflicts.</dd>
 </div>
 
 
-<div id="outline-container-org27e463c" class="outline-4">
-<h4 id="org27e463c">单文件关键字(Per-file keywords)</h4>
-<div class="outline-text-4" id="text-org27e463c">
+<div id="outline-container-orgc27c155" class="outline-4">
+<h4 id="orgc27c155">单文件关键字(Per-file keywords)</h4>
+<div class="outline-text-4" id="text-orgc27c155">
 <p>
 不同的文件,不同的需求.
 </p>
@@ -4201,9 +4304,9 @@ shift-selection 的交互的讨论,参见[[Conflicts.</dd>
 </div>
 
 
-<div id="outline-container-org93d31b6" class="outline-4">
-<h4 id="org93d31b6"><code>TODO</code> 关键字的外观(Faces for TODO keywords)</h4>
-<div class="outline-text-4" id="text-org93d31b6">
+<div id="outline-container-orgedc68d7" class="outline-4">
+<h4 id="orgedc68d7"><code>TODO</code> 关键字的外观(Faces for TODO keywords)</h4>
+<div class="outline-text-4" id="text-orgedc68d7">
 <p>
 高亮显示 TODO 项目的状态.
 </p>
@@ -4233,9 +4336,9 @@ Org mode 会使用特殊的外观高亮显示 TODO 关键字: <code>org-todo</co
 </div>
 </div>
 
-<div id="outline-container-org228d498" class="outline-4">
-<h4 id="org228d498"><code>TODO</code> 依赖项(TODO dependencies)</h4>
-<div class="outline-text-4" id="text-org228d498">
+<div id="outline-container-org6cb95a9" class="outline-4">
+<h4 id="org6cb95a9"><code>TODO</code> 依赖项(TODO dependencies)</h4>
+<div class="outline-text-4" id="text-org6cb95a9">
 <p>
 一个任务需要等待其他任务完成的情况.
 </p>
@@ -4280,7 +4383,7 @@ Columns):
 <dl class="org-dl">
 <dt>C-c C-x o &#x2013; (org-toggle-ordered-property)</dt><dd>切换当前条目的 <code>ORDERED</code> 属性.使
 用属性来设置这个行为是因为这个行为应该作用于当前条目,而不是像标签一样从上
-层继承(见<a href="#orge1c04e5">标签(Tags)</a>). 然而,如果你为了更好的可见性,想要使用标签来追踪这个属性的值,请
+层继承(见<a href="#orgde513a9">标签(Tags)</a>). 然而,如果你为了更好的可见性,想要使用标签来追踪这个属性的值,请
 设置变量 <code>org-track-ordered-property-with-tag</code>.</dd>
 <dt>C-u C-u C-u C-c C-t</dt><dd>改变 TODO 状态,无视任何状态阻塞.</dd>
 </dl>
@@ -4289,11 +4392,11 @@ Columns):
 <p>
 如果你设置了变量 <code>org-agenda-dim-blocked-tasks</code>, 在 agenda 视图里,待办条目不能
 被标记为完成,因为未被标记的子条目使用黯淡的字体显示甚至是被隐藏了,详情参见
-<a href="#orgd1a3739">Agenda Views</a>.
+<a href="#org36657f7">Agenda Views</a>.
 </p>
 
 <p>
-你也可以通过使用复选框来阻塞待办状态的改变,参见 <a href="#org7b9c5ef">复选框(Checkboxes)</a>. 如果你
+你也可以通过使用复选框来阻塞待办状态的改变,参见 <a href="#org2443411">复选框(Checkboxes)</a>. 如果你
 色纸了变量 <code>org-enforce-todo-checkbox-dependencies</code>, 拥有未勾选的复选框的条目
 将被阻止切换到 DONE.
 </p>
@@ -4305,9 +4408,9 @@ Columns):
 </div>
 </div>
 </div>
-<div id="outline-container-org598a18e" class="outline-3">
-<h3 id="org598a18e">进度记录(Progress Logging)</h3>
-<div class="outline-text-3" id="text-org598a18e">
+<div id="outline-container-org1b0bf83" class="outline-3">
+<h3 id="org1b0bf83">进度记录(Progress Logging)</h3>
+<div class="outline-text-3" id="text-org1b0bf83">
 <p>
 进度的日期和笔记.
 </p>
@@ -4320,7 +4423,7 @@ Columns):
 <dt>C-u C-c C-t &#x2013; (org-todo)</dt><dd><p>
 提示输入笔记,并记录待办状态改变的时间.笔记会
 作为一个列表被插入到标题之下, 但是也可以被放置到一个 drawer 里,详情参见
-<a href="#org2768e24">跟踪待办状态改变(Tracking TODO state changes)</a>
+<a href="#orgf074593">跟踪待办状态改变(Tracking TODO state changes)</a>
 </p>
 
 <p>
@@ -4332,9 +4435,9 @@ Columns):
 </dl>
 </div>
 
-<div id="outline-container-org50e0423" class="outline-4">
-<h4 id="org50e0423">关闭条目(Closing items)</h4>
-<div class="outline-text-4" id="text-org50e0423">
+<div id="outline-container-org9b79e35" class="outline-4">
+<h4 id="org9b79e35">关闭条目(Closing items)</h4>
+<div class="outline-text-4" id="text-org9b79e35">
 <p>
 什么时候将条目标记未已完成?
 </p>
@@ -4365,9 +4468,9 @@ Columns):
 </div>
 </div>
 
-<div id="outline-container-org2768e24" class="outline-4">
-<h4 id="org2768e24">跟踪待办状态改变(Tracking TODO state changes)</h4>
-<div class="outline-text-4" id="text-org2768e24">
+<div id="outline-container-orgf074593" class="outline-4">
+<h4 id="orgf074593">跟踪待办状态改变(Tracking TODO state changes)</h4>
+<div class="outline-text-4" id="text-orgf074593">
 <p>
 状态是什么时候改变的?
 </p>
@@ -4376,7 +4479,7 @@ Columns):
 你可能想要自动跟踪状态发生变化的时间,并记录此更改.你可以只记录时间戳也可以记
 录带时间戳的笔记.这些记录会被作为逐项列表的形式插入到标题之下,作为最新的一行
 <sup><a id="fnr.15" class="footref" href="#fn.15">15</a></sup>.当记下了很多笔记之后,你可能想
-要将这些笔记放到抽屉(见 <a href="#org0865ad6">抽屉 (Drawers)</a>). 配置变量 <code>org-log-into-drawer</code> 来实
+要将这些笔记放到抽屉(见 <a href="#org68052e8">抽屉 (Drawers)</a>). 配置变量 <code>org-log-into-drawer</code> 来实
 现这一行为.对于这些笔记,推荐的抽屉叫做 <code>LOGBOOK</code> <sup><a id="fnr.16" class="footref" href="#fn.16">16</a></sup>.你也可以针对
 子树覆盖这个变量的配置,只需通过设置 <code>LOG_INTO_DRAWER</code> 属性.
 </p>
@@ -4435,10 +4538,9 @@ TODO 并没有配置日志的记录.
 </div>
 </div>
 
-
-<div id="outline-container-org069b289" class="outline-4">
-<h4 id="org069b289">跟踪你的习惯</h4>
-<div class="outline-text-4" id="text-org069b289">
+<div id="outline-container-org538d5d7" class="outline-4">
+<h4 id="org538d5d7">跟踪你的习惯</h4>
+<div class="outline-text-4" id="text-org538d5d7">
 <p>
 你有多坚持?
 </p>
@@ -4453,13 +4555,13 @@ Org 拥有跟踪一种特殊类别的待办事项的连贯性的功能,这种功
 </p>
 <ol class="org-ol">
 <li>习惯是一个待办事项,拥有一个待办关键字来表示启用的状态.</li>
-<li>属性 <code>STYLE</code> 值要被设置为 <code>habit</code>, 参见 <a href="#org7649e45">属性和列(Properties and Columns)</a></li>
+<li>属性 <code>STYLE</code> 值要被设置为 <code>habit</code>, 参见 <a href="#orgbc2e3ce">属性和列(Properties and Columns)</a></li>
 <li>待办有一个计划日期,通常带上一个 <code>.+</code> 格式的重复间隔时间.一个 <code>++</code> 格式适合有
 时间限制的习惯,例如,必须在周末完成的.或者一个 <code>+</code> 格式用于表示可能有积压工
 作(待办事项)的习惯,例如,每周报告.</li>
 <li>TODO 还可以使用 <code>.+2d/3d</code> 语法指定最大和最小范围,这表示你希望至多每三天完成
 一次任务,最多每两天完成一次.</li>
-<li>DONE 状态的状态日志是启用的(参见 <a href="#org2768e24">跟踪待办状态改变(Tracking TODO state changes)</a>) ,以便能用连贯的图表展示历史数据.如果没有启用,不是一个错误,但连
+<li>DONE 状态的状态日志是启用的(参见 <a href="#orgf074593">跟踪待办状态改变(Tracking TODO state changes)</a>) ,以便能用连贯的图表展示历史数据.如果没有启用,不是一个错误,但连
 续性图表很大程度上就没有意义了.</li>
 </ol>
 
@@ -4489,7 +4591,7 @@ Org 拥有跟踪一种特殊类别的待办事项的连贯性的功能,这种功
 <p>
 这个习惯描述的是:我想最多每2天最少每4天要刮一次胡子(根据给定的 <code>SCHEDULED</code> 日
 期和重复间隔).如果今天是15号,这个习惯在至少两天之后的17号首次出现在日程里(参
-见 <a href="#orgd1a3739">Agenda Views</a>), 并将在四天之后的19号之后过期.
+见 <a href="#org36657f7">Agenda Views</a>), 并将在四天之后的19号之后过期.
 </p>
 
 <p>
@@ -4531,9 +4633,9 @@ habits 真正有用的地方在于它展现出来的连贯性图标,展示你过
 </div>
 </div>
 
-<div id="outline-container-org8d94f6e" class="outline-3">
-<h3 id="org8d94f6e">优先级(Priorities)</h3>
-<div class="outline-text-3" id="text-org8d94f6e">
+<div id="outline-container-org598ed26" class="outline-3">
+<h3 id="org598ed26">优先级(Priorities)</h3>
+<div class="outline-text-3" id="text-org598ed26">
 <p>
 一些比其他事情更重要的事.
 </p>
@@ -4550,7 +4652,7 @@ TODO 关键字之后实现,就像这样:
 <p>
 Org mode 默认支持三个优先级: <code>A</code> , <code>B</code> 和 <code>C</code>.其中 <code>A</code> 是最高优先级.一个没有 cookie
 的条目被视作其拥有 <code>B</code> 优先级.优先级只会对日程中的排序操作产生影响(参见
-<a href="#org6f5f55d">Weekly/daily agenda</a>). 在日程之外,他们对 Org mode 来说没有固有意义.这些
+<a href="#org7aa83c1">Weekly/daily agenda</a>). 在日程之外,他们对 Org mode 来说没有固有意义.这些
 cookies 的外观是由变量 <code>org-priority-faces</code> 定义的,是可以自定义的.
 </p>
 
@@ -4574,11 +4676,11 @@ cookies 的外观是由变量 <code>org-priority-faces</code> 定义的,是可�
 <dt>C-c , &#x2013; (org-priority)</dt><dd>设置当前标题的优先级. 这个命令提示输入优先级字
 符 <code>A</code> , <code>B</code> 或 <code>C</code>. 当你输入的是 <code>&lt;SPC&gt;</code> 时,如果已有优先级 cookie 设置,会清除该优
 先级设置.在 agenda 缓冲区里使用命令 <code>,</code> 也可以 "远程" 改变优先级,参见
-<a href="#orgbca39f1">Agenda Commands</a>.</dd>
+<a href="#orgbae7b23">Agenda Commands</a>.</dd>
 <dt>S-&lt;UP&gt; &#x2013; (org-priority-up) , S-&lt;DOWN&gt; &#x2013; (org-priority-down)</dt><dd>提高/降低
 当前标题的优先级<sup><a id="fnr.18" class="footref" href="#fn.18">18</a></sup>.注意,这
-些快捷键也用来修改时间戳(见 <a href="#orgfbf9778">创建时间戳(Creating Timestamps)</a>). 另见
-<a href="#org90c51c4">Conflicts</a> 里关于使用 shift-选择 进行交互的讨论.</dd>
+些快捷键也用来修改时间戳(见 <a href="#orgd2564b7">创建时间戳(Creating Timestamps)</a>). 另见
+<a href="#orgda692b8">Conflicts</a> 里关于使用 shift-选择 进行交互的讨论.</dd>
 </dl>
 
 
@@ -4600,9 +4702,9 @@ cookies 的外观是由变量 <code>org-priority-faces</code> 定义的,是可�
 </div>
 
 
-<div id="outline-container-orgd6f53b0" class="outline-3">
-<h3 id="orgd6f53b0">分解任务(Breaking Down Tasks)</h3>
-<div class="outline-text-3" id="text-orgd6f53b0">
+<div id="outline-container-org02277e6" class="outline-3">
+<h3 id="org02277e6">分解任务(Breaking Down Tasks)</h3>
+<div class="outline-text-3" id="text-org02277e6">
 <p>
 拆分任务为便于管理的子任务.
 </p>
@@ -4655,15 +4757,15 @@ cookies 的外观是由变量 <code>org-priority-faces</code> 定义的,是可�
 </div>
 
 <p>
-另一个可选的用法是使用复选框(参见 <a href="#org7b9c5ef">复选框(Checkboxes)</a>)来标识大量子任务.
+另一个可选的用法是使用复选框(参见 <a href="#org2443411">复选框(Checkboxes)</a>)来标识大量子任务.
 </p>
 </div>
 </div>
 
 
-<div id="outline-container-org7b9c5ef" class="outline-3">
-<h3 id="org7b9c5ef">复选框(Checkboxes)</h3>
-<div class="outline-text-3" id="text-org7b9c5ef">
+<div id="outline-container-org2443411" class="outline-3">
+<h3 id="org2443411">复选框(Checkboxes)</h3>
+<div class="outline-text-3" id="text-org2443411">
 <p>
 勾选清单.
 </p>
@@ -4671,7 +4773,7 @@ cookies 的外观是由变量 <code>org-priority-faces</code> 定义的,是可�
 
 <p>
 每一个普通列表<sup><a id="fnr.20" class="footref" href="#fn.20">20</a></sup> 都可以通过以 <code>[ ]</code> 字符串开头来设置称为一个
-复选框.这个特性和 TODO条目(见 <a href="#orga14f4e0"><code>TODO</code> 条目(TODO Items)</a>)类似,但是更为轻量级.复
+复选框.这个特性和 TODO条目(见 <a href="#org3ac2fdd"><code>TODO</code> 条目(TODO Items)</a>)类似,但是更为轻量级.复
 选框并不包含在全局待办列表里,所以使用他们来将任务拆分为多个简单的步骤非常有用.或
 者你也可以在购物清单里使用他们.
 </p>
@@ -4739,7 +4841,7 @@ cookie 的范围涵盖了该 cookie 所在的条目/标题结构上的直接子�
 <code>C-c C-c</code> 也能被视为复选框的单选按钮,只需在列表之前设置 <code>#+ATTR_ORG: :radio t</code>
 或者调用 <code>M-x org-list-checkbox-radio-mode</code> 来激活这个副模式.</dd>
 <dt>M-S-&lt;RET&gt; &#x2013; (org-insert-todo-heading)</dt><dd>插入一个新的带复选框的条目,这只在
-光标处已经有一个简单列表条目时生效(见 <a href="#org43ab869">简单列表(Plain Lists)</a>)</dd>
+光标处已经有一个简单列表条目时生效(见 <a href="#orgf40a947">简单列表(Plain Lists)</a>)</dd>
 <dt>C-c C-x o &#x2013; (org-toggle-ordered-property)</dt><dd>切换条目的 <code>ORDERED</code> 属性,如果
 复选框必须按顺序勾选,请打开该选项.使用属性来设置这一行为是因为它应该只针对
 当前条目,而不是像标签一样可以继承.然而,如果你为了更好的可见性,想用标签来跟
@@ -4754,9 +4856,9 @@ cookie. 当加上 <code>C-u</code> 前缀调用,会更新整个文件的统计 c
 </div>
 </div>
 
-<div id="outline-container-orge1c04e5" class="outline-2">
-<h2 id="orge1c04e5">标签(Tags)</h2>
-<div class="outline-text-2" id="text-orge1c04e5">
+<div id="outline-container-orgde513a9" class="outline-2">
+<h2 id="orgde513a9">标签(Tags)</h2>
+<div class="outline-text-2" id="text-orgde513a9">
 <p>
 实现标签和上下的信息互相关联的一个很好的方法是为标题指定 <span class="underline">标签</span>.Org mode 广泛支持
 标签.
@@ -4764,13 +4866,13 @@ cookie. 当加上 <code>C-u</code> 前缀调用,会更新整个文件的统计 c
 和 <code>@</code>.标签前面和后面必须有一个冒号,例如: <code>:work:</code>. 多个标签可以这样指定:
 <code>:work:urgent:</code>. 标签默认用粗体显示,颜色和标题一行.你可以使用变量 <code>org-tag-faces</code> 为
 特殊的标签指定特殊外观,其方式与 TODO 关键字的方式大致相同,详情可以参见
-<a href="#org93d31b6"><code>TODO</code> 关键字的外观(Faces for TODO keywords)</a>).
+<a href="#orgedc68d7"><code>TODO</code> 关键字的外观(Faces for TODO keywords)</a>).
 </p>
 </div>
 
-<div id="outline-container-org4a8b661" class="outline-3">
-<h3 id="org4a8b661">标签继承(Tag Inheritance)</h3>
-<div class="outline-text-3" id="text-org4a8b661">
+<div id="outline-container-org4be0b11" class="outline-3">
+<h3 id="org4be0b11">标签继承(Tag Inheritance)</h3>
+<div class="outline-text-3" id="text-org4be0b11">
 <p>
 标签使用大纲的树结构.
 </p>
@@ -4814,9 +4916,9 @@ cookie. 当加上 <code>C-u</code> 前缀调用,会更新整个文件的统计 c
 </div>
 
 
-<div id="outline-container-org895aba0" class="outline-3">
-<h3 id="org895aba0">设置标签(Setting Tags)</h3>
-<div class="outline-text-3" id="text-org895aba0">
+<div id="outline-container-org75429e0" class="outline-3">
+<h3 id="org75429e0">设置标签(Setting Tags)</h3>
+<div class="outline-text-3" id="text-org75429e0">
 <p>
 如何给标题指定标签.
 </p>
@@ -4830,7 +4932,7 @@ cookie. 当加上 <code>C-u</code> 前缀调用,会更新整个文件的统计 c
 全或特殊的单快捷键来设置标签,见下文. 在按了 <code>&lt;RET&gt;</code> 之后,标签会被插入并对齐到
 <code>org-tags-column</code> 设置的列. 带上 <code>C-u</code> 前缀一起调用,当前缓冲区的所有标签都会对齐到
 该列,只为看起来更好看.标签在升级,降级和 TODO 状态改变时会自动进行重对齐(参见
-<a href="#orge98a9b6"><code>TODO</code> 基础(TODO Basics)</a>)</dd>
+<a href="#org8913f0b"><code>TODO</code> 基础(TODO Basics)</a>)</dd>
 <dt>C-c C-c &#x2013; (org-set-tags-command)</dt><dd>当光标在标签上时,和 <code>C-c C-q</code> 一样.</dd>
 </dl>
 
@@ -4969,9 +5071,9 @@ Org 支持基于标签列表的标签插入.默认情况下,该列表是动态�
 </div>
 
 
-<div id="outline-container-org60bee40" class="outline-3">
-<h3 id="org60bee40">标签层级(Tag Hierarchy)</h3>
-<div class="outline-text-3" id="text-org60bee40">
+<div id="outline-container-orgcd80846" class="outline-3">
+<h3 id="orgcd80846">标签层级(Tag Hierarchy)</h3>
+<div class="outline-text-3" id="text-orgcd80846">
 <p>
 创建标签的层级.
 </p>
@@ -5056,7 +5158,7 @@ Org 支持基于标签列表的标签插入.默认情况下,该列表是动态�
 
 <p>
 此外,一个组标签的成员可以是正则表达式,从而创造一种更动态的,基于规则的标签结构(请
-参见 <a href="#orgb544b20">正则表达式(Regular Expressions)</a>). 组里的正则表达式必须在花括号内指定.下面
+参见 <a href="#orgd860e6b">正则表达式(Regular Expressions)</a>). 组里的正则表达式必须在花括号内指定.下面
 是一个扩展实例:
 </p>
 <pre class="example">
@@ -5079,9 +5181,9 @@ Org 支持基于标签列表的标签插入.默认情况下,该列表是动态�
 </div>
 
 
-<div id="outline-container-org38f1c78" class="outline-3">
-<h3 id="org38f1c78">标签搜索(Tag Searches)</h3>
-<div class="outline-text-3" id="text-org38f1c78">
+<div id="outline-container-orga21b4bb" class="outline-3">
+<h3 id="orga21b4bb">标签搜索(Tag Searches)</h3>
+<div class="outline-text-3" id="text-orga21b4bb">
 <p>
 查找标签的组合.
 </p>
@@ -5094,7 +5196,7 @@ Org 支持基于标签列表的标签插入.默认情况下,该列表是动态�
 <dt><code>C-c / m</code> or <code>C-c \</code> &#x2013; (org-match-sparse-tree)</dt><dd>创建一个所有标签题都匹配标签搜
 索的稀疏树.带上 <code>C-u</code> 前缀参数,会忽视非待办标题.</dd>
 <dt>M-x org-agenda m &#x2013; (org-tags-view)</dt><dd>从所有 agenda 文件中创建一个标签匹配的
-全局列表. 参见 <a href="#orgdb95050">匹配标签和属性(Matching tags and properties)</a>.</dd>
+全局列表. 参见 <a href="#org8014bd2">匹配标签和属性(Matching tags and properties)</a>.</dd>
 <dt>M-x org-agenda M &#x2013; (org-tags-view)</dt><dd>从所有 agenda 文件中创建一个标签匹配的
 全局列表,但只检查 TODO 条目,并强制检查子条目(参见选项
 <code>org-tags-match-list-sublevels</code> ).</dd>
@@ -5106,15 +5208,15 @@ Org 支持基于标签列表的标签插入.默认情况下,该列表是动态�
 <code>+boss+urgent-project1</code>, 用来查找带有标签 <code>boss</code> 和 <code>urgent</code> 但不带标签 <code>project1</code> 的条
 目;或者 <code>Kathy|Sally</code>, 用来查找带有标签 <code>Kathy</code> 或者带有标签 <code>Sally</code> 的条目. 搜索字符
 串的全部语法是非常丰富的,并且其还允许匹配 TODO 关键字,条目层级和属性.关于许多示
-例的完成描述,请参见 <a href="#orgdb95050">匹配标签和属性(Matching tags and properties)</a>.
+例的完成描述,请参见 <a href="#org8014bd2">匹配标签和属性(Matching tags and properties)</a>.
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org7649e45" class="outline-2">
-<h2 id="org7649e45">属性和列(Properties and Columns)</h2>
-<div class="outline-text-2" id="text-org7649e45">
+<div id="outline-container-orgbc2e3ce" class="outline-2">
+<h2 id="orgbc2e3ce">属性和列(Properties and Columns)</h2>
+<div class="outline-text-2" id="text-orgbc2e3ce">
 <p>
 <span class="underline">属性</span> 是一个与条目关联的 <span class="underline">键值对</span>. 属性可以设置为与单个条目关联,与一个树结构中的所
 有条目关联或者与整个缓冲区相关联.
@@ -5136,21 +5238,21 @@ Org mode 里有两个属性的主要运用.
 </p>
 
 <p>
-可以在列视图中方便地编辑和查看属性(参见 <a href="#org3d19e06">列视图(Column View)</a>).
+可以在列视图中方便地编辑和查看属性(参见 <a href="#orgee8f6fd">列视图(Column View)</a>).
 </p>
 </div>
 
-<div id="outline-container-org71159e7" class="outline-3">
-<h3 id="org71159e7">属性语法(Property Syntax)</h3>
-<div class="outline-text-3" id="text-org71159e7">
+<div id="outline-container-org66718b9" class="outline-3">
+<h3 id="org66718b9">属性语法(Property Syntax)</h3>
+<div class="outline-text-3" id="text-org66718b9">
 <p>
 属性是如何拼写.
 </p>
 
 <p>
 属性是键值对. 当他们与一个条目或一个树结构关联时,需要将他们插入到一个名为
-<code>PROPERTIES</code> 的特殊抽屉里(见 <a href="#org0865ad6">抽屉 (Drawers)</a>), 该抽屉必须位于标题的正下方,如果适用,还
-需要位于标题的规划行(参见 <a href="#org0e51213">截止时间和日程安排(Deadlines and Scheduling)</a>)的下方.每
+<code>PROPERTIES</code> 的特殊抽屉里(见 <a href="#org68052e8">抽屉 (Drawers)</a>), 该抽屉必须位于标题的正下方,如果适用,还
+需要位于标题的规划行(参见 <a href="#org7b86a21">截止时间和日程安排(Deadlines and Scheduling)</a>)的下方.每
 一个属性都在一行中指定,首先是由冒号包围的 <span class="underline">键</span> ,后面跟着是 <span class="underline">值</span>. <span class="underline">键</span> 是大小写敏感的.
 这里是一个例子:
 </p>
@@ -5169,7 +5271,7 @@ Org mode 里有两个属性的主要运用.
 
 <p>
 用这种方式设置的属性值,要么与单个条目关联,要么与该条目的子树相关联,这取决于变量
-<code>org-use-property-inheritance</code> 的值, 请参见 <a href="#orga2a2303">属性继承(Property Inheritance)</a>.
+<code>org-use-property-inheritance</code> 的值, 请参见 <a href="#org45b0f2f">属性继承(Property Inheritance)</a>.
 </p>
 
 <p>
@@ -5269,16 +5371,16 @@ Org mode 里有两个属性的主要运用.
 </div>
 </div>
 
-<div id="outline-container-orgd3faeef" class="outline-3">
-<h3 id="orgd3faeef">特殊属性(Special Properties)</h3>
-<div class="outline-text-3" id="text-orgd3faeef">
+<div id="outline-container-orga8d6737" class="outline-3">
+<h3 id="orga8d6737">特殊属性(Special Properties)</h3>
+<div class="outline-text-3" id="text-orga8d6737">
 <p>
 使用其他的 Org mode 功能.
 </p>
 
 <p>
 特殊的属性提供了对 Org mode 功能的另一种访问方式,如前面所述的 TODO 状态或者条目
-的优先级.此接口的存在让你可以在列视图(参见 <a href="#org3d19e06">列视图(Column View)</a>)中包含这些状态,
+的优先级.此接口的存在让你可以在列视图(参见 <a href="#orgee8f6fd">列视图(Column View)</a>)中包含这些状态,
 或者在查询中使用它们.下面的属性名是特殊的,不应用作属性抽屉中的 <span class="underline">键</span>:
 </p>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
@@ -5392,16 +5494,16 @@ Org mode 里有两个属性的主要运用.
 
 
 
-<div id="outline-container-orge37363c" class="outline-3">
-<h3 id="orge37363c">属性搜索(Property Searches)</h3>
-<div class="outline-text-3" id="text-orge37363c">
+<div id="outline-container-org6506e96" class="outline-3">
+<h3 id="org6506e96">属性搜索(Property Searches)</h3>
+<div class="outline-text-3" id="text-org6506e96">
 <p>
 匹配属性值.
 </p>
 
 <p>
 要创建稀疏树和基于属性选择的特殊列表,可以使用与标签搜索相同的命令.可参考标签搜索
-的内容:<a href="#org38f1c78">标签搜索(Tag Searches)</a> 对照使用.
+的内容:<a href="#orga21b4bb">标签搜索(Tag Searches)</a> 对照使用.
 </p>
 
 <dl class="org-dl">
@@ -5415,7 +5517,7 @@ Org mode 里有两个属性的主要运用.
 
 
 <p>
-搜索字符串的语法在 <a href="#orgdb95050">匹配标签和属性(Matching tags and properties)</a> 里有具体描述.
+搜索字符串的语法在 <a href="#org8014bd2">匹配标签和属性(Matching tags and properties)</a> 里有具体描述.
 </p>
 
 <p>
@@ -5425,16 +5527,16 @@ Org mode 里有两个属性的主要运用.
 <dl class="org-dl">
 <dt>C-c / p</dt><dd>基于属性的值创建稀疏树.该命令首先会提示输入属性的名字,然后是属性值.这
 会创建一个稀疏树,其中包含所有用给定值定义给定属性的条目.如果你用花括号将值包裹,那
-它将会被解释成一个正则表达式,并用它取匹配属性值(参见 <a href="#orgb544b20">正则表达式(Regular Expressions)</a>).</dd>
+它将会被解释成一个正则表达式,并用它取匹配属性值(参见 <a href="#orgd860e6b">正则表达式(Regular Expressions)</a>).</dd>
 </dl>
 </div>
 </div>
 
 
 
-<div id="outline-container-orga2a2303" class="outline-3">
-<h3 id="orga2a2303">属性继承(Property Inheritance)</h3>
-<div class="outline-text-3" id="text-orga2a2303">
+<div id="outline-container-org45b0f2f" class="outline-3">
+<h3 id="org45b0f2f">属性继承(Property Inheritance)</h3>
+<div class="outline-text-3" id="text-org45b0f2f">
 <p>
 向下传递值.
 </p>
@@ -5453,23 +5555,23 @@ Org 文档的大纲结构适合于属性的继承模型:如果树的父级具有
 Org mode 有几个属性的继承是硬核编码的,至少对于使用他们的特殊运用是这样的:
 </p>
 <dl class="org-dl">
-<dt>COLUMNS</dt><dd><code>COLUMNS</code> 属性定义列视图的格式,参见<a href="#org3d19e06">列视图(Column View)</a>. 从定义
+<dt>COLUMNS</dt><dd><code>COLUMNS</code> 属性定义列视图的格式,参见<a href="#orgee8f6fd">列视图(Column View)</a>. 从定义
 <code>COLUMNS</code> 属性的级别作为列视图表的起点的意义上来说,它是继承的,与打开列视图的子树
 中的位置无关.</dd>
 <dt><code>CATEGORY</code></dt><dd>对于 agenda 视图,通过 <code>CATEGORY</code> 属性设置的类别适用于整个子树.</dd>
 <dt>ARCHIVE</dt><dd>对于归档(archiving), <code>ARCHIVE</code> 属性可以定义整个子树的归档位置(请参见
-<a href="#orga5444f0">移动子树(Moving subtrees)</a>).</dd>
+<a href="#orge99cd7e">移动子树(Moving subtrees)</a>).</dd>
 <dt>LOGGING</dt><dd><code>LOGGING</code> 属性可能会定义一个条目或子树的日志设置(请参阅:
-<a href="#org2768e24">跟踪待办状态改变(Tracking TODO state changes)</a>).</dd>
+<a href="#orgf074593">跟踪待办状态改变(Tracking TODO state changes)</a>).</dd>
 </dl>
 </div>
 </div>
 
 
 
-<div id="outline-container-org3d19e06" class="outline-3">
-<h3 id="org3d19e06">列视图(Column View)</h3>
-<div class="outline-text-3" id="text-org3d19e06">
+<div id="outline-container-orgee8f6fd" class="outline-3">
+<h3 id="orgee8f6fd">列视图(Column View)</h3>
+<div class="outline-text-3" id="text-orgee8f6fd">
 <p>
 表格查看和编辑.
 </p>
@@ -5481,13 +5583,13 @@ Org mode 有几个属性的继承是硬核编码的,至少对于使用他们的�
 说,当列视图处于激活状态时,通过切换到 "目录视图",可以得到一张紧凑的表格--<code>S-&lt;TAB&gt;</code>
 <code>S-&lt;TAB&gt;</code> 或直接 <code>c</code> .但你仍然可以打开,阅读和编辑每个标题下的条目.或者,你可以在执行
 稀疏树命令之后切换到列视图,并用这种方式仅为所选的条目创造一个表格.列视图也适用于
-agenda 缓冲区(参见 <a href="#orgd1a3739">Agenda Views</a>), 其中搜集了选中条目的查询结果可能来自多个文件.
+agenda 缓冲区(参见 <a href="#org36657f7">Agenda Views</a>), 其中搜集了选中条目的查询结果可能来自多个文件.
 </p>
 </div>
 
-<div id="outline-container-org6bac82b" class="outline-4">
-<h4 id="org6bac82b">定义列(Defining columns)</h4>
-<div class="outline-text-4" id="text-org6bac82b">
+<div id="outline-container-org481b8e4" class="outline-4">
+<h4 id="org481b8e4">定义列(Defining columns)</h4>
+<div class="outline-text-4" id="text-org481b8e4">
 <p>
 列格式属性.
 </p>
@@ -5498,8 +5600,8 @@ agenda 缓冲区(参见 <a href="#orgd1a3739">Agenda Views</a>), 其中搜集了
 </div>
 
 <ul class="org-ul">
-<li><a id="org7175581"></a>列定义的范围(Scope of column definitions)<br />
-<div class="outline-text-5" id="text-org7175581">
+<li><a id="org2e78476"></a>列定义的范围(Scope of column definitions)<br />
+<div class="outline-text-5" id="text-org2e78476">
 <p>
 在哪定义?在哪有效?
 </p>
@@ -5530,8 +5632,8 @@ agenda 缓冲区(参见 <a href="#orgd1a3739">Agenda Views</a>), 其中搜集了
 </div>
 </li>
 
-<li><a id="org54ed11f"></a>列属性(Column attributes)<br />
-<div class="outline-text-5" id="text-org54ed11f">
+<li><a id="orgb75e613"></a>列属性(Column attributes)<br />
+<div class="outline-text-5" id="text-orgb75e613">
 <p>
 列的内容和外观.
 </p>
@@ -5548,7 +5650,7 @@ agenda 缓冲区(参见 <a href="#orgd1a3739">Agenda Views</a>), 其中搜集了
 <dl class="org-dl">
 <dt>WIDTH</dt><dd>以字符为单位指定列的宽度的整数.如果省略,宽度将自动确定.</dd>
 <dt>PROPERTY</dt><dd>应该在列里编辑的属性.这里也允许使用表示元数据的特殊属性,请参见
-<a href="#orgd3faeef">特殊属性(Special Properties)</a>.</dd>
+<a href="#orga8d6737">特殊属性(Special Properties)</a>.</dd>
 <dt>TITLE</dt><dd>列的标题文本.如果省略,则为属性名称.</dd>
 <dt>SUMMARY-TYPE</dt><dd><p>
 摘要类型.如果指定,父节点的列值将从子节点开始计算<sup><a id="fnr.27" class="footref" href="#fn.27">27</a></sup>.
@@ -5692,9 +5794,9 @@ agenda 缓冲区(参见 <a href="#orgd1a3739">Agenda Views</a>), 其中搜集了
 
 
 
-<div id="outline-container-org9385965" class="outline-4">
-<h4 id="org9385965">使用列视图(Using column view)</h4>
-<div class="outline-text-4" id="text-org9385965">
+<div id="outline-container-org16b1356" class="outline-4">
+<h4 id="org16b1356">使用列视图(Using column view)</h4>
+<div class="outline-text-4" id="text-org16b1356">
 <p>
 如何创造和使用列视图
 </p>
@@ -5748,16 +5850,16 @@ agenda 缓冲区(参见 <a href="#orgd1a3739">Agenda Views</a>), 其中搜集了
 </div>
 </div>
 
-<div id="outline-container-orgd96789e" class="outline-4">
-<h4 id="orgd96789e">捕获列视图(Capturing column view)</h4>
-<div class="outline-text-4" id="text-orgd96789e">
+<div id="outline-container-org40b0424" class="outline-4">
+<h4 id="org40b0424">捕获列视图(Capturing column view)</h4>
+<div class="outline-text-4" id="text-org40b0424">
 <p>
 列视图的动态块.
 </p>
 
 <p>
 因为列视图只是缓冲区上的一个覆盖,所以它无法直接打印或导出. 如果你想捕获列视图,请
-使用 <code>columnview</code> 动态块(参见 <a href="#orgd9b0ec0">Dynamic Blocks</a>). 该块的框架如下:
+使用 <code>columnview</code> 动态块(参见 <a href="#orgc2ee90c">Dynamic Blocks</a>). 该块的框架如下:
 </p>
 <pre class="example">
 * The column view
@@ -5789,7 +5891,7 @@ agenda 缓冲区(参见 <a href="#orgd1a3739">Agenda Views</a>), 其中搜集了
 <dt>:skip-empty-rows</dt><dd>非 <code>nil</code> 时,跳过列视图中唯一非空说明符为 <code>ITEM</code> 的行.</dd>
 <dt>:exclude-tags</dt><dd>要从列视图中排除的标签列表:有这些标签的条目将从列视图中排除.</dd>
 <dt>:indent</dt><dd>非 <code>nil</code> 时,根据层级缩进每一个 <code>ITEM</code> 字段.</dd>
-<dt>:format</dt><dd>为动态块指定一个列属性(参见 <a href="#org54ed11f">列属性(Column attributes)</a>).</dd>
+<dt>:format</dt><dd>为动态块指定一个列属性(参见 <a href="#orgb75e613">列属性(Column attributes)</a>).</dd>
 </dl>
 
 
@@ -5800,10 +5902,10 @@ agenda 缓冲区(参见 <a href="#orgd1a3739">Agenda Views</a>), 其中搜集了
 <dl class="org-dl">
 <dt>org-columns-insert-dblock</dt><dd>插入一个捕获列视图的动态块.提示输入视图的范围或
 ID. 这个命令可以通过调用 <code>org-dynamic-block-insert-dblock</code> (绑定为 <code>C-c C-x x</code>) 并
-选择 "columnview" 来启动(参见 <a href="#orgd9b0ec0">Dynamic Blocks</a>).</dd>
+选择 "columnview" 来启动(参见 <a href="#orgc2ee90c">Dynamic Blocks</a>).</dd>
 <dt>C-c C-c 或 C-c C-x C-u &#x2013; (org-dblock-update)</dt><dd>更新光标处的动态块.光标需要位
 于动态块的 <code>#+BEGIN</code> 行.</dd>
-<dt>C-u C-c C-x C-u &#x2013; (org-update-all-dblocks)</dt><dd>更新所有动态块(参见 <a href="#orgd9b0ec0">Dynamic Blocks</a>). 如果你的缓冲区中有多个时钟表块,列捕获块或其他动态块时是很有用的.</dd>
+<dt>C-u C-c C-x C-u &#x2013; (org-update-all-dblocks)</dt><dd>更新所有动态块(参见 <a href="#orgc2ee90c">Dynamic Blocks</a>). 如果你的缓冲区中有多个时钟表块,列捕获块或其他动态块时是很有用的.</dd>
 </dl>
 
 
@@ -5822,18 +5924,18 @@ Eric Schulte 的 <code>org-collector.el</code> 包提供了另一种将属性值
 </div>
 </div>
 
-<div id="outline-container-org8d413cf" class="outline-2">
-<h2 id="org8d413cf">日期和时间(Dates and Times)</h2>
-<div class="outline-text-2" id="text-org8d413cf">
+<div id="outline-container-org4c5498c" class="outline-2">
+<h2 id="org4c5498c">日期和时间(Dates and Times)</h2>
+<div class="outline-text-2" id="text-org4c5498c">
 </div>
-<div id="outline-container-org89405ad" class="outline-3">
-<h3 id="org89405ad">时间戳(Timestamps)</h3>
-<div class="outline-text-3" id="text-org89405ad">
+<div id="outline-container-org0281924" class="outline-3">
+<h3 id="org0281924">时间戳(Timestamps)</h3>
+<div class="outline-text-3" id="text-org0281924">
 <p>
 时间戳是特殊格式的日期规范(可能带有时间或时间范围),可以使 <code>&lt;2022-05-02 Mon&gt;</code> 或
 <code>&lt;2022-05-02 Mon 02:44&gt;</code> 或 <code>&lt;2022-05-02 Mon 12:00-12:30&gt;</code><sup><a id="fnr.31" class="footref" href="#fn.31">31</a></sup>.
 一个时间戳可以出现在 Org 树条目的标题或正文中的任何位置.他的存在会导致条目出现在
-agenda 的特定日期显示里(参见 <a href="#org6f5f55d">Weekly/daily agenda</a>). 我们区分下面概念:
+agenda 的特定日期显示里(参见 <a href="#org7aa83c1">Weekly/daily agenda</a>). 我们区分下面概念:
 </p>
 <dl class="org-dl">
 <dt>简单时间戳;事件;预约</dt><dd><p>
@@ -5882,9 +5984,9 @@ agenda 的特定日期显示里(参见 <a href="#org6f5f55d">Weekly/daily agenda
 </dl>
 </div>
 </div>
-<div id="outline-container-orgfbf9778" class="outline-3">
-<h3 id="orgfbf9778">创建时间戳(Creating Timestamps)</h3>
-<div class="outline-text-3" id="text-orgfbf9778">
+<div id="outline-container-orgd2564b7" class="outline-3">
+<h3 id="orgd2564b7">创建时间戳(Creating Timestamps)</h3>
+<div class="outline-text-3" id="text-orgd2564b7">
 <p>
 为了让 Org mode 能识别时间戳,时间戳需要使用特定的格式.下面列出的所有命令都能产生
 正确格式的时间戳:
@@ -5904,17 +6006,17 @@ agenda 条目的无效(不活跃的)时间戳.</dd>
 <dt>C-c &gt; &#x2013; (org-goto-calendar)</dt><dd>从当前日期访问 Emacs calendar(Emacs 的日历程
 序).如果当前行有一个时间戳,则会从其对应的时间访问日历.</dd>
 <dt>C-c C-o &#x2013; (org-opne-at-point)</dt><dd>从光标处的时间戳或时间戳范围给定的日期访问
-agenda (参见 <a href="#org6f5f55d">Weekly/daily agenda</a>).</dd>
+agenda (参见 <a href="#org7aa83c1">Weekly/daily agenda</a>).</dd>
 <dt>S-&lt;LEFT&gt; &#x2013; (org-timestamp-down-day)</dt><dd>将光标处的时间戳日期减少一天.</dd>
 <dt>S-&lt;RIGHT&gt; &#x2013; (org-timestamp-up-day)</dt><dd>将光标处的时间戳日期增加一天.这个快捷键
-和上一个快捷键绑定与 shift-selection 和相关模式有冲突(详情见 <a href="#org90c51c4">Conflicts</a>).</dd>
+和上一个快捷键绑定与 shift-selection 和相关模式有冲突(详情见 <a href="#orgda692b8">Conflicts</a>).</dd>
 <dt>C-c C-y &#x2013; (org-evaluate-time-range)</dt><dd>通过计算开始和结束的差来计算一个时间范
 围. 带上前缀参数使用,会在时间范围之后插入结果(在表格中则会将结果插入到下一列).</dd>
 </dl>
 </div>
-<div id="outline-container-org407ff8f" class="outline-4">
-<h4 id="org407ff8f">日期/时间提示(The date/time prompt)</h4>
-<div class="outline-text-4" id="text-org407ff8f">
+<div id="outline-container-orgd26d67a" class="outline-4">
+<h4 id="orgd26d67a">日期/时间提示(The date/time prompt)</h4>
+<div class="outline-text-4" id="text-orgd26d67a">
 <p>
 Org mode 会帮助你输入日期和时间.
 </p>
@@ -6018,9 +6120,9 @@ minibuffer 提示出现的同时,一个日历会弹出<sup><a id="fnr.34" class=
 </p>
 </div>
 </div>
-<div id="outline-container-org83a12a7" class="outline-4">
-<h4 id="org83a12a7">自定义时间格式(Custom time format)</h4>
-<div class="outline-text-4" id="text-org83a12a7">
+<div id="outline-container-org3387ebf" class="outline-4">
+<h4 id="org3387ebf">自定义时间格式(Custom time format)</h4>
+<div class="outline-text-4" id="text-org3387ebf">
 <p>
 让日期看起来不一样.
 Org mode 使用ISO 8601 中定义的时间和日期的标准 ISO 标记法. 如果你不习惯这种表示
@@ -6047,9 +6149,9 @@ Org mode 需要使用默认格式进行扫描,所以自定义格式不会替换�
 </div>
 </div>
 
-<div id="outline-container-org0e51213" class="outline-3">
-<h3 id="org0e51213">截止时间和日程安排(Deadlines and Scheduling)</h3>
-<div class="outline-text-3" id="text-org0e51213">
+<div id="outline-container-org7b86a21" class="outline-3">
+<h3 id="org7b86a21">截止时间和日程安排(Deadlines and Scheduling)</h3>
+<div class="outline-text-3" id="text-org7b86a21">
 <p>
 时间戳前可以加上特殊关键字,以便于计划.时间戳和关键字都必须紧跟在它们所指的任务之
 后.
@@ -6087,7 +6189,7 @@ Org mode 需要使用默认格式进行扫描,所以自定义格式不会替换�
 如果你想 <span class="underline">推迟</span> 该任务在 agenda 里的显示,可以使用 <code>SCHEDULED:
   &lt;2004-12-25 Sat -2d&gt;</code> :该任务仍然计划在 25号,但会在25号的两天后才会出现在
 agenda 里,也就是27号才会出现在 agenda 里.如果任务中有重复器(repeater, 中继器,
-但这里还是觉得翻译成重复器好理解一点 <a href="#orge867522">重复的任务(Repeated tasks)</a>),则延迟显示会
+但这里还是觉得翻译成重复器好理解一点 <a href="#orged3cac4">重复的任务(Repeated tasks)</a>),则延迟显示会
 影响所有该任务的出现;如果你想只延迟显示任务的第一次出现,请使用 <code>--2d</code>. 更多关于
 如何全局或者每个 agenda 里控制这一行为的详情,请参考变量
 <code>org-scheduled-delay-days</code> 和 <code>org-agenda-skip-scheduled-delay-if-deadline</code>.
@@ -6117,9 +6219,9 @@ Org mode 对每个函数的内部结构了解不足,无法发布早期和晚期�
 </p>
 </div>
 
-<div id="outline-container-org71ebcdb" class="outline-4">
-<h4 id="org71ebcdb">插入截止日期/日程安排(Inserting deadline/schedule)</h4>
-<div class="outline-text-4" id="text-org71ebcdb">
+<div id="outline-container-orgff7727f" class="outline-4">
+<h4 id="orgff7727f">插入截止日期/日程安排(Inserting deadline/schedule)</h4>
+<div class="outline-text-4" id="text-orgff7727f">
 <p>
 规划项目.
 </p>
@@ -6152,9 +6254,9 @@ Org mode 对每个函数的内部结构了解不足,无法发布早期和晚期�
 </p>
 </div>
 </div>
-<div id="outline-container-orge867522" class="outline-4">
-<h4 id="orge867522">重复的任务(Repeated tasks)</h4>
-<div class="outline-text-4" id="text-orge867522">
+<div id="outline-container-orged3cac4" class="outline-4">
+<h4 id="orged3cac4">重复的任务(Repeated tasks)</h4>
+<div class="outline-text-4" id="text-orged3cac4">
 <p>
 一次又一次出现的项目.
 </p>
@@ -6234,16 +6336,16 @@ DEADLINE: &lt;2005-10-01 Sat +1m -3d&gt;
 
 <p>
 另一种使用重复器的方式是创建许多任务子树的副本子树,日期随副本变化. <code>C-c C-x c</code> 命
-令就是基于次命令创造的;该命令的详细描述在 <a href="#orgb8660e3">结构编辑(Structure Editing)</a> 中.
+令就是基于次命令创造的;该命令的详细描述在 <a href="#orgc444565">结构编辑(Structure Editing)</a> 中.
 </p>
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-orgf648755" class="outline-3">
-<h3 id="orgf648755">计时工作时间(Clocking Work Time)</h3>
-<div class="outline-text-3" id="text-orgf648755">
+<div id="outline-container-org76e8bc8" class="outline-3">
+<h3 id="org76e8bc8">计时工作时间(Clocking Work Time)</h3>
+<div class="outline-text-3" id="text-org76e8bc8">
 <p>
 Org mode 允许你对在一个项目中的特定任务上所花的时间进行计时.当你开始处理一个事项
 时,你可以开始计时.当你停止执行该任务或者当你标记该任务为已完成时,计时会停止,并记
@@ -6262,13 +6364,13 @@ Org mode 允许你对在一个项目中的特定任务上所花的时间进行�
 
 <p>
 当你重新启动 Emacs ,并对一个新的任务开始计时,未完成的计时<sup><a id="fnr.44" class="footref" href="#fn.44">44</a></sup>会恢复并
-且会提示你要对该任务进行什么操作(参见 <a href="#org14d8b0b">解决空闲时间(Resolving idle time)</a>).
+且会提示你要对该任务进行什么操作(参见 <a href="#orgc3fbe51">解决空闲时间(Resolving idle time)</a>).
 </p>
 </div>
 
-<div id="outline-container-org6f98aed" class="outline-4">
-<h4 id="org6f98aed">计时命令(Clocking commands)</h4>
-<div class="outline-text-4" id="text-org6f98aed">
+<div id="outline-container-orgf812f03" class="outline-4">
+<h4 id="orgf812f03">计时命令(Clocking commands)</h4>
+<div class="outline-text-4" id="text-orgf812f03">
 <p>
 开始和停止计时.
 </p>
@@ -6282,8 +6384,8 @@ Org mode 允许你对在一个项目中的特定任务上所花的时间进行�
 停止时开始计时来强制连续性计时.
 当计时正在进行时,Org 会在 mode line 里展示当前的计时时间和计时任务的标题.显示
 的计时时间时为该任务和其子任务计时的所有时间.如果该任务有一个工作量估计(参见
-<a href="#org0a1a4c8">工作量估算(Effort Estimates)</a>),mode line 会展示工作量估计的当前计时时间<sup><a id="fnr.45" class="footref" href="#fn.45">45</a></sup>. 如果任务是
-重复任务(参见 <a href="#orge867522">重复的任务(Repeated tasks)</a>), 只展示从上一次重置起的时间<sup><a id="fnr.46" class="footref" href="#fn.46">46</a></sup>. 你可以使用 <code>CLOCK_MODELINE_TOTAL</code> 属
+<a href="#org43813c4">工作量估算(Effort Estimates)</a>),mode line 会展示工作量估计的当前计时时间<sup><a id="fnr.45" class="footref" href="#fn.45">45</a></sup>. 如果任务是
+重复任务(参见 <a href="#orged3cac4">重复的任务(Repeated tasks)</a>), 只展示从上一次重置起的时间<sup><a id="fnr.46" class="footref" href="#fn.46">46</a></sup>. 你可以使用 <code>CLOCK_MODELINE_TOTAL</code> 属
 性对显示时间进行更多的控制. 该属性可以有值 <code>current</code> 来只展示当前计时实例,值
 <code>today</code> 来显示今天这个任务所有的计时时间(另见变量 <code>org-extend-today-util</code>), 值 <code>all</code>
 来包括所有的时间,或者是默认值 <code>auto</code> .<sup><a id="fnr.47" class="footref" href="#fn.47">47</a></sup>
@@ -6322,7 +6424,7 @@ Org mode 允许你对在一个项目中的特定任务上所花的时间进行�
 
 
 <p>
-<code>l</code> 键可以用于 agenda 中(参见<a href="#org6f5f55d">Weekly/daily agenda</a>)来显示一天中哪些任务已完成或结束.
+<code>l</code> 键可以用于 agenda 中(参见<a href="#org7aa83c1">Weekly/daily agenda</a>)来显示一天中哪些任务已完成或结束.
 </p>
 
 <p>
@@ -6332,26 +6434,26 @@ Org mode 允许你对在一个项目中的特定任务上所花的时间进行�
 </div>
 </div>
 
-<div id="outline-container-org990d7f9" class="outline-4">
-<h4 id="org990d7f9">计时表格(The clock table)</h4>
-<div class="outline-text-4" id="text-org990d7f9">
+<div id="outline-container-orgea38b70" class="outline-4">
+<h4 id="orgea38b70">计时表格(The clock table)</h4>
+<div class="outline-text-4" id="text-orgea38b70">
 <p>
 详情报告.
 </p>
 </div>
 </div>
-<div id="outline-container-org14d8b0b" class="outline-4">
-<h4 id="org14d8b0b">解决空闲时间(Resolving idle time)</h4>
-<div class="outline-text-4" id="text-org14d8b0b">
+<div id="outline-container-orgc3fbe51" class="outline-4">
+<h4 id="orgc3fbe51">解决空闲时间(Resolving idle time)</h4>
+<div class="outline-text-4" id="text-orgc3fbe51">
 <p>
 解决你空闲的时间.
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org0a1a4c8" class="outline-3">
-<h3 id="org0a1a4c8">工作量估算(Effort Estimates)</h3>
-<div class="outline-text-3" id="text-org0a1a4c8">
+<div id="outline-container-org43813c4" class="outline-3">
+<h3 id="org43813c4">工作量估算(Effort Estimates)</h3>
+<div class="outline-text-3" id="text-org43813c4">
 <p>
 如果你像以一种更详细的方式计划你的工作,或者你需要生成带有工作量估计的报价,你可能
 需要给事项分配工作量估计.如果你也想要为你的工作计时,你稍后可能希望将估计时间和实
@@ -6374,7 +6476,7 @@ Org mode 允许你对在一个项目中的特定任务上所花的时间进行�
 </dl>
 
 <p>
-很显然,使用工作量估计最好的方式是通过列视图(参见<a href="#org3d19e06">列视图(Column View)</a>). 你应该从
+很显然,使用工作量估计最好的方式是通过列视图(参见<a href="#orgee8f6fd">列视图(Column View)</a>). 你应该从
 给工作量估计设置一个不连续值开始,而且一个 <code>COLUMNS</code> 格式会和计时总和一起展示这些值
 (如果你想计时的话). 对于特定缓冲区,你可以使用:
 </p>
@@ -6403,15 +6505,15 @@ Org mode 允许你对在一个项目中的特定任务上所花的时间进行�
 </p>
 
 <p>
-工作量估计可以用于 <code>/</code> 键触发的二级 agenda 筛选中(参见<a href="#orgbca39f1">Agenda Commands</a>). 如果你对
+工作量估计可以用于 <code>/</code> 键触发的二级 agenda 筛选中(参见<a href="#orgbae7b23">Agenda Commands</a>). 如果你对
 工作量估值的定义是一致的,那么只需要两次或三次按键就可以缩小列表范围,找到某个可用
 的时间段.
 </p>
 </div>
 </div>
-<div id="outline-container-org7494c74" class="outline-3">
-<h3 id="org7494c74">计时器(Times)</h3>
-<div class="outline-text-3" id="text-org7494c74">
+<div id="outline-container-orga1b18b7" class="outline-3">
+<h3 id="orga1b18b7">计时器(Times)</h3>
+<div class="outline-text-3" id="text-orga1b18b7">
 <p>
 Org 提供了两种类型的计时器.一种是正向计数的相对计时器,在会议或者观看视频期间记笔
 记非常有用. 另一种是倒计时计数器.
@@ -6447,18 +6549,18 @@ Org 提供了两种类型的计时器.一种是正向计数的相对计时器,�
 </div>
 </div>
 </div>
-<div id="outline-container-orgee2cc76" class="outline-2">
-<h2 id="orgee2cc76">重新归档和存档(Refiling and Archiving)</h2>
-<div class="outline-text-2" id="text-orgee2cc76">
+<div id="outline-container-orgd1a3988" class="outline-2">
+<h2 id="orgd1a3988">重新归档和存档(Refiling and Archiving)</h2>
+<div class="outline-text-2" id="text-orgd1a3988">
 <p>
 一旦信息存在于系统里,它就可能需要到处移动. Org 为此提供了重新归档,复制和存档命令.重
 新归档和复制命令帮助移动和复制大纲.归档有助于保持系统的紧凑型和快速性.
 </p>
 </div>
 
-<div id="outline-container-org42a5838" class="outline-3">
-<h3 id="org42a5838">重新归档和复制(Refile and Copy)</h3>
-<div class="outline-text-3" id="text-org42a5838">
+<div id="outline-container-org72144fb" class="outline-3">
+<h3 id="org72144fb">重新归档和复制(Refile and Copy)</h3>
+<div class="outline-text-3" id="text-org72144fb">
 <p>
 当复习捕获的数据时,你可能会想将其中的一些重新归档或复制到不同的列表中去,例如复制
 到一个项目中去.剪切,找到正确位置,然后粘贴笔记是很麻烦的.为了简化这一过程,你可以
@@ -6496,9 +6598,9 @@ Org 提供了两种类型的计时器.一种是正向计数的相对计时器,�
 </div>
 
 
-<div id="outline-container-org7b7033a" class="outline-3">
-<h3 id="org7b7033a">存档(Archiving)</h3>
-<div class="outline-text-3" id="text-org7b7033a">
+<div id="outline-container-org0eec6c2" class="outline-3">
+<h3 id="org0eec6c2">存档(Archiving)</h3>
+<div class="outline-text-3" id="text-org0eec6c2">
 <p>
 对已完成的笔记做些什么.
 </p>
@@ -6514,9 +6616,9 @@ Org 提供了两种类型的计时器.一种是正向计数的相对计时器,�
 </dl>
 </div>
 
-<div id="outline-container-orga5444f0" class="outline-4">
-<h4 id="orga5444f0">移动子树(Moving subtrees)</h4>
-<div class="outline-text-4" id="text-orga5444f0">
+<div id="outline-container-orge99cd7e" class="outline-4">
+<h4 id="orge99cd7e">移动子树(Moving subtrees)</h4>
+<div class="outline-text-4" id="text-orge99cd7e">
 <p>
 移动树到存档文件.
 </p>
@@ -6547,7 +6649,7 @@ Org 提供了两种类型的计时器.一种是正向计数的相对计时器,�
 </pre>
 <p>
 如果你想要为单个条目或子树设置一个特殊的存档位置,给定该条目一个 <code>ARCHIVE</code> 属性,位
-置作为属性值(参见 <a href="#org7649e45">属性和列(Properties and Columns)</a>).
+置作为属性值(参见 <a href="#orgbc2e3ce">属性和列(Properties and Columns)</a>).
 </p>
 
 <p>
@@ -6558,9 +6660,9 @@ Org 提供了两种类型的计时器.一种是正向计数的相对计时器,�
 </p>
 </div>
 </div>
-<div id="outline-container-orgd46813e" class="outline-4">
-<h4 id="orgd46813e">内部存档(Internal archiving)</h4>
-<div class="outline-text-4" id="text-orgd46813e">
+<div id="outline-container-org6e34315" class="outline-4">
+<h4 id="org6e34315">内部存档(Internal archiving)</h4>
+<div class="outline-text-4" id="text-org6e34315">
 <p>
 "关掉"树,但仍保留在文件中.
 </p>
@@ -6571,20 +6673,20 @@ Org 提供了两种类型的计时器.一种是正向计数的相对计时器,�
 </p>
 
 <p>
-一个用 <code>ARCHIVE</code> 标签(<a href="#orge1c04e5">标签(Tags)</a>)标记了的标题会保持其在大纲树中的位置,但具有下面
+一个用 <code>ARCHIVE</code> 标签(<a href="#orgde513a9">标签(Tags)</a>)标记了的标题会保持其在大纲树中的位置,但具有下面
 表现:
 </p>
 <ul class="org-ul">
-<li>当你视图使用可视性循环命令时(<a href="#orgf1ebbfb">标题可视性切换(Visibility Cycling)</a>),它不会被打开
+<li>当你视图使用可视性循环命令时(<a href="#org89758a4">标题可视性切换(Visibility Cycling)</a>),它不会被打开
 (可见).你可以使用 <code>C-&lt;TAB&gt;</code> 强制切换存档子树可视性,或者设置选项
 <code>org-cycle-opne-archived-trees</code>. 常用的大纲命令,例如 <code>outline-show-all</code> 也会打开存
 档的子树.</li>
-<li>在稀疏树(参见 <a href="#org908ec40">稀疏树(Sparse Trees)</a>)的构造期间,除非配置了选项
+<li>在稀疏树(参见 <a href="#org6e7529a">稀疏树(Sparse Trees)</a>)的构造期间,除非配置了选项
 <code>org-sparse-tree-open-archived-trees</code> 否则不会公开存档子树中的匹配项.</li>
-<li>在 agenda 视图(参见 <a href="#orgd1a3739">Agenda Views</a>)构造期间,除非你配置了选项
+<li>在 agenda 视图(参见 <a href="#org36657f7">Agenda Views</a>)构造期间,除非你配置了选项
 <code>org-agenda-skip-archived-trees</code> ,否则存档树里的内容都会被忽略.在 agenda 里,你可
 以按 <code>v a</code> 来让暂时包括存档.</li>
-<li>在导出时(见 <a href="#org18197d1">导出(Exporting)</a>), 只有标题会被导出,存档树不会被导出.使用变量
+<li>在导出时(见 <a href="#org851df39">导出(Exporting)</a>), 只有标题会被导出,存档树不会被导出.使用变量
 <code>org-export-with-archived-trees</code> 配置更多细节.</li>
 <li>除非变量 <code>org-columns-skip-archived-trees</code> 被配置为 <code>nil</code>, 否则存档的树会被排除在
 列视图之外.</li>
@@ -6610,20 +6712,19 @@ Org 提供了两种类型的计时器.一种是正向计数的相对计时器,�
 </div>
 </div>
 
-
-<div id="outline-container-orgf278ea1" class="outline-2">
-<h2 id="orgf278ea1"><span class="done DONE">DONE</span> 捕获和附件(Capture and Attachments)</h2>
-<div class="outline-text-2" id="text-orgf278ea1">
+<div id="outline-container-org227dfad" class="outline-2">
+<h2 id="org227dfad"><span class="done DONE">DONE</span> 捕获和附件(Capture and Attachments)</h2>
+<div class="outline-text-2" id="text-org227dfad">
 <p>
 任何组织系统系统的一个重要部分就是能快速捕获新点子和任务,并将参考资料与之相关联
 的能力. Org 使用一个叫做 <span class="underline">capture</span> 的流程来实现这一能力.它也能用来将与任务(附件)相
 关联的文件储存在特殊的目录中.最后,它能解析 RSS 提要来获取信息.要知道如何让外部程
-序(如网页浏览器)触发 Org 来捕获材料,请参阅 <a href="#orga941051">Protocols</a>.
+序(如网页浏览器)触发 Org 来捕获材料,请参阅 <a href="#orgad5ad9e">Protocols</a>.
 </p>
 </div>
-<div id="outline-container-org6af6025" class="outline-3">
-<h3 id="org6af6025">捕获(Capture)</h3>
-<div class="outline-text-3" id="text-org6af6025">
+<div id="outline-container-orgbb46cf2" class="outline-3">
+<h3 id="orgbb46cf2">捕获(Capture)</h3>
+<div class="outline-text-3" id="text-orgbb46cf2">
 <p>
 捕获新事物.
 </p>
@@ -6633,9 +6734,9 @@ Org 提供了两种类型的计时器.一种是正向计数的相对计时器,�
 John Wiegley 的优秀 <a href="https://github.com/jwiegley/remember">Remember</a> 包的启发.
 </p>
 </div>
-<div id="outline-container-org263eca5" class="outline-4">
-<h4 id="org263eca5">设置捕获(Setting up capture)</h4>
-<div class="outline-text-4" id="text-org263eca5">
+<div id="outline-container-orgc975166" class="outline-4">
+<h4 id="orgc975166">设置捕获(Setting up capture)</h4>
+<div class="outline-text-4" id="text-orgc975166">
 <p>
 下面的自定义设置了一个笔记的默认目标文件:
 </p>
@@ -6644,24 +6745,24 @@ John Wiegley 的优秀 <a href="https://github.com/jwiegley/remember">Remember</
 </pre>
 </div>
 <p>
-你可以定义一个全局快捷键来捕获新材料(参见<a href="#org8440852">激活(Activation)</a>)
+你可以定义一个全局快捷键来捕获新材料(参见<a href="#org926e004">激活(Activation)</a>)
 </p>
 </div>
 </div>
 
-<div id="outline-container-org45de975" class="outline-4">
-<h4 id="org45de975">使用捕获(Using capture)</h4>
-<div class="outline-text-4" id="text-org45de975">
+<div id="outline-container-orgf187096" class="outline-4">
+<h4 id="orgf187096">使用捕获(Using capture)</h4>
+<div class="outline-text-4" id="text-orgf187096">
 <dl class="org-dl">
 <dt>M-x org-capture &#x2013; (org-capture)</dt><dd>显示捕获模版菜单. 如果你定义了模版
-(参见<a href="#orgb3191f3">捕获模版(Capture templates)</a>), 该命令会提供这些模版供你选择或者是使用一个
+(参见<a href="#org755b79d">捕获模版(Capture templates)</a>), 该命令会提供这些模版供你选择或者是使用一个
 新的Org 大纲节点作为默认模版.该命令会插入模版到目标文件中,并切换到一个定位到新
 节点的间接缓冲区.然后,你可以插入所需要的信息了.</dd>
 <dt>C-c C-c &#x2013; (org-capture-finalize)</dt><dd>一旦你完成了键入信息到捕获缓冲区里的工作,
 <code>C-c C-c</code> 会让你返回捕获操作之前的窗口配置,这样你就可以继续工作,而不会进一步分心.当
 带上前缀参数调用时,完成操作并跳转到捕获的条目位置.</dd>
 <dt>C-c C-w &#x2013; (org-capture-refile)</dt><dd>通过将笔记重新归档到其他地方来完成捕获操作
-(参见 <a href="#org42a5838">重新归档和复制(Refile and Copy)</a>). 请注意,这将会执行一个常规的重新归档命
+(参见 <a href="#org72144fb">重新归档和复制(Refile and Copy)</a>). 请注意,这将会执行一个常规的重新归档命
 令,因此,在你运行这个命令时光标的位置是很重要的.如果你插入了一个带有父级和子级
 节点的树,请先将光标移动到父节点位置.所有传递给该命令的前缀参数都会传递给
 <code>org-refile</code> 命令.</dd>
@@ -6690,9 +6791,9 @@ John Wiegley 的优秀 <a href="https://github.com/jwiegley/remember">Remember</
 </p>
 </div>
 </div>
-<div id="outline-container-orgb3191f3" class="outline-4">
-<h4 id="orgb3191f3">捕获模版(Capture templates)</h4>
-<div class="outline-text-4" id="text-orgb3191f3">
+<div id="outline-container-org755b79d" class="outline-4">
+<h4 id="org755b79d">捕获模版(Capture templates)</h4>
+<div class="outline-text-4" id="text-org755b79d">
 <p>
 你可以为不同类型的捕获条目和不同的目标位置使用模版.创建模版的最容易的方法就是通
 过自定义界面.
@@ -6741,8 +6842,8 @@ John Wiegley 的优秀 <a href="https://github.com/jwiegley/remember">Remember</
 </div>
 
 <ul class="org-ul">
-<li><a id="org9469138"></a>模版元素(Template elements)<br />
-<div class="outline-text-5" id="text-org9469138">
+<li><a id="org2745247"></a>模版元素(Template elements)<br />
+<div class="outline-text-5" id="text-org2745247">
 <p>
 完整的模版条目需要些什么.
 </p>
@@ -6851,8 +6952,8 @@ John Wiegley 的优秀 <a href="https://github.com/jwiegley/remember">Remember</
 </dl>
 </div>
 </li>
-<li><a id="org1654418"></a>模版扩展(Template expansion)<br />
-<div class="outline-text-5" id="text-org1654418">
+<li><a id="org4cab90b"></a>模版扩展(Template expansion)<br />
+<div class="outline-text-5" id="text-org4cab90b">
 <p>
 填写关于时间和内容的信息.
 </p>
@@ -6998,8 +7099,8 @@ John Wiegley 的优秀 <a href="https://github.com/jwiegley/remember">Remember</
 </table>
 </div>
 </li>
-<li><a id="org287ad1e"></a>上下文中的模版(Templates in contexts)<br />
-<div class="outline-text-5" id="text-org287ad1e">
+<li><a id="orgce46364"></a>上下文中的模版(Templates in contexts)<br />
+<div class="outline-text-5" id="text-orgce46364">
 <p>
 仅在特定上下文中显示模版.
 </p>
@@ -7031,16 +7132,16 @@ John Wiegley 的优秀 <a href="https://github.com/jwiegley/remember">Remember</
 </div>
 </div>
 
-<div id="outline-container-org07b0834" class="outline-3">
-<h3 id="org07b0834">附件(Attachments)</h3>
-<div class="outline-text-3" id="text-org07b0834">
+<div id="outline-container-org0431815" class="outline-3">
+<h3 id="org0431815">附件(Attachments)</h3>
+<div class="outline-text-3" id="text-org0431815">
 <p>
 将文件附加到大纲.
 </p>
 
 <p>
 将参考资料和大纲节点关联起来通常是很有用的.小的纯文本块可以简单的存储在项目的子
-树中.超链接(见<a href="#orgccbd367">超链接(Hyperlinks)</a>) 可以与本地甚至是远程计算机上其他位置的文件建
+树中.超链接(见<a href="#org40995e6">超链接(Hyperlinks)</a>) 可以与本地甚至是远程计算机上其他位置的文件建
 立关联, 例如属于项目的电子邮件或者源代码文件.
 </p>
 
@@ -7051,9 +7152,9 @@ John Wiegley 的优秀 <a href="https://github.com/jwiegley/remember">Remember</
 </div>
 
 
-<div id="outline-container-org9dc8abe" class="outline-4">
-<h4 id="org9dc8abe">附件默认设置和调度程序(Attachment defaults and dispatcher)</h4>
-<div class="outline-text-4" id="text-org9dc8abe">
+<div id="outline-container-orgcf93f1a" class="outline-4">
+<h4 id="orgcf93f1a">附件默认设置和调度程序(Attachment defaults and dispatcher)</h4>
+<div class="outline-text-4" id="text-orgcf93f1a">
 <p>
 如何访问附件命令
 </p>
@@ -7070,7 +7171,7 @@ John Wiegley 的优秀 <a href="https://github.com/jwiegley/remember">Remember</
 </p>
 
 <p>
-关于对设置的更多控制,请参见 <a href="#org2f04bd5">附件选项(Attachment options)</a>.
+关于对设置的更多控制,请参见 <a href="#org135f6d5">附件选项(Attachment options)</a>.
 </p>
 
 <p>
@@ -7091,7 +7192,7 @@ John Wiegley 的优秀 <a href="https://github.com/jwiegley/remember">Remember</
 <dt>z &#x2013; (org-attach-sync)</dt><dd>将当前任务和其附件目录同步,以防你自己添加了附件.</dd>
 <dt>o &#x2013; (org-attach-open)</dt><dd>打开当前任务的附件.如果附件数多于1,则提示你先输入
 文件名.打开方式遵循  <code>org-file-apps</code> 设置的规则.更多细节请查看超链接的信息(请
-参阅<a href="#org92c78a9">处理链接(Handling Links)</a>).</dd>
+参阅<a href="#org269dead">处理链接(Handling Links)</a>).</dd>
 <dt>O &#x2013; (org-attach-open-in-emacs)</dt><dd>也是打开附件,但是强制在 Emacs 里打开文件.</dd>
 <dt>f &#x2013; (org-attach-reveal)</dt><dd>打开当前任务的附件目录.</dd>
 <dt>F &#x2013; (org-attach-reveal-in-emacs)</dt><dd>也是打开目录,但是强制在 Emacs 里使用
@@ -7109,9 +7210,9 @@ Dired 里打开目录然后再删除附件.</dd>
 </div>
 </div>
 
-<div id="outline-container-org2f04bd5" class="outline-4">
-<h4 id="org2f04bd5">附件选项(Attachment options)</h4>
-<div class="outline-text-4" id="text-org2f04bd5">
+<div id="outline-container-org135f6d5" class="outline-4">
+<h4 id="org135f6d5">附件选项(Attachment options)</h4>
+<div class="outline-text-4" id="text-org135f6d5">
 <p>
 配置附件系统
 </p>
@@ -7128,7 +7229,7 @@ Dired 里打开目录然后再删除附件.</dd>
 <code>org-use-property-inheritance</code> 定义的值继承来的.如果你想要专门设置Org attach 的
 继承,可以使用 <code>org-attach-use-inheritance</code> 来完成这一设置.大多数情况下,通过节点
 层级结构继承文档是非常有意义的.特别是当使用附件链接的时候,请参见
-<a href="#org6d63aae">附件链接(Attachment links)</a>. 下面的例子展示了一个附件继承的用例:
+<a href="#org66b9310">附件链接(Attachment links)</a>. 下面的例子展示了一个附件继承的用例:
 </p>
 <pre class="example">
 * Chapter A ...
@@ -7163,7 +7264,7 @@ Some text
 的第一个元素.将现有 ID 解析为路径时,将尝试此列表中的所有函数,以保持与系统中现
 有文件夹的向后兼容.</dd>
 <dt>org-attach-store-link-p</dt><dd>保存一个正在被附加的文件的链接.该链接被保存到
-<code>org-store-links</code> 里,以便随后使用 <code>C-c C-l</code> 插入(参见<a href="#org92c78a9">处理链接(Handling Links)</a>). 根据 <code>org-attach-store-link-p</code> 里设置的值,该链接会是指向原位置的文件链
+<code>org-store-links</code> 里,以便随后使用 <code>C-c C-l</code> 插入(参见<a href="#org269dead">处理链接(Handling Links)</a>). 根据 <code>org-attach-store-link-p</code> 里设置的值,该链接会是指向原位置的文件链
 接,一个指向附件位置的附件链接或者是一个指向附件位置的文件链接.</dd>
 <dt>org-attach-commands</dt><dd>附件调度器里使用的所有命令的列表.</dd>
 <dt>org-attach-expert</dt><dd>当 <code>org-attach-expert</code> 被设置为非 <code>nil</code> 时,不会显示附件调度器
@@ -7177,9 +7278,9 @@ Some text
 </div>
 </div>
 
-<div id="outline-container-org6d63aae" class="outline-4">
-<h4 id="org6d63aae">附件链接(Attachment links)</h4>
-<div class="outline-text-4" id="text-org6d63aae">
+<div id="outline-container-org66b9310" class="outline-4">
+<h4 id="org66b9310">附件链接(Attachment links)</h4>
+<div class="outline-text-4" id="text-org66b9310">
 <p>
 附件的超链接访问
 </p>
@@ -7196,13 +7297,13 @@ Some text
 See attached document for more information: [[attachment:info.org]]
 </pre>
 <p>
-关于这些链接的更多信息请参阅 <a href="#org21f0367">外部链接(External Links)</a>.
+关于这些链接的更多信息请参阅 <a href="#orgc880ab3">外部链接(External Links)</a>.
 </p>
 </div>
 </div>
-<div id="outline-container-org4fe26f1" class="outline-4">
-<h4 id="org4fe26f1">使用 Git 进行自动版本控制(Automatic version-control with Git)</h4>
-<div class="outline-text-4" id="text-org4fe26f1">
+<div id="outline-container-org173b705" class="outline-4">
+<h4 id="org173b705">使用 Git 进行自动版本控制(Automatic version-control with Git)</h4>
+<div class="outline-text-4" id="text-org173b705">
 <p>
 所有内容都安全存储起来.
 </p>
@@ -7223,9 +7324,9 @@ See attached document for more information: [[attachment:info.org]]
 </div>
 
 
-<div id="outline-container-org5089ea2" class="outline-4">
-<h4 id="org5089ea2">从 Dired 附加(Attach from Dired)</h4>
-<div class="outline-text-4" id="text-org5089ea2">
+<div id="outline-container-orgd29ac21" class="outline-4">
+<h4 id="orgd29ac21">从 Dired 附加(Attach from Dired)</h4>
+<div class="outline-text-4" id="text-orgd29ac21">
 <p>
 使用 dired 来选择附件.
 </p>
@@ -7268,11 +7369,9 @@ See attached document for more information: [[attachment:info.org]]
 </div>
 </div>
 
-
-
-<div id="outline-container-orgb4f43fb" class="outline-3">
-<h3 id="orgb4f43fb">RSS 订阅(RSS Feads)</h3>
-<div class="outline-text-3" id="text-orgb4f43fb">
+<div id="outline-container-org6e72fc5" class="outline-3">
+<h3 id="org6e72fc5">RSS 订阅(RSS Feads)</h3>
+<div class="outline-text-3" id="text-org6e72fc5">
 <p>
 从 RSS 提要中获得输入.
 </p>
@@ -7312,12 +7411,9 @@ Org 可以基于 RSS 订阅和 Atom 订阅里找到的信息添加和改变条�
 串.
 </p>
 </div>
-
-
-
-<div id="outline-container-org9d233ec" class="outline-4">
-<h4 id="org9d233ec">测试</h4>
-<div class="outline-text-4" id="text-org9d233ec">
+<div id="outline-container-org1399533" class="outline-4">
+<h4 id="org1399533">测试</h4>
+<div class="outline-text-4" id="text-org1399533">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-feed-alist
       '((<span style="font-style: italic;">"ReadingWorldMagazine"</span>
@@ -7325,6 +7421,7 @@ Org 可以基于 RSS 订阅和 Atom 订阅里找到的信息添加和改变条�
          <span style="font-style: italic;">"~/MyLife/org/feeds.org"</span> <span style="font-style: italic;">"ReadingWorld Entries"</span>)))
 </pre>
 </div>
+
 <p>
 使用 <code>C-c C-x G</code> 可以跳转到 feeds.org 文件的 ReadingWorld Entries 标题, 再使用  <code>C-c
 C-x g</code> 可以从网站的 RSS 接口里读取摘要到该条目里.
@@ -7334,36 +7431,91 @@ C-x g</code> 可以从网站的 RSS 接口里读取摘要到该条目里.
 </div>
 </div>
 
-<div id="outline-container-orgd1a3739" class="outline-2">
-<h2 id="orgd1a3739"><span class="todo TODO">TODO</span> Agenda Views</h2>
-<div class="outline-text-2" id="text-orgd1a3739">
+<div id="outline-container-org36657f7" class="outline-2">
+<h2 id="org36657f7"><span class="todo TODO">TODO</span> Agenda Views</h2>
+<div class="outline-text-2" id="text-org36657f7">
 </div>
-<div id="outline-container-org6f5f55d" class="outline-3">
-<h3 id="org6f5f55d">Weekly/daily agenda</h3>
+<div id="outline-container-org8022a2b" class="outline-3">
+<h3 id="org8022a2b">Agenda Files</h3>
 </div>
-<div id="outline-container-orgbca39f1" class="outline-3">
-<h3 id="orgbca39f1">Agenda Commands</h3>
+<div id="outline-container-orgd5ff3ea" class="outline-3">
+<h3 id="orgd5ff3ea">Agenda Dispatcher</h3>
 </div>
-<div id="outline-container-orgd8d202e" class="outline-3">
-<h3 id="orgd8d202e">Built-in Agenda Views</h3>
-<div class="outline-text-3" id="text-orgd8d202e">
+
+<div id="outline-container-org24c484c" class="outline-3">
+<h3 id="org24c484c">Built-in Agenda Views</h3>
+<div class="outline-text-3" id="text-org24c484c">
 </div>
-<div id="outline-container-orgdb95050" class="outline-4">
-<h4 id="orgdb95050">匹配标签和属性(Matching tags and properties)</h4>
+<div id="outline-container-org7aa83c1" class="outline-4">
+<h4 id="org7aa83c1">Weekly/daily agenda</h4>
+</div>
+<div id="outline-container-orge14b0c9" class="outline-4">
+<h4 id="orge14b0c9">Global TODO list</h4>
+</div>
+<div id="outline-container-org8014bd2" class="outline-4">
+<h4 id="org8014bd2">匹配标签和属性(Matching tags and properties)</h4>
+</div>
+<div id="outline-container-orgfe44925" class="outline-4">
+<h4 id="orgfe44925">Search view</h4>
+</div>
+<div id="outline-container-orge2d452b" class="outline-4">
+<h4 id="orge2d452b">Stuck projects</h4>
 </div>
 </div>
-<div id="outline-container-org12208c8" class="outline-3">
-<h3 id="org12208c8">Agenda Column View</h3>
+<div id="outline-container-org9c00ef6" class="outline-3">
+<h3 id="org9c00ef6">Presentation and Sorting</h3>
+<div class="outline-text-3" id="text-org9c00ef6">
+</div>
+<div id="outline-container-org5eed72a" class="outline-4">
+<h4 id="org5eed72a">种类(Categories)</h4>
+</div>
+<div id="outline-container-org49ffd9e" class="outline-4">
+<h4 id="org49ffd9e">Time-of-day specifications</h4>
+</div>
+<div id="outline-container-orga0b55fe" class="outline-4">
+<h4 id="orga0b55fe">agenda 条目排序(Sorting og agenda items)</h4>
+</div>
+<div id="outline-container-org134aba9" class="outline-4">
+<h4 id="org134aba9">过滤/限制 agenda 条目(Filtering/limiting agenda items)</h4>
 </div>
 </div>
 
-<div id="outline-container-org5ba4821" class="outline-2">
-<h2 id="org5ba4821"><span class="todo TODO">TODO</span> 富文本的标记(Markup for Rich Contents)</h2>
-<div class="outline-text-2" id="text-org5ba4821">
+<div id="outline-container-orgbae7b23" class="outline-3">
+<h3 id="orgbae7b23">Agenda Commands</h3>
 </div>
-<div id="outline-container-orgbf95e14" class="outline-3">
-<h3 id="orgbf95e14">创建脚注(Creating Footnotes)</h3>
-<div class="outline-text-3" id="text-orgbf95e14">
+
+<div id="outline-container-org06a94df" class="outline-3">
+<h3 id="org06a94df">Custom Agenda Views</h3>
+<div class="outline-text-3" id="text-org06a94df">
+</div>
+<div id="outline-container-org03fe384" class="outline-4">
+<h4 id="org03fe384">保存搜索(Storing searches)</h4>
+</div>
+
+<div id="outline-container-orgfdd9e21" class="outline-4">
+<h4 id="orgfdd9e21">Block agenda</h4>
+</div>
+
+<div id="outline-container-orgdc59097" class="outline-4">
+<h4 id="orgdc59097">设置选项(Setting options)</h4>
+</div>
+</div>
+
+<div id="outline-container-org3ea1e57" class="outline-3">
+<h3 id="org3ea1e57">Exporting Agenda Views</h3>
+</div>
+<div id="outline-container-orgcbbdcc6" class="outline-3">
+<h3 id="orgcbbdcc6">Agenda Column View</h3>
+</div>
+</div>
+
+<div id="outline-container-orgc248931" class="outline-2">
+<h2 id="orgc248931"><span class="todo TODO">TODO</span> 富文本的标记(Markup for Rich Contents)</h2>
+<div class="outline-text-2" id="text-orgc248931">
+</div>
+<div id="outline-container-org79926c9" class="outline-3">
+<h3 id="org79926c9">创建脚注(Creating Footnotes)</h3>
+<div class="outline-text-3" id="text-org79926c9">
 <p>
 脚注从第0列方括号中的脚注标记开始,不允许由缩进,到下一个脚注的定义,下一个
 标题或连续两个空白行后结束.脚注引用只是文本里方括号中的标记.标记总是以 <code>fn:</code> 开
@@ -7426,9 +7578,9 @@ Org 模式将基于数字的语法扩展到命名脚注和可选的内联定义.
 </div>
 </div>
 
-<div id="outline-container-org18197d1" class="outline-2">
-<h2 id="org18197d1"><span class="todo TODO">TODO</span> 导出(Exporting)</h2>
-<div class="outline-text-2" id="text-org18197d1">
+<div id="outline-container-org851df39" class="outline-2">
+<h2 id="org851df39"><span class="todo TODO">TODO</span> 导出(Exporting)</h2>
+<div class="outline-text-2" id="text-org851df39">
 <p>
 当需要将自己的 org 笔记打印出来,发布到网上,或是分享给不用 Org 的人.Orrg 可以将
 文档转化并导出为各种其他的格式,同时尽可能的保持文档结构和 markup (富文本标记内
@@ -7464,88 +7616,88 @@ back-ends 可以通过两种方式加载:
 加载 Markdown 格式的 back-end, 在 Eamcs 配置文件里添加 <code>(require 'ox-md)</code></li>
 </ul>
 </div>
-<div id="outline-container-orgb7f455a" class="outline-3">
-<h3 id="orgb7f455a">The Export Dispatcher(The main interface.) 导出调度器</h3>
-<div class="outline-text-3" id="text-orgb7f455a">
+<div id="outline-container-org8ab1d9c" class="outline-3">
+<h3 id="org8ab1d9c">The Export Dispatcher(The main interface.) 导出调度器</h3>
+<div class="outline-text-3" id="text-org8ab1d9c">
 <p>
 To Be Continued!
 </p>
 </div>
 </div>
-<div id="outline-container-orgfe8ddd9" class="outline-3">
-<h3 id="orgfe8ddd9">HTML Export</h3>
+<div id="outline-container-orgc9c0569" class="outline-3">
+<h3 id="orgc9c0569">HTML Export</h3>
 </div>
 </div>
 
-<div id="outline-container-org270ae5d" class="outline-2">
-<h2 id="org270ae5d"><span class="todo TODO">TODO</span> 发布(Publishing)</h2>
+<div id="outline-container-org3683e21" class="outline-2">
+<h2 id="org3683e21"><span class="todo TODO">TODO</span> 发布(Publishing)</h2>
 </div>
-<div id="outline-container-org3777b31" class="outline-2">
-<h2 id="org3777b31"><span class="todo TODO">TODO</span> 引用处理(Citation handling)</h2>
+<div id="outline-container-org4406b6e" class="outline-2">
+<h2 id="org4406b6e"><span class="todo TODO">TODO</span> 引用处理(Citation handling)</h2>
 </div>
-<div id="outline-container-orgbb5e63f" class="outline-2">
-<h2 id="orgbb5e63f"><span class="todo TODO">TODO</span> 使用源代码(Working with Source Code)</h2>
+<div id="outline-container-orgc429867" class="outline-2">
+<h2 id="orgc429867"><span class="todo TODO">TODO</span> 使用源代码(Working with Source Code)</h2>
 </div>
-<div id="outline-container-orga923c59" class="outline-2">
-<h2 id="orga923c59"><span class="todo TODO">TODO</span> 杂项(Miscellaneous)</h2>
-<div class="outline-text-2" id="text-orga923c59">
+<div id="outline-container-org67ee481" class="outline-2">
+<h2 id="org67ee481"><span class="todo TODO">TODO</span> 杂项(Miscellaneous)</h2>
+<div class="outline-text-2" id="text-org67ee481">
 </div>
-<div id="outline-container-org90c51c4" class="outline-3">
-<h3 id="org90c51c4">Conflicts</h3>
-</div>
-
-<div id="outline-container-orga941051" class="outline-3">
-<h3 id="orga941051">Protocols</h3>
-</div>
-</div>
-<div id="outline-container-orgc41c205" class="outline-2">
-<h2 id="orgc41c205"><span class="todo TODO">TODO</span> Hacking</h2>
-<div class="outline-text-2" id="text-orgc41c205">
-</div>
-<div id="outline-container-orgd9b0ec0" class="outline-3">
-<h3 id="orgd9b0ec0">Dynamic Blocks</h3>
-</div>
-<div id="outline-container-orgc6c60dc" class="outline-3">
-<h3 id="orgc6c60dc">Adding Hyperlink Types</h3>
-</div>
-</div>
-<div id="outline-container-org51275f4" class="outline-2">
-<h2 id="org51275f4"><span class="todo TODO">TODO</span> History and Acknowledgments</h2>
-</div>
-<div id="outline-container-org68869aa" class="outline-2">
-<h2 id="org68869aa"><span class="todo TODO">TODO</span> GNU Free Documentation License</h2>
-</div>
-<div id="outline-container-orge3bd835" class="outline-2">
-<h2 id="orge3bd835"><span class="todo TODO">TODO</span> Main Index</h2>
-</div>
-<div id="outline-container-orge061632" class="outline-2">
-<h2 id="orge061632"><span class="todo TODO">TODO</span> Key Index</h2>
-</div>
-<div id="outline-container-orgb59920a" class="outline-2">
-<h2 id="orgb59920a"><span class="todo TODO">TODO</span> Command and Function Index</h2>
-</div>
-<div id="outline-container-orgebea538" class="outline-2">
-<h2 id="orgebea538"><span class="todo TODO">TODO</span> Variable Index</h2>
-</div>
-<div id="outline-container-orgb544b20" class="outline-2">
-<h2 id="orgb544b20"><span class="todo TODO">TODO</span> 正则表达式(Regular Expressions)</h2>
+<div id="outline-container-orgda692b8" class="outline-3">
+<h3 id="orgda692b8">Conflicts</h3>
 </div>
 
-<div id="outline-container-org4ad09fc" class="outline-2">
-<h2 id="org4ad09fc"><span class="todo TODO">TODO</span> Unfinished task</h2>
-<div class="outline-text-2" id="text-org4ad09fc">
+<div id="outline-container-orgad5ad9e" class="outline-3">
+<h3 id="orgad5ad9e">Protocols</h3>
+</div>
+</div>
+<div id="outline-container-org06f2c41" class="outline-2">
+<h2 id="org06f2c41"><span class="todo TODO">TODO</span> Hacking</h2>
+<div class="outline-text-2" id="text-org06f2c41">
+</div>
+<div id="outline-container-orgc2ee90c" class="outline-3">
+<h3 id="orgc2ee90c">Dynamic Blocks</h3>
+</div>
+<div id="outline-container-org8762893" class="outline-3">
+<h3 id="org8762893">Adding Hyperlink Types</h3>
+</div>
+</div>
+<div id="outline-container-org5c490fe" class="outline-2">
+<h2 id="org5c490fe"><span class="todo TODO">TODO</span> History and Acknowledgments</h2>
+</div>
+<div id="outline-container-orge9b7c57" class="outline-2">
+<h2 id="orge9b7c57"><span class="todo TODO">TODO</span> GNU Free Documentation License</h2>
+</div>
+<div id="outline-container-org535ea82" class="outline-2">
+<h2 id="org535ea82"><span class="todo TODO">TODO</span> Main Index</h2>
+</div>
+<div id="outline-container-orgf1cfa0c" class="outline-2">
+<h2 id="orgf1cfa0c"><span class="todo TODO">TODO</span> Key Index</h2>
+</div>
+<div id="outline-container-org9250911" class="outline-2">
+<h2 id="org9250911"><span class="todo TODO">TODO</span> Command and Function Index</h2>
+</div>
+<div id="outline-container-org1caa887" class="outline-2">
+<h2 id="org1caa887"><span class="todo TODO">TODO</span> Variable Index</h2>
+</div>
+<div id="outline-container-orgd860e6b" class="outline-2">
+<h2 id="orgd860e6b"><span class="todo TODO">TODO</span> 正则表达式(Regular Expressions)</h2>
+</div>
+
+<div id="outline-container-org3ce4e34" class="outline-2">
+<h2 id="org3ce4e34"><span class="todo TODO">TODO</span> Unfinished task</h2>
+<div class="outline-text-2" id="text-org3ce4e34">
 <p>
 除了 TODO Item 一节,其他带TODO 文本的地方都是许多需要修改引用或脚注的地方.
 </p>
 </div>
 </div>
-<div id="outline-container-orgb7f0b5d" class="outline-2">
-<h2 id="orgb7f0b5d"><span class="todo TODO">TODO</span> Questions &amp; Answers</h2>
-<div class="outline-text-2" id="text-orgb7f0b5d">
+<div id="outline-container-org2264fc3" class="outline-2">
+<h2 id="org2264fc3"><span class="todo TODO">TODO</span> Questions &amp; Answers</h2>
+<div class="outline-text-2" id="text-org2264fc3">
 </div>
-<div id="outline-container-org46c305f" class="outline-3">
-<h3 id="org46c305f">orgmode '#STARTUP: hideblocks' doesn't work</h3>
-<div class="outline-text-3" id="text-org46c305f">
+<div id="outline-container-org05c0da3" class="outline-3">
+<h3 id="org05c0da3">orgmode '#STARTUP: hideblocks' doesn't work</h3>
+<div class="outline-text-3" id="text-org05c0da3">
 <ul class="org-ul">
 <li>description:
 org version: 9.4.4
@@ -7645,10 +7797,10 @@ Org mode 之后, Org mode 才会解析这些行.光标在 <code>#+</code> 开头
 <div class="footdef"><sup><a id="fn.23" class="footnum" href="#fnr.23">23</a></sup> <div class="footpara">和所有缓冲区设置一样,使用 <code>C-c C-c</code>
 来激活行中的任何更改.</div></div>
 
-<div class="footdef"><sup><a id="fn.24" class="footnum" href="#fnr.24">24</a></sup> <div class="footpara">只有在搜索并不涉及复杂的测试时生效(包括属性,参见 <a href="#orge37363c">属性搜索(Property Searches)</a>).</div></div>
+<div class="footdef"><sup><a id="fn.24" class="footnum" href="#fnr.24">24</a></sup> <div class="footpara">只有在搜索并不涉及复杂的测试时生效(包括属性,参见 <a href="#org6506e96">属性搜索(Property Searches)</a>).</div></div>
 
 <div class="footdef"><sup><a id="fn.25" class="footnum" href="#fnr.25">25</a></sup> <div class="footpara">若要将这个默认列表扩展到 agenda 文件里使用的所有标签(参见
-<a href="#orgd1a3739">Agenda Views</a>),请自定义变量 <code>org-complete-tags-always-offer-all-agenda-tags</code></div></div>
+<a href="#org36657f7">Agenda Views</a>),请自定义变量 <code>org-complete-tags-always-offer-all-agenda-tags</code></div></div>
 
 <div class="footdef"><sup><a id="fn.26" class="footnum" href="#fnr.26">26</a></sup> <div class="footpara">快捷键会给没有设
 置快捷键的标签自动分配</div></div>
@@ -7665,7 +7817,7 @@ Org mode 之后, Org mode 才会解析这些行.光标在 <code>#+</code> 开头
 发布 &#x2013; 请访问 <a href="https://orgmode.org">https://orgmode.org</a></div></div>
 
 <div class="footdef"><sup><a id="fn.31" class="footnum" href="#fnr.31">31</a></sup> <div class="footpara">Org 的日期格式受标准
-ISO 8601 日期/时间格式的启发.要使用其他格式,请参考<a href="#org83a12a7">自定义时间格式(Custom time format)</a>. 当您自己键入日期时,日期名称是可选的.然而,为了阅读方便,Org 在插入或修改
+ISO 8601 日期/时间格式的启发.要使用其他格式,请参考<a href="#org3387ebf">自定义时间格式(Custom time format)</a>. 当您自己键入日期时,日期名称是可选的.然而,为了阅读方便,Org 在插入或修改
 任何日期时都会添加该日的名称.</div></div>
 
 <div class="footdef"><sup><a id="fn.32" class="footnum" href="#fnr.32">32</a></sup> <div class="footpara">当使用标准的日记表达方法时,你需要特别关注参数的
@@ -7703,7 +7855,7 @@ mode 用户可以使用这个方法的特殊版本,例如 <code>org-date</code> 
 <div class="footdef"><sup><a id="fn.40" class="footnum" href="#fnr.40">40</a></sup> <div class="footpara">相应的 <code>STARTUP</code> 选项是 <code>logreschedule</code> , <code>lognotereschedule</code> 和
 <code>nologreschedule</code> .</div></div>
 
-<div class="footdef"><sup><a id="fn.41" class="footnum" href="#fnr.41">41</a></sup> <div class="footpara">然而,Org 不重复无效(未激活)的时间戳, 参见 <a href="#org89405ad">时间戳(Timestamps)</a></div></div>
+<div class="footdef"><sup><a id="fn.41" class="footnum" href="#fnr.41">41</a></sup> <div class="footpara">然而,Org 不重复无效(未激活)的时间戳, 参见 <a href="#org0281924">时间戳(Timestamps)</a></div></div>
 
 <div class="footdef"><sup><a id="fn.42" class="footnum" href="#fnr.42">42</a></sup> <div class="footpara">要改变这一行为,你可以使用选项 <code>org-log-repeat</code>
 或者使用 <code>STARTUP~s 选项: ~logrepeat</code> , <code>lognoterepeat</code> 和 <code>nologrepeat</code> . 使用
@@ -7726,7 +7878,7 @@ mode 用户可以使用这个方法的特殊版本,例如 <code>org-date</code> 
 
 <div class="footdef"><sup><a id="fn.48" class="footnum" href="#fnr.48">48</a></sup> <div class="footpara">相应的缓冲区内设置是 <code>#+STARTUP: lognoteclock-out</code> .</div></div>
 
-<div class="footdef"><sup><a id="fn.49" class="footnum" href="#fnr.49">49</a></sup> <div class="footpara">请注意在平面列表中求和层级数据的陷阱(参见 <a href="#org12208c8">Agenda Column View</a>)</div></div>
+<div class="footdef"><sup><a id="fn.49" class="footnum" href="#fnr.49">49</a></sup> <div class="footpara">请注意在平面列表中求和层级数据的陷阱(参见 <a href="#orgcbbdcc6">Agenda Column View</a>)</div></div>
 
 <div class="footdef"><sup><a id="fn.50" class="footnum" href="#fnr.50">50</a></sup> <div class="footpara">注意,相应的 <code>STARTUP</code> 选项是 <code>logrefile,
   lognoterefile, nologrefile</code></div></div>
@@ -7746,7 +7898,7 @@ mode 用户可以使用这个方法的特殊版本,例如 <code>org-date</code> 
 斜杠将 <code>%</code> 转义.</div></div>
 
 <div class="footdef"><sup><a id="fn.55" class="footnum" href="#fnr.55">55</a></sup> <div class="footpara">如果你定义了你自己的链接类型(参见
-<a href="#orgc6c60dc">Adding Hyperlink Types</a>) 任何你存储在 <code>org-store-link-props</code> 里的属性都能通过类似
+<a href="#org8762893">Adding Hyperlink Types</a>) 任何你存储在 <code>org-store-link-props</code> 里的属性都能通过类似
 的方式在捕获模版里访问到.</div></div>
 
 <div class="footdef"><sup><a id="fn.56" class="footnum" href="#fnr.56">56</a></sup> <div class="footpara">这永远是另一个人,而不是用户. 请参阅变量 <code>org-link-from-user-regexp</code> .</div></div>
@@ -7765,7 +7917,7 @@ fninline' 或 '#+STARTUP: nofninline'</div></div>
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-05-24 Tue 18:38</p>
+<p class="date">Created: 2022-05-25 Wed 01:25</p>
 <p class="validation"></p>
 </div>
 </body>

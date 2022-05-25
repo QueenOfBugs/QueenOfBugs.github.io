@@ -6,7 +6,7 @@
 <!-- 2022-05-25 Wed 01:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>阅读计划</title>
+<title>&lrm;</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="kamisama" />
 <style type="text/css">
@@ -226,6 +226,28 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="org-div-home-and-up">
@@ -233,37 +255,58 @@ for the JavaScript code in this tag.
  |
  <a accesskey="H" href="../index.html"> HOME </a>
 </div><div id="content">
-<h1 class="title">阅读计划</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org2dcf942"><span class="todo TODO">TODO</span> 通用源码阅读指导书</a>
+<li><a href="#orgc8cfefc">欧式平面几何五大公理</a>
 <ul>
-<li><a href="#org39a738c">背景</a></li>
-<li><a href="#orgbe7c480">目标</a></li>
+<li><a href="#orgd53d6a5">两点可以连成一条直线</a></li>
+<li><a href="#org6ef61ad">线段可以任意延长</a></li>
+<li><a href="#org908e718">给定点 O 和线段长 r, 可以以 O 为圆心, r 为半径长做一个圆</a>
+<ul>
+<li><a href="#org172e185">为什么C_a,C_b 相交于两点</a></li>
+</ul>
+</li>
+<li><a href="#org7c27772">凡直角皆相等</a></li>
+<li><a href="#org113dfe7">平行公理</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org2dcf942" class="outline-2">
-<h2 id="org2dcf942"><span class="todo TODO">TODO</span> 通用源码阅读指导书</h2>
-<div class="outline-text-2" id="text-org2dcf942">
+<div id="outline-container-orgc8cfefc" class="outline-2">
+<h2 id="orgc8cfefc">欧式平面几何五大公理</h2>
+<div class="outline-text-2" id="text-orgc8cfefc">
 </div>
-<div id="outline-container-org39a738c" class="outline-3">
-<h3 id="org39a738c">背景</h3>
-<div class="outline-text-3" id="text-org39a738c">
+<div id="outline-container-orgd53d6a5" class="outline-3">
+<h3 id="orgd53d6a5">两点可以连成一条直线</h3>
+</div>
+<div id="outline-container-org6ef61ad" class="outline-3">
+<h3 id="org6ef61ad">线段可以任意延长</h3>
+</div>
+<div id="outline-container-org908e718" class="outline-3">
+<h3 id="org908e718">给定点 O 和线段长 r, 可以以 O 为圆心, r 为半径长做一个圆</h3>
+<div class="outline-text-3" id="text-org908e718">
+</div>
+<div id="outline-container-org172e185" class="outline-4">
+<h4 id="org172e185">为什么C_a,C_b 相交于两点</h4>
+</div>
+</div>
+<div id="outline-container-org7c27772" class="outline-3">
+<h3 id="org7c27772">凡直角皆相等</h3>
+<div class="outline-text-3" id="text-org7c27772">
 <p>
-阅读源码时查阅的相关资料对简单部分讲解得细致入微,对复杂的部分则避而不谈.
+平移以后图形不变就是根据这个来的
 </p>
 </div>
 </div>
-<div id="outline-container-orgbe7c480" class="outline-3">
-<h3 id="orgbe7c480">目标</h3>
-<div class="outline-text-3" id="text-orgbe7c480">
+<div id="outline-container-org113dfe7" class="outline-3">
+<h3 id="org113dfe7">平行公理</h3>
+<div class="outline-text-3" id="text-org113dfe7">
 <p>
-掌握源码的阅读技巧.
+\({\alpha}_1 + {\alpha}_2 < 180^{\degree}\) 则两直线l1,l2相交于 l 的同侧.
+等价于:过线外一点,可做一条直线(且只有一条直线)与已知直线平行.
 </p>
 </div>
 </div>
