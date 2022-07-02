@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-06-25 Sat 17:19 -->
+<!-- 2022-07-02 Sat 14:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -15,40 +15,53 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1f4b455">1. Language</a></li>
-<li><a href="#org52d3404">2. 多线程(multithread, MT) 编程</a>
+<li><a href="#orgdbfcd48">1. Language</a></li>
+<li><a href="#orgca2bfb8">2. 多线程(multithread, MT) 编程</a>
 <ul>
-<li><a href="#org14e85a4">2.1. 简介/动机</a></li>
-<li><a href="#org4754d52">2.2. 线程和进程</a>
+<li><a href="#orge9b5b6e">2.1. 简介/动机</a></li>
+<li><a href="#org66ce703">2.2. 线程和进程</a>
 <ul>
-<li><a href="#org11b33a4">2.2.1. 进程</a></li>
-<li><a href="#org668ea64">2.2.2. 线程</a></li>
+<li><a href="#orgc3ca0fd">2.2.1. 进程</a></li>
+<li><a href="#org587f351">2.2.2. 线程</a></li>
 </ul>
 </li>
-<li><a href="#org34e91a4">2.3. 线程和Python</a>
+<li><a href="#orgd32114a">2.3. 线程和Python</a>
 <ul>
-<li><a href="#org82d280d">2.3.1. 全局解释器锁</a></li>
-<li><a href="#org46c98e4">2.3.2. 退出线程</a></li>
-<li><a href="#org5b3e8e7">2.3.3. 在Python中使用线程</a></li>
-<li><a href="#org2a7ad3b">2.3.4. 不使用线程的情况</a></li>
-<li><a href="#org1db6643">2.3.5. Python的threading模块</a></li>
+<li><a href="#orge4803b1">2.3.1. 全局解释器锁</a></li>
+<li><a href="#org3b7b890">2.3.2. 退出线程</a></li>
+<li><a href="#orgc714f27">2.3.3. 在Python中使用线程</a></li>
+<li><a href="#org63fb71b">2.3.4. 不使用线程的情况</a></li>
+<li><a href="#org6706196">2.3.5. Python的threading模块</a></li>
 </ul>
 </li>
-<li><a href="#orgbe2c9e8">2.4. thread 模块</a></li>
+<li><a href="#org30ebf21">2.4. thread 模块</a></li>
+<li><a href="#orgbb7ed1a">2.5. threading 模块</a>
+<ul>
+<li><a href="#org1c2a7a0">2.5.1. Thread 类</a></li>
+<li><a href="#orga8c1c8a">2.5.2. threading 模块的其他函数</a></li>
 </ul>
 </li>
+<li><a href="#org68b948d">2.6. 单线程或多线程执行对比</a></li>
+<li><a href="#orga187123">2.7. 多线程实践</a>
+<ul>
+<li><a href="#org8e8a574">2.7.1. 图书排名示例</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org54a9cd1">3. 相关概念</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1f4b455" class="outline-2">
-<h2 id="org1f4b455"><span class="section-number-2">1</span> Language</h2>
+<div id="outline-container-orgdbfcd48" class="outline-2">
+<h2 id="orgdbfcd48"><span class="section-number-2">1</span> Language</h2>
 </div>
-<div id="outline-container-org52d3404" class="outline-2">
-<h2 id="org52d3404"><span class="section-number-2">2</span> 多线程(multithread, MT) 编程</h2>
+<div id="outline-container-orgca2bfb8" class="outline-2">
+<h2 id="orgca2bfb8"><span class="section-number-2">2</span> 多线程(multithread, MT) 编程</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org14e85a4" class="outline-3">
-<h3 id="org14e85a4"><span class="section-number-3">2.1</span> 简介/动机</h3>
+<div id="outline-container-orge9b5b6e" class="outline-3">
+<h3 id="orge9b5b6e"><span class="section-number-3">2.1</span> 简介/动机</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 多线程编程出现之前,计算机程序的执行是由单个步骤序列组成的,该序列在主机的 CPU 中
@@ -113,12 +126,12 @@
 </div>
 </div>
 
-<div id="outline-container-org4754d52" class="outline-3">
-<h3 id="org4754d52"><span class="section-number-3">2.2</span> 线程和进程</h3>
+<div id="outline-container-org66ce703" class="outline-3">
+<h3 id="org66ce703"><span class="section-number-3">2.2</span> 线程和进程</h3>
 <div class="outline-text-3" id="text-2-2">
 </div>
-<div id="outline-container-org11b33a4" class="outline-4">
-<h4 id="org11b33a4"><span class="section-number-4">2.2.1</span> 进程</h4>
+<div id="outline-container-orgc3ca0fd" class="outline-4">
+<h4 id="orgc3ca0fd"><span class="section-number-4">2.2.1</span> 进程</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <p>
 程序是存储在磁盘上的可执行文件.只有将其加载到内存中并被操作系统调用,才拥有其生命
@@ -138,8 +151,8 @@
 </div>
 </div>
 
-<div id="outline-container-org668ea64" class="outline-4">
-<h4 id="org668ea64"><span class="section-number-4">2.2.2</span> 线程</h4>
+<div id="outline-container-org587f351" class="outline-4">
+<h4 id="org587f351"><span class="section-number-4">2.2.2</span> 线程</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <p>
 线程与进程类似,不过他们是在同一进程下执行的,并共享相同的上下文.
@@ -174,8 +187,8 @@
 </div>
 </div>
 
-<div id="outline-container-org34e91a4" class="outline-3">
-<h3 id="org34e91a4"><span class="section-number-3">2.3</span> 线程和Python</h3>
+<div id="outline-container-orgd32114a" class="outline-3">
+<h3 id="orgd32114a"><span class="section-number-3">2.3</span> 线程和Python</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 这部分讨论如何在Python中使用线程,其中包括全局解释器锁对线程的限制和一个快速的演
@@ -183,8 +196,8 @@
 </p>
 </div>
 
-<div id="outline-container-org82d280d" class="outline-4">
-<h4 id="org82d280d"><span class="section-number-4">2.3.1</span> 全局解释器锁</h4>
+<div id="outline-container-orge4803b1" class="outline-4">
+<h4 id="orge4803b1"><span class="section-number-4">2.3.1</span> 全局解释器锁</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <p>
 Python 代码的执行是由Python 虚拟机(又名解释器主循环)进行控制的.
@@ -228,8 +241,8 @@ Python 卡爱抚这,你并不需要担心 Python 代码在这些情况下被锁�
 </div>
 </div>
 
-<div id="outline-container-org46c98e4" class="outline-4">
-<h4 id="org46c98e4"><span class="section-number-4">2.3.2</span> 退出线程</h4>
+<div id="outline-container-org3b7b890" class="outline-4">
+<h4 id="org3b7b890"><span class="section-number-4">2.3.2</span> 退出线程</h4>
 <div class="outline-text-4" id="text-2-3-2">
 <p>
 当一个线程完成函数的执行时,它就会退出.另外,还可以通过调用例如 thread.exit() 之类
@@ -242,7 +255,7 @@ Python 卡爱抚这,你并不需要担心 Python 代码在这些情况下被锁�
 这个建议有很多原因,其中一个最明显的原因是在主线程退出之后,所有其他线程都会在没有
 清理的情况下直接退出,而另一个 threading 模块会确保在所有 "重要的" 子线程退出前,
 保持整个进程的存活(对于 "重要的" 这个含义的说明,请阅读下面的
-<a href="#orge681a96">2.3.5</a> .)
+<a href="#org5632e81">2.3.5</a> .)
 </p>
 
 <p>
@@ -253,8 +266,8 @@ Python 卡爱抚这,你并不需要担心 Python 代码在这些情况下被锁�
 </div>
 </div>
 
-<div id="outline-container-org5b3e8e7" class="outline-4">
-<h4 id="org5b3e8e7"><span class="section-number-4">2.3.3</span> 在Python中使用线程</h4>
+<div id="outline-container-orgc714f27" class="outline-4">
+<h4 id="orgc714f27"><span class="section-number-4">2.3.3</span> 在Python中使用线程</h4>
 <div class="outline-text-4" id="text-2-3-3">
 <p>
 避免使用thread模块
@@ -273,7 +286,7 @@ Python 虽然支持多线程编程,但是还需要取决于它运行的操作系
 &gt;&gt;&gt;
 </pre>
 <p>
-我用的是 Python3 所以导入 _thread 模块,更多信息参考 <a href="#orge681a96">2.3.5</a>
+我用的是 Python3 所以导入 _thread 模块,更多信息参考 <a href="#org5632e81">2.3.5</a>
 如果你的 Python 解释器没有将线程支持编译进去,模块导入将会失败:
 </p>
 <pre class="example">
@@ -292,8 +305,8 @@ README 文件,来获取如何在系统中编译线程支持的 Python 的指定�
 </div>
 </div>
 
-<div id="outline-container-org2a7ad3b" class="outline-4">
-<h4 id="org2a7ad3b"><span class="section-number-4">2.3.4</span> 不使用线程的情况</h4>
+<div id="outline-container-org63fb71b" class="outline-4">
+<h4 id="org63fb71b"><span class="section-number-4">2.3.4</span> 不使用线程的情况</h4>
 <div class="outline-text-4" id="text-2-3-4">
 <p>
 在第一个例子里,我们使用 time.sleep() 函数来演示线程是如何工作的. time.sleep() 函
@@ -354,11 +367,19 @@ onethr.py:
 </div>
 </div>
 
-<div id="outline-container-org1db6643" class="outline-4">
-<h4 id="org1db6643"><span class="section-number-4">2.3.5</span> Python的threading模块</h4>
+<div id="outline-container-org6706196" class="outline-4">
+<h4 id="org6706196"><span class="section-number-4">2.3.5</span> Python的threading模块</h4>
 <div class="outline-text-4" id="text-2-3-5">
 <p>
-<a id="orge681a96"></a>
+Python 提供了多个模块来支持多线程编程,包括 thread, threading 和 Queue 模块等.程
+序可以使用 thread 和 threading 模块开创建和管理线程. thread 模块提供了基本的线程
+和锁定支持; 而 threading 模块提供了更高级别功能,功能更齐全的线程管理. Queue 模块,可
+以创建一个队列数据结构,用于在多线程之间进行共享. 我们会分别查看这几个模块,并给出
+几个例子和中等规模的应用.
+</p>
+
+<p>
+<a id="org5632e81"></a>
 推荐使用更高级别的 threading 模块,而不是使用 thread 模块有很多原因.
 threading 模块更加先进,有更好的线程支持,并且 thread 模块中的一些属性会和
 threading 模块有冲突. 另一个原因就是低级别的 thread 模块拥有的同步原语很少(实际
@@ -376,17 +397,878 @@ threading 模块有冲突. 另一个原因就是低级别的 thread 模块拥有
 Python3 中该模块被重命名为 _thread. 你创建的任何多线程应用都应该使用 threading
 模块或者其他更高级别的模块.
 </p>
+
+<p>
+处于对 Python 的学习和线程的学习,我们会给出使用 thread 模块的一些代码.这些代码只
+是出于学习目的,希望能更好的领悟为什么应该避免使用 thread 模块. 还将展示如何使用
+更加合适的工具,如 threading 和 Queue 模块中的那些方法.
+</p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgbe2c9e8" class="outline-3">
-<h3 id="orgbe2c9e8"><span class="section-number-3">2.4</span> thread 模块</h3>
+<div id="outline-container-org30ebf21" class="outline-3">
+<h3 id="org30ebf21"><span class="section-number-3">2.4</span> thread 模块</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+除了派生线程外, thread 模块还提供了基本的同步数据结构,称为 <span class="underline">锁对象</span> (lock object,
+也叫原语锁,简单锁,互斥锁,互斥和二进制信号量). 如前所述,这个同步原语和线程管理是
+密切相关的.
+</p>
+
+<p>
+thread 模块的核心函数是 start<sub>new</sub><sub>thread</sub>(). 他的参数包括函数(对象),函数的参数以
+及可选的关键字参数.将专门派生新的线程来调用这个函数.
+下面列出了一些常用的线程函数,以及 LockType 锁对象的方法.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">函数/方法</td>
+<td class="org-left">描述</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>thread 模块的函数</b></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">start<sub>new</sub><sub>thread</sub>(function, args, kwars=None)</td>
+<td class="org-left">派生一个新的线程,使用给定的 args 和可选的 kwargs 来执行 function</td>
+</tr>
+
+<tr>
+<td class="org-left">allocate<sub>lock</sub>()</td>
+<td class="org-left">分配 LockType 对象</td>
+</tr>
+
+<tr>
+<td class="org-left">exit()</td>
+<td class="org-left">给线程退出命令</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>LockType 锁对象的方法</b></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">acquire(wait=None)</td>
+<td class="org-left">尝试获取锁对象</td>
+</tr>
+
+<tr>
+<td class="org-left">locked()</td>
+<td class="org-left">如果获取了锁对象则返回 True, 否则,返回 False</td>
+</tr>
+
+<tr>
+<td class="org-left">release()</td>
+<td class="org-left">释放锁</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+把多线程整合进 onethr.py 这个例子里. 把对 loop*() 函数的调用稍微改变一下,得到下
+面 mtsleepA.py 文件.
+</p>
+
+<p>
+<b>mtsleepA.py</b>
+这里执行的循环和 onethr.py 是一样的,不过这次使用了 thread 模块提供的简单多线程机
+制.两个循环是并发执行的(很明显,短的先结束),因此总的运行时间只与最慢的线程相关,而
+不是每个线程运行时间之和.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">import</span> _thread
+<span style="font-weight: bold;">from</span> time <span style="font-weight: bold;">import</span> sleep, ctime
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">loop0</span>():
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'start loop 0 at:'</span>, ctime())
+    sleep(4)
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'loop 0 done at:'</span>, ctime())
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">loop1</span>():
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'start loop 1 at:'</span>, ctime())
+    sleep(2)
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'loop 1 done at:'</span>, ctime())
+
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">main</span>():
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'starting at:'</span>, ctime())
+    _thread.start_new_thread(loop0, ())
+    _thread.start_new_thread(loop1, ())
+    sleep(6)
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'all Done at:'</span>, ctime())
+
+<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">'__main__'</span>:
+    main()
+</pre>
+</div>
+
+<p>
+start<sub>new</sub><sub>thread</sub>() 必须包含开始的两个参数,于是即使要执行的函数不需要参数,也需要
+传递一个空元组.
+</p>
+
+<p>
+与之前的代码比,这个程序执行的输出结果有很大不同.原来需要6-7秒的时间，而现在只需
+要运行4秒,也就是最常的循环加上其他开销的时间之和.
+</p>
+
+<p>
+这里面的睡眠4秒和2秒的代码片段是并发执行的,这样有助于减少整体的运行时间.从输出里
+可以看到,loop1 是在 loop0 之前结束的.
+这个程序中最主要的区别是增加了一个 sleep(6) 调用. 为什么要这样做呢? 前面说过
+thread 模块对进程何时退出没有控制,如果不让主线程等待子线程全部完成,那它将继续执
+行下一条语句,显示 "all done" ,然后直接退出, loop0() 和 loop1() 这两个线程会直接
+终止:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">import</span> _thread
+<span style="font-weight: bold;">from</span> time <span style="font-weight: bold;">import</span> sleep, ctime
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">loop0</span>():
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'start loop 0 at:'</span>, ctime())
+    sleep(4)
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'loop 0 done at:'</span>, ctime())
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">loop1</span>():
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'start loop 1 at:'</span>, ctime())
+    sleep(2)
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'loop 1 done at:'</span>, ctime())
+
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">main</span>():
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'starting at:'</span>, ctime())
+    _thread.start_new_thread(loop0, ())
+    _thread.start_new_thread(loop1, ())
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'all Done at:'</span>, ctime())
+
+<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">'__main__'</span>:
+    main()
+</pre>
+</div>
+
+<p>
+上面去掉主线程等待的 sleep(6) 之后再多次执行的代码输出结果,可以看到,派生出的子线
+程甚至没能执行到打印语句就已经由于主线程退出而直接终止了,多次执行可以观察到由于
+操作系统调度的原因,两个线程执行顺序会有先后,有时能看到两个循环的打印,有时只能看
+到一个循环的打印,但都在没有完成时就直接终止了.
+</p>
+
+<p>
+我们没有写让主线程等待子线程全部完成之后在继续的代码,即我们所说的线程需要某种形
+式的同步.
+</p>
+
+<p>
+这上面的例子就是使用 sleep() 来作为同步机制,将其设置为 6s 是因为我们知道所有线程
+会在主线程计时到 6s 之前完成.
+</p>
+
+<p>
+你可能会想到,肯定有比在主线程中额外延时6s 更好的线程管理方式. 由于这个延时,整个
+程序的运行时间没有比单线程的版本更快.像这样使用 sleep() 来进行线程同步是不可靠的.
+如果循环有独立且不同的执行时间怎么办?我们可能会过早或过晚退出主线程. 这就是我们
+引出锁的原因.
+</p>
+
+<p>
+再次修改代码,引出锁,并去除单独的循环函数,修改后的代码为 mtsleepB.py, 如下所示:
+<b>mtsleepB.oy</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">import</span> _thread
+<span style="font-weight: bold;">from</span> time <span style="font-weight: bold;">import</span> ctime, sleep
+<span style="font-weight: bold; font-style: italic;">loops</span> = [4, 2]
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">loop</span>(nloop, nsec, lock):
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'start loop,'</span>, nloop, <span style="font-style: italic;">'at:'</span>, ctime())
+    sleep(nsec)
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'loop'</span>, nloop, <span style="font-style: italic;">'done at:'</span>, ctime())
+    lock.release()
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">main</span>():
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'starting at:'</span>, ctime())
+    <span style="font-weight: bold; font-style: italic;">locks</span> = []
+    <span style="font-weight: bold; font-style: italic;">nloops</span> = <span style="font-weight: bold;">range</span>(<span style="font-weight: bold;">len</span>(loops))
+    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nloops:
+        <span style="font-weight: bold; font-style: italic;">lock</span> = _thread.allocate_lock()
+        lock.acquire()
+        locks.append(lock)
+    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nloops:
+        _thread.start_new_thread(loop, (i, loops[i], locks[i]))
+    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nloops:
+        <span style="font-weight: bold;">while</span> locks[i].locked(): <span style="font-weight: bold;">pass</span>
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'all done at:'</span>, ctime())
+
+
+<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">'__main__'</span>:
+    main()
+</pre>
+</div>
+
+<p>
+allocate<sub>lock</sub>() 创建的锁对象,初始状态是解锁状态, acquire() 申请获得锁对象,获得锁
+操作相当于"把锁锁上",上锁后,就可以添加到锁列表中了.上锁后就表示该锁已被"使用"了.而
+release() 方法则表明获取该锁的线程已经完成. 没有在上锁的循环里立即启动线程有两个
+原因:
+</p>
+<ol class="org-ol">
+<li>我们要同步线程,以便"所有马同时冲出围栏"</li>
+<li>获取锁需要时间,如果线程执行太快,可能会出现获取锁之前线程就执行结束的情况.</li>
+</ol>
+
+
+<p>
+每个线程执行完成时,都会释放自己的锁对象. 最后一个循环就是等待(暂停主线程,而不是
+让他直接结束),直到所有锁都被释放才会继续执行.
+</p>
+<blockquote>
+<p>
+锁机制的实现,锁的目的是为了实现同步,保证同一时间只有一个线程在使用某一资源,本质
+上就是一个flag 变量,为1表示未上锁,为0表示上锁,当线程A访问flag 时,发现它为1,表示
+可以使用该资源,并准备将flag 设置为0.但与此同时线程B 也访问 flag ,发现它为1(线程A
+设置 flag 的操作并未完成),此时就会冲突,所以锁的操作需要有 <span class="underline">原子性</span> ,即锁的访问和设
+置要么全部执行,要么都不执行;并且同一时间应只有一个线程能访问锁(具体实现暂且不管).
+</p>
+</blockquote>
+
+<p>
+正如前面提示的,这里使用 thread 模块只是为了介绍多线程编程. 多线程应用程序应当使
+用更高级别的模块.比如下面的 threading 模块.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbb7ed1a" class="outline-3">
+<h3 id="orgbb7ed1a"><span class="section-number-3">2.5</span> threading 模块</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+现在介绍更高级别的 threading 模块. 除了 Thread 类外,该模块还包括许多非常好用的同
+步机制.下面给出 threading 模块中所有可用对象的列表.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">对象</td>
+<td class="org-left">描述</td>
+</tr>
+
+<tr>
+<td class="org-left">Thread</td>
+<td class="org-left">表示一个执行线程的对象</td>
+</tr>
+
+<tr>
+<td class="org-left">Lock</td>
+<td class="org-left">锁原语对象(和 _thread 模块中的锁一样)</td>
+</tr>
+
+<tr>
+<td class="org-left">RLock</td>
+<td class="org-left">可重入锁对象,是单一线程可以再次获得以持有的锁(递归锁)</td>
+</tr>
+
+<tr>
+<td class="org-left">Condition</td>
+<td class="org-left">条件变量对象,使得一个线程等待另一个线程满足特定的"条件",比如改变状态或某个数据值</td>
+</tr>
+
+<tr>
+<td class="org-left">Event</td>
+<td class="org-left">条件变量的通用版本,任意数量的线程等待某个事件的发生,在该事件发生后所有线程将被激活</td>
+</tr>
+
+<tr>
+<td class="org-left">Semaphore</td>
+<td class="org-left">信号量,为线程间共享的有限资源提供了一个"计数器",如果没有可用资源时会被阻塞</td>
+</tr>
+
+<tr>
+<td class="org-left">BoundedSemaphore</td>
+<td class="org-left">与 Semaphore 相似,不过它不允许超过初始值</td>
+</tr>
+
+<tr>
+<td class="org-left">Timer</td>
+<td class="org-left">与 Thread 相似,不过它要在运行前等待一段时间</td>
+</tr>
+
+<tr>
+<td class="org-left">Barrier</td>
+<td class="org-left">创建一个"障碍",必须达到指定数量的线程后才可以继续</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+核心提示: 守护线程
+避免使用 thread 模块的另一个原因是该模块不支持守护线程这个概念. 当主线程退出时,
+所有子线程都将终止,不管他们是否仍在工作.如果你不希望发生这种行为就要引入守护线程
+的概念了.
+</p>
+
+<p>
+threading 模块支持守护线程,其工作方式是:守护线程一般是一个等待客户端请求的服务器.如
+果没有客户端请求,守护线程就是空闲的,如果将一个线程设置为守护线程,就意味着这个线
+程是不重要的,进程退出时不用等待这个线程执行完成.
+</p>
+
+<p>
+如果主线程准备退出时,不需要等待某些线程完成,就可以为这些子线程设置守护线程标记.该
+标记为真时表示该线程能够不重要,或者说该线程只是用来等待客户端请求而不做任何其他
+事情.
+</p>
+
+<p>
+要将一个线程设置为守护线程,需要在启动线程之前执行: <code>thread.daemon = True</code> (旧的方
+法为 thread.setDaemon(True)). 同样,要检查线程的守护状态,也只需要检查这个值即可
+(对应的旧方法为 thread.isDaemon). 一个新的子线程会继承父线程的守护标记. 整个
+Python 程序(理解为主线程)将在所有非守护线程退出后才退出,换句话说,就是没有剩下存
+活的非守护进程时.
+</p>
+</div>
+
+<div id="outline-container-org1c2a7a0" class="outline-4">
+<h4 id="org1c2a7a0"><span class="section-number-4">2.5.1</span> Thread 类</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<p>
+threading 模块的 Thread 类是主要的执行对象. 它有 thread 模块中没有的很多函数.
+</p>
+
+<p>
+下面给出它的属性和方法列表:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">属性</th>
+<th scope="col" class="org-left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Thread 对象数据属性</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">name</td>
+<td class="org-left">线程名</td>
+</tr>
+
+<tr>
+<td class="org-left">ident</td>
+<td class="org-left">线程的标识符</td>
+</tr>
+
+<tr>
+<td class="org-left">daemon</td>
+<td class="org-left">布尔标志,表示这个线程是否为守护线程</td>
+</tr>
+
+<tr>
+<td class="org-left">Thread 对象方法</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">_<sub>init</sub>_<sub>(group=None, target=None, name=None, args=(), kwargs={}, verbose=None, daemon=None)</sub></td>
+<td class="org-left">实例化一个线程对象,需要有一个可调用的 target, 以及其参数 args 或 kwargs, 还可以传递 name 或 group 参数,不过后者还未实现,此外,verbose 标志也是可以接受的, 而 daemon 的值将会设置 thread.daemon 属性/标志</td>
+</tr>
+
+<tr>
+<td class="org-left">start()</td>
+<td class="org-left">开始执行该线程</td>
+</tr>
+
+<tr>
+<td class="org-left">run()</td>
+<td class="org-left">定义线程功能的方法(通常在子类中被应用开发者重写)</td>
+</tr>
+
+<tr>
+<td class="org-left">join(timeout=None)</td>
+<td class="org-left">直至启动的线程终止之前一直挂起,除非给出了 timeout(秒),否则会一直阻塞</td>
+</tr>
+
+<tr>
+<td class="org-left">getName()</td>
+<td class="org-left">返回线程名</td>
+</tr>
+
+<tr>
+<td class="org-left">setName()</td>
+<td class="org-left">设定线程名</td>
+</tr>
+
+<tr>
+<td class="org-left">isAlive/is<sub>alive</sub>()</td>
+<td class="org-left">布尔标志,表示线程是否还存活</td>
+</tr>
+
+<tr>
+<td class="org-left">isDaemon()</td>
+<td class="org-left">如果是守护线程则返回 True, 否则返回 False</td>
+</tr>
+
+<tr>
+<td class="org-left">setDaemon(daemonic)</td>
+<td class="org-left">把线程的守护标志设置为布尔值 daemonic( 必须在线程 start() 之前调用)</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>
+注意: getName, setName, isAlive/is<sub>alive</sub>, isDaemon, setDaemon 都已经弃用
+</p>
+</blockquote>
+
+<p>
+使用 Thread 类,可以有很多方法创建线程.我们会介绍比较相似的三种方法(推荐最后一种).
+</p>
+<ul class="org-ul">
+<li>创建 Thread 的实例,传给它一个函数.</li>
+<li>创建 Thread 的实例,传给它一个可调用的类实例.</li>
+<li>派生 Thread 的子类,并创建子类的实例.</li>
+</ul>
+
+
+<p>
+你会发现你将选择第一个或第三个方案. 当你需要一个更加符合面向对象的接口时,选择第
+三种,否则,选择第一种.
+事实上,你会发现第二种方案有些尴尬并且难以阅读.
+</p>
+
+<p>
+<b>创建 Thread 的实例,传给它一个函数</b>
+第一个方案里,我们只是把 Thread 类实例化,然后将函数(及其参数)传递进去,和之前例子
+中采取的方式一样. 当线程开始执行时,这个函数也会开始执行.
+修改下 mtSleepB.py 脚本,添加使用 Thread 类,得到 mtsleepC.py:
+threading 模块的 Thread 类有一个 join() 方法,可以让主线程等待所有线程执行完毕.
+<b>mtsleepC.py:</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">import</span> threading
+<span style="font-weight: bold;">from</span> time <span style="font-weight: bold;">import</span> sleep, ctime
+<span style="font-weight: bold; font-style: italic;">loops</span> = [4, 2]
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">loop</span>(nloop, nsec):
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'start loop'</span>, nloop, <span style="font-style: italic;">'at:'</span>, ctime())
+    sleep(nsec)
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'loop'</span>, nloop, <span style="font-style: italic;">'done at:'</span>, ctime())
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">main</span>():
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'starting at:'</span>, ctime())
+    <span style="font-weight: bold; font-style: italic;">threads</span> = []
+
+    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> <span style="font-weight: bold;">range</span>(<span style="font-weight: bold;">len</span>(loops)):
+        <span style="font-weight: bold; font-style: italic;">t</span> = threading.Thread(target=loop,args=(i, loops[i]))
+        threads.append(t)
+
+    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> <span style="font-weight: bold;">range</span>(<span style="font-weight: bold;">len</span>(loops)):
+        threads[i].start()
+
+    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> <span style="font-weight: bold;">range</span>(<span style="font-weight: bold;">len</span>(loops)):
+        threads[i].join()
+
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'all Done at:'</span>, ctime())
+
+<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">'__main__'</span>:
+    main()
+
+</pre>
+</div>
+
+<p>
+相比于 mtsleepB.py , mtsleepC.py 修改了哪些呢?
+使用 thread 模块的锁没有了,取而代之的是一组 Thread 对象. 当实例化每个 Thread 对
+象时,将函数(target) 和参数(args) 传进去,然后的到返回的 Thread 实例. 实例化
+Thread( 调用 Thread()) 和调用 thread.start<sub>new</sub><sub>thread</sub>() 的最大区别是新线程不会立
+即开始执行. 这是一个非常有用的同步功能,尤其是当你并不希望线程立即开始执行时.
+</p>
+
+<p>
+<b>创建 Thread 的实例,传给它一个可调用的类实例</b>
+</p>
+
+<p>
+创建线程时,与传入函数类似的一个方法是传入一个可调用的类的实例,用于线程执行&#x2013;这种
+方法更加接近面向对象的多线程编程.
+这种可调用的类包含一个执行环境,比起函数或者从一组函数中选择而言,有更好的灵活性.
+现在你有了一个类对象,而不仅仅是单个函数或者一个函数列表/元组.
+</p>
+
+<p>
+在 mtsleepC.py 中添加一个新类 ThreadFunc, 并进行一些其他改动,得到 mtsleepD.py,
+如下:
+<b>mtsleepD.py</b>:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">import</span> threading
+<span style="font-weight: bold;">from</span> time <span style="font-weight: bold;">import</span> sleep, ctime
+
+<span style="font-weight: bold; font-style: italic;">loops</span> = [4, 2]
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">ThreadFunc</span>(<span style="font-weight: bold;">object</span>):
+
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>(<span style="font-weight: bold;">self</span>, func, args, name=<span style="font-style: italic;">''</span>):
+        <span style="font-weight: bold;">self</span>.name = name
+        <span style="font-weight: bold;">self</span>.func = func
+        <span style="font-weight: bold;">self</span>.args = args
+
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__call__</span>(<span style="font-weight: bold;">self</span>):
+        <span style="font-weight: bold;">self</span>.func(*<span style="font-weight: bold;">self</span>.args)
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">loop</span>(nloop, secs):
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'start loop'</span>, nloop, <span style="font-style: italic;">'at:'</span>, ctime())
+    sleep(secs)
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'loop'</span>, nloop, <span style="font-style: italic;">'done at:'</span>, ctime())
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">main</span>():
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'starting at:'</span>, ctime())
+    <span style="font-weight: bold; font-style: italic;">threads</span> = []
+    <span style="font-weight: bold; font-style: italic;">nloops</span> = <span style="font-weight: bold;">range</span>(<span style="font-weight: bold;">len</span>(loops))
+
+    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nloops:
+        <span style="font-weight: bold; font-style: italic;">t</span> = threading.Thread(target=ThreadFunc(loop, (i, loops[i]), loop.<span style="font-weight: bold;">__name__</span>))
+        threads.append(t)
+    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nloops:
+        threads[i].start()
+
+    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nloops:
+        threads[i].join()
+
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'all done at:'</span>, ctime())
+
+<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">'__main__'</span>:
+    main()
+</pre>
+</div>
+
+<p>
+mtsleepD.py 在实例化 Thread 对象时同时实例化了可调用类 ThreadFunc. 我们希望这个
+类更加通用,而不是局限于 loop() 函数,因此添加了一些新的东西,比如让这个类保存了函
+数的参数,函数自身和函数名字的字符串.而构造函数 _<sub>init</sub>_<sub>()</sub> 用于设定这些值.
+</p>
+
+<p>
+创建新线程时, Thread 类的代码会调用 ThreadFunc 对象,此时会调用 _<sub>call</sub>_<sub>()</sub> 这个特
+殊方法.因为已经有了要用到的参数,这里就不需要再将其传递给 Thread() 的构造函数里了,直
+接调用就行了.
+</p>
+
+<p>
+<b>派生Thread 的子类,并创建子类的实例</b>
+</p>
+
+<p>
+最后一种创建线程的用法比上一个创建可调用类的例子类似,但是更容易阅读:
+<b>mtsleepE.py</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">import</span> threading
+<span style="font-weight: bold;">from</span> time <span style="font-weight: bold;">import</span> sleep, ctime
+
+<span style="font-weight: bold; font-style: italic;">loops</span> = (4, 2)
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">MyThread</span>(threading.Thread):
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>(<span style="font-weight: bold;">self</span>, func, args, name=<span style="font-style: italic;">''</span>):
+        threading.Thread.__init__(<span style="font-weight: bold;">self</span>)
+        <span style="font-weight: bold;">self</span>.name = name
+        <span style="font-weight: bold;">self</span>.func = func
+        <span style="font-weight: bold;">self</span>.args = args
+
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">run</span>(<span style="font-weight: bold;">self</span>):
+        <span style="font-weight: bold;">self</span>.func(*<span style="font-weight: bold;">self</span>.args)
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">loop</span>(nloop, secs):
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'start loop'</span>, nloop, <span style="font-style: italic;">'at:'</span>, ctime())
+    sleep(secs)
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'loop'</span>, nloop, <span style="font-style: italic;">'done at:'</span>, ctime())
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">main</span>():
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'starting at:'</span>, ctime())
+    <span style="font-weight: bold; font-style: italic;">threads</span> = []
+    <span style="font-weight: bold; font-style: italic;">nloops</span> = <span style="font-weight: bold;">range</span>(<span style="font-weight: bold;">len</span>(loops))
+
+    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nloops:
+        <span style="font-weight: bold; font-style: italic;">t</span> = MyThread(loop,(i, loops[i]), loop.<span style="font-weight: bold;">__name__</span>)
+        threads.append(t)
+
+    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nloops:
+        threads[i].start()
+
+
+    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nloops:
+        threads[i].join()
+
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'all done at:'</span>, ctime())
+
+<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">'__main__'</span>:
+    main()
+</pre>
+</div>
+
+
+<p>
+比较 D 和 E 的代码:
+</p>
+<ol class="org-ol">
+<li>MyThread 子类的构造函数必须先调用其基类的构造函数</li>
+<li>之前的特殊方法 _<sub>call</sub>_<sub>()</sub> 在这个子类里必须写为 run().</li>
+</ol>
+
+
+<p>
+Thread 对象开始运行时(执行 start()), 它会在一个独立的控制进程里调用对象的 run()
+方法. run() 方法是代表线程活动的方法,这个方法可有在子类型里重载. 标准的 run() 方
+法会对作为 target 参数传递给该对象构造器的<a href="#org0677752">3</a>(如果存在)发起调用,并从附带
+args 和 kwargs 参数分别获取的位置和关键字参数.
+</p>
+
+<p>
+现在,对 Mythread 类进行修改,增加一些调试信息的输出,并将其存为 myThread 的独立模
+块,以便后面的例子里导入这个类. 除了简单地调用函数外,还将结果保存到实例属性
+self.res 中,并创建一个获取这个值的新方法 getResult()
+</p>
+
+<p>
+<b>Thread 子类 MyThread(myThread.py)</b>:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">import</span> threading
+<span style="font-weight: bold;">from</span> time <span style="font-weight: bold;">import</span> sleep, ctime
+
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">MyThread</span>(threading.Thread):
+
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>(<span style="font-weight: bold;">self</span>, func, args, name=<span style="font-style: italic;">''</span>):
+        threading.Thread.__init__(<span style="font-weight: bold;">self</span>)
+        <span style="font-weight: bold;">self</span>.name = name
+        <span style="font-weight: bold;">self</span>.func = func
+        <span style="font-weight: bold;">self</span>.args = args
+
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">getResult</span>(<span style="font-weight: bold;">self</span>):
+        <span style="font-weight: bold;">return</span> <span style="font-weight: bold;">self</span>.res
+
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">run</span>(<span style="font-weight: bold;">self</span>):
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'starting'</span>, <span style="font-weight: bold;">self</span>.name, <span style="font-style: italic;">'at:'</span>, ctime())
+        <span style="font-weight: bold;">self</span>.res = <span style="font-weight: bold;">self</span>.func(*<span style="font-weight: bold;">self</span>.args)
+        <span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">self</span>.name, <span style="font-style: italic;">'finished at:'</span>, ctime())
+</pre>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orga8c1c8a" class="outline-4">
+<h4 id="orga8c1c8a"><span class="section-number-4">2.5.2</span> threading 模块的其他函数</h4>
+<div class="outline-text-4" id="text-2-5-2">
+<p>
+除了各种同步和线程对象外, threading 模块还提供一些函数,如下所示:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">函数</th>
+<th scope="col" class="org-left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">activeCount/active<sub>count</sub>()</td>
+<td class="org-left">当前活动的 Thread 对象个数</td>
+</tr>
+
+<tr>
+<td class="org-left">currentThread()/current<sub>thread</sub></td>
+<td class="org-left">返回当前的Thread 对象</td>
+</tr>
+
+<tr>
+<td class="org-left">enumerate()</td>
+<td class="org-left">返回当前活动的 Thread 对象列表</td>
+</tr>
+
+<tr>
+<td class="org-left">settrace(func)</td>
+<td class="org-left">为所有线程设置一个 trace 函数</td>
+</tr>
+
+<tr>
+<td class="org-left">setprofile(func)</td>
+<td class="org-left">为所有线程设置一个 profile 函数</td>
+</tr>
+
+<tr>
+<td class="org-left">stack<sub>size</sub>(size=0)</td>
+<td class="org-left">返回新创建线程的栈大小,或为后续创建的线程设定栈的大小为size</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>
+注意:
+</p>
+<ol class="org-ol">
+<li>驼峰式命名已经弃用,并从Python2.6 版本起已经开始被取代</li>
+<li>thread.stack<sub>size</sub>() 的一个别名是从 Python2.5 开始引入.</li>
+</ol>
+</blockquote>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org68b948d" class="outline-3">
+<h3 id="org68b948d"><span class="section-number-3">2.6</span> 单线程或多线程执行对比</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+下面的 mtfacfib.py 脚本比较了递归求斐波那契,阶乘与累加函数的执行.该脚本按照单线
+程方式运行这三个函数.之后使用多线程方式执行同样任务.来比较多线程环境的优点.
+</p>
+
+<p>
+<b>mtfacfib.py</b>:
+</p>
+<div class="org-src-container">
+<pre class="src src-python">
+<span style="font-weight: bold;">from</span> myThread <span style="font-weight: bold;">import</span> MyThread
+<span style="font-weight: bold;">from</span> time <span style="font-weight: bold;">import</span> ctime, sleep
+
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">fib</span>(x):
+    sleep(0.005)
+    <span style="font-weight: bold;">if</span> x &lt; 2:
+        <span style="font-weight: bold;">return</span> 1
+    <span style="font-weight: bold;">return</span> (fib(x - 2) + fib(x - 1))
+
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">sum</span>(x):
+    sleep(0.1)
+    <span style="font-weight: bold;">if</span> x &lt; 2:
+        <span style="font-weight: bold;">return</span> 1
+    <span style="font-weight: bold;">return</span> (x + <span style="font-weight: bold;">sum</span>(x - 1))
+
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">fac</span>(x):
+    sleep(0.1)
+    <span style="font-weight: bold;">if</span> x &lt; 2:
+        <span style="font-weight: bold;">return</span> 1
+    <span style="font-weight: bold;">return</span> (x * fac(x - 1))
+
+
+<span style="font-weight: bold; font-style: italic;">funcs</span> = [fib, fac, <span style="font-weight: bold;">sum</span>]
+<span style="font-weight: bold; font-style: italic;">n</span> = 12
+
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">main</span>():
+    <span style="font-weight: bold; font-style: italic;">nfuncs</span> = <span style="font-weight: bold;">range</span>(<span style="font-weight: bold;">len</span>(funcs))
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'*** SINGLE THREAD'</span>)
+    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nfuncs:
+        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'starting'</span>, funcs[i].<span style="font-weight: bold;">__name__</span>, <span style="font-style: italic;">'at:'</span>, ctime())
+        <span style="font-weight: bold;">print</span>(funcs[i](n))
+        <span style="font-weight: bold;">print</span>(funcs[i].<span style="font-weight: bold;">__name__</span>, <span style="font-style: italic;">'finished'</span>, <span style="font-style: italic;">'at:'</span>, ctime())
+
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'\n*** MULTIPLE THREADS'</span>)
+    <span style="font-weight: bold; font-style: italic;">threads</span> = []
+    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nfuncs:
+        <span style="font-weight: bold; font-style: italic;">t</span> = MyThread(funcs[i], (n,), funcs[i].<span style="font-weight: bold;">__name__</span>)
+        threads.append(t)
+    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nfuncs:
+        threads[i].start()
+    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nfuncs:
+        threads[i].join()
+        <span style="font-weight: bold;">print</span>(threads[i].getResult())
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'all Done at:'</span>, ctime())
+
+
+<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">'__main__'</span>:
+    main()
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga187123" class="outline-3">
+<h3 id="orga187123"><span class="section-number-3">2.7</span> 多线程实践</h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+<a href="#orge4803b1">2.3.1</a> 里曾提到,由于 Python 虚拟机是单线程(GIL) 的原因,只有线程在执行 I/O
+密集型的应用时才能更好发挥 Python 的并发性(对比计算密集型,I/O 密集型只需要做轮
+询),因此让我们看一个 I/O 密集型的例子.
+</p>
+</div>
+
+<div id="outline-container-org8e8a574" class="outline-4">
+<h4 id="org8e8a574"><span class="section-number-4">2.7.1</span> 图书排名示例</h4>
+<div class="outline-text-4" id="text-2-7-1">
+<p>
+下面例子在 Amazon 上查询图书的当前排名.这个例子里函数 getRanking() 使用正则表达
+式来拉取和返回当前排名,而函数 _showRanking() 用于向用户显示结果.
+</p>
+
+<p>
+<b>bookrank.py</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-python">
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org54a9cd1" class="outline-2">
+<h2 id="org54a9cd1"><span class="section-number-2">3</span> 相关概念</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+<a id="org0677752"></a>:函数(用户自定义,内置,内置对象的方法), 类对象, 类实例的方法以及任何具
+有 _<sub>call</sub>_<sub>()</sub> 方法的对象都是可调用对象
+</p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2022-06-25 Sat 17:19</p>
+<p class="date">Created: 2022-07-02 Sat 14:54</p>
 <p class="validation"></p>
 </div>
 </body>
