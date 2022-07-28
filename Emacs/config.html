@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-07-03 Sun 18:04 -->
+<!-- 2022-07-28 Thu 17:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Org 文件配置Emacs</title>
@@ -239,126 +239,127 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf7b0994">Org-babel</a>
+<li><a href="#orgad1895d">Org-babel</a>
 <ul>
-<li><a href="#orgf61f320">启用Org-babel</a></li>
-<li><a href="#orge52f5b7">ob-tangle</a></li>
-<li><a href="#org402fe28">自动执行 org-babel-tangle</a></li>
-<li><a href="#org7b3c26a">为其他语言启用org-babel支持</a></li>
-<li><a href="#org97cf6a0">取消执行前的询问</a></li>
+<li><a href="#orge6a6b8f">启用Org-babel</a></li>
+<li><a href="#org04bf1e4">ob-tangle</a></li>
+<li><a href="#orgb3c468a">自动执行 org-babel-tangle</a></li>
+<li><a href="#orgb5aa8c0">为其他语言启用org-babel支持</a></li>
+<li><a href="#org1c3c15f">取消执行前的询问</a></li>
 </ul>
 </li>
-<li><a href="#org8cf88d7">包管理器:use-package</a>
+<li><a href="#org6cf0901">包管理器:use-package</a>
 <ul>
-<li><a href="#org20f6934">启用Emacs内置包管理器package 安装 use-package</a></li>
+<li><a href="#org9696005">启用Emacs内置包管理器package 安装 use-package</a></li>
 </ul>
 </li>
-<li><a href="#org8e63951">分析启动耗时</a></li>
-<li><a href="#org5166f5a">显示emacs启动时间 + 设置初始界面</a></li>
-<li><a href="#org51edfbc">Server Mode</a></li>
-<li><a href="#orgc77439a">Evil</a></li>
-<li><a href="#org964dfe6">ws-butler 自动清除空格</a></li>
-<li><a href="#orgb23aaa4">treemacs 文件管理</a></li>
-<li><a href="#org6b15b98">翻译</a>
+<li><a href="#org2be6c47">分析启动耗时</a></li>
+<li><a href="#org94d2b2d">显示emacs启动时间 + 设置初始界面</a></li>
+<li><a href="#orgf7648be">Server Mode</a></li>
+<li><a href="#orgc4d8c33">Evil</a></li>
+<li><a href="#orgebd7b0b">ws-butler 自动清除空格</a></li>
+<li><a href="#org5a7a338">treemacs 文件管理</a></li>
+<li><a href="#orge5a48ec">翻译</a>
 <ul>
-<li><a href="#org233cd28">bing-dict</a></li>
-<li><a href="#orgac7741e">youdao-dictionary</a></li>
+<li><a href="#org8f860e8">bing-dict</a></li>
+<li><a href="#org5fc7504">youdao-dictionary</a></li>
 </ul>
 </li>
-<li><a href="#orgd79ee47">counsel &#x2013; better input completion</a></li>
-<li><a href="#org332800f">Text completion</a>
+<li><a href="#org681ffac">counsel &#x2013; better input completion</a></li>
+<li><a href="#orged13f43">Text completion</a>
 <ul>
-<li><a href="#org2a74476">括号补全</a></li>
+<li><a href="#org5aeef64">括号补全</a></li>
 </ul>
 </li>
-<li><a href="#orgcee441a">Org mode</a>
+<li><a href="#org1f6ad69">Org mode</a>
 <ul>
-<li><a href="#org1d3a77f">Org mode UI</a></li>
-<li><a href="#orgb5d3618">Basic settings</a></li>
-<li><a href="#org229479e">Org bullets</a></li>
-<li><a href="#org548a0ae">Code Blocks</a></li>
-<li><a href="#org1ac8866">Org Capture</a>
+<li><a href="#orgbc16941">Org mode UI</a></li>
+<li><a href="#org0413772">Basic settings</a></li>
+<li><a href="#orgf0b4842">Org bullets</a></li>
+<li><a href="#org08a38cc">Code Blocks</a></li>
+<li><a href="#org01b15c0">Org Capture</a>
 <ul>
-<li><a href="#org1592b20">template for org drill</a></li>
+<li><a href="#orgb5cfe99">template for org drill</a></li>
 </ul>
 </li>
-<li><a href="#org36d5cb9">Literate programming settings</a>
+<li><a href="#org19bd3b8">Literate programming settings</a>
 <ul>
-<li><a href="#org662fb7b">jupyter-python</a></li>
+<li><a href="#org55055bd">jupyter-python</a></li>
 </ul>
 </li>
-<li><a href="#orgb0a09c5">Latex</a></li>
-<li><a href="#org4636b30">change inline image size</a></li>
+<li><a href="#org435866c">Latex</a></li>
+<li><a href="#org33a52f1">change inline image size</a></li>
 </ul>
 </li>
-<li><a href="#org4b1bd9f">Org mode agendas</a></li>
-<li><a href="#orge897244">Org drill &#x2013; flashcards</a></li>
-<li><a href="#orgbd1e8cc">Org roam</a></li>
-<li><a href="#org2e7561f">Basic UI</a></li>
-<li><a href="#org323f8db">early-init.el</a></li>
-<li><a href="#org2266da5">icons</a></li>
-<li><a href="#org3986c66">modeline</a>
+<li><a href="#orgcde7b11">Org mode agendas</a></li>
+<li><a href="#org6d8a373">Org drill &#x2013; flashcards</a></li>
+<li><a href="#org7105642">Org roam</a></li>
+<li><a href="#org3db3451">Basic UI</a></li>
+<li><a href="#org7ea83bc">early-init.el</a></li>
+<li><a href="#org335b98b">icons</a></li>
+<li><a href="#orgdfdc007">modeline</a>
 <ul>
-<li><a href="#orgb0f15b0">doom-modeline</a></li>
-<li><a href="#org74e1ca4">Show time and date in modeline</a></li>
-<li><a href="#org7de28d3">show column numbers in mode line</a></li>
+<li><a href="#org5079cb2">doom-modeline</a></li>
+<li><a href="#org602801f">Show time and date in modeline</a></li>
+<li><a href="#org09e344c">show column numbers in mode line</a></li>
 </ul>
 </li>
-<li><a href="#org5a4a3fd">theme</a>
+<li><a href="#org9d4835f">theme</a>
 <ul>
-<li><a href="#orge059789">doom-themes</a></li>
-<li><a href="#orgcfefc6b">built-in themes</a></li>
-<li><a href="#org0393776">uwu theme</a></li>
+<li><a href="#org9248f8d">doom-themes</a></li>
+<li><a href="#org453d032">built-in themes</a></li>
+<li><a href="#org48bccd7">uwu theme</a></li>
 </ul>
 </li>
-<li><a href="#org0cd8578">input-method</a>
+<li><a href="#org5f29472">input-method</a>
 <ul>
-<li><a href="#org239a770">rime</a></li>
-<li><a href="#org97870a0">pyim</a></li>
+<li><a href="#org6e93e34">rime</a></li>
+<li><a href="#org7b8ac84">pyim</a></li>
 </ul>
 </li>
-<li><a href="#orgb10a184">Programming</a>
+<li><a href="#orgfbb3448">Programming</a>
 <ul>
-<li><a href="#orgcdfcf9b">Lsp common settings</a></li>
-<li><a href="#orgae8c16f">Lsp settings for Python</a>
+<li><a href="#org1ac4516">Lsp common settings</a></li>
+<li><a href="#org5cab8c5">Lsp settings for Python</a>
 <ul>
-<li><a href="#orgd73cbbc">设置pylsp</a></li>
+<li><a href="#org499331a">设置pylsp</a></li>
 </ul>
 </li>
-<li><a href="#org558c4d9">Lsp settings for C/C++</a></li>
-<li><a href="#org848d473">dap mode setting for debug</a></li>
-<li><a href="#orgc8ba457">Python Templates</a></li>
-<li><a href="#orgf683cc5">Programming common setting</a></li>
-<li><a href="#org459cf57">Common Lisp Environment</a></li>
+<li><a href="#org87d9f9a">Lsp settings for C/C++</a></li>
+<li><a href="#orga4473c7">dap mode setting for debug</a></li>
+<li><a href="#org992cf9c">Python Templates</a></li>
+<li><a href="#org9515270">Programming common setting</a></li>
+<li><a href="#org7c0ff4b">Common Lisp Environment</a></li>
 </ul>
 </li>
-<li><a href="#org783e7ed">自动备份</a></li>
-<li><a href="#org502a29e">Parenthesis 括号显示</a></li>
-<li><a href="#org4b1668a">Which key</a></li>
-<li><a href="#org48b7e94">上次访问位置</a></li>
-<li><a href="#orgc8684f2">最近访问文件列表</a></li>
-<li><a href="#orgdec8b59">记住 minibuffer 的提示历史</a></li>
-<li><a href="#orgc29489f">不使用UI对话框形式的提示</a></li>
-<li><a href="#org6c50ae7">自动恢复/刷新已修改的文件</a></li>
-<li><a href="#org36f4ee8">使用空格而不是tab来进行缩进</a></li>
-<li><a href="#org1544921">设置tab显示长度</a></li>
-<li><a href="#orgd8a10a9">Proxy setting for url</a>
+<li><a href="#org507e165">自动备份</a></li>
+<li><a href="#org2ca2f8e">Parenthesis 括号显示</a></li>
+<li><a href="#org74c3090">Which key</a></li>
+<li><a href="#org590c9c1">上次访问位置</a></li>
+<li><a href="#orgae2c0f1">最近访问文件列表</a></li>
+<li><a href="#org4b2f8f0">记住 minibuffer 的提示历史</a></li>
+<li><a href="#org04155ff">不使用UI对话框形式的提示</a></li>
+<li><a href="#org33582e2">自动恢复/刷新已修改的文件</a></li>
+<li><a href="#orgf98ed5d">使用空格而不是tab来进行缩进</a></li>
+<li><a href="#org60c3520">设置tab显示长度</a></li>
+<li><a href="#org4a9361b">Proxy setting for url</a>
 <ul>
-<li><a href="#org1fc1d2f">Scoks Proxies</a></li>
+<li><a href="#org95e164e">Scoks Proxies</a></li>
 </ul>
 </li>
-<li><a href="#org7861db6">Telegram Client in emacs &#x2013; telega</a></li>
-<li><a href="#org13b2952">EPUB reading</a></li>
-<li><a href="#orgff7617d">EXWM</a></li>
-<li><a href="#org82a16e7">set personal info</a></li>
-<li><a href="#org41e1ced">file related tweaks</a></li>
+<li><a href="#org63c19de">Telegram Client in emacs &#x2013; telega</a></li>
+<li><a href="#orgeaf147c">EPUB reading</a></li>
+<li><a href="#orgf272789">EXWM</a></li>
+<li><a href="#orgd245cad">set personal info</a></li>
+<li><a href="#org4eb29a0">file related tweaks</a></li>
+<li><a href="#org190e546">自动对齐行内注释</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgf7b0994" class="outline-2">
-<h2 id="orgf7b0994">Org-babel</h2>
-<div class="outline-text-2" id="text-orgf7b0994">
+<div id="outline-container-orgad1895d" class="outline-2">
+<h2 id="orgad1895d">Org-babel</h2>
+<div class="outline-text-2" id="text-orgad1895d">
 <p>
 第一次用Emacs 打开这个文件,按 <code>C-c C-v t</code>,就可以把文件里的配置导出到 <code>init.el</code> 文件
 </p>
@@ -368,18 +369,18 @@ for the JavaScript code in this tag.
 </p>
 </blockquote>
 </div>
-<div id="outline-container-orgf61f320" class="outline-3">
-<h3 id="orgf61f320">启用Org-babel</h3>
-<div class="outline-text-3" id="text-orgf61f320">
+<div id="outline-container-orge6a6b8f" class="outline-3">
+<h3 id="orge6a6b8f">启用Org-babel</h3>
+<div class="outline-text-3" id="text-orge6a6b8f">
 <p>
 Org mode 是默认启用了Org-babel 功能的,只不过只是默认支持了Elisp(emacs-lisp),
 所以第一步不需要进一步配置Org-babel.
 </p>
 </div>
 </div>
-<div id="outline-container-orge52f5b7" class="outline-3">
-<h3 id="orge52f5b7">ob-tangle</h3>
-<div class="outline-text-3" id="text-orge52f5b7">
+<div id="outline-container-org04bf1e4" class="outline-3">
+<h3 id="org04bf1e4">ob-tangle</h3>
+<div class="outline-text-3" id="text-org04bf1e4">
 <p>
 ob-tangle 库用来将Org 文件里的源代码提取出来.
 </p>
@@ -408,9 +409,9 @@ ob-tangle 库用来将Org 文件里的源代码提取出来.
 </pre>
 </div>
 </div>
-<div id="outline-container-org402fe28" class="outline-3">
-<h3 id="org402fe28">自动执行 org-babel-tangle</h3>
-<div class="outline-text-3" id="text-org402fe28">
+<div id="outline-container-orgb3c468a" class="outline-3">
+<h3 id="orgb3c468a">自动执行 org-babel-tangle</h3>
+<div class="outline-text-3" id="text-orgb3c468a">
 <p>
 每次修改这个文件的代码块后,想要将配置文件导出到 <code>init.el</code> 文件,都需要执行
 <code>(org-babel-tangle)</code> 或者按 <code>C-c C-v t</code>. 这个操作也是可以自动化的.加入下面的代码,
@@ -427,9 +428,9 @@ ob-tangle 库用来将Org 文件里的源代码提取出来.
 </div>
 </div>
 </div>
-<div id="outline-container-org7b3c26a" class="outline-3">
-<h3 id="org7b3c26a">为其他语言启用org-babel支持</h3>
-<div class="outline-text-3" id="text-org7b3c26a">
+<div id="outline-container-orgb5aa8c0" class="outline-3">
+<h3 id="orgb5aa8c0">为其他语言启用org-babel支持</h3>
+<div class="outline-text-3" id="text-orgb5aa8c0">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(org-babel-do-load-languages
  'org-babel-load-languages
@@ -443,9 +444,9 @@ ob-tangle 库用来将Org 文件里的源代码提取出来.
 </div>
 </div>
 </div>
-<div id="outline-container-org97cf6a0" class="outline-3">
-<h3 id="org97cf6a0">取消执行前的询问</h3>
-<div class="outline-text-3" id="text-org97cf6a0">
+<div id="outline-container-org1c3c15f" class="outline-3">
+<h3 id="org1c3c15f">取消执行前的询问</h3>
+<div class="outline-text-3" id="text-org1c3c15f">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-confirm-babel-evaluate nil)
 </pre>
@@ -453,16 +454,16 @@ ob-tangle 库用来将Org 文件里的源代码提取出来.
 </div>
 </div>
 </div>
-<div id="outline-container-org8cf88d7" class="outline-2">
-<h2 id="org8cf88d7">包管理器:use-package</h2>
-<div class="outline-text-2" id="text-org8cf88d7">
+<div id="outline-container-org6cf0901" class="outline-2">
+<h2 id="org6cf0901">包管理器:use-package</h2>
+<div class="outline-text-2" id="text-org6cf0901">
 <p>
 我使用 use-package 安装和管理插件.
 </p>
 </div>
-<div id="outline-container-org20f6934" class="outline-3">
-<h3 id="org20f6934">启用Emacs内置包管理器package 安装 use-package</h3>
-<div class="outline-text-3" id="text-org20f6934">
+<div id="outline-container-org9696005" class="outline-3">
+<h3 id="org9696005">启用Emacs内置包管理器package 安装 use-package</h3>
+<div class="outline-text-3" id="text-org9696005">
 <p>
 因为是使用use-package, 它暂时还不是 emacs 的内置包,所以需要先使用内置的
 package 包来下载use-package, 再使用use-package 管理包.
@@ -492,9 +493,9 @@ package 包来下载use-package, 再使用use-package 管理包.
 </div>
 </div>
 </div>
-<div id="outline-container-org8e63951" class="outline-2">
-<h2 id="org8e63951">分析启动耗时</h2>
-<div class="outline-text-2" id="text-org8e63951">
+<div id="outline-container-org2be6c47" class="outline-2">
+<h2 id="org2be6c47">分析启动耗时</h2>
+<div class="outline-text-2" id="text-org2be6c47">
 <p>
 发现启动时长异常时可以使用这个包
 </p>
@@ -508,9 +509,9 @@ package 包来下载use-package, 再使用use-package 管理包.
 </div>
 </div>
 </div>
-<div id="outline-container-org5166f5a" class="outline-2">
-<h2 id="org5166f5a">显示emacs启动时间 + 设置初始界面</h2>
-<div class="outline-text-2" id="text-org5166f5a">
+<div id="outline-container-org94d2b2d" class="outline-2">
+<h2 id="org94d2b2d">显示emacs启动时间 + 设置初始界面</h2>
+<div class="outline-text-2" id="text-org94d2b2d">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package dashboard
   <span style="font-weight: bold;">:config</span>
@@ -520,18 +521,18 @@ package 包来下载use-package, 再使用use-package 管理包.
 </div>
 </div>
 </div>
-<div id="outline-container-org51edfbc" class="outline-2">
-<h2 id="org51edfbc">Server Mode</h2>
-<div class="outline-text-2" id="text-org51edfbc">
+<div id="outline-container-orgf7648be" class="outline-2">
+<h2 id="orgf7648be">Server Mode</h2>
+<div class="outline-text-2" id="text-orgf7648be">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(server-mode t)
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgc77439a" class="outline-2">
-<h2 id="orgc77439a">Evil</h2>
-<div class="outline-text-2" id="text-orgc77439a">
+<div id="outline-container-orgc4d8c33" class="outline-2">
+<h2 id="orgc4d8c33">Evil</h2>
+<div class="outline-text-2" id="text-orgc4d8c33">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(use-package undo-tree</span>
 <span style="font-weight: bold; font-style: italic;">;;   </span><span style="font-weight: bold; font-style: italic;">:init</span>
@@ -564,9 +565,9 @@ package 包来下载use-package, 再使用use-package 管理包.
 </div>
 </div>
 
-<div id="outline-container-org964dfe6" class="outline-2">
-<h2 id="org964dfe6">ws-butler 自动清除空格</h2>
-<div class="outline-text-2" id="text-org964dfe6">
+<div id="outline-container-orgebd7b0b" class="outline-2">
+<h2 id="orgebd7b0b">ws-butler 自动清除空格</h2>
+<div class="outline-text-2" id="text-orgebd7b0b">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package ws-butler
   <span style="font-weight: bold;">:hook</span> ((text-mode . ws-butler-mode)
@@ -576,9 +577,9 @@ package 包来下载use-package, 再使用use-package 管理包.
 </div>
 </div>
 
-<div id="outline-container-orgb23aaa4" class="outline-2">
-<h2 id="orgb23aaa4">treemacs 文件管理</h2>
-<div class="outline-text-2" id="text-orgb23aaa4">
+<div id="outline-container-org5a7a338" class="outline-2">
+<h2 id="org5a7a338">treemacs 文件管理</h2>
+<div class="outline-text-2" id="text-org5a7a338">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 (use-package treemacs
@@ -591,13 +592,13 @@ package 包来下载use-package, 再使用use-package 管理包.
 </div>
 </div>
 
-<div id="outline-container-org6b15b98" class="outline-2">
-<h2 id="org6b15b98">翻译</h2>
-<div class="outline-text-2" id="text-org6b15b98">
+<div id="outline-container-orge5a48ec" class="outline-2">
+<h2 id="orge5a48ec">翻译</h2>
+<div class="outline-text-2" id="text-orge5a48ec">
 </div>
-<div id="outline-container-org233cd28" class="outline-3">
-<h3 id="org233cd28">bing-dict</h3>
-<div class="outline-text-3" id="text-org233cd28">
+<div id="outline-container-org8f860e8" class="outline-3">
+<h3 id="org8f860e8">bing-dict</h3>
+<div class="outline-text-3" id="text-org8f860e8">
 <p>
 网络原因,换有道了
 </p>
@@ -610,9 +611,9 @@ package 包来下载use-package, 再使用use-package 管理包.
 </div>
 </div>
 
-<div id="outline-container-orgac7741e" class="outline-3">
-<h3 id="orgac7741e">youdao-dictionary</h3>
-<div class="outline-text-3" id="text-orgac7741e">
+<div id="outline-container-org5fc7504" class="outline-3">
+<h3 id="org5fc7504">youdao-dictionary</h3>
+<div class="outline-text-3" id="text-org5fc7504">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package youdao-dictionary
   <span style="font-weight: bold;">:config</span>
@@ -627,9 +628,9 @@ package 包来下载use-package, 再使用use-package 管理包.
 </div>
 </div>
 
-<div id="outline-container-orgd79ee47" class="outline-2">
-<h2 id="orgd79ee47">counsel &#x2013; better input completion</h2>
-<div class="outline-text-2" id="text-orgd79ee47">
+<div id="outline-container-org681ffac" class="outline-2">
+<h2 id="org681ffac">counsel &#x2013; better input completion</h2>
+<div class="outline-text-2" id="text-org681ffac">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package ivy
   <span style="font-weight: bold;">:diminish</span>
@@ -669,13 +670,13 @@ package 包来下载use-package, 再使用use-package 管理包.
 </div>
 </div>
 
-<div id="outline-container-org332800f" class="outline-2">
-<h2 id="org332800f">Text completion</h2>
-<div class="outline-text-2" id="text-org332800f">
+<div id="outline-container-orged13f43" class="outline-2">
+<h2 id="orged13f43">Text completion</h2>
+<div class="outline-text-2" id="text-orged13f43">
 </div>
-<div id="outline-container-org2a74476" class="outline-3">
-<h3 id="org2a74476">括号补全</h3>
-<div class="outline-text-3" id="text-org2a74476">
+<div id="outline-container-org5aeef64" class="outline-3">
+<h3 id="org5aeef64">括号补全</h3>
+<div class="outline-text-3" id="text-org5aeef64">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package smartparens
   <span style="font-weight: bold;">:hook</span>
@@ -686,13 +687,13 @@ package 包来下载use-package, 再使用use-package 管理包.
 </div>
 </div>
 </div>
-<div id="outline-container-orgcee441a" class="outline-2">
-<h2 id="orgcee441a">Org mode</h2>
-<div class="outline-text-2" id="text-orgcee441a">
+<div id="outline-container-org1f6ad69" class="outline-2">
+<h2 id="org1f6ad69">Org mode</h2>
+<div class="outline-text-2" id="text-org1f6ad69">
 </div>
-<div id="outline-container-org1d3a77f" class="outline-3">
-<h3 id="org1d3a77f">Org mode UI</h3>
-<div class="outline-text-3" id="text-org1d3a77f">
+<div id="outline-container-orgbc16941" class="outline-3">
+<h3 id="orgbc16941">Org mode UI</h3>
+<div class="outline-text-3" id="text-orgbc16941">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package org-modern
   <span style="font-weight: bold;">:hook</span>
@@ -703,9 +704,9 @@ package 包来下载use-package, 再使用use-package 管理包.
 </div>
 </div>
 </div>
-<div id="outline-container-orgb5d3618" class="outline-3">
-<h3 id="orgb5d3618">Basic settings</h3>
-<div class="outline-text-3" id="text-orgb5d3618">
+<div id="outline-container-org0413772" class="outline-3">
+<h3 id="org0413772">Basic settings</h3>
+<div class="outline-text-3" id="text-org0413772">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">Orgmode</span>
 (use-package org
@@ -755,9 +756,9 @@ package 包来下载use-package, 再使用use-package 管理包.
 </div>
 </div>
 
-<div id="outline-container-org229479e" class="outline-3">
-<h3 id="org229479e">Org bullets</h3>
-<div class="outline-text-3" id="text-org229479e">
+<div id="outline-container-orgf0b4842" class="outline-3">
+<h3 id="orgf0b4842">Org bullets</h3>
+<div class="outline-text-3" id="text-orgf0b4842">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package org-superstar
   <span style="font-weight: bold;">:after</span> org
@@ -773,9 +774,9 @@ package 包来下载use-package, 再使用use-package 管理包.
 </div>
 </div>
 
-<div id="outline-container-org548a0ae" class="outline-3">
-<h3 id="org548a0ae">Code Blocks</h3>
-<div class="outline-text-3" id="text-org548a0ae">
+<div id="outline-container-org08a38cc" class="outline-3">
+<h3 id="org08a38cc">Code Blocks</h3>
+<div class="outline-text-3" id="text-org08a38cc">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-hide-block-startup t)
 </pre>
@@ -783,13 +784,13 @@ package 包来下载use-package, 再使用use-package 管理包.
 </div>
 </div>
 
-<div id="outline-container-org1ac8866" class="outline-3">
-<h3 id="org1ac8866">Org Capture</h3>
-<div class="outline-text-3" id="text-org1ac8866">
+<div id="outline-container-org01b15c0" class="outline-3">
+<h3 id="org01b15c0">Org Capture</h3>
+<div class="outline-text-3" id="text-org01b15c0">
 </div>
-<div id="outline-container-org1592b20" class="outline-4">
-<h4 id="org1592b20">template for org drill</h4>
-<div class="outline-text-4" id="text-org1592b20">
+<div id="outline-container-orgb5cfe99" class="outline-4">
+<h4 id="orgb5cfe99">template for org drill</h4>
+<div class="outline-text-4" id="text-orgb5cfe99">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">      (<span style="font-weight: bold;">with-eval-after-load</span> 'org-capture
               (add-to-list `org-capture-templates '(<span style="font-style: italic;">"d"</span> <span style="font-style: italic;">"drills"</span>))
@@ -812,13 +813,13 @@ package 包来下载use-package, 再使用use-package 管理包.
 </div>
 </div>
 
-<div id="outline-container-org36d5cb9" class="outline-3">
-<h3 id="org36d5cb9">Literate programming settings</h3>
-<div class="outline-text-3" id="text-org36d5cb9">
+<div id="outline-container-org19bd3b8" class="outline-3">
+<h3 id="org19bd3b8">Literate programming settings</h3>
+<div class="outline-text-3" id="text-org19bd3b8">
 </div>
-<div id="outline-container-org662fb7b" class="outline-4">
-<h4 id="org662fb7b">jupyter-python</h4>
-<div class="outline-text-4" id="text-org662fb7b">
+<div id="outline-container-org55055bd" class="outline-4">
+<h4 id="org55055bd">jupyter-python</h4>
+<div class="outline-text-4" id="text-org55055bd">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package jupyter
   <span style="font-weight: bold;">:config</span>
@@ -832,9 +833,9 @@ package 包来下载use-package, 再使用use-package 管理包.
 </div>
 
 
-<div id="outline-container-orgb0a09c5" class="outline-3">
-<h3 id="orgb0a09c5">Latex</h3>
-<div class="outline-text-3" id="text-orgb0a09c5">
+<div id="outline-container-org435866c" class="outline-3">
+<h3 id="org435866c">Latex</h3>
+<div class="outline-text-3" id="text-org435866c">
 <p>
 修改生成的latex preview 图片大小: <code>org-format-latex-options</code>
 </p>
@@ -845,9 +846,9 @@ package 包来下载use-package, 再使用use-package 管理包.
 </div>
 </div>
 
-<div id="outline-container-org4636b30" class="outline-3">
-<h3 id="org4636b30">change inline image size</h3>
-<div class="outline-text-3" id="text-org4636b30">
+<div id="outline-container-org33a52f1" class="outline-3">
+<h3 id="org33a52f1">change inline image size</h3>
+<div class="outline-text-3" id="text-org33a52f1">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-image-actual-width 600)
 </pre>
@@ -856,9 +857,9 @@ package 包来下载use-package, 再使用use-package 管理包.
 </div>
 </div>
 
-<div id="outline-container-org4b1bd9f" class="outline-2">
-<h2 id="org4b1bd9f">Org mode agendas</h2>
-<div class="outline-text-2" id="text-org4b1bd9f">
+<div id="outline-container-orgcde7b11" class="outline-2">
+<h2 id="orgcde7b11">Org mode agendas</h2>
+<div class="outline-text-2" id="text-orgcde7b11">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">with-eval-after-load</span> 'org-agenda
   (add-to-list 'org-agenda-files org-directory))
@@ -867,11 +868,11 @@ package 包来下载use-package, 再使用use-package 管理包.
 </div>
 </div>
 
-<div id="outline-container-orge897244" class="outline-2">
-<h2 id="orge897244">Org drill &#x2013; flashcards</h2>
-<div class="outline-text-2" id="text-orge897244">
+<div id="outline-container-org6d8a373" class="outline-2">
+<h2 id="org6d8a373">Org drill &#x2013; flashcards</h2>
+<div class="outline-text-2" id="text-org6d8a373">
 <p>
-template settings:  <a href="#org1592b20">template for org drill</a>
+template settings:  <a href="#orgb5cfe99">template for org drill</a>
 </p>
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package org-drill
@@ -881,9 +882,9 @@ template settings:  <a href="#org1592b20">template for org drill</a>
 </div>
 </div>
 
-<div id="outline-container-orgbd1e8cc" class="outline-2">
-<h2 id="orgbd1e8cc">Org roam</h2>
-<div class="outline-text-2" id="text-orgbd1e8cc">
+<div id="outline-container-org7105642" class="outline-2">
+<h2 id="org7105642">Org roam</h2>
+<div class="outline-text-2" id="text-org7105642">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Org-roam</span>
@@ -911,9 +912,9 @@ template settings:  <a href="#org1592b20">template for org drill</a>
 </div>
 
 
-<div id="outline-container-org2e7561f" class="outline-2">
-<h2 id="org2e7561f">Basic UI</h2>
-<div class="outline-text-2" id="text-org2e7561f">
+<div id="outline-container-org3db3451" class="outline-2">
+<h2 id="org3db3451">Basic UI</h2>
+<div class="outline-text-2" id="text-org3db3451">
 <p>
 不需要任何其他包的 UI 设置
 </p>
@@ -946,9 +947,9 @@ template settings:  <a href="#org1592b20">template for org drill</a>
 </div>
 </div>
 
-<div id="outline-container-org323f8db" class="outline-2">
-<h2 id="org323f8db">early-init.el</h2>
-<div class="outline-text-2" id="text-org323f8db">
+<div id="outline-container-org7ea83bc" class="outline-2">
+<h2 id="org7ea83bc">early-init.el</h2>
+<div class="outline-text-2" id="text-org7ea83bc">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> package-enable-at-startup nil)
 </pre>
@@ -956,9 +957,9 @@ template settings:  <a href="#org1592b20">template for org drill</a>
 </div>
 </div>
 
-<div id="outline-container-org2266da5" class="outline-2">
-<h2 id="org2266da5">icons</h2>
-<div class="outline-text-2" id="text-org2266da5">
+<div id="outline-container-org335b98b" class="outline-2">
+<h2 id="org335b98b">icons</h2>
+<div class="outline-text-2" id="text-org335b98b">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package all-the-icons)
 </pre>
@@ -966,13 +967,13 @@ template settings:  <a href="#org1592b20">template for org drill</a>
 </div>
 </div>
 
-<div id="outline-container-org3986c66" class="outline-2">
-<h2 id="org3986c66">modeline</h2>
-<div class="outline-text-2" id="text-org3986c66">
+<div id="outline-container-orgdfdc007" class="outline-2">
+<h2 id="orgdfdc007">modeline</h2>
+<div class="outline-text-2" id="text-orgdfdc007">
 </div>
-<div id="outline-container-orgb0f15b0" class="outline-3">
-<h3 id="orgb0f15b0">doom-modeline</h3>
-<div class="outline-text-3" id="text-orgb0f15b0">
+<div id="outline-container-org5079cb2" class="outline-3">
+<h3 id="org5079cb2">doom-modeline</h3>
+<div class="outline-text-3" id="text-org5079cb2">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">modeline</span>
 (use-package
@@ -986,9 +987,9 @@ template settings:  <a href="#org1592b20">template for org drill</a>
 </div>
 </div>
 </div>
-<div id="outline-container-org74e1ca4" class="outline-3">
-<h3 id="org74e1ca4">Show time and date in modeline</h3>
-<div class="outline-text-3" id="text-org74e1ca4">
+<div id="outline-container-org602801f" class="outline-3">
+<h3 id="org602801f">Show time and date in modeline</h3>
+<div class="outline-text-3" id="text-org602801f">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(display-time)
 (<span style="font-weight: bold;">setq</span> display-time-day-and-date t)
@@ -996,9 +997,9 @@ template settings:  <a href="#org1592b20">template for org drill</a>
 </div>
 </div>
 </div>
-<div id="outline-container-org7de28d3" class="outline-3">
-<h3 id="org7de28d3">show column numbers in mode line</h3>
-<div class="outline-text-3" id="text-org7de28d3">
+<div id="outline-container-org09e344c" class="outline-3">
+<h3 id="org09e344c">show column numbers in mode line</h3>
+<div class="outline-text-3" id="text-org09e344c">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(column-number-mode 1)
 </pre>
@@ -1007,13 +1008,13 @@ template settings:  <a href="#org1592b20">template for org drill</a>
 </div>
 </div>
 
-<div id="outline-container-org5a4a3fd" class="outline-2">
-<h2 id="org5a4a3fd">theme</h2>
-<div class="outline-text-2" id="text-org5a4a3fd">
+<div id="outline-container-org9d4835f" class="outline-2">
+<h2 id="org9d4835f">theme</h2>
+<div class="outline-text-2" id="text-org9d4835f">
 </div>
-<div id="outline-container-orge059789" class="outline-3">
-<h3 id="orge059789">doom-themes</h3>
-<div class="outline-text-3" id="text-orge059789">
+<div id="outline-container-org9248f8d" class="outline-3">
+<h3 id="org9248f8d">doom-themes</h3>
+<div class="outline-text-3" id="text-org9248f8d">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package
   doom-themes
@@ -1024,18 +1025,18 @@ template settings:  <a href="#org1592b20">template for org drill</a>
 </div>
 </div>
 </div>
-<div id="outline-container-orgcfefc6b" class="outline-3">
-<h3 id="orgcfefc6b">built-in themes</h3>
-<div class="outline-text-3" id="text-orgcfefc6b">
+<div id="outline-container-org453d032" class="outline-3">
+<h3 id="org453d032">built-in themes</h3>
+<div class="outline-text-3" id="text-org453d032">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(load-theme 'tsdh-dark)
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org0393776" class="outline-3">
-<h3 id="org0393776">uwu theme</h3>
-<div class="outline-text-3" id="text-org0393776">
+<div id="outline-container-org48bccd7" class="outline-3">
+<h3 id="org48bccd7">uwu theme</h3>
+<div class="outline-text-3" id="text-org48bccd7">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package uwu-theme
   <span style="font-weight: bold;">:config</span>
@@ -1046,17 +1047,17 @@ template settings:  <a href="#org1592b20">template for org drill</a>
 </div>
 </div>
 
-<div id="outline-container-org0cd8578" class="outline-2">
-<h2 id="org0cd8578">input-method</h2>
-<div class="outline-text-2" id="text-org0cd8578">
+<div id="outline-container-org5f29472" class="outline-2">
+<h2 id="org5f29472">input-method</h2>
+<div class="outline-text-2" id="text-org5f29472">
 <p>
 rime 不能在 evil 的 Search mode 里面使用,经过测试跟 rime-show-candidate 没有关
 系缺点: 不能在 isearch 和 vim 的 Search mode 里面使用
 </p>
 </div>
-<div id="outline-container-org239a770" class="outline-3">
-<h3 id="org239a770">rime</h3>
-<div class="outline-text-3" id="text-org239a770">
+<div id="outline-container-org6e93e34" class="outline-3">
+<h3 id="org6e93e34">rime</h3>
+<div class="outline-text-3" id="text-org6e93e34">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package rime
   <span style="font-weight: bold;">:config</span>
@@ -1087,9 +1088,9 @@ rime 不能在 evil 的 Search mode 里面使用,经过测试跟 rime-show-candi
 </div>
 
 
-<div id="outline-container-org97870a0" class="outline-3">
-<h3 id="org97870a0">pyim</h3>
-<div class="outline-text-3" id="text-org97870a0">
+<div id="outline-container-org7b8ac84" class="outline-3">
+<h3 id="org7b8ac84">pyim</h3>
+<div class="outline-text-3" id="text-org7b8ac84">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package
   pyim
@@ -1107,13 +1108,13 @@ rime 不能在 evil 的 Search mode 里面使用,经过测试跟 rime-show-candi
 </div>
 </div>
 </div>
-<div id="outline-container-orgb10a184" class="outline-2">
-<h2 id="orgb10a184">Programming</h2>
-<div class="outline-text-2" id="text-orgb10a184">
+<div id="outline-container-orgfbb3448" class="outline-2">
+<h2 id="orgfbb3448">Programming</h2>
+<div class="outline-text-2" id="text-orgfbb3448">
 </div>
-<div id="outline-container-orgcdfcf9b" class="outline-3">
-<h3 id="orgcdfcf9b">Lsp common settings</h3>
-<div class="outline-text-3" id="text-orgcdfcf9b">
+<div id="outline-container-org1ac4516" class="outline-3">
+<h3 id="org1ac4516">Lsp common settings</h3>
+<div class="outline-text-3" id="text-org1ac4516">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Lsp common setting.</span>
@@ -1154,13 +1155,13 @@ rime 不能在 evil 的 Search mode 里面使用,经过测试跟 rime-show-candi
 </div>
 </div>
 
-<div id="outline-container-orgae8c16f" class="outline-3">
-<h3 id="orgae8c16f">Lsp settings for Python</h3>
-<div class="outline-text-3" id="text-orgae8c16f">
+<div id="outline-container-org5cab8c5" class="outline-3">
+<h3 id="org5cab8c5">Lsp settings for Python</h3>
+<div class="outline-text-3" id="text-org5cab8c5">
 </div>
-<div id="outline-container-orgd73cbbc" class="outline-4">
-<h4 id="orgd73cbbc">设置pylsp</h4>
-<div class="outline-text-4" id="text-orgd73cbbc">
+<div id="outline-container-org499331a" class="outline-4">
+<h4 id="org499331a">设置pylsp</h4>
+<div class="outline-text-4" id="text-org499331a">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span>
  lsp-pylsp-plugins-jedi-use-pyenv-environment t
@@ -1171,9 +1172,9 @@ rime 不能在 evil 的 Search mode 里面使用,经过测试跟 rime-show-candi
 </div>
 </div>
 
-<div id="outline-container-org558c4d9" class="outline-3">
-<h3 id="org558c4d9">Lsp settings for C/C++</h3>
-<div class="outline-text-3" id="text-org558c4d9">
+<div id="outline-container-org87d9f9a" class="outline-3">
+<h3 id="org87d9f9a">Lsp settings for C/C++</h3>
+<div class="outline-text-3" id="text-org87d9f9a">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(add-hook 'c-mode-hook 'lsp)
 (add-hook 'c++-mode-hook 'lsp)
@@ -1182,13 +1183,13 @@ rime 不能在 evil 的 Search mode 里面使用,经过测试跟 rime-show-candi
 </div>
 </div>
 
-<div id="outline-container-org848d473" class="outline-3">
-<h3 id="org848d473">dap mode setting for debug</h3>
-<div class="outline-text-3" id="text-org848d473">
+<div id="outline-container-orga4473c7" class="outline-3">
+<h3 id="orga4473c7">dap mode setting for debug</h3>
+<div class="outline-text-3" id="text-orga4473c7">
 </div>
 <ul class="org-ul">
-<li><a id="orga41574d"></a>Enable Dap mode<br />
-<div class="outline-text-5" id="text-orga41574d">
+<li><a id="org98b6321"></a>Enable Dap mode<br />
+<div class="outline-text-5" id="text-org98b6321">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package dap-mode
 
@@ -1229,10 +1230,10 @@ Or if you want to enable only specific modes instead:
 </div>
 </div>
 </li>
-<li><a id="orgaabc5fd"></a>Dap mode for python<br />
+<li><a id="orgdd28a77"></a>Dap mode for python<br />
 <ul class="org-ul">
-<li><a id="orgcbe52b1"></a>Installation<br />
-<div class="outline-text-6" id="text-orgcbe52b1">
+<li><a id="orgca6438f"></a>Installation<br />
+<div class="outline-text-6" id="text-orgca6438f">
 <ul class="org-ul">
 <li>install latest version of ptvsd:</li>
 </ul>
@@ -1251,8 +1252,8 @@ Or if you want to enable only specific modes instead:
 </div>
 </div>
 </li>
-<li><a id="org8aefaee"></a>define a "Python::Run Configuration" template to run or debug visited module.<br />
-<div class="outline-text-6" id="text-org8aefaee">
+<li><a id="org3bda56a"></a>define a "Python::Run Configuration" template to run or debug visited module.<br />
+<div class="outline-text-6" id="text-org3bda56a">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(dap-register-debug-template <span style="font-style: italic;">"My App"</span>
   (list <span style="font-weight: bold;">:type</span> <span style="font-style: italic;">"python"</span>
@@ -1269,13 +1270,13 @@ Or if you want to enable only specific modes instead:
 </li>
 </ul>
 </li>
-<li><a id="orgab687da"></a>Dap mode for C/C++<br /></li>
+<li><a id="orgfaf1550"></a>Dap mode for C/C++<br /></li>
 </ul>
 </div>
 
-<div id="outline-container-orgc8ba457" class="outline-3">
-<h3 id="orgc8ba457">Python Templates</h3>
-<div class="outline-text-3" id="text-orgc8ba457">
+<div id="outline-container-org992cf9c" class="outline-3">
+<h3 id="org992cf9c">Python Templates</h3>
+<div class="outline-text-3" id="text-org992cf9c">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 (auto-insert-mode 1)
@@ -1297,9 +1298,9 @@ Or if you want to enable only specific modes instead:
 </div>
 </div>
 
-<div id="outline-container-orgf683cc5" class="outline-3">
-<h3 id="orgf683cc5">Programming common setting</h3>
-<div class="outline-text-3" id="text-orgf683cc5">
+<div id="outline-container-org9515270" class="outline-3">
+<h3 id="org9515270">Programming common setting</h3>
+<div class="outline-text-3" id="text-org9515270">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> python-guess-indent nil)
 </pre>
@@ -1307,9 +1308,9 @@ Or if you want to enable only specific modes instead:
 </div>
 </div>
 
-<div id="outline-container-org459cf57" class="outline-3">
-<h3 id="org459cf57">Common Lisp Environment</h3>
-<div class="outline-text-3" id="text-org459cf57">
+<div id="outline-container-org7c0ff4b" class="outline-3">
+<h3 id="org7c0ff4b">Common Lisp Environment</h3>
+<div class="outline-text-3" id="text-org7c0ff4b">
 <p>
 Common lisp interpretor.
 sbcl need to be installed.
@@ -1325,9 +1326,9 @@ sbcl need to be installed.
 </div>
 </div>
 
-<div id="outline-container-org783e7ed" class="outline-2">
-<h2 id="org783e7ed">自动备份</h2>
-<div class="outline-text-2" id="text-org783e7ed">
+<div id="outline-container-org507e165" class="outline-2">
+<h2 id="org507e165">自动备份</h2>
+<div class="outline-text-2" id="text-org507e165">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#33258;&#21160;&#22791;&#20221;&#35774;&#32622;:</span>
 (<span style="font-weight: bold;">setq</span> backup-by-copying t               <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">&#33258;&#21160;&#22791;&#20221;</span>
@@ -1342,9 +1343,9 @@ sbcl need to be installed.
 </div>
 </div>
 
-<div id="outline-container-org502a29e" class="outline-2">
-<h2 id="org502a29e">Parenthesis 括号显示</h2>
-<div class="outline-text-2" id="text-org502a29e">
+<div id="outline-container-org2ca2f8e" class="outline-2">
+<h2 id="org2ca2f8e">Parenthesis 括号显示</h2>
+<div class="outline-text-2" id="text-org2ca2f8e">
 <p>
 emacs 自带的显示成对括号.
 </p>
@@ -1355,9 +1356,9 @@ emacs 自带的显示成对括号.
 </div>
 </div>
 
-<div id="outline-container-org4b1668a" class="outline-2">
-<h2 id="org4b1668a">Which key</h2>
-<div class="outline-text-2" id="text-org4b1668a">
+<div id="outline-container-org74c3090" class="outline-2">
+<h2 id="org74c3090">Which key</h2>
+<div class="outline-text-2" id="text-org74c3090">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package which-key
   <span style="font-weight: bold;">:init</span>
@@ -1372,9 +1373,9 @@ emacs 自带的显示成对括号.
 </div>
 </div>
 
-<div id="outline-container-org48b7e94" class="outline-2">
-<h2 id="org48b7e94">上次访问位置</h2>
-<div class="outline-text-2" id="text-org48b7e94">
+<div id="outline-container-org590c9c1" class="outline-2">
+<h2 id="org590c9c1">上次访问位置</h2>
+<div class="outline-text-2" id="text-org590c9c1">
 <p>
 打开文件时,回到上次编辑该文件的光标位置.
 </p>
@@ -1385,9 +1386,9 @@ emacs 自带的显示成对括号.
 </div>
 </div>
 
-<div id="outline-container-orgc8684f2" class="outline-2">
-<h2 id="orgc8684f2">最近访问文件列表</h2>
-<div class="outline-text-2" id="text-orgc8684f2">
+<div id="outline-container-orgae2c0f1" class="outline-2">
+<h2 id="orgae2c0f1">最近访问文件列表</h2>
+<div class="outline-text-2" id="text-orgae2c0f1">
 <p>
 和 dashboard 已经开启该功能.开启后可以使用 <code>M-x recentf-open-files</code> 获取最近访问
 的文件记录列表,移动光标到文件项,按回车可以打开文件.
@@ -1399,9 +1400,9 @@ emacs 自带的显示成对括号.
 </div>
 </div>
 
-<div id="outline-container-orgdec8b59" class="outline-2">
-<h2 id="orgdec8b59">记住 minibuffer 的提示历史</h2>
-<div class="outline-text-2" id="text-orgdec8b59">
+<div id="outline-container-org4b2f8f0" class="outline-2">
+<h2 id="org4b2f8f0">记住 minibuffer 的提示历史</h2>
+<div class="outline-text-2" id="text-org4b2f8f0">
 <p>
 开启这个功能后,在 <code>M-x</code> , <code>isearch</code> 等使用 minibuffer 的情况下,你可以用 <code>M-n</code>
 <code>(next-history-element)</code> 或 <code>M-p</code> <code>(previous-history-element)</code> 来遍历之前用过的命令
@@ -1416,9 +1417,9 @@ emacs 自带的显示成对括号.
 </div>
 </div>
 
-<div id="outline-container-orgc29489f" class="outline-2">
-<h2 id="orgc29489f">不使用UI对话框形式的提示</h2>
-<div class="outline-text-2" id="text-orgc29489f">
+<div id="outline-container-org04155ff" class="outline-2">
+<h2 id="org04155ff">不使用UI对话框形式的提示</h2>
+<div class="outline-text-2" id="text-org04155ff">
 <p>
 有时候Emacs 会让你确认一些不同类型的动作,比如保存退出,是否关闭有程序正在运行的
 终端等等,这时Emacs 会打开一个图像形式的提示对话框,而不是文字形式,
@@ -1431,9 +1432,9 @@ emacs 自带的显示成对括号.
 </div>
 </div>
 
-<div id="outline-container-org6c50ae7" class="outline-2">
-<h2 id="org6c50ae7">自动恢复/刷新已修改的文件</h2>
-<div class="outline-text-2" id="text-org6c50ae7">
+<div id="outline-container-org33582e2" class="outline-2">
+<h2 id="org33582e2">自动恢复/刷新已修改的文件</h2>
+<div class="outline-text-2" id="text-org33582e2">
 <p>
 如果缓冲区内文件在其他地方被修改了,Emacs 一般不会自动刷新这个文件,而是打开提示,让
 用户自己选择是否恢复文件,这样有个好处是可以用未刷新的缓冲区内容重新覆盖修改过
@@ -1447,9 +1448,9 @@ emacs 自带的显示成对括号.
 </div>
 </div>
 
-<div id="outline-container-org36f4ee8" class="outline-2">
-<h2 id="org36f4ee8">使用空格而不是tab来进行缩进</h2>
-<div class="outline-text-2" id="text-org36f4ee8">
+<div id="outline-container-orgf98ed5d" class="outline-2">
+<h2 id="orgf98ed5d">使用空格而不是tab来进行缩进</h2>
+<div class="outline-text-2" id="text-orgf98ed5d">
 <p>
 indent-tabs-mode 可以设置按 tab 键时插入空格而不是制表符 TAB.
 tab-stop-list 变量可以设置 tab 转换成空格时的空格数量,当值为空时,会使用变量
@@ -1473,9 +1474,9 @@ tab-width 的值作为转换的空格数.
 </div>
 </div>
 
-<div id="outline-container-org1544921" class="outline-2">
-<h2 id="org1544921">设置tab显示长度</h2>
-<div class="outline-text-2" id="text-org1544921">
+<div id="outline-container-org60c3520" class="outline-2">
+<h2 id="org60c3520">设置tab显示长度</h2>
+<div class="outline-text-2" id="text-org60c3520">
 <p>
 这里设置的是一个TAB在Org文档里占用多少个字符的位置.
 如果想要设置TAB转化成空格时的空格个数
@@ -1489,9 +1490,9 @@ tabtab这句话里有一个tab, 可以tab-width 为不同数值看看效果
 </div>
 </div>
 
-<div id="outline-container-orgd8a10a9" class="outline-2">
-<h2 id="orgd8a10a9">Proxy setting for url</h2>
-<div class="outline-text-2" id="text-orgd8a10a9">
+<div id="outline-container-org4a9361b" class="outline-2">
+<h2 id="org4a9361b">Proxy setting for url</h2>
+<div class="outline-text-2" id="text-org4a9361b">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> url-proxy-services
       '((<span style="font-style: italic;">"http"</span>     . <span style="font-style: italic;">"socks://127.0.0.1:1080"</span>)
@@ -1503,9 +1504,9 @@ tabtab这句话里有一个tab, 可以tab-width 为不同数值看看效果
 </div>
 </div>
 
-<div id="outline-container-org1fc1d2f" class="outline-3">
-<h3 id="org1fc1d2f">Scoks Proxies</h3>
-<div class="outline-text-3" id="text-org1fc1d2f">
+<div id="outline-container-org95e164e" class="outline-3">
+<h3 id="org95e164e">Scoks Proxies</h3>
+<div class="outline-text-3" id="text-org95e164e">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> socks-override-functions 1)
 (<span style="font-weight: bold;">setq</span> socks-noproxy '(<span style="font-style: italic;">"127.0.0.1"</span>))
@@ -1517,9 +1518,9 @@ tabtab这句话里有一个tab, 可以tab-width 为不同数值看看效果
 </div>
 </div>
 
-<div id="outline-container-org7861db6" class="outline-2">
-<h2 id="org7861db6">Telegram Client in emacs &#x2013; telega</h2>
-<div class="outline-text-2" id="text-org7861db6">
+<div id="outline-container-org63c19de" class="outline-2">
+<h2 id="org63c19de">Telegram Client in emacs &#x2013; telega</h2>
+<div class="outline-text-2" id="text-org63c19de">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package telega
   <span style="font-weight: bold;">:config</span>
@@ -1530,9 +1531,9 @@ tabtab这句话里有一个tab, 可以tab-width 为不同数值看看效果
 </div>
 </div>
 
-<div id="outline-container-org13b2952" class="outline-2">
-<h2 id="org13b2952">EPUB reading</h2>
-<div class="outline-text-2" id="text-org13b2952">
+<div id="outline-container-orgeaf147c" class="outline-2">
+<h2 id="orgeaf147c">EPUB reading</h2>
+<div class="outline-text-2" id="text-orgeaf147c">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(use-package nov
   <span style="font-weight: bold;">:config</span>
@@ -1543,9 +1544,9 @@ tabtab这句话里有一个tab, 可以tab-width 为不同数值看看效果
 </div>
 </div>
 
-<div id="outline-container-orgff7617d" class="outline-2">
-<h2 id="orgff7617d">EXWM</h2>
-<div class="outline-text-2" id="text-orgff7617d">
+<div id="outline-container-orgf272789" class="outline-2">
+<h2 id="orgf272789">EXWM</h2>
+<div class="outline-text-2" id="text-orgf272789">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 (<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">efs/exwm-update-class</span> ()
@@ -1623,9 +1624,9 @@ tabtab这句话里有一个tab, 可以tab-width 为不同数值看看效果
 </div>
 </div>
 
-<div id="outline-container-org82a16e7" class="outline-2">
-<h2 id="org82a16e7">set personal info</h2>
-<div class="outline-text-2" id="text-org82a16e7">
+<div id="outline-container-orgd245cad" class="outline-2">
+<h2 id="orgd245cad">set personal info</h2>
+<div class="outline-text-2" id="text-orgd245cad">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> user-full-name <span style="font-style: italic;">"kamisama"</span>)
 (<span style="font-weight: bold;">setq</span> user-mail-address <span style="font-style: italic;">"wj915614874@163.com"</span>)
@@ -1634,11 +1635,36 @@ tabtab这句话里有一个tab, 可以tab-width 为不同数值看看效果
 </div>
 </div>
 
-<div id="outline-container-org41e1ced" class="outline-2">
-<h2 id="org41e1ced">file related tweaks</h2>
-<div class="outline-text-2" id="text-org41e1ced">
+<div id="outline-container-org4eb29a0" class="outline-2">
+<h2 id="org4eb29a0">file related tweaks</h2>
+<div class="outline-text-2" id="text-org4eb29a0">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> create-lockfiles nil)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org190e546" class="outline-2">
+<h2 id="org190e546">自动对齐行内注释</h2>
+<div class="outline-text-2" id="text-org190e546">
+<p>
+出处:
+<a href="https://stackoverflow.com/questions/20274336/how-to-automatically-align-comments-in-different-pieces-of-code">https://stackoverflow.com/questions/20274336/how-to-automatically-align-comments-in-different-pieces-of-code</a>
+交互命令调用 : <code>M-x align-regexp ENTER ;; ENTER</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">my-align-comments</span> (beginning end)
+
+  <span style="font-style: italic;">"Align comments within marked region."</span>
+
+  (<span style="font-weight: bold;">interactive</span> <span style="font-style: italic;">"*r"</span>)
+
+  (<span style="font-weight: bold;">let</span> (indent-tabs-mode align-to-tab-stop)
+
+    (align-regexp beginning end (concat <span style="font-style: italic;">"</span><span style="font-weight: bold; font-style: italic;">\\</span><span style="font-weight: bold; font-style: italic;">(</span><span style="font-style: italic;">\\s-*</span><span style="font-weight: bold; font-style: italic;">\\</span><span style="font-weight: bold; font-style: italic;">)</span><span style="font-style: italic;">\"</span>
+
+<span style="font-style: italic;">                                        (regexp-quote comment-start)))))</span><span style="font-weight: bold; font-style: italic;">\\</span><span style="font-weight: bold; font-style: italic;">)</span><span style="font-style: italic;">"</span>))))
 </pre>
 </div>
 </div>
@@ -1647,7 +1673,7 @@ tabtab这句话里有一个tab, 可以tab-width 为不同数值看看效果
 <div id="postamble" class="status">
 <p class="date">Date: 2022-01-30 Sun 07:03</p>
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-07-03 Sun 18:04</p>
+<p class="date">Created: 2022-07-28 Thu 17:13</p>
 <p class="validation"></p>
 </div>
 </body>
