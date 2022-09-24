@@ -6,7 +6,7 @@
 <!-- 2022-09-24 Sat 12:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>树莓派相关笔记</title>
+<title>Emacs 笔记</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="kamisama" />
 <style type="text/css">
@@ -233,91 +233,40 @@ for the JavaScript code in this tag.
  |
  <a accesskey="H" href="../index.html"> HOME </a>
 </div><div id="content">
-<h1 class="title">树莓派相关笔记</h1>
+<h1 class="title">Emacs 笔记</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org49100db">配置无头树莓派</a>
-<ul>
-<li><a href="#org84e06a2">设置无线网</a></li>
-<li><a href="#org6271cd5">设置ssh连接</a></li>
-</ul>
-</li>
-<li><a href="#orgd7763f5">在树莓派上部署自己的Git服务器</a>
-<ul>
-<li><a href="#org74d290c">安装Git</a></li>
-</ul>
-</li>
+<li><a href="#org7f0e689">Emacs 编码系统</a></li>
 </ul>
 </div>
 </div>
+<div id="outline-container-org7f0e689" class="outline-2">
+<h2 id="org7f0e689">Emacs 编码系统</h2>
+<div class="outline-text-2" id="text-org7f0e689">
+<p>
+使用不同语言的用户或多或少地创建了许多不同标准的编码系统来表示它们的语言文字。但
+Emacs 内部并不使用这些编码系统，它在读取数据时从各种编码系统转变为自己内部的编码
+系统，在写入数据时将内部编码系统转变为其他编码系统.
+</p>
 
-<div id="outline-container-org49100db" class="outline-2">
-<h2 id="org49100db">配置无头树莓派</h2>
-<div class="outline-text-2" id="text-org49100db">
 <p>
-如果不使用键盘或显示器来运行树莓派,也就是无界面(无头)形式的树莓派,我们可以通过
-设置其无线网络然后通过 ssh 来连接和操作它.
-在系统镜像烧录到SD卡中后,将SD卡插入到读卡器并连接到电脑上,可以在文件管理器中找
-到SD卡的 <code>boot</code> 分区(文件夹)
+这种编码的转换会在读或写文件时进行.会在给终端发送命令或接收终端输出时进行,也会
+在与子进程交换数据时进行.
 </p>
-</div>
-<div id="outline-container-org84e06a2" class="outline-3">
-<h3 id="org84e06a2">设置无线网</h3>
-<div class="outline-text-3" id="text-org84e06a2">
-<p>
-在 <code>boot</code> 分区里创建一个名为 <code>wpa_supplicant.conf</code> 的文件.当树莓派第一次启动时,会
-将这个文件复制到linux 根文件系统(/root)的正确位置,然后根据文件里的设置来启动
-无线网络的连接.
-</p>
-<blockquote>
-<p>
-树莓派通电后,确保等上几分钟(不超过5min)来让机器能启动并注册好网络.
-</p>
-</blockquote>
-<p>
-一个 <code>wpa_supplicant.conf</code> 文件例子:
-</p>
-<pre class="example">
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-country=&lt;Insert 2 letter ISO 3166-1 country code here&gt;
-update_config=1
 
-network={
-ssid="&lt;Name of your wireless LAN&gt;"
-psk="&lt;Password for your wireless LAN&gt;"
-}
-</pre>
 <p>
-<code>ctrl_interface</code> 那一行不用改, <code>country</code> 那一行设置为 <code>country=CN</code> , <code>update_config</code>
-也不用管, <code>ssid</code> 是无线网的名字, <code>psk</code> 是密码.
+有了上面的概念,Emacs 的编码系统设置就好理解一点了,不管是我们键盘输入的数据,还是
+直接复制粘贴的数据,都是属于其他编码系统,Emacs 在处理这些数据时会将它们转换成其内
+部的编码系统(emacs-internal,或者是相等的uft-8-emacs)
 </p>
-</div>
-</div>
-<div id="outline-container-org6271cd5" class="outline-3">
-<h3 id="org6271cd5">设置ssh连接</h3>
-<div class="outline-text-3" id="text-org6271cd5">
+
 <p>
-因为没有显示器或键盘,我们只能通过其他方式来远程连接到无头树莓派.在无头树莓派
-的设置阶段,我们可以通过在 <code>boot</code> 分区里创建一个文件名是 <code>ssh</code> 的文件,文件名就叫
-<code>ssh</code> ,不带任何文件扩展名. 然后就可以启用树莓派的 ssh 服务了.
+如果想要Emacs不进行任何的编码转换就访问某个文件,则可以使用 find-file-literally
+命令,使用这个命令打开一个有中文的文件,会发现中文全都无法正常显示,只有英文显示正
+常
 </p>
-</div>
-</div>
-</div>
-<div id="outline-container-orgd7763f5" class="outline-2">
-<h2 id="orgd7763f5">在树莓派上部署自己的Git服务器</h2>
-<div class="outline-text-2" id="text-orgd7763f5">
-</div>
-<div id="outline-container-org74d290c" class="outline-3">
-<h3 id="org74d290c">安装Git</h3>
-<div class="outline-text-3" id="text-org74d290c">
-<div class="org-src-container">
-<pre class="src src-sh">sudo apt-get install wget git
-</pre>
-</div>
-</div>
 </div>
 </div>
 </div>
