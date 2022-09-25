@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-09-24 Sat 12:39 -->
+<!-- 2022-09-25 Sun 07:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -237,49 +237,49 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf789904">使用Github遇到的问题记录</a>
+<li><a href="#orgb67fc12">使用Github遇到的问题记录</a>
 <ul>
-<li><a href="#orgdfa2ec9">github actions</a>
+<li><a href="#orgb7db1b6">github actions</a>
 <ul>
-<li><a href="#org0cd7d20">git会记录文件状态</a></li>
+<li><a href="#org332bcec">git会记录文件状态</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org583f9a2">生成和添加 SSH keys 到github</a>
+<li><a href="#org4a1d1cf">生成和添加 SSH keys 到github</a>
 <ul>
-<li><a href="#org5c11184">生成新的 SHH 密钥</a></li>
-<li><a href="#orgf5a047c">添加 SSH 密钥到 ssh-agent</a>
+<li><a href="#orgb695614">生成新的 SHH 密钥</a></li>
+<li><a href="#org348c935">添加 SSH 密钥到 ssh-agent</a>
 <ul>
-<li><a href="#org51b317a">后台启动 ssh 代理</a></li>
-<li><a href="#orgbab9bf9">将 ssh 私钥添加到代理</a></li>
-<li><a href="#org461ec98">将 SSH 密钥添加到 Github 帐号</a></li>
+<li><a href="#org8bf46fe">后台启动 ssh 代理</a></li>
+<li><a href="#org0dc1683">将 ssh 私钥添加到代理</a></li>
+<li><a href="#org8b296fb">将 SSH 密钥添加到 Github 帐号</a></li>
 </ul>
 </li>
-<li><a href="#org95c25c7">测试 SSH 连接</a></li>
-<li><a href="#org2cde30a">通过代理连接 SSH</a></li>
+<li><a href="#orgd16ff33">测试 SSH 连接</a></li>
+<li><a href="#org282db44">通过代理连接 SSH</a></li>
 </ul>
 </li>
-<li><a href="#orgbc8f4c8">Github.io 踩坑</a>
+<li><a href="#orgce2e7fb">Github.io 踩坑</a>
 <ul>
-<li><a href="#org891faf2">路径含有隐藏文件夹时url访问失败</a></li>
+<li><a href="#orgda54ec9">路径含有隐藏文件夹时url访问失败</a></li>
 </ul>
 </li>
-<li><a href="#org1ad2e07">远程仓库强制覆盖本地仓库.</a></li>
+<li><a href="#orga548bc6">远程仓库强制覆盖本地仓库.</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf789904" class="outline-2">
-<h2 id="orgf789904">使用Github遇到的问题记录</h2>
-<div class="outline-text-2" id="text-orgf789904">
+<div id="outline-container-orgb67fc12" class="outline-2">
+<h2 id="orgb67fc12">使用Github遇到的问题记录</h2>
+<div class="outline-text-2" id="text-orgb67fc12">
 </div>
-<div id="outline-container-orgdfa2ec9" class="outline-3">
-<h3 id="orgdfa2ec9">github actions</h3>
-<div class="outline-text-3" id="text-orgdfa2ec9">
+<div id="outline-container-orgb7db1b6" class="outline-3">
+<h3 id="orgb7db1b6">github actions</h3>
+<div class="outline-text-3" id="text-orgb7db1b6">
 </div>
-<div id="outline-container-org0cd7d20" class="outline-4">
-<h4 id="org0cd7d20">git会记录文件状态</h4>
-<div class="outline-text-4" id="text-org0cd7d20">
+<div id="outline-container-org332bcec" class="outline-4">
+<h4 id="org332bcec">git会记录文件状态</h4>
+<div class="outline-text-4" id="text-org332bcec">
 <p>
 使用 Emacs 编辑文件的情况下: 很容易一边编辑文件,另一边就打开了shell-mode 要
 对刚刚的更改进行提交.
@@ -290,18 +290,18 @@ for the JavaScript code in this tag.
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="orgbee2fbf"></a><span class="todo TODO">TODO</span> 测试其他文本编辑器是否会出现这种状况.<br /></li>
+<li><a id="org3ffacd5"></a><span class="todo TODO">TODO</span> 测试其他文本编辑器是否会出现这种状况.<br /></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-org583f9a2" class="outline-2">
-<h2 id="org583f9a2">生成和添加 SSH keys 到github</h2>
-<div class="outline-text-2" id="text-org583f9a2">
+<div id="outline-container-org4a1d1cf" class="outline-2">
+<h2 id="org4a1d1cf">生成和添加 SSH keys 到github</h2>
+<div class="outline-text-2" id="text-org4a1d1cf">
 </div>
-<div id="outline-container-org5c11184" class="outline-3">
-<h3 id="org5c11184">生成新的 SHH 密钥</h3>
-<div class="outline-text-3" id="text-org5c11184">
+<div id="outline-container-orgb695614" class="outline-3">
+<h3 id="orgb695614">生成新的 SHH 密钥</h3>
+<div class="outline-text-3" id="text-orgb695614">
 <div class="org-src-container">
 <pre class="src src-sh">ssh-keygen -t ed25519 -C <span style="font-style: italic;">"wj915614874@163.com"</span>
 </pre>
@@ -309,13 +309,13 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgf5a047c" class="outline-3">
-<h3 id="orgf5a047c">添加 SSH 密钥到 ssh-agent</h3>
-<div class="outline-text-3" id="text-orgf5a047c">
+<div id="outline-container-org348c935" class="outline-3">
+<h3 id="org348c935">添加 SSH 密钥到 ssh-agent</h3>
+<div class="outline-text-3" id="text-org348c935">
 </div>
-<div id="outline-container-org51b317a" class="outline-4">
-<h4 id="org51b317a">后台启动 ssh 代理</h4>
-<div class="outline-text-4" id="text-org51b317a">
+<div id="outline-container-org8bf46fe" class="outline-4">
+<h4 id="org8bf46fe">后台启动 ssh 代理</h4>
+<div class="outline-text-4" id="text-org8bf46fe">
 <div class="org-src-container">
 <pre class="src src-sh"><span style="font-weight: bold;">eval</span> <span style="font-style: italic;">"$(ssh-agent -s)"</span>
 </pre>
@@ -323,9 +323,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgbab9bf9" class="outline-4">
-<h4 id="orgbab9bf9">将 ssh 私钥添加到代理</h4>
-<div class="outline-text-4" id="text-orgbab9bf9">
+<div id="outline-container-org0dc1683" class="outline-4">
+<h4 id="org0dc1683">将 ssh 私钥添加到代理</h4>
+<div class="outline-text-4" id="text-org0dc1683">
 <div class="org-src-container">
 <pre class="src src-sh">ssh-add ~/.ssh/id_ed25519
 </pre>
@@ -333,9 +333,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org461ec98" class="outline-4">
-<h4 id="org461ec98">将 SSH 密钥添加到 Github 帐号</h4>
-<div class="outline-text-4" id="text-org461ec98">
+<div id="outline-container-org8b296fb" class="outline-4">
+<h4 id="org8b296fb">将 SSH 密钥添加到 Github 帐号</h4>
+<div class="outline-text-4" id="text-org8b296fb">
 <p>
 将下面命令的结果复制到 <a href="https://github.com/settings/ssh/new">https://github.com/settings/ssh/new</a> 里的 Key 表单中.
 </p>
@@ -347,9 +347,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org95c25c7" class="outline-3">
-<h3 id="org95c25c7">测试 SSH 连接</h3>
-<div class="outline-text-3" id="text-org95c25c7">
+<div id="outline-container-orgd16ff33" class="outline-3">
+<h3 id="orgd16ff33">测试 SSH 连接</h3>
+<div class="outline-text-3" id="text-orgd16ff33">
 <div class="org-src-container">
 <pre class="src src-sh">ssh -T git@github.com
 </pre>
@@ -365,9 +365,9 @@ Hi username! You've successfully authenticated, but GitHub does not provide shel
 </div>
 </div>
 
-<div id="outline-container-org2cde30a" class="outline-3">
-<h3 id="org2cde30a">通过代理连接 SSH</h3>
-<div class="outline-text-3" id="text-org2cde30a">
+<div id="outline-container-org282db44" class="outline-3">
+<h3 id="org282db44">通过代理连接 SSH</h3>
+<div class="outline-text-3" id="text-org282db44">
 <p>
 因为经常被墙的原因,使用代理连接 SSH 是很有必要的.这里去分一下 git 命令里设置的走
 代理, git 里设置的代理是用来 clone 下载文件的,走的是 http/https 协议,因为下载文
@@ -400,22 +400,22 @@ Host *
 </div>
 </div>
 </div>
-<div id="outline-container-orgbc8f4c8" class="outline-2">
-<h2 id="orgbc8f4c8">Github.io 踩坑</h2>
-<div class="outline-text-2" id="text-orgbc8f4c8">
+<div id="outline-container-orgce2e7fb" class="outline-2">
+<h2 id="orgce2e7fb">Github.io 踩坑</h2>
+<div class="outline-text-2" id="text-orgce2e7fb">
 </div>
-<div id="outline-container-org891faf2" class="outline-3">
-<h3 id="org891faf2">路径含有隐藏文件夹时url访问失败</h3>
-<div class="outline-text-3" id="text-org891faf2">
+<div id="outline-container-orgda54ec9" class="outline-3">
+<h3 id="orgda54ec9">路径含有隐藏文件夹时url访问失败</h3>
+<div class="outline-text-3" id="text-orgda54ec9">
 <p>
 如果网页资源的某个文件路径中有隐藏文件(夹)，那该资源就会访问失败.
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org1ad2e07" class="outline-2">
-<h2 id="org1ad2e07">远程仓库强制覆盖本地仓库.</h2>
-<div class="outline-text-2" id="text-org1ad2e07">
+<div id="outline-container-orga548bc6" class="outline-2">
+<h2 id="orga548bc6">远程仓库强制覆盖本地仓库.</h2>
+<div class="outline-text-2" id="text-orga548bc6">
 <p>
 适用于本地未提交的修改,但远端仓库已经从另一台机器提交了新的修改.如果本地未提交的
 修改并不重要,可以删除,那么就使用这种方法:
@@ -436,7 +436,7 @@ origin/main 中的文件.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-09-24 Sat 12:39</p>
+<p class="date">Created: 2022-09-25 Sun 07:25</p>
 <p class="validation"></p>
 </div>
 </body>
