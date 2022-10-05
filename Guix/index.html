@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-09-25 Sun 07:25 -->
+<!-- 2022-10-05 Wed 17:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Guix Notes</title>
@@ -16,32 +16,32 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgbb426d8">1. 虚拟机运行Guix</a>
+<li><a href="#orgea04a39">1. 虚拟机运行Guix</a>
 <ul>
-<li><a href="#org5dddadf">1.1. 下载安装包</a></li>
-<li><a href="#org6e763c8">1.2. QEMU 里安装 Guix</a>
+<li><a href="#org8526ad2">1.1. 下载安装包</a></li>
+<li><a href="#org0d1e92c">1.2. QEMU 里安装 Guix</a>
 <ul>
-<li><a href="#org0af0f5d">1.2.1. 创建一个磁盘镜像,用来运行 Guix</a></li>
-<li><a href="#orgf3618db">1.2.2. 使用下载的安装镜像引导启动,进行系统安装</a>
+<li><a href="#org4f8f9a9">1.2.1. 创建一个磁盘镜像,用来运行 Guix</a></li>
+<li><a href="#org61c1902">1.2.2. 使用下载的安装镜像引导启动,进行系统安装</a>
 <ul>
-<li><a href="#org3270ba4">1.2.2.1. 系统安装</a></li>
+<li><a href="#org6dec55b">1.2.2.1. 系统安装</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org59958aa">1.3. 安装好后运行Guix</a></li>
-<li><a href="#org018e4b7">1.4. 使用官方提供的 QEMU 镜像运行 Guix</a></li>
+<li><a href="#orgeef2f6b">1.3. 安装好后运行Guix</a></li>
+<li><a href="#orgb81542c">1.4. 使用官方提供的 QEMU 镜像运行 Guix</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbb426d8" class="outline-2">
-<h2 id="orgbb426d8"><span class="section-number-2">1</span> 虚拟机运行Guix</h2>
+<div id="outline-container-orgea04a39" class="outline-2">
+<h2 id="orgea04a39"><span class="section-number-2">1</span> 虚拟机运行Guix</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org5dddadf" class="outline-3">
-<h3 id="org5dddadf"><span class="section-number-3">1.1</span> 下载安装包</h3>
+<div id="outline-container-org8526ad2" class="outline-3">
+<h3 id="org8526ad2"><span class="section-number-3">1.1</span> 下载安装包</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 下载地址:<a href="https://guix.gnu.org/zh-CN/download/">https://guix.gnu.org/zh-CN/download/</a>
@@ -51,12 +51,12 @@
 </div>
 </div>
 
-<div id="outline-container-org6e763c8" class="outline-3">
-<h3 id="org6e763c8"><span class="section-number-3">1.2</span> QEMU 里安装 Guix</h3>
+<div id="outline-container-org0d1e92c" class="outline-3">
+<h3 id="org0d1e92c"><span class="section-number-3">1.2</span> QEMU 里安装 Guix</h3>
 <div class="outline-text-3" id="text-1-2">
 </div>
-<div id="outline-container-org0af0f5d" class="outline-4">
-<h4 id="org0af0f5d"><span class="section-number-4">1.2.1</span> 创建一个磁盘镜像,用来运行 Guix</h4>
+<div id="outline-container-org4f8f9a9" class="outline-4">
+<h4 id="org4f8f9a9"><span class="section-number-4">1.2.1</span> 创建一个磁盘镜像,用来运行 Guix</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <div class="org-src-container">
 <pre class="src src-sh">qemu-img create -f qcow2 guix-system.img 50G
@@ -68,8 +68,8 @@
 </div>
 </div>
 
-<div id="outline-container-orgf3618db" class="outline-4">
-<h4 id="orgf3618db"><span class="section-number-4">1.2.2</span> 使用下载的安装镜像引导启动,进行系统安装</h4>
+<div id="outline-container-org61c1902" class="outline-4">
+<h4 id="org61c1902"><span class="section-number-4">1.2.2</span> 使用下载的安装镜像引导启动,进行系统安装</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <div class="org-src-container">
 <pre class="src src-sh">qemu-system-x86_64 -m 1024 -smp 1 -enable-kvm <span style="font-style: italic;">\</span>
@@ -80,8 +80,8 @@
 </div>
 </div>
 
-<div id="outline-container-org3270ba4" class="outline-5">
-<h5 id="org3270ba4"><span class="section-number-5">1.2.2.1</span> 系统安装</h5>
+<div id="outline-container-org6dec55b" class="outline-5">
+<h5 id="org6dec55b"><span class="section-number-5">1.2.2.1</span> 系统安装</h5>
 <div class="outline-text-5" id="text-1-2-2-1">
 <p>
 熟悉 Linux 系统安装的都不会陌生,不熟悉的可以看看手册
@@ -92,11 +92,11 @@
 </div>
 </div>
 
-<div id="outline-container-org59958aa" class="outline-3">
-<h3 id="org59958aa"><span class="section-number-3">1.3</span> 安装好后运行Guix</h3>
+<div id="outline-container-orgeef2f6b" class="outline-3">
+<h3 id="orgeef2f6b"><span class="section-number-3">1.3</span> 安装好后运行Guix</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
-安装完成后我们就将系统成功加载到 <a href="#org0af0f5d">创建一个磁盘镜像,用来运行 Guix</a> 这一步创建的磁盘
+安装完成后我们就将系统成功加载到 <a href="#org4f8f9a9">创建一个磁盘镜像,用来运行 Guix</a> 这一步创建的磁盘
 镜像里了,那么以后再启动就可以直接使用该镜像文件启动了:
 command:
 </p>
@@ -111,8 +111,8 @@ command:
 </div>
 </div>
 
-<div id="outline-container-org018e4b7" class="outline-3">
-<h3 id="org018e4b7"><span class="section-number-3">1.4</span> 使用官方提供的 QEMU 镜像运行 Guix</h3>
+<div id="outline-container-orgb81542c" class="outline-3">
+<h3 id="orgb81542c"><span class="section-number-3">1.4</span> 使用官方提供的 QEMU 镜像运行 Guix</h3>
 <div class="outline-text-3" id="text-1-4">
 <div class="org-src-container">
 <pre class="src src-sh">qemu-system-x86_64 <span style="font-style: italic;">\</span>
@@ -127,7 +127,7 @@ command:
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2022-09-25 Sun 07:25</p>
+<p class="date">Created: 2022-10-05 Wed 17:08</p>
 <p class="validation"></p>
 </div>
 </body>
