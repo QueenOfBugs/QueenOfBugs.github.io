@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-10-05 Wed 17:08 -->
+<!-- 2022-10-07 Fri 15:37 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs 笔记</title>
@@ -238,14 +238,52 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4e0e2af">Emacs 编码系统</a></li>
-<li><a href="#orgc4e2e23">Emacs 语言环境设置</a></li>
+<li><a href="#org7f89eef">Emacs 编码系统</a></li>
+<li><a href="#org2a75d22">Emacs 语言环境设置</a></li>
+<li><a href="#org4970d71">基本编辑命令(Fundamental Editing Commands)</a>
+<ul>
+<li><a href="#orgf8d3596">基础(Basic)</a>
+<ul>
+<li><a href="#orgcd9a478">位置信息(Position Info)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org18833dc">重要文本更改命令(Import Text-Changing Commands)</a>
+<ul>
+<li><a href="#orgeb574ff">显示(Display)</a>
+<ul>
+<li><a href="#orgf67b3be">文本显示(Text Display)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgbbc0326">Emacs 的主要结构(Major Structures of Emacs)</a>
+<ul>
+<li><a href="#org1f2114a">文件(Files)</a></li>
+<li><a href="#org8774047">缓冲区(Buffers)</a></li>
+<li><a href="#org40014fa">窗口(Windows)</a></li>
+<li><a href="#org850ed51">框架(Frames)</a></li>
+<li><a href="#orgfbfde49">国际化(International)</a>
+<ul>
+<li><a href="#org83b882a">Fontsets</a></li>
+<li><a href="#org5ea73d8">定义字体集(Defining Fontsets)</a></li>
+<li><a href="#org82133d6">修改字体集(Modifying Fontsets)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org379c5a9">附录(Appendices)</a>
+<ul>
+<li><a href="#orge139a67">X Resources</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4e0e2af" class="outline-2">
-<h2 id="org4e0e2af">Emacs 编码系统</h2>
-<div class="outline-text-2" id="text-org4e0e2af">
+<div id="outline-container-org7f89eef" class="outline-2">
+<h2 id="org7f89eef">Emacs 编码系统</h2>
+<div class="outline-text-2" id="text-org7f89eef">
 <p>
 使用不同语言的用户或多或少地创建了许多不同标准的编码系统来表示它们的语言文字。但
 Emacs 内部并不使用这些编码系统，它在读取数据时从各种编码系统转变为自己内部的编码
@@ -270,9 +308,9 @@ Emacs 内部并不使用这些编码系统，它在读取数据时从各种编�
 </p>
 </div>
 </div>
-<div id="outline-container-orgc4e2e23" class="outline-2">
-<h2 id="orgc4e2e23">Emacs 语言环境设置</h2>
-<div class="outline-text-2" id="text-orgc4e2e23">
+<div id="outline-container-org2a75d22" class="outline-2">
+<h2 id="org2a75d22">Emacs 语言环境设置</h2>
+<div class="outline-text-2" id="text-org2a75d22">
 <p>
 Emacs 的语言环境是针对使用不同语言,字符集和编码系统的一系列设置,该设置会修改默认
 的输入法,字符集和编码系统.想要查看特定的语言环境,可以使用快捷键 <code>C-h L</code> 或者直接使
@@ -282,10 +320,248 @@ Emacs 的语言环境是针对使用不同语言,字符集和编码系统的一�
 </p>
 </div>
 </div>
+<div id="outline-container-org4970d71" class="outline-2">
+<h2 id="org4970d71">基本编辑命令(Fundamental Editing Commands)</h2>
+<div class="outline-text-2" id="text-org4970d71">
 </div>
+<div id="outline-container-orgf8d3596" class="outline-3">
+<h3 id="orgf8d3596">基础(Basic)</h3>
+<div class="outline-text-3" id="text-orgf8d3596">
+<p>
+最基本的编辑命令
+</p>
+</div>
+<div id="outline-container-orgcd9a478" class="outline-4">
+<h4 id="orgcd9a478">位置信息(Position Info)</h4>
+<div class="outline-text-4" id="text-orgcd9a478">
+<p>
+光标位于哪一行?哪一列?
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org18833dc" class="outline-2">
+<h2 id="org18833dc">重要文本更改命令(Import Text-Changing Commands)</h2>
+<div class="outline-text-2" id="text-org18833dc">
+</div>
+<div id="outline-container-orgeb574ff" class="outline-3">
+<h3 id="orgeb574ff">显示(Display)</h3>
+<div class="outline-text-3" id="text-orgeb574ff">
+<p>
+控制显示什么文本.
+</p>
+</div>
+<div id="outline-container-orgf67b3be" class="outline-4">
+<h4 id="orgf67b3be">文本显示(Text Display)</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbbc0326" class="outline-2">
+<h2 id="orgbbc0326">Emacs 的主要结构(Major Structures of Emacs)</h2>
+<div class="outline-text-2" id="text-orgbbc0326">
+</div>
+<div id="outline-container-org1f2114a" class="outline-3">
+<h3 id="org1f2114a">文件(Files)</h3>
+</div>
+
+<div id="outline-container-org8774047" class="outline-3">
+<h3 id="org8774047">缓冲区(Buffers)</h3>
+</div>
+
+<div id="outline-container-org40014fa" class="outline-3">
+<h3 id="org40014fa">窗口(Windows)</h3>
+</div>
+
+<div id="outline-container-org850ed51" class="outline-3">
+<h3 id="org850ed51">框架(Frames)</h3>
+</div>
+
+<div id="outline-container-orgfbfde49" class="outline-3">
+<h3 id="orgfbfde49">国际化(International)</h3>
+<div class="outline-text-3" id="text-orgfbfde49">
+<p>
+使用非 ASCII 字符集.
+</p>
+</div>
+<div id="outline-container-org83b882a" class="outline-4">
+<h4 id="org83b882a">Fontsets</h4>
+<div class="outline-text-4" id="text-org83b882a">
+<p>
+字体集
+</p>
+
+<p>
+一个字体通常定义了单个字母表或字母系统的形状.因此,要显示 Emacs 支持的整个脚本范
+围需要许多字体的集合. 在 Emacs 里这样的集合叫做 "fontset" (字体集). 一个字体集通
+过一个字体的规格列表定义,每个字体规格被分配来处理一套字符代码,并且对于它指定的字
+体并未涵盖的字符,可能会退回到另一个字体集.
+</p>
+
+<p>
+每个字体集都有一个名字,就像字体一样. 然而,尽管字体都存储在操作系统里,而且可用的
+字体名称由操作系统定义,但是字体集是在 Emacs 本身里面定义的. 一旦你定义了一个字体
+集,你可以在任何你能使用单个字体的地方,通过指定它的名字在 Emacs 里使用它. 当然了,
+Emacs 字体集只能使用你的操作系统支持(已安装)的字体.如果在屏幕上的某些字符是以空
+的方框或者十六进制代码的形式出现的,这意味着他们使用的字体集没有这些字符的字体.在
+这种情况下,或者是字符显示了,但是不是你想要的样子,你可能需要安装额外的字体或者是
+修改字体集来使用你的系统里已经安装的特定字体(见下文). 你的操作系统可能有你可以安
+装的可选字体;或者你可以安装 GNU Intlfonts 包,该包涵盖了大多数受支持脚本的字
+体.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> 
+</p>
+
+<p>
+Emacs 会自动创建三哥字体集: "standard fontsets", "startup fontset" 和 "default
+fontset". 默认的字体集(default fontset) 最有可能具有各种非 ASCII 字符的字体,并且
+是其他两个字体集的默认备用字体集,如果你设置的是默认字体而不是字体集.然而,它不指
+定字体系列名,所以如果直接使用它,结果可能会有点随机.
+你可以通过使用 <code>-fn</code> 选项启动 Emacs 来指定特定的字符集. 例如:
+</p>
+<pre class="example">
+emacs -fn fontset-standard
+</pre>
+
+<p>
+你也可以通过 <code>Font</code> 资源来指定一个字符集.(参见 <a href="#orge139a67">X Resources</a> 部分).
+</p>
+
+<p>
+如果没有指定使用字体集,那么 Emacs 会使用一个 ASCII 字体,并将 <code>fontset-default</code> 作
+为字体没有包含的字符的后备选项. 标准的字体集(standard fontset) 仅在显示请求时使
+用,尽管它的名字是标准的字体集.
+</p>
+
+<p>
+为了显示一个特定字体集的相关信息, 请使用 <code>M-x describe-fontset</code> 命令. 改名令会提示
+你输入一个字体集名称,默认值为当前框架使用的字体集名称,然后显示该字体集中字符的所
+有子范围以及分配给它们的字体.
+要查看 Emacs 在没有特定字体集的会话(这是通常会发生的),请在提示输入时键入
+<code>fontset-default &lt;RET&gt;</code> ,或者只是键入 <code>&lt;RET&gt;</code> 来描述当前框架使用的字体集.
+</p>
+
+<p>
+一个字体集不必要为每个字符编码指定字体.如果一个字体集没有为一个特定的字符指定字
+体,或者如果它指定了一个操作系统中不存在的字体,那么 Emacs 不能正确显示该字符.
+Emacs 会将该字符显示为一个十六进制编码或空格或空框.
+(详情查看 <a href="#orgf67b3be">glyphless characters</a>.) 或者一个字体集可能会为某些字符范围指定一个字体,
+但是你可能不喜欢他们的视觉表现.如果发生这种情况,你可能希望修改修改你的字体集;要
+知道如何操作,请查看 <a href="#org82133d6">修改字体集(Modifying Fontsets)</a>.
+</p>
+</div>
+</div>
+<div id="outline-container-org5ea73d8" class="outline-4">
+<h4 id="org5ea73d8">定义字体集(Defining Fontsets)</h4>
+</div>
+
+<div id="outline-container-org82133d6" class="outline-4">
+<h4 id="org82133d6">修改字体集(Modifying Fontsets)</h4>
+<div class="outline-text-4" id="text-org82133d6">
+<p>
+字体集不必总是从头开始创建. 如果只是需要较小的改动,更简单的方法是修改一个现存的
+字体集,通常是 <code>fontset-default</code> (默认字体集). 修改 <code>fontset-default</code> 也会影响其它将
+其作为后备的字体集,因此这是解决 Emacs 为特定字母系统选择的字体问题的有效方法.
+</p>
+
+<p>
+字体集可以通过使用 <code>set-fontset-font</code> 函数修改,指定要修改字体的字符,字符集,字母系
+统或者是字符范围,以及要使用的字体的字体规格.
+例如:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Prefer a big5 font for han characters.</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#20026; han (&#27721;)&#23383;&#31526;&#39318;&#36873; big5 (&#32321;&#20307;)&#23383;&#20307;</span>
+(set-fontset-font <span style="font-style: italic;">"fontset-default"</span>
+                  'han (font-spec <span style="font-weight: bold;">:registry</span> <span style="font-style: italic;">"big5"</span>)
+                  nil 'prepend)
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Use MyPrivateFont for the Unicode private use area.</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#23558; MyPrivateFont &#29992;&#20110; Unicode &#19987;&#29992;&#21306;&#22495;(Unicode &#23383;&#31526;&#33539;&#22260; e000-f8ff).</span>
+(set-fontset-font <span style="font-style: italic;">"fontset-default"</span>  '(#xe000 . #xf8ff)
+                  <span style="font-style: italic;">"MyPrivateFont"</span>)
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Use Liberation Mono for latin-3 charset.</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#20026; latin-3 &#23383;&#31526;&#38598;&#20351;&#29992; Liberation Mono &#23383;&#20307;</span>
+(set-fontset-font <span style="font-style: italic;">"fontset-default"</span> 'iso-8859-3
+                  <span style="font-style: italic;">"Liberation Mono"</span>)
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Use DejaVu Sans Mono as a fallback in fontset-startup</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">before resorting to fontset-default.</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#22312;&#20351;&#29992; fontset-default &#20316;&#20026;&#21518;&#22791;&#20043;&#21069;&#23558; DejaVu Sans Mono &#20316;&#20026; fontset-startup &#30340;&#21518;&#22791;&#23383;&#20307;</span>
+(set-fontset-font <span style="font-style: italic;">"fontset-startup"</span> nil <span style="font-style: italic;">"DejaVu Sans Mono"</span>
+                  nil 'append)
+</pre>
+</div>
+
+<p>
+更多关于使用 <code>set-fontset-font</code> 函数的细节请查看 <a href="Elisp.html#org75464c7">(elisp)Fontsets</a>.
+</p>
+
+<p>
+如果你不知道字符的字符码,或者是它属于哪一个字母系统,你可以询问 Emacs. 光标位于字
+符处时,键入 <code>C-u C-x = -- (what-cursor-position)</code>, 那么此信息以及更多的信息将显示
+在 Emacs 弹出的 <b>Help</b> 缓冲区中. 参见 <a href="#orgcd9a478">位置信息(Position Info)</a>.
+例如, 日语字符属于 <code>kana</code> 字母系统,但是日语文本也将其与汉语字符混合了,因此,下面的
+代码使用 <code>han</code> 字母系统来设置 Emacs, 让其对日语文本使用 <code>Kochi Gothic</code> 字体:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(set-fontset-font <span style="font-style: italic;">"fontset-default"</span> 'han <span style="font-style: italic;">"Kochi Gothic"</span>)
+</pre>
+</div>
+<p>
+(为了方便起见, Emacs 中的 <code>han</code> 字母系统设置为支持所有中文,日文和韩文,即 CJK 字符,
+而不仅仅是中文字符.)
+</p>
+
+<p>
+请参阅变量 <code>script-representative-chars</code> 的文档来查看已知的字母系统.
+</p>
+
+<p>
+像上面的字体集设置只影响默认字体不支持的字符,所以如果 <code>Kochi Gothic</code> 字体涵盖了拉
+丁字符,它也不会被用来显示拉丁字母系统,因为 Emacs 使用的默认字体通常都涵盖了基本
+的拉丁字符.
+</p>
+
+<p>
+一些你的操作系统上安装的字体可能已经损怀,或者使用他们的字符产生一些不愉快的结果,
+你可能希望指示 Emacs 在搜索显示字符所需要的合适字体时完全忽略这些字体. 你可以通
+过将有问题的字体添加到变量 <code>face-ignored-fonts</code> 的值里来实现这一点,该变量是一个列
+表. 下面是一个放入到你的 <code>~/.emacs</code> 文件的示例:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(add-to-list 'face-ignored-fonts <span style="font-style: italic;">"Some Bad Font"</span>)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org379c5a9" class="outline-2">
+<h2 id="org379c5a9">附录(Appendices)</h2>
+<div class="outline-text-2" id="text-org379c5a9">
+</div>
+<div id="outline-container-orge139a67" class="outline-3">
+<h3 id="orge139a67">X Resources</h3>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara">如果你在 X 窗口系统上运行 Emacs, 你可能需要使用下面的命令来告诉 X 服务
+器关于新安装的字体的位置信息: xset fp+ /usr/local/share/emacs/fonts;xset fp
+rehash</div></div>
+
+
+</div>
+</div></div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-10-05 Wed 17:08</p>
+<p class="date">Created: 2022-10-07 Fri 15:37</p>
 <p class="validation"></p>
 </div>
 </body>
