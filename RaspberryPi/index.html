@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-11-01 Tue 03:49 -->
+<!-- 2022-11-03 Thu 19:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>树莓派相关笔记</title>
@@ -238,24 +238,24 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org45e613d">配置无头树莓派</a>
+<li><a href="#orgb50f915">配置无头树莓派</a>
 <ul>
-<li><a href="#org701ef1c">设置无线网</a></li>
-<li><a href="#org5d29623">设置ssh连接</a></li>
+<li><a href="#org9ef4ca2">设置无线网</a></li>
+<li><a href="#orgdc23d09">设置ssh连接</a></li>
 </ul>
 </li>
-<li><a href="#org3c42bc6">在树莓派上部署自己的Git服务器</a>
+<li><a href="#org0319a85">在树莓派上部署自己的Git服务器</a>
 <ul>
-<li><a href="#orgb7a6830">安装Git</a></li>
+<li><a href="#org46c1233">安装Git</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org45e613d" class="outline-2">
-<h2 id="org45e613d">配置无头树莓派</h2>
-<div class="outline-text-2" id="text-org45e613d">
+<div id="outline-container-orgb50f915" class="outline-2">
+<h2 id="orgb50f915">配置无头树莓派</h2>
+<div class="outline-text-2" id="text-orgb50f915">
 <p>
 如果不使用键盘或显示器来运行树莓派,也就是无界面(无头)形式的树莓派,我们可以通过
 设置其无线网络然后通过 ssh 来连接和操作它.
@@ -263,9 +263,9 @@ for the JavaScript code in this tag.
 到SD卡的 <code>boot</code> 分区(文件夹)
 </p>
 </div>
-<div id="outline-container-org701ef1c" class="outline-3">
-<h3 id="org701ef1c">设置无线网</h3>
-<div class="outline-text-3" id="text-org701ef1c">
+<div id="outline-container-org9ef4ca2" class="outline-3">
+<h3 id="org9ef4ca2">设置无线网</h3>
+<div class="outline-text-3" id="text-org9ef4ca2">
 <p>
 在 <code>boot</code> 分区里创建一个名为 <code>wpa_supplicant.conf</code> 的文件.当树莓派第一次启动时,会
 将这个文件复制到linux 根文件系统(/root)的正确位置,然后根据文件里的设置来启动
@@ -295,9 +295,9 @@ psk="&lt;Password for your wireless LAN&gt;"
 </p>
 </div>
 </div>
-<div id="outline-container-org5d29623" class="outline-3">
-<h3 id="org5d29623">设置ssh连接</h3>
-<div class="outline-text-3" id="text-org5d29623">
+<div id="outline-container-orgdc23d09" class="outline-3">
+<h3 id="orgdc23d09">设置ssh连接</h3>
+<div class="outline-text-3" id="text-orgdc23d09">
 <p>
 因为没有显示器或键盘,我们只能通过其他方式来远程连接到无头树莓派.在无头树莓派
 的设置阶段,我们可以通过在 <code>boot</code> 分区里创建一个文件名是 <code>ssh</code> 的文件,文件名就叫
@@ -306,13 +306,13 @@ psk="&lt;Password for your wireless LAN&gt;"
 </div>
 </div>
 </div>
-<div id="outline-container-org3c42bc6" class="outline-2">
-<h2 id="org3c42bc6">在树莓派上部署自己的Git服务器</h2>
-<div class="outline-text-2" id="text-org3c42bc6">
+<div id="outline-container-org0319a85" class="outline-2">
+<h2 id="org0319a85">在树莓派上部署自己的Git服务器</h2>
+<div class="outline-text-2" id="text-org0319a85">
 </div>
-<div id="outline-container-orgb7a6830" class="outline-3">
-<h3 id="orgb7a6830">安装Git</h3>
-<div class="outline-text-3" id="text-orgb7a6830">
+<div id="outline-container-org46c1233" class="outline-3">
+<h3 id="org46c1233">安装Git</h3>
+<div class="outline-text-3" id="text-org46c1233">
 <div class="org-src-container">
 <pre class="src src-sh">sudo apt-get install wget git
 </pre>
@@ -323,7 +323,7 @@ psk="&lt;Password for your wireless LAN&gt;"
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-11-01 Tue 03:49</p>
+<p class="date">Created: 2022-11-03 Thu 19:31</p>
 <p class="validation"></p>
 </div>
 </body>
