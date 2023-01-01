@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-11-03 Thu 19:31 -->
+<!-- 2023-01-01 Sun 09:52 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>树莓派相关笔记</title>
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -185,7 +198,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -238,24 +251,24 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb50f915">配置无头树莓派</a>
+<li><a href="#orgf140268">配置无头树莓派</a>
 <ul>
-<li><a href="#org9ef4ca2">设置无线网</a></li>
-<li><a href="#orgdc23d09">设置ssh连接</a></li>
+<li><a href="#org3eb6a0e">设置无线网</a></li>
+<li><a href="#orgc6bc3d4">设置ssh连接</a></li>
 </ul>
 </li>
-<li><a href="#org0319a85">在树莓派上部署自己的Git服务器</a>
+<li><a href="#orgdadcdea">在树莓派上部署自己的Git服务器</a>
 <ul>
-<li><a href="#org46c1233">安装Git</a></li>
+<li><a href="#orgaba953f">安装Git</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgb50f915" class="outline-2">
-<h2 id="orgb50f915">配置无头树莓派</h2>
-<div class="outline-text-2" id="text-orgb50f915">
+<div id="outline-container-orgf140268" class="outline-2">
+<h2 id="orgf140268">配置无头树莓派</h2>
+<div class="outline-text-2" id="text-orgf140268">
 <p>
 如果不使用键盘或显示器来运行树莓派,也就是无界面(无头)形式的树莓派,我们可以通过
 设置其无线网络然后通过 ssh 来连接和操作它.
@@ -263,9 +276,9 @@ for the JavaScript code in this tag.
 到SD卡的 <code>boot</code> 分区(文件夹)
 </p>
 </div>
-<div id="outline-container-org9ef4ca2" class="outline-3">
-<h3 id="org9ef4ca2">设置无线网</h3>
-<div class="outline-text-3" id="text-org9ef4ca2">
+<div id="outline-container-org3eb6a0e" class="outline-3">
+<h3 id="org3eb6a0e">设置无线网</h3>
+<div class="outline-text-3" id="text-org3eb6a0e">
 <p>
 在 <code>boot</code> 分区里创建一个名为 <code>wpa_supplicant.conf</code> 的文件.当树莓派第一次启动时,会
 将这个文件复制到linux 根文件系统(/root)的正确位置,然后根据文件里的设置来启动
@@ -295,9 +308,9 @@ psk="&lt;Password for your wireless LAN&gt;"
 </p>
 </div>
 </div>
-<div id="outline-container-orgdc23d09" class="outline-3">
-<h3 id="orgdc23d09">设置ssh连接</h3>
-<div class="outline-text-3" id="text-orgdc23d09">
+<div id="outline-container-orgc6bc3d4" class="outline-3">
+<h3 id="orgc6bc3d4">设置ssh连接</h3>
+<div class="outline-text-3" id="text-orgc6bc3d4">
 <p>
 因为没有显示器或键盘,我们只能通过其他方式来远程连接到无头树莓派.在无头树莓派
 的设置阶段,我们可以通过在 <code>boot</code> 分区里创建一个文件名是 <code>ssh</code> 的文件,文件名就叫
@@ -306,13 +319,13 @@ psk="&lt;Password for your wireless LAN&gt;"
 </div>
 </div>
 </div>
-<div id="outline-container-org0319a85" class="outline-2">
-<h2 id="org0319a85">在树莓派上部署自己的Git服务器</h2>
-<div class="outline-text-2" id="text-org0319a85">
+<div id="outline-container-orgdadcdea" class="outline-2">
+<h2 id="orgdadcdea">在树莓派上部署自己的Git服务器</h2>
+<div class="outline-text-2" id="text-orgdadcdea">
 </div>
-<div id="outline-container-org46c1233" class="outline-3">
-<h3 id="org46c1233">安装Git</h3>
-<div class="outline-text-3" id="text-org46c1233">
+<div id="outline-container-orgaba953f" class="outline-3">
+<h3 id="orgaba953f">安装Git</h3>
+<div class="outline-text-3" id="text-orgaba953f">
 <div class="org-src-container">
 <pre class="src src-sh">sudo apt-get install wget git
 </pre>
@@ -323,8 +336,7 @@ psk="&lt;Password for your wireless LAN&gt;"
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-11-03 Thu 19:31</p>
-<p class="validation"></p>
+<p class="date">Created: 2023-01-01 Sun 09:52</p>
 </div>
 </body>
 </html>

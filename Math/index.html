@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-11-03 Thu 19:31 -->
+<!-- 2023-01-01 Sun 09:52 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -185,7 +198,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -259,79 +272,79 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org79e645d">欧式平面几何五大公理</a>
+<li><a href="#orge2289a7">欧式平面几何五大公理</a>
 <ul>
-<li><a href="#org2196326">两点可以连成一条直线</a></li>
-<li><a href="#org6a35253">线段可以任意延长</a></li>
-<li><a href="#org5f2c1e0">给定点 O 和线段长 r, 可以以 O 为圆心, r 为半径长做一个圆</a>
+<li><a href="#org6282c98">两点可以连成一条直线</a></li>
+<li><a href="#org495a729">线段可以任意延长</a></li>
+<li><a href="#org67abb25">给定点 O 和线段长 r, 可以以 O 为圆心, r 为半径长做一个圆</a>
 <ul>
-<li><a href="#orgeef0216">为什么C_a,C_b 相交于两点</a></li>
+<li><a href="#org6ab9985">为什么C_a,C_b 相交于两点</a></li>
 </ul>
 </li>
-<li><a href="#org04610da">凡直角皆相等</a></li>
-<li><a href="#org3f92e93">平行公理</a></li>
+<li><a href="#orga8e50c2">凡直角皆相等</a></li>
+<li><a href="#orgecbaadb">平行公理</a></li>
 </ul>
 </li>
-<li><a href="#orgd102280">自学纯数学的路径和书籍资料推荐</a>
+<li><a href="#orgbb9dfa5">自学纯数学的路径和书籍资料推荐</a>
 <ul>
-<li><a href="#org34a4df3">第一学年</a>
+<li><a href="#org7e63019">第一学年</a>
 <ul>
-<li><a href="#org404f58a">Linear Algebra</a></li>
-<li><a href="#orgabf5d89">Real Analysis</a></li>
+<li><a href="#org9da9c16">Linear Algebra</a></li>
+<li><a href="#org4506886">Real Analysis</a></li>
 </ul>
 </li>
-<li><a href="#org9adb480">第二学年</a>
+<li><a href="#org867e6e1">第二学年</a>
 <ul>
-<li><a href="#orgf62a197">Point Set Topology</a></li>
-<li><a href="#orgf15dbc5">Complex Analysis</a></li>
+<li><a href="#orgb824d0c">Point Set Topology</a></li>
+<li><a href="#orgb4c9ee2">Complex Analysis</a></li>
 </ul>
 </li>
-<li><a href="#org12d478a">第三学年</a>
+<li><a href="#orga7071be">第三学年</a>
 <ul>
-<li><a href="#org3d0bcfd">Group Theory</a></li>
-<li><a href="#org20c3d19">Galois Theory</a></li>
+<li><a href="#orgd03f52a">Group Theory</a></li>
+<li><a href="#orga079498">Galois Theory</a></li>
 </ul>
 </li>
-<li><a href="#org0270a56">第四学年</a>
+<li><a href="#orge829c44">第四学年</a>
 <ul>
-<li><a href="#org0d0c43f">Algebraic Topology</a></li>
-<li><a href="#org9d56493">Differential Geometry</a></li>
-</ul>
-</li>
+<li><a href="#org0d449bf">Algebraic Topology</a></li>
+<li><a href="#org23ee233">Differential Geometry</a></li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
 </div>
 </div>
-<div id="outline-container-org79e645d" class="outline-2">
-<h2 id="org79e645d">欧式平面几何五大公理</h2>
-<div class="outline-text-2" id="text-org79e645d">
+<div id="outline-container-orge2289a7" class="outline-2">
+<h2 id="orge2289a7">欧式平面几何五大公理</h2>
+<div class="outline-text-2" id="text-orge2289a7">
 </div>
-<div id="outline-container-org2196326" class="outline-3">
-<h3 id="org2196326">两点可以连成一条直线</h3>
+<div id="outline-container-org6282c98" class="outline-3">
+<h3 id="org6282c98">两点可以连成一条直线</h3>
 </div>
-<div id="outline-container-org6a35253" class="outline-3">
-<h3 id="org6a35253">线段可以任意延长</h3>
+<div id="outline-container-org495a729" class="outline-3">
+<h3 id="org495a729">线段可以任意延长</h3>
 </div>
-<div id="outline-container-org5f2c1e0" class="outline-3">
-<h3 id="org5f2c1e0">给定点 O 和线段长 r, 可以以 O 为圆心, r 为半径长做一个圆</h3>
-<div class="outline-text-3" id="text-org5f2c1e0">
+<div id="outline-container-org67abb25" class="outline-3">
+<h3 id="org67abb25">给定点 O 和线段长 r, 可以以 O 为圆心, r 为半径长做一个圆</h3>
+<div class="outline-text-3" id="text-org67abb25">
 </div>
-<div id="outline-container-orgeef0216" class="outline-4">
-<h4 id="orgeef0216">为什么C_a,C_b 相交于两点</h4>
+<div id="outline-container-org6ab9985" class="outline-4">
+<h4 id="org6ab9985">为什么C_a,C_b 相交于两点</h4>
 </div>
 </div>
-<div id="outline-container-org04610da" class="outline-3">
-<h3 id="org04610da">凡直角皆相等</h3>
-<div class="outline-text-3" id="text-org04610da">
+<div id="outline-container-orga8e50c2" class="outline-3">
+<h3 id="orga8e50c2">凡直角皆相等</h3>
+<div class="outline-text-3" id="text-orga8e50c2">
 <p>
 平移以后图形不变就是根据这个来的
 </p>
 </div>
 </div>
-<div id="outline-container-org3f92e93" class="outline-3">
-<h3 id="org3f92e93">平行公理</h3>
-<div class="outline-text-3" id="text-org3f92e93">
+<div id="outline-container-orgecbaadb" class="outline-3">
+<h3 id="orgecbaadb">平行公理</h3>
+<div class="outline-text-3" id="text-orgecbaadb">
 <p>
 \({\alpha}_1 + {\alpha}_2 < 180^{\degree}\) 则两直线l1,l2相交于 l 的同侧.
 等价于:过线外一点,可做一条直线(且只有一条直线)与已知直线平行.
@@ -339,31 +352,31 @@ for the JavaScript code in this tag.
 </div>
 </div>
 </div>
-<div id="outline-container-orgd102280" class="outline-2">
-<h2 id="orgd102280">自学纯数学的路径和书籍资料推荐</h2>
-<div class="outline-text-2" id="text-orgd102280">
+<div id="outline-container-orgbb9dfa5" class="outline-2">
+<h2 id="orgbb9dfa5">自学纯数学的路径和书籍资料推荐</h2>
+<div class="outline-text-2" id="text-orgbb9dfa5">
 <blockquote>
 <p>
 学习路线来源:<a href="https://www.youtube.com/watch?v=byNaO_zn2fI&amp;list=PLJ3QEfewWfpQuGNhNONVxAE-AXlmRKAje&amp;index=1">https://www.youtube.com/watch?v=byNaO_zn2fI&amp;list=PLJ3QEfewWfpQuGNhNONVxAE-AXlmRKAje&amp;index=1</a>
 </p>
 </blockquote>
 </div>
-<div id="outline-container-org34a4df3" class="outline-3">
-<h3 id="org34a4df3">第一学年</h3>
-<div class="outline-text-3" id="text-org34a4df3">
+<div id="outline-container-org7e63019" class="outline-3">
+<h3 id="org7e63019">第一学年</h3>
+<div class="outline-text-3" id="text-org7e63019">
 </div>
-<div id="outline-container-org404f58a" class="outline-4">
-<h4 id="org404f58a">Linear Algebra</h4>
-<div class="outline-text-4" id="text-org404f58a">
+<div id="outline-container-org9da9c16" class="outline-4">
+<h4 id="org9da9c16">Linear Algebra</h4>
+<div class="outline-text-4" id="text-org9da9c16">
 <p>
 Materail : "Linear Algebra Done Right" by Sheldon Axler : examples and
 exercises. corresponding videos: <a href="https://www.youtube.com/playlist?list=PLGAnmvB9m7zOBVCZBUUmSinFV0wEir2Vw">https://www.youtube.com/playlist?list=PLGAnmvB9m7zOBVCZBUUmSinFV0wEir2Vw</a>
 </p>
 </div>
 </div>
-<div id="outline-container-orgabf5d89" class="outline-4">
-<h4 id="orgabf5d89">Real Analysis</h4>
-<div class="outline-text-4" id="text-orgabf5d89">
+<div id="outline-container-org4506886" class="outline-4">
+<h4 id="org4506886">Real Analysis</h4>
+<div class="outline-text-4" id="text-org4506886">
 <p>
 Book: “Understanding Analysis” by Stephen Abbott.
 Videos: Lectures by Francis Su (<a href="https://www.youtube.com/playlist?list=PL0E754696F72137EC">https://www.youtube.com/playlist?list=PL0E754696F72137EC</a>)
@@ -371,16 +384,16 @@ Videos: Lectures by Francis Su (<a href="https://www.youtube.com/playlist?list=P
 </div>
 </div>
 </div>
-<div id="outline-container-org9adb480" class="outline-3">
-<h3 id="org9adb480">第二学年</h3>
-<div class="outline-text-3" id="text-org9adb480">
+<div id="outline-container-org867e6e1" class="outline-3">
+<h3 id="org867e6e1">第二学年</h3>
+<div class="outline-text-3" id="text-org867e6e1">
 </div>
-<div id="outline-container-orgf62a197" class="outline-4">
-<h4 id="orgf62a197">Point Set Topology</h4>
+<div id="outline-container-orgb824d0c" class="outline-4">
+<h4 id="orgb824d0c">Point Set Topology</h4>
 </div>
-<div id="outline-container-orgf15dbc5" class="outline-4">
-<h4 id="orgf15dbc5">Complex Analysis</h4>
-<div class="outline-text-4" id="text-orgf15dbc5">
+<div id="outline-container-orgb4c9ee2" class="outline-4">
+<h4 id="orgb4c9ee2">Complex Analysis</h4>
+<div class="outline-text-4" id="text-orgb4c9ee2">
 <p>
 Intro Book: “Visual Complex Functions: an Introduction with Phase Portraits” by Elias Wegert
 More Technical Book: “Complex Analysis” by Serge Lang
@@ -389,22 +402,22 @@ Videos: Wesleyan University Playlist (<a href="https://www.youtube.com/playlist?
 </div>
 </div>
 </div>
-<div id="outline-container-org12d478a" class="outline-3">
-<h3 id="org12d478a">第三学年</h3>
-<div class="outline-text-3" id="text-org12d478a">
+<div id="outline-container-orga7071be" class="outline-3">
+<h3 id="orga7071be">第三学年</h3>
+<div class="outline-text-3" id="text-orga7071be">
 </div>
-<div id="outline-container-org3d0bcfd" class="outline-4">
-<h4 id="org3d0bcfd">Group Theory</h4>
-<div class="outline-text-4" id="text-org3d0bcfd">
+<div id="outline-container-orgd03f52a" class="outline-4">
+<h4 id="orgd03f52a">Group Theory</h4>
+<div class="outline-text-4" id="text-orgd03f52a">
 <p>
 Book: “Topics in Algebra” by Herstein (Chapter 2)
 Videos: Lectures by Benedict Gross (<a href="https://www.youtube.com/playlist?list=PLelIK3uylPMGzHBuR3hLMHrYfMqWWsmx5">https://www.youtube.com/playlist?list=PLelIK3uylPMGzHBuR3hLMHrYfMqWWsmx5</a>)
 </p>
 </div>
 </div>
-<div id="outline-container-org20c3d19" class="outline-4">
-<h4 id="org20c3d19">Galois Theory</h4>
-<div class="outline-text-4" id="text-org20c3d19">
+<div id="outline-container-orga079498" class="outline-4">
+<h4 id="orga079498">Galois Theory</h4>
+<div class="outline-text-4" id="text-orga079498">
 <p>
 Notes by Tom Leinster: <a href="https://www.maths.ed.ac.uk/~tl/gt/gt.pdf">https://www.maths.ed.ac.uk/~tl/gt/gt.pdf</a>
 </p>
@@ -412,23 +425,23 @@ Notes by Tom Leinster: <a href="https://www.maths.ed.ac.uk/~tl/gt/gt.pdf">https:
 </div>
 </div>
 
-<div id="outline-container-org0270a56" class="outline-3">
-<h3 id="org0270a56">第四学年</h3>
-<div class="outline-text-3" id="text-org0270a56">
+<div id="outline-container-orge829c44" class="outline-3">
+<h3 id="orge829c44">第四学年</h3>
+<div class="outline-text-3" id="text-orge829c44">
 </div>
-<div id="outline-container-org0d0c43f" class="outline-4">
-<h4 id="org0d0c43f">Algebraic Topology</h4>
-<div class="outline-text-4" id="text-org0d0c43f">
+<div id="outline-container-org0d449bf" class="outline-4">
+<h4 id="org0d449bf">Algebraic Topology</h4>
+<div class="outline-text-4" id="text-org0d449bf">
 <p>
 Book: Algebraic Topology by Allen Hatcher (available for free on his website:
-<a href="https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa0hycGsxTTduTXh5T3Z0TmtjNVN3Z3FhcXlDQXxBQ3Jtc0tuZHotN0x5UjVFT2JXclRRbnhTdkZtYzFlR29hbVpQVS1wMlplakJrTS01OVJxSjQxVk9sMEItREFrLUtWcG8tcWhJekZHbjBOZVE5MUgwRFphRDZsbURyNzA3REV5X1dkODZkUlY0QnJzVTRjWkphWQ&amp;q=https://pi.math.cornell.edu/~hatcher/AT/ATpage.html&amp;v=byNaO_zn2fI">https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa0hycGsxTTduTXh5T3Z0TmtjNVN3Z3FhcXlDQXxBQ3Jtc0tuZHotN0x5UjVFT2JXclRRbnhTdkZtYzFlR29hbVpQVS1wMlplakJrTS01OVJxSjQxVk9sMEItREFrLUtWcG8tcWhJekZHbjBOZVE5MUgwRFphRDZsbURyNzA3REV5X1dkODZkUlY0QnJzVTRjWkphWQ&amp;q=https://pi.math.cornell.edu/~hatcher/AT/ATpage.html&amp;v=byNaO_zn2fI</a>)
+<a href="https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa0hycGsxTTduTXh5T3Z0TmtjNVN3Z3FhcXlDQXxBQ3Jtc0tuZHotN0x5UjVFT2JXclRRbnhTdkZtYzFlR29hbVpQVS1wMlplakJrTS01OVJxSjQxVk9sMEItREFrLUtWcG8tcWhJekZHbjBOZVE5MUgwRFphRDZsbURyNzA3REV5X1dkODZkUlY0QnJzVTRjWkphWQ&amp;q=https%3A%2F%2Fpi.math.cornell.edu%2F%7Ehatcher%2FAT%2FATpage.html&amp;v=byNaO_zn2fI">https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa0hycGsxTTduTXh5T3Z0TmtjNVN3Z3FhcXlDQXxBQ3Jtc0tuZHotN0x5UjVFT2JXclRRbnhTdkZtYzFlR29hbVpQVS1wMlplakJrTS01OVJxSjQxVk9sMEItREFrLUtWcG8tcWhJekZHbjBOZVE5MUgwRFphRDZsbURyNzA3REV5X1dkODZkUlY0QnJzVTRjWkphWQ&amp;q=https%3A%2F%2Fpi.math.cornell.edu%2F%7Ehatcher%2FAT%2FATpage.html&amp;v=byNaO_zn2fI</a>)
 Videos: Lectures by Pierre Albin:<a href="https://www.youtube.com/playlist?list=PL41FDABC6AA085E78">https://www.youtube.com/playlist?list=PL41FDABC6AA085E78</a>
 </p>
 </div>
 </div>
-<div id="outline-container-org9d56493" class="outline-4">
-<h4 id="org9d56493">Differential Geometry</h4>
-<div class="outline-text-4" id="text-org9d56493">
+<div id="outline-container-org23ee233" class="outline-4">
+<h4 id="org23ee233">Differential Geometry</h4>
+<div class="outline-text-4" id="text-org23ee233">
 <p>
 Book: Introduction to Differentiable Manifolds and Riemannian Geometry by Boothby
 </p>
@@ -439,8 +452,7 @@ Book: Introduction to Differentiable Manifolds and Riemannian Geometry by Boothb
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-11-03 Thu 19:31</p>
-<p class="validation"></p>
+<p class="date">Created: 2023-01-01 Sun 09:52</p>
 </div>
 </body>
 </html>

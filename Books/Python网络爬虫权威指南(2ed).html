@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-11-03 Thu 19:31 -->
+<!-- 2023-01-01 Sun 09:52 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Python网络权威指南(第二版)</title>
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -185,7 +198,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -238,45 +251,45 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4401378">初见网络爬虫</a>
+<li><a href="#orge9398c8">初见网络爬虫</a>
 <ul>
-<li><a href="#org0cfbaea">网络连接</a></li>
-<li><a href="#org81d80e0">BeautifulSoup 简介</a>
+<li><a href="#org0d0148d">网络连接</a></li>
+<li><a href="#org1b584d3">BeautifulSoup 简介</a>
 <ul>
-<li><a href="#orgb4afc99">安装BeautifulSoup</a></li>
-<li><a href="#orgf270bb6">运行BeautifulSoup</a></li>
-<li><a href="#org7623b9c">可靠的网络连接以及异常的处理</a></li>
+<li><a href="#org9d05f93">安装BeautifulSoup</a></li>
+<li><a href="#org9acdaba">运行BeautifulSoup</a></li>
+<li><a href="#org6d4c07a">可靠的网络连接以及异常的处理</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgc42623a">复杂 HTML 解析</a>
+<li><a href="#orgf80d6a1">复杂 HTML 解析</a>
 <ul>
-<li><a href="#orgf2718dd">不是一直都要用锤子</a></li>
-<li><a href="#org161e2f1">再端一碗 BeautifulSoup (Another Serving of BeautifulSoup)</a>
+<li><a href="#org9564803">不是一直都要用锤子</a></li>
+<li><a href="#org7f4a014">再端一碗 BeautifulSoup (Another Serving of BeautifulSoup)</a>
 <ul>
-<li><a href="#org551343c">BeautifulSoup 的 find() 和 find_all()</a></li>
-<li><a href="#orgfbc88d6">其他 BeautifulSoup 对象</a></li>
-<li><a href="#org783729d">导航树</a></li>
+<li><a href="#orga61d497">BeautifulSoup 的 find() 和 find_all()</a></li>
+<li><a href="#orgce4b969">其他 BeautifulSoup 对象</a></li>
+<li><a href="#orgc6a6f4e">导航树</a></li>
 </ul>
 </li>
-<li><a href="#org055ab18">正则表达式</a></li>
-<li><a href="#orgf5853e5">正则表达式和 BeautifulSoup</a></li>
-<li><a href="#orgd9dff81">获取属性</a></li>
-<li><a href="#org20fc6b0">Lambda 表达式</a></li>
+<li><a href="#orgf1833df">正则表达式</a></li>
+<li><a href="#orga3e8970">正则表达式和 BeautifulSoup</a></li>
+<li><a href="#org4bb3cbb">获取属性</a></li>
+<li><a href="#org5175cfd">Lambda 表达式</a></li>
 </ul>
 </li>
-<li><a href="#org395f413">避开抓取陷阱</a></li>
+<li><a href="#orgb8a63fa">避开抓取陷阱</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4401378" class="outline-2">
-<h2 id="org4401378">初见网络爬虫</h2>
-<div class="outline-text-2" id="text-org4401378">
+<div id="outline-container-orge9398c8" class="outline-2">
+<h2 id="orge9398c8">初见网络爬虫</h2>
+<div class="outline-text-2" id="text-orge9398c8">
 </div>
-<div id="outline-container-org0cfbaea" class="outline-3">
-<h3 id="org0cfbaea">网络连接</h3>
-<div class="outline-text-3" id="text-org0cfbaea">
+<div id="outline-container-org0d0148d" class="outline-3">
+<h3 id="org0d0148d">网络连接</h3>
+<div class="outline-text-3" id="text-org0d0148d">
 <p>
 当一台机器(客户端)想要与另一台机器(服务端)对话时,会发生下面的行为:
 </p>
@@ -326,8 +339,8 @@ Web 浏览器可以让处理器将数据发送到那些对接无线(或有线)�
 
 <pre class="example">
 b'&lt;html&gt;\n&lt;head&gt;\n&lt;title&gt;A Useful Page&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n&lt;h1&gt;An Interesting Title&lt;/h1&gt;\n&lt;div&gt;\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n&lt;/div&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n'
-
 </pre>
+
 
 <p>
 这段代码可以输出 <a href="http://pythonscraping.com/pages/page1.html">http://pythonscraping.com/pages/page1.html</a> 网页的全部HTML 代
@@ -367,9 +380,9 @@ urlopen 用来打开并读取一个从网络获取的远程对象,因为他是�
 </p>
 </div>
 </div>
-<div id="outline-container-org81d80e0" class="outline-3">
-<h3 id="org81d80e0">BeautifulSoup 简介</h3>
-<div class="outline-text-3" id="text-org81d80e0">
+<div id="outline-container-org1b584d3" class="outline-3">
+<h3 id="org1b584d3">BeautifulSoup 简介</h3>
+<div class="outline-text-3" id="text-org1b584d3">
 <p>
 BeautifulSoup 库的名字取自刘易斯·卡罗尔在《爱丽丝梦游仙境》里的同名诗歌.
 </p>
@@ -379,9 +392,9 @@ BeautifulSoup 库的名字取自刘易斯·卡罗尔在《爱丽丝梦游仙境�
 们展现 XML 结构信息.
 </p>
 </div>
-<div id="outline-container-orgb4afc99" class="outline-4">
-<h4 id="orgb4afc99">安装BeautifulSoup</h4>
-<div class="outline-text-4" id="text-orgb4afc99">
+<div id="outline-container-org9d05f93" class="outline-4">
+<h4 id="org9d05f93">安装BeautifulSoup</h4>
+<div class="outline-text-4" id="text-org9d05f93">
 <p>
 由于 BeautifulSoup 库不是Python 标准库,因此需要独立安装.
 pip 安装:
@@ -392,11 +405,11 @@ pip 安装:
 </div>
 </div>
 </div>
-<div id="outline-container-orgf270bb6" class="outline-4">
-<h4 id="orgf270bb6">运行BeautifulSoup</h4>
-<div class="outline-text-4" id="text-orgf270bb6">
+<div id="outline-container-org9acdaba" class="outline-4">
+<h4 id="org9acdaba">运行BeautifulSoup</h4>
+<div class="outline-text-4" id="text-org9acdaba">
 <p>
-BeautifulSoup 库最常用的对象恰好就是 BeautifulSoup 对象.调整 <a href="#org0cfbaea">网络连接</a> 里的例
+BeautifulSoup 库最常用的对象恰好就是 BeautifulSoup 对象.调整 <a href="#org0d0148d">网络连接</a> 里的例
 子再运行下看看:
 </p>
 <div class="org-src-container">
@@ -409,8 +422,8 @@ BeautifulSoup 库最常用的对象恰好就是 BeautifulSoup 对象.调整 <a h
 </div>
 <pre class="example">
 None
-
 </pre>
+
 
 <p>
 这里仅仅返回了页面上的第一个 h1 标签实例.通常情况下, 一个页面也只有一个 h1 标
@@ -519,15 +532,15 @@ html.parser 都慢. 尽管如此, 如果你处理的都是一些杂乱或手写�
 
 <p>
 其实,任何 HTML(或XML) 文件的任意节点信息都可以被提取出来, 只要目标信息的旁边
-或附近有标签就行 <a href="#orgc42623a">复杂 HTML 解析</a> 将会进一步探讨更复杂的 BeautifulSoup 函数,还
+或附近有标签就行 <a href="#orgf80d6a1">复杂 HTML 解析</a> 将会进一步探讨更复杂的 BeautifulSoup 函数,还
 会介绍正则表达式,以及如何把正则表达式用于 BeautifulSoup 以提取网站信息.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org7623b9c" class="outline-4">
-<h4 id="org7623b9c">可靠的网络连接以及异常的处理</h4>
-<div class="outline-text-4" id="text-org7623b9c">
+<div id="outline-container-org6d4c07a" class="outline-4">
+<h4 id="org6d4c07a">可靠的网络连接以及异常的处理</h4>
+<div class="outline-text-4" id="text-org6d4c07a">
 <p>
 Web 是十分复杂的. 网络数据格式不友好,网站服务器死机,目标数据标签找不到,都是
 很麻烦的事情. 网页抓取最痛苦的遭遇之一,就是爬虫运行的时候你洗洗睡了,第二天醒
@@ -700,17 +713,17 @@ AttributeError 的函数.
 </div>
 
 
-<div id="outline-container-orgc42623a" class="outline-2">
-<h2 id="orgc42623a">复杂 HTML 解析</h2>
-<div class="outline-text-2" id="text-orgc42623a">
+<div id="outline-container-orgf80d6a1" class="outline-2">
+<h2 id="orgf80d6a1">复杂 HTML 解析</h2>
+<div class="outline-text-2" id="text-orgf80d6a1">
 <p>
 这一部分将介绍如何解析复杂的 HTML 页面,从中提取出所需的信息.
 </p>
 </div>
 
-<div id="outline-container-orgf2718dd" class="outline-3">
-<h3 id="orgf2718dd">不是一直都要用锤子</h3>
-<div class="outline-text-3" id="text-orgf2718dd">
+<div id="outline-container-org9564803" class="outline-3">
+<h3 id="org9564803">不是一直都要用锤子</h3>
+<div class="outline-text-3" id="text-org9564803">
 <p>
 面对页面解析的难题时,很容易不假思索直接写几行代码来提取信息.但是,这样鲁莽使用
 技术,只会让程序变得难以调试或脆弱不堪,甚至二者兼具.在开始解析网页之前,让我们
@@ -740,7 +753,7 @@ div), 该怎么做呢? 上面的代码是不安全的,它依赖于网站的结�
 </p>
 <ul class="org-ul">
 <li>寻找 "打印此页" 的链接,或者看看网站有没有 HTML 样式更友好的移动版(把请求头
-设置成处于移动设备的状态,然后接受网站移动版,更多内容在 <a href="#org395f413">避开抓取陷阱</a> 介绍)</li>
+设置成处于移动设备的状态,然后接受网站移动版,更多内容在 <a href="#orgb8a63fa">避开抓取陷阱</a> 介绍)</li>
 <li>寻找隐藏在 JavaScript 文件里的信息,实现这一点,需要查看网页加载的 JavaScript
 文件.</li>
 <li>虽然网页标题经常会用到,但是这个信息也许可以从网页的 URL 链接里获取.</li>
@@ -766,11 +779,11 @@ div), 该怎么做呢? 上面的代码是不安全的,它依赖于网站的结�
 </div>
 </div>
 
-<div id="outline-container-org161e2f1" class="outline-3">
-<h3 id="org161e2f1">再端一碗 BeautifulSoup (Another Serving of BeautifulSoup)</h3>
-<div class="outline-text-3" id="text-org161e2f1">
+<div id="outline-container-org7f4a014" class="outline-3">
+<h3 id="org7f4a014">再端一碗 BeautifulSoup (Another Serving of BeautifulSoup)</h3>
+<div class="outline-text-3" id="text-org7f4a014">
 <p>
-第一部分(<a href="#orgf270bb6">运行BeautifulSoup</a>)使用了选择对象的解析方式
+第一部分(<a href="#org9acdaba">运行BeautifulSoup</a>)使用了选择对象的解析方式
 这一节介绍通过属性查找标签的方法,标签组的使用,以及标签解析书的导航过程.
 </p>
 
@@ -807,7 +820,7 @@ span 标签引用了对应的 CSS 属性:
 by this reception.
 </pre>
 <p>
-使用和 <a href="#orgf270bb6">运行BeautifulSoup</a> 里类似的程序抓取整个页面并创建一个 BeautifulSoup 对
+使用和 <a href="#org9acdaba">运行BeautifulSoup</a> 里类似的程序抓取整个页面并创建一个 BeautifulSoup 对
 象:
 </p>
 <div class="org-src-container">
@@ -840,8 +853,8 @@ FedorovnaPrince Vasili KuraginAnna PavlovnaSt. Petersburgthe princeAnna Pavlovna
 FunkeThe princeAnna
 Pavlovnathe EmpressThe princeAnatolethe princeThe princeAnna
 PavlovnaAnna Pavlovna
-
 </pre>
+
 <p>
 之前用 bs.tagName 只能获取页面中指定的第一个标签.现在,使用
 bs.find_all(tagName, tagAttributes) 可以获取页面中所有指定的标签,不再只是第一
@@ -862,9 +875,9 @@ Unicode 字符串. 如果你正在处理一个包含许多超链接,段落和其
 </blockquote>
 </div>
 
-<div id="outline-container-org551343c" class="outline-4">
-<h4 id="org551343c">BeautifulSoup 的 find() 和 find_all()</h4>
-<div class="outline-text-4" id="text-org551343c">
+<div id="outline-container-orga61d497" class="outline-4">
+<h4 id="orga61d497">BeautifulSoup 的 find() 和 find_all()</h4>
+<div class="outline-text-4" id="text-orga61d497">
 <p>
 BeautifulSoup 里的 find() 和 find_all() 可能是最常用的两个函数. 使用它们,可
 以通过标签的不同属性轻松过滤 HTML 页面, 查找需要的标签组或者单个标签.
@@ -919,8 +932,8 @@ string 文本参数有点不同, 它是用标签的文本内容取匹配, 而不
 </p>
 <pre class="example">
 7
-
 </pre>
+
 <p>
 可选参数 limit 限制范围,只适用于 find_all 方法. find 实际等价于 limit 参数设
 置为1 的find_all 方法.
@@ -942,7 +955,7 @@ title = bs.find(id='title')
 <p>
 <b>关键词参数和"类"的注意事项</b>
 虽然关键词参数 keyword 在一些场景中很有用,但实际上是一个冗余的 BeautifulSoup
-功能. 任何用关键词参数能完成的人物,也可以用后面的技术解决(见 <a href="#org055ab18">正则表达式</a> 和 <a href="#org20fc6b0">Lambda 表达式</a>)
+功能. 任何用关键词参数能完成的人物,也可以用后面的技术解决(见 <a href="#orgf1833df">正则表达式</a> 和 <a href="#org5175cfd">Lambda 表达式</a>)
 例如,下面两行代码效果完全相同:
 bs.find_all(id='text')
 bs.find_all('', {'id', 'text'})
@@ -965,9 +978,9 @@ bs.find_all('', {'class', 'green'})
 </div>
 </div>
 
-<div id="outline-container-orgfbc88d6" class="outline-4">
-<h4 id="orgfbc88d6">其他 BeautifulSoup 对象</h4>
-<div class="outline-text-4" id="text-orgfbc88d6">
+<div id="outline-container-orgce4b969" class="outline-4">
+<h4 id="orgce4b969">其他 BeautifulSoup 对象</h4>
+<div class="outline-text-4" id="text-orgce4b969">
 <dl class="org-dl">
 <dt>BeautifulSoupd 对象</dt><dd>前面代码实例种的 bs.</dd>
 <dt>标签 Tag 对象</dt><dd><p>
@@ -991,9 +1004,9 @@ bs.div.h1
 </div>
 
 
-<div id="outline-container-org783729d" class="outline-4">
-<h4 id="org783729d">导航树</h4>
-<div class="outline-text-4" id="text-org783729d">
+<div id="outline-container-orgc6a6f4e" class="outline-4">
+<h4 id="orgc6a6f4e">导航树</h4>
+<div class="outline-text-4" id="text-orgc6a6f4e">
 <p>
 find_all 函数通过标签的名称和属性来查找标签. 但是如果需要通过标签在文档种的
 位置来查找标签,该怎么办?
@@ -1017,26 +1030,26 @@ bs.tag.subTag.anotherSubTag
 这个 HTML 页面可以映射成一棵树.
 </p>
 <pre class="example">
-    ⚫ HTML
-        ⚫ body
-	    ▪ div.wrapper
-	    ⚬ h1
-	    ⚬ div.content
-	    ⚬ table#giftList
-	        ⚬ tr
-	   	    ⚬ th
-	   	    ⚬ th
-	   	    ⚬ th
-	   	    ⚬ th
-	        ⚬ tr.gift#gift1
-	   	    ⚬ td
-	   	    ⚬ td
-	   	        ⚬ span.excitingNote
-	   	    ⚬ td
-	   	    ⚬ td
-	   	    ⚬ img
-	   	⚬ ...table rows continue...
-	    ⚬ div.footer
+⚫ HTML
+    ⚫ body
+	▪ div.wrapper
+	⚬ h1
+	⚬ div.content
+	⚬ table#giftList
+	    ⚬ tr
+	   	⚬ th
+	   	⚬ th
+	   	⚬ th
+	   	⚬ th
+	    ⚬ tr.gift#gift1
+	   	⚬ td
+	   	⚬ td
+	   	    ⚬ span.excitingNote
+	   	⚬ td
+	   	⚬ td
+	   	⚬ img
+	    ⚬ ...table rows continue...
+	⚬ div.footer
 </pre>
 <p>
 后面的几节内容也以这个标签结构为例
@@ -1044,8 +1057,8 @@ bs.tag.subTag.anotherSubTag
 </div>
 
 <ul class="org-ul">
-<li><a id="org5dc768f"></a>处理子标签和其后代标签<br />
-<div class="outline-text-5" id="text-org5dc768f">
+<li><a id="org5bdf6ab"></a>处理子标签和其后代标签<br />
+<div class="outline-text-5" id="text-org5bdf6ab">
 <p>
 在 BeautifulSoup 库里, 孩子(child) 和 后代(descendant) 有显著不同:
 子标签和人类的家谱一样,子标签就是父标签的下一级, 而后代标签是指父标签下面所
@@ -1150,8 +1163,8 @@ above is a part of descents
 </div>
 </li>
 
-<li><a id="org7a5f9e5"></a>处理兄弟标签<br />
-<div class="outline-text-5" id="text-org7a5f9e5">
+<li><a id="orge926ea5"></a>处理兄弟标签<br />
+<div class="outline-text-5" id="text-orge926ea5">
 <p>
 兄弟标签就是同一层级的标签.
 标签对象的 next_siblings 属性可以获取该标签后面的兄弟标签,
@@ -1164,31 +1177,30 @@ next_sibling 和 previous_sibling 是获取前面(后面)的一个标签.
 </div>
 </div>
 
-<div id="outline-container-org055ab18" class="outline-3">
-<h3 id="org055ab18">正则表达式</h3>
+<div id="outline-container-orgf1833df" class="outline-3">
+<h3 id="orgf1833df">正则表达式</h3>
 </div>
 
-<div id="outline-container-orgf5853e5" class="outline-3">
-<h3 id="orgf5853e5">正则表达式和 BeautifulSoup</h3>
+<div id="outline-container-orga3e8970" class="outline-3">
+<h3 id="orga3e8970">正则表达式和 BeautifulSoup</h3>
 </div>
 
-<div id="outline-container-orgd9dff81" class="outline-3">
-<h3 id="orgd9dff81">获取属性</h3>
+<div id="outline-container-org4bb3cbb" class="outline-3">
+<h3 id="org4bb3cbb">获取属性</h3>
 </div>
 
-<div id="outline-container-org20fc6b0" class="outline-3">
-<h3 id="org20fc6b0">Lambda 表达式</h3>
+<div id="outline-container-org5175cfd" class="outline-3">
+<h3 id="org5175cfd">Lambda 表达式</h3>
 </div>
 </div>
 
-<div id="outline-container-org395f413" class="outline-2">
-<h2 id="org395f413">避开抓取陷阱</h2>
+<div id="outline-container-orgb8a63fa" class="outline-2">
+<h2 id="orgb8a63fa">避开抓取陷阱</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: kamisama</p>
-<p class="date">Created: 2022-11-03 Thu 19:31</p>
-<p class="validation"></p>
+<p class="date">Created: 2023-01-01 Sun 09:52</p>
 </div>
 </body>
 </html>
