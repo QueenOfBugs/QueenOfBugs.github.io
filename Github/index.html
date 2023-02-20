@@ -249,49 +249,49 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org665a639">使用Github遇到的问题记录</a>
+<li><a href="#org4cb0eb0">使用Github遇到的问题记录</a>
 <ul>
-<li><a href="#org3b6b179">github actions</a>
+<li><a href="#orge3bd32c">github actions</a>
 <ul>
-<li><a href="#org76f345e">git会记录文件状态</a></li>
+<li><a href="#orgcf17fc2">git会记录文件状态</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orga7c2324">生成和添加 SSH keys 到github</a>
+<li><a href="#org8dce200">生成和添加 SSH keys 到github</a>
 <ul>
-<li><a href="#orgcdc7813">生成新的 SHH 密钥</a></li>
-<li><a href="#orge8efa06">添加 SSH 密钥到 ssh-agent</a>
+<li><a href="#org4c58d1b">生成新的 SHH 密钥</a></li>
+<li><a href="#org5d9c918">添加 SSH 密钥到 ssh-agent</a>
 <ul>
-<li><a href="#orged72fbb">后台启动 ssh 代理</a></li>
-<li><a href="#orgb5f668f">将 ssh 私钥添加到代理</a></li>
-<li><a href="#org4bf6775">将 SSH 密钥添加到 Github 帐号</a></li>
+<li><a href="#org85998fa">后台启动 ssh 代理</a></li>
+<li><a href="#org4eeb322">将 ssh 私钥添加到代理</a></li>
+<li><a href="#org1aae394">将 SSH 密钥添加到 Github 帐号</a></li>
 </ul>
 </li>
-<li><a href="#orgb7b2b1b">测试 SSH 连接</a></li>
-<li><a href="#org93194c0">通过代理连接 SSH</a></li>
+<li><a href="#org40b9ad7">测试 SSH 连接</a></li>
+<li><a href="#org937dfe8">通过代理连接 SSH</a></li>
 </ul>
 </li>
-<li><a href="#org79bbb05">Github.io 踩坑</a>
+<li><a href="#orgff5dc37">Github.io 踩坑</a>
 <ul>
-<li><a href="#org3dcb857">路径含有隐藏文件夹时url访问失败</a></li>
+<li><a href="#org82e55a4">路径含有隐藏文件夹时url访问失败</a></li>
 </ul>
 </li>
-<li><a href="#orgbfa5efc">远程仓库强制覆盖本地仓库.</a></li>
+<li><a href="#org3570ce1">远程仓库强制覆盖本地仓库.</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org665a639" class="outline-2">
-<h2 id="org665a639">使用Github遇到的问题记录</h2>
-<div class="outline-text-2" id="text-org665a639">
+<div id="outline-container-org4cb0eb0" class="outline-2">
+<h2 id="org4cb0eb0">使用Github遇到的问题记录</h2>
+<div class="outline-text-2" id="text-org4cb0eb0">
 </div>
-<div id="outline-container-org3b6b179" class="outline-3">
-<h3 id="org3b6b179">github actions</h3>
-<div class="outline-text-3" id="text-org3b6b179">
+<div id="outline-container-orge3bd32c" class="outline-3">
+<h3 id="orge3bd32c">github actions</h3>
+<div class="outline-text-3" id="text-orge3bd32c">
 </div>
-<div id="outline-container-org76f345e" class="outline-4">
-<h4 id="org76f345e">git会记录文件状态</h4>
-<div class="outline-text-4" id="text-org76f345e">
+<div id="outline-container-orgcf17fc2" class="outline-4">
+<h4 id="orgcf17fc2">git会记录文件状态</h4>
+<div class="outline-text-4" id="text-orgcf17fc2">
 <p>
 使用 Emacs 编辑文件的情况下: 很容易一边编辑文件,另一边就打开了shell-mode 要
 对刚刚的更改进行提交.
@@ -302,18 +302,18 @@ for the JavaScript code in this tag.
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="orgb697ceb"></a><span class="todo TODO">TODO</span> 测试其他文本编辑器是否会出现这种状况.<br /></li>
+<li><a id="orgbff231a"></a><span class="todo TODO">TODO</span> 测试其他文本编辑器是否会出现这种状况.<br /></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-orga7c2324" class="outline-2">
-<h2 id="orga7c2324">生成和添加 SSH keys 到github</h2>
-<div class="outline-text-2" id="text-orga7c2324">
+<div id="outline-container-org8dce200" class="outline-2">
+<h2 id="org8dce200">生成和添加 SSH keys 到github</h2>
+<div class="outline-text-2" id="text-org8dce200">
 </div>
-<div id="outline-container-orgcdc7813" class="outline-3">
-<h3 id="orgcdc7813">生成新的 SHH 密钥</h3>
-<div class="outline-text-3" id="text-orgcdc7813">
+<div id="outline-container-org4c58d1b" class="outline-3">
+<h3 id="org4c58d1b">生成新的 SHH 密钥</h3>
+<div class="outline-text-3" id="text-org4c58d1b">
 <div class="org-src-container">
 <pre class="src src-sh">ssh-keygen -t ed25519 -C <span style="font-style: italic;">"wj915614874@163.com"</span>
 </pre>
@@ -321,13 +321,13 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orge8efa06" class="outline-3">
-<h3 id="orge8efa06">添加 SSH 密钥到 ssh-agent</h3>
-<div class="outline-text-3" id="text-orge8efa06">
+<div id="outline-container-org5d9c918" class="outline-3">
+<h3 id="org5d9c918">添加 SSH 密钥到 ssh-agent</h3>
+<div class="outline-text-3" id="text-org5d9c918">
 </div>
-<div id="outline-container-orged72fbb" class="outline-4">
-<h4 id="orged72fbb">后台启动 ssh 代理</h4>
-<div class="outline-text-4" id="text-orged72fbb">
+<div id="outline-container-org85998fa" class="outline-4">
+<h4 id="org85998fa">后台启动 ssh 代理</h4>
+<div class="outline-text-4" id="text-org85998fa">
 <div class="org-src-container">
 <pre class="src src-sh"><span style="font-weight: bold;">eval</span> <span style="font-style: italic;">"$(ssh-agent -s)"</span>
 </pre>
@@ -335,9 +335,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgb5f668f" class="outline-4">
-<h4 id="orgb5f668f">将 ssh 私钥添加到代理</h4>
-<div class="outline-text-4" id="text-orgb5f668f">
+<div id="outline-container-org4eeb322" class="outline-4">
+<h4 id="org4eeb322">将 ssh 私钥添加到代理</h4>
+<div class="outline-text-4" id="text-org4eeb322">
 <div class="org-src-container">
 <pre class="src src-sh">ssh-add ~/.ssh/id_ed25519
 </pre>
@@ -345,9 +345,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org4bf6775" class="outline-4">
-<h4 id="org4bf6775">将 SSH 密钥添加到 Github 帐号</h4>
-<div class="outline-text-4" id="text-org4bf6775">
+<div id="outline-container-org1aae394" class="outline-4">
+<h4 id="org1aae394">将 SSH 密钥添加到 Github 帐号</h4>
+<div class="outline-text-4" id="text-org1aae394">
 <p>
 将下面命令的结果复制到 <a href="https://github.com/settings/ssh/new">https://github.com/settings/ssh/new</a> 里的 Key 表单中.
 </p>
@@ -359,9 +359,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgb7b2b1b" class="outline-3">
-<h3 id="orgb7b2b1b">测试 SSH 连接</h3>
-<div class="outline-text-3" id="text-orgb7b2b1b">
+<div id="outline-container-org40b9ad7" class="outline-3">
+<h3 id="org40b9ad7">测试 SSH 连接</h3>
+<div class="outline-text-3" id="text-org40b9ad7">
 <div class="org-src-container">
 <pre class="src src-sh">ssh -T git@github.com
 </pre>
@@ -377,9 +377,9 @@ Hi username! You've successfully authenticated, but GitHub does not provide shel
 </div>
 </div>
 
-<div id="outline-container-org93194c0" class="outline-3">
-<h3 id="org93194c0">通过代理连接 SSH</h3>
-<div class="outline-text-3" id="text-org93194c0">
+<div id="outline-container-org937dfe8" class="outline-3">
+<h3 id="org937dfe8">通过代理连接 SSH</h3>
+<div class="outline-text-3" id="text-org937dfe8">
 <p>
 因为经常被墙的原因,使用代理连接 SSH 是很有必要的.这里去分一下 git 命令里设置的走
 代理, git 里设置的代理是用来 clone 下载文件的,走的是 http/https 协议,因为下载文
@@ -412,22 +412,22 @@ Host *
 </div>
 </div>
 </div>
-<div id="outline-container-org79bbb05" class="outline-2">
-<h2 id="org79bbb05">Github.io 踩坑</h2>
-<div class="outline-text-2" id="text-org79bbb05">
+<div id="outline-container-orgff5dc37" class="outline-2">
+<h2 id="orgff5dc37">Github.io 踩坑</h2>
+<div class="outline-text-2" id="text-orgff5dc37">
 </div>
-<div id="outline-container-org3dcb857" class="outline-3">
-<h3 id="org3dcb857">路径含有隐藏文件夹时url访问失败</h3>
-<div class="outline-text-3" id="text-org3dcb857">
+<div id="outline-container-org82e55a4" class="outline-3">
+<h3 id="org82e55a4">路径含有隐藏文件夹时url访问失败</h3>
+<div class="outline-text-3" id="text-org82e55a4">
 <p>
 如果网页资源的某个文件路径中有隐藏文件(夹)，那该资源就会访问失败.
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgbfa5efc" class="outline-2">
-<h2 id="orgbfa5efc">远程仓库强制覆盖本地仓库.</h2>
-<div class="outline-text-2" id="text-orgbfa5efc">
+<div id="outline-container-org3570ce1" class="outline-2">
+<h2 id="org3570ce1">远程仓库强制覆盖本地仓库.</h2>
+<div class="outline-text-2" id="text-org3570ce1">
 <p>
 适用于本地未提交的修改,但远端仓库已经从另一台机器提交了新的修改.如果本地未提交的
 修改并不重要,可以删除,那么就使用这种方法:
