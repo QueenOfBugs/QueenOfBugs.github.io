@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>Emacs Lisp 学习笔记</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="kamisama" />
 <style type="text/css">
@@ -245,204 +245,107 @@ for the JavaScript code in this tag.
  |
  <a accesskey="H" href="../index.html"> HOME </a>
 </div><div id="content">
+<h1 class="title">Emacs Lisp 学习笔记</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd5915d5">使用Github遇到的问题记录</a>
+<li><a href="#org3af69a7">Xahlee 的 Elisp 教程</a>
 <ul>
-<li><a href="#orgcec4460">github actions</a>
+<li><a href="#org379306c">Emacs Lisp 基础</a>
 <ul>
-<li><a href="#orgbdb39be">git会记录文件状态</a></li>
+<li><a href="#org4a24d40">执行 Elisp</a></li>
+<li><a href="#org2b1bd29">打印数据</a></li>
+</ul>
+</li>
+<li><a href="#orgf7131b3">Emacs Lisp 实践</a></li>
 </ul>
 </li>
 </ul>
-</li>
-<li><a href="#org194ede0">生成和添加 SSH keys 到github</a>
-<ul>
-<li><a href="#orgca89b18">生成新的 SHH 密钥</a></li>
-<li><a href="#org94bc3c1">添加 SSH 密钥到 ssh-agent</a>
-<ul>
-<li><a href="#orgdbd836a">后台启动 ssh 代理</a></li>
-<li><a href="#org78bb87c">将 ssh 私钥添加到代理</a></li>
-<li><a href="#orga58017b">将 SSH 密钥添加到 Github 帐号</a></li>
-</ul>
-</li>
-<li><a href="#org9539a0f">测试 SSH 连接</a></li>
-<li><a href="#org6b9485a">通过代理连接 SSH</a></li>
-</ul>
-</li>
-<li><a href="#org089d69c">Github.io 踩坑</a>
-<ul>
-<li><a href="#org151b8d9">路径含有隐藏文件夹时url访问失败</a></li>
-</ul>
-</li>
-<li><a href="#orga192d94">远程仓库强制覆盖本地仓库.</a></li>
-</ul>
 </div>
 </div>
-<div id="outline-container-orgd5915d5" class="outline-2">
-<h2 id="orgd5915d5">使用Github遇到的问题记录</h2>
-<div class="outline-text-2" id="text-orgd5915d5">
-</div>
-<div id="outline-container-orgcec4460" class="outline-3">
-<h3 id="orgcec4460">github actions</h3>
-<div class="outline-text-3" id="text-orgcec4460">
-</div>
-<div id="outline-container-orgbdb39be" class="outline-4">
-<h4 id="orgbdb39be">git会记录文件状态</h4>
-<div class="outline-text-4" id="text-orgbdb39be">
 <p>
-使用 Emacs 编辑文件的情况下: 很容易一边编辑文件,另一边就打开了shell-mode 要
-对刚刚的更改进行提交.
-当一个文件在本地打开,没有保存时,他会处于被其他程序占用的状态,如果这时候进行
-了 git 提交的话,该文件的状态一样会被记录,当项目使用了 github action 并且进行
-的操作涉及到这个未保存的文件,那 action 就会失败,提示该文件被某个用户或程序锁
-定.
+Created: <span class="timestamp-wrapper"><span class="timestamp">[2023-02-21 Tue 12:18]</span></span>
+Last modified: <span class="timestamp-wrapper"><span class="timestamp">[2023-02-21 Tue 15:26]</span></span>
+</p>
+
+<div id="outline-container-org3af69a7" class="outline-2">
+<h2 id="org3af69a7">Xahlee 的 Elisp 教程</h2>
+<div class="outline-text-2" id="text-org3af69a7">
+</div>
+<div id="outline-container-org379306c" class="outline-3">
+<h3 id="org379306c">Emacs Lisp 基础</h3>
+<div class="outline-text-3" id="text-org379306c">
+<p>
+Emacs 是由 C 语言和 Emacs lisp 语言编写的,因此它内置了对 Emacs lisp 语言的支持.也
+因为 Emacs lisp 才让 Emacs 具有更多的可能性. 所以学习 Emacs lisp 对理解和掌握
+Emacs 有很大帮助. 为了方便,一般我们将 Emacs Lisp 简称为 Elisp.
+</p>
+
+<p>
+Xahlee 的Emacs Lisp 基础部分只教学 Elsip 中对于所有 Lisp 语言都通用的部分,比如基
+础语法,数学运算,变量,字符串,循环,分支控制(条件语句),编写函数,以及数据结构.
+</p>
+
+<p>
+Elisp 关于 Emacs 作为一个编辑器特有的部分,比如移动鼠标,查找文本,切换缓冲区,插入
+文本等在 <a href="#orgf7131b3">Emacs Lisp 实践</a> 部分.
 </p>
 </div>
-<ul class="org-ul">
-<li><a id="orgcf88c10"></a><span class="todo TODO">TODO</span> 测试其他文本编辑器是否会出现这种状况.<br /></li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org194ede0" class="outline-2">
-<h2 id="org194ede0">生成和添加 SSH keys 到github</h2>
-<div class="outline-text-2" id="text-org194ede0">
-</div>
-<div id="outline-container-orgca89b18" class="outline-3">
-<h3 id="orgca89b18">生成新的 SHH 密钥</h3>
-<div class="outline-text-3" id="text-orgca89b18">
-<div class="org-src-container">
-<pre class="src src-sh">ssh-keygen -t ed25519 -C <span style="font-style: italic;">"wj915614874@163.com"</span>
-</pre>
-</div>
+<div id="outline-container-org4a24d40" class="outline-4">
+<h4 id="org4a24d40">执行 Elisp</h4>
+<div class="outline-text-4" id="text-org4a24d40">
+<p>
+在任意缓冲区中键入 <code>(+ 3 4)</code> ,然后将光标移动到右括号处,按下 <code>M-x eval-last-sexp</code>
+或是使用快捷键 <code>CTRL+x CTRL+e</code>, 也可以选中键入的 lisp 代码,然后
+<code>M-x eval-region</code> .上面的几种方法都可以执行键入的代码,然后结果会出现在窗口下面的
+消息缓冲区(Messages Buffer)
+</p>
+
+<p>
+另外,Elisp 也有像 python 一样的交互式解释器, <code>M-x ielm</code> 即可打开交互式解释器.在
+交互式解释器中输入上面代码然后回车也可以执行代码.
+</p>
+
+<p>
+还有 <code>eval-buffer</code> 可以执行整个当前缓冲区, <code>load-file</code> 可以执行一个文件,它会提示
+你输入一个文件名/路径, 还有 <code>eval-defun</code> 可以执行光标所在之处的函数定义(函数定义
+的elisp代码必须有良好的索引,不然 emacs 可能会在查找函数时出现问题.因此不建议使
+用,同样还有 <code>narrow-to-defun</code> 也会出问题,导致内容丢失,同样不建议使用)
+</p>
+
+<blockquote>
+<p>
+关于 <code>narrow-to-defun</code> 有问题的部分 Xahlee 的文章是 2015年的,Emacs 24.4.1 但是直
+到现在我测试时还是有问题.
+</p>
+</blockquote>
 </div>
 </div>
 
-<div id="outline-container-org94bc3c1" class="outline-3">
-<h3 id="org94bc3c1">添加 SSH 密钥到 ssh-agent</h3>
-<div class="outline-text-3" id="text-org94bc3c1">
-</div>
-<div id="outline-container-orgdbd836a" class="outline-4">
-<h4 id="orgdbd836a">后台启动 ssh 代理</h4>
-<div class="outline-text-4" id="text-orgdbd836a">
-<div class="org-src-container">
-<pre class="src src-sh"><span style="font-weight: bold;">eval</span> <span style="font-style: italic;">"$(ssh-agent -s)"</span>
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org78bb87c" class="outline-4">
-<h4 id="org78bb87c">将 ssh 私钥添加到代理</h4>
-<div class="outline-text-4" id="text-org78bb87c">
-<div class="org-src-container">
-<pre class="src src-sh">ssh-add ~/.ssh/id_ed25519
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orga58017b" class="outline-4">
-<h4 id="orga58017b">将 SSH 密钥添加到 Github 帐号</h4>
-<div class="outline-text-4" id="text-orga58017b">
+<div id="outline-container-org2b1bd29" class="outline-4">
+<h4 id="org2b1bd29">打印数据</h4>
+<div class="outline-text-4" id="text-org2b1bd29">
 <p>
-将下面命令的结果复制到 <a href="https://github.com/settings/ssh/new">https://github.com/settings/ssh/new</a> 里的 Key 表单中.
+打印数据是我们调试程序过程中必不可少的部分,使用 <code>(message)</code> 函数可以将数据显示在
+消息缓冲区中.
 </p>
-<div class="org-src-container">
-<pre class="src src-sh">cat ~/.ssh/id_ed25519.pub
-</pre>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org9539a0f" class="outline-3">
-<h3 id="org9539a0f">测试 SSH 连接</h3>
-<div class="outline-text-3" id="text-org9539a0f">
-<div class="org-src-container">
-<pre class="src src-sh">ssh -T git@github.com
-</pre>
-</div>
 
 <p>
-如果前面都设置正常的,应该会提示你验证公钥是否正确,输入 yes 后会看到类似下面的信
-息:
+<code>(message "Hi Emacs!")</code> 会在消息缓冲区中显示 "Hi Emacs!"
 </p>
-<pre class="example">
-Hi username! You've successfully authenticated, but GitHub does not provide shell access.
-</pre>
-</div>
-</div>
 
-<div id="outline-container-org6b9485a" class="outline-3">
-<h3 id="org6b9485a">通过代理连接 SSH</h3>
-<div class="outline-text-3" id="text-org6b9485a">
 <p>
-因为经常被墙的原因,使用代理连接 SSH 是很有必要的.这里去分一下 git 命令里设置的走
-代理, git 里设置的代理是用来 clone 下载文件的,走的是 http/https 协议,因为下载文
-件的网址也时不时被墙,或者直连下载极慢,所以需要走代理;而这里使用的 SSH 协议是用来
-验证我们自己的账户,保证账户安全的,还可以方便我们对自己的仓库进行操作,  这两个是
-不同的,所以不要以为设置了 git 的代理就可以使用代理进行 ssh 连接了.
-openssh 自身是不带代理功能的(网上说的,具体是不是没有翻文档),需要使用另外的工具来
-实现代理,这里需要的是 nc(netcat) ,这是一个强大的网络工具,但 gnu-netcat 这个版本
-的并没有提供代理功能,我的 Manjaro-i3 已经安装了 nc, 不过是 gnu-netcat 版的,实验
-多次还以为哪里有问题,直到看到这篇博文 <a href="https://tech.he-sb.top/posts/ssh-connecting-through-proxy/#linux-%E7%B3%BB%E7%BB%9F">通过代理连接 SSH</a> 里提到 openbsd-netcat 版
-本的netcat才有代理功能,才爬出这个坑.具体步骤就不再详细写了,那篇博文写的很清楚了,
-记录下使用的命令和配置:
-</p>
-<ul class="org-ul">
-<li><p>
-使用命令完成代理:
-</p>
-<div class="org-src-container">
-<pre class="src src-sh">ssh user@server -o <span style="font-style: italic;">"ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p"</span>
-</pre>
-</div></li>
-<li><p>
-使用 ".ssh/config" 配置文件:
-</p>
-<pre class="example">
-Host *
-  ProxyCommand=nc -x 127.0.0.1:1080 %h %p
-</pre></li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org089d69c" class="outline-2">
-<h2 id="org089d69c">Github.io 踩坑</h2>
-<div class="outline-text-2" id="text-org089d69c">
-</div>
-<div id="outline-container-org151b8d9" class="outline-3">
-<h3 id="org151b8d9">路径含有隐藏文件夹时url访问失败</h3>
-<div class="outline-text-3" id="text-org151b8d9">
-<p>
-如果网页资源的某个文件路径中有隐藏文件(夹)，那该资源就会访问失败.
+<code>message</code> 也可以打印变量值,如 <code>(message "Her age is %d" 16)</code>, 有学过 C 语言的应
+该会比较眼熟这种用法,和 printf() 差不多,占位符 <code>%s</code> 表示字符串, <code>%S</code> 表示任意
+Lisp 表达式,例如 <code>(message "Her name is %s" "Jessica")</code>, <code>(message "A List : %S"
+(list 1 2 3 4))</code>
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-orga192d94" class="outline-2">
-<h2 id="orga192d94">远程仓库强制覆盖本地仓库.</h2>
-<div class="outline-text-2" id="text-orga192d94">
-<p>
-适用于本地未提交的修改,但远端仓库已经从另一台机器提交了新的修改.如果本地未提交的
-修改并不重要,可以删除,那么就使用这种方法:
-</p>
-<div class="org-src-container">
-<pre class="src src-sh">git fetch --all
-git reset --hard origin/main
-git pull
-</pre>
-</div>
-<p>
-fetch 从远程下载最新代码,但不执行合并或rebase 等操作.
-reset 将主分支重置为 fetch 下载的内容. hard 选项更改工作树中所有文件以匹配
-origin/main 中的文件.
-</p>
+<div id="outline-container-orgf7131b3" class="outline-3">
+<h3 id="orgf7131b3">Emacs Lisp 实践</h3>
 </div>
 </div>
 </div>

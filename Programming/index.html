@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-02-20 Mon 13:22 -->
+<!-- 2023-02-22 Wed 14:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -15,53 +15,53 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org2596d66">1. Language</a></li>
-<li><a href="#orge66e20a">2. 多线程(multithread, MT) 编程</a>
+<li><a href="#orgfaaa3be">1. Language</a></li>
+<li><a href="#orgc1b9847">2. 多线程(multithread, MT) 编程</a>
 <ul>
-<li><a href="#org25c519f">2.1. 简介/动机</a></li>
-<li><a href="#org62da637">2.2. 线程和进程</a>
+<li><a href="#orgcc0bfc0">2.1. 简介/动机</a></li>
+<li><a href="#org511b699">2.2. 线程和进程</a>
 <ul>
-<li><a href="#org0caec81">2.2.1. 进程</a></li>
-<li><a href="#orgb2e07a2">2.2.2. 线程</a></li>
+<li><a href="#org29d2802">2.2.1. 进程</a></li>
+<li><a href="#orgfbd00ca">2.2.2. 线程</a></li>
 </ul>
 </li>
-<li><a href="#orgec73e1c">2.3. 线程和Python</a>
+<li><a href="#orgfe1b841">2.3. 线程和Python</a>
 <ul>
-<li><a href="#org120fb8a">2.3.1. 全局解释器锁</a></li>
-<li><a href="#org3ebd873">2.3.2. 退出线程</a></li>
-<li><a href="#orge860a61">2.3.3. 在Python中使用线程</a></li>
-<li><a href="#org1405d18">2.3.4. 不使用线程的情况</a></li>
-<li><a href="#orgdde7363">2.3.5. Python的threading模块</a></li>
+<li><a href="#org3901dde">2.3.1. 全局解释器锁</a></li>
+<li><a href="#orgbb9feb1">2.3.2. 退出线程</a></li>
+<li><a href="#org83d8902">2.3.3. 在Python中使用线程</a></li>
+<li><a href="#org94d9916">2.3.4. 不使用线程的情况</a></li>
+<li><a href="#org8e38a3c">2.3.5. Python的threading模块</a></li>
 </ul>
 </li>
-<li><a href="#org27ee71c">2.4. thread 模块</a></li>
-<li><a href="#org1515874">2.5. threading 模块</a>
+<li><a href="#orge1904bf">2.4. thread 模块</a></li>
+<li><a href="#org9960776">2.5. threading 模块</a>
 <ul>
-<li><a href="#orgccd480b">2.5.1. Thread 类</a></li>
-<li><a href="#org44a3837">2.5.2. threading 模块的其他函数</a></li>
+<li><a href="#org7cbe8dd">2.5.1. Thread 类</a></li>
+<li><a href="#orga0d11ce">2.5.2. threading 模块的其他函数</a></li>
 </ul>
 </li>
-<li><a href="#orgd519a79">2.6. 单线程或多线程执行对比</a></li>
-<li><a href="#org5cb6651">2.7. 多线程实践</a>
+<li><a href="#org7b59621">2.6. 单线程或多线程执行对比</a></li>
+<li><a href="#orgb1eca63">2.7. 多线程实践</a>
 <ul>
-<li><a href="#org026d174">2.7.1. 图书排名示例</a></li>
+<li><a href="#org900c4ff">2.7.1. 图书排名示例</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org1a454b6">3. 相关概念</a></li>
+<li><a href="#orgaad2474">3. 相关概念</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org2596d66" class="outline-2">
-<h2 id="org2596d66"><span class="section-number-2">1</span> Language</h2>
+<div id="outline-container-orgfaaa3be" class="outline-2">
+<h2 id="orgfaaa3be"><span class="section-number-2">1</span> Language</h2>
 </div>
-<div id="outline-container-orge66e20a" class="outline-2">
-<h2 id="orge66e20a"><span class="section-number-2">2</span> 多线程(multithread, MT) 编程</h2>
+<div id="outline-container-orgc1b9847" class="outline-2">
+<h2 id="orgc1b9847"><span class="section-number-2">2</span> 多线程(multithread, MT) 编程</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org25c519f" class="outline-3">
-<h3 id="org25c519f"><span class="section-number-3">2.1</span> 简介/动机</h3>
+<div id="outline-container-orgcc0bfc0" class="outline-3">
+<h3 id="orgcc0bfc0"><span class="section-number-3">2.1</span> 简介/动机</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 多线程编程出现之前,计算机程序的执行是由单个步骤序列组成的,该序列在主机的 CPU 中
@@ -126,12 +126,12 @@
 </div>
 </div>
 
-<div id="outline-container-org62da637" class="outline-3">
-<h3 id="org62da637"><span class="section-number-3">2.2</span> 线程和进程</h3>
+<div id="outline-container-org511b699" class="outline-3">
+<h3 id="org511b699"><span class="section-number-3">2.2</span> 线程和进程</h3>
 <div class="outline-text-3" id="text-2-2">
 </div>
-<div id="outline-container-org0caec81" class="outline-4">
-<h4 id="org0caec81"><span class="section-number-4">2.2.1</span> 进程</h4>
+<div id="outline-container-org29d2802" class="outline-4">
+<h4 id="org29d2802"><span class="section-number-4">2.2.1</span> 进程</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <p>
 程序是存储在磁盘上的可执行文件.只有将其加载到内存中并被操作系统调用,才拥有其生命
@@ -151,8 +151,8 @@
 </div>
 </div>
 
-<div id="outline-container-orgb2e07a2" class="outline-4">
-<h4 id="orgb2e07a2"><span class="section-number-4">2.2.2</span> 线程</h4>
+<div id="outline-container-orgfbd00ca" class="outline-4">
+<h4 id="orgfbd00ca"><span class="section-number-4">2.2.2</span> 线程</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <p>
 线程与进程类似,不过他们是在同一进程下执行的,并共享相同的上下文.
@@ -187,8 +187,8 @@
 </div>
 </div>
 
-<div id="outline-container-orgec73e1c" class="outline-3">
-<h3 id="orgec73e1c"><span class="section-number-3">2.3</span> 线程和Python</h3>
+<div id="outline-container-orgfe1b841" class="outline-3">
+<h3 id="orgfe1b841"><span class="section-number-3">2.3</span> 线程和Python</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 这部分讨论如何在Python中使用线程,其中包括全局解释器锁对线程的限制和一个快速的演
@@ -196,8 +196,8 @@
 </p>
 </div>
 
-<div id="outline-container-org120fb8a" class="outline-4">
-<h4 id="org120fb8a"><span class="section-number-4">2.3.1</span> 全局解释器锁</h4>
+<div id="outline-container-org3901dde" class="outline-4">
+<h4 id="org3901dde"><span class="section-number-4">2.3.1</span> 全局解释器锁</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <p>
 Python 代码的执行是由Python 虚拟机(又名解释器主循环)进行控制的.
@@ -241,8 +241,8 @@ Python 卡爱抚这,你并不需要担心 Python 代码在这些情况下被锁�
 </div>
 </div>
 
-<div id="outline-container-org3ebd873" class="outline-4">
-<h4 id="org3ebd873"><span class="section-number-4">2.3.2</span> 退出线程</h4>
+<div id="outline-container-orgbb9feb1" class="outline-4">
+<h4 id="orgbb9feb1"><span class="section-number-4">2.3.2</span> 退出线程</h4>
 <div class="outline-text-4" id="text-2-3-2">
 <p>
 当一个线程完成函数的执行时,它就会退出.另外,还可以通过调用例如 thread.exit() 之类
@@ -255,7 +255,7 @@ Python 卡爱抚这,你并不需要担心 Python 代码在这些情况下被锁�
 这个建议有很多原因,其中一个最明显的原因是在主线程退出之后,所有其他线程都会在没有
 清理的情况下直接退出,而另一个 threading 模块会确保在所有 "重要的" 子线程退出前,
 保持整个进程的存活(对于 "重要的" 这个含义的说明,请阅读下面的
-<a href="#org3c9e8a6">2.3.5</a> .)
+<a href="#orgfa97b71">2.3.5</a> .)
 </p>
 
 <p>
@@ -266,8 +266,8 @@ Python 卡爱抚这,你并不需要担心 Python 代码在这些情况下被锁�
 </div>
 </div>
 
-<div id="outline-container-orge860a61" class="outline-4">
-<h4 id="orge860a61"><span class="section-number-4">2.3.3</span> 在Python中使用线程</h4>
+<div id="outline-container-org83d8902" class="outline-4">
+<h4 id="org83d8902"><span class="section-number-4">2.3.3</span> 在Python中使用线程</h4>
 <div class="outline-text-4" id="text-2-3-3">
 <p>
 避免使用thread模块
@@ -286,7 +286,7 @@ Python 虽然支持多线程编程,但是还需要取决于它运行的操作系
 &gt;&gt;&gt;
 </pre>
 <p>
-我用的是 Python3 所以导入 _thread 模块,更多信息参考 <a href="#org3c9e8a6">2.3.5</a>
+我用的是 Python3 所以导入 _thread 模块,更多信息参考 <a href="#orgfa97b71">2.3.5</a>
 如果你的 Python 解释器没有将线程支持编译进去,模块导入将会失败:
 </p>
 <pre class="example">
@@ -305,8 +305,8 @@ README 文件,来获取如何在系统中编译线程支持的 Python 的指定�
 </div>
 </div>
 
-<div id="outline-container-org1405d18" class="outline-4">
-<h4 id="org1405d18"><span class="section-number-4">2.3.4</span> 不使用线程的情况</h4>
+<div id="outline-container-org94d9916" class="outline-4">
+<h4 id="org94d9916"><span class="section-number-4">2.3.4</span> 不使用线程的情况</h4>
 <div class="outline-text-4" id="text-2-3-4">
 <p>
 在第一个例子里,我们使用 time.sleep() 函数来演示线程是如何工作的. time.sleep() 函
@@ -367,8 +367,8 @@ onethr.py:
 </div>
 </div>
 
-<div id="outline-container-orgdde7363" class="outline-4">
-<h4 id="orgdde7363"><span class="section-number-4">2.3.5</span> Python的threading模块</h4>
+<div id="outline-container-org8e38a3c" class="outline-4">
+<h4 id="org8e38a3c"><span class="section-number-4">2.3.5</span> Python的threading模块</h4>
 <div class="outline-text-4" id="text-2-3-5">
 <p>
 Python 提供了多个模块来支持多线程编程,包括 thread, threading 和 Queue 模块等.程
@@ -379,7 +379,7 @@ Python 提供了多个模块来支持多线程编程,包括 thread, threading �
 </p>
 
 <p>
-<a id="org3c9e8a6"></a>
+<a id="orgfa97b71"></a>
 推荐使用更高级别的 threading 模块,而不是使用 thread 模块有很多原因.
 threading 模块更加先进,有更好的线程支持,并且 thread 模块中的一些属性会和
 threading 模块有冲突. 另一个原因就是低级别的 thread 模块拥有的同步原语很少(实际
@@ -407,8 +407,8 @@ Python3 中该模块被重命名为 _thread. 你创建的任何多线程应用�
 </div>
 </div>
 
-<div id="outline-container-org27ee71c" class="outline-3">
-<h3 id="org27ee71c"><span class="section-number-3">2.4</span> thread 模块</h3>
+<div id="outline-container-orge1904bf" class="outline-3">
+<h3 id="orge1904bf"><span class="section-number-3">2.4</span> thread 模块</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 除了派生线程外, thread 模块还提供了基本的同步数据结构,称为 <span class="underline">锁对象</span> (lock object,
@@ -651,8 +651,8 @@ release() 方法则表明获取该锁的线程已经完成. 没有在上锁的�
 </div>
 </div>
 
-<div id="outline-container-org1515874" class="outline-3">
-<h3 id="org1515874"><span class="section-number-3">2.5</span> threading 模块</h3>
+<div id="outline-container-org9960776" class="outline-3">
+<h3 id="org9960776"><span class="section-number-3">2.5</span> threading 模块</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
 现在介绍更高级别的 threading 模块. 除了 Thread 类外,该模块还包括许多非常好用的同
@@ -748,8 +748,8 @@ Python 程序(理解为主线程)将在所有非守护线程退出后才退出,�
 </p>
 </div>
 
-<div id="outline-container-orgccd480b" class="outline-4">
-<h4 id="orgccd480b"><span class="section-number-4">2.5.1</span> Thread 类</h4>
+<div id="outline-container-org7cbe8dd" class="outline-4">
+<h4 id="org7cbe8dd"><span class="section-number-4">2.5.1</span> Thread 类</h4>
 <div class="outline-text-4" id="text-2-5-1">
 <p>
 threading 模块的 Thread 类是主要的执行对象. 它有 thread 模块中没有的很多函数.
@@ -1051,7 +1051,7 @@ mtsleepD.py 在实例化 Thread 对象时同时实例化了可调用类 ThreadFu
 <p>
 Thread 对象开始运行时(执行 start()), 它会在一个独立的控制进程里调用对象的 run()
 方法. run() 方法是代表线程活动的方法,这个方法可有在子类型里重载. 标准的 run() 方
-法会对作为 target 参数传递给该对象构造器的<a href="#org78be563">3</a>(如果存在)发起调用,并从附带
+法会对作为 target 参数传递给该对象构造器的<a href="#orgc6d4bd5">3</a>(如果存在)发起调用,并从附带
 args 和 kwargs 参数分别获取的位置和关键字参数.
 </p>
 
@@ -1091,8 +1091,8 @@ self.res 中,并创建一个获取这个值的新方法 getResult()
 
 
 
-<div id="outline-container-org44a3837" class="outline-4">
-<h4 id="org44a3837"><span class="section-number-4">2.5.2</span> threading 模块的其他函数</h4>
+<div id="outline-container-orga0d11ce" class="outline-4">
+<h4 id="orga0d11ce"><span class="section-number-4">2.5.2</span> threading 模块的其他函数</h4>
 <div class="outline-text-4" id="text-2-5-2">
 <p>
 除了各种同步和线程对象外, threading 模块还提供一些函数,如下所示:
@@ -1157,8 +1157,8 @@ self.res 中,并创建一个获取这个值的新方法 getResult()
 </div>
 </div>
 
-<div id="outline-container-orgd519a79" class="outline-3">
-<h3 id="orgd519a79"><span class="section-number-3">2.6</span> 单线程或多线程执行对比</h3>
+<div id="outline-container-org7b59621" class="outline-3">
+<h3 id="org7b59621"><span class="section-number-3">2.6</span> 单线程或多线程执行对比</h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 下面的 mtfacfib.py 脚本比较了递归求斐波那契,阶乘与累加函数的执行.该脚本按照单线
@@ -1227,18 +1227,18 @@ self.res 中,并创建一个获取这个值的新方法 getResult()
 </div>
 </div>
 
-<div id="outline-container-org5cb6651" class="outline-3">
-<h3 id="org5cb6651"><span class="section-number-3">2.7</span> 多线程实践</h3>
+<div id="outline-container-orgb1eca63" class="outline-3">
+<h3 id="orgb1eca63"><span class="section-number-3">2.7</span> 多线程实践</h3>
 <div class="outline-text-3" id="text-2-7">
 <p>
-<a href="#org120fb8a">2.3.1</a> 里曾提到,由于 Python 虚拟机是单线程(GIL) 的原因,只有线程在执行 I/O
+<a href="#org3901dde">2.3.1</a> 里曾提到,由于 Python 虚拟机是单线程(GIL) 的原因,只有线程在执行 I/O
 密集型的应用时才能更好发挥 Python 的并发性(对比计算密集型,I/O 密集型只需要做轮
 询),因此让我们看一个 I/O 密集型的例子.
 </p>
 </div>
 
-<div id="outline-container-org026d174" class="outline-4">
-<h4 id="org026d174"><span class="section-number-4">2.7.1</span> 图书排名示例</h4>
+<div id="outline-container-org900c4ff" class="outline-4">
+<h4 id="org900c4ff"><span class="section-number-4">2.7.1</span> 图书排名示例</h4>
 <div class="outline-text-4" id="text-2-7-1">
 <p>
 下面例子在 Amazon 上查询图书的当前排名.这个例子里函数 getRanking() 使用正则表达
@@ -1257,18 +1257,18 @@ self.res 中,并创建一个获取这个值的新方法 getResult()
 </div>
 </div>
 
-<div id="outline-container-org1a454b6" class="outline-2">
-<h2 id="org1a454b6"><span class="section-number-2">3</span> 相关概念</h2>
+<div id="outline-container-orgaad2474" class="outline-2">
+<h2 id="orgaad2474"><span class="section-number-2">3</span> 相关概念</h2>
 <div class="outline-text-2" id="text-3">
 <p>
-<a id="org78be563"></a>:函数(用户自定义,内置,内置对象的方法), 类对象, 类实例的方法以及任何具
+<a id="orgc6d4bd5"></a>:函数(用户自定义,内置,内置对象的方法), 类对象, 类实例的方法以及任何具
 有 _<sub>call</sub>_<sub>()</sub> 方法的对象都是可调用对象
 </p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-02-20 Mon 13:22</p>
+<p class="date">Created: 2023-02-22 Wed 14:31</p>
 </div>
 </body>
 </html>
