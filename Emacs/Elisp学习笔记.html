@@ -250,15 +250,16 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge0d6b79">Xahlee 的 Elisp 教程</a>
+<li><a href="#org8a228df">Xahlee 的 Elisp 教程</a>
 <ul>
-<li><a href="#orgb714238">Emacs Lisp 基础</a>
+<li>
 <ul>
-<li><a href="#orgaf220a4">执行 Elisp</a></li>
-<li><a href="#orgaaa607b">打印数据</a></li>
+<li><a href="#org97ec8d9">执行 Elisp</a></li>
+<li><a href="#org50da1f0">打印</a></li>
+<li><a href="#org32fb0bc">光标位置函数</a></li>
+<li><a href="#orgf30ab1e">文本编辑函数</a></li>
 </ul>
 </li>
-<li><a href="#org912cfd2">Emacs Lisp 实践</a></li>
 </ul>
 </li>
 </ul>
@@ -266,69 +267,67 @@ for the JavaScript code in this tag.
 </div>
 <p>
 Created: <span class="timestamp-wrapper"><span class="timestamp">[2023-02-21 Tue 12:18]</span></span>
-Last modified: <span class="timestamp-wrapper"><span class="timestamp">[2023-02-21 Tue 15:26]</span></span>
+Last modified: <span class="timestamp-wrapper"><span class="timestamp">[2023-03-01 Wed 00:18]</span></span>
 </p>
 
-<div id="outline-container-orge0d6b79" class="outline-2">
-<h2 id="orge0d6b79">Xahlee 的 Elisp 教程</h2>
-<div class="outline-text-2" id="text-orge0d6b79">
-</div>
-<div id="outline-container-orgb714238" class="outline-3">
-<h3 id="orgb714238">Emacs Lisp 基础</h3>
-<div class="outline-text-3" id="text-orgb714238">
+<div id="outline-container-org8a228df" class="outline-2">
+<h2 id="org8a228df">Xahlee 的 Elisp 教程</h2>
+<div class="outline-text-2" id="text-org8a228df">
 <p>
-Emacs 是由 C 语言和 Emacs lisp 语言编写的,因此它内置了对 Emacs lisp 语言的支持.也
-因为 Emacs lisp 才让 Emacs 具有更多的可能性. 所以学习 Emacs lisp 对理解和掌握
-Emacs 有很大帮助. 为了方便,一般我们将 Emacs Lisp 简称为 Elisp.
-</p>
-
-<p>
-Xahlee 的Emacs Lisp 基础部分只教学 Elsip 中对于所有 Lisp 语言都通用的部分,比如基
-础语法,数学运算,变量,字符串,循环,分支控制(条件语句),编写函数,以及数据结构.
-</p>
-
-<p>
-Elisp 关于 Emacs 作为一个编辑器特有的部分,比如移动鼠标,查找文本,切换缓冲区,插入
-文本等在 <a href="#org912cfd2">Emacs Lisp 实践</a> 部分.
+Xahlee 的 Emacs Lisp 分为了基础和实践部分,基础只包含 LISP 语言通用的部分,实践部
+分才涉及 Emacs Lisp 这种 LISP 方言特有的知识,我就不按照他的排版来记笔记了,按照我
+自己学习的路线记算了.
 </p>
 </div>
-<div id="outline-container-orgaf220a4" class="outline-4">
-<h4 id="orgaf220a4">执行 Elisp</h4>
-<div class="outline-text-4" id="text-orgaf220a4">
+
+<div id="outline-container-org97ec8d9" class="outline-4">
+<h4 id="org97ec8d9">执行 Elisp</h4>
+<div class="outline-text-4" id="text-org97ec8d9">
 <p>
-在任意缓冲区中键入 <code>(+ 3 4)</code> ,然后将光标移动到右括号处,按下 <code>M-x eval-last-sexp</code>
-或是使用快捷键 <code>CTRL+x CTRL+e</code>, 也可以选中键入的 lisp 代码,然后
-<code>M-x eval-region</code> .上面的几种方法都可以执行键入的代码,然后结果会出现在窗口下面的
-消息缓冲区(Messages Buffer)
+在任意缓冲区中键入
+</p>
+<pre class="example">
+(+ 3 4)
+</pre>
+<p>
+然后将光标移动到右边括号处,按下按键 <code>Ctrl-x Ctrl-e</code> 就可以看到代码被执行,且执行
+结果 7 会显示在 Message Buffer 里.
 </p>
 
 <p>
-另外,Elisp 也有像 python 一样的交互式解释器, <code>M-x ielm</code> 即可打开交互式解释器.在
-交互式解释器中输入上面代码然后回车也可以执行代码.
+这是最简单的执行 Elisp 片段的方式,还有好几种执行 Elisp 的方式如下:
 </p>
-
-<p>
-还有 <code>eval-buffer</code> 可以执行整个当前缓冲区, <code>load-file</code> 可以执行一个文件,它会提示
-你输入一个文件名/路径, 还有 <code>eval-defun</code> 可以执行光标所在之处的函数定义(函数定义
-的elisp代码必须有良好的索引,不然 emacs 可能会在查找函数时出现问题.因此不建议使
-用,同样还有 <code>narrow-to-defun</code> 也会出问题,导致内容丢失,同样不建议使用)
-</p>
-
+<ul class="org-ul">
+<li><code>M-x eval-last-sexp</code> : 执行光标左边的 Elisp 表达式.其实就是上面的 <code>Ctrl-x
+  Ctrl-e</code> 快捷键所代表的操作.</li>
+<li><code>M-x eval-region</code> : 执行选中的文本.</li>
+<li><code>M-x eval-buffer</code> : 执行整个缓冲区.</li>
+<li><code>M-x load-file</code> : 执行一个文件,会提示输入文件路径/名.</li>
+<li><code>M-x eval-defun</code> : 执行光标所在处的函数定义.(该函数的代码必须要有良好的缩进,不
+然在查找函数时会有问题.就像 narrow-to-defun, eval-defun 一样有bug)</li>
+<li><code>M-x eval-expression</code> : 提示你输入要执行的 Elisp 表达式.</li>
+</ul>
 <blockquote>
 <p>
 关于 <code>narrow-to-defun</code> 有问题的部分 Xahlee 的文章是 2015年的,Emacs 24.4.1 但是直
 到现在我测试时还是有问题.
 </p>
 </blockquote>
-</div>
-</div>
 
-<div id="outline-container-orgaaa607b" class="outline-4">
-<h4 id="orgaaa607b">打印数据</h4>
-<div class="outline-text-4" id="text-orgaaa607b">
 <p>
-打印数据是我们调试程序过程中必不可少的部分,使用 <code>(message)</code> 函数可以将数据显示在
-消息缓冲区中.
+此外, Elisp 也有交互式运行环境,叫做 ielm 使用 <code>M-x ielm</code> 就可以调用它了,使用起来
+和其他语言的交互式运行环境没有差别.
+</p>
+</div>
+</div>
+<div id="outline-container-org50da1f0" class="outline-4">
+<h4 id="org50da1f0">打印</h4>
+<div class="outline-text-4" id="text-org50da1f0">
+<p>
+我接触过的几乎所有语言都有类似 print 的这样的函数,用来打印数据, Elisp 也不例外,
+不过 Emacs 最简单的打印函数应该是 <code>(message FORMAT-STRING &amp;rest ARGS)</code>, 它用来在
+Message Buffer 里打印数据,不会干扰到其他缓冲区,格式化字符串的用法和 C 语言的
+printf() 类似.
 </p>
 
 <p>
@@ -336,16 +335,89 @@ Elisp 关于 Emacs 作为一个编辑器特有的部分,比如移动鼠标,查�
 </p>
 
 <p>
-<code>message</code> 也可以打印变量值,如 <code>(message "Her age is %d" 16)</code>, 有学过 C 语言的应
-该会比较眼熟这种用法,和 printf() 差不多,占位符 <code>%s</code> 表示字符串, <code>%S</code> 表示任意
-Lisp 表达式,例如 <code>(message "Her name is %s" "Jessica")</code>, <code>(message "A List : %S"
-(list 1 2 3 4))</code>
+<code>message</code> 也可以打印变量值,如 <code>(message "Her age is %d" 16)</code> ,占位符 <code>%s</code> 表示字
+符串, <code>%S</code> 表示任意Lisp 表达式,例如 <code>(message "Her name is %s" "Jessica")</code>,
+<code>(message "A List : %S" (list 1 2 3 4))</code>
+</p>
+
+<p>
+其他 LISP 一般都有的打印函数是 (print OBJECT &amp;optional PRINTCHARFUN) 以 lisp 语
+法打印 lisp 对象. 打印的输出可以被其他函数读取,可选的参数可以是一个目标缓冲区或
+是其他函数,如果被省略,那么可选参数会默认是变量 <code>standard-output</code> 里的值,而
+<code>standart-output</code> 为 <code>t</code> 是,指的就是 Message Buffer, 因此可选参数省略时就默认打
+印输出到 Message Buffer . 当编写一个做批处理的 elsip 脚本时,最好是将输出打印到你
+自己的缓冲区,因为 Messages Buffer 会滚动.
+</p>
+
+<p>
+print 的示例:
+</p>
+<pre class="example">
+(setq xbuff (generate-new-buffer "*my output*"))
+
+(print "something" xbuff)
+
+(switch-to-buffer xbuff )
+</pre>
+<p>
+上面代码我只熟悉一个 setq 和 print 一个是设置变量用的,一个就是刚学的 print ,不过
+这些函数名都取的很好,看见名字就知道是做什么用的, 第一条语句生成一个新的缓冲区,名
+字叫做 <code>*my output*</code> 然后将这个缓冲区赋值给变量 xbuff, 第二条语句打印字符串
+"something" 到变量 xbuff, 也就是我们刚刚创建的缓冲区,第三条语句是切换到缓冲区
+xbuff 去,所以三条语句执行的结果就是会切换到一个新的缓冲区,这个缓冲区名字叫 <code>*my
+output*</code> 而里面的内容是 "something".
+</p>
+
+<p>
+与 pirnt 相似的还有两个函数:
+</p>
+<ul class="org-ul">
+<li>(prin1 OBJECT &amp;optional PRINTCHARFUN) : 和 print 相似,但是不会在每个打印输出的
+后面添加换行符.</li>
+<li>(princ OBJECT &amp;optional PRINTCHARFUN) : 打印输出不带换行符和字符串分隔符的内容,为
+了方便人类阅读.</li>
+</ul>
+
+
+<p>
+还有可以直接输出到当前缓冲区的函数 (insert &amp;rest ARGS) 可以将字符串输出到当前缓
+冲区的光标位置.
+例如:
+</p>
+<pre class="example">
+(insert "something")
+</pre>
+<p>
+在用 <code>Ctrl-x Ctrl-e</code> 执行代码后,就会产生下面的结果中的一种,具体是哪种结果取决于
+在执行代码时光标是在右边括号上还是右边括号的右侧.
+</p>
+<pre class="example">
+(insert "something")something
+(insert "something"something)
+</pre>
+<p>
+关于光标位置的函数参见 <a href="#org32fb0bc">光标位置函数</a> 部分.
+形如 insert 这样编辑文本的函数参见 <a href="#orgf30ab1e">文本编辑函数</a> 部分.
+</p>
+
+<p>
+我们经常需要将一系列输出全输入到一个缓冲区,每次都要像 print 函数一样指定缓冲区就
+太麻烦了,所以我们可以使用 (with-output-to-temp-buffer BUFNAME &amp;rest BODY) 函数,
+这个函数会将"标准输出"绑定到 BUFNAME 缓冲区,然后执行 BODY, BODY 里所有输出到标准
+输出的函数的输出都会输出到 BUFNAME 里.这个结构会在 BODY 部分执行之前清空 BUFNAME
+缓冲区.
+</p>
+
+<p>
+<b>*</b>
 </p>
 </div>
 </div>
+<div id="outline-container-org32fb0bc" class="outline-4">
+<h4 id="org32fb0bc">光标位置函数</h4>
 </div>
-<div id="outline-container-org912cfd2" class="outline-3">
-<h3 id="org912cfd2">Emacs Lisp 实践</h3>
+<div id="outline-container-orgf30ab1e" class="outline-4">
+<h4 id="orgf30ab1e">文本编辑函数</h4>
 </div>
 </div>
 </div>
