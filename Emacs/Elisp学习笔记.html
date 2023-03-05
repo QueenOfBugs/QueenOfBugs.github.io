@@ -250,14 +250,19 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8a228df">Xahlee 的 Elisp 教程</a>
+<li><a href="#org6ddf606">Xahlee 的 Elisp 教程</a>
 <ul>
 <li>
 <ul>
-<li><a href="#org97ec8d9">执行 Elisp</a></li>
-<li><a href="#org50da1f0">打印</a></li>
-<li><a href="#org32fb0bc">光标位置函数</a></li>
-<li><a href="#orgf30ab1e">文本编辑函数</a></li>
+<li><a href="#org47c419b">执行 Elisp</a></li>
+<li><a href="#org95de8cb">打印</a></li>
+<li><a href="#org04b4bb0">格式化字符串</a></li>
+<li><a href="#org871f569">注释</a></li>
+<li><a href="#org0d5283e">字符串</a></li>
+<li><a href="#orgf8dd25d">算术运算</a></li>
+<li><a href="#org30c40b3">整型/浮点型,数字/字符串类型转换</a></li>
+<li><a href="#org93780fc">光标位置函数</a></li>
+<li><a href="#org869d532">文本编辑函数</a></li>
 </ul>
 </li>
 </ul>
@@ -267,12 +272,12 @@ for the JavaScript code in this tag.
 </div>
 <p>
 Created: <span class="timestamp-wrapper"><span class="timestamp">[2023-02-21 Tue 12:18]</span></span>
-Last modified: <span class="timestamp-wrapper"><span class="timestamp">[2023-03-01 Wed 00:18]</span></span>
+Last modified: <span class="timestamp-wrapper"><span class="timestamp">[2023-03-01 Wed 15:07]</span></span>
 </p>
 
-<div id="outline-container-org8a228df" class="outline-2">
-<h2 id="org8a228df">Xahlee 的 Elisp 教程</h2>
-<div class="outline-text-2" id="text-org8a228df">
+<div id="outline-container-org6ddf606" class="outline-2">
+<h2 id="org6ddf606">Xahlee 的 Elisp 教程</h2>
+<div class="outline-text-2" id="text-org6ddf606">
 <p>
 Xahlee 的 Emacs Lisp 分为了基础和实践部分,基础只包含 LISP 语言通用的部分,实践部
 分才涉及 Emacs Lisp 这种 LISP 方言特有的知识,我就不按照他的排版来记笔记了,按照我
@@ -280,9 +285,9 @@ Xahlee 的 Emacs Lisp 分为了基础和实践部分,基础只包含 LISP 语言
 </p>
 </div>
 
-<div id="outline-container-org97ec8d9" class="outline-4">
-<h4 id="org97ec8d9">执行 Elisp</h4>
-<div class="outline-text-4" id="text-org97ec8d9">
+<div id="outline-container-org47c419b" class="outline-4">
+<h4 id="org47c419b">执行 Elisp</h4>
+<div class="outline-text-4" id="text-org47c419b">
 <p>
 在任意缓冲区中键入
 </p>
@@ -320,9 +325,9 @@ Xahlee 的 Emacs Lisp 分为了基础和实践部分,基础只包含 LISP 语言
 </p>
 </div>
 </div>
-<div id="outline-container-org50da1f0" class="outline-4">
-<h4 id="org50da1f0">打印</h4>
-<div class="outline-text-4" id="text-org50da1f0">
+<div id="outline-container-org95de8cb" class="outline-4">
+<h4 id="org95de8cb">打印</h4>
+<div class="outline-text-4" id="text-org95de8cb">
 <p>
 我接触过的几乎所有语言都有类似 print 的这样的函数,用来打印数据, Elisp 也不例外,
 不过 Emacs 最简单的打印函数应该是 <code>(message FORMAT-STRING &amp;rest ARGS)</code>, 它用来在
@@ -339,6 +344,19 @@ printf() 类似.
 符串, <code>%S</code> 表示任意Lisp 表达式,例如 <code>(message "Her name is %s" "Jessica")</code>,
 <code>(message "A List : %S" (list 1 2 3 4))</code>
 </p>
+
+<blockquote>
+<p>
+common Lisp 的官网手册教程中使用的是 (format STRING &amp;reset OBJECTS) 函数,它主要
+用来格式化字符串,在所有使用格式化字符串的地方,比如上面的
+<code>(message "Her name is %s" "Jessica")</code> ,
+都可以使用 format 函数替代: <code>(message (format "Her name is %s" "Jessica"))</code>.
+</p>
+
+<p>
+关于格式化字符串占位符的文档,可以查看 format 函数的文档字符串.
+</p>
+</blockquote>
 
 <p>
 其他 LISP 一般都有的打印函数是 (print OBJECT &amp;optional PRINTCHARFUN) 以 lisp 语
@@ -396,8 +414,8 @@ output*</code> 而里面的内容是 "something".
 (insert "something"something)
 </pre>
 <p>
-关于光标位置的函数参见 <a href="#org32fb0bc">光标位置函数</a> 部分.
-形如 insert 这样编辑文本的函数参见 <a href="#orgf30ab1e">文本编辑函数</a> 部分.
+关于光标位置的函数参见 <a href="#org93780fc">光标位置函数</a> 部分.
+形如 insert 这样编辑文本的函数参见 <a href="#org869d532">文本编辑函数</a> 部分.
 </p>
 
 <p>
@@ -405,19 +423,196 @@ output*</code> 而里面的内容是 "something".
 太麻烦了,所以我们可以使用 (with-output-to-temp-buffer BUFNAME &amp;rest BODY) 函数,
 这个函数会将"标准输出"绑定到 BUFNAME 缓冲区,然后执行 BODY, BODY 里所有输出到标准
 输出的函数的输出都会输出到 BUFNAME 里.这个结构会在 BODY 部分执行之前清空 BUFNAME
-缓冲区.
+缓冲区.print , prin1 这样默认输出到标准输出的函数在 BODY 里执行的输出结构都会进
+入到 BUFNAME 里.另外,这个结构在最后会也将 BUFNAME 这个缓冲区设置为只读的.
 </p>
 
 <p>
-<b>*</b>
+示例如下:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+(<span style="font-weight: bold;">setq</span> xbuff (generate-new-buffer <span style="font-style: italic;">"*my output*"</span>))
+
+(<span style="font-weight: bold;">with-output-to-temp-buffer</span> xbuff
+
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">this is inserted in current buffer</span>
+  (insert <span style="font-style: italic;">"xyz"</span>)
+
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">this is printed in buffer xbuff</span>
+  (print <span style="font-style: italic;">"abc"</span>))
+
+(switch-to-buffer xbuff )
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org04b4bb0" class="outline-4">
+<h4 id="org04b4bb0">格式化字符串</h4>
+<div class="outline-text-4" id="text-org04b4bb0">
+<p>
+Elisp 里格式字符串的规则基本与 format 函数的文档字符串里解释的一致,使用
+<code>M-x describe-function format</code> 或快捷键 <code>Ctrl-h f format</code> 很容易就能查看到
+format 的文档字符串,既然都在学 Elisp 了,那肯定在用 Emacs, 这部分的笔记就不用记了,在
+需要时调出来看看就可以了.
 </p>
 </div>
 </div>
-<div id="outline-container-org32fb0bc" class="outline-4">
-<h4 id="org32fb0bc">光标位置函数</h4>
+
+<div id="outline-container-org871f569" class="outline-4">
+<h4 id="org871f569">注释</h4>
+<div class="outline-text-4" id="text-org871f569">
+<p>
+Elisp 代码的注释由一个分号 <code>;</code> 开始,按照传统约定,单行注释由两个分号开始,小节标题
+由三个分号开始:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">this is a comment</span>
+
+(+ 1 2) <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">result is 3</span>
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">by emacs convention, comment on a line by itself starts with 2 semicolons</span>
+
+<span style="font-weight: bold; font-style: italic;">;;; </span><span style="font-weight: bold; font-style: italic;">HEADER COMMENT</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">by emacs convention, comment starting with 3 semicolons is a header, e.g. section title</span>
+</pre>
 </div>
-<div id="outline-container-orgf30ab1e" class="outline-4">
-<h4 id="orgf30ab1e">文本编辑函数</h4>
+</div>
+</div>
+
+<div id="outline-container-org0d5283e" class="outline-4">
+<h4 id="org0d5283e">字符串</h4>
+<div class="outline-text-4" id="text-org0d5283e">
+<p>
+Elisp 里字符串由双引号引用,语法如下:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-style: italic;">"this is a string"</span>
+
+(length <span style="font-style: italic;">"abc"</span>)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">3</span>
+</pre>
+</div>
+<p>
+要在字符串里使用双引号,需要使用字符串转义:例如 <code>"He said \"something\""</code> 还有许
+多特殊的转义字符,如 <code>\n</code> 换行符, <code>\t</code> 制表符等,这在大多数语言中都是通用的.有些我
+没见过的就是 <code>\uxxxx</code> 和 <code>\U00xxxxxx</code> 的 Unicode 转义序列了. 使用 Unicode 转义序
+列可以在字符串里使用符号,形状和表情:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(string-equal <span style="font-style: italic;">"\u0061"</span> <span style="font-style: italic;">"a"</span>)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">t</span>
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#9829; BLACK HEART SUIT</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">codepoint 9829</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">hexadecimal 2665</span>
+(string-equal <span style="font-style: italic;">"\u2665"</span> <span style="font-style: italic;">"&#9829;"</span>)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">t</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#128568; GRINNING CAT FACE WITH SMILING EYES</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">codepoint 128568</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">hexadecimal 1f638</span>
+(string-equal <span style="font-style: italic;">"\U0001f638"</span> <span style="font-style: italic;">"&#128568;"</span>)
+(string-equal <span style="font-style: italic;">"\U00010000"</span> <span style="font-style: italic;">"\u0061"</span>)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">t</span>
+</pre>
+</div>
+<p>
+<code>\uxxxx</code> 和 <code>\U00xxxxxx</code> 后者能表达的字符更多,两者格式有些许差别,其他就都差不多
+了.
+</p>
+
+<p>
+更多内容请参考 info 手册 <a href="https://www.gnu.org/software/emacs/manual/html_mono/elisp.html#String-Type">elisp#String Type</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf8dd25d" class="outline-4">
+<h4 id="orgf8dd25d">算术运算</h4>
+<div class="outline-text-4" id="text-orgf8dd25d">
+<p>
+基本的算术运算看几个例子就都明白了:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">addition</span>
+(+ 4 5 1) <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">10</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Subtraction</span>
+(- 9 2) <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">7</span>
+(- 9 2 3) <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">4</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Multiplication</span>
+(* 2 3) <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">6</span>
+(* 2 3 2) <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">12</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Division</span>
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">WARNING: 7 divided by 2 returns 3, not 3.5,</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">because the division function return a int when both operands are int.</span>
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">integer part of quotient</span>
+(/ 7 2) <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">3</span>
+
+(/ 7 2.0) <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">3.5</span>
+
+WARNING: 2. is still a int. 2.0 is a float.
+</pre>
+</div>
+<p>
+上面加减乘除值得注意的还是涉及浮点数的除法,依旧和 C 语言一样,分整型除法和浮点型
+除法,有一点和其他语言不一样的是,在 Elisp 里 <code>2.</code> 仍然是整型,只有 <code>2.0</code> 才被视为
+浮点数,其他语言如 python 就将 <code>.2</code> 和 <code>2.</code> 都视为浮点数 <code>0.2</code> 和 <code>2.0</code> 了.
+</p>
+
+<p>
+一个有用的小技巧是 Elsip 里许多判断类型的函数都是用 <code>***p</code> 或 <code>***-p</code> 来命名的,
+比如下面判断是否为整型和浮点型的代码示例:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(integerp 2) <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">t</span>
+(integerp 2.) <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">t</span>
+(integerp 2.0) <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">nil</span>
+
+(floatp 2) <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">nil</span>
+(floatp 2.) <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">nil</span>
+(floatp 2.0) <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">t</span>
+</pre>
+</div>
+<blockquote>
+<p>
+另一个小规则, 以 "p" 结尾的函数通常返回值都是 "真" 值或"假" 值, Elisp 里一般 t
+代表真值, nil 代表假值.
+</p>
+</blockquote>
+
+<p>
+另外还有取模运算求余数:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(% 7 4) <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">3</span>
+</pre>
+</div>
+<p>
+以及幂运算:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(expt 2 3) <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">8</span>
+</pre>
+</div>
+
+<p>
+更多关于数字计算的内容可以查阅Emacs 的 info 文档 <a href="https://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Numbers">elisp#Numbers</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org30c40b3" class="outline-4">
+<h4 id="org30c40b3">整型/浮点型,数字/字符串类型转换</h4>
+</div>
+
+<div id="outline-container-org93780fc" class="outline-4">
+<h4 id="org93780fc">光标位置函数</h4>
+</div>
+<div id="outline-container-org869d532" class="outline-4">
+<h4 id="org869d532">文本编辑函数</h4>
 </div>
 </div>
 </div>
