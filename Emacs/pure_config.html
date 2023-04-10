@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="kamisama" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="./index.html"> UP </a>
+ |
+ <a accesskey="H" href="../index.html"> HOME </a>
+</div><div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org84989a6">实操配置过程</a>
+<ul>
+<li><a href="#org1aa1fa1">设置垃圾回收机制</a></li>
+<li><a href="#org88a9bfc">设置编码系统</a></li>
+<li><a href="#org9677eaa">配置图形界面框架参数</a></li>
+<li><a href="#org97397c4">配置包管理器初始化参数</a></li>
+<li><a href="#orgab0da6e">主题设置</a></li>
+<li><a href="#org5fa2e8f">用Evil 模拟 vim</a>
+<ul>
+<li><a href="#org4d289b8">Evil 基础vim按键</a></li>
+<li><a href="#org0858e10">evil-collection 更多功能绑定</a></li>
+</ul>
+</li>
+<li><a href="#orgc806705">Org 生态</a>
+<ul>
+<li><a href="#org0f78210">Org 基础配置</a></li>
+<li><a href="#orgadc42de">Org-tempo &#x2013; 快速输入 "块结构"</a></li>
+<li><a href="#orgc7dd12d">Org-drill &#x2013; org  flashcard "卡片学习"</a></li>
+<li><a href="#org95c6367">Org-crypt &#x2013; (简单)加密文件内容</a></li>
+<li><a href="#org4f4e1e0">Org-babel &#x2013; 编辑,导出和执行源代码</a></li>
+<li><a href="#org2d17f5a">Org-agenda &#x2013; 日程管理</a></li>
+</ul>
+</li>
+<li><a href="#org1878255">input-method &#x2013; 输入法</a>
+<ul>
+<li><a href="#orgc8f6e92">pyim</a></li>
+</ul>
+</li>
+<li><a href="#org519d942">自动更新时间戳</a></li>
+<li><a href="#orge440b0d">编辑设置</a>
+<ul>
+<li><a href="#org90688de">自动清除空格</a></li>
+</ul>
+</li>
+<li><a href="#org82a9e13">输入补全(input completion)</a>
+<ul>
+<li><a href="#orgfa06719">ivy &#x2013; completion mechanism</a></li>
+<li><a href="#org0b59da9">counsel &#x2013; better input completion</a></li>
+<li><a href="#orgc0865c6">swiper &#x2013; better isearch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+Last modified:2023-04-10 11:56:56 kamisama
+</p>
+<div id="outline-container-org84989a6" class="outline-2">
+<h2 id="org84989a6">实操配置过程</h2>
+<div class="outline-text-2" id="text-org84989a6">
+<p>
+本来是尝试将原来的配置改成尽量用原生的 Emacs 提供的功能来进行配置,结果还是先花了大量理解 Emacs 的启动过程.不过学完发现现在对
+Emacs 加载,启用包,各种变量什么时候用,什么时候生效都有了更清晰的认知,现在某个配置项没有得到预期结果,我可以自己分析,自己实验得到
+解答,原先只能靠实验和猜测,一个是有模型的"试错"学习,一个是无模型的"试错"学习,无模型虽然最后可能也可以解决问题,但提升有限,有模型
+的学习虽然在开始配置前花了大量时间成本去理解它,但最后解决问题起来会更容易,提升会更大.
+</p>
+</div>
+
+<div id="outline-container-org1aa1fa1" class="outline-3">
+<h3 id="org1aa1fa1">设置垃圾回收机制</h3>
+<div class="outline-text-3" id="text-org1aa1fa1">
+<p>
+Emcas 在启动过程中,一旦最后一次垃圾收集后,由一定量的字节被分配给 Emacs 就会自动进行一次垃圾收集行为,这个字节数由 gc-cons-threshold 控制;
+而且只要调用 'eval' 命令,垃圾收集行为就会自动执行.
+因此为了避免启动过程中频繁的垃圾回收行为拖慢启动时间,需要将 gc-cons-threshold 设置为一个比较大的数值,来减少垃圾收集行为的执行,并尽可能少的在
+启动过程中执行 eval 命令.
+</p>
+
+<p>
+另外 gc-cons-percentage 也是设置自动回收行为执行的间隔的,不过它是用百分比来设置的,分配的堆内存百分比到达它设置的值时也会触发垃圾收集行为,但如果
+这个百分比对应的字节数小于 gc-cons-threshold ,则会忽略这个值,使用 gc-cons-threshold 来触发垃圾收集行为.
+</p>
+
+<p>
+因为需要减少整个启动过程中垃圾收集行为的次数,所以需要在启动过程尽量开始的位置设置 gc-cons-threshold ,例如 early-init.el 里.
+又因为需要避免 Emacs 使用中的产生的垃圾数据占用大量内存之后才会进行垃圾收集行为,所以我们需要在 Emacs 启动后将其调整为默认值(64位系统为 800000,32位系统为 400000),
+一般都是初始化 Emacs 阶段加载各种包,执行用户的配置代码等需要大量内存,所以在 after-init-hook,emacs-startup-hook 或 window-setup-hook里将其
+设置回默认值都行.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> gc-cons-threshold 1000000)
+(add-hook 'after-init-hook (<span style="font-weight: bold;">lambda</span>() (<span style="font-weight: bold;">setq</span> gc-cons-threshold 800000)))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org88a9bfc" class="outline-3">
+<h3 id="org88a9bfc">设置编码系统</h3>
+<div class="outline-text-3" id="text-org88a9bfc">
+<p>
+语言环境的设置会影响到默认输入法,因为每种语言环境都有自己的一套编码格式,输入法和
+字符集,因此编码系统的设置最好是放在配置文件的前面,至少要放在输入法设置的前面,不
+然 language-environment 的设置就会.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(set-default-coding-systems 'utf-8)
+(set-language-environment <span style="font-style: italic;">"UTF-8"</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9677eaa" class="outline-3">
+<h3 id="org9677eaa">配置图形界面框架参数</h3>
+<div class="outline-text-3" id="text-org9677eaa">
+<p>
+图形界面的框架参数可以控制我们看到的 Emacs 界面外观.对于设置主题也是在设置这些参数,一般设置主题还是使用 load-theme 方便,所以
+框架参数这里就不配置主题相关的设置. 影响图形框架参数的主要就是两个参数 initial-frame-alist 和 default-frame-alist,前者负责
+Emacs 启动后我们看到的第一个界面的设置,后者负责新创建的框架的设置,另外,如果只设置了后者,没设置前者,则后者的设置会应用到前者上.
+</p>
+
+<p>
+基于两个参数的作用区别,在没有特殊要求的情况下,只用设置 default-frame-alist 就行了.
+</p>
+<blockquote>
+<p>
+如果想在 Emacs 运行时改变框架参数并实时应用改变,思路就是先设置 default-frame-alist 然后再调用 frame-notice-user-settings 就可以立即让改变生效查看效果.
+事实上 Emacs 也提供了一个对应的函数 modify-all-frames-parameters 它接受一个和 default-frame-alist 一样的关系列表,设置完参数后就会调用 frame-notice-user-settings 让参数立即生效.
+但由于这个立即生效也是重新绘制图形界面,所以在运行Emacs时调试使用还可以,放在配置文件里就会产生一闪一闪的效果,搞得像哪里弄错了一样,明白这一点后我就不准备用它来进行设置了.
+</p>
+</blockquote>
+
+<p>
+下面配置里的一些参数可能有人没见过,实际上这些参数就是对应的命令所修改的对应参数,比如 menu-bar-mode 命令用于开启或关闭菜单栏查看它的源码可以看到它是修改了框架参数里的 menu-bar-lines 为1或0
+来表示是否显示菜单栏.tool-bar-mode 和 tool-bar-lines 也是类似的.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> default-frame-alist '(
+
+                            (menu-bar-lines . 0) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#21462;&#28040;&#33756;&#21333;&#26639;</span>
+                            (tool-bar-lines . 0) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#21462;&#28040;&#24037;&#20855;&#26639;</span>
+                            (vertical-scroll-bars . nil) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#21462;&#28040;&#20391;&#36793;&#28378;&#21160;&#26639;</span>
+                            (horizontal-scroll-bars . nil) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#21462;&#28040;&#27700;&#24179;&#28378;&#21160;&#26639;</span>
+                            (left-fringe . nil) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">nil &#20026;&#40664;&#35748;&#30340; fringe &#23485;&#24230;</span>
+                            (right-fringe . nil)
+                            (right-divider-width . 0) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#24038;&#21491; window &#20998;&#38548;&#32447;&#23485;&#24230;</span>
+                            (bottom-divider-width . 0) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#19978;&#19979; window &#20998;&#38548;&#32447;&#23485;&#24230;</span>
+                            <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(background-color . "#66CCFF") ;; &#35774;&#32622;&#32972;&#26223;&#33394;</span>
+                            <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(foreground-color . "#660000") ;; &#35774;&#32622;&#21069;&#26223;&#33394;</span>
+                            (font . <span style="font-style: italic;">"Inconsolata-12"</span>)
+                            (fullscreen . maximized) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#26368;&#22823;&#21270;&#31383;&#21475;</span>
+))
+
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(setq mode-line-format nil)</span>
+(blink-cursor-mode -1)
+(<span style="font-weight: bold;">setq</span> ring-bell-function 'ignore)
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(setq inhibit-startup-screen t) ;; &#31105;&#29992;&#24320;&#22987;&#30340; Gnu Emacs &#32531;&#20914;&#21306;</span>
+(<span style="font-weight: bold;">setq</span> initial-buffer-choice t) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#36873;&#25321; *scratch* &#26368;&#20026;&#21021;&#22987;&#32531;&#20914;&#21306;,&#21516;&#26102;&#20250;&#31105;&#29992;&#24320;&#22987;&#30340; Gnu Emacs.</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">nice scrolling</span>
+(<span style="font-weight: bold;">setq</span> scroll-margin 0
+      scroll-conservatively 100000
+      scroll-preserve-screen-position 1)
+(<span style="font-weight: bold;">setq</span> default-directory <span style="font-style: italic;">"~/"</span>)
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(setq frame-inhibit-implied-resize nil)</span>
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#23383;&#20307;&#35774;&#32622;</span>
+(set-fontset-font <span style="font-style: italic;">"fontset-default"</span>
+                  'han <span style="font-style: italic;">"Wenquanyi Zen Hei Mono"</span>)
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(modify-all-frames-parameters '(
+                               (menu-bar-lines . 0) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#21462;&#28040;&#33756;&#21333;&#26639;</span>
+                               (tool-bar-lines . 0) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#21462;&#28040;&#24037;&#20855;&#26639;</span>
+                               (vertical-scroll-bars . nil) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#21462;&#28040;&#20391;&#36793;&#28378;&#21160;&#26639;</span>
+                               (horizontal-scroll-bars . nil) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#21462;&#28040;&#27700;&#24179;&#28378;&#21160;&#26639;</span>
+                               (left-fringe . nil) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">nil &#20026;&#40664;&#35748;&#30340; fringe &#23485;&#24230;</span>
+                               (right-fringe . nil)
+                               (right-divider-width . 1) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#24038;&#21491; window &#20998;&#38548;&#32447;&#23485;&#24230;</span>
+                               (bottom-divider-width . 1) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#19978;&#19979; window &#20998;&#38548;&#32447;&#23485;&#24230;</span>
+                               (background-color . <span style="font-style: italic;">"#000000"</span>) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#35774;&#32622;&#32972;&#26223;&#33394;</span>
+                               (foreground-color . <span style="font-style: italic;">"#660000"</span>) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#35774;&#32622;&#21069;&#26223;&#33394;</span>
+                               (fullscreen . maximized) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#26368;&#22823;&#21270;&#31383;&#21475;</span>
+                               ))
+(<span style="font-weight: bold;">setq</span> mode-line-format nil)
+(blink-cursor-mode -1)
+(<span style="font-weight: bold;">setq</span> ring-bell-function 'ignore)
+(<span style="font-weight: bold;">setq</span> inhibit-startup-screen t)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org97397c4" class="outline-3">
+<h3 id="org97397c4">配置包管理器初始化参数</h3>
+<div class="outline-text-3" id="text-org97397c4">
+<p>
+由于众所周知的网络问题,常用的三个 ELPA(Emacs Lisp Package Archives)仓库,gnu elpa,melpa和nognu elpa的官方网址总是会出现各种各样的连接问题.
+所以决定使用网易的镜像仓库
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> package-archives '((<span style="font-style: italic;">"gnu"</span>    . <span style="font-style: italic;">"https://mirrors.163.com/elpa/gnu/"</span>)
+                         (<span style="font-style: italic;">"nongnu"</span> . <span style="font-style: italic;">"https://mirrors.163.com/elpa/nongnu/"</span>)
+                         (<span style="font-style: italic;">"melpa"</span>  . <span style="font-style: italic;">"https://mirrors.163.com/elpa/melpa/"</span>)))
+</pre>
+</div>
+
+<p>
+<del>不希望emacs 自动加载所有包的autoload 命令</del>,除非是自己编写包的加载过程,否则一定是需要将
+这些包加载到 Emacs 的运行环境中的,不然就无法使用,所以最终还是要调用 package-activate-all 来
+"激活" 所有已经安装了的包的,emm 可能还有一种情况,就是安装了许多包,但只使用了其中的部分,没使用,也不准备使用
+的包没有被卸载(删除),这种情况就需要用下面的选项禁用加载所有包,并且需要设置 package-load-list 来控制加载哪些包:
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> package-enable-at-startup nil)
+</pre>
+</div>
+
+<p>
+<del>由于加载包是在 early-init 文件加载之后进行的,所以设置包管理器初始化参数最好在 early-init 之前.</del>
+early-init 之后只是简单激活已经安装的包,就是加载load-path 里找到的这些包的 autoload 命令在包比较少时并没有占用太多启动时间,
+查看了 package 的源码,发现读取包内容缓存到 package-archive-contents 里也不用花很长时间,反而是 package&#x2013;build-compatibility-table 占用了大量时间.
+每次使用package-initialize 的目的我认为是刷新包信息缓存,那只要确认有那些缓存文件就可以了,那个兼容性表暂时不知道什么具体作用,因为 package-install 里也
+没有发现检查兼容性的,所以我决定先试试将 package-initialize 拆分,只进行读取缓存的操作,判断是否存在缓存文件,然后就开始安装包,省略掉兼容性.
+以前从各个大佬那里抄来的配置里放在 init 文件里总是要进行 package-initialize 刷新已经安装了的包的记录,并调用 package-activate-all 激活所有包.
+实际上这个函数调用只是重复了 Emacs 正常启动时加载并激活所有包的过程,init 文件里调用它一般是因为修改了 <b>包存档</b> 的仓库地址,想要让修改生效,并且从
+仓库里下载包存档的信息,所以一般还会与 package-refresh-contents 一起使用从仓库下载包的列表信息,这个过程其实也就是 list-package 命令执行时会做
+的事情,那如果我们把这些配置放在包管理器初始化之前,也就是 early-init 文件里,就可以省略这些额外重复的动作了.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(require 'package)</span>
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(package-read-all-archive-contents)</span>
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(unless package-archive-contents</span>
+<span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(package-refresh-contents))</span>
+  (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">package</span>)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#35835;&#21462;&#21253;&#32531;&#23384;&#25991;&#20214;&#30340;&#20449;&#24687;&#21040; package-archive-contents</span>
+  (package-read-all-archive-contents)
+  (<span style="font-weight: bold;">unless</span> package-archive-contents
+    (package-refresh-contents)
+  (package-initialize))
+  (<span style="font-weight: bold;">unless</span> package--initialized
+    (package-initialize))
+</pre>
+</div>
+<p>
+<del>这里的话就是省略了好多步骤的 package-initialize 命令, pacakge 包的初始化丐版?不知道能不能正常用,先用着,出错了再来改.</del>
+<del>本来是准备在 before-init-hook 里设置这个刷新缓存的,但是测试发现即使经过了 package-activate-all 也不会让 pacakge 包初始化,</del>
+<del>package-activate-all 只是加载了找到的包的 autoload 命令,而不是全部.</del>
+到了这里,所有已安装的包都可以使用了,注意,是已经安装了的包,如果是第一次使用这个文件,那么很多包都是没有安装的,所以 需要用 require
+来加载包才能使用它们,而且加载完 early-init 之后,自动执行的 package-activate-all 也会重新加载一次所有已下载的包,对于已经加载了的包
+则会跳过.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgab0da6e" class="outline-3">
+<h3 id="orgab0da6e">主题设置</h3>
+<div class="outline-text-3" id="text-orgab0da6e">
+<p>
+只要下载安装了主题,就可以设置主题了,无论是early-inti 或是 init 文件里都可以,但在
+init 文件里的设置会导致 emacs 的窗口框架在启动时重新绘制一次,所以我选择在
+early-inti 里设置.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">unless</span> (package-installed-p 'doom-themes)
+  (package-install 'doom-themes))
+(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">doom-themes</span>)
+(load-theme 'doom-nord t) 
+
+(<span style="font-weight: bold;">unless</span> (package-installed-p 'doom-modeline)
+  (package-install 'doom-modeline))
+(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">doom-modeline</span>)
+(doom-modeline-mode)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5fa2e8f" class="outline-3">
+<h3 id="org5fa2e8f">用Evil 模拟 vim</h3>
+<div class="outline-text-3" id="text-org5fa2e8f">
+</div>
+<div id="outline-container-org4d289b8" class="outline-4">
+<h4 id="org4d289b8">Evil 基础vim按键</h4>
+<div class="outline-text-4" id="text-org4d289b8">
+<p>
+Evil 包模拟了 vim 基本的按键功能, 但没有与 Emacs 其他功能绑定,
+比如,如果只设置它,那在 org mode 里就不能用 Tab 来调用 org-cycle 切换条目的可视性了.
+</p>
+
+<p>
+需要让其很好适配 emacs 其他库,则需要用到 <a href="#org0858e10">evil-collection 更多功能绑定</a>
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">unless</span> (package-installed-p 'evil)
+  (package-install 'evil))
+(<span style="font-weight: bold;">setq</span> evil-want-keybinding nil)
+(evil-mode 1)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0858e10" class="outline-4">
+<h4 id="org0858e10">evil-collection 更多功能绑定</h4>
+<div class="outline-text-4" id="text-org0858e10">
+<p>
+evil-collection 将 evil 按键与更多 Emacs 功能结合.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">unless</span> (package-installed-p 'evil-collection)
+  (package-install 'evil-collection))
+
+(<span style="font-weight: bold;">with-eval-after-load</span> 'evil
+  (<span style="font-weight: bold;">progn</span> (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">evil-collection</span>)
+         (evil-collection-init)
+         ))
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc806705" class="outline-3">
+<h3 id="orgc806705">Org 生态</h3>
+<div class="outline-text-3" id="text-orgc806705">
+</div>
+<div id="outline-container-org0f78210" class="outline-4">
+<h4 id="org0f78210">Org 基础配置</h4>
+<div class="outline-text-4" id="text-org0f78210">
+<p>
+配置 Org 的基本功能,包括全局快捷键,工作目录等
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-directory <span style="font-style: italic;">"~/MyLife/org"</span>) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#23558; Org &#24037;&#20316;&#30446;&#24405;&#35774;&#32622;&#20026;&#33258;&#24049;&#30340;&#24037;&#20316;&#30446;&#24405;.</span>
+(<span style="font-weight: bold;">setq</span> org-hide-emphasis-markers nil) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#26174;&#31034;&#26631;&#35760;&#31526;&#21495;,&#40664;&#35748;&#23601;&#26159; nil &#20294;&#22914;&#26524;&#29992;&#20102;&#20854;&#20182;&#20027;&#39064;&#30456;&#20851;&#30340;&#35774;&#32622;,&#23601;&#20250;&#22312;&#20351;&#29992;&#26631;&#35760;&#31526;&#21495;&#26102;&#21482;&#26174;&#31034;&#25928;&#26524;,&#32780;&#19981;&#26174;&#31034;&#31526;&#21495;.</span>
+(global-set-key (kbd <span style="font-style: italic;">"C-c l"</span>) 'org-store-link) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#35753;&#21629;&#20196;&#20840;&#23616;&#21487;&#29992;,&#26041;&#20415;&#20445;&#23384;&#20301;&#32622;&#20449;&#24687;,&#38543;&#21518;&#29992;&#20316;&#38142;&#25509;&#25554;&#20837;.</span>
+(global-set-key (kbd <span style="font-style: italic;">"C-c a"</span>) 'org-agenda) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#35753; org-agenda &#20840;&#23616;&#21487;&#29992;,&#26041;&#20415;&#26597;&#30475;&#26085;&#31243;.</span>
+(global-set-key (kbd <span style="font-style: italic;">"C-c c"</span>) 'org-capture) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#35753; org-capture &#20840;&#23616;&#21487;&#29992;,&#26041;&#20415;&#24555;&#36895;&#20648;&#23384;&#31508;&#35760;.</span>
+
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#21551;&#29992; habit &#27169;&#22359;,&#29992;&#20110;&#20064;&#24815;&#31649;&#29702;&#35760;&#24405;.</span>
+(<span style="font-weight: bold;">with-eval-after-load</span> 'org (add-to-list 'org-modules 'org-habit t)) <span style="font-weight: bold; font-style: italic;">;; </span>
+
+(add-hook 'org-mode-hook (<span style="font-weight: bold;">lambda</span>() (<span style="font-weight: bold;">setq</span> fill-column 80) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#35774;&#32622;&#25442;&#34892;&#30340;&#26368;&#22823;&#23383;&#25968;</span>
+                                (auto-fill-mode) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#21551;&#29992;&#33258;&#21160;&#25442;&#34892;&#27169;&#24335;</span>
+                                ))
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#20801;&#35768;&#23383;&#27597;&#20316;&#20026;&#21015;&#34920;&#32534;&#21495;</span>
+(<span style="font-weight: bold;">setq</span> org-list-allow-alphabetical t)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#26102;&#38388;&#25139;&#26684;&#24335;&#32479;&#19968;&#20026;&#33521;&#25991;</span>
+(<span style="font-weight: bold;">setq</span> system-time-locale <span style="font-style: italic;">"C"</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgadc42de" class="outline-4">
+<h4 id="orgadc42de">Org-tempo &#x2013; 快速输入 "块结构"</h4>
+<div class="outline-text-4" id="text-orgadc42de">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"> (<span style="font-weight: bold;">with-eval-after-load</span> 'org
+   (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">org-tempo</span>))
+(<span style="font-weight: bold;">setq</span> org-structure-template-alist '(
+                                     (<span style="font-style: italic;">"el"</span> . <span style="font-style: italic;">"src emacs-lisp"</span>)
+                                     (<span style="font-style: italic;">"py"</span> . <span style="font-style: italic;">"src python"</span>)
+                                     (<span style="font-style: italic;">"a"</span> . <span style="font-style: italic;">"export ascii"</span>)
+                                     (<span style="font-style: italic;">"c"</span> . <span style="font-style: italic;">"center"</span>)
+                                     (<span style="font-style: italic;">"C"</span> . <span style="font-style: italic;">"comment"</span>)
+                                     (<span style="font-style: italic;">"e"</span> . <span style="font-style: italic;">"example"</span>)
+                                     (<span style="font-style: italic;">"E"</span> . <span style="font-style: italic;">"export"</span>)
+                                     (<span style="font-style: italic;">"h"</span> . <span style="font-style: italic;">"export html"</span>)
+                                     (<span style="font-style: italic;">"l"</span> . <span style="font-style: italic;">"export latex"</span>)
+                                     (<span style="font-style: italic;">"q"</span> . <span style="font-style: italic;">"quote"</span>)
+                                     (<span style="font-style: italic;">"v"</span> . <span style="font-style: italic;">"verse"</span>)
+                                     (<span style="font-style: italic;">"s"</span> . <span style="font-style: italic;">"src"</span>)
+                                     ))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc7dd12d" class="outline-4">
+<h4 id="orgc7dd12d">Org-drill &#x2013; org  flashcard "卡片学习"</h4>
+<div class="outline-text-4" id="text-orgc7dd12d">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">unless</span> (package-installed-p 'org-drill)
+(package-install 'org-drill))
+
+(<span style="font-weight: bold;">with-eval-after-load</span> 'org
+(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">org-drill</span>))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org95c6367" class="outline-4">
+<h4 id="org95c6367">Org-crypt &#x2013; (简单)加密文件内容</h4>
+<div class="outline-text-4" id="text-org95c6367">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(org-crypt-use-before-save-magic)
+(<span style="font-weight: bold;">setq</span> org-tags-exclude-from-inheritance (<span style="font-weight: bold;">quote</span> (<span style="font-style: italic;">"crypt"</span>)))
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">GPG key for encryption</span>
+(<span style="font-weight: bold;">setq</span> org-crypt-key <span style="font-style: italic;">"kamisama"</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4f4e1e0" class="outline-4">
+<h4 id="org4f4e1e0">Org-babel &#x2013; 编辑,导出和执行源代码</h4>
+<div class="outline-text-4" id="text-org4f4e1e0">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-confirm-babel-evaluate nil) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">C-c C-c &#26102;&#21462;&#28040;&#30830;&#35748;</span>
+
+(org-babel-do-load-languages <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">org-babel &#35821;&#35328;&#25903;&#25345;</span>
+ 'org-babel-load-languages
+ '(
+   (emacs-lisp . t) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#36825;&#34892;&#20854;&#23454;&#19981;&#38656;&#35201;,&#22240;&#20026;&#40664;&#35748;&#23601;(&#21482;)&#21551;&#29992;&#20102; eamcs-lisp &#25903;&#25345;.</span>
+   (python . t)
+   ))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2d17f5a" class="outline-4">
+<h4 id="org2d17f5a">Org-agenda &#x2013; 日程管理</h4>
+<div class="outline-text-4" id="text-org2d17f5a">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#23558; Org &#24037;&#20316;&#30446;&#24405;&#28155;&#21152;&#21040; org-agenda &#30340;&#24037;&#20316;&#30446;&#24405;</span>
+  (<span style="font-weight: bold;">with-eval-after-load</span> 'org-agenda
+    (add-to-list 'org-agenda-files org-directory))
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1878255" class="outline-3">
+<h3 id="org1878255">input-method &#x2013; 输入法</h3>
+<div class="outline-text-3" id="text-org1878255">
+<p>
+流行的 emacs 中文输入法有 emacs-rime 和 pyim 其中 emacs-rime 需要 librime 库支持, pyim则
+由纯 emacs-lisp 实现.
+</p>
+
+<p>
+在 windows 上面安装编译 librime 比较麻烦,所以决定使用 pyim
+</p>
+</div>
+<div id="outline-container-orgc8f6e92" class="outline-4">
+<h4 id="orgc8f6e92">pyim</h4>
+<div class="outline-text-4" id="text-orgc8f6e92">
+</div>
+<ul class="org-ul">
+<li><a id="org5406997"></a>安装<br />
+<div class="outline-text-5" id="text-org5406997">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">unless</span> (package-installed-p 'pyim)
+(package-install 'pyim))
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgc8729a2"></a>基本配置<br />
+<div class="outline-text-5" id="text-orgc8729a2">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#23433;&#35013;&#26174;&#31034;&#20505;&#36873;&#35789;&#30340;&#21253;</span>
+(<span style="font-weight: bold;">unless</span> (package-installed-p 'posframe)
+  (package-install 'posframe))
+(<span style="font-weight: bold;">setq</span> pyim-page-tooltip 'posframe) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#26174;&#31034;&#20505;&#36873;&#35789;&#20351;&#29992;&#30340;&#24037;&#20855;&#26639;,&#40664;&#35748;&#20351;&#29992;&#30340;&#26159; minibuffer(&#23454;&#38469;&#19978;&#26159;&#22238;&#21709;&#21306;&#22495;)</span>
+(<span style="font-weight: bold;">setq</span> default-input-method <span style="font-style: italic;">"pyim"</span>) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#35774;&#32622;&#40664;&#35748;&#30340;&#36755;&#20837;&#27861;,</span>
+(<span style="font-weight: bold;">setq</span> pyim-page-length 5)
+(global-set-key (kbd <span style="font-style: italic;">"M-j"</span>) 'pyim-convert-string-at-point)
+(pyim-default-scheme 'quanpin)
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#26029;&#35328;&#35774;&#32622;</span>
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#20174; emacs-rime &#37027;&#37324;&#22797;&#21046;&#36807;&#26469;&#30340;&#26029;&#35328;&#21028;&#26029;&#20989;&#25968;(&#25506;&#38024;?)</span>
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">rime-predicate-space-after-cc-p</span> ()
+  <span style="font-style: italic;">"If cursor is after a whitespace which follow a non-ascii character."</span>
+  (<span style="font-weight: bold;">and</span> (&gt; (point) (<span style="font-weight: bold;">save-excursion</span> (back-to-indentation) (point)))
+       (<span style="font-weight: bold;">let</span> ((string (buffer-substring (point) (max (line-beginning-position) (- (point) 80)))))
+         (string-match-p <span style="font-style: italic;">"\\cc +$"</span> string))))
+(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">rime-predicate-after-alphabet-char-p</span> ()
+  <span style="font-style: italic;">"If the cursor is after a alphabet character.</span>
+
+<span style="font-style: italic;">Can be used in `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">rime-disable-predicates</span><span style="font-style: italic;">' and `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">rime-inline-predicates</span><span style="font-style: italic;">'."</span>
+  (<span style="font-weight: bold;">and</span> (&gt; (point) (<span style="font-weight: bold;">save-excursion</span> (back-to-indentation) (point)))
+       (<span style="font-weight: bold;">let</span> ((string (buffer-substring (point) (max (line-beginning-position) (- (point) 80)))))
+         (string-match-p <span style="font-style: italic;">"[a-zA-Z][0-9\x21-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f]*$"</span> string))))
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">pyim &#30340;&#26029;&#35328;&#35774;&#32622;</span>
+(<span style="font-weight: bold;">setq-default</span> pyim-english-input-switch-functions
+              '(
+pyim-probe-program-mode
+                  pyim-probe-org-structure-template
+                  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#20809;&#26631;&#20301;&#20110;&#31354;&#26684;&#20043;&#21518;,&#19988;&#31354;&#26684;&#20043;&#21069;&#26159;&#20013;&#25991;,&#19979;&#19968;&#20010;&#23383;&#31526;&#23601;&#20250;&#20999;&#25442;&#20026;&#33521;&#25991;,&#20294;&#25928;&#26524;&#20165;&#38480;&#20110;&#19968;&#20010;&#23383;&#31526;</span>
+                  rime-predicate-space-after-cc-p
+                  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#20809;&#26631;&#20301;&#20110;&#23383;&#27597;&#20043;&#21518;,&#21017;&#32487;&#32493;&#20351;&#29992;&#33521;&#25991;&#36755;&#20837;,&#37197;&#21512;&#19978;&#38754;&#30340;&#26029;&#35328;&#35774;&#32622;,&#21487;&#20197;&#36798;&#21040;&#25928;&#26524;:</span>
+                  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#36755;&#20837;:&#20013;&#25991;&lt;space&gt;english&lt;space&gt;&#20013;&#25991;, &#25928;&#26524;: &#20013;&#25991; english &#20013;&#25991;</span>
+                  rime-predicate-after-alphabet-char-p
+                ))
+
+(<span style="font-weight: bold;">setq-default</span> pyim-punctuation-translate-p '(no)) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">no:&#19968;&#24459;&#20351;&#29992;&#21322;&#35282;&#26631;&#28857;;auto:&#20013;&#25991;&#20840;&#35282;,&#33521;&#25991;&#21322;&#35282;;yes:&#19968;&#24459;&#20840;&#35282;&#26631;&#28857;.</span>
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org4210cf9"></a>词库配置<br />
+<ul class="org-ul">
+<li><a id="orgc5ddbdd"></a>快速配置的基础词库<br />
+<div class="outline-text-6" id="text-orgc5ddbdd">
+<p>
+最基础的词库,安装启用了就可以体验带词库的 pyim 了,但使用起来很难受,不如自己设置词库.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">unless</span> (package-installed-p 'pyim-basedict)
+(package-install 'pyim-basedict))
+<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#21551;&#21160; pyim &#21518;&#21551;&#29992;&#35789;&#24211;</span>
+(<span style="font-weight: bold;">with-eval-after-load</span> 'pyim
+  (<span style="font-weight: bold;">progn</span>
+    (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">pyim-basedict</span>))
+  )
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgfba62ae"></a>自己配置词库<br />
+<div class="outline-text-6" id="text-orgfba62ae">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> pyim-dicts
+      '(
+        <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(:name "&#35745;&#31639;&#26426;&#21644;&#24515;&#29702;&#23398;" :file "C:/Users/kamisama/Desktop/chinese-pyim.txt")</span>
+        <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(:name "&#35745;&#31639;&#26426;&#24515;&#29702;&#23398;" :file "~/chinese-pyim.txt")</span>
+        <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">(:name "allinone" :file "~/allinone.txt")</span>
+        (<span style="font-weight: bold;">:name</span> <span style="font-style: italic;">"600&#19975;"</span> <span style="font-weight: bold;">:file</span> <span style="font-style: italic;">"~/.emacs.d/600w.pyim"</span>)
+        (<span style="font-weight: bold;">:name</span> <span style="font-style: italic;">"&#20010;&#20154;&#35789;&#24211;"</span> <span style="font-weight: bold;">:file</span> <span style="font-style: italic;">"~/.emacs.d/words_counts.pyim"</span>)
+        (<span style="font-weight: bold;">:name</span> <span style="font-style: italic;">"&#22522;&#30784;&#35789;&#24211;"</span> <span style="font-weight: bold;">:file</span> <span style="font-style: italic;">"~/.emacs.d/&#22522;&#30784;&#35789;&#24211;.pyim"</span>)
+        (<span style="font-weight: bold;">:name</span> <span style="font-style: italic;">"&#24494;&#36719;&#25340;&#38899;"</span> <span style="font-weight: bold;">:file</span> <span style="font-style: italic;">"~/.emacs.d/&#24494;&#36719;&#25340;&#38899;.pyim"</span>)
+        ))
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org519d942" class="outline-3">
+<h3 id="org519d942">自动更新时间戳</h3>
+<div class="outline-text-3" id="text-org519d942">
+<p>
+time-stamp 命令可以更新时间戳,时间戳默认格式:
+</p>
+<pre class="example">
+Time-stamp: &lt;2020-08-07 17:10:21 gildea&gt;
+</pre>
+<p>
+将该命令添加到 before-save-hook 里面,就可以在每个文件保存之间都更新一遍时间戳了.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(add-hook 'before-save-hook 'time-stamp)
+</pre>
+</div>
+<p>
+时间戳的格式是可以自定义的,所以我们可以实现在文件里记录每个文件最后一次保存的时
+间.
+时间戳格式可以通过 <code>time-stamp-pattern</code> 修改,
+这个变量最好是作为文件本地变量来使用,不然可能会和别人的文件不兼容. 我目前只想要
+把Github Pages 上面记录的笔记的文件里都添加上最后一次修改的日期,所以我可以选择每
+个文件都添加一个本地变量,但是这样太麻烦了,emacs 有一个 =目录变量=(directory
+variables) 可以实现我想要的功能,它能将一个变量设置为对当前目录及其子目录下的所有
+文件来说都是本地文件变量,具体使用查看文档:<a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Directory-Variables.html">directory variables</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">((nil . ((time-stamp-pattern . <span style="font-style: italic;">"Last modified:%%$"</span>)
+         )))
+</pre>
+</div>
+<p>
+这样github pages 里的内容目录下面的每个文件夹里的所有文件都会有一个文件本地变量
+<code>time-stamp-pattern</code> 被设置了
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge440b0d" class="outline-3">
+<h3 id="orge440b0d">编辑设置</h3>
+<div class="outline-text-3" id="text-orge440b0d">
+</div>
+<div id="outline-container-org90688de" class="outline-4">
+<h4 id="org90688de">自动清除空格</h4>
+<div class="outline-text-4" id="text-org90688de">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">unless</span> (package-installed-p 'ws-butler)
+(package-install 'ws-butler))
+(add-hook 'prog-mode-hook #'ws-butler-mode)
+(add-hook 'text-mode-hook #'ws-butler-mode)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org82a9e13" class="outline-3">
+<h3 id="org82a9e13">输入补全(input completion)</h3>
+<div class="outline-text-3" id="text-org82a9e13">
+<p>
+Emacs 的补全分为两种,一种是文本补全,专指对缓冲区中编辑的内容进行补全,另一种是对
+minibuffer 中输入的命令进行补全.
+</p>
+
+<p>
+,ivy, 一个 Emacs 的通用补全机制; counsel, ivy 加强版的 Emacs 常用命令的集合;
+swiper ,Isearch 的 ivy 加强版.
+</p>
+</div>
+
+<div id="outline-container-orgfa06719" class="outline-4">
+<h4 id="orgfa06719">ivy &#x2013; completion mechanism</h4>
+<div class="outline-text-4" id="text-orgfa06719">
+<p>
+ivy 是 counsel 和 swiper 的基础,所以需要先安装这个包
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">unless</span> (package-installed-p 'ivy)
+(package-install 'ivy))
+(ivy-mode)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0b59da9" class="outline-4">
+<h4 id="org0b59da9">counsel &#x2013; better input completion</h4>
+<div class="outline-text-4" id="text-org0b59da9">
+<p>
+counsel 需要 ivy 和 swiper 包,安装 counsel 会自动安装这两个包.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">unless</span> (package-installed-p 'counsel)
+(package-install 'counsel))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc0865c6" class="outline-4">
+<h4 id="orgc0865c6">swiper &#x2013; better isearch</h4>
+<div class="outline-text-4" id="text-orgc0865c6">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">unless</span> (package-installed-p 'swiper)
+(package-install 'swiper))
+(global-set-key (kbd <span style="font-style: italic;">"C-s"</span>) 'swiper)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: kamisama</p>
+</div>
+</body>
+</html>
