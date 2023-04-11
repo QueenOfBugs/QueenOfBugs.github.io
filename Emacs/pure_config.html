@@ -249,46 +249,46 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7ca2a7a">实操配置过程</a>
+<li><a href="#orgeb5baf5">实操配置过程</a>
 <ul>
-<li><a href="#orgb89da45">设置垃圾回收机制</a></li>
-<li><a href="#orgd5c94f4">设置编码系统</a></li>
-<li><a href="#org16f29df">配置图形界面框架参数</a></li>
-<li><a href="#orge0b1918">配置包管理器初始化参数</a></li>
-<li><a href="#org7773335">主题设置</a></li>
-<li><a href="#org7538361">用Evil 模拟 vim</a>
+<li><a href="#org1b60d52">设置垃圾回收机制</a></li>
+<li><a href="#org5416323">设置编码系统</a></li>
+<li><a href="#orgccb4764">配置图形界面框架参数</a></li>
+<li><a href="#org762272e">配置包管理器初始化参数</a></li>
+<li><a href="#org6b71512">主题设置</a></li>
+<li><a href="#org439f3e4">用Evil 模拟 vim</a>
 <ul>
-<li><a href="#org57f5095">Evil 基础vim按键</a></li>
-<li><a href="#org0cfd063">evil-collection 更多功能绑定</a></li>
+<li><a href="#org3baa2e5">Evil 基础vim按键</a></li>
+<li><a href="#org0e2d5b9">evil-collection 更多功能绑定</a></li>
 </ul>
 </li>
-<li><a href="#org9297efc">Org 生态</a>
+<li><a href="#org884240a">Org 生态</a>
 <ul>
-<li><a href="#org7f53fcd">Org 基础配置</a></li>
-<li><a href="#org23d3ab6">Org-tempo &#x2013; 快速输入 "块结构"</a></li>
-<li><a href="#orge68c6ac">Org-drill &#x2013; org  flashcard "卡片学习"</a></li>
-<li><a href="#org2c18281">Org-crypt &#x2013; (简单)加密文件内容</a></li>
-<li><a href="#orgddeeb25">Org-babel &#x2013; 编辑,导出和执行源代码</a></li>
-<li><a href="#orgb4a9f36">Org-agenda &#x2013; 日程管理</a></li>
+<li><a href="#orgab9951f">Org 基础配置</a></li>
+<li><a href="#org6c5b1b0">Org-tempo &#x2013; 快速输入 "块结构"</a></li>
+<li><a href="#org9432e9e">Org-drill &#x2013; org  flashcard "卡片学习"</a></li>
+<li><a href="#orgc9d68bc">Org-crypt &#x2013; (简单)加密文件内容</a></li>
+<li><a href="#org0fd49fd">Org-babel &#x2013; 编辑,导出和执行源代码</a></li>
+<li><a href="#orgf72662b">Org-agenda &#x2013; 日程管理</a></li>
 </ul>
 </li>
-<li><a href="#org602015f">input-method &#x2013; 输入法</a>
+<li><a href="#orged08083">input-method &#x2013; 输入法</a>
 <ul>
-<li><a href="#org1200e91">pyim</a></li>
+<li><a href="#org8a00e8e">pyim</a></li>
 </ul>
 </li>
-<li><a href="#org2595202">自动更新时间戳</a></li>
-<li><a href="#org66e98f1">编辑设置</a>
+<li><a href="#orge352166">自动更新时间戳</a></li>
+<li><a href="#org85f4ac1">编辑设置</a>
 <ul>
-<li><a href="#orga59fb6e">自动清除空格</a></li>
-<li><a href="#orge3d593c">使用空格而不是 tab 缩进</a></li>
+<li><a href="#org7077888">自动清除空格</a></li>
+<li><a href="#org2fc7a0c">使用空格而不是 tab 缩进</a></li>
 </ul>
 </li>
-<li><a href="#orgb4b729a">输入补全(input completion)</a>
+<li><a href="#org2504eff">输入补全(input completion)</a>
 <ul>
-<li><a href="#orgef96eaf">ivy &#x2013; completion mechanism</a></li>
-<li><a href="#orgb510da3">counsel &#x2013; better input completion</a></li>
-<li><a href="#org557cdbe">swiper &#x2013; better isearch</a></li>
+<li><a href="#orga24e8f9">ivy &#x2013; completion mechanism</a></li>
+<li><a href="#orgcc5de33">counsel &#x2013; better input completion</a></li>
+<li><a href="#orgd145c91">swiper &#x2013; better isearch</a></li>
 </ul>
 </li>
 </ul>
@@ -299,9 +299,9 @@ for the JavaScript code in this tag.
 <p>
 Last modified:2023-04-11 02:08:29 kamisama
 </p>
-<div id="outline-container-org7ca2a7a" class="outline-2">
-<h2 id="org7ca2a7a">实操配置过程</h2>
-<div class="outline-text-2" id="text-org7ca2a7a">
+<div id="outline-container-orgeb5baf5" class="outline-2">
+<h2 id="orgeb5baf5">实操配置过程</h2>
+<div class="outline-text-2" id="text-orgeb5baf5">
 <p>
 本来是尝试将原来的配置改成尽量用原生的 Emacs 提供的功能来进行配置,结果还是先花了大量理解 Emacs 的启动过程.不过学完发现现在对
 Emacs 加载,启用包,各种变量什么时候用,什么时候生效都有了更清晰的认知,现在某个配置项没有得到预期结果,我可以自己分析,自己实验得到
@@ -310,9 +310,9 @@ Emacs 加载,启用包,各种变量什么时候用,什么时候生效都有了�
 </p>
 </div>
 
-<div id="outline-container-orgb89da45" class="outline-3">
-<h3 id="orgb89da45">设置垃圾回收机制</h3>
-<div class="outline-text-3" id="text-orgb89da45">
+<div id="outline-container-org1b60d52" class="outline-3">
+<h3 id="org1b60d52">设置垃圾回收机制</h3>
+<div class="outline-text-3" id="text-org1b60d52">
 <p>
 Emcas 在启动过程中,一旦最后一次垃圾收集后,由一定量的字节被分配给 Emacs 就会自动进行一次垃圾收集行为,这个字节数由 gc-cons-threshold 控制;
 而且只要调用 'eval' 命令,垃圾收集行为就会自动执行.
@@ -339,9 +339,9 @@ Emcas 在启动过程中,一旦最后一次垃圾收集后,由一定量的字节
 </div>
 </div>
 
-<div id="outline-container-orgd5c94f4" class="outline-3">
-<h3 id="orgd5c94f4">设置编码系统</h3>
-<div class="outline-text-3" id="text-orgd5c94f4">
+<div id="outline-container-org5416323" class="outline-3">
+<h3 id="org5416323">设置编码系统</h3>
+<div class="outline-text-3" id="text-org5416323">
 <p>
 语言环境的设置会影响到默认输入法,因为每种语言环境都有自己的一套编码格式,输入法和
 字符集,因此编码系统的设置最好是放在配置文件的前面,至少要放在输入法设置的前面,不
@@ -355,9 +355,9 @@ Emcas 在启动过程中,一旦最后一次垃圾收集后,由一定量的字节
 </div>
 </div>
 
-<div id="outline-container-org16f29df" class="outline-3">
-<h3 id="org16f29df">配置图形界面框架参数</h3>
-<div class="outline-text-3" id="text-org16f29df">
+<div id="outline-container-orgccb4764" class="outline-3">
+<h3 id="orgccb4764">配置图形界面框架参数</h3>
+<div class="outline-text-3" id="text-orgccb4764">
 <p>
 图形界面的框架参数可以控制我们看到的 Emacs 界面外观.对于设置主题也是在设置这些参数,一般设置主题还是使用 load-theme 方便,所以
 框架参数这里就不配置主题相关的设置. 影响图形框架参数的主要就是两个参数 initial-frame-alist 和 default-frame-alist,前者负责
@@ -439,9 +439,9 @@ Emacs 启动后我们看到的第一个界面的设置,后者负责新创建的�
 </div>
 </div>
 
-<div id="outline-container-orge0b1918" class="outline-3">
-<h3 id="orge0b1918">配置包管理器初始化参数</h3>
-<div class="outline-text-3" id="text-orge0b1918">
+<div id="outline-container-org762272e" class="outline-3">
+<h3 id="org762272e">配置包管理器初始化参数</h3>
+<div class="outline-text-3" id="text-org762272e">
 <p>
 由于众所周知的网络问题,常用的三个 ELPA(Emacs Lisp Package Archives)仓库,gnu elpa,melpa和nognu elpa的官方网址总是会出现各种各样的连接问题.
 所以决定使用网易的镜像仓库
@@ -501,9 +501,9 @@ early-init 之后只是简单激活已经安装的包,就是加载load-path 里�
 </div>
 </div>
 
-<div id="outline-container-org7773335" class="outline-3">
-<h3 id="org7773335">主题设置</h3>
-<div class="outline-text-3" id="text-org7773335">
+<div id="outline-container-org6b71512" class="outline-3">
+<h3 id="org6b71512">主题设置</h3>
+<div class="outline-text-3" id="text-org6b71512">
 <p>
 只要下载安装了主题,就可以设置主题了,无论是early-inti 或是 init 文件里都可以,但在
 init 文件里的设置会导致 emacs 的窗口框架在启动时重新绘制一次,所以我选择在
@@ -524,20 +524,20 @@ early-inti 里设置.
 </div>
 </div>
 
-<div id="outline-container-org7538361" class="outline-3">
-<h3 id="org7538361">用Evil 模拟 vim</h3>
-<div class="outline-text-3" id="text-org7538361">
+<div id="outline-container-org439f3e4" class="outline-3">
+<h3 id="org439f3e4">用Evil 模拟 vim</h3>
+<div class="outline-text-3" id="text-org439f3e4">
 </div>
-<div id="outline-container-org57f5095" class="outline-4">
-<h4 id="org57f5095">Evil 基础vim按键</h4>
-<div class="outline-text-4" id="text-org57f5095">
+<div id="outline-container-org3baa2e5" class="outline-4">
+<h4 id="org3baa2e5">Evil 基础vim按键</h4>
+<div class="outline-text-4" id="text-org3baa2e5">
 <p>
 Evil 包模拟了 vim 基本的按键功能, 但没有与 Emacs 其他功能绑定,
 比如,如果只设置它,那在 org mode 里就不能用 Tab 来调用 org-cycle 切换条目的可视性了.
 </p>
 
 <p>
-需要让其很好适配 emacs 其他库,则需要用到 <a href="#org0cfd063">evil-collection 更多功能绑定</a>
+需要让其很好适配 emacs 其他库,则需要用到 <a href="#org0e2d5b9">evil-collection 更多功能绑定</a>
 </p>
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">unless</span> (package-installed-p 'evil)
@@ -549,9 +549,9 @@ Evil 包模拟了 vim 基本的按键功能, 但没有与 Emacs 其他功能绑�
 </div>
 </div>
 
-<div id="outline-container-org0cfd063" class="outline-4">
-<h4 id="org0cfd063">evil-collection 更多功能绑定</h4>
-<div class="outline-text-4" id="text-org0cfd063">
+<div id="outline-container-org0e2d5b9" class="outline-4">
+<h4 id="org0e2d5b9">evil-collection 更多功能绑定</h4>
+<div class="outline-text-4" id="text-org0e2d5b9">
 <p>
 evil-collection 将 evil 按键与更多 Emacs 功能结合.
 </p>
@@ -569,13 +569,13 @@ evil-collection 将 evil 按键与更多 Emacs 功能结合.
 </div>
 </div>
 
-<div id="outline-container-org9297efc" class="outline-3">
-<h3 id="org9297efc">Org 生态</h3>
-<div class="outline-text-3" id="text-org9297efc">
+<div id="outline-container-org884240a" class="outline-3">
+<h3 id="org884240a">Org 生态</h3>
+<div class="outline-text-3" id="text-org884240a">
 </div>
-<div id="outline-container-org7f53fcd" class="outline-4">
-<h4 id="org7f53fcd">Org 基础配置</h4>
-<div class="outline-text-4" id="text-org7f53fcd">
+<div id="outline-container-orgab9951f" class="outline-4">
+<h4 id="orgab9951f">Org 基础配置</h4>
+<div class="outline-text-4" id="text-orgab9951f">
 <p>
 配置 Org 的基本功能,包括全局快捷键,工作目录等
 </p>
@@ -601,9 +601,9 @@ evil-collection 将 evil 按键与更多 Emacs 功能结合.
 </div>
 </div>
 
-<div id="outline-container-org23d3ab6" class="outline-4">
-<h4 id="org23d3ab6">Org-tempo &#x2013; 快速输入 "块结构"</h4>
-<div class="outline-text-4" id="text-org23d3ab6">
+<div id="outline-container-org6c5b1b0" class="outline-4">
+<h4 id="org6c5b1b0">Org-tempo &#x2013; 快速输入 "块结构"</h4>
+<div class="outline-text-4" id="text-org6c5b1b0">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"> (<span style="font-weight: bold;">with-eval-after-load</span> 'org
    (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">org-tempo</span>))
@@ -626,9 +626,9 @@ evil-collection 将 evil 按键与更多 Emacs 功能结合.
 </div>
 </div>
 
-<div id="outline-container-orge68c6ac" class="outline-4">
-<h4 id="orge68c6ac">Org-drill &#x2013; org  flashcard "卡片学习"</h4>
-<div class="outline-text-4" id="text-orge68c6ac">
+<div id="outline-container-org9432e9e" class="outline-4">
+<h4 id="org9432e9e">Org-drill &#x2013; org  flashcard "卡片学习"</h4>
+<div class="outline-text-4" id="text-org9432e9e">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">unless</span> (package-installed-p 'org-drill)
 (package-install 'org-drill))
@@ -640,9 +640,9 @@ evil-collection 将 evil 按键与更多 Emacs 功能结合.
 </div>
 </div>
 
-<div id="outline-container-org2c18281" class="outline-4">
-<h4 id="org2c18281">Org-crypt &#x2013; (简单)加密文件内容</h4>
-<div class="outline-text-4" id="text-org2c18281">
+<div id="outline-container-orgc9d68bc" class="outline-4">
+<h4 id="orgc9d68bc">Org-crypt &#x2013; (简单)加密文件内容</h4>
+<div class="outline-text-4" id="text-orgc9d68bc">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(org-crypt-use-before-save-magic)
 (<span style="font-weight: bold;">setq</span> org-tags-exclude-from-inheritance (<span style="font-weight: bold;">quote</span> (<span style="font-style: italic;">"crypt"</span>)))
@@ -653,9 +653,9 @@ evil-collection 将 evil 按键与更多 Emacs 功能结合.
 </div>
 </div>
 
-<div id="outline-container-orgddeeb25" class="outline-4">
-<h4 id="orgddeeb25">Org-babel &#x2013; 编辑,导出和执行源代码</h4>
-<div class="outline-text-4" id="text-orgddeeb25">
+<div id="outline-container-org0fd49fd" class="outline-4">
+<h4 id="org0fd49fd">Org-babel &#x2013; 编辑,导出和执行源代码</h4>
+<div class="outline-text-4" id="text-org0fd49fd">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-confirm-babel-evaluate nil) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">C-c C-c &#26102;&#21462;&#28040;&#30830;&#35748;</span>
 
@@ -670,9 +670,9 @@ evil-collection 将 evil 按键与更多 Emacs 功能结合.
 </div>
 </div>
 
-<div id="outline-container-orgb4a9f36" class="outline-4">
-<h4 id="orgb4a9f36">Org-agenda &#x2013; 日程管理</h4>
-<div class="outline-text-4" id="text-orgb4a9f36">
+<div id="outline-container-orgf72662b" class="outline-4">
+<h4 id="orgf72662b">Org-agenda &#x2013; 日程管理</h4>
+<div class="outline-text-4" id="text-orgf72662b">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#23558; Org &#24037;&#20316;&#30446;&#24405;&#28155;&#21152;&#21040; org-agenda &#30340;&#24037;&#20316;&#30446;&#24405;</span>
   (<span style="font-weight: bold;">with-eval-after-load</span> 'org-agenda
@@ -683,9 +683,9 @@ evil-collection 将 evil 按键与更多 Emacs 功能结合.
 </div>
 </div>
 
-<div id="outline-container-org602015f" class="outline-3">
-<h3 id="org602015f">input-method &#x2013; 输入法</h3>
-<div class="outline-text-3" id="text-org602015f">
+<div id="outline-container-orged08083" class="outline-3">
+<h3 id="orged08083">input-method &#x2013; 输入法</h3>
+<div class="outline-text-3" id="text-orged08083">
 <p>
 流行的 emacs 中文输入法有 emacs-rime 和 pyim 其中 emacs-rime 需要 librime 库支持, pyim则
 由纯 emacs-lisp 实现.
@@ -695,13 +695,13 @@ evil-collection 将 evil 按键与更多 Emacs 功能结合.
 在 windows 上面安装编译 librime 比较麻烦,所以决定使用 pyim
 </p>
 </div>
-<div id="outline-container-org1200e91" class="outline-4">
-<h4 id="org1200e91">pyim</h4>
-<div class="outline-text-4" id="text-org1200e91">
+<div id="outline-container-org8a00e8e" class="outline-4">
+<h4 id="org8a00e8e">pyim</h4>
+<div class="outline-text-4" id="text-org8a00e8e">
 </div>
 <ul class="org-ul">
-<li><a id="orgeb348ca"></a>安装<br />
-<div class="outline-text-5" id="text-orgeb348ca">
+<li><a id="org4d86b7e"></a>安装<br />
+<div class="outline-text-5" id="text-org4d86b7e">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">unless</span> (package-installed-p 'pyim)
 (package-install 'pyim))
@@ -710,8 +710,8 @@ evil-collection 将 evil 按键与更多 Emacs 功能结合.
 </div>
 </li>
 
-<li><a id="org42fe6c4"></a>基本配置<br />
-<div class="outline-text-5" id="text-org42fe6c4">
+<li><a id="org1ab9e4a"></a>基本配置<br />
+<div class="outline-text-5" id="text-org1ab9e4a">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#23433;&#35013;&#26174;&#31034;&#20505;&#36873;&#35789;&#30340;&#21253;</span>
 (<span style="font-weight: bold;">unless</span> (package-installed-p 'posframe)
@@ -753,10 +753,10 @@ pyim-probe-program-mode
 </div>
 </li>
 
-<li><a id="orgfd7e31a"></a>词库配置<br />
+<li><a id="org931b3b6"></a>词库配置<br />
 <ul class="org-ul">
-<li><a id="org0fc4f9d"></a>快速配置的基础词库<br />
-<div class="outline-text-6" id="text-org0fc4f9d">
+<li><a id="orgf08fe56"></a>快速配置的基础词库<br />
+<div class="outline-text-6" id="text-orgf08fe56">
 <p>
 最基础的词库,安装启用了就可以体验带词库的 pyim 了,但使用起来很难受,不如自己设置词库.
 </p>
@@ -773,8 +773,8 @@ pyim-probe-program-mode
 </div>
 </li>
 
-<li><a id="org722ee52"></a>自己配置词库<br />
-<div class="outline-text-6" id="text-org722ee52">
+<li><a id="orgcc489a9"></a>自己配置词库<br />
+<div class="outline-text-6" id="text-orgcc489a9">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> pyim-dicts
       '(
@@ -796,9 +796,9 @@ pyim-probe-program-mode
 </div>
 </div>
 
-<div id="outline-container-org2595202" class="outline-3">
-<h3 id="org2595202">自动更新时间戳</h3>
-<div class="outline-text-3" id="text-org2595202">
+<div id="outline-container-orge352166" class="outline-3">
+<h3 id="orge352166">自动更新时间戳</h3>
+<div class="outline-text-3" id="text-orge352166">
 <p>
 time-stamp 命令可以更新时间戳,时间戳默认格式:
 </p>
@@ -835,13 +835,13 @@ variables) 可以实现我想要的功能,它能将一个变量设置为对当�
 </div>
 </div>
 
-<div id="outline-container-org66e98f1" class="outline-3">
-<h3 id="org66e98f1">编辑设置</h3>
-<div class="outline-text-3" id="text-org66e98f1">
+<div id="outline-container-org85f4ac1" class="outline-3">
+<h3 id="org85f4ac1">编辑设置</h3>
+<div class="outline-text-3" id="text-org85f4ac1">
 </div>
-<div id="outline-container-orga59fb6e" class="outline-4">
-<h4 id="orga59fb6e">自动清除空格</h4>
-<div class="outline-text-4" id="text-orga59fb6e">
+<div id="outline-container-org7077888" class="outline-4">
+<h4 id="org7077888">自动清除空格</h4>
+<div class="outline-text-4" id="text-org7077888">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">unless</span> (package-installed-p 'ws-butler)
 (package-install 'ws-butler))
@@ -852,9 +852,9 @@ variables) 可以实现我想要的功能,它能将一个变量设置为对当�
 </div>
 </div>
 
-<div id="outline-container-orge3d593c" class="outline-4">
-<h4 id="orge3d593c">使用空格而不是 tab 缩进</h4>
-<div class="outline-text-4" id="text-orge3d593c">
+<div id="outline-container-org2fc7a0c" class="outline-4">
+<h4 id="org2fc7a0c">使用空格而不是 tab 缩进</h4>
+<div class="outline-text-4" id="text-org2fc7a0c">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> indent-tabs-mode nil)
 </pre>
@@ -863,9 +863,9 @@ variables) 可以实现我想要的功能,它能将一个变量设置为对当�
 </div>
 </div>
 
-<div id="outline-container-orgb4b729a" class="outline-3">
-<h3 id="orgb4b729a">输入补全(input completion)</h3>
-<div class="outline-text-3" id="text-orgb4b729a">
+<div id="outline-container-org2504eff" class="outline-3">
+<h3 id="org2504eff">输入补全(input completion)</h3>
+<div class="outline-text-3" id="text-org2504eff">
 <p>
 Emacs 的补全分为两种,一种是文本补全,专指对缓冲区中编辑的内容进行补全,另一种是对
 minibuffer 中输入的命令进行补全.
@@ -877,9 +877,9 @@ swiper ,Isearch 的 ivy 加强版.
 </p>
 </div>
 
-<div id="outline-container-orgef96eaf" class="outline-4">
-<h4 id="orgef96eaf">ivy &#x2013; completion mechanism</h4>
-<div class="outline-text-4" id="text-orgef96eaf">
+<div id="outline-container-orga24e8f9" class="outline-4">
+<h4 id="orga24e8f9">ivy &#x2013; completion mechanism</h4>
+<div class="outline-text-4" id="text-orga24e8f9">
 <p>
 ivy 是 counsel 和 swiper 的基础,所以需要先安装这个包
 </p>
@@ -892,9 +892,9 @@ ivy 是 counsel 和 swiper 的基础,所以需要先安装这个包
 </div>
 </div>
 
-<div id="outline-container-orgb510da3" class="outline-4">
-<h4 id="orgb510da3">counsel &#x2013; better input completion</h4>
-<div class="outline-text-4" id="text-orgb510da3">
+<div id="outline-container-orgcc5de33" class="outline-4">
+<h4 id="orgcc5de33">counsel &#x2013; better input completion</h4>
+<div class="outline-text-4" id="text-orgcc5de33">
 <p>
 counsel 需要 ivy 和 swiper 包,安装 counsel 会自动安装这两个包.
 </p>
@@ -906,9 +906,9 @@ counsel 需要 ivy 和 swiper 包,安装 counsel 会自动安装这两个包.
 </div>
 </div>
 
-<div id="outline-container-org557cdbe" class="outline-4">
-<h4 id="org557cdbe">swiper &#x2013; better isearch</h4>
-<div class="outline-text-4" id="text-org557cdbe">
+<div id="outline-container-orgd145c91" class="outline-4">
+<h4 id="orgd145c91">swiper &#x2013; better isearch</h4>
+<div class="outline-text-4" id="text-orgd145c91">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">unless</span> (package-installed-p 'swiper)
 (package-install 'swiper))
