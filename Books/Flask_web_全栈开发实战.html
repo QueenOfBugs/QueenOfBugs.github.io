@@ -250,123 +250,140 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org16e742f">环境搭建</a>
+<li><a href="#org51603c6">环境搭建</a>
 <ul>
-<li><a href="#orgc3e9bfc">Python 环境</a></li>
-<li><a href="#org3849e72">Flask 版本</a></li>
-<li><a href="#orgdda9a21">开发软件以及虚拟环境搭建</a></li>
-<li><a href="#org8594f23">Org mode 里运行项目的设置</a></li>
+<li><a href="#orgae342ee">Python 环境</a></li>
+<li><a href="#orge5c41bb">Flask 版本</a></li>
+<li><a href="#orge3aefb7">开发软件以及虚拟环境搭建</a></li>
+<li><a href="#org51462b4">Org mode 里运行项目的设置</a></li>
 </ul>
 </li>
-<li><a href="#org094dc9a">项目配置</a>
+<li><a href="#org466c2a9">项目配置</a>
 <ul>
-<li><a href="#org6858218">Debug 模式, Host, Port 配置</a>
+<li><a href="#org7075189">Debug 模式, Host, Port 配置</a>
 <ul>
-<li><a href="#org859e142">Debug 模式</a></li>
-<li><a href="#orgb8b918b">设置 Host 和 Port</a></li>
+<li><a href="#org0d798b6">Debug 模式</a></li>
+<li><a href="#org30c5ea6">设置 Host 和 Port</a></li>
 </ul>
 </li>
-<li><a href="#org77f069e">在 app.config 中添加配置</a>
+<li><a href="#orgcb66f86">在 app.config 中添加配置</a>
 <ul>
-<li><a href="#org14dedf9">使用 app.config 配置</a></li>
-<li><a href="#org3ccf495">使用 Python 配置文件</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org47c4602">URL 和视图</a>
-<ul>
-<li><a href="#org074d039">定义 URL</a>
-<ul>
-<li><a href="#org7687547">定义无参数的URL</a></li>
-<li><a href="#org4e91595">定义有参数的URL</a></li>
-</ul>
-</li>
-<li><a href="#orgf89de71">HTTP 请求方法</a></li>
-<li><a href="#org9c2cdda">页面重定向</a></li>
-<li><a href="#orge45a452">构造 URL</a></li>
-</ul>
-</li>
-<li><a href="#org86f4f12">Jinja2 模板</a>
-<ul>
-<li><a href="#org84fcc06">模板的基本使用</a>
-<ul>
-<li><a href="#orgb87a639">渲染模板</a></li>
-<li><a href="#org134cbdd">渲染变量</a></li>
-</ul>
-</li>
-<li><a href="#orga814911">过滤器和测试器</a>
-<ul>
-<li><a href="#org1facf91">自定义过滤器</a></li>
-<li><a href="#orga33f3ff">Jinja2 内置过滤器</a></li>
-<li><a href="#org832ca3b">测试器</a></li>
-</ul>
-</li>
-<li><a href="#orgfbada3c">控制语句</a>
-<ul>
-<li><a href="#org226d178">if 判断语句</a></li>
-<li><a href="#org42331e8">for 循环语句</a></li>
-</ul>
-</li>
-<li><a href="#org4af9795">模板结构</a>
-<ul>
-<li><a href="#org177931c">宏和 import 语句</a></li>
-<li><a href="#org3a992e4">模板继承</a></li>
-<li><a href="#orgcc3f70f">引入模板</a></li>
-</ul>
-</li>
-<li><a href="#orgd0304c8">模板环境</a>
-<ul>
-<li><a href="#orgfeb2c2e">模板上下文(context?)</a></li>
-<li><a href="#orgc8008aa">全局函数</a></li>
-<li><a href="#org2548a7a">Flask 模板环境</a></li>
-</ul>
-</li>
-<li><a href="#orgb251c06">其他</a>
-<ul>
-<li><a href="#orgfeee59e">转义</a></li>
-<li><a href="#orga19ea51">加载静态文件</a></li>
-<li><a href="#orgc763157">闪现消息</a></li>
+<li><a href="#orgb3908cb">使用 app.config 配置</a></li>
+<li><a href="#org4fa9e04">使用 Python 配置文件</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orga32c90e">数据库</a>
+<li><a href="#orgf67b485">URL 和视图</a>
 <ul>
-<li><a href="#orgc70af23">准备工作</a>
+<li><a href="#org01e598f">定义 URL</a>
 <ul>
-<li><a href="#org0cb3417">MySQL 软件</a></li>
-<li><a href="#orgd9ec15c">Python 操作 MySQL 驱动</a></li>
-<li><a href="#orgfc3a386">Flask-SQLAlchemy</a></li>
+<li><a href="#org07b9028">定义无参数的URL</a></li>
+<li><a href="#org995f4e3">定义有参数的URL</a></li>
 </ul>
 </li>
-<li><a href="#org87168f0">Flask-SQLAlchemy 的基本使用</a>
+<li><a href="#org67afe89">HTTP 请求方法</a></li>
+<li><a href="#orgd4c90c5">页面重定向</a></li>
+<li><a href="#orgcca1ec6">构造 URL</a></li>
+</ul>
+</li>
+<li><a href="#org18b68c3">Jinja2 模板</a>
 <ul>
-<li><a href="#org5d77533">连接 MySQL</a></li>
-<li><a href="#orgbf5e22f">ORM模型</a></li>
-<li><a href="#org9cf20ea">CRUD 操作</a></li>
-</ul>
-</li>
-<li><a href="#org723b033">表关系</a>
+<li><a href="#orgdf98d72">模板的基本使用</a>
 <ul>
-<li><a href="#orgac9e51b">外键</a></li>
-<li><a href="#orgdbd0a6a">一对多关系</a></li>
-<li><a href="#orgc4735a1">一对一关系</a></li>
-<li><a href="#orgcc167a8">多对多关系</a></li>
-<li><a href="#org8677837">级联操作</a></li>
+<li><a href="#org7ce84c6">渲染模板</a></li>
+<li><a href="#orge5ecb4d">渲染变量</a></li>
 </ul>
 </li>
-<li><a href="#org1d2385a">ORM 模型迁移</a>
+<li><a href="#org9f81389">过滤器和测试器</a>
 <ul>
-<li><a href="#org57807cd">创建迁移对象</a></li>
-<li><a href="#org0d60990">初始化迁移环境</a></li>
-<li><a href="#org42f03c5">生成迁移脚本</a></li>
-<li><a href="#org52a0bb6">执行迁移脚本</a></li>
+<li><a href="#org87a7b8c">自定义过滤器</a></li>
+<li><a href="#org8040532">Jinja2 内置过滤器</a></li>
+<li><a href="#org6a15173">测试器</a></li>
+</ul>
+</li>
+<li><a href="#org33ecbf6">控制语句</a>
+<ul>
+<li><a href="#org006e4c2">if 判断语句</a></li>
+<li><a href="#org9cf0b92">for 循环语句</a></li>
+</ul>
+</li>
+<li><a href="#org6500f55">模板结构</a>
+<ul>
+<li><a href="#org052a421">宏和 import 语句</a></li>
+<li><a href="#org9338c37">模板继承</a></li>
+<li><a href="#org4473400">引入模板</a></li>
+</ul>
+</li>
+<li><a href="#orgdc681a0">模板环境</a>
+<ul>
+<li><a href="#org579884d">模板上下文(context?)</a></li>
+<li><a href="#orgfb4bcdc">全局函数</a></li>
+<li><a href="#orgb212d2c">Flask 模板环境</a></li>
+</ul>
+</li>
+<li><a href="#org4312458">其他</a>
+<ul>
+<li><a href="#orgd3f355c">转义</a></li>
+<li><a href="#orgdc8983f">加载静态文件</a></li>
+<li><a href="#orgaf5016f">闪现消息</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org02494fd">表单</a></li>
+<li><a href="#org33b1550">数据库</a>
+<ul>
+<li><a href="#org822e70d">准备工作</a>
+<ul>
+<li><a href="#org8c7e25d">MySQL 软件</a></li>
+<li><a href="#org1a557f0">Python 操作 MySQL 驱动</a></li>
+<li><a href="#orgc81ef97">Flask-SQLAlchemy</a></li>
+</ul>
+</li>
+<li><a href="#orge56ed21">Flask-SQLAlchemy 的基本使用</a>
+<ul>
+<li><a href="#orgd8b5fc8">连接 MySQL</a></li>
+<li><a href="#org770f5a6">ORM模型</a></li>
+<li><a href="#org9a1f7cf">CRUD 操作</a></li>
+</ul>
+</li>
+<li><a href="#org8aee9f7">表关系</a>
+<ul>
+<li><a href="#orgbdfd2de">外键</a></li>
+<li><a href="#org8975eae">一对多关系</a></li>
+<li><a href="#org6b5679c">一对一关系</a></li>
+<li><a href="#org113d32a">多对多关系</a></li>
+<li><a href="#org8ea0e87">级联操作</a></li>
+</ul>
+</li>
+<li><a href="#orgd56b847">ORM 模型迁移</a>
+<ul>
+<li><a href="#orgbff662d">创建迁移对象</a></li>
+<li><a href="#org975c666">初始化迁移环境</a></li>
+<li><a href="#org1ed2330">生成迁移脚本</a></li>
+<li><a href="#org473c172">执行迁移脚本</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org5dbfee6">表单</a>
+<ul>
+<li><a href="#orgec9fd7e">表单验证</a>
+<ul>
+<li><a href="#orga509485">表单类编写</a></li>
+<li><a href="#org8e8e31a">视图函数中使用表单</a></li>
+<li><a href="#orge960b88">自定义验证字段</a></li>
+</ul>
+</li>
+<li><a href="#orgedf3c1d">渲染表单模板</a></li>
+<li><a href="#orgc220582">CSRF 攻击</a>
+<ul>
+<li><a href="#org72c8972">防御 CSRF 攻击原理</a></li>
+<li><a href="#org45bcdda">Flask-WTF 防御 CSRF 攻击</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -374,23 +391,23 @@ for the JavaScript code in this tag.
 :header-args: :eval never-export :results verbatim
 </p>
 <p>
-Last modified:2023-04-23 22:19:23 kamisama
+Last modified:2023-04-25 15:54:10 kamisama
 </p>
-<div id="outline-container-org16e742f" class="outline-2">
-<h2 id="org16e742f">环境搭建</h2>
-<div class="outline-text-2" id="text-org16e742f">
+<div id="outline-container-org51603c6" class="outline-2">
+<h2 id="org51603c6">环境搭建</h2>
+<div class="outline-text-2" id="text-org51603c6">
 </div>
-<div id="outline-container-orgc3e9bfc" class="outline-3">
-<h3 id="orgc3e9bfc">Python 环境</h3>
-<div class="outline-text-3" id="text-orgc3e9bfc">
+<div id="outline-container-orgae342ee" class="outline-3">
+<h3 id="orgae342ee">Python 环境</h3>
+<div class="outline-text-3" id="text-orgae342ee">
 <p>
 书里使用的是 Python 3.9, 作者推荐至少使用 Python 3.6 以上的版本.
 </p>
 </div>
 </div>
-<div id="outline-container-org3849e72" class="outline-3">
-<h3 id="org3849e72">Flask 版本</h3>
-<div class="outline-text-3" id="text-org3849e72">
+<div id="outline-container-orge5c41bb" class="outline-3">
+<h3 id="orge5c41bb">Flask 版本</h3>
+<div class="outline-text-3" id="text-orge5c41bb">
 <p>
 书里的知识点和项目都基于 Flask 2.0.1.
 </p>
@@ -418,9 +435,9 @@ Successfully installed flask-2.0.1
 </div>
 </div>
 
-<div id="outline-container-orgdda9a21" class="outline-3">
-<h3 id="orgdda9a21">开发软件以及虚拟环境搭建</h3>
-<div class="outline-text-3" id="text-orgdda9a21">
+<div id="outline-container-orge3aefb7" class="outline-3">
+<h3 id="orge3aefb7">开发软件以及虚拟环境搭建</h3>
+<div class="outline-text-3" id="text-orge3aefb7">
 <p>
 作者推荐使用 Pycharm. 但我当前的目标是使用 Org 文档进行文学编程,笔记记录等,所以
 仍然尝试用这个笔记文件来进行开发以及笔记记录,也就是说用 Emacs 作为开发软件(吧).
@@ -589,16 +606,16 @@ touch app.py
 </div>
 </div>
 
-<div id="outline-container-org8594f23" class="outline-3">
-<h3 id="org8594f23">Org mode 里运行项目的设置</h3>
-<div class="outline-text-3" id="text-org8594f23">
+<div id="outline-container-org51462b4" class="outline-3">
+<h3 id="org51462b4">Org mode 里运行项目的设置</h3>
+<div class="outline-text-3" id="text-org51462b4">
 <p>
 将代码块命名可以通过调用来执行该代码块,利用这一点,我们将运行项目的代码编写到一起,需
 要时调用即可,如同IDE 的运行按钮一样.
 先进入项目目录并激活虚拟环境
 </p>
 <div class="org-src-container">
-<pre class="src src-sh" id="org5c56126"><span style="font-weight: bold;">cd</span> ~/flask_web_py3_10
+<pre class="src src-sh" id="orgfe7acff"><span style="font-weight: bold;">cd</span> ~/flask_web_py3_10
 source Scripts/activate
 </pre>
 </div>
@@ -610,16 +627,16 @@ sh: no job control in this shell
 
 
 <div class="org-src-container">
-<pre class="src src-shell" id="orge895dfb">ls
+<pre class="src src-shell" id="org349aae0">ls
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org094dc9a" class="outline-2">
-<h2 id="org094dc9a">项目配置</h2>
-<div class="outline-text-2" id="text-org094dc9a">
+<div id="outline-container-org466c2a9" class="outline-2">
+<h2 id="org466c2a9">项目配置</h2>
+<div class="outline-text-2" id="text-org466c2a9">
 <p>
 Flask 项目开发或部署到服务器上,都需要做一些配置. 这些配置可以开启或关闭一些
 Flask 项目的功能,比如 Debug 模式,连接数据库参数信息等都需要通过配置才能开启.
@@ -641,9 +658,9 @@ mkdir: cannot create directory '/c/Users/kamisama/flask_web_py3_10/demo02': File
 
 
 
-<div id="outline-container-org6858218" class="outline-3">
-<h3 id="org6858218">Debug 模式, Host, Port 配置</h3>
-<div class="outline-text-3" id="text-org6858218">
+<div id="outline-container-org7075189" class="outline-3">
+<h3 id="org7075189">Debug 模式, Host, Port 配置</h3>
+<div class="outline-text-3" id="text-org7075189">
 <p>
 Debug 模式表示是否开启调试模式, Host 和 Port 配置则代表项目运行使用的 Host 和监
 听的端口号.
@@ -659,9 +676,9 @@ Port 窗口/房间里处理对应事情的人员,发送到 Host 大楼,Port 窗�
 </blockquote>
 </div>
 
-<div id="outline-container-org859e142" class="outline-4">
-<h4 id="org859e142">Debug 模式</h4>
-<div class="outline-text-4" id="text-org859e142">
+<div id="outline-container-org0d798b6" class="outline-4">
+<h4 id="org0d798b6">Debug 模式</h4>
+<div class="outline-text-4" id="text-org0d798b6">
 <p>
 使用 Flask 开发项目过程中,会不断添加和修改代码,如果没有开启 Debug 模式,每次修改
 后都需要重新启动项目才能看到运行效果,开启 Debug 模式后,对代码的修改被检测到后
@@ -732,9 +749,9 @@ IDE 一样查看终端的输出了.使用 IDE 或者直接就是在终端里运�
 </div>
 </div>
 
-<div id="outline-container-orgb8b918b" class="outline-4">
-<h4 id="orgb8b918b">设置 Host 和 Port</h4>
-<div class="outline-text-4" id="text-orgb8b918b">
+<div id="outline-container-org30c5ea6" class="outline-4">
+<h4 id="org30c5ea6">设置 Host 和 Port</h4>
+<div class="outline-text-4" id="text-org30c5ea6">
 <p>
 Host 表示主机,Port 表示端口号. 例如,百度首页的网址: <a href="https://www.baidu.com">https://www.baidu.com</a>,
 www.baidu.com 就是 Host, 443 就是 Port. https 表示该网址使用的是 https 协议,因为
@@ -818,18 +835,18 @@ port 参数只能设置整型值,host 只能设置为字符串. host设置为"0.
 </div>
 </div>
 
-<div id="outline-container-org77f069e" class="outline-3">
-<h3 id="org77f069e">在 app.config 中添加配置</h3>
-<div class="outline-text-3" id="text-org77f069e">
+<div id="outline-container-orgcb66f86" class="outline-3">
+<h3 id="orgcb66f86">在 app.config 中添加配置</h3>
+<div class="outline-text-3" id="text-orgcb66f86">
 <p>
 除了 Debug,Host 和 Port 这三个配置之外,其他的配置参数都需要配置到 Flask 对象
 (app)的 app.config 属性中,在配置较多的情况下,还会将配置放到配置文件中.
 </p>
 </div>
 
-<div id="outline-container-org14dedf9" class="outline-4">
-<h4 id="org14dedf9">使用 app.config 配置</h4>
-<div class="outline-text-4" id="text-org14dedf9">
+<div id="outline-container-orgb3908cb" class="outline-4">
+<h4 id="orgb3908cb">使用 app.config 配置</h4>
+<div class="outline-text-4" id="text-orgb3908cb">
 <p>
 app.config 是 Config 的对象, Config 是继承自 dict 的子类,所以可以像操作字典一样
 操作它.
@@ -870,9 +887,9 @@ app.config 里的配置项可以是 Flask 及其插件内置的一些配置项,�
 </div>
 </div>
 
-<div id="outline-container-org3ccf495" class="outline-4">
-<h4 id="org3ccf495">使用 Python 配置文件</h4>
-<div class="outline-text-4" id="text-org3ccf495">
+<div id="outline-container-org4fa9e04" class="outline-4">
+<h4 id="org4fa9e04">使用 Python 配置文件</h4>
+<div class="outline-text-4" id="text-org4fa9e04">
 <p>
 在项目文件夹下创建一个 config.py 文件,用来专门存放配置项.
 </p>
@@ -931,11 +948,11 @@ app.config.from_json. 查阅 Flask 官方文档可以看到相关内容:
 </div>
 </div>
 
-<div id="outline-container-org47c4602" class="outline-2">
-<h2 id="org47c4602">URL 和视图</h2>
-<div class="outline-text-2" id="text-org47c4602">
+<div id="outline-container-orgf67b485" class="outline-2">
+<h2 id="orgf67b485">URL 和视图</h2>
+<div class="outline-text-2" id="text-orgf67b485">
 <div class="org-src-container">
-<pre class="src src-sh" id="org0fcb894">source ~/flask_web_py3_10/Scripts/activate
+<pre class="src src-sh" id="org61b96aa">source ~/flask_web_py3_10/Scripts/activate
 <span style="font-weight: bold;">cd</span> ~/flask_web_py3_10/demo03/
 python  app.py
 </pre>
@@ -977,18 +994,18 @@ Pycharm Professional 创建 flask 项目后会自动生成 app.py 文件,里面�
 </p>
 </div>
 
-<div id="outline-container-org074d039" class="outline-3">
-<h3 id="org074d039">定义 URL</h3>
-<div class="outline-text-3" id="text-org074d039">
+<div id="outline-container-org01e598f" class="outline-3">
+<h3 id="org01e598f">定义 URL</h3>
+<div class="outline-text-3" id="text-org01e598f">
 <p>
 多数网站不可能只有首页一个页面,所以需要定义多个不同的 URL 来满足不同页面的访问需
 求. URL 又分为两种,一种为无参URL, 另一种是带参URL.
 </p>
 </div>
 
-<div id="outline-container-org7687547" class="outline-4">
-<h4 id="org7687547">定义无参数的URL</h4>
-<div class="outline-text-4" id="text-org7687547">
+<div id="outline-container-org07b9028" class="outline-4">
+<h4 id="org07b9028">定义无参数的URL</h4>
+<div class="outline-text-4" id="text-org07b9028">
 <p>
 无参URL 值得是定义 URL 时不需要定义参数.例如,定义博客个人中心的页面URL
 "/profile":
@@ -1023,9 +1040,9 @@ Pycharm Professional 创建 flask 项目后会自动生成 app.py 文件,里面�
 </div>
 </div>
 
-<div id="outline-container-org4e91595" class="outline-4">
-<h4 id="org4e91595">定义有参数的URL</h4>
-<div class="outline-text-4" id="text-org4e91595">
+<div id="outline-container-org995f4e3" class="outline-4">
+<h4 id="org995f4e3">定义有参数的URL</h4>
+<div class="outline-text-4" id="text-org995f4e3">
 <p>
 其实现在大多数 URL 访问时都是带参数的.比如获取博客第10页的页面,则需要传入10到
 URL 里,URL 可能为 "/blog/page/10", URL 里的10 表示页码,以参数形式传入.
@@ -1305,9 +1322,9 @@ URL 中定义参数, 实际上参数是 URL 的一部分了, 查询字符串方�
 </div>
 
 
-<div id="outline-container-orgf89de71" class="outline-3">
-<h3 id="orgf89de71">HTTP 请求方法</h3>
-<div class="outline-text-3" id="text-orgf89de71">
+<div id="outline-container-org67afe89" class="outline-3">
+<h3 id="org67afe89">HTTP 请求方法</h3>
+<div class="outline-text-3" id="text-org67afe89">
 <p>
 HTTP 协议中,请求 URL 有不同的方法(method), 不同的请求方法有不同的应用场景.
 </p>
@@ -1472,9 +1489,9 @@ Flask 项目中使用 app.route 装饰器定义 URL 时,默认使用的就是 GE
 </div>
 </div>
 
-<div id="outline-container-org9c2cdda" class="outline-3">
-<h3 id="org9c2cdda">页面重定向</h3>
-<div class="outline-text-3" id="text-org9c2cdda">
+<div id="outline-container-orgd4c90c5" class="outline-3">
+<h3 id="orgd4c90c5">页面重定向</h3>
+<div class="outline-text-3" id="text-orgd4c90c5">
 <p>
 页面重定向, 一般简称为重定向. 重定向在页面中的表现就是,浏览器会自动从一个页面跳
 转到另一个页面.最常见的就是访问需要登录才能访问的页面,但是用户没有登录,然后就跳
@@ -1534,9 +1551,9 @@ flask 里的重定向是通过 flask.redirect(location,code=302) 函数来实现
 </div>
 </div>
 
-<div id="outline-container-orge45a452" class="outline-3">
-<h3 id="orge45a452">构造 URL</h3>
-<div class="outline-text-3" id="text-orge45a452">
+<div id="outline-container-orgcca1ec6" class="outline-3">
+<h3 id="orgcca1ec6">构造 URL</h3>
+<div class="outline-text-3" id="text-orgcca1ec6">
 <p>
 上面重定向时使用的 <code>redict("/login")</code> 里的 URL 是硬编码的,而URL 可能会随着发展而
 变化,一旦发生改变,只要是用硬编码方式使用该 URL 的地方,在项目代码里都需要修改,会
@@ -1606,9 +1623,9 @@ flask 里的重定向是通过 flask.redirect(location,code=302) 函数来实现
 </div>
 </div>
 
-<div id="outline-container-org86f4f12" class="outline-2">
-<h2 id="org86f4f12">Jinja2 模板</h2>
-<div class="outline-text-2" id="text-org86f4f12">
+<div id="outline-container-org18b68c3" class="outline-2">
+<h2 id="org18b68c3">Jinja2 模板</h2>
+<div class="outline-text-2" id="text-org18b68c3">
 <p>
 前面使用的视图函数都是简单的返回了一个字符串,所以看到的页面都只有很简单的一句话,
 这是为了演示用的,实际开发过程中服务器响应用户请求(浏览器访问网址就是发送了请求)
@@ -1632,20 +1649,20 @@ Jinja2 在作者写书的时候最新版是 3.0.2 现在最新版是 3.1.2, 官�
 运行这一章的项目使用的代码:
 </p>
 <div class="org-src-container">
-<pre class="src src-sh" id="orga4a75da">source ~/flask_web_py3_10/Scripts/activate
+<pre class="src src-sh" id="org72277e6">source ~/flask_web_py3_10/Scripts/activate
 <span style="font-weight: bold;">cd</span> ~/flask_web_py3_10/demo04/
 python app.py
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org84fcc06" class="outline-3">
-<h3 id="org84fcc06">模板的基本使用</h3>
-<div class="outline-text-3" id="text-org84fcc06">
+<div id="outline-container-orgdf98d72" class="outline-3">
+<h3 id="orgdf98d72">模板的基本使用</h3>
+<div class="outline-text-3" id="text-orgdf98d72">
 </div>
-<div id="outline-container-orgb87a639" class="outline-4">
-<h4 id="orgb87a639">渲染模板</h4>
-<div class="outline-text-4" id="text-orgb87a639">
+<div id="outline-container-org7ce84c6" class="outline-4">
+<h4 id="org7ce84c6">渲染模板</h4>
+<div class="outline-text-4" id="text-org7ce84c6">
 <p>
 Flask 项目默认在 templates 文件夹里查找模板文件, Pycharm professional 在创建
 Flask 项目时会自动创建该文件夹, 其他编辑环境需要手动创建.
@@ -1746,9 +1763,9 @@ cp ~/flask_web_py3_10/demo04/templates/index.html ~/flask_web_py3_10/demo04/myte
 </div>
 </div>
 
-<div id="outline-container-org134cbdd" class="outline-4">
-<h4 id="org134cbdd">渲染变量</h4>
-<div class="outline-text-4" id="text-org134cbdd">
+<div id="outline-container-orge5ecb4d" class="outline-4">
+<h4 id="orge5ecb4d">渲染变量</h4>
+<div class="outline-text-4" id="text-orge5ecb4d">
 <p>
 上一小节提高过, HTML 文件中有数据是需要填充的,不能硬编码在 HTML 文件中. 一般做法
 是,先在视图函数中将数据准备好,然后使用 render_template 函数渲染模板时将数据传递
@@ -1945,9 +1962,9 @@ user 的用户名是: ,user 的邮箱是: lisi@qq.com
 </div>
 </div>
 
-<div id="outline-container-orga814911" class="outline-3">
-<h3 id="orga814911">过滤器和测试器</h3>
-<div class="outline-text-3" id="text-orga814911">
+<div id="outline-container-org9f81389" class="outline-3">
+<h3 id="org9f81389">过滤器和测试器</h3>
+<div class="outline-text-3" id="text-org9f81389">
 <p>
 Python 中对变量(数据) 进行处理可以通过函数来实现,而在模板中,就要通过"过滤器"来实
 现.
@@ -1968,9 +1985,9 @@ Python 中对变量(数据) 进行处理可以通过函数来实现,而在模板
 </blockquote>
 </div>
 
-<div id="outline-container-org1facf91" class="outline-4">
-<h4 id="org1facf91">自定义过滤器</h4>
-<div class="outline-text-4" id="text-org1facf91">
+<div id="outline-container-org87a7b8c" class="outline-4">
+<h4 id="org87a7b8c">自定义过滤器</h4>
+<div class="outline-text-4" id="text-org87a7b8c">
 <p>
 过滤器本质上是 Python 的函数,它把管道符号左边的值(被过滤的值)当做第一个参数传递
 给过滤器这个函数,值(数据)经过处理后,再返回新的值.
@@ -2035,9 +2052,9 @@ dformat 了,而如果 add_template_filter 没有第二个参数,那过滤器名�
 </div>
 </div>
 
-<div id="outline-container-orga33f3ff" class="outline-4">
-<h4 id="orga33f3ff">Jinja2 内置过滤器</h4>
-<div class="outline-text-4" id="text-orga33f3ff">
+<div id="outline-container-org8040532" class="outline-4">
+<h4 id="org8040532">Jinja2 内置过滤器</h4>
+<div class="outline-text-4" id="text-org8040532">
 <p>
 了解了 Jinja2 过滤器原理之后,再学习和使用 Jinja2 内置的过滤器就容易理解了.
 Jinja2 内置了许多过滤器,不需要全部记住(用多了自然就记住了),只需要在使用的时候翻
@@ -2217,9 +2234,9 @@ titles 传递给 map, map 对 titles 应用 lower 过滤器(函数), 并返回�
 </div>
 </div>
 
-<div id="outline-container-org832ca3b" class="outline-4">
-<h4 id="org832ca3b">测试器</h4>
-<div class="outline-text-4" id="text-org832ca3b">
+<div id="outline-container-org6a15173" class="outline-4">
+<h4 id="org6a15173">测试器</h4>
+<div class="outline-text-4" id="text-org6a15173">
 <p>
 测试器是用来判断某些元素是否满足某个条件的.和过滤器一样,也是一种函数,不过它的使
 用与管道和普通 python 函数调用又不一样:
@@ -2406,9 +2423,9 @@ titles 传递给 map, map 对 titles 应用 lower 过滤器(函数), 并返回�
 </div>
 </div>
 
-<div id="outline-container-orgfbada3c" class="outline-3">
-<h3 id="orgfbada3c">控制语句</h3>
-<div class="outline-text-3" id="text-orgfbada3c">
+<div id="outline-container-org33ecbf6" class="outline-3">
+<h3 id="org33ecbf6">控制语句</h3>
+<div class="outline-text-3" id="text-org33ecbf6">
 <p>
 Jinja2 模板中也是有 if 判断和for 循环等控制语句的,前面代码示例里用过但没有具体解
 释.
@@ -2419,9 +2436,9 @@ Jinja2 模板中也是有 if 判断和for 循环等控制语句的,前面代码�
 </p>
 </div>
 
-<div id="outline-container-org226d178" class="outline-4">
-<h4 id="org226d178">if 判断语句</h4>
-<div class="outline-text-4" id="text-org226d178">
+<div id="outline-container-org006e4c2" class="outline-4">
+<h4 id="org006e4c2">if 判断语句</h4>
+<div class="outline-text-4" id="text-org006e4c2">
 <p>
 Jinja2 的 if 判断语句和 Python 中的 if 判断语句非常类似,可以使用关系运算符
 <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>==</code>, <code>!=</code> 来进行判断,也可以通过 and , or, not 来进行逻辑
@@ -2486,9 +2503,9 @@ Jinja2 中的代码缩进只是为了方便阅读,与 Python 的缩进是语法�
 </div>
 </div>
 
-<div id="outline-container-org42331e8" class="outline-4">
-<h4 id="org42331e8">for 循环语句</h4>
-<div class="outline-text-4" id="text-org42331e8">
+<div id="outline-container-org9cf0b92" class="outline-4">
+<h4 id="org9cf0b92">for 循环语句</h4>
+<div class="outline-text-4" id="text-org9cf0b92">
 <p>
 Jinja2 中的 for 循环与 Python 的 for 循环也非常类似,也只多一个 endfor 语句表示语
 句结束:
@@ -2919,9 +2936,9 @@ Jinja2 模板的 for 循环不存在 break 和 continue 来中断循环,这是�
 </div>
 </div>
 
-<div id="outline-container-org4af9795" class="outline-3">
-<h3 id="org4af9795">模板结构</h3>
-<div class="outline-text-3" id="text-org4af9795">
+<div id="outline-container-org6500f55" class="outline-3">
+<h3 id="org6500f55">模板结构</h3>
+<div class="outline-text-3" id="text-org6500f55">
 <p>
 Jinja2 比传统的 HTML 有更强大的功能,其中一个就是代码模块化.
 </p>
@@ -2932,9 +2949,9 @@ HTML 除了通过 iframe 标签在浏览器端动态加载其他网页外,它自
 </p>
 </div>
 
-<div id="outline-container-org177931c" class="outline-4">
-<h4 id="org177931c">宏和 import 语句</h4>
-<div class="outline-text-4" id="text-org177931c">
+<div id="outline-container-org052a421" class="outline-4">
+<h4 id="org052a421">宏和 import 语句</h4>
+<div class="outline-text-4" id="text-org052a421">
 <p>
 模板中的 "宏" 与函数类似,可以传递参数,但没有返回值.
 </p>
@@ -3155,9 +3172,9 @@ render_template 传递给模板的所以数据的 "集合", 不能直接作为�
 </div>
 </div>
 
-<div id="outline-container-org3a992e4" class="outline-4">
-<h4 id="org3a992e4">模板继承</h4>
-<div class="outline-text-4" id="text-org3a992e4">
+<div id="outline-container-org9338c37" class="outline-4">
+<h4 id="org9338c37">模板继承</h4>
+<div class="outline-text-4" id="text-org9338c37">
 <p>
 网站中大部分网页的模块是重复的,例如顶部导航栏,底部备案信息. 如果每个页面都重复写
 这些代码,就会让项目臃肿,且后期不易维护. 比较好的做法是,通过模板继承,把重复性的代
@@ -3275,9 +3292,9 @@ h1 里的.
 </div>
 </div>
 
-<div id="outline-container-orgcc3f70f" class="outline-4">
-<h4 id="orgcc3f70f">引入模板</h4>
-<div class="outline-text-4" id="text-orgcc3f70f">
+<div id="outline-container-org4473400" class="outline-4">
+<h4 id="org4473400">引入模板</h4>
+<div class="outline-text-4" id="text-org4473400">
 <p>
 有些HTML 的模块需要在交给页面中使用,如果使用模板继承,就会在所有子模板中都加载,所
 以不合适;如果每个需要该模块的页面中添加相通的代码,又会导致维护成本增加,此时就可
@@ -3305,13 +3322,13 @@ h1 里的.
 </div>
 </div>
 
-<div id="outline-container-orgd0304c8" class="outline-3">
-<h3 id="orgd0304c8">模板环境</h3>
-<div class="outline-text-3" id="text-orgd0304c8">
+<div id="outline-container-orgdc681a0" class="outline-3">
+<h3 id="orgdc681a0">模板环境</h3>
+<div class="outline-text-3" id="text-orgdc681a0">
 </div>
-<div id="outline-container-orgfeb2c2e" class="outline-4">
-<h4 id="orgfeb2c2e">模板上下文(context?)</h4>
-<div class="outline-text-4" id="text-orgfeb2c2e">
+<div id="outline-container-org579884d" class="outline-4">
+<h4 id="org579884d">模板上下文(context?)</h4>
+<div class="outline-text-4" id="text-org579884d">
 <p>
 通过 render_template 传入的变量,实际上是保存到了模板的上下文中, Jinja2 也有一些
 内置的上下文变量,可以通过 app.context_processor 来添加全局上下文.所以简单理解为
@@ -3326,8 +3343,8 @@ app.context_processor 添加的全局上下文应该就是通过 "with context" 
 </div>
 
 <ul class="org-ul">
-<li><a id="orga88f6e1"></a>自定义变量<br />
-<div class="outline-text-5" id="text-orga88f6e1">
+<li><a id="orgdd48c72"></a>自定义变量<br />
+<div class="outline-text-5" id="text-orgdd48c72">
 <p>
 变量除了通过 render_template 传递外,还可以在模板中通过 set 语法定义新的变量:
 </p>
@@ -3362,8 +3379,8 @@ with 语句也有简写形式:
 </div>
 </li>
 
-<li><a id="org44b44a5"></a>Jinja2 内置全局上下文变量<br />
-<div class="outline-text-5" id="text-org44b44a5">
+<li><a id="orgb072f15"></a>Jinja2 内置全局上下文变量<br />
+<div class="outline-text-5" id="text-orgb072f15">
 <p>
 Jinja2 内置了一些常用的全局上下文变量:
 </p>
@@ -3408,8 +3425,8 @@ Jinja2 内置了一些常用的全局上下文变量:
 </div>
 </li>
 
-<li><a id="org5785bda"></a>上下文处理器(context processor)<br />
-<div class="outline-text-5" id="text-org5785bda">
+<li><a id="org690dc9b"></a>上下文处理器(context processor)<br />
+<div class="outline-text-5" id="text-org690dc9b">
 <p>
 Jinja2 虽然内置了一些上下文变量,但是有时我们需要传递自定义的变量,例如网站当前登
 录的用户名,几乎所有模板都会用到这个数据,因此需要把 user 变量传递到几乎所有模板中,如
@@ -3429,20 +3446,20 @@ Jinja2 虽然内置了一些上下文变量,但是有时我们需要传递自定
 自定义的上下文处理器函数中,要把变量放到字典才能被模板使用(应该是由于 Web 开发传
 递数据多用 JSON 格式的原因吧).另外,在上下文的变量中,除了 Jinja2 内置的全局上下文
 变量外,其余的上下文变量是不能被 import 导入的模板使用的,如果需要使用,就要用 with
-context 语法(详见 <a href="#org177931c">宏和 import 语句</a>).
+context 语法(详见 <a href="#org052a421">宏和 import 语句</a>).
 </p>
 </div>
 </li>
 </ul>
 </div>
 
-<div id="outline-container-orgc8008aa" class="outline-4">
-<h4 id="orgc8008aa">全局函数</h4>
-<div class="outline-text-4" id="text-orgc8008aa">
+<div id="outline-container-orgfb4bcdc" class="outline-4">
+<h4 id="orgfb4bcdc">全局函数</h4>
+<div class="outline-text-4" id="text-orgfb4bcdc">
 </div>
 <ul class="org-ul">
-<li><a id="org60246ae"></a>内置全局函数<br />
-<div class="outline-text-5" id="text-org60246ae">
+<li><a id="org1fbb580"></a>内置全局函数<br />
+<div class="outline-text-5" id="text-org1fbb580">
 <p>
 为了增强 Jinja2 的逻辑功能,Jinja2 内置了一些全局函数,它们在所有模板中都可以使用,
 包括被导入的模板.
@@ -3520,15 +3537,15 @@ url_for 函数可以用来构建 URL 和加载静态文件,和在 Python 中的 
 </div>
 
 <p>
-url_for 加载静态文件以及 get_flashed_messages 的使用会在<a href="#orga19ea51">加载静态文件</a> 和 <a href="#orgc763157">闪现消息</a>
+url_for 加载静态文件以及 get_flashed_messages 的使用会在<a href="#orgdc8983f">加载静态文件</a> 和 <a href="#orgaf5016f">闪现消息</a>
 中讲解
 </p>
 </div>
 </li>
 
 
-<li><a id="orgce239e4"></a>自定义全局函数<br />
-<div class="outline-text-5" id="text-orgce239e4">
+<li><a id="orgb5fc9e9"></a>自定义全局函数<br />
+<div class="outline-text-5" id="text-orgb5fc9e9">
 <p>
 想要自定义全局函数可以通过 app.template_global 装饰器来实现:
 </p>
@@ -3554,9 +3571,9 @@ url_for 加载静态文件以及 get_flashed_messages 的使用会在<a href="#o
 </ul>
 </div>
 
-<div id="outline-container-org2548a7a" class="outline-4">
-<h4 id="org2548a7a">Flask 模板环境</h4>
-<div class="outline-text-4" id="text-org2548a7a">
+<div id="outline-container-orgb212d2c" class="outline-4">
+<h4 id="orgb212d2c">Flask 模板环境</h4>
+<div class="outline-text-4" id="text-orgb212d2c">
 <p>
 Flask 中使用 Jinja2, 可以通过 app.jinja_env 属性来配置模板.
 </p>
@@ -3568,8 +3585,8 @@ app.jinja_env 是 Jinja2.Environment 类的对象.下面是一些 Jinja2.Environ
 </div>
 
 <ul class="org-ul">
-<li><a id="org9ff91cd"></a>设置 autoescape(自动转义)<br />
-<div class="outline-text-5" id="text-org9ff91cd">
+<li><a id="orgc90422d"></a>设置 autoescape(自动转义)<br />
+<div class="outline-text-5" id="text-orgc90422d">
 <p>
 Jinja2 默认是开启了全局转义,如果要关闭全局转义,可以通过下面代码实现:
 </p>
@@ -3580,8 +3597,8 @@ Jinja2 默认是开启了全局转义,如果要关闭全局转义,可以通过�
 </div>
 </li>
 
-<li><a id="org51eb9e2"></a>添加过滤器<br />
-<div class="outline-text-5" id="text-org51eb9e2">
+<li><a id="org0373e6a"></a>添加过滤器<br />
+<div class="outline-text-5" id="text-org0373e6a">
 <p>
 添加过滤器还可以通过 app.jinja_env.filters 实现:
 </p>
@@ -3601,8 +3618,8 @@ Jinja2 默认是开启了全局转义,如果要关闭全局转义,可以通过�
 </div>
 </li>
 
-<li><a id="org3b53529"></a>添加全局对象<br />
-<div class="outline-text-5" id="text-org3b53529">
+<li><a id="org8a5e9d8"></a>添加全局对象<br />
+<div class="outline-text-5" id="text-org8a5e9d8">
 <p>
 app.template_global() 装饰器只能添加全局函数,如果需要添加其他的 Pytho 对象,可以
 通过 app.jinja_env.globals 实现:
@@ -3614,8 +3631,8 @@ app.template_global() 装饰器只能添加全局函数,如果需要添加其他
 </div>
 </li>
 
-<li><a id="orgad9b332"></a>添加测试器<br />
-<div class="outline-text-5" id="text-orgad9b332">
+<li><a id="org554fcf7"></a>添加测试器<br />
+<div class="outline-text-5" id="text-org554fcf7">
 <p>
 测试器也可以通过 app.jinja_env.tests 添加:
 </p>
@@ -3640,13 +3657,13 @@ Jinja2.Environment 的其他属性可以查阅官网文档:<a href="https://jinj
 </div>
 </div>
 
-<div id="outline-container-orgb251c06" class="outline-3">
-<h3 id="orgb251c06">其他</h3>
-<div class="outline-text-3" id="text-orgb251c06">
+<div id="outline-container-org4312458" class="outline-3">
+<h3 id="org4312458">其他</h3>
+<div class="outline-text-3" id="text-org4312458">
 </div>
-<div id="outline-container-orgfeee59e" class="outline-4">
-<h4 id="orgfeee59e">转义</h4>
-<div class="outline-text-4" id="text-orgfeee59e">
+<div id="outline-container-orgd3f355c" class="outline-4">
+<h4 id="orgd3f355c">转义</h4>
+<div class="outline-text-4" id="text-orgd3f355c">
 <p>
 模板渲染字符串时,字符串中有一些字符可能会破坏原本的 HTML 标签,如 "&amp;","&lt;","/"等,
 更严重可能会发生 XSS 跨域脚本供给.因此,处理这些特殊字符时,要将其转义成 HTML 能正
@@ -3678,9 +3695,9 @@ Jinja2.Environment 的其他属性可以查阅官网文档:<a href="https://jinj
 </div>
 </div>
 
-<div id="outline-container-orga19ea51" class="outline-4">
-<h4 id="orga19ea51">加载静态文件</h4>
-<div class="outline-text-4" id="text-orga19ea51">
+<div id="outline-container-orgdc8983f" class="outline-4">
+<h4 id="orgdc8983f">加载静态文件</h4>
+<div class="outline-text-4" id="text-orgdc8983f">
 <p>
 网页中除了 HTML 代码外,还有 CSS, JavaScript 和图片文件. 静态文件默认存放的目录为
 当前目录的 static 文件夹中,如果要修改静态文件存放的路径,可以在创建 Flask 对象时
@@ -3713,9 +3730,9 @@ filename 是文件名或文件路径,路径是相对于 static_folder 的路径(
 </div>
 </div>
 
-<div id="outline-container-orgc763157" class="outline-4">
-<h4 id="orgc763157">闪现消息</h4>
-<div class="outline-text-4" id="text-orgc763157">
+<div id="outline-container-orgaf5016f" class="outline-4">
+<h4 id="orgaf5016f">闪现消息</h4>
+<div class="outline-text-4" id="text-orgaf5016f">
 <p>
 用户发送请求后,网站可能需要发送给用户一些提示消息,如登录失败或登录成功,这些提示
 一般用闪现消息实现.
@@ -3806,9 +3823,9 @@ message2
 </div>
 </div>
 
-<div id="outline-container-orga32c90e" class="outline-2">
-<h2 id="orga32c90e">数据库</h2>
-<div class="outline-text-2" id="text-orga32c90e">
+<div id="outline-container-org33b1550" class="outline-2">
+<h2 id="org33b1550">数据库</h2>
+<div class="outline-text-2" id="text-org33b1550">
 <p>
 数据库是动态站必备的基础功能,通过使用数据库,数据可以被动态展示,修改,删除,极大提
 高了数据的管理能力以及数据的传递效率.
@@ -3838,22 +3855,22 @@ sh-5.2$ mkdir: cannot create directory 'demo05': File exists
 </div>
 
 
-<div id="outline-container-orgc70af23" class="outline-3">
-<h3 id="orgc70af23">准备工作</h3>
-<div class="outline-text-3" id="text-orgc70af23">
+<div id="outline-container-org822e70d" class="outline-3">
+<h3 id="org822e70d">准备工作</h3>
+<div class="outline-text-3" id="text-org822e70d">
 </div>
-<div id="outline-container-org0cb3417" class="outline-4">
-<h4 id="org0cb3417">MySQL 软件</h4>
-<div class="outline-text-4" id="text-org0cb3417">
+<div id="outline-container-org8c7e25d" class="outline-4">
+<h4 id="org8c7e25d">MySQL 软件</h4>
+<div class="outline-text-4" id="text-org8c7e25d">
 <p>
 书中使用的 MySQL 8.0 版本.下载安装的图文教程:<a href="https://zlkt.net/book/detail/10/306">Install MySQL</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgd9ec15c" class="outline-4">
-<h4 id="orgd9ec15c">Python 操作 MySQL 驱动</h4>
-<div class="outline-text-4" id="text-orgd9ec15c">
+<div id="outline-container-org1a557f0" class="outline-4">
+<h4 id="org1a557f0">Python 操作 MySQL 驱动</h4>
+<div class="outline-text-4" id="text-org1a557f0">
 <p>
 Flask 是 Python 的框架,想要用 Flask 操作 MySQL 要先安装 Python 操作 MySQL 的驱动.目
 前有下面这些 MySQL 驱动包:
@@ -3894,9 +3911,9 @@ You should consider upgrading via the 'c:\users\kamisama\flask_web_py3_10\script
 </div>
 </div>
 
-<div id="outline-container-orgfc3a386" class="outline-4">
-<h4 id="orgfc3a386">Flask-SQLAlchemy</h4>
-<div class="outline-text-4" id="text-orgfc3a386">
+<div id="outline-container-orgc81ef97" class="outline-4">
+<h4 id="orgc81ef97">Flask-SQLAlchemy</h4>
+<div class="outline-text-4" id="text-orgc81ef97">
 <p>
 Flask 中,很少会使用 pymysql 直接写原生的 SQL 语句去操作数据库,更多的是通过
 SQLAlchemy 提供的 ORM 技术,类似于操作普通 Python 对象一样,来实现对数据库的增删改
@@ -3944,13 +3961,13 @@ SQLAlchemy 类似于 Jinja2, 也可以独立于 Flask 使用, 完全可以在任
 </div>
 </div>
 
-<div id="outline-container-org87168f0" class="outline-3">
-<h3 id="org87168f0">Flask-SQLAlchemy 的基本使用</h3>
-<div class="outline-text-3" id="text-org87168f0">
+<div id="outline-container-orge56ed21" class="outline-3">
+<h3 id="orge56ed21">Flask-SQLAlchemy 的基本使用</h3>
+<div class="outline-text-3" id="text-orge56ed21">
 </div>
-<div id="outline-container-org5d77533" class="outline-4">
-<h4 id="org5d77533">连接 MySQL</h4>
-<div class="outline-text-4" id="text-org5d77533">
+<div id="outline-container-orgd8b5fc8" class="outline-4">
+<h4 id="orgd8b5fc8">连接 MySQL</h4>
+<div class="outline-text-4" id="text-orgd8b5fc8">
 <p>
 Flask-SQLAlchemy 操作数据库需要先创建一个由 Flask-SQLAlchemy 提供的 SQLAlchemy
 类的对象.创建这个对象时,要传入当前 app, 还要在 app.config 里设置
@@ -4046,9 +4063,9 @@ FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead 
 </div>
 </div>
 
-<div id="outline-container-orgbf5e22f" class="outline-4">
-<h4 id="orgbf5e22f">ORM模型</h4>
-<div class="outline-text-4" id="text-orgbf5e22f">
+<div id="outline-container-org770f5a6" class="outline-4">
+<h4 id="org770f5a6">ORM模型</h4>
+<div class="outline-text-4" id="text-org770f5a6">
 <p>
 object relationship mapping 对象关系映射,简称 ORM. 它是一种可以用面向对象的方式
 来操作关系型数据库的技术.我们将能够映射数据库表的 Python 类称为 ORM 模型(当然了,
@@ -4333,9 +4350,9 @@ show create table User;
 </div>
 </div>
 
-<div id="outline-container-org9cf20ea" class="outline-4">
-<h4 id="org9cf20ea">CRUD 操作</h4>
-<div class="outline-text-4" id="text-org9cf20ea">
+<div id="outline-container-org9a1f7cf" class="outline-4">
+<h4 id="org9a1f7cf">CRUD 操作</h4>
+<div class="outline-text-4" id="text-org9a1f7cf">
 <p>
 使用 ORM 进行 CRUD(create,read,update,delete) 操作,需要先把操作添加到会话中,通过
 db.session 可以获取到会话对象.会话对象存在于内存,如果需要把会话的操作提交到数据
@@ -4352,8 +4369,8 @@ db.session.rollback() .
 </div>
 
 <ul class="org-ul">
-<li><a id="orgae97571"></a>Create 操作<br />
-<div class="outline-text-5" id="text-orgae97571">
+<li><a id="org96bc637"></a>Create 操作<br />
+<div class="outline-text-5" id="text-org96bc637">
 <p>
 使用 ORM 添加/创建以一条数据非常简单,先用 ORM 模型创建一个对象,然后添加到会话中,
 再进行 commit 操作就可以了.
@@ -4438,8 +4455,8 @@ db.session.rollback() .
 </div>
 </li>
 
-<li><a id="orgbc46da9"></a>Read 操作<br />
-<div class="outline-text-5" id="text-orgbc46da9">
+<li><a id="org5ebd08e"></a>Read 操作<br />
+<div class="outline-text-5" id="text-org5ebd08e">
 <p>
 Read 就是查询操作. ORM 模型都继承自 db.Model. db.Model 内置的 query 属性有许多方
 法,可以实现对 ORM 模型的查寻操作.
@@ -4916,8 +4933,8 @@ or: 用于满足一个或多个条件,实际方法名为 or_:
 </div>
 </li>
 
-<li><a id="orgd894b42"></a>update 操作<br />
-<div class="outline-text-5" id="text-orgd894b42">
+<li><a id="org4b8c7f9"></a>update 操作<br />
+<div class="outline-text-5" id="text-org4b8c7f9">
 <p>
 更新操作也分为两种,一种针对一条数据,另一种针对多条数据.
 </p>
@@ -4957,8 +4974,8 @@ synchronize_session 的作用: <a href="https://stackoverflow.com/questions/7035
 </div>
 </li>
 
-<li><a id="org7c07364"></a>delete 操作<br />
-<div class="outline-text-5" id="text-org7c07364">
+<li><a id="org8820b5c"></a>delete 操作<br />
+<div class="outline-text-5" id="text-org8820b5c">
 <p>
 删除也分删除一条或删除多条数据两种.
 </p>
@@ -4986,9 +5003,9 @@ db.session.commit()
 </div>
 </div>
 
-<div id="outline-container-org723b033" class="outline-3">
-<h3 id="org723b033">表关系</h3>
-<div class="outline-text-3" id="text-org723b033">
+<div id="outline-container-org8aee9f7" class="outline-3">
+<h3 id="org8aee9f7">表关系</h3>
+<div class="outline-text-3" id="text-org8aee9f7">
 <p>
 关系型数据库的一个强大功能就是多个表可以建立关系.
 </p>
@@ -5014,9 +5031,9 @@ Flask-SQLAlchemy 对数据库的表关系也有对应的映射实现.表关系�
 </p>
 </div>
 
-<div id="outline-container-orgac9e51b" class="outline-4">
-<h4 id="orgac9e51b">外键</h4>
-<div class="outline-text-4" id="text-orgac9e51b">
+<div id="outline-container-orgbdfd2de" class="outline-4">
+<h4 id="orgbdfd2de">外键</h4>
+<div class="outline-text-4" id="text-orgbdfd2de">
 <p>
 外键是数据库里的概念, Flask-SQLAlchemy 中支持在创建 ORM 模型时就指定外键,创建外
 键通过 db.ForeginKey 实现. 例如,前面已经有了用户表 User ,现在要创建一个文章表
@@ -5040,9 +5057,9 @@ Article, 来存储每篇文章的信息,包括作者信息,这张表有一个 au
 </div>
 </div>
 
-<div id="outline-container-orgdbd0a6a" class="outline-4">
-<h4 id="orgdbd0a6a">一对多关系</h4>
-<div class="outline-text-4" id="text-orgdbd0a6a">
+<div id="outline-container-org8975eae" class="outline-4">
+<h4 id="org8975eae">一对多关系</h4>
+<div class="outline-text-4" id="text-org8975eae">
 <p>
 一对多和多对一其实是一个概念(吧),或者说是同一个关系不同角度的解释,一篇博客文章只
 能属于一个作者,但一个作者可以发布多篇博客,作者和文章就是一对多的关系,换个角度,文
@@ -5051,10 +5068,10 @@ Article, 来存储每篇文章的信息,包括作者信息,这张表有一个 au
 </div>
 
 <ul class="org-ul">
-<li><a id="org0a6b779"></a>建立关系<br />
-<div class="outline-text-5" id="text-org0a6b779">
+<li><a id="org0f624ff"></a>建立关系<br />
+<div class="outline-text-5" id="text-org0f624ff">
 <p>
-关系是通过外键建立的, <a href="#orgac9e51b">外键</a> 部分创建的 Article 模型中其实已经通过 author_id 外键
+关系是通过外键建立的, <a href="#orgbdfd2de">外键</a> 部分创建的 Article 模型中其实已经通过 author_id 外键
 建立了博客和作者的关系. 但是只是建立了一个外键,通过 Article 对象还是无法直接获取
 到 author_id 对应的 User 对象.
 </p>
@@ -5189,8 +5206,8 @@ User 是在 Article 前面定义的,所以没错,但在后面我们需要建立 
 </li>
 
 
-<li><a id="orgc9953f8"></a>建立双向关系<br />
-<div class="outline-text-5" id="text-orgc9953f8">
+<li><a id="org2e5f7a7"></a>建立双向关系<br />
+<div class="outline-text-5" id="text-org2e5f7a7">
 <p>
 通过上面代码, Article 模型可以通过 author 属性访问到 User 的实例对象,但 User 的
 实例对象不能访问到与其关联的 Article 实例对象,因此,为了实现双向的绑定,我们需要在
@@ -5285,8 +5302,8 @@ db.create_all()
 </div>
 </li>
 
-<li><a id="org94b2979"></a>简化关系定义<br />
-<div class="outline-text-5" id="text-org94b2979">
+<li><a id="orge0bdffa"></a>简化关系定义<br />
+<div class="outline-text-5" id="text-orge0bdffa">
 <p>
 上面的 User 和 Article 模型,二者都通过 db.relationship 传递 bakc_populates 参数
 实现双向绑定,这种方式还是有些繁琐.我们可以修改一下代码,实现只在一个模型上定义
@@ -5388,9 +5405,9 @@ backref 双向绑定可以在第一个绑定对象定义后再进行绑定,这�
 </ul>
 </div>
 
-<div id="outline-container-orgc4735a1" class="outline-4">
-<h4 id="orgc4735a1">一对一关系</h4>
-<div class="outline-text-4" id="text-orgc4735a1">
+<div id="outline-container-org6b5679c" class="outline-4">
+<h4 id="org6b5679c">一对一关系</h4>
+<div class="outline-text-4" id="text-org6b5679c">
 <p>
 一对一的关系,只需要在一对多的基础上,将 "多" 的一端设置未 "一"即可.
 </p>
@@ -5599,9 +5616,9 @@ user_id 重复的数据时会抛出异常.
 </div>
 </div>
 
-<div id="outline-container-orgcc167a8" class="outline-4">
-<h4 id="orgcc167a8">多对多关系</h4>
-<div class="outline-text-4" id="text-orgcc167a8">
+<div id="outline-container-org113d32a" class="outline-4">
+<h4 id="org113d32a">多对多关系</h4>
+<div class="outline-text-4" id="text-org113d32a">
 <p>
 多对多的关系在数据库层面需要通过一张中间表来实现, Flask-SQLAlchemy 中也是一样
 (ORM 是关系型数据库的抽象,当然得保持一致).文章表和标签表就很适合多对多的关系,一
@@ -5841,9 +5858,9 @@ article_tag_table 表中却插入了对应的记录,这就是 db.relationship �
 </div>
 </div>
 
-<div id="outline-container-org8677837" class="outline-4">
-<h4 id="org8677837">级联操作</h4>
-<div class="outline-text-4" id="text-org8677837">
+<div id="outline-container-org8ea0e87" class="outline-4">
+<h4 id="org8ea0e87">级联操作</h4>
+<div class="outline-text-4" id="text-org8ea0e87">
 <p>
 级联操作(cascade) 是操作某个对象时,其关联的对象也会进行对应的操作.
 </p>
@@ -5918,8 +5935,8 @@ db.create_all()
 </div>
 
 <ul class="org-ul">
-<li><a id="org467ffb7"></a>save-update<br />
-<div class="outline-text-5" id="text-org467ffb7">
+<li><a id="org5fed2ea"></a>save-update<br />
+<div class="outline-text-5" id="text-org5fed2ea">
 <p>
 save-update 是 cascade 的默认值,即如果不设置 cascade 就按照 save-update 的方式处
 理.它的处理方式是当某个对象被添加到会话中时,与其相关联的对象也会被添加进去:
@@ -6070,8 +6087,8 @@ save-update, 关联的对象 category 没有被添加到会话中,所以获取�
 </div>
 </li>
 
-<li><a id="org01ddf91"></a>delete<br />
-<div class="outline-text-5" id="text-org01ddf91">
+<li><a id="orgb9c38ba"></a>delete<br />
+<div class="outline-text-5" id="text-orgb9c38ba">
 <p>
 delete 表示当删除某个对象时,被关联的所有对象都会删除,
 </p>
@@ -6143,8 +6160,8 @@ relationship 完成了.
 </div>
 </li>
 
-<li><a id="orga221434"></a>delete-orphan<br />
-<div class="outline-text-5" id="text-orga221434">
+<li><a id="orgd3b2ef8"></a>delete-orphan<br />
+<div class="outline-text-5" id="text-orgd3b2ef8">
 <p>
 delete-orphan 表示某个对象被父表解除关联时,该对象也会自动被删除(与 delete 不同的
 地方).当然了,如果父表中的数据被删除,该对象也会被删除(与 delete 相同的地方).
@@ -6244,8 +6261,8 @@ category.newses 的关系里并没有 news 对象(数据/记录).
 </div>
 </li>
 
-<li><a id="org2539309"></a>merge<br />
-<div class="outline-text-5" id="text-org2539309">
+<li><a id="org4ddef5e"></a>merge<br />
+<div class="outline-text-5" id="text-org4ddef5e">
 <p>
 merge 也是默认的 cascade 值(它是可以有多个值的). 在使用 session.merge 合并对象时,会
 使用 db.relationship 关联的对象也进行 merge 操作.
@@ -6267,8 +6284,8 @@ merge 也是默认的 cascade 值(它是可以有多个值的). 在使用 sessio
 </div>
 </li>
 
-<li><a id="orga9aa8fe"></a>expunge<br />
-<div class="outline-text-5" id="text-orga9aa8fe">
+<li><a id="orgbadf33a"></a>expunge<br />
+<div class="outline-text-5" id="text-orgbadf33a">
 <p>
 进行移除操作时,将关联的对象也移除.这个操作只将对象从 session 中移除,而不会从数据
 库中删除.
@@ -6351,22 +6368,22 @@ category 也从 session 移除了,因此 session 中就不存在 category 了,�
 
 <blockquote>
 <p>
-直接修改实例对象属性值属于单条记录的更新操作,也是会影响数据库的,参见 <a href="#orgd894b42">update 操作</a>
+直接修改实例对象属性值属于单条记录的更新操作,也是会影响数据库的,参见 <a href="#org4b8c7f9">update 操作</a>
 </p>
 </blockquote>
 </div>
 </li>
 
-<li><a id="org543c6f9"></a>all<br />
-<div class="outline-text-5" id="text-org543c6f9">
+<li><a id="orgf4ba637"></a>all<br />
+<div class="outline-text-5" id="text-orgf4ba637">
 <p>
 all 就是 save-update, merge, expunge, delete 的缩写,不包括 delete-orphan.
 </p>
 </div>
 </li>
 
-<li><a id="orge092142"></a>默认值<br />
-<div class="outline-text-5" id="text-orge092142">
+<li><a id="org69204fa"></a>默认值<br />
+<div class="outline-text-5" id="text-org69204fa">
 <p>
 cascade 在没有进行设置时的默认值是 save-update 和 merge.
 </p>
@@ -6376,9 +6393,9 @@ cascade 在没有进行设置时的默认值是 save-update 和 merge.
 </div>
 </div>
 
-<div id="outline-container-org1d2385a" class="outline-3">
-<h3 id="org1d2385a">ORM 模型迁移</h3>
-<div class="outline-text-3" id="text-org1d2385a">
+<div id="outline-container-orgd56b847" class="outline-3">
+<h3 id="orgd56b847">ORM 模型迁移</h3>
+<div class="outline-text-3" id="text-orgd56b847">
 <p>
 前面的代码里 ORM 模型定义好了之后,是通过 db.create_all 将 ORM 模型映射到数据库的.
 </p>
@@ -6413,9 +6430,9 @@ alembic 会自动随着 flask-migrate安装. 完成安装后就可以配置使�
 </p>
 </div>
 
-<div id="outline-container-org57807cd" class="outline-4">
-<h4 id="org57807cd">创建迁移对象</h4>
-<div class="outline-text-4" id="text-org57807cd">
+<div id="outline-container-orgbff662d" class="outline-4">
+<h4 id="orgbff662d">创建迁移对象</h4>
+<div class="outline-text-4" id="text-orgbff662d">
 <p>
 先创建迁移对象:
 </p>
@@ -6442,9 +6459,9 @@ db.SQLAlchemy(app)
 </div>
 </div>
 
-<div id="outline-container-org0d60990" class="outline-4">
-<h4 id="org0d60990">初始化迁移环境</h4>
-<div class="outline-text-4" id="text-org0d60990">
+<div id="outline-container-org975c666" class="outline-4">
+<h4 id="org975c666">初始化迁移环境</h4>
+<div class="outline-text-4" id="text-org975c666">
 <p>
 创建迁移对象后,要初始化迁移环境.
 </p>
@@ -6478,9 +6495,9 @@ db.SQLAlchemy(app)
 </div>
 </div>
 
-<div id="outline-container-org42f03c5" class="outline-4">
-<h4 id="org42f03c5">生成迁移脚本</h4>
-<div class="outline-text-4" id="text-org42f03c5">
+<div id="outline-container-org1ed2330" class="outline-4">
+<h4 id="org1ed2330">生成迁移脚本</h4>
+<div class="outline-text-4" id="text-org1ed2330">
 <p>
 初始化迁移环境后,无论是新增 ORM 模型,或者是 ORM 模型的字段信息发生变化,且想要将
 变化同步到数据库中,都需要将当前的修改生成一个迁移脚本,生成迁移脚本的命令如下:
@@ -6501,9 +6518,9 @@ db.SQLAlchemy(app)
 </div>
 </div>
 
-<div id="outline-container-org52a0bb6" class="outline-4">
-<h4 id="org52a0bb6">执行迁移脚本</h4>
-<div class="outline-text-4" id="text-org52a0bb6">
+<div id="outline-container-org473c172" class="outline-4">
+<h4 id="org473c172">执行迁移脚本</h4>
+<div class="outline-text-4" id="text-org473c172">
 <p>
 迁移脚本只是写好了修改数据库的代码,但并没有更新数据库(因为这些代码并没有被执行!),所
 以我们需要执行生成的迁移脚本,才能将改变映射到数据库中.
@@ -6542,8 +6559,1188 @@ flask-migrate 进行迁移操作需要注意的是,被迁移的 ORM 模型必需
 </div>
 </div>
 
-<div id="outline-container-org02494fd" class="outline-2">
-<h2 id="org02494fd">表单</h2>
+<div id="outline-container-org5dbfee6" class="outline-2">
+<h2 id="org5dbfee6">表单</h2>
+<div class="outline-text-2" id="text-org5dbfee6">
+<p>
+表单是网站和用户进行交互必不可少的元素.
+</p>
+
+<p>
+表单可以提供文本输入框,单选按钮,复选框,按钮等供用户提交数据.
+</p>
+
+<p>
+Flask 中, 抽象出来的表单除了可以表示传统的 HTML 标签(元素)外,还有数据验证的作用.数
+据被发送到服务器后,服务器会对提交的数据进行验证,因为有非正常用户会尝试提交一些 "
+非法"的数据, 来获得服务器的权限或是破坏网站运行.所以要通过数据验证来保证数据合法,通
+常在前端也会有数据合法性的验证和限制,但了解过爬虫或是网络安全的都知道会有各种方
+法绕过限制,因此服务器端的数据验证仍然是必要的.
+</p>
+
+<p>
+要实现表单的验证功能,我们需要使用插件 Flask-WTF, Flask-WTF 是对 WTForms 库的封装,让
+WTForms 库在 Flask 项目中更方便的被使用,不过 Flask-WTF 提供的功能有限,大部分是直
+接从 WTForms 导入的. WTForms 主要有两个功能,分别是验证数据和在模板中渲染表单HTML
+标签. WTForms 也还有一些其他的功能,比如 CSRF 保护,文件上传等.
+</p>
+
+<p>
+安装 Flask-WTF 同时也会安装依赖 WTForms :
+激活虚拟环境:
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">mkdir ~/flask_web_py3_10/demo06
+source ~/flask_web_py3_10/Scripts/activate
+<span style="font-weight: bold;">cd</span> ~/flask_web_py3_10/demo06
+</pre>
+</div>
+
+
+
+<p>
+安装 Flask-Wtf
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">pip install flask-wtf -i https://mirrors.163.com/pypi/simple/
+</pre>
+</div>
+
+<pre class="example">
+Looking in indexes: https://mirrors.163.com/pypi/simple/
+Collecting flask-wtf
+  Downloading https://mirrors.163.com/pypi/packages/36/a9/8c01171066bd7a524ee005d81bb4a8aa446ab178043a1ad6cb5dc8f0bd83/Flask_WTF-0.14.3-py2.py3-none-any.whl (13 kB)
+Requirement already satisfied: Flask in c:\users\kamisama\flask_web_py3_10\lib\site-packages (from flask-wtf) (2.0.1)
+Collecting WTForms
+  Downloading https://mirrors.163.com/pypi/packages/e0/31/614fc7dc7d76005b0acb8c0c8920d962b83d7422b4ba912886dfb63f86ff/WTForms-2.3.3-py2.py3-none-any.whl (169 kB)
+Requirement already satisfied: itsdangerous in c:\users\kamisama\flask_web_py3_10\lib\site-packages (from flask-wtf) (2.1.2)
+=7.1.2 in c:\users\kamisama\flask_web_py3_10\lib\site-packages (from Flask-&gt;flask-wtf) (8.1.3)
+=3.0 in c:\users\kamisama\flask_web_py3_10\lib\site-packages (from Flask-&gt;flask-wtf) (3.1.2)
+=2.0 in c:\users\kamisama\flask_web_py3_10\lib\site-packages (from Flask-&gt;flask-wtf) (2.2.3)
+flask-wtf) (2.1.2)
+=7.1.2-&gt;Flask-&gt;flask-wtf) (0.4.6)
+Installing collected packages: WTForms, flask-wtf
+Successfully installed WTForms-2.3.3 flask-wtf-0.14.3
+</pre>
+
+<p>
+安装完毕后,创建一个 demo06 文件夹用来存放这一章的项目文件(作者创建的 formlearn
+文件夹/项目)
+</p>
+</div>
+
+<div id="outline-container-orgec9fd7e" class="outline-3">
+<h3 id="orgec9fd7e">表单验证</h3>
+<div class="outline-text-3" id="text-orgec9fd7e">
+<p>
+通常表单都是用来提交大量/隐私数据的,所以这里以注册的功能为例,讲解表单的验证功能.
+</p>
+
+<p>
+注册时一般都需要提供邮箱,用户名,密码,确认密码4个字段的数据.
+</p>
+
+<p>
+首先,在 templates 文件夹中创建一个 register.html 模板文件:
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="font-weight: bold;">!DOCTYPE</span> html&gt;
+&lt;<span style="font-weight: bold;">html</span> <span style="font-weight: bold; font-style: italic;">lang</span>=<span style="font-style: italic;">"en"</span>&gt;
+  &lt;<span style="font-weight: bold;">head</span>&gt;
+    &lt;<span style="font-weight: bold;">meta</span> <span style="font-weight: bold; font-style: italic;">charset</span>=<span style="font-style: italic;">"UTF-8"</span>&gt;
+    &lt;<span style="font-weight: bold;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">&#27880;&#20876;&#39029;&#38754;</span>&lt;/<span style="font-weight: bold;">title</span>&gt;
+  &lt;/<span style="font-weight: bold;">head</span>&gt;
+  &lt;<span style="font-weight: bold;">body</span>&gt;
+    &lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">action</span>=<span style="font-style: italic;">" {{ url_for('register') }}"</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"POST"</span>&gt;
+      &lt;<span style="font-weight: bold;">table</span>&gt;
+        &lt;<span style="font-weight: bold;">tr</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt;Username:&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt; &lt;<span style="font-weight: bold;">input</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"text"</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"username"</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+        &lt;/<span style="font-weight: bold;">tr</span>&gt;
+
+        &lt;<span style="font-weight: bold;">tr</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt;Email:&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt; &lt;<span style="font-weight: bold;">input</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"email"</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"email"</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+        &lt;/<span style="font-weight: bold;">tr</span>&gt;
+
+        &lt;<span style="font-weight: bold;">tr</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt;Password:&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt; &lt;<span style="font-weight: bold;">input</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"password"</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"password"</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+        &lt;/<span style="font-weight: bold;">tr</span>&gt;
+
+        &lt;<span style="font-weight: bold;">tr</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt;Confirm Password:&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt; &lt;<span style="font-weight: bold;">input</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"password"</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"confirm_password"</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+        &lt;/<span style="font-weight: bold;">tr</span>&gt;
+
+        &lt;<span style="font-weight: bold;">tr</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt; &lt;<span style="font-weight: bold;">input</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span> <span style="font-weight: bold; font-style: italic;">value</span>=<span style="font-style: italic;">"Submit"</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+        &lt;/<span style="font-weight: bold;">tr</span>&gt;
+
+      &lt;/<span style="font-weight: bold;">table</span>&gt;
+    &lt;/<span style="font-weight: bold;">form</span>&gt;
+  &lt;/<span style="font-weight: bold;">body</span>&gt;
+&lt;/<span style="font-weight: bold;">html</span>&gt;
+</pre>
+</div>
+
+<p>
+上面代码中,创建了一个 form 表单标签,然后设置 action 为 url_for('register') ,就是
+将 register 视图函数反转为 URL (就是返回 register 视图函数对应的 URL), 在点击提
+交按钮时, form 表单就会将表单标签中输入框的内容都提交给这个 URL. 然后设置了
+method 为 POST, 指定数据以 POST 方式提交. 然后在 form 标签下,添加了属性 name 分
+别为 username, email, password 以及 confirm_password 的input 标签. 最后添加了一
+个 type="submit" 的 input 标签,它会生成一个按钮,点击就会提交数据.
+</p>
+
+<p>
+模板写好后,再用一个视图函数渲染该模板:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> flask <span style="font-weight: bold;">import</span> Flask, url_for, render_template, request
+
+<span style="font-weight: bold; font-style: italic;">app</span> = Flask(<span style="font-weight: bold;">__name__</span>)
+
+<span style="font-weight: bold; text-decoration: underline;">@app.route</span>(<span style="font-style: italic;">"/register"</span>, methods=[<span style="font-style: italic;">"GET"</span>, <span style="font-style: italic;">"POST"</span>])
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">register</span>():
+    <span style="font-weight: bold;">if</span> request.method == <span style="font-style: italic;">"GET"</span>:
+        <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">"register.html"</span>)
+    <span style="font-weight: bold;">else</span>:
+        <span style="font-weight: bold;">pass</span>
+
+<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">"__main__"</span>:
+    app.run(debug=<span style="font-weight: bold; text-decoration: underline;">True</span>)
+</pre>
+</div>
+<p>
+运行项目,访问 <a href="http://127.0.0.1:5000/register">http://127.0.0.1:5000/register</a> 就会看到4个输入框,一个按钮,以及对应
+的说明文本,虽然样式简陋,但功能看起来和用过的注册页面差不多.
+</p>
+</div>
+
+<div id="outline-container-orga509485" class="outline-4">
+<h4 id="orga509485">表单类编写</h4>
+<div class="outline-text-4" id="text-orga509485">
+<p>
+上一小节,完成了前端模板代码的编写,用于已经可以通过该简陋的注册页面输入和提交数据
+了,这个页面输入的数据也是有一定要求的:
+</p>
+<ul class="org-ul">
+<li>username : 最少要输入3位以上的字符.</li>
+<li>email: 格式必须用 <code>**@example.com</code> 的格式.</li>
+<li>password: 至少要输入 6 位以上字符.</li>
+<li>confirm password: 该内容必需与上面的 password 内容一致.</li>
+</ul>
+
+
+<p>
+一般来说,我们不能指望用户完全按照这些要求输入数据,如果用户输入错误,应该在页面中
+进行提示.这个一般是通过前端的 JavaScript 来完成的,但是我们需要在服务器端做好验证,因
+为有一定技术功底的"用户",可以通过抓包形式获取请求参数,然后用工具或代码构造请求,
+来模拟注册,这样就绕开了前端的限制,而此时我们如果不在服务器端进行限制,那就会导致
+错误的数据提交到程序中,好点的后果程序出错,网站崩溃,坏一点的可能就被找到漏洞,让人
+黑进服务器了.
+</p>
+
+<p>
+服务器端的验证可以通过 WTForms 来实现:
+先在项目根目录创建一个 forms.py 文件:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> wtforms <span style="font-weight: bold;">import</span> Form, StringField
+<span style="font-weight: bold;">from</span> wtforms.validators <span style="font-weight: bold;">import</span> length, email, equal_to
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">RegisterForm</span>(Form):
+    <span style="font-weight: bold; font-style: italic;">username</span> = StringField(validators=[length(<span style="font-weight: bold;">min</span>=3,<span style="font-weight: bold;">max</span>=20,message=<span style="font-style: italic;">"&#35831;&#36755;&#20837;&#27491;&#30830;&#38271;&#24230;&#30340;&#29992;&#25143;&#21517;(3-20&#20010;&#23383;&#31526;)"</span>)])
+    <span style="font-weight: bold; font-style: italic;">email</span> = StringField(validators=[email(message=<span style="font-style: italic;">"&#35831;&#36755;&#20837;&#27491;&#30830;&#26684;&#24335;&#30340;&#37038;&#31665;"</span>)])
+    <span style="font-weight: bold; font-style: italic;">password</span> = StringField(validators=[length(<span style="font-weight: bold;">min</span>=6,<span style="font-weight: bold;">max</span>=20,message=<span style="font-style: italic;">"&#35831;&#36755;&#20837;&#27491;&#30830;&#38271;&#24230;&#30340;&#23494;&#30721;"</span>)])
+    <span style="font-weight: bold; font-style: italic;">confirm_password</span> = StringField(validators=[equal_to(<span style="font-style: italic;">"password"</span>,message=<span style="font-style: italic;">"&#20004;&#27425;&#23494;&#30721;&#19981;&#19968;&#33268;"</span>)])
+</pre>
+</div>
+
+<p>
+上面代码从 wtforms 导入 Form 基类,所有表单类都继承自 Form 类. 然后在
+RegisterForm 中添加了 username, email, password 和 confirm_password 4个字段,这里
+的字段名称必需和模板文件中表单元素的 name 值一致. 前面模板文件中 4 个 input 标签
+的name 是 username , email , password 和 confirm_password 与这里一致.
+</p>
+
+<p>
+这 4 个属性(字段)都是字符串类型,因此使用 StringField 类型,除了 StringField 外,还
+有下表这些类型可以用:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 12:</span> Field类的类型</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">字段类型</td>
+<td class="org-left">描述</td>
+</tr>
+
+<tr>
+<td class="org-left">StringField</td>
+<td class="org-left">字符串类型</td>
+</tr>
+
+<tr>
+<td class="org-left">IntegerField</td>
+<td class="org-left">整型类型</td>
+</tr>
+
+<tr>
+<td class="org-left">FloatField</td>
+<td class="org-left">浮点类型</td>
+</tr>
+
+<tr>
+<td class="org-left">DecimalField</td>
+<td class="org-left">定点类型</td>
+</tr>
+
+<tr>
+<td class="org-left">BooleanField</td>
+<td class="org-left">布尔类型</td>
+</tr>
+
+<tr>
+<td class="org-left">DateTimFielde</td>
+<td class="org-left">日期时间类型</td>
+</tr>
+
+<tr>
+<td class="org-left">DateField</td>
+<td class="org-left">日期类型</td>
+</tr>
+
+<tr>
+<td class="org-left">TimeField</td>
+<td class="org-left">时间类型</td>
+</tr>
+
+<tr>
+<td class="org-left">FileField</td>
+<td class="org-left">文件类型</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+每个字段都传递了 validators 参数,这个参数可以存储多个验证器的集合. 不同的字段应
+该根据实际需要设置不同的验证器:
+</p>
+<ul class="org-ul">
+<li>username : 添加了 length 验证器,用来规定最短和最长的字符串长度,如果不在范围,会
+提示错误信息,错误信息的内容为 message 指定的值.</li>
+<li>email : 添加了 email 验证器,它会自动验证上传的值是否满足邮箱格式,不满足,则提示
+message 指定的值.</li>
+<li>password: 同样使用 length 验证器,指定长度6-20 字符.</li>
+<li>confirm_password: 确认密码是否一致使用的是 equal_to 验证器,验证两个字段的值是
+否相等.</li>
+</ul>
+
+
+<p>
+除了上面使用的 length , email 和 equal_to 外,WTForms 还提供了这些验证器:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 13:</span> WTForms 常用验证器</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">验证器</td>
+<td class="org-left">描述</td>
+</tr>
+
+<tr>
+<td class="org-left">length(min,max,message)</td>
+<td class="org-left">验证长度是否在区间内</td>
+</tr>
+
+<tr>
+<td class="org-left">email()</td>
+<td class="org-left">验证内容是否满足邮箱格式规则</td>
+</tr>
+
+<tr>
+<td class="org-left">equal_to(filename,message)</td>
+<td class="org-left">验证是否和另一个字段的值相等</td>
+</tr>
+
+<tr>
+<td class="org-left">ip_address(message)</td>
+<td class="org-left">验证是否满足 IP 地址的规则</td>
+</tr>
+
+<tr>
+<td class="org-left">mac_address(message)</td>
+<td class="org-left">验证是否满足 mac 地址的规则</td>
+</tr>
+
+<tr>
+<td class="org-left">number_range(min,max,message)</td>
+<td class="org-left">验证数字是否在指定区间</td>
+</tr>
+
+<tr>
+<td class="org-left">optional(strip_whitespace)</td>
+<td class="org-left">设置数据可以为空,并停止其他验证器的验证</td>
+</tr>
+
+<tr>
+<td class="org-left">input_required(message)</td>
+<td class="org-left">验证是否为空</td>
+</tr>
+
+<tr>
+<td class="org-left">data_required(message)</td>
+<td class="org-left">验证是否有效</td>
+</tr>
+
+<tr>
+<td class="org-left">url(message)</td>
+<td class="org-left">验证是否满足 URL 规则</td>
+</tr>
+
+<tr>
+<td class="org-left">any_of(values,message, values_formatter)</td>
+<td class="org-left">验证是否为 values 中的一个</td>
+</tr>
+
+<tr>
+<td class="org-left">none_of( values, message, values_formatter)</td>
+<td class="org-left">验证是否不是 values 中的一个</td>
+</tr>
+
+<tr>
+<td class="org-left">regexp(regex, flags, message)</td>
+<td class="org-left">自己指定正则表达式验证</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+这些验证器中, input_required 和 data_required 经常会被混淆, input_required 只是
+验证字段是否有值, data_required 则是验证数据是否有效. 如果字段的类型是
+Integerfield, 但是传入的数据不能被转换成整型(比如传入 123a ), input_required 会验证成功,因为有值
+传入,但 data_required 会验证失败,因为它不能被转换成整型.
+</p>
+
+<blockquote>
+<p>
+验证器都是小写形式,是为了方便使用,它们的原始名称是大驼峰命名法,如 length 的原始
+名称是 Length,input_required 的原始名称是 InputRequired.
+</p>
+
+<p>
+其实我还是更喜欢下划线命名法,可能是 <del>学 C 语言</del> 用 linux 多的原因吧.看起来更清晰
+明了
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org8e8e31a" class="outline-4">
+<h4 id="org8e8e31a">视图函数中使用表单</h4>
+<div class="outline-text-4" id="text-org8e8e31a">
+<p>
+forms.py 中创建完 RegisterForm 表单类后,就可以在视图函数里对数据进行验证了.
+前面的视图函数 register 并没有写完(处理表单的部分用 pass 暂替了),现在我们就可以
+完善它了:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> flask <span style="font-weight: bold;">import</span> Flask, url_for, render_template, request, redirect, flash
+<span style="font-weight: bold;">from</span> forms <span style="font-weight: bold;">import</span> RegisterForm
+
+<span style="font-weight: bold; font-style: italic;">app</span> = Flask(<span style="font-weight: bold;">__name__</span>)
+<span style="font-weight: bold; font-style: italic;">app.config</span>[<span style="font-style: italic;">"SECRET_KEY"</span>] = <span style="font-style: italic;">"1234123"</span>
+
+<span style="font-weight: bold; text-decoration: underline;">@app.route</span>(<span style="font-style: italic;">"/register"</span>, methods=[<span style="font-style: italic;">"GET"</span>, <span style="font-style: italic;">"POST"</span>])
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">register</span>():
+    <span style="font-weight: bold;">if</span> request.method == <span style="font-style: italic;">"GET"</span>:
+        <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">"register.html"</span>)
+    <span style="font-weight: bold;">else</span>:
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">request.form &#26159; html &#27169;&#26495;&#25552;&#20132;&#30340;&#34920;&#21333;&#25968;&#25454;</span>
+        <span style="font-weight: bold; font-style: italic;">form</span> = RegisterForm(request.form)
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#22914;&#26524;&#34920;&#21333;&#36890;&#36807;&#39564;&#35777; form.validate &#36827;&#34892;&#25968;&#25454;&#39564;&#35777;&#36890;&#36807;&#21017;&#36820;&#22238; True</span>
+        <span style="font-weight: bold;">if</span> form.validate():
+            <span style="font-weight: bold; font-style: italic;">email</span> = form.email.data
+            <span style="font-weight: bold; font-style: italic;">username</span> = form.username.data
+            <span style="font-weight: bold; font-style: italic;">password</span> = form.password.data
+
+            <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#36890;&#36807;&#39564;&#35777;&#23601;&#21487;&#20197;&#20445;&#23384;&#29992;&#25143;&#25552;&#20132;&#30340;&#25968;&#25454;&#20102;,</span>
+            <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#19979;&#38754;&#29992; print &#27169;&#25311;&#20445;&#23384;&#25968;&#25454;&#21040;&#25968;&#25454;&#24211;&#30340;&#25805;&#20316;</span>
+            <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"email:"</span>, email)
+            <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"password:"</span>, password)
+            <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"username:"</span>, username)
+            <span style="font-weight: bold;">return</span> <span style="font-style: italic;">"&#27880;&#20876;&#25104;&#21151;"</span>
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#25968;&#25454;&#27809;&#26377;&#36890;&#36807;&#39564;&#35777;</span>
+        <span style="font-weight: bold;">else</span>:
+            <span style="font-weight: bold;">for</span> errors <span style="font-weight: bold;">in</span> form.errors.values():
+                <span style="font-weight: bold;">for</span> error <span style="font-weight: bold;">in</span> errors:
+                    flash(error)
+            <span style="font-weight: bold;">return</span> redirect(url_for(<span style="font-style: italic;">"register"</span>))
+
+<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">"__main__"</span>:
+    app.run(debug=<span style="font-weight: bold; text-decoration: underline;">True</span>)
+</pre>
+</div>
+
+<blockquote>
+<p>
+运行后又有坑,邮箱验证器需要  email_validator 包提供支持,作者用的 Pycharm Pro 不
+知道是不是自动安装了这些包,毕竟是有 Flask 集成的 Pro 版,反正我自己用 pip 安装是没
+有的,运行会报措: <code>Exception: Install 'email_validator' for email validation support.</code>
+</p>
+
+<p>
+运行下面命令安装:
+pip install email_validator -i <a href="https://mirrors.163.com/pypi/simple/">https://mirrors.163.com/pypi/simple/</a>
+</p>
+
+<p>
+然后就可以正常运行了.
+</p>
+
+<p>
+另外,要使用 flash 消息,必需要配置 SECRET_KEY  或者直接通过 app.secret_key 设置秘
+钥
+</p>
+</blockquote>
+
+<p>
+上面代码先创建了一个 RegisterForm 的 form 对象,并且把 request.form 作为参数传递
+给 RegisterForm, request.form 是一个类字典类型,用键值对的形式保存了从浏览器中提
+交的表单数据. 然后调用了 form.validate() 方法判断 RegisterForm 中定义的所有字段
+是否都通过了验证,如果通过了验证,则可以用 form.&lt;字段名&gt;.data 来获取对应字段的数据,这
+里是从 form 对象上获取了数据, 而不是从 request.form 上获取数据的原因,就是服务器
+获取从浏览器提交的数据,本质上都是字符串类型,所以 request.form 上的所有数据都是字
+符串类型,但是经过 form 对象获取的数据是经过处理的. 上面代码中没有获取
+confirm_password 的值,是因为它的意义就是验证值和 password 是否一致,如果通过了,就
+相等,所以没有必要再次获取.
+</p>
+
+<p>
+所有数据都获取了就可以保存数据到数据库或是进行其他的操作了,如果表单验证失败了,
+可以通过 form.errors 获取错误信息. form.errors 是字典类型 , key 是字段名称,
+value 是错误信息的列表,假如表单中什么都不输入就点击提交按钮,那么 form.errors 的
+值就会是:
+</p>
+<pre class="example">
+{"username" : ["请输入正确长度的用户名"],
+"email": ["请输入正确格式的邮箱"],
+"password": ["请输入正确长度的密码"]}
+</pre>
+<p>
+所以在表单验证失败的情况下,通过循环获取 form.errors.values() 可以获取所有内容,并
+将它们存储到 flash 中. 然后就可以在模板中把 flash 消息显示出来(目前的代码,如果验
+证失败不会有任何提示,虽然我们把错误消息 flash 到了浏览器的 session 中,但是前端模
+板并没有读取这些消息的代码.),修改 register.html 读取flash 的消息:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="font-weight: bold;">!DOCTYPE</span> html&gt;
+&lt;<span style="font-weight: bold;">html</span> <span style="font-weight: bold; font-style: italic;">lang</span>=<span style="font-style: italic;">"en"</span>&gt;
+  &lt;<span style="font-weight: bold;">head</span>&gt;
+    &lt;<span style="font-weight: bold;">meta</span> <span style="font-weight: bold; font-style: italic;">charset</span>=<span style="font-style: italic;">"UTF-8"</span>&gt;
+    &lt;<span style="font-weight: bold;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">&#27880;&#20876;&#39029;&#38754;</span>&lt;/<span style="font-weight: bold;">title</span>&gt;
+  &lt;/<span style="font-weight: bold;">head</span>&gt;
+  &lt;<span style="font-weight: bold;">body</span>&gt;
+    &lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">action</span>=<span style="font-style: italic;">" {{ url_for('register') }}"</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"POST"</span>&gt;
+      &lt;<span style="font-weight: bold;">table</span>&gt;
+        &lt;<span style="font-weight: bold;">tr</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt;Username:&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt; &lt;<span style="font-weight: bold;">input</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"text"</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"username"</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+        &lt;/<span style="font-weight: bold;">tr</span>&gt;
+
+        &lt;<span style="font-weight: bold;">tr</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt;Email:&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt; &lt;<span style="font-weight: bold;">input</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"email"</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"email"</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+        &lt;/<span style="font-weight: bold;">tr</span>&gt;
+
+        &lt;<span style="font-weight: bold;">tr</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt;Password:&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt; &lt;<span style="font-weight: bold;">input</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"password"</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"password"</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+        &lt;/<span style="font-weight: bold;">tr</span>&gt;
+
+        &lt;<span style="font-weight: bold;">tr</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt;Confirm Password:&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt; &lt;<span style="font-weight: bold;">input</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"password"</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"confirm_password"</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+        &lt;/<span style="font-weight: bold;">tr</span>&gt;
+
+        &lt;<span style="font-weight: bold;">tr</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt; &lt;<span style="font-weight: bold;">input</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span> <span style="font-weight: bold; font-style: italic;">value</span>=<span style="font-style: italic;">"Submit"</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+        &lt;/<span style="font-weight: bold;">tr</span>&gt;
+
+      &lt;/<span style="font-weight: bold;">table</span>&gt;
+      &lt;<span style="font-weight: bold;">ul</span>&gt;
+        {% for message in get_flashed_messages() %}
+        &lt;<span style="font-weight: bold;">li</span>&gt;{{ message }}&lt;/<span style="font-weight: bold;">li</span>&gt;
+        {% endfor %}
+      &lt;/<span style="font-weight: bold;">ul</span>&gt;
+    &lt;/<span style="font-weight: bold;">form</span>&gt;
+  &lt;/<span style="font-weight: bold;">body</span>&gt;
+&lt;/<span style="font-weight: bold;">html</span>&gt;
+</pre>
+</div>
+
+<p>
+如果在浏览器中访问 <a href="http://127.0.0.1:5000/register">http://127.0.0.1:5000/register</a> 什么都不输入,点击提交按钮,就会
+显示下列信息:
+</p>
+<pre class="example">
+请输入正确长度的用户名(3-20个字符)
+请输入正确格式的邮箱
+请输入正确长度的密码
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orge960b88" class="outline-4">
+<h4 id="orge960b88">自定义验证字段</h4>
+<div class="outline-text-4" id="text-orge960b88">
+<p>
+虽然 Wtforms 已经提供了许多验证器,但是我们有时候还是需要根据需求自定义验证逻辑.
+</p>
+
+<p>
+仍然用上面的 RegisterForm 为例子,在验证 email 字段时,除了验证 email 是否满足邮箱
+格式,还需要验证邮箱是否已经被注册过了,这就必需查询数据库,来判断邮箱是否存在.如果
+要自定义某个字段的验证逻辑,可以在表单类中自定义方法 validate_&lt;fieldname&gt; 来实现,
+以验证 email 字段为例:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> wtforms <span style="font-weight: bold;">import</span> Form, StringField, ValidationError
+<span style="font-weight: bold;">from</span> wtforms.validators <span style="font-weight: bold;">import</span> length, email, equal_to
+
+<span style="font-weight: bold; font-style: italic;">registed_email</span> = [<span style="font-style: italic;">'aa@example.com'</span>, <span style="font-style: italic;">'bb@example.com'</span>]
+
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">RegisterForm</span>(Form):
+    <span style="font-weight: bold; font-style: italic;">username</span> = StringField(validators=[length(<span style="font-weight: bold;">min</span>=3,<span style="font-weight: bold;">max</span>=20,message=<span style="font-style: italic;">"&#35831;&#36755;&#20837;&#27491;&#30830;&#38271;&#24230;&#30340;&#29992;&#25143;&#21517;(3-20&#20010;&#23383;&#31526;)"</span>)])
+    <span style="font-weight: bold; font-style: italic;">email</span> = StringField(validators=[email(message=<span style="font-style: italic;">"&#35831;&#36755;&#20837;&#27491;&#30830;&#26684;&#24335;&#30340;&#37038;&#31665;"</span>)])
+    <span style="font-weight: bold; font-style: italic;">password</span> = StringField(validators=[length(<span style="font-weight: bold;">min</span>=6,<span style="font-weight: bold;">max</span>=20,message=<span style="font-style: italic;">"&#35831;&#36755;&#20837;&#27491;&#30830;&#38271;&#24230;&#30340;&#23494;&#30721;"</span>)])
+    <span style="font-weight: bold; font-style: italic;">confirm_password</span> = StringField(validators=[equal_to(<span style="font-style: italic;">"password"</span>,message=<span style="font-style: italic;">"&#20004;&#27425;&#23494;&#30721;&#19981;&#19968;&#33268;"</span>)])
+
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">validate_email</span>(<span style="font-weight: bold;">self</span>, field):
+        <span style="font-weight: bold; font-style: italic;">email</span> = field.data
+        <span style="font-weight: bold;">if</span> email <span style="font-weight: bold;">in</span> registed_email:
+            <span style="font-weight: bold;">raise</span> ValidationError(<span style="font-style: italic;">"&#35813;&#37038;&#31665;&#24050;&#32463;&#34987;&#27880;&#20876;"</span>)
+        <span style="font-weight: bold;">return</span> <span style="font-weight: bold; text-decoration: underline;">True</span>
+</pre>
+</div>
+
+<p>
+这里用 registed_email 模拟从数据库中查询出的已经被注册的邮箱,真实应用中可以结合
+ORM 和数据库进行查找(另外,这种把所有数据读取到程序中进行判断的思路并不现实,只做
+测试用).然后在 RegisterForm 中定义了一个 validate_email(self,fiedl) 方法,以后在
+视图函数中调用 form.validate() 方法进行验证时,RegisterForm 类的底层会自动调用
+validate_email 方法,并且会传递一个 field 参数,这里验证的是 email ,所以这个 field
+就代表 email 字段,如果验证的是其他字段,field 就代表其他字段. 然后通过 field.data
+就可以那到对应的值,再进行判断,验证失败就抛出 wtforms.ValidationError 异常,并且指
+定一个错误信息,这个错误信息会出现在 form.errors 中,成功就直接返回 True.
+</p>
+<blockquote>
+<p>
+这个自定义的验证器需要严格按照规则命名 validate_&lt;fieldname&gt; 因为它的生效机制都是
+按照命名来得, fieldname 指定了函数内部 field 会获取哪一个字段的值, validate 开头
+表示是一个验证器,在 form.validate() 验证时会自动调用. 要是格式不对,就不能生效了.
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgedf3c1d" class="outline-3">
+<h3 id="orgedf3c1d">渲染表单模板</h3>
+<div class="outline-text-3" id="text-orgedf3c1d">
+<p>
+WTForms 和 Flask-WTF 提供了将 Python 表单渲染成 HTML 表单模板的功能.
+</p>
+
+<p>
+以登录为例,先实现一个登录的表单类:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> wtforms <span style="font-weight: bold;">import</span> Form, StringField, BooleanField, SubmitField, ValidationError
+<span style="font-weight: bold;">from</span> wtforms.validators <span style="font-weight: bold;">import</span> length, email, equal_to
+<span style="font-weight: bold;">from</span> flask_wtf <span style="font-weight: bold;">import</span> FlaskForm
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#30331;&#24405;&#34920;&#21333;&#31867;</span>
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">LoginForm</span>(FlaskForm):
+    <span style="font-weight: bold; font-style: italic;">email</span> = StringField(label=<span style="font-style: italic;">"Email:"</span>, validators = [email(message=<span style="font-style: italic;">"&#35831;&#36755;&#20837;&#27491;&#30830;&#26684;&#24335;&#30340;&#37038;&#31665;"</span>)], render_kw={<span style="font-style: italic;">"placeholder"</span>:<span style="font-style: italic;">"&#35831;&#36755;&#20837;&#37038;&#31665;"</span>})
+
+    <span style="font-weight: bold; font-style: italic;">password</span> = StringField(label=<span style="font-style: italic;">"Password:"</span>, validators=[length(<span style="font-weight: bold;">min</span>=6,<span style="font-weight: bold;">max</span>=20,message=<span style="font-style: italic;">"&#35831;&#36755;&#20837;&#27491;&#30830;&#38271;&#24230;&#30340;&#23494;&#30721;"</span>)],
+                           render_kw={<span style="font-style: italic;">"placeholder"</span>:<span style="font-style: italic;">"&#35831;&#36755;&#20837;&#23494;&#30721;"</span>})
+    <span style="font-weight: bold; font-style: italic;">remember</span> = BooleanField(label=<span style="font-style: italic;">"Remember Me:"</span>)
+    <span style="font-weight: bold; font-style: italic;">submit</span> = SubmitField(label=<span style="font-style: italic;">"Submit"</span>)
+
+<span style="font-weight: bold; font-style: italic;">registed_email</span> = [<span style="font-style: italic;">'aa@example.com'</span>, <span style="font-style: italic;">'bb@example.com'</span>]
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#27880;&#20876;&#34920;&#21333;&#31867;</span>
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">RegisterForm</span>(Form):
+    <span style="font-weight: bold; font-style: italic;">username</span> = StringField(validators=[length(<span style="font-weight: bold;">min</span>=3,<span style="font-weight: bold;">max</span>=20,message=<span style="font-style: italic;">"&#35831;&#36755;&#20837;&#27491;&#30830;&#38271;&#24230;&#30340;&#29992;&#25143;&#21517;(3-20&#20010;&#23383;&#31526;)"</span>)])
+    <span style="font-weight: bold; font-style: italic;">email</span> = StringField(validators=[email(message=<span style="font-style: italic;">"&#35831;&#36755;&#20837;&#27491;&#30830;&#26684;&#24335;&#30340;&#37038;&#31665;"</span>)])
+    <span style="font-weight: bold; font-style: italic;">password</span> = StringField(validators=[length(<span style="font-weight: bold;">min</span>=6,<span style="font-weight: bold;">max</span>=20,message=<span style="font-style: italic;">"&#35831;&#36755;&#20837;&#27491;&#30830;&#38271;&#24230;&#30340;&#23494;&#30721;"</span>)])
+    <span style="font-weight: bold; font-style: italic;">confirm_password</span> = StringField(validators=[equal_to(<span style="font-style: italic;">"password"</span>,message=<span style="font-style: italic;">"&#20004;&#27425;&#23494;&#30721;&#19981;&#19968;&#33268;"</span>)])
+
+    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">validate_email</span>(<span style="font-weight: bold;">self</span>, field):
+        <span style="font-weight: bold; font-style: italic;">email</span> = field.data
+        <span style="font-weight: bold;">if</span> email <span style="font-weight: bold;">in</span> registed_email:
+            <span style="font-weight: bold;">raise</span> ValidationError(<span style="font-style: italic;">"&#35813;&#37038;&#31665;&#24050;&#32463;&#34987;&#27880;&#20876;"</span>)
+        <span style="font-weight: bold;">return</span> <span style="font-weight: bold; text-decoration: underline;">True</span>
+</pre>
+</div>
+<p>
+新增的 LoginForm 表单类除了新使用了 Booleanfield 和 SubmitField 字段类外只新增了
+label 和 render_kw 两个参数, BooleanField 和 SubmitField 字段和其他字段没什么不
+同. label 会被被设置成属性 value 的值, render_kw 可以设置表单标签的一些其他属性,
+比如上面的 placeholder .
+LoginForm 和 RegisterForm 最大的区别是它继承自 FlaskForm 类,而不是 Form 类,
+FlaskForm 的父类是 wtforms.Form 类,其在 wtforms.Form 类的基础上增加了一些方便的
+方法,来让验证表单数据时,不再需要手动传入 request.form.
+</p>
+
+<p>
+定义好了表单类后,就可以在视图函数中使用,因为这个表单类和模板深度结合,所以使用方
+式有所不同了:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> flask <span style="font-weight: bold;">import</span> Flask, url_for, render_template, request, redirect, flash
+<span style="font-weight: bold;">from</span> forms <span style="font-weight: bold;">import</span> RegisterForm, LoginForm
+
+<span style="font-weight: bold; font-style: italic;">app</span> = Flask(<span style="font-weight: bold;">__name__</span>)
+<span style="font-weight: bold; font-style: italic;">app.config</span>[<span style="font-style: italic;">"SECRET_KEY"</span>] = <span style="font-style: italic;">"1234123"</span>
+
+<span style="font-weight: bold; text-decoration: underline;">@app.route</span>(<span style="font-style: italic;">"/login"</span>, methods=[<span style="font-style: italic;">"POST"</span>, <span style="font-style: italic;">"GET"</span>])
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">login</span>():
+    <span style="font-weight: bold; font-style: italic;">form</span> = LoginForm(meta={<span style="font-style: italic;">"csrf"</span>:<span style="font-weight: bold; text-decoration: underline;">False</span>})
+    <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">form = LoginForm()</span>
+    <span style="font-weight: bold;">if</span> form.validate_on_submit():
+        <span style="font-weight: bold; font-style: italic;">email</span> = form.email.data
+        <span style="font-weight: bold; font-style: italic;">password</span> = form.password.data
+        <span style="font-weight: bold;">return</span> redirect(<span style="font-style: italic;">"/"</span>)
+    <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">"login.html"</span>, form=form)
+
+<span style="font-weight: bold; text-decoration: underline;">@app.route</span>(<span style="font-style: italic;">"/register"</span>, methods=[<span style="font-style: italic;">"GET"</span>, <span style="font-style: italic;">"POST"</span>])
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">register</span>():
+    <span style="font-weight: bold;">if</span> request.method == <span style="font-style: italic;">"GET"</span>:
+        <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">"register.html"</span>)
+    <span style="font-weight: bold;">else</span>:
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">request.form &#26159; html &#27169;&#26495;&#25552;&#20132;&#30340;&#34920;&#21333;&#25968;&#25454;</span>
+        <span style="font-weight: bold; font-style: italic;">form</span> = RegisterForm(request.form)
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#22914;&#26524;&#34920;&#21333;&#36890;&#36807;&#39564;&#35777; form.validate &#36827;&#34892;&#25968;&#25454;&#39564;&#35777;&#36890;&#36807;&#21017;&#36820;&#22238; True</span>
+        <span style="font-weight: bold;">if</span> form.validate():
+            <span style="font-weight: bold; font-style: italic;">email</span> = form.email.data
+            <span style="font-weight: bold; font-style: italic;">username</span> = form.username.data
+            <span style="font-weight: bold; font-style: italic;">password</span> = form.password.data
+
+            <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#36890;&#36807;&#39564;&#35777;&#23601;&#21487;&#20197;&#20445;&#23384;&#29992;&#25143;&#25552;&#20132;&#30340;&#25968;&#25454;&#20102;,</span>
+            <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#19979;&#38754;&#29992; print &#27169;&#25311;&#20445;&#23384;&#25968;&#25454;&#21040;&#25968;&#25454;&#24211;&#30340;&#25805;&#20316;</span>
+            <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"email:"</span>, email)
+            <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"password:"</span>, password)
+            <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"username:"</span>, username)
+            <span style="font-weight: bold;">return</span> <span style="font-style: italic;">"&#27880;&#20876;&#25104;&#21151;"</span>
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#25968;&#25454;&#27809;&#26377;&#36890;&#36807;&#39564;&#35777;</span>
+        <span style="font-weight: bold;">else</span>:
+            <span style="font-weight: bold;">for</span> errors <span style="font-weight: bold;">in</span> form.errors.values():
+                <span style="font-weight: bold;">for</span> error <span style="font-weight: bold;">in</span> errors:
+                    flash(error)
+            <span style="font-weight: bold;">return</span> redirect(url_for(<span style="font-style: italic;">"register"</span>))
+
+<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">"__main__"</span>:
+    app.run(debug=<span style="font-weight: bold; text-decoration: underline;">True</span>)
+</pre>
+</div>
+<blockquote>
+<p>
+又有坑来
+了
+,<a href="https://stackoverflow.com/questions/71652965/importerror-cannot-import-name-safe-str-cmp-from-werkzeug-security">https://stackoverflow.com/questions/71652965/importerror-cannot-import-name-safe-str-cmp-from-werkzeug-security</a>
+通过 WTForms 定义表单类并渲染表单的方式会用到 Werkzeug 包, 新版的 Werkzeug 包移
+除了 safe_str_cmp, 所以上面代码运行就会报措,根据前面贴出的链接,将 Werkzeug 重新
+安装成 2.0.0 且将 Jinja2 安装成 3.0.2 版本,才能正常运行.
+</p>
+</blockquote>
+<p>
+上述代码,定义一个 login 视图函数,支持 GET 和 POST 请求,然后创建一个 LoginForm 对
+象,并通过传递 meta 参数关闭了 CSRF 验证(<a href="#orgc220582">CSRF 攻击</a> 中会讲到). 不同的重点在于渲染
+模板的代码, 我们把 form 对象传递给了 login.html 模板,而在 login.html 模板中,就可
+以使用 form 对象来渲染表单了:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="font-weight: bold;">!DOCTYPE</span> html&gt;
+&lt;<span style="font-weight: bold;">html</span> <span style="font-weight: bold; font-style: italic;">lang</span>=<span style="font-style: italic;">"en"</span>&gt;
+  &lt;<span style="font-weight: bold;">head</span>&gt;
+    &lt;<span style="font-weight: bold;">meta</span> <span style="font-weight: bold; font-style: italic;">charset</span>=<span style="font-style: italic;">"UTF-8"</span>&gt;
+    &lt;<span style="font-weight: bold;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Login Page</span>&lt;/<span style="font-weight: bold;">title</span>&gt;
+  &lt;/<span style="font-weight: bold;">head</span>&gt;
+  &lt;<span style="font-weight: bold;">body</span>&gt;
+    &lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">action</span>=<span style="font-style: italic;">""</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"POST"</span>&gt;
+      &lt;<span style="font-weight: bold;">table</span>&gt;
+        &lt;<span style="font-weight: bold;">tbody</span>&gt;
+
+          &lt;<span style="font-weight: bold;">tr</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;{{ form.email.label }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;{{ form.email }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;/<span style="font-weight: bold;">tr</span>&gt;
+          {% for error in form.email.errors %}
+          &lt;<span style="font-weight: bold;">tr</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;{{ error }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;/<span style="font-weight: bold;">tr</span>&gt;
+          {% endfor %}
+
+          &lt;<span style="font-weight: bold;">tr</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;{{ form.password.label }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;{{ form.password }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;/<span style="font-weight: bold;">tr</span>&gt;
+          {% for error in form.password.errors %}
+          &lt;<span style="font-weight: bold;">tr</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;{{ error }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;/<span style="font-weight: bold;">tr</span>&gt;
+          {% endfor %}
+
+          &lt;<span style="font-weight: bold;">tr</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;{{ form.remember.label }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;{{ form.remember }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;/<span style="font-weight: bold;">tr</span>&gt;
+          &lt;<span style="font-weight: bold;">tr</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;{{ form.submit }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;/<span style="font-weight: bold;">tr</span>&gt;
+        &lt;/<span style="font-weight: bold;">tbody</span>&gt;
+      &lt;/<span style="font-weight: bold;">table</span>&gt;
+    &lt;/<span style="font-weight: bold;">form</span>&gt;
+  &lt;/<span style="font-weight: bold;">body</span>&gt;
+&lt;/<span style="font-weight: bold;">html</span>&gt;
+</pre>
+</div>
+
+<p>
+上述代码,通过 form.&lt;fieldname&gt;.label 渲染了 email, password 和 remember 三个字段
+的label标签, 每个字段下面循环 form.&lt;fieldname&gt;.errors 进行验证,若验证出错,就会展
+示错误信息.
+再重新看看 login() 视图函数,调用 form.validate_on_submit() 判断是否通过 POST 请
+求使表单验证成功,如果通过,就下一步,否则仍然渲染 login.html 模板. 此时重新渲染的
+模板中传递的 form 已经保存了验证失败的信息,所以在模板中用
+form.&lt;fieldname&gt;.errors 可以获取对应字段的错误信息,访问
+<a href="http://127.0.0.1:5000/login">http://127.0.0.1:5000/login</a> 不输入数据,直接提交,可以看到错误信息都显示出来了.
+</p>
+
+<blockquote>
+<p>
+作者并不推荐使用 WTForms 和 Flask-WTF 在模板中渲染表单. 因为在 Python 类中去定义
+HTML 的标签以及样式,会提高代码的耦合度,造成本该在 HTML 模块中完成的工作却要在
+Python 文件中修改,这在前后端工程师共同开发时缺点尤为明显.
+</p>
+
+<p>
+这点我有点体会,之前也看过一本学 Flask 的书,上来就给我用 Flask 渲染表单,给我一种
+不仅要做后端开发,还要别扭的用 python 做前端工作的感觉, 一想到学这个要一个人干两
+个人的活,那本书就看不下去了.印象深刻,当时其实都没看太懂,所以就记得那本书讲了个表
+单我就读不下去了.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgc220582" class="outline-3">
+<h3 id="orgc220582">CSRF 攻击</h3>
+<div class="outline-text-3" id="text-orgc220582">
+<p>
+CSRF &#x2013; cross site request forgery (跨站请求伪造) 我听别人提到都简称叫跨域攻击.
+CSRf 是一种网络攻击.(作者建议能理解原理是最好,暂时不能理解可以在掌握了 cookie 和
+session 的相关知识再回过头理解)
+</p>
+
+<p>
+CSRF 攻击原理: 网站通常都是通过 cookie 实现登录功能,浏览器访问某个网站时,会自动
+把之前保存在浏览器中的 cookie 数据携带到服务器上. 如果有一个病毒网站,在其网站源
+代码中有恶意的 Javascript 代码,当访问这个病毒网站时,会自动给具有 CSRF 漏洞的网站
+的服务器发送请求. 因为发送请求时,浏览器会自动把网站的 cookie 数据发送给对应服务
+器,而服务器并不知道请求是用户自己发送的还是由恶意代码伪造的,导致服务器接收并处理
+了请求,这样就会造成损失.
+比如用户曾经使用浏览器登录过 AC 站,该站没有相应的防御 CSRF 的功能,无法识别请求是
+伪造的还是真实的,所以用户后面访问恶意网站时,就被伪造了请求,将 AC 站中的账户里的
+硬币全部花掉了.
+</p>
+</div>
+
+<div id="outline-container-org72c8972" class="outline-4">
+<h4 id="org72c8972">防御 CSRF 攻击原理</h4>
+<div class="outline-text-4" id="text-org72c8972">
+<p>
+CSRF 攻击的要点,就在于相应的 cookie 会自动发送给服务器,而服务器无法识别携带
+cookie 的请求是来自真实用户还是伪造,所以,可以在用户每次访问有表单的网页时,在表单
+中加入一个随机的字符串,例如 csrf_token, 同时在 cookie 中加入一个具有相通值的
+csrf_token 键值对,以后再发送请求时,必需在表单和 cookie 中携带 csrf_token, 因为在
+不同域名下的 Javascript 不能操作对方的 cookie ,所以服务器只有在检测到 cookie 中
+的 csrf_token 和表单中的 csrf_token 相同,才会认为请求是正常的,否则就是伪造的.然
+后服务器就会进行相应防御操作.
+</p>
+
+<blockquote>
+<p>
+这个和爬虫和反爬虫也有点像啊, 爬虫需要数据就得尽力伪造真实请求,反爬虫机制识别到
+了就进行防御,不过这个 CSRF 是在别人访问恶意网站时通过浏览器发送伪造请求,而爬虫直
+接就是分析网站的请求,模拟伪造请求发送.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org45bcdda" class="outline-4">
+<h4 id="org45bcdda">Flask-WTF 防御 CSRF 攻击</h4>
+<div class="outline-text-4" id="text-org45bcdda">
+<p>
+使用 Flask-WTF 可以方便地实现 CSRF 防御. CSRF 防御可以分为 3 种方式.
+</p>
+<ol class="org-ol">
+<li>全局防御</li>
+<li>表单防御</li>
+<li>AJAX</li>
+</ol>
+
+
+<p>
+三种方式的前提是 cookie 中已经设置好了 csrf, 然后再从表单中获取 csrf_token, 二者
+进行比对,一致则通过验证,否则验证失败.
+</p>
+
+<p>
+<b>全局防御</b>
+CSRF 全局防御是通过 Flask-WTF 中的 CSRFProtect 类实现的,它接收 app 作为参数,使用
+CSRFProtect 创建对象后,它会自动在 Jinja2 模板的上下文(context) 中添加 csrf_token
+函数,然后通过在模板中调用这个函数,就会自动生成 csrf_token.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> flask <span style="font-weight: bold;">import</span> Flask, url_for, render_template, request, redirect, flash
+<span style="font-weight: bold;">from</span> forms <span style="font-weight: bold;">import</span> RegisterForm, LoginForm
+<span style="font-weight: bold;">from</span> flask_wtf <span style="font-weight: bold;">import</span> CSRFProtect
+
+<span style="font-weight: bold; font-style: italic;">app</span> = Flask(<span style="font-weight: bold;">__name__</span>)
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#20026; app &#35774;&#32622; CSRF &#38450;&#24481;</span>
+<span style="font-weight: bold; font-style: italic;">app.secret_key</span> = <span style="font-style: italic;">"&#33258;&#23450;&#20041;&#30340; app &#23494;&#38053;"</span>
+CSRFProtect(app)
+
+<span style="font-weight: bold; font-style: italic;">app.config</span>[<span style="font-style: italic;">"SECRET_KEY"</span>] = <span style="font-style: italic;">"1234123"</span>
+
+<span style="font-weight: bold; text-decoration: underline;">@app.route</span>(<span style="font-style: italic;">"/login"</span>, methods=[<span style="font-style: italic;">"POST"</span>, <span style="font-style: italic;">"GET"</span>])
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">login</span>():
+    <span style="font-weight: bold; font-style: italic;">form</span> = LoginForm(meta={<span style="font-style: italic;">"csrf"</span>:<span style="font-weight: bold; text-decoration: underline;">False</span>})
+    <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">form = LoginForm()</span>
+    <span style="font-weight: bold;">if</span> form.validate_on_submit():
+        <span style="font-weight: bold; font-style: italic;">email</span> = form.email.data
+        <span style="font-weight: bold; font-style: italic;">password</span> = form.password.data
+        <span style="font-weight: bold;">return</span> redirect(<span style="font-style: italic;">"/"</span>)
+    <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">"login.html"</span>, form=form)
+
+<span style="font-weight: bold; text-decoration: underline;">@app.route</span>(<span style="font-style: italic;">"/register"</span>, methods=[<span style="font-style: italic;">"GET"</span>, <span style="font-style: italic;">"POST"</span>])
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">register</span>():
+    <span style="font-weight: bold;">if</span> request.method == <span style="font-style: italic;">"GET"</span>:
+        <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">"register.html"</span>)
+    <span style="font-weight: bold;">else</span>:
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">request.form &#26159; html &#27169;&#26495;&#25552;&#20132;&#30340;&#34920;&#21333;&#25968;&#25454;</span>
+        <span style="font-weight: bold; font-style: italic;">form</span> = RegisterForm(request.form)
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#22914;&#26524;&#34920;&#21333;&#36890;&#36807;&#39564;&#35777; form.validate &#36827;&#34892;&#25968;&#25454;&#39564;&#35777;&#36890;&#36807;&#21017;&#36820;&#22238; True</span>
+        <span style="font-weight: bold;">if</span> form.validate():
+            <span style="font-weight: bold; font-style: italic;">email</span> = form.email.data
+            <span style="font-weight: bold; font-style: italic;">username</span> = form.username.data
+            <span style="font-weight: bold; font-style: italic;">password</span> = form.password.data
+
+            <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#36890;&#36807;&#39564;&#35777;&#23601;&#21487;&#20197;&#20445;&#23384;&#29992;&#25143;&#25552;&#20132;&#30340;&#25968;&#25454;&#20102;,</span>
+            <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#19979;&#38754;&#29992; print &#27169;&#25311;&#20445;&#23384;&#25968;&#25454;&#21040;&#25968;&#25454;&#24211;&#30340;&#25805;&#20316;</span>
+            <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"email:"</span>, email)
+            <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"password:"</span>, password)
+            <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"username:"</span>, username)
+            <span style="font-weight: bold;">return</span> <span style="font-style: italic;">"&#27880;&#20876;&#25104;&#21151;"</span>
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#25968;&#25454;&#27809;&#26377;&#36890;&#36807;&#39564;&#35777;</span>
+        <span style="font-weight: bold;">else</span>:
+            <span style="font-weight: bold;">for</span> errors <span style="font-weight: bold;">in</span> form.errors.values():
+                <span style="font-weight: bold;">for</span> error <span style="font-weight: bold;">in</span> errors:
+                    flash(error)
+            <span style="font-weight: bold;">return</span> redirect(url_for(<span style="font-style: italic;">"register"</span>))
+
+<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">"__main__"</span>:
+    app.run(debug=<span style="font-weight: bold; text-decoration: underline;">True</span>)
+</pre>
+</div>
+<p>
+使用注册页面 register.html 为例,添加 csrf_token:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="font-weight: bold;">!DOCTYPE</span> html&gt;
+&lt;<span style="font-weight: bold;">html</span> <span style="font-weight: bold; font-style: italic;">lang</span>=<span style="font-style: italic;">"en"</span>&gt;
+  &lt;<span style="font-weight: bold;">head</span>&gt;
+    &lt;<span style="font-weight: bold;">meta</span> <span style="font-weight: bold; font-style: italic;">charset</span>=<span style="font-style: italic;">"UTF-8"</span>&gt;
+    &lt;<span style="font-weight: bold;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">&#27880;&#20876;&#39029;&#38754;</span>&lt;/<span style="font-weight: bold;">title</span>&gt;
+  &lt;/<span style="font-weight: bold;">head</span>&gt;
+  &lt;<span style="font-weight: bold;">body</span>&gt;
+    &lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">action</span>=<span style="font-style: italic;">" {{ url_for('register') }}"</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"POST"</span>&gt;
+      &lt;<span style="font-weight: bold;">table</span>&gt;
+        &lt;<span style="font-weight: bold;">tr</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt; &lt;<span style="font-weight: bold;">input</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"hidden"</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"csrf_token"</span> <span style="font-weight: bold; font-style: italic;">value</span>=<span style="font-style: italic;">"{{ csrf_token() }}"</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+        &lt;/<span style="font-weight: bold;">tr</span>&gt;
+        &lt;<span style="font-weight: bold;">tr</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt;Username:&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt; &lt;<span style="font-weight: bold;">input</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"text"</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"username"</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+        &lt;/<span style="font-weight: bold;">tr</span>&gt;
+
+        &lt;<span style="font-weight: bold;">tr</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt;Email:&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt; &lt;<span style="font-weight: bold;">input</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"email"</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"email"</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+        &lt;/<span style="font-weight: bold;">tr</span>&gt;
+
+        &lt;<span style="font-weight: bold;">tr</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt;Password:&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt; &lt;<span style="font-weight: bold;">input</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"password"</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"password"</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+        &lt;/<span style="font-weight: bold;">tr</span>&gt;
+
+        &lt;<span style="font-weight: bold;">tr</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt;Confirm Password:&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt; &lt;<span style="font-weight: bold;">input</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"password"</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"confirm_password"</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+        &lt;/<span style="font-weight: bold;">tr</span>&gt;
+
+        &lt;<span style="font-weight: bold;">tr</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;<span style="font-weight: bold;">td</span>&gt; &lt;<span style="font-weight: bold;">input</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"submit"</span> <span style="font-weight: bold; font-style: italic;">value</span>=<span style="font-style: italic;">"Submit"</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+        &lt;/<span style="font-weight: bold;">tr</span>&gt;
+
+      &lt;/<span style="font-weight: bold;">table</span>&gt;
+      &lt;<span style="font-weight: bold;">ul</span>&gt;
+        {% for message in get_flashed_messages() %}
+        &lt;<span style="font-weight: bold;">li</span>&gt;{{ message }}&lt;/<span style="font-weight: bold;">li</span>&gt;
+        {% endfor %}
+      &lt;/<span style="font-weight: bold;">ul</span>&gt;
+    &lt;/<span style="font-weight: bold;">form</span>&gt;
+  &lt;/<span style="font-weight: bold;">body</span>&gt;
+&lt;/<span style="font-weight: bold;">html</span>&gt;
+</pre>
+</div>
+
+<p>
+修改后的 register.html 添加了一个 type 为 hidden 的input 标签,它不会被显示在浏览
+器上,但是点击提交按钮时,它的值仍然会发送给服务器. 这个标签的 name 设置为了
+csrf_token, 除非通过配置文件进行了修改,否则,必须将值设置为 csrf_token, 接着调用
+csrf_token() 函数,设置 value 值. 这样渲染模板后,在
+<a href="http://127.0.0.1:5000/register">http://127.0.0.1:5000/register</a> 察看网页源代码,可以看到类似的 input 标签:
+</p>
+<pre class="example">
+&lt;input type="hidden" name="csrf_token" value="IjdiNGFlOTg4ODY5N2NlOTZiYzMwN2UyYzQwNTFmMjU0MGRkMjZmYTIi.ZEeBXg.HrHQkLzkgThu5gt7VuFQTl8KF5o"&gt;
+</pre>
+<p>
+表单中有 csrf_token 之后,在视图函数中调用 form.validate() 方法时, RegisterForm
+会自动对比 request.form 中的 csrf_token 是否和 cookie 中的 csrf 值相等,相等就通
+过验证,否则验证失败.
+</p>
+
+<p>
+<b>单表单防御</b>
+单表单防御是通过在模板中传递 FlaskForm 子类实现的,也就是<a href="#orgedf3c1d">渲染表单模板</a> 中登录功能
+的实现. FlaskForm 子类默认是开启 csrf 防御的,如果想要关闭,在创建表单对象时传递
+meta={"csrf":False} 就可以了,不传递这个参数就默认开启 CSRF 防御了. 在 login.html
+中只要渲染 form.csrf_token, 就会自动生成 type 为 hiddern 类型的 input 标签:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="font-weight: bold;">!DOCTYPE</span> html&gt;
+&lt;<span style="font-weight: bold;">html</span> <span style="font-weight: bold; font-style: italic;">lang</span>=<span style="font-style: italic;">"en"</span>&gt;
+  &lt;<span style="font-weight: bold;">head</span>&gt;
+    &lt;<span style="font-weight: bold;">meta</span> <span style="font-weight: bold; font-style: italic;">charset</span>=<span style="font-style: italic;">"UTF-8"</span>&gt;
+    &lt;<span style="font-weight: bold;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Login Page</span>&lt;/<span style="font-weight: bold;">title</span>&gt;
+  &lt;/<span style="font-weight: bold;">head</span>&gt;
+  &lt;<span style="font-weight: bold;">body</span>&gt;
+    &lt;<span style="font-weight: bold;">form</span> <span style="font-weight: bold; font-style: italic;">action</span>=<span style="font-style: italic;">""</span> <span style="font-weight: bold; font-style: italic;">method</span>=<span style="font-style: italic;">"POST"</span>&gt;
+      &lt;<span style="font-weight: bold;">table</span>&gt;
+        &lt;<span style="font-weight: bold;">tbody</span>&gt;
+
+          &lt;<span style="font-weight: bold;">tr</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;{{ form.csrf_token }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;/<span style="font-weight: bold;">tr</span>&gt;
+
+          &lt;<span style="font-weight: bold;">tr</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;{{ form.email.label }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;{{ form.email }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;/<span style="font-weight: bold;">tr</span>&gt;
+          {% for error in form.email.errors %}
+          &lt;<span style="font-weight: bold;">tr</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;{{ error }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;/<span style="font-weight: bold;">tr</span>&gt;
+          {% endfor %}
+
+          &lt;<span style="font-weight: bold;">tr</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;{{ form.password.label }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;{{ form.password }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;/<span style="font-weight: bold;">tr</span>&gt;
+          {% for error in form.password.errors %}
+          &lt;<span style="font-weight: bold;">tr</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;{{ error }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;/<span style="font-weight: bold;">tr</span>&gt;
+          {% endfor %}
+
+          &lt;<span style="font-weight: bold;">tr</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;{{ form.remember.label }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;{{ form.remember }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;/<span style="font-weight: bold;">tr</span>&gt;
+          &lt;<span style="font-weight: bold;">tr</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;&lt;/<span style="font-weight: bold;">td</span>&gt;
+            &lt;<span style="font-weight: bold;">td</span>&gt;{{ form.submit }}&lt;/<span style="font-weight: bold;">td</span>&gt;
+          &lt;/<span style="font-weight: bold;">tr</span>&gt;
+        &lt;/<span style="font-weight: bold;">tbody</span>&gt;
+      &lt;/<span style="font-weight: bold;">table</span>&gt;
+    &lt;/<span style="font-weight: bold;">form</span>&gt;
+  &lt;/<span style="font-weight: bold;">body</span>&gt;
+&lt;/<span style="font-weight: bold;">html</span>&gt;
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> flask <span style="font-weight: bold;">import</span> Flask, url_for, render_template, request, redirect, flash
+<span style="font-weight: bold;">from</span> forms <span style="font-weight: bold;">import</span> RegisterForm, LoginForm
+<span style="font-weight: bold;">from</span> flask_wtf <span style="font-weight: bold;">import</span> CSRFProtect
+
+<span style="font-weight: bold; font-style: italic;">app</span> = Flask(<span style="font-weight: bold;">__name__</span>)
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#20026; app &#35774;&#32622; CSRF &#38450;&#24481;</span>
+CSRFProtect(app)
+
+<span style="font-weight: bold; font-style: italic;">app.config</span>[<span style="font-style: italic;">"SECRET_KEY"</span>] = <span style="font-style: italic;">"1234123"</span>
+
+<span style="font-weight: bold; text-decoration: underline;">@app.route</span>(<span style="font-style: italic;">"/login"</span>, methods=[<span style="font-style: italic;">"POST"</span>, <span style="font-style: italic;">"GET"</span>])
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">login</span>():
+    <span style="font-weight: bold; font-style: italic;">form</span> = LoginForm()
+    <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">form = LoginForm()</span>
+    <span style="font-weight: bold;">if</span> form.validate_on_submit():
+        <span style="font-weight: bold; font-style: italic;">email</span> = form.email.data
+        <span style="font-weight: bold; font-style: italic;">password</span> = form.password.data
+        <span style="font-weight: bold;">return</span> redirect(<span style="font-style: italic;">"/"</span>)
+    <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">"login.html"</span>, form=form)
+
+<span style="font-weight: bold; text-decoration: underline;">@app.route</span>(<span style="font-style: italic;">"/register"</span>, methods=[<span style="font-style: italic;">"GET"</span>, <span style="font-style: italic;">"POST"</span>])
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">register</span>():
+    <span style="font-weight: bold;">if</span> request.method == <span style="font-style: italic;">"GET"</span>:
+        <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">"register.html"</span>)
+    <span style="font-weight: bold;">else</span>:
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">request.form &#26159; html &#27169;&#26495;&#25552;&#20132;&#30340;&#34920;&#21333;&#25968;&#25454;</span>
+        <span style="font-weight: bold; font-style: italic;">form</span> = RegisterForm(request.form)
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#22914;&#26524;&#34920;&#21333;&#36890;&#36807;&#39564;&#35777; form.validate &#36827;&#34892;&#25968;&#25454;&#39564;&#35777;&#36890;&#36807;&#21017;&#36820;&#22238; True</span>
+        <span style="font-weight: bold;">if</span> form.validate():
+            <span style="font-weight: bold; font-style: italic;">email</span> = form.email.data
+            <span style="font-weight: bold; font-style: italic;">username</span> = form.username.data
+            <span style="font-weight: bold; font-style: italic;">password</span> = form.password.data
+
+            <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#36890;&#36807;&#39564;&#35777;&#23601;&#21487;&#20197;&#20445;&#23384;&#29992;&#25143;&#25552;&#20132;&#30340;&#25968;&#25454;&#20102;,</span>
+            <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#19979;&#38754;&#29992; print &#27169;&#25311;&#20445;&#23384;&#25968;&#25454;&#21040;&#25968;&#25454;&#24211;&#30340;&#25805;&#20316;</span>
+            <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"email:"</span>, email)
+            <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"password:"</span>, password)
+            <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"username:"</span>, username)
+            <span style="font-weight: bold;">return</span> <span style="font-style: italic;">"&#27880;&#20876;&#25104;&#21151;"</span>
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#25968;&#25454;&#27809;&#26377;&#36890;&#36807;&#39564;&#35777;</span>
+        <span style="font-weight: bold;">else</span>:
+            <span style="font-weight: bold;">for</span> errors <span style="font-weight: bold;">in</span> form.errors.values():
+                <span style="font-weight: bold;">for</span> error <span style="font-weight: bold;">in</span> errors:
+                    flash(error)
+            <span style="font-weight: bold;">return</span> redirect(url_for(<span style="font-style: italic;">"register"</span>))
+
+<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">"__main__"</span>:
+    app.run(debug=<span style="font-weight: bold; text-decoration: underline;">True</span>)
+</pre>
+</div>
+<p>
+访问 <a href="http://127.0.0.1:5000/login">http://127.0.0.1:5000/login</a> 察看网页源代码,会看到类似这样的 input 标签:
+</p>
+<pre class="example">
+&lt;input id="csrf_token" name="csrf_token" type="hidden" value="IjdiNGFlOTg4ODY5N2NlOTZiYzMwN2UyYzQwNTFmMjU0MGRkMjZmYTIi.ZEeDsg.tKBe_BowLYOtC0aCvX10dxXY6qo"&gt;
+</pre>
+<p>
+同样的,在视图函数中调用 form.validate() 方法会自动比对cookie 和 form 提交的
+csrf, 判断是否通过验证.
+</p>
+
+<p>
+<b>使用AJAX</b>
+使用 AJAX 提交表单数据,前提是开启全局 CSRF 保护.
+</p>
+
+<p>
+为了方便,我们可以在HTML父模板中的 head 标签内添加一个 meta 标签,然后把
+csrf_token 添加到该标签中,这样所有子模板都可以获取到 csrf_token:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="font-weight: bold;">!DOCTYPE</span> html&gt;
+&lt;<span style="font-weight: bold;">html</span> <span style="font-weight: bold; font-style: italic;">lang</span>=<span style="font-style: italic;">"en"</span>&gt;
+  &lt;<span style="font-weight: bold;">head</span>&gt;
+    &lt;<span style="font-weight: bold;">meta</span> <span style="font-weight: bold; font-style: italic;">charset</span>=<span style="font-style: italic;">"UTF-8"</span>&gt;
+    &lt;<span style="font-weight: bold;">link</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"stylesheet"</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"base.css"</span>/&gt;
+    &lt;<span style="font-weight: bold;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;"> {% block title %}{% endblock %} </span>&lt;/<span style="font-weight: bold;">title</span>&gt;
+    {% block head %}{% endblock %}
+    &lt;<span style="font-weight: bold;">meta</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"csrf_token"</span> <span style="font-weight: bold; font-style: italic;">content</span>=<span style="font-style: italic;">"{{ csrf_token() }}"</span>&gt;
+  &lt;/<span style="font-weight: bold;">head</span>&gt;
+  &lt;<span style="font-weight: bold;">body</span>&gt;
+    &lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"body"</span>&gt;
+      {% block body %}
+      {% endblock %}
+    &lt;/<span style="font-weight: bold;">div</span>&gt;
+    &lt;<span style="font-weight: bold;">div</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"footer"</span>&gt;
+      {% block footer %}
+      <span style="font-weight: bold; font-style: italic;">&amp;copy;</span>Copyright 2008 by &lt;<span style="font-weight: bold;">a</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"http://domain.invalid/"</span>&gt;you&lt;/<span style="font-weight: bold;">a</span>&gt;
+      {% endblock %}&lt;/<span style="font-weight: bold;">div</span>&gt;
+  &lt;/<span style="font-weight: bold;">body</span>&gt;
+&lt;/<span style="font-weight: bold;">html</span>&gt;
+</pre>
+</div>
+
+<p>
+在使用 Javascript 发送请求前,先从模板获取 csrf_token, 然后再设置到请求头中.
+Flask-WTF 验证 csrf_token ,除了用 cookie 和表单中的值比对外,还会用 cookie 和请求
+头中的值进行对比,从请求头中获取,是通过 X-CSRFToken 参数获取的.
+</p>
+
+<p>
+以 jQuery 为例,设置每次发送请求之前都添加好 csrf_token:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="font-weight: bold;">var</span> <span style="font-weight: bold; font-style: italic;">csrftoken</span> = $(<span style="font-style: italic;">'meta[name=csrf_token]'</span>.attr(<span style="font-style: italic;">'content'</span>))
+$.ajaxSetup({
+    beforeSend:
+    <span style="font-weight: bold;">function</span>(<span style="font-weight: bold; font-style: italic;">xhr</span>, <span style="font-weight: bold; font-style: italic;">settings</span>){
+        <span style="font-weight: bold;">if</span>(!<span style="font-style: italic;">/^(GET|HEAD|OPTIONS|TRACE)$/</span>i.test(settings.type) &amp;&amp; !<span style="font-weight: bold; text-decoration: underline;">this</span>.crossDomain)
+            xhr.setRequestHeader(<span style="font-style: italic;">"X-CSRFTOKEN"</span>, csrftoken)
+        }
+    })
+</pre>
+</div>
+<p>
+上面的代码,先从模板文件中获取了 csrf_token 的值, 然后通过设置 beforeSend 方法,在
+每次发送请求之前都把 csrf_token 设置到请求头中,这样就可以完成 csrf 的验证了.
+</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
