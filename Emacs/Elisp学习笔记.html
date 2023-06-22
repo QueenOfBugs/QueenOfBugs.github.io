@@ -250,19 +250,19 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga7f0032">Xahlee 的 Elisp 教程</a>
+<li><a href="#org2b8e3e8">Xahlee 的 Elisp 教程</a>
 <ul>
 <li>
 <ul>
-<li><a href="#orgf4aa41d">执行 Elisp</a></li>
-<li><a href="#org7401b78">打印</a></li>
-<li><a href="#org97a4acd">格式化字符串</a></li>
-<li><a href="#org504cd2a">注释</a></li>
-<li><a href="#orge1317b3">字符串</a></li>
-<li><a href="#orga156910">算术运算</a></li>
-<li><a href="#org85a6f25">整型/浮点型,数字/字符串类型转换</a></li>
-<li><a href="#orgb43d58b">光标位置函数</a></li>
-<li><a href="#orgdbcd94b">文本编辑函数</a></li>
+<li><a href="#org08bda5a">执行 Elisp</a></li>
+<li><a href="#orga590bb6">打印</a></li>
+<li><a href="#org4961642">格式化字符串</a></li>
+<li><a href="#org762d16a">注释</a></li>
+<li><a href="#org41bb261">字符串</a></li>
+<li><a href="#org8755574">算术运算</a></li>
+<li><a href="#orgf6c9292">整型/浮点型,数字/字符串类型转换</a></li>
+<li><a href="#orgbfe8a59">光标位置函数</a></li>
+<li><a href="#org9683898">文本编辑函数</a></li>
 </ul>
 </li>
 </ul>
@@ -275,9 +275,9 @@ Created: <span class="timestamp-wrapper"><span class="timestamp">[2023-02-21 Tue
 Last modified: <span class="timestamp-wrapper"><span class="timestamp">[2023-03-01 Wed 15:07]</span></span>
 </p>
 
-<div id="outline-container-orga7f0032" class="outline-2">
-<h2 id="orga7f0032">Xahlee 的 Elisp 教程</h2>
-<div class="outline-text-2" id="text-orga7f0032">
+<div id="outline-container-org2b8e3e8" class="outline-2">
+<h2 id="org2b8e3e8">Xahlee 的 Elisp 教程</h2>
+<div class="outline-text-2" id="text-org2b8e3e8">
 <p>
 Xahlee 的 Emacs Lisp 分为了基础和实践部分,基础只包含 LISP 语言通用的部分,实践部
 分才涉及 Emacs Lisp 这种 LISP 方言特有的知识,我就不按照他的排版来记笔记了,按照我
@@ -285,9 +285,9 @@ Xahlee 的 Emacs Lisp 分为了基础和实践部分,基础只包含 LISP 语言
 </p>
 </div>
 
-<div id="outline-container-orgf4aa41d" class="outline-4">
-<h4 id="orgf4aa41d">执行 Elisp</h4>
-<div class="outline-text-4" id="text-orgf4aa41d">
+<div id="outline-container-org08bda5a" class="outline-4">
+<h4 id="org08bda5a">执行 Elisp</h4>
+<div class="outline-text-4" id="text-org08bda5a">
 <p>
 在任意缓冲区中键入
 </p>
@@ -325,9 +325,9 @@ Xahlee 的 Emacs Lisp 分为了基础和实践部分,基础只包含 LISP 语言
 </p>
 </div>
 </div>
-<div id="outline-container-org7401b78" class="outline-4">
-<h4 id="org7401b78">打印</h4>
-<div class="outline-text-4" id="text-org7401b78">
+<div id="outline-container-orga590bb6" class="outline-4">
+<h4 id="orga590bb6">打印</h4>
+<div class="outline-text-4" id="text-orga590bb6">
 <p>
 我接触过的几乎所有语言都有类似 print 的这样的函数,用来打印数据, Elisp 也不例外,
 不过 Emacs 最简单的打印函数应该是 <code>(message FORMAT-STRING &amp;rest ARGS)</code>, 它用来在
@@ -414,8 +414,8 @@ output*</code> 而里面的内容是 "something".
 (insert "something"something)
 </pre>
 <p>
-关于光标位置的函数参见 <a href="#orgb43d58b">光标位置函数</a> 部分.
-形如 insert 这样编辑文本的函数参见 <a href="#orgdbcd94b">文本编辑函数</a> 部分.
+关于光标位置的函数参见 <a href="#orgbfe8a59">光标位置函数</a> 部分.
+形如 insert 这样编辑文本的函数参见 <a href="#org9683898">文本编辑函数</a> 部分.
 </p>
 
 <p>
@@ -448,9 +448,9 @@ output*</code> 而里面的内容是 "something".
 </div>
 </div>
 
-<div id="outline-container-org97a4acd" class="outline-4">
-<h4 id="org97a4acd">格式化字符串</h4>
-<div class="outline-text-4" id="text-org97a4acd">
+<div id="outline-container-org4961642" class="outline-4">
+<h4 id="org4961642">格式化字符串</h4>
+<div class="outline-text-4" id="text-org4961642">
 <p>
 Elisp 里格式字符串的规则基本与 format 函数的文档字符串里解释的一致,使用
 <code>M-x describe-function format</code> 或快捷键 <code>Ctrl-h f format</code> 很容易就能查看到
@@ -460,9 +460,9 @@ format 的文档字符串,既然都在学 Elisp 了,那肯定在用 Emacs, 这�
 </div>
 </div>
 
-<div id="outline-container-org504cd2a" class="outline-4">
-<h4 id="org504cd2a">注释</h4>
-<div class="outline-text-4" id="text-org504cd2a">
+<div id="outline-container-org762d16a" class="outline-4">
+<h4 id="org762d16a">注释</h4>
+<div class="outline-text-4" id="text-org762d16a">
 <p>
 Elisp 代码的注释由一个分号 <code>;</code> 开始,按照传统约定,单行注释由两个分号开始,小节标题
 由三个分号开始:
@@ -481,9 +481,9 @@ Elisp 代码的注释由一个分号 <code>;</code> 开始,按照传统约定,�
 </div>
 </div>
 
-<div id="outline-container-orge1317b3" class="outline-4">
-<h4 id="orge1317b3">字符串</h4>
-<div class="outline-text-4" id="text-orge1317b3">
+<div id="outline-container-org41bb261" class="outline-4">
+<h4 id="org41bb261">字符串</h4>
+<div class="outline-text-4" id="text-org41bb261">
 <p>
 Elisp 里字符串由双引号引用,语法如下:
 </p>
@@ -528,9 +528,9 @@ Elisp 里字符串由双引号引用,语法如下:
 </div>
 </div>
 
-<div id="outline-container-orga156910" class="outline-4">
-<h4 id="orga156910">算术运算</h4>
-<div class="outline-text-4" id="text-orga156910">
+<div id="outline-container-org8755574" class="outline-4">
+<h4 id="org8755574">算术运算</h4>
+<div class="outline-text-4" id="text-org8755574">
 <p>
 基本的算术运算看几个例子就都明白了:
 </p>
@@ -604,15 +604,15 @@ WARNING: 2. is still a int. 2.0 is a float.
 </div>
 </div>
 
-<div id="outline-container-org85a6f25" class="outline-4">
-<h4 id="org85a6f25">整型/浮点型,数字/字符串类型转换</h4>
+<div id="outline-container-orgf6c9292" class="outline-4">
+<h4 id="orgf6c9292">整型/浮点型,数字/字符串类型转换</h4>
 </div>
 
-<div id="outline-container-orgb43d58b" class="outline-4">
-<h4 id="orgb43d58b">光标位置函数</h4>
+<div id="outline-container-orgbfe8a59" class="outline-4">
+<h4 id="orgbfe8a59">光标位置函数</h4>
 </div>
-<div id="outline-container-orgdbcd94b" class="outline-4">
-<h4 id="orgdbcd94b">文本编辑函数</h4>
+<div id="outline-container-org9683898" class="outline-4">
+<h4 id="org9683898">文本编辑函数</h4>
 </div>
 </div>
 </div>
