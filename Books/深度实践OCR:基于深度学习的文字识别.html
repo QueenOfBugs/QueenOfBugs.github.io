@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-17 Mon 04:33 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>深度实践OCR:基于深度学习的文字识别</title>
+<meta name="generator" content="Org mode" />
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">深度实践OCR:基于深度学习的文字识别</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org8b04050">1. 绪论</a>
+<ul>
+<li><a href="#orgbec42b6">1.1. OCR 发展史</a>
+<ul>
+<li><a href="#org9b018ca">1.1.1. 传统OCR方法</a></li>
+<li><a href="#org75eda83">1.1.2. 基于深度学习OCR方法一般流程</a></li>
+</ul>
+</li>
+<li><a href="#orgf871240">1.2. 文字检测</a></li>
+<li><a href="#orgf2d5085">1.3. 文字识别</a></li>
+<li><a href="#orgc673db0">1.4. 产业应用现状</a></li>
+<li><a href="#org19feaf3">1.5. 小结</a></li>
+</ul>
+</li>
+<li><a href="#org81b6fb6">2. 图像预处理</a>
+<ul>
+<li><a href="#orgea1f07a">2.1. 二值化</a>
+<ul>
+<li><a href="#orgf39306d">2.1.1. 全局阈值方法</a>
+<ul>
+<li><a href="#org21bead0">2.1.1.1. 固定阈值方法</a></li>
+<li><a href="#org812872f">2.1.1.2. Otsu算法</a></li>
+</ul>
+</li>
+<li><a href="#org1b96979">2.1.2. 局部阈值方法</a>
+<ul>
+<li><a href="#orgc26a03e">2.1.2.1. 自适应阈值算法</a></li>
+<li><a href="#orgb4f3332">2.1.2.2. Niblack算法</a></li>
+<li><a href="#org44ed01f">2.1.2.3. Sauvola算法</a></li>
+</ul>
+</li>
+<li><a href="#org77081ad">2.1.3. 基于深度学习的方法</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8b04050" class="outline-2">
+<h2 id="org8b04050"><span class="section-number-2">1</span> 绪论</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgbec42b6" class="outline-3">
+<h3 id="orgbec42b6"><span class="section-number-3">1.1</span> OCR 发展史</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org9b018ca" class="outline-4">
+<h4 id="org9b018ca"><span class="section-number-4">1.1.1</span> 传统OCR方法</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+在深度学习之前的传统 OCR 方法是基于人类对图像文字的视觉特征处理逻辑实现的,先是对
+数据预处理,然后提取数据特征,特征降维等操作,对数据进行分类,最后将分类的结果进行结
+构化.
+</p>
+
+<p>
+传统技术大致有以下几步:
+</p>
+<ul class="org-ul">
+<li>输入图像</li>
+<li>文本行检测</li>
+<li>单字分割</li>
+<li>单字符识别</li>
+<li>后处理</li>
+</ul>
+
+
+<p>
+这是在深度学习出现前人工智能领域中对人脑图像识别能力的模拟实现.是对人类将看到的
+图像识别为有意义的文字内容的这一过程的模拟.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org75eda83" class="outline-4">
+<h4 id="org75eda83"><span class="section-number-4">1.1.2</span> 基于深度学习OCR方法一般流程</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+传统的 OCR 技术涉及太多的人工涉及,且整个流程是串行的,每一步的错误都会在剩下的步
+骤中不断叠加,所以在一些背景稍微复杂或者字体不规范的情况下,传统的方法基本会失效.
+而且由于识别情境的复杂,导致实际的识别模块往往需要堆砌非常多的算法,但即使如此,传
+统识别模块也无法处理手写字体,验证码等复杂情境,因为这种情况下很难进行单字切分.
+</p>
+
+<p>
+而深度学习的自适应学习驱动方式,可以很好处理传统OCR方法难以解决的问题.
+</p>
+
+<p>
+深度学习的 OCR 方法将繁杂的流程分为两个主要步骤:
+</p>
+<ul class="org-ul">
+<li>文本检测,用于定位文本的位置.</li>
+<li>文本识别, 用于识别文本的具体内容.</li>
+</ul>
+
+
+<p>
+深度学习是对人脑能力形成过程的模拟.
+</p>
+
+<p>
+传统的OCR 和基于深度学习的 OCR 可以拿数学解题能力做比喻, 传统 OCR 是基于数学知识,一
+步步带着计算机解题, 基于深度学习的 OCR 是给出数学知识,让计算机自己学习解题能力,
+学习完后让计算机自己去解题.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf871240" class="outline-3">
+<h3 id="orgf871240"><span class="section-number-3">1.2</span> 文字检测</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+传统 OCR 的文字检测是以手动特征提取为主,经典方法有 SWT,MSER,HOG 等. 传统方式是对
+图像设置特征金字塔,然后使用滑动窗口进行扫描,之后进入手动特征提取,再通过滑动窗口
+提取分类,最后汇总为文本区域.
+</p>
+
+<p>
+深度学习的发展大大促进了文本检测的发展.
+</p>
+
+<p>
+文字检测具有以下特殊性:
+</p>
+<ul class="org-ul">
+<li>背景多样化. 自然场景下,文本的背景可以为任意背景,同时会受到纹理相近的背景影响.</li>
+<li>文本形状和方向的多样化. 水平,垂直,倾斜,曲线等.</li>
+<li>文本颜色,字体,尺度的多样化. 手写体,印刷体,各种用途的字体在颜色,尺度方面都有不
+同.</li>
+<li>不同程度的透视变换.</li>
+<li>恶劣的光照条件和不同程度的遮挡.</li>
+</ul>
+
+
+
+<p>
+文本检测发展出了独有的方法,但都在物体检测的框架体系之内:
+</p>
+<ul class="org-ul">
+<li>基于候选框(Anchor) 的文本检测</li>
+<li>基于语义分割(Segmentation) 的文本检测</li>
+<li>基于以上两种方式的混合方法(Hybrid)</li>
+</ul>
+
+
+<p>
+候选框方式是预生成若干后选矿,然后回归坐标和分类,最后经过 NMS 得到最终检测结果.
+</p>
+
+<p>
+基于语义分割的方式是通过 FPN 直接进行像素级别的语义分割,然后进行后处理得到相关坐
+标即可.
+</p>
+
+<p>
+上面两种方式各有利弊,因此最后产生了混合方式.
+</p>
+
+<p>
+除此之外,还有将识别网络和检测网络一起进行端到端训练的方式,例如 FOTS, TextSpotter
+等, 因为识别网络可以帮助检测网络去除一些非文字的候选框.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf2d5085" class="outline-3">
+<h3 id="orgf2d5085"><span class="section-number-3">1.3</span> 文字识别</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+文字识别的目标是对定位好的文字区域进行识别,主要是解决将一串文字图片转录为对应的
+字符的问题.
+</p>
+
+<p>
+在深度学习发展之前,文字识别技术一直在使用卷积神经网络和循环神经网络.例如在深度学
+习体系中占据重要地位的 LeNet5 网络就应用在 OCR 上,序列化模型 LSTM, BLSTM 和 CTC
+Loss 也很早被应用到手写英文的识别中.
+</p>
+
+<p>
+随着 2012年深度学习大发展,各种新的深度学习技术也促进了文字识别技术的发展.
+</p>
+
+<p>
+常用的文字识别框架主要有两个: CNN+RNN+CTC 和 CNN+Seq2Seq+Attention
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc673db0" class="outline-3">
+<h3 id="orgc673db0"><span class="section-number-3">1.4</span> 产业应用现状</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+OCR 技术作为机器视觉领域非常重要的研究方向,涉及的应用领域多种多样.
+</p>
+
+<p>
+各个应用领域已经出现了非常多的产品:
+</p>
+<ul class="org-ul">
+<li>卡片证件类识别: 身份证,银行卡,驾驶证,护照等等证件的识别.</li>
+<li>票据类识别: 发票,支票,汇票,银行票据,物流快递单据等的识别.</li>
+<li>文字信息结构化视频类识别: 主要有字母识别和文字跟踪等.</li>
+<li>其他识别: 二维码,一维码,车牌,数学公式,物理化学符号,工程图,流程图,手写输入等的
+识别.</li>
+</ul>
+
+
+<p>
+除此之外,还有通用自然场景下的文字识别,菜单识别,横幅检测,图章,广告等围绕审核的业
+务应用.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org19feaf3" class="outline-3">
+<h3 id="org19feaf3"><span class="section-number-3">1.5</span> 小结</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+这一章主要介绍 OCR 技术的发展,从传统技术到新技术的迭代升级,也有很多内容没有提及,
+如数据集,风格迁移等.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org81b6fb6" class="outline-2">
+<h2 id="org81b6fb6"><span class="section-number-2">2</span> 图像预处理</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+文字检测和识别中,图像质量的好坏直接影响到检测率与识别率的高低,因此对图像进行预处
+理是至关重要的一个环节.
+</p>
+
+<p>
+这部分会介绍图像预处理中的二值化,去噪和倾斜角检测校正的常用算法.
+</p>
+
+<p>
+在实战部分还根据实例对比不同方法的去噪效果.
+</p>
+</div>
+
+<div id="outline-container-orgea1f07a" class="outline-3">
+<h3 id="orgea1f07a"><span class="section-number-3">2.1</span> 二值化</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+图像二值化(Image Binarization) 是指将像素点的灰度值设置为 0 或 255, 使得图像呈现
+明显的黑白效果. 二值化一方面减少了数据的维度,另一方面通过排除原图中的噪声带来的
+干扰,可以凸显有效区域的轮廓结构.
+</p>
+
+<p>
+目前,二值化的方法主要分为 <b>全局阈值方法(Global Binarization)</b>,
+<b>局部阈值方法(Local Binarization)</b>, <b>基于深度学习的方法</b> 和其他方法.
+</p>
+</div>
+
+<div id="outline-container-orgf39306d" class="outline-4">
+<h4 id="orgf39306d"><span class="section-number-4">2.1.1</span> 全局阈值方法</h4>
+<div class="outline-text-4" id="text-2-1-1">
+</div>
+<div id="outline-container-org21bead0" class="outline-5">
+<h5 id="org21bead0"><span class="section-number-5">2.1.1.1</span> 固定阈值方法</h5>
+<div class="outline-text-5" id="text-2-1-1-1">
+<p>
+该方法对输入图像中的所有像素点使用同一个固定阈值:
+</p>
+
+\begin{equation}
+g(x,y) =
+\begin{cases}
+255, & f(x,y) \ge T \\
+0, & else \\
+\end{cases}
+\end{equation}
+
+<p>
+同一个输入图像,对于不同的 T 值,二值化的效果不同,因此固定阈值法的主要缺陷就是:很
+难为不同的输入图像确定最佳阈值.
+</p>
+
+<p>
+为了解决这一问题,后面介绍的方法也采用了根据输入图像计算最佳阈值的思想.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org812872f" class="outline-5">
+<h5 id="org812872f"><span class="section-number-5">2.1.1.2</span> Otsu算法</h5>
+<div class="outline-text-5" id="text-2-1-1-2">
+<p>
+Otsu 算法也叫 最大类间方差法,是一种自适应的阈值确定方法.
+</p>
+
+<p>
+其基本思想如下:
+  将输入图像视为 L 个灰度级, n<sub>i</sub> 表示灰度级为 i 的像素个数, 那么像素总数为:
+  \(N = n_{1} + n_{2} + ... + n_{L}\)
+  为了简化讨论, 使用根归一化的灰度直方图,将其视为输入图像的概率分布:
+  \(p_{i} = n_{i}/N, p_{i}>0,\sum_{i=1}^{L}{p_{i}=1}\)
+  现在假设在第 k 个灰度级设置阈值,将图像分为 C<sub>0</sub>和 C<sub>1</sub> (背景和目标物体),
+  C<sub>0</sub> 表示灰度级在 [1,&#x2026;,k] 的像素点, C<sub>1</sub> 表示灰度级为 [k+1,&#x2026;,L] 的像素点,那
+  么两类出现的概率以及类内灰度级的均值分别为:
+  \[\omega_{0} = Pr(C_{0}) = \sum_{i=1}^{k}{p_{i}} = \omega(k)\]
+  \[\omega_{1} = Pr(C_{1}) = \sum_{i=k+1}^{L}{p_{i}} = 1 - \omega(k)\]
+  \[\mu_{0} = \sum_{i=1}^{k}{i Pr(i|C_{0})} = \sum_{i=1}^{k}{ip_{i}/\omega_{0}} = \mu(k)/\omega(k)\]
+  \[\mu_{1} = \sum_{i=k+1}^{L}{i Pr(i|C_{1})} = \sum_{i=k+1}^{L}{ip_{i}/\omega_{1}} = \frac{\mu_{T}-\mu(k)}{1-\omega(k)}\]
+</p>
+
+<p>
+\(\omega(k)\) 和 \(\mu(k)\) 分别为灰度级从1到k 的累计出现概率和平均灰度级,而
+\(\mu_T\) 则是整张图的平均灰度级. 我们很容易就能验证,对于任意的 k 值,均有:
+\[ \omega_{0} \mu_{0} + \omega_{1} \mu_{1} = \mu_{T}, \omega_{0}+\omega_{1} = 1 \]
+</p>
+
+<p>
+这两类的类内方差由下面两个公式给出:
+\[\sigma_{0}^{2} = \sum_{i=1}^{k}(i-\mu_{0})^{2} Pr(i|C_{0}) = \sum_{i=1}^{k}(i-\mu_{0})^{2} p_{i}/\omega{0}\]
+\[\sigma_{1}^{2} = \sum_{i=k+1}^{L}(i-\mu_{1})^{2} Pr(i|C_{1}) = \sum_{i=k+1}^{L}(i-\mu_{1})^{2} p_{i}/\omega{1}\]
+为了评价阈值 k 的好坏,我们需要引入判别式,根据判别式的标准来测量:
+\[\lambda = \sigma_{B}^{2}/ \sigma_{W}^{2}, \kappa = \sigma_{T}^{2}/ \sigma_{W}^{2}, \eta = \sigma_{B}^{2}/ \sigma_{T}^{2}\]
+</p>
+
+<p>
+其中,
+\[ \sigma_{W}^{2} = \omega_{0}\sigma_{0}^{2} + \omega_{1}\sigma_{1}^{2} \]
+\[ \sigma_{B}^{2} = \omega_{0} (\mu_{0} - \mu_{T})^{2} + \omega_{1} (\mu_{1} -
+  \mu_{T})^{2} = \omega_{0}\omega_{1} (\mu_{1} - \mu_{0})^{2}\]
+\[ \sigma_{T}^{2} = \sum_{i=1}^{L} (i-\mu_{T})^{2} p_{i}\]
+</p>
+
+<p>
+\(\sigma_{W}\), \(\sigma_{B}\), \(\sigma_{T}\) 分别为类内方差,类间方差和灰度级的总方
+差.
+</p>
+
+<p>
+现在问题可以转化为一个优化问题,即找到一个 k, 使其能最大化判别式中的目标函数:
+\[\lambda = \sigma_{B}^{2}/ \sigma_{W}^{2}, \kappa = \sigma_{T}^{2}/ \sigma_{W}^{2}, \eta = \sigma_{B}^{2}/ \sigma_{T}^{2}\]
+由于
+\[ \sigma_{W}^{2} + \sigma_{B}^{2} = \sigma_{T}^{2} \]
+且 &sigma;<sub>B</sub> 和 &sigma;<sub>W</sub> 都是 k 的函数,但 &sigma;<sub>T</sub> 却与 k 无关;而且
+&sigma;<sub>W</sub><sup>2</sup> 是基于二阶统计(类方差),而 &sigma;<sub>B</sub><sup>2</sup> 是基于一阶统计(类均值).
+因此 \(\eta\) 是判别 k 取值好坏的最简单标准:
+\[ \eta = \sigma_{B}^{2}(k)/\sigma_{T}^{2}\]
+至此,我们得到了最佳的 k 值选择,即:
+\[ \sigma_{B}^{2}(k^{*}) = \underset{1 \le k \le L}{max} \sigma_{B}^{2}(k) \]
+</p>
+
+
+
+<p>
+为了更形象地解释 Otsu 算法,作者给出了测试图片和代码,用于将两张输入图像的灰度直方
+图以及算法得到的结果阈值绘制出来,首先是代码:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">import</span> cv2
+<span style="font-weight: bold;">from</span> matplotlib <span style="font-weight: bold;">import</span> pyplot <span style="font-weight: bold;">as</span> plt
+
+<span style="font-weight: bold; font-style: italic;">image</span> = cv2.imread(<span style="font-style: italic;">"test.png"</span>)
+
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#23558;&#36755;&#20837;&#22270;&#20687;&#36716;&#20026;&#28784;&#24230;&#22270;</span>
+<span style="font-weight: bold; font-style: italic;">gray</span> = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#32472;&#21046;&#28784;&#24230;&#22270;</span>
+plt.subplot(311), plt.imshow(gray, <span style="font-style: italic;">"gray"</span>)
+plt.title(<span style="font-style: italic;">"input image"</span>), plt.xticks([]), plt.yticks([])
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#23545;&#28784;&#24230;&#22270;&#20351;&#29992; Ostu &#31639;&#27861;</span>
+<span style="font-weight: bold; font-style: italic;">ret1</span>, <span style="font-weight: bold; font-style: italic;">th1</span> = cv2.threadhold(gray, 255, cv2.THRESH_OTSU)
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#32472;&#21046;&#28784;&#24230;&#30452;&#26041;&#22270;</span>
+plt.subplot(312), plt.hist(gray.ravel(),256)
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#26631;&#27880; Ostu &#38408;&#20540;&#25152;&#22312;&#30452;&#32447;</span>
+plt.axvline(x=ret1,color=<span style="font-style: italic;">"red"</span>, label=<span style="font-style: italic;">"otsu"</span>)
+plt.legend(loc=<span style="font-style: italic;">"upper right"</span>)
+plt.title(<span style="font-style: italic;">"Histogram"</span>), plt.xticks([]), plt.yticks([])
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#32472;&#21046;&#20108;&#20540;&#21270;&#22270;&#20687;</span>
+plt.subplot(313),plt.imshow(th1,<span style="font-style: italic;">"gray"</span>)
+plt.title(<span style="font-style: italic;">"output image"</span>), plt.xticks([]), plt.yticks([])
+plt.show
+</pre>
+</div>
+
+<p>
+观察结果图片可以发现,对于灰度直方图呈现两个峰值的图像, Otsu 算法得到的阈值为峰值
+间的低谷位置,二值化的效果比较好,但是当目标物体与背景大小比例悬殊或灰度级接近时,
+直方图呈现三峰值或双峰峰值差距极大时, Otsu 算法得不到满意结果. 因为单独将灰度分
+布作为设置阈值的依据不仅仅会使得结果对噪声及其敏感,而且还容易丢失图像中重要的空
+间结构关系.
+</p>
+
+<p>
+鉴于 Otsu 算法简单移动, Python 的 OpenCV 库对其进行了封装，以方便调用. 在实际应
+用中 Otsu 算法常常与其他方法一起组合使用.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1b96979" class="outline-4">
+<h4 id="org1b96979"><span class="section-number-4">2.1.2</span> 局部阈值方法</h4>
+<div class="outline-text-4" id="text-2-1-2">
+</div>
+<div id="outline-container-orgc26a03e" class="outline-5">
+<h5 id="orgc26a03e"><span class="section-number-5">2.1.2.1</span> 自适应阈值算法</h5>
+<div class="outline-text-5" id="text-2-1-2-1">
+<p>
+自适应阈值算法用到了积分图(Integral Image) 的概念,它是一个快速且有效地对网络的矩
+形自区域计算和的算法. 积分图中任意一点 \((x,y)\) 的值是从图左上角到该点形成的矩形
+区域内所有值之和.
+</p>
+
+<p>
+输入图片:
+</p>
+\begin{matrix}
+4&1&2&2\\
+0&4&1&3\\
+3&1&0&4\\
+2&1&3&2\\
+\end{matrix}
+
+<p>
+积分图:
+</p>
+\begin{matrix}
+4&5&7&9\\
+4&9&12&17\\
+7&13&16&25\\
+9&16&22&33\\
+\end{matrix}
+
+<p>
+积分图中
+\[I(x,y) = \sum_{x^{'}\le{x},y^{'}\le{y}}i(x^{'}, y^{'})\]
+</p>
+
+<p>
+例如积分图中第二行第二列的 I(2,2) 值为9 它为输入图片矩阵的(1,1) 到 (2,2) 矩形区
+域所有值的和,即 I(2,2) = i(1,1)+i(1,2)+i(2,1)+i(2,2)
+</p>
+
+<p>
+自适应阈值算法的主要思想是以一个像素点为中心设置大小为 \(s \times s\) 的滑窗,滑窗
+扫过整张图片,每次扫描均对窗口内的像素求均值,并将均值作为局部阈值. 若干窗口中某个
+像素值低于局部阈值 t/100, 赋值为 0; 高于局部阈值 t/100, 赋值为 255. 因为涉及多次
+对有重叠的窗口进行加和计算,因此积分图的使用可以有效降低复杂度和操作次数. 为了计
+算积分图,我们在每个位置储存其左边和上方所有 f(x,y) 值的总和,这一步骤会在线性时间
+内完成:
+\[I(x,y) = f(x,y) + I(x-1,y) I(x,y-1) - I(x-1,y-1)\]
+</p>
+
+<p>
+一旦得到积分图,对于任意从左上角 (x<sub>1,y</sub><sub>1</sub>) 到右下角 (x<sub>2</sub>, y<sub>2</sub>) 的矩形内的数值总和
+均可以使用下面式子计算:
+\[ \sum_{x=x_{1}}^{x_{2}} \sum_{y=y_{1}}^{y_2} f(x,y) = I(x_2,y_2) - I(x_2,y_1-1)-I(x_1-1,y_2)+I(x_1-1,y_1-1)\]
+</p>
+
+<p>
+流程供两次扫描,第一次扫描得到积分图,第二次根据上面式子计算每次扫描窗口内像素值的
+平均值的(100-t)/100, 并将计算结果作为局部阈值. 若窗口内某一像素点的值乘以窗口大
+小大于该阈值,则对应输出 255,反之输出0.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb4f3332" class="outline-5">
+<h5 id="orgb4f3332"><span class="section-number-5">2.1.2.2</span> Niblack算法</h5>
+<div class="outline-text-5" id="text-2-1-2-2">
+<p>
+Niblcak 算法同样是根据窗口内的像素值计算局部阈值的,不同在于它不仅考虑区域内像素
+点的均值和方差,还考虑到用一个事先设定的修正系数来决定影响程度.
+</p>
+
+<p>
+\[ T(x,y) = m(x,y) + ks(x,y)\]
+</p>
+
+<p>
+T(x,y) 为阈值, m(x,y), s(x,y) 分别代表均值和方差. 与 m(x,y) 相近的像素点被视为背
+景,反之视为前景,相近程度可由标准差和修正系数来决定,这样可以保证算法的灵活性.
+</p>
+
+<p>
+Niblcak 算法的缺陷在于 r &times; r 的滑窗会导致边界区域 (r-1)/2 的像素范围内无法
+求取阈值,另外如果 r &times; r 滑窗内全为背景,那该算法必然会使一部分像素点称为前景,形
+成伪噪声.因此, r 的选择非常关键,窗口太小,不能有效抑制噪声,窗口太大,会导致细节丢
+失.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org44ed01f" class="outline-5">
+<h5 id="org44ed01f"><span class="section-number-5">2.1.2.3</span> Sauvola算法</h5>
+<div class="outline-text-5" id="text-2-1-2-3">
+<p>
+Sauvola 算法是针对文档二值化处理,在 Niblack 算法基础上的改进:
+</p>
+
+<p>
+\[ T = m\left[1+k \left( \frac{s}{R} -1 \right)\right] \]
+</p>
+
+<p>
+R 是标准方差的动态范围,若当前输入的图像是 8 位灰度图像,则 R=128.
+</p>
+
+<p>
+Sauvola 算法在处理光线不均匀或染色图像时,比 Niblack 算法有更好表现,因为上式以自
+适应方式放大了标准差 s 的作用. 假设要处理一份浅色但有污渍的文档,那么乘以 m 系数
+会降低背景区域阈值的范围,这可以有效减少染色,污渍的影响.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org77081ad" class="outline-4">
+<h4 id="org77081ad"><span class="section-number-4">2.1.3</span> 基于深度学习的方法</h4>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2023-07-17 Mon 04:33</p>
+</div>
+</body>
+</html>
