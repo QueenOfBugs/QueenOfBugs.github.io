@@ -272,58 +272,58 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0cf55d7">Emacs 编码系统</a></li>
-<li><a href="#orgb406889">Emacs 语言环境设置</a></li>
-<li><a href="#org4bfec0c">基本编辑命令(Fundamental Editing Commands)</a>
+<li><a href="#org2de9c50">Emacs 编码系统</a></li>
+<li><a href="#org8ada41e">Emacs 语言环境设置</a></li>
+<li><a href="#org28c74a2">基本编辑命令(Fundamental Editing Commands)</a>
 <ul>
-<li><a href="#orgd7c59d2">基础(Basic)</a>
+<li><a href="#org83f7917">基础(Basic)</a>
 <ul>
-<li><a href="#org017878a">位置信息(Position Info)</a></li>
+<li><a href="#org7f56d88">位置信息(Position Info)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org2f2e0cb">重要文本更改命令(Import Text-Changing Commands)</a>
+<li><a href="#orgc73e405">重要文本更改命令(Import Text-Changing Commands)</a>
 <ul>
-<li><a href="#org8bda2f2">显示(Display)</a>
+<li><a href="#org0ce946d">显示(Display)</a>
 <ul>
-<li><a href="#org7f92aff">文本显示(Text Display)</a></li>
+<li><a href="#orgb05aff3">文本显示(Text Display)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orge264074">Emacs 的主要结构(Major Structures of Emacs)</a>
+<li><a href="#org7c374c6">Emacs 的主要结构(Major Structures of Emacs)</a>
 <ul>
-<li><a href="#org48c3822">文件(Files)</a></li>
-<li><a href="#orgdcae760">缓冲区(Buffers)</a></li>
-<li><a href="#orgc87af1f">窗口(Windows)</a></li>
-<li><a href="#org0e49df9">框架(Frames)</a></li>
-<li><a href="#orgffaa474">国际化(International)</a>
+<li><a href="#org31afce6">文件(Files)</a></li>
+<li><a href="#org25085e6">缓冲区(Buffers)</a></li>
+<li><a href="#orgfe1f484">窗口(Windows)</a></li>
+<li><a href="#org42bbd07">框架(Frames)</a></li>
+<li><a href="#org1db8098">国际化(International)</a>
 <ul>
-<li><a href="#org4923b54">Fontsets</a></li>
-<li><a href="#orgac182f2">定义字体集(Defining Fontsets)</a></li>
-<li><a href="#org53dd287">修改字体集(Modifying Fontsets)</a></li>
+<li><a href="#org4960753">Fontsets</a></li>
+<li><a href="#orgc61e134">定义字体集(Defining Fontsets)</a></li>
+<li><a href="#org793673a">修改字体集(Modifying Fontsets)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgfe0293e">time-stamp 自动更新时间戳</a>
+<li><a href="#orgfdf3ff4">time-stamp 自动更新时间戳</a>
 <ul>
-<li><a href="#orgb051d62">time-stamp 函数</a></li>
-<li><a href="#orgd97021b">time-stamp-pattern 设置自动更新的时间戳格式</a></li>
+<li><a href="#org5a3be5f">time-stamp 函数</a></li>
+<li><a href="#orga51325f">time-stamp-pattern 设置自动更新的时间戳格式</a></li>
 </ul>
 </li>
-<li><a href="#org94c1c28">附录(Appendices)</a>
+<li><a href="#org4e6f676">附录(Appendices)</a>
 <ul>
-<li><a href="#orgfc4de6d">X Resources</a></li>
+<li><a href="#org44ad9ee">X Resources</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0cf55d7" class="outline-2">
-<h2 id="org0cf55d7">Emacs 编码系统</h2>
-<div class="outline-text-2" id="text-org0cf55d7">
+<div id="outline-container-org2de9c50" class="outline-2">
+<h2 id="org2de9c50">Emacs 编码系统</h2>
+<div class="outline-text-2" id="text-org2de9c50">
 <p>
 使用不同语言的用户或多或少地创建了许多不同标准的编码系统来表示它们的语言文字。但
 Emacs 内部并不使用这些编码系统，它在读取数据时从各种编码系统转变为自己内部的编码
@@ -348,9 +348,9 @@ Emacs 内部并不使用这些编码系统，它在读取数据时从各种编�
 </p>
 </div>
 </div>
-<div id="outline-container-orgb406889" class="outline-2">
-<h2 id="orgb406889">Emacs 语言环境设置</h2>
-<div class="outline-text-2" id="text-orgb406889">
+<div id="outline-container-org8ada41e" class="outline-2">
+<h2 id="org8ada41e">Emacs 语言环境设置</h2>
+<div class="outline-text-2" id="text-org8ada41e">
 <p>
 Emacs 的语言环境是针对使用不同语言,字符集和编码系统的一系列设置,该设置会修改默认
 的输入法,字符集和编码系统.想要查看特定的语言环境,可以使用快捷键 <code>C-h L</code> 或者直接使
@@ -362,20 +362,20 @@ Emacs 的语言环境是针对使用不同语言,字符集和编码系统的一�
 </div>
 
 
-<div id="outline-container-org4bfec0c" class="outline-2">
-<h2 id="org4bfec0c">基本编辑命令(Fundamental Editing Commands)</h2>
-<div class="outline-text-2" id="text-org4bfec0c">
+<div id="outline-container-org28c74a2" class="outline-2">
+<h2 id="org28c74a2">基本编辑命令(Fundamental Editing Commands)</h2>
+<div class="outline-text-2" id="text-org28c74a2">
 </div>
-<div id="outline-container-orgd7c59d2" class="outline-3">
-<h3 id="orgd7c59d2">基础(Basic)</h3>
-<div class="outline-text-3" id="text-orgd7c59d2">
+<div id="outline-container-org83f7917" class="outline-3">
+<h3 id="org83f7917">基础(Basic)</h3>
+<div class="outline-text-3" id="text-org83f7917">
 <p>
 最基本的编辑命令
 </p>
 </div>
-<div id="outline-container-org017878a" class="outline-4">
-<h4 id="org017878a">位置信息(Position Info)</h4>
-<div class="outline-text-4" id="text-org017878a">
+<div id="outline-container-org7f56d88" class="outline-4">
+<h4 id="org7f56d88">位置信息(Position Info)</h4>
+<div class="outline-text-4" id="text-org7f56d88">
 <p>
 光标位于哪一行?哪一列?
 </p>
@@ -384,53 +384,53 @@ Emacs 的语言环境是针对使用不同语言,字符集和编码系统的一�
 </div>
 </div>
 
-<div id="outline-container-org2f2e0cb" class="outline-2">
-<h2 id="org2f2e0cb">重要文本更改命令(Import Text-Changing Commands)</h2>
-<div class="outline-text-2" id="text-org2f2e0cb">
+<div id="outline-container-orgc73e405" class="outline-2">
+<h2 id="orgc73e405">重要文本更改命令(Import Text-Changing Commands)</h2>
+<div class="outline-text-2" id="text-orgc73e405">
 </div>
-<div id="outline-container-org8bda2f2" class="outline-3">
-<h3 id="org8bda2f2">显示(Display)</h3>
-<div class="outline-text-3" id="text-org8bda2f2">
+<div id="outline-container-org0ce946d" class="outline-3">
+<h3 id="org0ce946d">显示(Display)</h3>
+<div class="outline-text-3" id="text-org0ce946d">
 <p>
 控制显示什么文本.
 </p>
 </div>
-<div id="outline-container-org7f92aff" class="outline-4">
-<h4 id="org7f92aff">文本显示(Text Display)</h4>
+<div id="outline-container-orgb05aff3" class="outline-4">
+<h4 id="orgb05aff3">文本显示(Text Display)</h4>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orge264074" class="outline-2">
-<h2 id="orge264074">Emacs 的主要结构(Major Structures of Emacs)</h2>
-<div class="outline-text-2" id="text-orge264074">
+<div id="outline-container-org7c374c6" class="outline-2">
+<h2 id="org7c374c6">Emacs 的主要结构(Major Structures of Emacs)</h2>
+<div class="outline-text-2" id="text-org7c374c6">
 </div>
-<div id="outline-container-org48c3822" class="outline-3">
-<h3 id="org48c3822">文件(Files)</h3>
-</div>
-
-<div id="outline-container-orgdcae760" class="outline-3">
-<h3 id="orgdcae760">缓冲区(Buffers)</h3>
+<div id="outline-container-org31afce6" class="outline-3">
+<h3 id="org31afce6">文件(Files)</h3>
 </div>
 
-<div id="outline-container-orgc87af1f" class="outline-3">
-<h3 id="orgc87af1f">窗口(Windows)</h3>
+<div id="outline-container-org25085e6" class="outline-3">
+<h3 id="org25085e6">缓冲区(Buffers)</h3>
 </div>
 
-<div id="outline-container-org0e49df9" class="outline-3">
-<h3 id="org0e49df9">框架(Frames)</h3>
+<div id="outline-container-orgfe1f484" class="outline-3">
+<h3 id="orgfe1f484">窗口(Windows)</h3>
 </div>
 
-<div id="outline-container-orgffaa474" class="outline-3">
-<h3 id="orgffaa474">国际化(International)</h3>
-<div class="outline-text-3" id="text-orgffaa474">
+<div id="outline-container-org42bbd07" class="outline-3">
+<h3 id="org42bbd07">框架(Frames)</h3>
+</div>
+
+<div id="outline-container-org1db8098" class="outline-3">
+<h3 id="org1db8098">国际化(International)</h3>
+<div class="outline-text-3" id="text-org1db8098">
 <p>
 使用非 ASCII 字符集.
 </p>
 </div>
-<div id="outline-container-org4923b54" class="outline-4">
-<h4 id="org4923b54">Fontsets</h4>
-<div class="outline-text-4" id="text-org4923b54">
+<div id="outline-container-org4960753" class="outline-4">
+<h4 id="org4960753">Fontsets</h4>
+<div class="outline-text-4" id="text-org4960753">
 <p>
 字体集
 </p>
@@ -466,7 +466,7 @@ emacs -fn fontset-standard
 </pre>
 
 <p>
-你也可以通过 <code>Font</code> 资源来指定一个字符集.(参见 <a href="#orgfc4de6d">X Resources</a> 部分).
+你也可以通过 <code>Font</code> 资源来指定一个字符集.(参见 <a href="#org44ad9ee">X Resources</a> 部分).
 </p>
 
 <p>
@@ -487,19 +487,19 @@ emacs -fn fontset-standard
 一个字体集不必要为每个字符编码指定字体.如果一个字体集没有为一个特定的字符指定字
 体,或者如果它指定了一个操作系统中不存在的字体,那么 Emacs 不能正确显示该字符.
 Emacs 会将该字符显示为一个十六进制编码或空格或空框.
-(详情查看 <a href="#org7f92aff">glyphless characters</a>.) 或者一个字体集可能会为某些字符范围指定一个字体,
+(详情查看 <a href="#orgb05aff3">glyphless characters</a>.) 或者一个字体集可能会为某些字符范围指定一个字体,
 但是你可能不喜欢他们的视觉表现.如果发生这种情况,你可能希望修改修改你的字体集;要
-知道如何操作,请查看 <a href="#org53dd287">修改字体集(Modifying Fontsets)</a>.
+知道如何操作,请查看 <a href="#org793673a">修改字体集(Modifying Fontsets)</a>.
 </p>
 </div>
 </div>
-<div id="outline-container-orgac182f2" class="outline-4">
-<h4 id="orgac182f2">定义字体集(Defining Fontsets)</h4>
+<div id="outline-container-orgc61e134" class="outline-4">
+<h4 id="orgc61e134">定义字体集(Defining Fontsets)</h4>
 </div>
 
-<div id="outline-container-org53dd287" class="outline-4">
-<h4 id="org53dd287">修改字体集(Modifying Fontsets)</h4>
-<div class="outline-text-4" id="text-org53dd287">
+<div id="outline-container-org793673a" class="outline-4">
+<h4 id="org793673a">修改字体集(Modifying Fontsets)</h4>
+<div class="outline-text-4" id="text-org793673a">
 <p>
 字体集不必总是从头开始创建. 如果只是需要较小的改动,更简单的方法是修改一个现存的
 字体集,通常是 <code>fontset-default</code> (默认字体集). 修改 <code>fontset-default</code> 也会影响其它将
@@ -538,13 +538,13 @@ Emacs 会将该字符显示为一个十六进制编码或空格或空框.
 </div>
 
 <p>
-更多关于使用 <code>set-fontset-font</code> 函数的细节请查看 <a href="Elisp.html#org4887b2e">(elisp)Fontsets</a>.
+更多关于使用 <code>set-fontset-font</code> 函数的细节请查看 <a href="Elisp.html#org72f7bb9">(elisp)Fontsets</a>.
 </p>
 
 <p>
 如果你不知道字符的字符码,或者是它属于哪一个字母系统,你可以询问 Emacs. 光标位于字
 符处时,键入 <code>C-u C-x = -- (what-cursor-position)</code>, 那么此信息以及更多的信息将显示
-在 Emacs 弹出的 <b>Help</b> 缓冲区中. 参见 <a href="#org017878a">位置信息(Position Info)</a>.
+在 Emacs 弹出的 <b>Help</b> 缓冲区中. 参见 <a href="#org7f56d88">位置信息(Position Info)</a>.
 例如, 日语字符属于 <code>kana</code> 字母系统,但是日语文本也将其与汉语字符混合了,因此,下面的
 代码使用 <code>han</code> 字母系统来设置 Emacs, 让其对日语文本使用 <code>Kochi Gothic</code> 字体:
 </p>
@@ -582,13 +582,13 @@ Emacs 会将该字符显示为一个十六进制编码或空格或空框.
 </div>
 </div>
 
-<div id="outline-container-orgfe0293e" class="outline-2">
-<h2 id="orgfe0293e">time-stamp 自动更新时间戳</h2>
-<div class="outline-text-2" id="text-orgfe0293e">
+<div id="outline-container-orgfdf3ff4" class="outline-2">
+<h2 id="orgfdf3ff4">time-stamp 自动更新时间戳</h2>
+<div class="outline-text-2" id="text-orgfdf3ff4">
 </div>
-<div id="outline-container-orgb051d62" class="outline-3">
-<h3 id="orgb051d62">time-stamp 函数</h3>
-<div class="outline-text-3" id="text-orgb051d62">
+<div id="outline-container-org5a3be5f" class="outline-3">
+<h3 id="org5a3be5f">time-stamp 函数</h3>
+<div class="outline-text-3" id="text-org5a3be5f">
 <p>
 time-stamp 函数是用来更新缓冲区里的时间戳字符串的.
 </p>
@@ -610,9 +610,9 @@ Time-stamp: " "
 </p>
 </div>
 </div>
-<div id="outline-container-orgd97021b" class="outline-3">
-<h3 id="orgd97021b">time-stamp-pattern 设置自动更新的时间戳格式</h3>
-<div class="outline-text-3" id="text-orgd97021b">
+<div id="outline-container-orga51325f" class="outline-3">
+<h3 id="orga51325f">time-stamp-pattern 设置自动更新的时间戳格式</h3>
+<div class="outline-text-3" id="text-orga51325f">
 <p>
 <code>time-stamp-pattern</code> 变量是用来设置 <code>time-stamp</code> 函数的时间戳模板格式的.
 </p>
@@ -635,7 +635,7 @@ Time-stamp: " "
 
 <p>
 第二个部分是一个正则表达式用来标识时间戳之前的内容.这个部分也可以省略来使用默认
-的模板(<code>Time-stamp:</code> 参考 <a href="#orgfe0293e">time-stamp 自动更新时间戳</a>).
+的模板(<code>Time-stamp:</code> 参考 <a href="#orgfdf3ff4">time-stamp 自动更新时间戳</a>).
 </p>
 
 <p>
@@ -699,13 +699,13 @@ newcommand{\\timestamp}{} 没有效果,要么是我理解错误,要么是这个�
 </div>
 </div>
 
-<div id="outline-container-org94c1c28" class="outline-2">
-<h2 id="org94c1c28">附录(Appendices)</h2>
-<div class="outline-text-2" id="text-org94c1c28">
+<div id="outline-container-org4e6f676" class="outline-2">
+<h2 id="org4e6f676">附录(Appendices)</h2>
+<div class="outline-text-2" id="text-org4e6f676">
 </div>
-<div id="outline-container-orgfc4de6d" class="outline-3">
-<h3 id="orgfc4de6d">X Resources</h3>
-<div class="outline-text-3" id="text-orgfc4de6d">
+<div id="outline-container-org44ad9ee" class="outline-3">
+<h3 id="org44ad9ee">X Resources</h3>
+<div class="outline-text-3" id="text-org44ad9ee">
 <p>
 ce测试 这是什么东西
 </p>
