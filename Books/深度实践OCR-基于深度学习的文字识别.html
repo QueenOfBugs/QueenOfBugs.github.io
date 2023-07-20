@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-19 Wed 11:19 -->
+<!-- 2023-07-20 Thu 13:11 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>深度实践OCR:基于深度学习的文字识别</title>
@@ -38,38 +38,38 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga38e9b1">1. 绪论</a>
+<li><a href="#org870cb15">1. 绪论</a>
 <ul>
-<li><a href="#orgd12ae8b">1.1. OCR 发展史</a>
+<li><a href="#org14b9fb9">1.1. OCR 发展史</a>
 <ul>
-<li><a href="#org25b6c55">1.1.1. 传统OCR方法</a></li>
-<li><a href="#org4ec2c66">1.1.2. 基于深度学习OCR方法一般流程</a></li>
+<li><a href="#org08cd2a3">1.1.1. 传统OCR方法</a></li>
+<li><a href="#org0f5567c">1.1.2. 基于深度学习OCR方法一般流程</a></li>
 </ul>
 </li>
-<li><a href="#org7c744b1">1.2. 文字检测</a></li>
-<li><a href="#orge0889f8">1.3. 文字识别</a></li>
-<li><a href="#orgdc75cbb">1.4. 产业应用现状</a></li>
-<li><a href="#org3f2bb21">1.5. 小结</a></li>
+<li><a href="#org6057c50">1.2. 文字检测</a></li>
+<li><a href="#org0886a94">1.3. 文字识别</a></li>
+<li><a href="#org515f774">1.4. 产业应用现状</a></li>
+<li><a href="#orga1d4c1a">1.5. 小结</a></li>
 </ul>
 </li>
-<li><a href="#orgaae2dcb">2. 图像预处理</a>
+<li><a href="#orgff3aaa5">2. 图像预处理</a>
 <ul>
-<li><a href="#orgfb742e6">2.1. 二值化</a>
+<li><a href="#org4dc495d">2.1. 二值化</a>
 <ul>
-<li><a href="#org10bce98">2.1.1. 全局阈值方法</a>
+<li><a href="#org0280a16">2.1.1. 全局阈值方法</a>
 <ul>
-<li><a href="#orgb72a7dd">2.1.1.1. 固定阈值方法</a></li>
-<li><a href="#org2ccb442">2.1.1.2. Otsu算法</a></li>
+<li><a href="#org8b435c8">2.1.1.1. 固定阈值方法</a></li>
+<li><a href="#org881853f">2.1.1.2. Otsu算法</a></li>
 </ul>
 </li>
-<li><a href="#org0dc4221">2.1.2. 局部阈值方法</a>
+<li><a href="#org693422e">2.1.2. 局部阈值方法</a>
 <ul>
-<li><a href="#orgc66fc95">2.1.2.1. 自适应阈值算法</a></li>
-<li><a href="#org43e62b8">2.1.2.2. Niblack算法</a></li>
-<li><a href="#org772fdfa">2.1.2.3. Sauvola算法</a></li>
+<li><a href="#org26002c4">2.1.2.1. 自适应阈值算法</a></li>
+<li><a href="#orgb54ca59">2.1.2.2. Niblack算法</a></li>
+<li><a href="#org807660e">2.1.2.3. Sauvola算法</a></li>
 </ul>
 </li>
-<li><a href="#org43b218f">2.1.3. 基于深度学习的方法</a></li>
+<li><a href="#org0fa51ae">2.1.3. 基于深度学习的方法</a></li>
 </ul>
 </li>
 </ul>
@@ -77,16 +77,16 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orga38e9b1" class="outline-2">
-<h2 id="orga38e9b1"><span class="section-number-2">1</span> 绪论</h2>
+<div id="outline-container-org870cb15" class="outline-2">
+<h2 id="org870cb15"><span class="section-number-2">1</span> 绪论</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgd12ae8b" class="outline-3">
-<h3 id="orgd12ae8b"><span class="section-number-3">1.1</span> OCR 发展史</h3>
+<div id="outline-container-org14b9fb9" class="outline-3">
+<h3 id="org14b9fb9"><span class="section-number-3">1.1</span> OCR 发展史</h3>
 <div class="outline-text-3" id="text-1-1">
 </div>
-<div id="outline-container-org25b6c55" class="outline-4">
-<h4 id="org25b6c55"><span class="section-number-4">1.1.1</span> 传统OCR方法</h4>
+<div id="outline-container-org08cd2a3" class="outline-4">
+<h4 id="org08cd2a3"><span class="section-number-4">1.1.1</span> 传统OCR方法</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 在深度学习之前的传统 OCR 方法是基于人类对图像文字的视觉特征处理逻辑实现的,先是对
@@ -113,8 +113,8 @@
 </div>
 </div>
 
-<div id="outline-container-org4ec2c66" class="outline-4">
-<h4 id="org4ec2c66"><span class="section-number-4">1.1.2</span> 基于深度学习OCR方法一般流程</h4>
+<div id="outline-container-org0f5567c" class="outline-4">
+<h4 id="org0f5567c"><span class="section-number-4">1.1.2</span> 基于深度学习OCR方法一般流程</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <p>
 传统的 OCR 技术涉及太多的人工涉及,且整个流程是串行的,每一步的错误都会在剩下的步
@@ -149,8 +149,8 @@
 </div>
 </div>
 
-<div id="outline-container-org7c744b1" class="outline-3">
-<h3 id="org7c744b1"><span class="section-number-3">1.2</span> 文字检测</h3>
+<div id="outline-container-org6057c50" class="outline-3">
+<h3 id="org6057c50"><span class="section-number-3">1.2</span> 文字检测</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 传统 OCR 的文字检测是以手动特征提取为主,经典方法有 SWT,MSER,HOG 等. 传统方式是对
@@ -206,8 +206,8 @@
 </div>
 </div>
 
-<div id="outline-container-orge0889f8" class="outline-3">
-<h3 id="orge0889f8"><span class="section-number-3">1.3</span> 文字识别</h3>
+<div id="outline-container-org0886a94" class="outline-3">
+<h3 id="org0886a94"><span class="section-number-3">1.3</span> 文字识别</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 文字识别的目标是对定位好的文字区域进行识别,主要是解决将一串文字图片转录为对应的
@@ -230,8 +230,8 @@ Loss 也很早被应用到手写英文的识别中.
 </div>
 </div>
 
-<div id="outline-container-orgdc75cbb" class="outline-3">
-<h3 id="orgdc75cbb"><span class="section-number-3">1.4</span> 产业应用现状</h3>
+<div id="outline-container-org515f774" class="outline-3">
+<h3 id="org515f774"><span class="section-number-3">1.4</span> 产业应用现状</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 OCR 技术作为机器视觉领域非常重要的研究方向,涉及的应用领域多种多样.
@@ -256,8 +256,8 @@ OCR 技术作为机器视觉领域非常重要的研究方向,涉及的应用领
 </div>
 </div>
 
-<div id="outline-container-org3f2bb21" class="outline-3">
-<h3 id="org3f2bb21"><span class="section-number-3">1.5</span> 小结</h3>
+<div id="outline-container-orga1d4c1a" class="outline-3">
+<h3 id="orga1d4c1a"><span class="section-number-3">1.5</span> 小结</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 这一章主要介绍 OCR 技术的发展,从传统技术到新技术的迭代升级,也有很多内容没有提及,
@@ -267,8 +267,8 @@ OCR 技术作为机器视觉领域非常重要的研究方向,涉及的应用领
 </div>
 </div>
 
-<div id="outline-container-orgaae2dcb" class="outline-2">
-<h2 id="orgaae2dcb"><span class="section-number-2">2</span> 图像预处理</h2>
+<div id="outline-container-orgff3aaa5" class="outline-2">
+<h2 id="orgff3aaa5"><span class="section-number-2">2</span> 图像预处理</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 文字检测和识别中,图像质量的好坏直接影响到检测率与识别率的高低,因此对图像进行预处
@@ -284,8 +284,8 @@ OCR 技术作为机器视觉领域非常重要的研究方向,涉及的应用领
 </p>
 </div>
 
-<div id="outline-container-orgfb742e6" class="outline-3">
-<h3 id="orgfb742e6"><span class="section-number-3">2.1</span> 二值化</h3>
+<div id="outline-container-org4dc495d" class="outline-3">
+<h3 id="org4dc495d"><span class="section-number-3">2.1</span> 二值化</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 图像二值化(Image Binarization) 是指将像素点的灰度值设置为 0 或 255, 使得图像呈现
@@ -299,12 +299,12 @@ OCR 技术作为机器视觉领域非常重要的研究方向,涉及的应用领
 </p>
 </div>
 
-<div id="outline-container-org10bce98" class="outline-4">
-<h4 id="org10bce98"><span class="section-number-4">2.1.1</span> 全局阈值方法</h4>
+<div id="outline-container-org0280a16" class="outline-4">
+<h4 id="org0280a16"><span class="section-number-4">2.1.1</span> 全局阈值方法</h4>
 <div class="outline-text-4" id="text-2-1-1">
 </div>
-<div id="outline-container-orgb72a7dd" class="outline-5">
-<h5 id="orgb72a7dd"><span class="section-number-5">2.1.1.1</span> 固定阈值方法</h5>
+<div id="outline-container-org8b435c8" class="outline-5">
+<h5 id="org8b435c8"><span class="section-number-5">2.1.1.1</span> 固定阈值方法</h5>
 <div class="outline-text-5" id="text-2-1-1-1">
 <p>
 该方法对输入图像中的所有像素点使用同一个固定阈值:
@@ -329,8 +329,8 @@ g(x,y) =
 </div>
 </div>
 
-<div id="outline-container-org2ccb442" class="outline-5">
-<h5 id="org2ccb442"><span class="section-number-5">2.1.1.2</span> Otsu算法</h5>
+<div id="outline-container-org881853f" class="outline-5">
+<h5 id="org881853f"><span class="section-number-5">2.1.1.2</span> Otsu算法</h5>
 <div class="outline-text-5" id="text-2-1-1-2">
 <p>
 Otsu 算法也叫 最大类间方差法,是一种自适应的阈值确定方法.
@@ -440,12 +440,12 @@ plt.show
 </div>
 </div>
 
-<div id="outline-container-org0dc4221" class="outline-4">
-<h4 id="org0dc4221"><span class="section-number-4">2.1.2</span> 局部阈值方法</h4>
+<div id="outline-container-org693422e" class="outline-4">
+<h4 id="org693422e"><span class="section-number-4">2.1.2</span> 局部阈值方法</h4>
 <div class="outline-text-4" id="text-2-1-2">
 </div>
-<div id="outline-container-orgc66fc95" class="outline-5">
-<h5 id="orgc66fc95"><span class="section-number-5">2.1.2.1</span> 自适应阈值算法</h5>
+<div id="outline-container-org26002c4" class="outline-5">
+<h5 id="org26002c4"><span class="section-number-5">2.1.2.1</span> 自适应阈值算法</h5>
 <div class="outline-text-5" id="text-2-1-2-1">
 <p>
 自适应阈值算法用到了积分图(Integral Image) 的概念,它是一个快速且有效地对网络的矩
@@ -507,8 +507,8 @@ plt.show
 </div>
 </div>
 
-<div id="outline-container-org43e62b8" class="outline-5">
-<h5 id="org43e62b8"><span class="section-number-5">2.1.2.2</span> Niblack算法</h5>
+<div id="outline-container-orgb54ca59" class="outline-5">
+<h5 id="orgb54ca59"><span class="section-number-5">2.1.2.2</span> Niblack算法</h5>
 <div class="outline-text-5" id="text-2-1-2-2">
 <p>
 Niblcak 算法同样是根据窗口内的像素值计算局部阈值的,不同在于它不仅考虑区域内像素
@@ -533,8 +533,8 @@ Niblcak 算法的缺陷在于 r &times; r 的滑窗会导致边界区域 (r-1)/2
 </div>
 </div>
 
-<div id="outline-container-org772fdfa" class="outline-5">
-<h5 id="org772fdfa"><span class="section-number-5">2.1.2.3</span> Sauvola算法</h5>
+<div id="outline-container-org807660e" class="outline-5">
+<h5 id="org807660e"><span class="section-number-5">2.1.2.3</span> Sauvola算法</h5>
 <div class="outline-text-5" id="text-2-1-2-3">
 <p>
 Sauvola 算法是针对文档二值化处理,在 Niblack 算法基础上的改进:
@@ -557,14 +557,14 @@ Sauvola 算法在处理光线不均匀或染色图像时,比 Niblack 算法有�
 </div>
 </div>
 
-<div id="outline-container-org43b218f" class="outline-4">
-<h4 id="org43b218f"><span class="section-number-4">2.1.3</span> 基于深度学习的方法</h4>
+<div id="outline-container-org0fa51ae" class="outline-4">
+<h4 id="org0fa51ae"><span class="section-number-4">2.1.3</span> 基于深度学习的方法</h4>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-07-19 Wed 11:19</p>
+<p class="date">Created: 2023-07-20 Thu 13:11</p>
 </div>
 </body>
 </html>
