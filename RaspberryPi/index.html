@@ -250,24 +250,24 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3932ada">配置无头树莓派</a>
+<li><a href="#org15abdff">配置无头树莓派</a>
 <ul>
-<li><a href="#orgcc40767">设置无线网</a></li>
-<li><a href="#org11e0bd6">设置ssh连接</a></li>
+<li><a href="#org19b47d4">设置无线网</a></li>
+<li><a href="#org93cf82e">设置ssh连接</a></li>
 </ul>
 </li>
-<li><a href="#org9863231">在树莓派上部署自己的Git服务器</a>
+<li><a href="#org892eb15">在树莓派上部署自己的Git服务器</a>
 <ul>
-<li><a href="#org9140e29">安装Git</a></li>
+<li><a href="#org5858569">安装Git</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org3932ada" class="outline-2">
-<h2 id="org3932ada">配置无头树莓派</h2>
-<div class="outline-text-2" id="text-org3932ada">
+<div id="outline-container-org15abdff" class="outline-2">
+<h2 id="org15abdff">配置无头树莓派</h2>
+<div class="outline-text-2" id="text-org15abdff">
 <p>
 如果不使用键盘或显示器来运行树莓派,也就是无界面(无头)形式的树莓派,我们可以通过
 设置其无线网络然后通过 ssh 来连接和操作它.
@@ -275,9 +275,9 @@ for the JavaScript code in this tag.
 到SD卡的 <code>boot</code> 分区(文件夹)
 </p>
 </div>
-<div id="outline-container-orgcc40767" class="outline-3">
-<h3 id="orgcc40767">设置无线网</h3>
-<div class="outline-text-3" id="text-orgcc40767">
+<div id="outline-container-org19b47d4" class="outline-3">
+<h3 id="org19b47d4">设置无线网</h3>
+<div class="outline-text-3" id="text-org19b47d4">
 <p>
 在 <code>boot</code> 分区里创建一个名为 <code>wpa_supplicant.conf</code> 的文件.当树莓派第一次启动时,会
 将这个文件复制到linux 根文件系统(/root)的正确位置,然后根据文件里的设置来启动
@@ -307,9 +307,9 @@ psk="&lt;Password for your wireless LAN&gt;"
 </p>
 </div>
 </div>
-<div id="outline-container-org11e0bd6" class="outline-3">
-<h3 id="org11e0bd6">设置ssh连接</h3>
-<div class="outline-text-3" id="text-org11e0bd6">
+<div id="outline-container-org93cf82e" class="outline-3">
+<h3 id="org93cf82e">设置ssh连接</h3>
+<div class="outline-text-3" id="text-org93cf82e">
 <p>
 因为没有显示器或键盘,我们只能通过其他方式来远程连接到无头树莓派.在无头树莓派
 的设置阶段,我们可以通过在 <code>boot</code> 分区里创建一个文件名是 <code>ssh</code> 的文件,文件名就叫
@@ -318,13 +318,13 @@ psk="&lt;Password for your wireless LAN&gt;"
 </div>
 </div>
 </div>
-<div id="outline-container-org9863231" class="outline-2">
-<h2 id="org9863231">在树莓派上部署自己的Git服务器</h2>
-<div class="outline-text-2" id="text-org9863231">
+<div id="outline-container-org892eb15" class="outline-2">
+<h2 id="org892eb15">在树莓派上部署自己的Git服务器</h2>
+<div class="outline-text-2" id="text-org892eb15">
 </div>
-<div id="outline-container-org9140e29" class="outline-3">
-<h3 id="org9140e29">安装Git</h3>
-<div class="outline-text-3" id="text-org9140e29">
+<div id="outline-container-org5858569" class="outline-3">
+<h3 id="org5858569">安装Git</h3>
+<div class="outline-text-3" id="text-org5858569">
 <div class="org-src-container">
 <pre class="src src-sh">sudo apt-get install wget git
 </pre>
