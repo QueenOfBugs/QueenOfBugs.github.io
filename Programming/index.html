@@ -3,66 +3,232 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-02-16 Fri 04:57 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
-<meta name="generator" content="Org mode" />
+<meta name="author" content="kamisama" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
 </head>
 <body>
-<div id="content">
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#org6fa22b2">1. Language</a></li>
-<li><a href="#org9b2b109">2. 多线程(multithread, MT) 编程</a>
-<ul>
-<li><a href="#orga87ce25">2.1. 简介/动机</a></li>
-<li><a href="#org0281ada">2.2. 线程和进程</a>
-<ul>
-<li><a href="#orgc21d7b1">2.2.1. 进程</a></li>
-<li><a href="#orgad4ab67">2.2.2. 线程</a></li>
-</ul>
-</li>
-<li><a href="#orgc66ee2b">2.3. 线程和Python</a>
-<ul>
-<li><a href="#orgff93dfe">2.3.1. 全局解释器锁</a></li>
-<li><a href="#org3b0cc00">2.3.2. 退出线程</a></li>
-<li><a href="#orge80af3e">2.3.3. 在Python中使用线程</a></li>
-<li><a href="#org2cb957a">2.3.4. 不使用线程的情况</a></li>
-<li><a href="#orgb1bcb6d">2.3.5. Python的threading模块</a></li>
-</ul>
-</li>
-<li><a href="#org9302d04">2.4. thread 模块</a></li>
-<li><a href="#org53a473c">2.5. threading 模块</a>
-<ul>
-<li><a href="#orge7f408e">2.5.1. Thread 类</a></li>
-<li><a href="#org3096dfc">2.5.2. threading 模块的其他函数</a></li>
-</ul>
-</li>
-<li><a href="#org0b119e8">2.6. 单线程或多线程执行对比</a></li>
-<li><a href="#org3e0c897">2.7. 多线程实践</a>
-<ul>
-<li><a href="#org70fc5fd">2.7.1. 图书排名示例</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org09e646a">3. 相关概念</a></li>
-</ul>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="./index.html"> UP </a>
+ |
+ <a accesskey="H" href="./sitemap.html"> HOME </a>
+</div><div id="content" class="content">
+<div id="outline-container-org8b38cf1" class="outline-2">
+<h2 id="org8b38cf1">Language</h2>
 </div>
+<div id="outline-container-org8ad363d" class="outline-2">
+<h2 id="org8ad363d">多线程(multithread, MT) 编程</h2>
+<div class="outline-text-2" id="text-org8ad363d">
 </div>
-<div id="outline-container-org6fa22b2" class="outline-2">
-<h2 id="org6fa22b2"><span class="section-number-2">1</span> Language</h2>
-</div>
-<div id="outline-container-org9b2b109" class="outline-2">
-<h2 id="org9b2b109"><span class="section-number-2">2</span> 多线程(multithread, MT) 编程</h2>
-<div class="outline-text-2" id="text-2">
-</div>
-<div id="outline-container-orga87ce25" class="outline-3">
-<h3 id="orga87ce25"><span class="section-number-3">2.1</span> 简介/动机</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-orga98c512" class="outline-3">
+<h3 id="orga98c512">简介/动机</h3>
+<div class="outline-text-3" id="text-orga98c512">
 <p>
 多线程编程出现之前,计算机程序的执行是由单个步骤序列组成的,该序列在主机的 CPU 中
 按照同步顺序执行.无论是任务本身需要按照步骤顺序执行,还是整个程序实际上包含多个子
@@ -126,13 +292,13 @@
 </div>
 </div>
 
-<div id="outline-container-org0281ada" class="outline-3">
-<h3 id="org0281ada"><span class="section-number-3">2.2</span> 线程和进程</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-org0ec9523" class="outline-3">
+<h3 id="org0ec9523">线程和进程</h3>
+<div class="outline-text-3" id="text-org0ec9523">
 </div>
-<div id="outline-container-orgc21d7b1" class="outline-4">
-<h4 id="orgc21d7b1"><span class="section-number-4">2.2.1</span> 进程</h4>
-<div class="outline-text-4" id="text-2-2-1">
+<div id="outline-container-orgc2caa55" class="outline-4">
+<h4 id="orgc2caa55">进程</h4>
+<div class="outline-text-4" id="text-orgc2caa55">
 <p>
 程序是存储在磁盘上的可执行文件.只有将其加载到内存中并被操作系统调用,才拥有其生命
 期.
@@ -151,9 +317,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgad4ab67" class="outline-4">
-<h4 id="orgad4ab67"><span class="section-number-4">2.2.2</span> 线程</h4>
-<div class="outline-text-4" id="text-2-2-2">
+<div id="outline-container-org630556e" class="outline-4">
+<h4 id="org630556e">线程</h4>
+<div class="outline-text-4" id="text-org630556e">
 <p>
 线程与进程类似,不过他们是在同一进程下执行的,并共享相同的上下文.
 可以将线程认为是在一个主进程或"主线程"中并行运行的一些"迷你进程".
@@ -187,18 +353,18 @@
 </div>
 </div>
 
-<div id="outline-container-orgc66ee2b" class="outline-3">
-<h3 id="orgc66ee2b"><span class="section-number-3">2.3</span> 线程和Python</h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-org2318701" class="outline-3">
+<h3 id="org2318701">线程和Python</h3>
+<div class="outline-text-3" id="text-org2318701">
 <p>
 这部分讨论如何在Python中使用线程,其中包括全局解释器锁对线程的限制和一个快速的演
 示脚本.
 </p>
 </div>
 
-<div id="outline-container-orgff93dfe" class="outline-4">
-<h4 id="orgff93dfe"><span class="section-number-4">2.3.1</span> 全局解释器锁</h4>
-<div class="outline-text-4" id="text-2-3-1">
+<div id="outline-container-orgaec9771" class="outline-4">
+<h4 id="orgaec9771">全局解释器锁</h4>
+<div class="outline-text-4" id="text-orgaec9771">
 <p>
 Python 代码的执行是由Python 虚拟机(又名解释器主循环)进行控制的.
 Python 在设计时是这样考虑的:主循环中只能有一个控制线程在执行,就像单核 CPU 系统中
@@ -241,9 +407,9 @@ Python 卡爱抚这,你并不需要担心 Python 代码在这些情况下被锁�
 </div>
 </div>
 
-<div id="outline-container-org3b0cc00" class="outline-4">
-<h4 id="org3b0cc00"><span class="section-number-4">2.3.2</span> 退出线程</h4>
-<div class="outline-text-4" id="text-2-3-2">
+<div id="outline-container-orga418b3e" class="outline-4">
+<h4 id="orga418b3e">退出线程</h4>
+<div class="outline-text-4" id="text-orga418b3e">
 <p>
 当一个线程完成函数的执行时,它就会退出.另外,还可以通过调用例如 thread.exit() 之类
 的退出函数,或者 sys.exit() 之类的退出Python进程的标准方法,亦或是抛出 SystemExit
@@ -255,7 +421,7 @@ Python 卡爱抚这,你并不需要担心 Python 代码在这些情况下被锁�
 这个建议有很多原因,其中一个最明显的原因是在主线程退出之后,所有其他线程都会在没有
 清理的情况下直接退出,而另一个 threading 模块会确保在所有 "重要的" 子线程退出前,
 保持整个进程的存活(对于 "重要的" 这个含义的说明,请阅读下面的
-<a href="#org6aa5a48">2.3.5</a> .)
+<a href="#org91de383">No description for this link</a> .)
 </p>
 
 <p>
@@ -266,9 +432,9 @@ Python 卡爱抚这,你并不需要担心 Python 代码在这些情况下被锁�
 </div>
 </div>
 
-<div id="outline-container-orge80af3e" class="outline-4">
-<h4 id="orge80af3e"><span class="section-number-4">2.3.3</span> 在Python中使用线程</h4>
-<div class="outline-text-4" id="text-2-3-3">
+<div id="outline-container-org404ab7f" class="outline-4">
+<h4 id="org404ab7f">在Python中使用线程</h4>
+<div class="outline-text-4" id="text-org404ab7f">
 <p>
 避免使用thread模块
 Python 虽然支持多线程编程,但是还需要取决于它运行的操作系统.如下操作系统是支持多
@@ -281,15 +447,15 @@ Python 虽然支持多线程编程,但是还需要取决于它运行的操作系
 已经启用的. 要确定解释器是否支持线程,只需要在交互式解释器中尝试导入 thread 模块
 即可,如果线程是可用的,则不会产生错误:
 </p>
-<pre class="example">
+<pre class="example" id="org81c0dbd">
 &gt;&gt;&gt; import _thread
 &gt;&gt;&gt;
 </pre>
 <p>
-我用的是 Python3 所以导入 _thread 模块,更多信息参考 <a href="#org6aa5a48">2.3.5</a>
+我用的是 Python3 所以导入 _thread 模块,更多信息参考 <a href="#org91de383">No description for this link</a>
 如果你的 Python 解释器没有将线程支持编译进去,模块导入将会失败:
 </p>
-<pre class="example">
+<pre class="example" id="orge2bb15c">
 &gt;&gt;&gt; import thread
 Traceback (most recent call last):
   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
@@ -305,9 +471,9 @@ README 文件,来获取如何在系统中编译线程支持的 Python 的指定�
 </div>
 </div>
 
-<div id="outline-container-org2cb957a" class="outline-4">
-<h4 id="org2cb957a"><span class="section-number-4">2.3.4</span> 不使用线程的情况</h4>
-<div class="outline-text-4" id="text-2-3-4">
+<div id="outline-container-orgc9ab0e5" class="outline-4">
+<h4 id="orgc9ab0e5">不使用线程的情况</h4>
+<div class="outline-text-4" id="text-orgc9ab0e5">
 <p>
 在第一个例子里,我们使用 time.sleep() 函数来演示线程是如何工作的. time.sleep() 函
 数需要一个浮点型的参数,然后以这个给定的秒数进行"睡眠",也就是说,程序的执行会暂停
@@ -367,9 +533,9 @@ onethr.py:
 </div>
 </div>
 
-<div id="outline-container-orgb1bcb6d" class="outline-4">
-<h4 id="orgb1bcb6d"><span class="section-number-4">2.3.5</span> Python的threading模块</h4>
-<div class="outline-text-4" id="text-2-3-5">
+<div id="outline-container-orgaf84335" class="outline-4">
+<h4 id="orgaf84335">Python的threading模块</h4>
+<div class="outline-text-4" id="text-orgaf84335">
 <p>
 Python 提供了多个模块来支持多线程编程,包括 thread, threading 和 Queue 模块等.程
 序可以使用 thread 和 threading 模块开创建和管理线程. thread 模块提供了基本的线程
@@ -379,7 +545,7 @@ Python 提供了多个模块来支持多线程编程,包括 thread, threading �
 </p>
 
 <p>
-<a id="org6aa5a48"></a>
+<a id="org91de383"></a>
 推荐使用更高级别的 threading 模块,而不是使用 thread 模块有很多原因.
 threading 模块更加先进,有更好的线程支持,并且 thread 模块中的一些属性会和
 threading 模块有冲突. 另一个原因就是低级别的 thread 模块拥有的同步原语很少(实际
@@ -407,9 +573,9 @@ Python3 中该模块被重命名为 _thread. 你创建的任何多线程应用�
 </div>
 </div>
 
-<div id="outline-container-org9302d04" class="outline-3">
-<h3 id="org9302d04"><span class="section-number-3">2.4</span> thread 模块</h3>
-<div class="outline-text-3" id="text-2-4">
+<div id="outline-container-org1a3fadb" class="outline-3">
+<h3 id="org1a3fadb">thread 模块</h3>
+<div class="outline-text-3" id="text-org1a3fadb">
 <p>
 除了派生线程外, thread 模块还提供了基本的同步数据结构,称为 <span class="underline">锁对象</span> (lock object,
 也叫原语锁,简单锁,互斥锁,互斥和二进制信号量). 如前所述,这个同步原语和线程管理是
@@ -651,9 +817,9 @@ release() 方法则表明获取该锁的线程已经完成. 没有在上锁的�
 </div>
 </div>
 
-<div id="outline-container-org53a473c" class="outline-3">
-<h3 id="org53a473c"><span class="section-number-3">2.5</span> threading 模块</h3>
-<div class="outline-text-3" id="text-2-5">
+<div id="outline-container-org1f15d3f" class="outline-3">
+<h3 id="org1f15d3f">threading 模块</h3>
+<div class="outline-text-3" id="text-org1f15d3f">
 <p>
 现在介绍更高级别的 threading 模块. 除了 Thread 类外,该模块还包括许多非常好用的同
 步机制.下面给出 threading 模块中所有可用对象的列表.
@@ -748,9 +914,9 @@ Python 程序(理解为主线程)将在所有非守护线程退出后才退出,�
 </p>
 </div>
 
-<div id="outline-container-orge7f408e" class="outline-4">
-<h4 id="orge7f408e"><span class="section-number-4">2.5.1</span> Thread 类</h4>
-<div class="outline-text-4" id="text-2-5-1">
+<div id="outline-container-org6071e3c" class="outline-4">
+<h4 id="org6071e3c">Thread 类</h4>
+<div class="outline-text-4" id="text-org6071e3c">
 <p>
 threading 模块的 Thread 类是主要的执行对象. 它有 thread 模块中没有的很多函数.
 </p>
@@ -941,9 +1107,9 @@ Thread( 调用 Thread()) 和调用 thread.start<sub>new</sub><sub>thread</sub>()
 <span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">ThreadFunc</span>(<span style="font-weight: bold;">object</span>):
 
     <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>(<span style="font-weight: bold;">self</span>, func, args, name=<span style="font-style: italic;">''</span>):
-        <span style="font-weight: bold;">self</span>.name = name
-        <span style="font-weight: bold;">self</span>.func = func
-        <span style="font-weight: bold;">self</span>.args = args
+        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">name</span> = name
+        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">func</span> = func
+        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">args</span> = args
 
     <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__call__</span>(<span style="font-weight: bold;">self</span>):
         <span style="font-weight: bold;">self</span>.func(*<span style="font-weight: bold;">self</span>.args)
@@ -1003,9 +1169,9 @@ mtsleepD.py 在实例化 Thread 对象时同时实例化了可调用类 ThreadFu
 <span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">MyThread</span>(threading.Thread):
     <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>(<span style="font-weight: bold;">self</span>, func, args, name=<span style="font-style: italic;">''</span>):
         threading.Thread.__init__(<span style="font-weight: bold;">self</span>)
-        <span style="font-weight: bold;">self</span>.name = name
-        <span style="font-weight: bold;">self</span>.func = func
-        <span style="font-weight: bold;">self</span>.args = args
+        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">name</span> = name
+        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">func</span> = func
+        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">args</span> = args
 
     <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">run</span>(<span style="font-weight: bold;">self</span>):
         <span style="font-weight: bold;">self</span>.func(*<span style="font-weight: bold;">self</span>.args)
@@ -1051,7 +1217,7 @@ mtsleepD.py 在实例化 Thread 对象时同时实例化了可调用类 ThreadFu
 <p>
 Thread 对象开始运行时(执行 start()), 它会在一个独立的控制进程里调用对象的 run()
 方法. run() 方法是代表线程活动的方法,这个方法可有在子类型里重载. 标准的 run() 方
-法会对作为 target 参数传递给该对象构造器的<a href="#org946a872">3</a>(如果存在)发起调用,并从附带
+法会对作为 target 参数传递给该对象构造器的<a href="#orge2ec53f">No description for this link</a>(如果存在)发起调用,并从附带
 args 和 kwargs 参数分别获取的位置和关键字参数.
 </p>
 
@@ -1073,16 +1239,16 @@ self.res 中,并创建一个获取这个值的新方法 getResult()
 
     <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>(<span style="font-weight: bold;">self</span>, func, args, name=<span style="font-style: italic;">''</span>):
         threading.Thread.__init__(<span style="font-weight: bold;">self</span>)
-        <span style="font-weight: bold;">self</span>.name = name
-        <span style="font-weight: bold;">self</span>.func = func
-        <span style="font-weight: bold;">self</span>.args = args
+        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">name</span> = name
+        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">func</span> = func
+        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">args</span> = args
 
     <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">getResult</span>(<span style="font-weight: bold;">self</span>):
         <span style="font-weight: bold;">return</span> <span style="font-weight: bold;">self</span>.res
 
     <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">run</span>(<span style="font-weight: bold;">self</span>):
         <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'starting'</span>, <span style="font-weight: bold;">self</span>.name, <span style="font-style: italic;">'at:'</span>, ctime())
-        <span style="font-weight: bold;">self</span>.res = <span style="font-weight: bold;">self</span>.func(*<span style="font-weight: bold;">self</span>.args)
+        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">res</span> = <span style="font-weight: bold;">self</span>.func(*<span style="font-weight: bold;">self</span>.args)
         <span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">self</span>.name, <span style="font-style: italic;">'finished at:'</span>, ctime())
 </pre>
 </div>
@@ -1091,9 +1257,9 @@ self.res 中,并创建一个获取这个值的新方法 getResult()
 
 
 
-<div id="outline-container-org3096dfc" class="outline-4">
-<h4 id="org3096dfc"><span class="section-number-4">2.5.2</span> threading 模块的其他函数</h4>
-<div class="outline-text-4" id="text-2-5-2">
+<div id="outline-container-orgac284a9" class="outline-4">
+<h4 id="orgac284a9">threading 模块的其他函数</h4>
+<div class="outline-text-4" id="text-orgac284a9">
 <p>
 除了各种同步和线程对象外, threading 模块还提供一些函数,如下所示:
 </p>
@@ -1157,9 +1323,9 @@ self.res 中,并创建一个获取这个值的新方法 getResult()
 </div>
 </div>
 
-<div id="outline-container-org0b119e8" class="outline-3">
-<h3 id="org0b119e8"><span class="section-number-3">2.6</span> 单线程或多线程执行对比</h3>
-<div class="outline-text-3" id="text-2-6">
+<div id="outline-container-orgea03fea" class="outline-3">
+<h3 id="orgea03fea">单线程或多线程执行对比</h3>
+<div class="outline-text-3" id="text-orgea03fea">
 <p>
 下面的 mtfacfib.py 脚本比较了递归求斐波那契,阶乘与累加函数的执行.该脚本按照单线
 程方式运行这三个函数.之后使用多线程方式执行同样任务.来比较多线程环境的优点.
@@ -1207,7 +1373,7 @@ self.res 中,并创建一个获取这个值的新方法 getResult()
         <span style="font-weight: bold;">print</span>(funcs[i](n))
         <span style="font-weight: bold;">print</span>(funcs[i].<span style="font-weight: bold;">__name__</span>, <span style="font-style: italic;">'finished'</span>, <span style="font-style: italic;">'at:'</span>, ctime())
 
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'\n*** MULTIPLE THREADS'</span>)
+    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'</span><span style="font-weight: bold; text-decoration: underline;">\n</span><span style="font-style: italic;">*** MULTIPLE THREADS'</span>)
     <span style="font-weight: bold; font-style: italic;">threads</span> = []
     <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nfuncs:
         <span style="font-weight: bold; font-style: italic;">t</span> = MyThread(funcs[i], (n,), funcs[i].<span style="font-weight: bold;">__name__</span>)
@@ -1227,19 +1393,19 @@ self.res 中,并创建一个获取这个值的新方法 getResult()
 </div>
 </div>
 
-<div id="outline-container-org3e0c897" class="outline-3">
-<h3 id="org3e0c897"><span class="section-number-3">2.7</span> 多线程实践</h3>
-<div class="outline-text-3" id="text-2-7">
+<div id="outline-container-org310c284" class="outline-3">
+<h3 id="org310c284">多线程实践</h3>
+<div class="outline-text-3" id="text-org310c284">
 <p>
-<a href="#orgff93dfe">2.3.1</a> 里曾提到,由于 Python 虚拟机是单线程(GIL) 的原因,只有线程在执行 I/O
+<a href="#orgaec9771">全局解释器锁</a> 里曾提到,由于 Python 虚拟机是单线程(GIL) 的原因,只有线程在执行 I/O
 密集型的应用时才能更好发挥 Python 的并发性(对比计算密集型,I/O 密集型只需要做轮
 询),因此让我们看一个 I/O 密集型的例子.
 </p>
 </div>
 
-<div id="outline-container-org70fc5fd" class="outline-4">
-<h4 id="org70fc5fd"><span class="section-number-4">2.7.1</span> 图书排名示例</h4>
-<div class="outline-text-4" id="text-2-7-1">
+<div id="outline-container-org9434ae6" class="outline-4">
+<h4 id="org9434ae6">图书排名示例</h4>
+<div class="outline-text-4" id="text-org9434ae6">
 <p>
 下面例子在 Amazon 上查询图书的当前排名.这个例子里函数 getRanking() 使用正则表达
 式来拉取和返回当前排名,而函数 _showRanking() 用于向用户显示结果.
@@ -1257,18 +1423,18 @@ self.res 中,并创建一个获取这个值的新方法 getResult()
 </div>
 </div>
 
-<div id="outline-container-org09e646a" class="outline-2">
-<h2 id="org09e646a"><span class="section-number-2">3</span> 相关概念</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org52e286d" class="outline-2">
+<h2 id="org52e286d">相关概念</h2>
+<div class="outline-text-2" id="text-org52e286d">
 <p>
-<a id="org946a872"></a>:函数(用户自定义,内置,内置对象的方法), 类对象, 类实例的方法以及任何具
+<a id="orge2ec53f"></a>:函数(用户自定义,内置,内置对象的方法), 类对象, 类实例的方法以及任何具
 有 _<sub>call</sub>_<sub>()</sub> 方法的对象都是可调用对象
 </p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2024-02-16 Fri 04:57</p>
+<p class="author">Author: kamisama</p>
 </div>
 </body>
 </html>

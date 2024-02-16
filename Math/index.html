@@ -6,10 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="kamisama" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -30,8 +30,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -39,22 +40,22 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
+    overflow: auto;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -189,161 +190,144 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+  .org-svg { }
 </style>
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
 </script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
 </script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
 <div id="org-div-home-and-up">
  <a accesskey="h" href="./index.html"> UP </a>
  |
  <a accesskey="H" href="../index.html"> HOME </a>
-</div><div id="content">
-<div id="table-of-contents">
+</div><div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org8289848">欧式平面几何五大公理</a>
+<li><a href="#orgf8087c0">欧式平面几何五大公理</a>
 <ul>
-<li><a href="#org35cf008">两点可以连成一条直线</a></li>
-<li><a href="#org76ae6eb">线段可以任意延长</a></li>
-<li><a href="#orgfb1417b">给定点 O 和线段长 r, 可以以 O 为圆心, r 为半径长做一个圆</a>
+<li><a href="#org2b91db2">两点可以连成一条直线</a></li>
+<li><a href="#org1509855">线段可以任意延长</a></li>
+<li><a href="#org4fb061a">给定点 O 和线段长 r, 可以以 O 为圆心, r 为半径长做一个圆</a>
 <ul>
-<li><a href="#org5cf9bfe">为什么C_a,C_b 相交于两点</a></li>
+<li><a href="#orgb3ecb35">为什么C_a,C_b 相交于两点</a></li>
 </ul>
 </li>
-<li><a href="#orgfce8810">凡直角皆相等</a></li>
-<li><a href="#org8ea6cc9">平行公理</a></li>
+<li><a href="#orgd69793a">凡直角皆相等</a></li>
+<li><a href="#org48549cd">平行公理</a></li>
 </ul>
 </li>
-<li><a href="#orgd539fab">自学纯数学的路径和书籍资料推荐</a>
+<li><a href="#orge07c4d6">自学纯数学的路径和书籍资料推荐</a>
 <ul>
-<li><a href="#org0465e68">第一学年</a>
+<li><a href="#org4a5f6ff">第一学年</a>
 <ul>
-<li><a href="#orga7802b4">Linear Algebra</a></li>
-<li><a href="#org41b91d1">Real Analysis</a></li>
+<li><a href="#orgcaa5169">Linear Algebra</a></li>
+<li><a href="#org39e5121">Real Analysis</a></li>
 </ul>
 </li>
-<li><a href="#orgaff2a09">第二学年</a>
+<li><a href="#org97ff63f">第二学年</a>
 <ul>
-<li><a href="#orgab0e265">Point Set Topology</a></li>
-<li><a href="#orgf146700">Complex Analysis</a></li>
+<li><a href="#orgd597e19">Point Set Topology</a></li>
+<li><a href="#org9f8d8b2">Complex Analysis</a></li>
 </ul>
 </li>
-<li><a href="#orgc72b9a3">第三学年</a>
+<li><a href="#org3754481">第三学年</a>
 <ul>
-<li><a href="#org80bb9b7">Group Theory</a></li>
-<li><a href="#org77614b1">Galois Theory</a></li>
+<li><a href="#org26730d7">Group Theory</a></li>
+<li><a href="#org3a2f8d5">Galois Theory</a></li>
 </ul>
 </li>
-<li><a href="#orgdb156ec">第四学年</a>
+<li><a href="#orgf769014">第四学年</a>
 <ul>
-<li><a href="#org6fad705">Algebraic Topology</a></li>
-<li><a href="#org14eaf94">Differential Geometry</a></li>
-</ul>
-</li>
+<li><a href="#orga47bfb8">Algebraic Topology</a></li>
+<li><a href="#org2456ebf">Differential Geometry</a></li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
 </div>
 </div>
-<div id="outline-container-org8289848" class="outline-2">
-<h2 id="org8289848">欧式平面几何五大公理</h2>
-<div class="outline-text-2" id="text-org8289848">
+<div id="outline-container-orgf8087c0" class="outline-2">
+<h2 id="orgf8087c0">欧式平面几何五大公理</h2>
+<div class="outline-text-2" id="text-orgf8087c0">
 </div>
-<div id="outline-container-org35cf008" class="outline-3">
-<h3 id="org35cf008">两点可以连成一条直线</h3>
+<div id="outline-container-org2b91db2" class="outline-3">
+<h3 id="org2b91db2">两点可以连成一条直线</h3>
 </div>
-<div id="outline-container-org76ae6eb" class="outline-3">
-<h3 id="org76ae6eb">线段可以任意延长</h3>
+<div id="outline-container-org1509855" class="outline-3">
+<h3 id="org1509855">线段可以任意延长</h3>
 </div>
-<div id="outline-container-orgfb1417b" class="outline-3">
-<h3 id="orgfb1417b">给定点 O 和线段长 r, 可以以 O 为圆心, r 为半径长做一个圆</h3>
-<div class="outline-text-3" id="text-orgfb1417b">
+<div id="outline-container-org4fb061a" class="outline-3">
+<h3 id="org4fb061a">给定点 O 和线段长 r, 可以以 O 为圆心, r 为半径长做一个圆</h3>
+<div class="outline-text-3" id="text-org4fb061a">
 </div>
-<div id="outline-container-org5cf9bfe" class="outline-4">
-<h4 id="org5cf9bfe">为什么C_a,C_b 相交于两点</h4>
+<div id="outline-container-orgb3ecb35" class="outline-4">
+<h4 id="orgb3ecb35">为什么C_a,C_b 相交于两点</h4>
 </div>
 </div>
-<div id="outline-container-orgfce8810" class="outline-3">
-<h3 id="orgfce8810">凡直角皆相等</h3>
-<div class="outline-text-3" id="text-orgfce8810">
+<div id="outline-container-orgd69793a" class="outline-3">
+<h3 id="orgd69793a">凡直角皆相等</h3>
+<div class="outline-text-3" id="text-orgd69793a">
 <p>
 平移以后图形不变就是根据这个来的
 </p>
 </div>
 </div>
-<div id="outline-container-org8ea6cc9" class="outline-3">
-<h3 id="org8ea6cc9">平行公理</h3>
-<div class="outline-text-3" id="text-org8ea6cc9">
+<div id="outline-container-org48549cd" class="outline-3">
+<h3 id="org48549cd">平行公理</h3>
+<div class="outline-text-3" id="text-org48549cd">
 <p>
 \({\alpha}_1 + {\alpha}_2 < 180^{\degree}\) 则两直线l1,l2相交于 l 的同侧.
 等价于:过线外一点,可做一条直线(且只有一条直线)与已知直线平行.
@@ -351,31 +335,31 @@ for the JavaScript code in this tag.
 </div>
 </div>
 </div>
-<div id="outline-container-orgd539fab" class="outline-2">
-<h2 id="orgd539fab">自学纯数学的路径和书籍资料推荐</h2>
-<div class="outline-text-2" id="text-orgd539fab">
+<div id="outline-container-orge07c4d6" class="outline-2">
+<h2 id="orge07c4d6">自学纯数学的路径和书籍资料推荐</h2>
+<div class="outline-text-2" id="text-orge07c4d6">
 <blockquote>
 <p>
 学习路线来源:<a href="https://www.youtube.com/watch?v=byNaO_zn2fI&amp;list=PLJ3QEfewWfpQuGNhNONVxAE-AXlmRKAje&amp;index=1">https://www.youtube.com/watch?v=byNaO_zn2fI&amp;list=PLJ3QEfewWfpQuGNhNONVxAE-AXlmRKAje&amp;index=1</a>
 </p>
 </blockquote>
 </div>
-<div id="outline-container-org0465e68" class="outline-3">
-<h3 id="org0465e68">第一学年</h3>
-<div class="outline-text-3" id="text-org0465e68">
+<div id="outline-container-org4a5f6ff" class="outline-3">
+<h3 id="org4a5f6ff">第一学年</h3>
+<div class="outline-text-3" id="text-org4a5f6ff">
 </div>
-<div id="outline-container-orga7802b4" class="outline-4">
-<h4 id="orga7802b4">Linear Algebra</h4>
-<div class="outline-text-4" id="text-orga7802b4">
+<div id="outline-container-orgcaa5169" class="outline-4">
+<h4 id="orgcaa5169">Linear Algebra</h4>
+<div class="outline-text-4" id="text-orgcaa5169">
 <p>
 Materail : "Linear Algebra Done Right" by Sheldon Axler : examples and
 exercises. corresponding videos: <a href="https://www.youtube.com/playlist?list=PLGAnmvB9m7zOBVCZBUUmSinFV0wEir2Vw">https://www.youtube.com/playlist?list=PLGAnmvB9m7zOBVCZBUUmSinFV0wEir2Vw</a>
 </p>
 </div>
 </div>
-<div id="outline-container-org41b91d1" class="outline-4">
-<h4 id="org41b91d1">Real Analysis</h4>
-<div class="outline-text-4" id="text-org41b91d1">
+<div id="outline-container-org39e5121" class="outline-4">
+<h4 id="org39e5121">Real Analysis</h4>
+<div class="outline-text-4" id="text-org39e5121">
 <p>
 Book: “Understanding Analysis” by Stephen Abbott.
 Videos: Lectures by Francis Su (<a href="https://www.youtube.com/playlist?list=PL0E754696F72137EC">https://www.youtube.com/playlist?list=PL0E754696F72137EC</a>)
@@ -383,16 +367,16 @@ Videos: Lectures by Francis Su (<a href="https://www.youtube.com/playlist?list=P
 </div>
 </div>
 </div>
-<div id="outline-container-orgaff2a09" class="outline-3">
-<h3 id="orgaff2a09">第二学年</h3>
-<div class="outline-text-3" id="text-orgaff2a09">
+<div id="outline-container-org97ff63f" class="outline-3">
+<h3 id="org97ff63f">第二学年</h3>
+<div class="outline-text-3" id="text-org97ff63f">
 </div>
-<div id="outline-container-orgab0e265" class="outline-4">
-<h4 id="orgab0e265">Point Set Topology</h4>
+<div id="outline-container-orgd597e19" class="outline-4">
+<h4 id="orgd597e19">Point Set Topology</h4>
 </div>
-<div id="outline-container-orgf146700" class="outline-4">
-<h4 id="orgf146700">Complex Analysis</h4>
-<div class="outline-text-4" id="text-orgf146700">
+<div id="outline-container-org9f8d8b2" class="outline-4">
+<h4 id="org9f8d8b2">Complex Analysis</h4>
+<div class="outline-text-4" id="text-org9f8d8b2">
 <p>
 Intro Book: “Visual Complex Functions: an Introduction with Phase Portraits” by Elias Wegert
 More Technical Book: “Complex Analysis” by Serge Lang
@@ -401,22 +385,22 @@ Videos: Wesleyan University Playlist (<a href="https://www.youtube.com/playlist?
 </div>
 </div>
 </div>
-<div id="outline-container-orgc72b9a3" class="outline-3">
-<h3 id="orgc72b9a3">第三学年</h3>
-<div class="outline-text-3" id="text-orgc72b9a3">
+<div id="outline-container-org3754481" class="outline-3">
+<h3 id="org3754481">第三学年</h3>
+<div class="outline-text-3" id="text-org3754481">
 </div>
-<div id="outline-container-org80bb9b7" class="outline-4">
-<h4 id="org80bb9b7">Group Theory</h4>
-<div class="outline-text-4" id="text-org80bb9b7">
+<div id="outline-container-org26730d7" class="outline-4">
+<h4 id="org26730d7">Group Theory</h4>
+<div class="outline-text-4" id="text-org26730d7">
 <p>
 Book: “Topics in Algebra” by Herstein (Chapter 2)
 Videos: Lectures by Benedict Gross (<a href="https://www.youtube.com/playlist?list=PLelIK3uylPMGzHBuR3hLMHrYfMqWWsmx5">https://www.youtube.com/playlist?list=PLelIK3uylPMGzHBuR3hLMHrYfMqWWsmx5</a>)
 </p>
 </div>
 </div>
-<div id="outline-container-org77614b1" class="outline-4">
-<h4 id="org77614b1">Galois Theory</h4>
-<div class="outline-text-4" id="text-org77614b1">
+<div id="outline-container-org3a2f8d5" class="outline-4">
+<h4 id="org3a2f8d5">Galois Theory</h4>
+<div class="outline-text-4" id="text-org3a2f8d5">
 <p>
 Notes by Tom Leinster: <a href="https://www.maths.ed.ac.uk/~tl/gt/gt.pdf">https://www.maths.ed.ac.uk/~tl/gt/gt.pdf</a>
 </p>
@@ -424,13 +408,13 @@ Notes by Tom Leinster: <a href="https://www.maths.ed.ac.uk/~tl/gt/gt.pdf">https:
 </div>
 </div>
 
-<div id="outline-container-orgdb156ec" class="outline-3">
-<h3 id="orgdb156ec">第四学年</h3>
-<div class="outline-text-3" id="text-orgdb156ec">
+<div id="outline-container-orgf769014" class="outline-3">
+<h3 id="orgf769014">第四学年</h3>
+<div class="outline-text-3" id="text-orgf769014">
 </div>
-<div id="outline-container-org6fad705" class="outline-4">
-<h4 id="org6fad705">Algebraic Topology</h4>
-<div class="outline-text-4" id="text-org6fad705">
+<div id="outline-container-orga47bfb8" class="outline-4">
+<h4 id="orga47bfb8">Algebraic Topology</h4>
+<div class="outline-text-4" id="text-orga47bfb8">
 <p>
 Book: Algebraic Topology by Allen Hatcher (available for free on his website:
 <a href="https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa0hycGsxTTduTXh5T3Z0TmtjNVN3Z3FhcXlDQXxBQ3Jtc0tuZHotN0x5UjVFT2JXclRRbnhTdkZtYzFlR29hbVpQVS1wMlplakJrTS01OVJxSjQxVk9sMEItREFrLUtWcG8tcWhJekZHbjBOZVE5MUgwRFphRDZsbURyNzA3REV5X1dkODZkUlY0QnJzVTRjWkphWQ&amp;q=https%3A%2F%2Fpi.math.cornell.edu%2F%7Ehatcher%2FAT%2FATpage.html&amp;v=byNaO_zn2fI">https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa0hycGsxTTduTXh5T3Z0TmtjNVN3Z3FhcXlDQXxBQ3Jtc0tuZHotN0x5UjVFT2JXclRRbnhTdkZtYzFlR29hbVpQVS1wMlplakJrTS01OVJxSjQxVk9sMEItREFrLUtWcG8tcWhJekZHbjBOZVE5MUgwRFphRDZsbURyNzA3REV5X1dkODZkUlY0QnJzVTRjWkphWQ&amp;q=https%3A%2F%2Fpi.math.cornell.edu%2F%7Ehatcher%2FAT%2FATpage.html&amp;v=byNaO_zn2fI</a>)
@@ -438,9 +422,9 @@ Videos: Lectures by Pierre Albin:<a href="https://www.youtube.com/playlist?list=
 </p>
 </div>
 </div>
-<div id="outline-container-org14eaf94" class="outline-4">
-<h4 id="org14eaf94">Differential Geometry</h4>
-<div class="outline-text-4" id="text-org14eaf94">
+<div id="outline-container-org2456ebf" class="outline-4">
+<h4 id="org2456ebf">Differential Geometry</h4>
+<div class="outline-text-4" id="text-org2456ebf">
 <p>
 Book: Introduction to Differentiable Manifolds and Riemannian Geometry by Boothby
 </p>

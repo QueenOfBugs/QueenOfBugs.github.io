@@ -5,11 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>懒惰脑科学</title>
-<meta name="generator" content="Org mode" />
+<title> 懒惰脑科学</title>
 <meta name="author" content="kamisama" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -30,8 +30,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -39,22 +40,22 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
+    overflow: auto;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -189,54 +190,27 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+  .org-svg { }
 </style>
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
 </script>
 </head>
 <body>
@@ -244,66 +218,66 @@ for the JavaScript code in this tag.
  <a accesskey="h" href="./index.html"> UP </a>
  |
  <a accesskey="H" href="../index.html"> HOME </a>
-</div><div id="content">
-<h1 class="title">懒惰脑科学</h1>
-<div id="table-of-contents">
+</div><div id="content" class="content">
+<h1 class="title"> 懒惰脑科学</h1>
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org6159cda">引言</a>
+<li><a href="#org7c4fb36">引言</a>
 <ul>
-<li><a href="#orgd002959">偶遇酒吧</a></li>
-<li><a href="#orgb7d3d23">偷懒的孩子!</a></li>
-<li><a href="#org0f8c26d">原因何在?</a></li>
-<li><a href="#org2f974eb">省力法则</a></li>
-<li><a href="#orge96f1c7">伦敦,1953</a></li>
-<li><a href="#org06d324f">看1小时电视=寿命缩短22分钟</a></li>
-<li><a href="#org59676ca">懒惰流行病</a></li>
-<li><a href="#org2d309b5">运动悖论</a></li>
-<li><a href="#org6da7910">开始锻炼的第一步:理解原理</a></li>
+<li><a href="#org77b276d">偶遇酒吧</a></li>
+<li><a href="#org50e140f">偷懒的孩子!</a></li>
+<li><a href="#orgdc82993">原因何在?</a></li>
+<li><a href="#orgf1fcb86">省力法则</a></li>
+<li><a href="#orgfc76c3b">伦敦,1953</a></li>
+<li><a href="#org0a8df04">看1小时电视=寿命缩短22分钟</a></li>
+<li><a href="#orgff9526b">懒惰流行病</a></li>
+<li><a href="#org10d9fd4">运动悖论</a></li>
+<li><a href="#org8a31e7e">开始锻炼的第一步:理解原理</a></li>
 </ul>
 </li>
-<li><a href="#orgd6956ba">Part1 一起骑马!</a>
+<li><a href="#orgbb3a152">Part1 一起骑马!</a>
 <ul>
-<li><a href="#org7123384">巡抚马儿,强大骑士</a></li>
-<li><a href="#org0bb0f04">你是马儿还是大象?</a></li>
+<li><a href="#org4cc01e9">巡抚马儿,强大骑士</a></li>
+<li><a href="#orgd047555">你是马儿还是大象?</a></li>
 </ul>
 </li>
-<li><a href="#orgcda09f0">Part2 身体活动大爆炸</a></li>
-<li><a href="#org690530b">Part3 久坐的吸引力</a></li>
-<li><a href="#org134fbb7">Part4 灾难配方</a></li>
-<li><a href="#org8dc3a86">Part5 没错你可以</a></li>
-<li><a href="#org1fa114a">Part6 没有借口</a></li>
-<li><a href="#orga388d6a">结语</a></li>
+<li><a href="#orge91c998">Part2 身体活动大爆炸</a></li>
+<li><a href="#org1753e2d">Part3 久坐的吸引力</a></li>
+<li><a href="#org1c8ad7e">Part4 灾难配方</a></li>
+<li><a href="#orgd96406d">Part5 没错你可以</a></li>
+<li><a href="#orgc31e3d4">Part6 没有借口</a></li>
+<li><a href="#orge553023">结语</a></li>
 </ul>
 </div>
 </div>
 <p>
 :ID:       ba3e9afa-9bc9-4fe4-9973-b0dad6d62b81
 </p>
-<div id="outline-container-org6159cda" class="outline-2">
-<h2 id="org6159cda">引言</h2>
-<div class="outline-text-2" id="text-org6159cda">
+<div id="outline-container-org7c4fb36" class="outline-2">
+<h2 id="org7c4fb36">引言</h2>
+<div class="outline-text-2" id="text-org7c4fb36">
 </div>
-<div id="outline-container-orgd002959" class="outline-3">
-<h3 id="orgd002959">偶遇酒吧</h3>
-<div class="outline-text-3" id="text-orgd002959">
+<div id="outline-container-org77b276d" class="outline-3">
+<h3 id="org77b276d">偶遇酒吧</h3>
+<div class="outline-text-3" id="text-org77b276d">
 <p>
 两位父亲身份的研究人员重逢于"偶遇"酒吧,发现两人的周末早晨出奇地相似.
 </p>
-<pre class="example">
+<pre class="example" id="org019f263">
 写本书的缘由吧?
 </pre>
 </div>
 </div>
-<div id="outline-container-orgb7d3d23" class="outline-3">
-<h3 id="orgb7d3d23">偷懒的孩子!</h3>
-<div class="outline-text-3" id="text-orgb7d3d23">
+<div id="outline-container-org50e140f" class="outline-3">
+<h3 id="org50e140f">偷懒的孩子!</h3>
+<div class="outline-text-3" id="text-org50e140f">
 <p>
 周末总是伴随这孩子们忙乱的晨起开始.让孩子们穿好袜子和衣服是一个艰巨的任务,十分钟
 一只袜子,20分钟穿好衣服.
 </p>
-<pre class="example">
+<pre class="example" id="org2447e8c">
 回忆自己小时候早上起床也是,记忆并不清晰,但是不想起床,一根手指都不想动的那种慵懒
 的感觉还能回忆起.我妈帮我穿衣服估计就像是给一滩烂泥塑形一样吧.
 </pre>
@@ -312,21 +286,21 @@ for the JavaScript code in this tag.
 了公园,又"累"又"受了伤"的小朋友一反刚才的状态,开始爬上爬下,东跑西跑.一个小时过去
 了,仍然经历充沛,生龙活虎,玩得不亦乐乎.
 </p>
-<pre class="example">
+<pre class="example" id="orgc7d9904">
 我接触过的"父母"身份的人能带全家一起出去玩的真的很少,很多都是母亲带孩子,"爸,我妈呢?"
 这句真的很经典.小时候每次和朋友们一起玩的时候确实不知道累,回到家歇一会瞌睡就来了.
 </pre>
 </div>
 </div>
-<div id="outline-container-org0f8c26d" class="outline-3">
-<h3 id="org0f8c26d">原因何在?</h3>
-<div class="outline-text-3" id="text-org0f8c26d">
+<div id="outline-container-orgdc82993" class="outline-3">
+<h3 id="orgdc82993">原因何在?</h3>
+<div class="outline-text-3" id="text-orgdc82993">
 <p>
 两位研究员父亲对孩子们能精力充沛玩上一个小时,却不愿意走几步去公园的现象感到好奇.初
 步的设想是公园里玩耍,既能活动身体也能收获快乐,而步行去公园,既不是趣事,也非必要,
 因为爸爸们可以充当运送员.
 </p>
-<pre class="example">
+<pre class="example" id="org3fd0066">
 活动身体(运动)能刺激多巴胺的分泌,和小伙伴玩耍满足社交的需求.
 </pre>
 <p>
@@ -336,9 +310,9 @@ for the JavaScript code in this tag.
 </p>
 </div>
 </div>
-<div id="outline-container-org2f974eb" class="outline-3">
-<h3 id="org2f974eb">省力法则</h3>
-<div class="outline-text-3" id="text-org2f974eb">
+<div id="outline-container-orgf1fcb86" class="outline-3">
+<h3 id="orgf1fcb86">省力法则</h3>
+<div class="outline-text-3" id="text-orgf1fcb86">
 <p>
 这种省力倾向在成年人身上一样存在.
 只要在电脑上点记下或者敲敲键盘,就能看着喜欢的电视剧等着送货上门.
@@ -346,7 +320,7 @@ for the JavaScript code in this tag.
 当我们想活动一下时,总是无法逃脱沙发的诱惑.只要躺在沙发上,我们就开始了内心斗争,想
 要离开沙发,屁股却被沙发封印了.
 </p>
-<pre class="example">
+<pre class="example" id="org0749597">
 所谓"拖延"的其中一部分原因就是这个吧.
 </pre>
 <p>
@@ -354,16 +328,16 @@ for the JavaScript code in this tag.
 找寻省力的方法.
 十个人中有九个都喜欢躺在沙发上,剩下那个说不喜欢的就是在说谎!
 </p>
-<pre class="example">
+<pre class="example" id="orgb898aaa">
 那这种省力倾向可以理解为人的"本能"吧,不管是所谓的"勤快"的人,"懒惰"的人身上都会有这种倾向
 所以不应该将"懒"当作一个人(自己)的特质,知道这一点可以减轻因为"懒惰"导致的"求不得"之后对
 自我的厌恶.
 </pre>
 </div>
 </div>
-<div id="outline-container-orge96f1c7" class="outline-3">
-<h3 id="orge96f1c7">伦敦,1953</h3>
-<div class="outline-text-3" id="text-orge96f1c7">
+<div id="outline-container-orgfc76c3b" class="outline-3">
+<h3 id="orgfc76c3b">伦敦,1953</h3>
+<div class="outline-text-3" id="text-orgfc76c3b">
 <p>
 这种省力的后果并非无足轻重,缺乏身体活动可能导致死亡!
 相关科学研究最早可以追溯到1953年.在这项研究中,实验者对比了伦敦红色大巴车司机与检
@@ -374,7 +348,7 @@ for the JavaScript code in this tag.
 如今,越来越多的研究都证明身体活动对健康的益处远超过任何一种药品,英国最著名的皇家
 医学院甚至将身体活动称为"灵药".
 </p>
-<pre class="example">
+<pre class="example" id="org0aa0104">
 作为久坐党,曾经也有几段时间持续跑步,那段时间确实人比较有精神,心情也变好了,抗压能力
 也变强了,最重要的是持续一段时间后有一种对自己的掌控感,自己想做什么能不需要外界动力,
 而且体重也控制下来了.唉,感觉身体变好了之后似乎运动的动力又减弱了,慢慢就放弃了,这也是
@@ -382,9 +356,9 @@ for the JavaScript code in this tag.
 </pre>
 </div>
 </div>
-<div id="outline-container-org06d324f" class="outline-3">
-<h3 id="org06d324f">看1小时电视=寿命缩短22分钟</h3>
-<div class="outline-text-3" id="text-org06d324f">
+<div id="outline-container-org0a8df04" class="outline-3">
+<h3 id="org0a8df04">看1小时电视=寿命缩短22分钟</h3>
+<div class="outline-text-3" id="text-org0a8df04">
 <p>
 澳大利亚的一项研究显示,我们每坐在沙发上看1小时电视,预期寿命就会缩短22分钟.换句话
 说,不论是看电视,和朋友坐在咖啡馆闲聊,坐车,还是工作,我们坐着的时间越长,预期寿命缩
@@ -392,16 +366,16 @@ for the JavaScript code in this tag.
 完成本书要1000多个小时的工作量,作者两人的寿命相应减少了22000分钟(367小时),也就是
 15天.
 </p>
-<pre class="example">
+<pre class="example" id="org006424a">
 从读书到现在2022年,从初中开始算,初中三年,高中三年,大学四年,10年,每天坐着时间往少了
 算10个小时,10*365*10=36500小时,预期寿命减少36500*20=730000分钟,也就是12166小时,
 506天.这么一想,现在学生的一些什么颈椎病,近视,失眠,抑郁这些毛病好像很正常了.
 </pre>
 </div>
 </div>
-<div id="outline-container-org59676ca" class="outline-3">
-<h3 id="org59676ca">懒惰流行病</h3>
-<div class="outline-text-3" id="text-org59676ca">
+<div id="outline-container-orgff9526b" class="outline-3">
+<h3 id="orgff9526b">懒惰流行病</h3>
+<div class="outline-text-3" id="text-orgff9526b">
 <p>
 从1953年开始,就有证据显示缺乏运动的危害会越来越大.缺乏运动是现代人类第四大死亡风
 险,仅排在高血压,吸烟和糖尿病之后.
@@ -416,7 +390,7 @@ for the JavaScript code in this tag.
 既然我们有运动的坚定意愿,为什么做不到定期锻炼呢?
 </p>
 </blockquote>
-<pre class="example">
+<pre class="example" id="orgfd604b2">
 对啊,持续跑步锻炼的那段时间我是切实体会到锻炼的益处的,那我最后还是没能将这一行为
 坚持下去呢?从之前那本关于习惯的书里,要持续做某事,必定要将其练习成为自己的习惯才能
 对抗各种干扰并保持该行为的持续性.任何基于其他外界动力(因素)的持续性行为在外界动力
@@ -424,9 +398,9 @@ for the JavaScript code in this tag.
 </pre>
 </div>
 </div>
-<div id="outline-container-org2d309b5" class="outline-3">
-<h3 id="org2d309b5">运动悖论</h3>
-<div class="outline-text-3" id="text-org2d309b5">
+<div id="outline-container-org10d9fd4" class="outline-3">
+<h3 id="org10d9fd4">运动悖论</h3>
+<div class="outline-text-3" id="text-org10d9fd4">
 <p>
 在懒惰成风的大背景下,是否能用"省力倾向"来解释我们的运动悖论?
 人们总是乘电梯去健身房,而不肯走旁边的楼梯.很动人买了健身课却从来不去.很多人的新
@@ -434,7 +408,7 @@ for the JavaScript code in this tag.
 如果你觉得离开沙发去运动,去健身房健身难过综合格斗,不必担心,每个人都会经历这种心
 理斗争.
 </p>
-<pre class="example">
+<pre class="example" id="org9046ef8">
 "知易行难"这一说法也可以用省力倾向解释下,我在这里阅读,来了解什么是懒惰,懒惰的成
 因,以及如何利用和避免懒惰的这一行为就是 "知易"了,而在最终目的将这些知识转变为智慧
 或技能的过程比阅读这一行为要困难的多.既然这是每个人都会经历的,那我们不必因为自己的
@@ -442,7 +416,7 @@ for the JavaScript code in this tag.
 我怀疑的恶性循环.
 
 </pre>
-<pre class="example">
+<pre class="example" id="orgd6c757e">
 话说解决畏难情绪的其中一种方法就是这个"知易"了,至少了解了面临的难题
 是什么,以及它背后的内在机制之后,我们就不会那么的畏惧它了.人害怕的是未知的事物,如果你
 的认知里,你能具现化鬼魂的存在,能以我们物质世界的角度理解鬼魂这一概念,你就不会像小时候
@@ -451,9 +425,9 @@ for the JavaScript code in this tag.
 </pre>
 </div>
 </div>
-<div id="outline-container-org6da7910" class="outline-3">
-<h3 id="org6da7910">开始锻炼的第一步:理解原理</h3>
-<div class="outline-text-3" id="text-org6da7910">
+<div id="outline-container-org8a31e7e" class="outline-3">
+<h3 id="org8a31e7e">开始锻炼的第一步:理解原理</h3>
+<div class="outline-text-3" id="text-org8a31e7e">
 <p>
 这本书的目的是帮助我们理解操纵我们行为的无意识机制.<br />
 这也是我的行为准则,遇到无法解决的事情(概念),要先理解其原理,运行机制,然后才能做出
@@ -547,18 +521,18 @@ Part6 没有借口
 </div>
 </div>
 
-<div id="outline-container-orgd6956ba" class="outline-2">
-<h2 id="orgd6956ba">Part1 一起骑马!</h2>
-<div class="outline-text-2" id="text-orgd6956ba">
+<div id="outline-container-orgbb3a152" class="outline-2">
+<h2 id="orgbb3a152">Part1 一起骑马!</h2>
+<div class="outline-text-2" id="text-orgbb3a152">
 <blockquote>
 <p>
 我们每个人身上都有理性和感性两面.
 </p>
 </blockquote>
 </div>
-<div id="outline-container-org7123384" class="outline-3">
-<h3 id="org7123384">巡抚马儿,强大骑士</h3>
-<div class="outline-text-3" id="text-org7123384">
+<div id="outline-container-org4cc01e9" class="outline-3">
+<h3 id="org4cc01e9">巡抚马儿,强大骑士</h3>
+<div class="outline-text-3" id="text-org4cc01e9">
 <p>
 一位骑士决心要到达山的另一边的 <b>运动</b> 王国.<br />
 为了尽快达到目的地,骑士选择直接爬山而非绕路.在他的号令下,马儿开始前进.<br />
@@ -593,9 +567,9 @@ Part6 没有借口
 </div>
 </div>
 
-<div id="outline-container-org0bb0f04" class="outline-3">
-<h3 id="org0bb0f04">你是马儿还是大象?</h3>
-<div class="outline-text-3" id="text-org0bb0f04">
+<div id="outline-container-orgd047555" class="outline-3">
+<h3 id="orgd047555">你是马儿还是大象?</h3>
+<div class="outline-text-3" id="text-orgd047555">
 <p>
 为了证明冲动的力量,研究人员换用了一种更难控制的动物-大象.
 </p>
@@ -637,23 +611,23 @@ Part6 没有借口
 </div>
 </div>
 
-<div id="outline-container-orgcda09f0" class="outline-2">
-<h2 id="orgcda09f0">Part2 身体活动大爆炸</h2>
+<div id="outline-container-orge91c998" class="outline-2">
+<h2 id="orge91c998">Part2 身体活动大爆炸</h2>
 </div>
-<div id="outline-container-org690530b" class="outline-2">
-<h2 id="org690530b">Part3 久坐的吸引力</h2>
+<div id="outline-container-org1753e2d" class="outline-2">
+<h2 id="org1753e2d">Part3 久坐的吸引力</h2>
 </div>
-<div id="outline-container-org134fbb7" class="outline-2">
-<h2 id="org134fbb7">Part4 灾难配方</h2>
+<div id="outline-container-org1c8ad7e" class="outline-2">
+<h2 id="org1c8ad7e">Part4 灾难配方</h2>
 </div>
-<div id="outline-container-org8dc3a86" class="outline-2">
-<h2 id="org8dc3a86">Part5 没错你可以</h2>
+<div id="outline-container-orgd96406d" class="outline-2">
+<h2 id="orgd96406d">Part5 没错你可以</h2>
 </div>
-<div id="outline-container-org1fa114a" class="outline-2">
-<h2 id="org1fa114a">Part6 没有借口</h2>
+<div id="outline-container-orgc31e3d4" class="outline-2">
+<h2 id="orgc31e3d4">Part6 没有借口</h2>
 </div>
-<div id="outline-container-orga388d6a" class="outline-2">
-<h2 id="orga388d6a">结语</h2>
+<div id="outline-container-orge553023" class="outline-2">
+<h2 id="orge553023">结语</h2>
 </div>
 </div>
 <div id="postamble" class="status">

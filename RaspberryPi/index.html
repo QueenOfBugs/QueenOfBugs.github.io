@@ -5,11 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>树莓派相关笔记</title>
-<meta name="generator" content="Org mode" />
+<title> 树莓派相关笔记</title>
 <meta name="author" content="kamisama" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -30,8 +30,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -39,22 +40,22 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
+    overflow: auto;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -189,54 +190,27 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+  .org-svg { }
 </style>
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
 </script>
 </head>
 <body>
@@ -244,30 +218,30 @@ for the JavaScript code in this tag.
  <a accesskey="h" href="./index.html"> UP </a>
  |
  <a accesskey="H" href="../index.html"> HOME </a>
-</div><div id="content">
-<h1 class="title">树莓派相关笔记</h1>
-<div id="table-of-contents">
+</div><div id="content" class="content">
+<h1 class="title"> 树莓派相关笔记</h1>
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org30de306">配置无头树莓派</a>
+<li><a href="#org198e16e">配置无头树莓派</a>
 <ul>
-<li><a href="#org832ee91">设置无线网</a></li>
-<li><a href="#orgebf6975">设置ssh连接</a></li>
+<li><a href="#orgf83bbb5">设置无线网</a></li>
+<li><a href="#org0a9a88b">设置ssh连接</a></li>
 </ul>
 </li>
-<li><a href="#orgf86a8d1">在树莓派上部署自己的Git服务器</a>
+<li><a href="#org7426ad1">在树莓派上部署自己的Git服务器</a>
 <ul>
-<li><a href="#org7bb12d3">安装Git</a></li>
+<li><a href="#orgd948b11">安装Git</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org30de306" class="outline-2">
-<h2 id="org30de306">配置无头树莓派</h2>
-<div class="outline-text-2" id="text-org30de306">
+<div id="outline-container-org198e16e" class="outline-2">
+<h2 id="org198e16e">配置无头树莓派</h2>
+<div class="outline-text-2" id="text-org198e16e">
 <p>
 如果不使用键盘或显示器来运行树莓派,也就是无界面(无头)形式的树莓派,我们可以通过
 设置其无线网络然后通过 ssh 来连接和操作它.
@@ -275,9 +249,9 @@ for the JavaScript code in this tag.
 到SD卡的 <code>boot</code> 分区(文件夹)
 </p>
 </div>
-<div id="outline-container-org832ee91" class="outline-3">
-<h3 id="org832ee91">设置无线网</h3>
-<div class="outline-text-3" id="text-org832ee91">
+<div id="outline-container-orgf83bbb5" class="outline-3">
+<h3 id="orgf83bbb5">设置无线网</h3>
+<div class="outline-text-3" id="text-orgf83bbb5">
 <p>
 在 <code>boot</code> 分区里创建一个名为 <code>wpa_supplicant.conf</code> 的文件.当树莓派第一次启动时,会
 将这个文件复制到linux 根文件系统(/root)的正确位置,然后根据文件里的设置来启动
@@ -291,7 +265,7 @@ for the JavaScript code in this tag.
 <p>
 一个 <code>wpa_supplicant.conf</code> 文件例子:
 </p>
-<pre class="example">
+<pre class="example" id="org1498944">
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 country=&lt;Insert 2 letter ISO 3166-1 country code here&gt;
 update_config=1
@@ -307,9 +281,9 @@ psk="&lt;Password for your wireless LAN&gt;"
 </p>
 </div>
 </div>
-<div id="outline-container-orgebf6975" class="outline-3">
-<h3 id="orgebf6975">设置ssh连接</h3>
-<div class="outline-text-3" id="text-orgebf6975">
+<div id="outline-container-org0a9a88b" class="outline-3">
+<h3 id="org0a9a88b">设置ssh连接</h3>
+<div class="outline-text-3" id="text-org0a9a88b">
 <p>
 因为没有显示器或键盘,我们只能通过其他方式来远程连接到无头树莓派.在无头树莓派
 的设置阶段,我们可以通过在 <code>boot</code> 分区里创建一个文件名是 <code>ssh</code> 的文件,文件名就叫
@@ -318,13 +292,13 @@ psk="&lt;Password for your wireless LAN&gt;"
 </div>
 </div>
 </div>
-<div id="outline-container-orgf86a8d1" class="outline-2">
-<h2 id="orgf86a8d1">在树莓派上部署自己的Git服务器</h2>
-<div class="outline-text-2" id="text-orgf86a8d1">
+<div id="outline-container-org7426ad1" class="outline-2">
+<h2 id="org7426ad1">在树莓派上部署自己的Git服务器</h2>
+<div class="outline-text-2" id="text-org7426ad1">
 </div>
-<div id="outline-container-org7bb12d3" class="outline-3">
-<h3 id="org7bb12d3">安装Git</h3>
-<div class="outline-text-3" id="text-org7bb12d3">
+<div id="outline-container-orgd948b11" class="outline-3">
+<h3 id="orgd948b11">安装Git</h3>
+<div class="outline-text-3" id="text-orgd948b11">
 <div class="org-src-container">
 <pre class="src src-sh">sudo apt-get install wget git
 </pre>

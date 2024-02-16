@@ -5,11 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>发现的乐趣 &#x2013; 理查德·费曼的演讲和访谈文章</title>
-<meta name="generator" content="Org mode" />
+<title> 发现的乐趣 &#x2013; 理查德·费曼的演讲和访谈文章</title>
 <meta name="author" content="kamisama" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -30,8 +30,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -39,22 +40,22 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
+    overflow: auto;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -189,54 +190,27 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+  .org-svg { }
 </style>
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
 </script>
 </head>
 <body>
@@ -244,27 +218,27 @@ for the JavaScript code in this tag.
  <a accesskey="h" href="./index.html"> UP </a>
  |
  <a accesskey="H" href="../index.html"> HOME </a>
-</div><div id="content">
-<h1 class="title">发现的乐趣 &#x2013; 理查德·费曼的演讲和访谈文章</h1>
-<div id="table-of-contents">
+</div><div id="content" class="content">
+<h1 class="title"> 发现的乐趣 &#x2013; 理查德·费曼的演讲和访谈文章</h1>
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org911adf9">发现的乐趣</a>
+<li><a href="#orgd3d307a">发现的乐趣</a>
 <ul>
-<li><a href="#org29750a5">科学家眼中的花之美</a></li>
-<li><a href="#orgac41a8b">关于偏科</a></li>
-<li><a href="#orgd0ce830">父亲教育我的方式</a></li>
-<li><a href="#orgd14c7b6">实干家如何学习</a></li>
+<li><a href="#org48a3b9b">科学家眼中的花之美</a></li>
+<li><a href="#orgf811fbf">关于偏科</a></li>
+<li><a href="#orge73dd44">父亲教育我的方式</a></li>
+<li><a href="#org2471520">实干家如何学习</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org911adf9" class="outline-2">
-<h2 id="org911adf9">发现的乐趣</h2>
-<div class="outline-text-2" id="text-org911adf9">
+<div id="outline-container-orgd3d307a" class="outline-2">
+<h2 id="orgd3d307a">发现的乐趣</h2>
+<div class="outline-text-2" id="text-orgd3d307a">
 <ul class="org-ul">
 <li>为什么仅仅知道一个事物的名字其实等同于对其一无所知</li>
 <li>当广岛人收原子弹荼毒之际,为什么曼哈顿计划的原子物理学家们,费曼和他的同事,能
@@ -272,9 +246,9 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 
-<div id="outline-container-org29750a5" class="outline-3">
-<h3 id="org29750a5">科学家眼中的花之美</h3>
-<div class="outline-text-3" id="text-org29750a5">
+<div id="outline-container-org48a3b9b" class="outline-3">
+<h3 id="org48a3b9b">科学家眼中的花之美</h3>
+<div class="outline-text-3" id="text-org48a3b9b">
 <p>
 美不尽然只存在与花朵的方寸之间,美也存在于更小的微观世界,花的内部构造也很美.
 </p>
@@ -292,9 +266,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgac41a8b" class="outline-3">
-<h3 id="orgac41a8b">关于偏科</h3>
-<div class="outline-text-3" id="text-orgac41a8b">
+<div id="outline-container-orgf811fbf" class="outline-3">
+<h3 id="orgf811fbf">关于偏科</h3>
+<div class="outline-text-3" id="text-orgf811fbf">
 <p>
 早些年,我几乎把所有精力都投入到学习自然学科上面.我几乎没有时间,也没有耐心去学
 习所谓人文学科,即便是大学里那些必修的课程.
@@ -307,9 +281,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgd0ce830" class="outline-3">
-<h3 id="orgd0ce830">父亲教育我的方式</h3>
-<div class="outline-text-3" id="text-orgd0ce830">
+<div id="outline-container-orge73dd44" class="outline-3">
+<h3 id="orge73dd44">父亲教育我的方式</h3>
+<div class="outline-text-3" id="text-orge73dd44">
 <p>
 凡是我们一起度过的内容,爸爸都会尽量用现实生活中的食物来解释. 就这样,我学到了
 一个方法&#x2013;无论我读到什么内容,我总要通过这种思考方式,弄明白它到底在说些什么.
@@ -345,8 +319,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgd14c7b6" class="outline-3">
-<h3 id="orgd14c7b6">实干家如何学习</h3>
+<div id="outline-container-org2471520" class="outline-3">
+<h3 id="org2471520">实干家如何学习</h3>
 </div>
 </div>
 </div>
