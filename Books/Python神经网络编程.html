@@ -273,61 +273,61 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org91a22d2">神经网络是如何工作的?</a>
+<li><a href="#orgd8960a3">神经网络是如何工作的?</a>
 <ul>
-<li><a href="#org0ad5e79">尺有所长,寸有所短</a></li>
-<li><a href="#orgf1438b8">一台简单的预测机</a></li>
-<li><a href="#orge3d6a86">分类器与预测器并无太大差别</a></li>
-<li><a href="#orge336ea2">训练简单的分类器</a></li>
-<li><a href="#org4917c2a">有时候一个分类器不足以求解问题</a></li>
-<li><a href="#org36bdb65">神经元&#x2013;大自然的计算器</a></li>
-<li><a href="#org1343eed">神经网络中追踪信号</a></li>
+<li><a href="#orga6231bb">尺有所长,寸有所短</a></li>
+<li><a href="#orga6c1a60">一台简单的预测机</a></li>
+<li><a href="#org2bd8356">分类器与预测器并无太大差别</a></li>
+<li><a href="#org534e9cd">训练简单的分类器</a></li>
+<li><a href="#org32a7931">有时候一个分类器不足以求解问题</a></li>
+<li><a href="#org17fd685">神经元&#x2013;大自然的计算器</a></li>
+<li><a href="#org37cf339">神经网络中追踪信号</a></li>
 </ul>
 </li>
-<li><a href="#orgb982e8f">使用Python进行DIY</a>
+<li><a href="#orge76ef3c">使用Python进行DIY</a>
 <ul>
-<li><a href="#orgfd42276">测试 emacs-jupyter</a></li>
-<li><a href="#org9ca00d3">开始制作神经网络</a>
+<li><a href="#org7858247">测试 emacs-jupyter</a></li>
+<li><a href="#org0b7e05d">开始制作神经网络</a>
 <ul>
-<li><a href="#orge21148b">框架代码</a></li>
-<li><a href="#org792a5ca">初始化网络</a></li>
-<li><a href="#org8cdae93">权重&#x2013;网络的核心</a></li>
-<li><a href="#orgac42504">可选: 较复杂的权重</a></li>
-<li><a href="#org319c3a8">查询网络</a></li>
-<li><a href="#orgeb3a9c3">目前为止的所有代码</a></li>
-<li><a href="#org65caec0">训练网络</a></li>
-<li><a href="#orgeb514f1">完整的神经网络代码</a></li>
+<li><a href="#orgef60b15">框架代码</a></li>
+<li><a href="#org3be343b">初始化网络</a></li>
+<li><a href="#org51701ad">权重&#x2013;网络的核心</a></li>
+<li><a href="#org270a340">可选: 较复杂的权重</a></li>
+<li><a href="#orge93aeee">查询网络</a></li>
+<li><a href="#org77469ad">目前为止的所有代码</a></li>
+<li><a href="#orgf162874">训练网络</a></li>
+<li><a href="#org21f38c3">完整的神经网络代码</a></li>
 </ul>
 </li>
-<li><a href="#org1c4d3f3">手写数字的数据集MNIST</a>
+<li><a href="#orgca8bf93">手写数字的数据集MNIST</a>
 <ul>
-<li><a href="#orgd6dbab3">准备MNIST训练数据</a></li>
-<li><a href="#org560aabb">测试网络</a></li>
-<li><a href="#org4ca9a30">使用完整的数据集进行训练和测试</a></li>
-<li><a href="#org796a92e">一些改进:调整学习率</a></li>
-<li><a href="#org77b781d">一些改进:多次运行</a></li>
-<li><a href="#org99f851a">改变网络形状</a></li>
-<li><a href="#org1a7db2e">大功告成!</a></li>
-<li><a href="#org92550b2">最终代码:</a></li>
+<li><a href="#org41e8e49">准备MNIST训练数据</a></li>
+<li><a href="#org2a6802e">测试网络</a></li>
+<li><a href="#org8374b58">使用完整的数据集进行训练和测试</a></li>
+<li><a href="#org4e66da2">一些改进:调整学习率</a></li>
+<li><a href="#orgb4e0df2">一些改进:多次运行</a></li>
+<li><a href="#orgb34d59a">改变网络形状</a></li>
+<li><a href="#orga68a356">大功告成!</a></li>
+<li><a href="#org50d7c87">最终代码:</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgc12beae">趣味盎然</a>
+<li><a href="#orge8bca63">趣味盎然</a>
 <ul>
-<li><a href="#org4a58583">自己的手写数字</a></li>
+<li><a href="#orgbf3c28e">自己的手写数字</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org91a22d2" class="outline-2">
-<h2 id="org91a22d2">神经网络是如何工作的?</h2>
-<div class="outline-text-2" id="text-org91a22d2">
+<div id="outline-container-orgd8960a3" class="outline-2">
+<h2 id="orgd8960a3">神经网络是如何工作的?</h2>
+<div class="outline-text-2" id="text-orgd8960a3">
 </div>
-<div id="outline-container-org0ad5e79" class="outline-3">
-<h3 id="org0ad5e79">尺有所长,寸有所短</h3>
-<div class="outline-text-3" id="text-org0ad5e79">
+<div id="outline-container-orga6231bb" class="outline-3">
+<h3 id="orga6231bb">尺有所长,寸有所短</h3>
+<div class="outline-text-3" id="text-orga6231bb">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -372,9 +372,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgf1438b8" class="outline-3">
-<h3 id="orgf1438b8">一台简单的预测机</h3>
-<div class="outline-text-3" id="text-orgf1438b8">
+<div id="outline-container-orga6c1a60" class="outline-3">
+<h3 id="orga6c1a60">一台简单的预测机</h3>
+<div class="outline-text-3" id="text-orga6c1a60">
 <p>
 先从构建超级简单的机器开始了解神经网络中的学习过程.
 </p>
@@ -585,9 +585,9 @@ input -&gt; machine -&gt; output;
 </div>
 </div>
 
-<div id="outline-container-orge3d6a86" class="outline-3">
-<h3 id="orge3d6a86">分类器与预测器并无太大差别</h3>
-<div class="outline-text-3" id="text-orge3d6a86">
+<div id="outline-container-org2bd8356" class="outline-3">
+<h3 id="org2bd8356">分类器与预测器并无太大差别</h3>
+<div class="outline-text-3" id="text-org2bd8356">
 <p>
 上面的简单机器接受了一个输入,并作出应有的预测,输出结果,我们将其称为预测器.根
 据结果与已知真实示例进行比较所得出的误差,调整内部参数,使得预测更加精确.
@@ -670,9 +670,9 @@ input -&gt; machine -&gt; output;
 </div>
 </div>
 
-<div id="outline-container-orge336ea2" class="outline-3">
-<h3 id="orge336ea2">训练简单的分类器</h3>
-<div class="outline-text-3" id="text-orge336ea2">
+<div id="outline-container-org534e9cd" class="outline-3">
+<h3 id="org534e9cd">训练简单的分类器</h3>
+<div class="outline-text-3" id="text-org534e9cd">
 <p>
 上一节我们构思了一种线性分类器,能够正确分类瓢虫和毛虫,根据上节图示,我们可以观
 察到,想要实现这样一种分类器,重点在于调整分界线的斜率,使其能够基于小虫的宽度和
@@ -1013,9 +1013,9 @@ y=3.0 差了很多,根据先前相同的推理,我们希望直线不经过点,�
 </div>
 </div>
 
-<div id="outline-container-org4917c2a" class="outline-3">
-<h3 id="org4917c2a">有时候一个分类器不足以求解问题</h3>
-<div class="outline-text-3" id="text-org4917c2a">
+<div id="outline-container-org32a7931" class="outline-3">
+<h3 id="org32a7931">有时候一个分类器不足以求解问题</h3>
+<div class="outline-text-3" id="text-org32a7931">
 <ul class="org-ul">
 <li>如果数据本身不是由单一线性过程支配,那么一个简单的线性分类器不能对数据进行划
 分.例如由逻辑 XOR 运算符支配的数据.</li>
@@ -1024,9 +1024,9 @@ y=3.0 差了很多,根据先前相同的推理,我们希望直线不经过点,�
 </div>
 </div>
 
-<div id="outline-container-org36bdb65" class="outline-3">
-<h3 id="org36bdb65">神经元&#x2013;大自然的计算器</h3>
-<div class="outline-text-3" id="text-org36bdb65">
+<div id="outline-container-org17fd685" class="outline-3">
+<h3 id="org17fd685">神经元&#x2013;大自然的计算器</h3>
+<div class="outline-text-3" id="text-org17fd685">
 <p>
 计算机有大量电子计算元件,巨大存储空间,并且计算机的运行频率比生物大脑要快得多,
 但即使是像鸽子一样小的大脑,能力也远大于电子计算机.
@@ -1185,9 +1185,9 @@ S 函数,有时也称为逻辑函数,其表达式为:
 </div>
 </div>
 
-<div id="outline-container-org1343eed" class="outline-3">
-<h3 id="org1343eed">神经网络中追踪信号</h3>
-<div class="outline-text-3" id="text-org1343eed">
+<div id="outline-container-org37cf339" class="outline-3">
+<h3 id="org37cf339">神经网络中追踪信号</h3>
+<div class="outline-text-3" id="text-org37cf339">
 <p>
 我们使用每层两个的神经元的较小神经网络来演示下神经网络是如何工作的:
 </p>
@@ -1251,13 +1251,13 @@ x 表示一个节点的输入,由于一个节点有上一层每个节点的多�
 </div>
 </div>
 </div>
-<div id="outline-container-orgb982e8f" class="outline-2">
-<h2 id="orgb982e8f">使用Python进行DIY</h2>
-<div class="outline-text-2" id="text-orgb982e8f">
+<div id="outline-container-orge76ef3c" class="outline-2">
+<h2 id="orge76ef3c">使用Python进行DIY</h2>
+<div class="outline-text-2" id="text-orge76ef3c">
 </div>
-<div id="outline-container-orgfd42276" class="outline-3">
-<h3 id="orgfd42276">测试 emacs-jupyter</h3>
-<div class="outline-text-3" id="text-orgfd42276">
+<div id="outline-container-org7858247" class="outline-3">
+<h3 id="org7858247">测试 emacs-jupyter</h3>
+<div class="outline-text-3" id="text-org7858247">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold;">import</span> sys
 <span style="font-weight: bold;">print</span>(sys.version)
@@ -1282,17 +1282,17 @@ print(sys.version)
 </div>
 </div>
 
-<div id="outline-container-org9ca00d3" class="outline-3">
-<h3 id="org9ca00d3">开始制作神经网络</h3>
-<div class="outline-text-3" id="text-org9ca00d3">
+<div id="outline-container-org0b7e05d" class="outline-3">
+<h3 id="org0b7e05d">开始制作神经网络</h3>
+<div class="outline-text-3" id="text-org0b7e05d">
 <p>
 从小处开始,然后让程序慢慢长大,这好似构建中等复杂度计算机代码的一种明智的方式.
 </p>
 </div>
 
-<div id="outline-container-orge21148b" class="outline-4">
-<h4 id="orge21148b">框架代码</h4>
-<div class="outline-text-4" id="text-orge21148b">
+<div id="outline-container-orgef60b15" class="outline-4">
+<h4 id="orgef60b15">框架代码</h4>
+<div class="outline-text-4" id="text-orgef60b15">
 <p>
 神经网络类应该至少有三个函数:
 </p>
@@ -1322,9 +1322,9 @@ print(sys.version)
 </div>
 </div>
 
-<div id="outline-container-org792a5ca" class="outline-4">
-<h4 id="org792a5ca">初始化网络</h4>
-<div class="outline-text-4" id="text-org792a5ca">
+<div id="outline-container-org3be343b" class="outline-4">
+<h4 id="org3be343b">初始化网络</h4>
+<div class="outline-text-4" id="text-org3be343b">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">initialize the neutral network</span>
 <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>(<span style="font-weight: bold;">self</span>, inputnodes, hiddennodes, outputnodes, learningrate):
@@ -1358,9 +1358,9 @@ print(sys.version)
 </div>
 </div>
 
-<div id="outline-container-org8cdae93" class="outline-4">
-<h4 id="org8cdae93">权重&#x2013;网络的核心</h4>
-<div class="outline-text-4" id="text-org8cdae93">
+<div id="outline-container-org51701ad" class="outline-4">
+<h4 id="org51701ad">权重&#x2013;网络的核心</h4>
+<div class="outline-text-4" id="text-org51701ad">
 <p>
 前面我们知道使用矩阵可以简明地表达权重.所以我们可以创建:
 </p>
@@ -1441,9 +1441,9 @@ array([[-0.38037314, -0.47892486, -0.13405653],
 </div>
 </div>
 
-<div id="outline-container-orgac42504" class="outline-4">
-<h4 id="orgac42504">可选: 较复杂的权重</h4>
-<div class="outline-text-4" id="text-orgac42504">
+<div id="outline-container-org270a340" class="outline-4">
+<h4 id="org270a340">可选: 较复杂的权重</h4>
+<div class="outline-text-4" id="text-org270a340">
 <p>
 我们可以选择一种简单却流行的优化初始权重的方式.
 </p>
@@ -1468,9 +1468,9 @@ normal 函数第一个参数是正态分布的中心,第二个参数是标准方
 </div>
 </div>
 
-<div id="outline-container-org319c3a8" class="outline-4">
-<h4 id="org319c3a8">查询网络</h4>
-<div class="outline-text-4" id="text-org319c3a8">
+<div id="outline-container-orge93aeee" class="outline-4">
+<h4 id="orge93aeee">查询网络</h4>
+<div class="outline-text-4" id="text-orge93aeee">
 <p>
 根据逻辑,我们因该开始填充 train() 函数.让我们先推迟一下这一步,来先编写简单的
 query() 函数,这会给我们更多时间来逐步建立信心,获得使用Python 和神经网络对象
@@ -1545,9 +1545,9 @@ self.activation_function, 所以我们可以通过 self.activation_function() �
 </div>
 </div>
 
-<div id="outline-container-orgeb3a9c3" class="outline-4">
-<h4 id="orgeb3a9c3">目前为止的所有代码</h4>
-<div class="outline-text-4" id="text-orgeb3a9c3">
+<div id="outline-container-org77469ad" class="outline-4">
+<h4 id="org77469ad">目前为止的所有代码</h4>
+<div class="outline-text-4" id="text-org77469ad">
 <p>
 让我们检查一下已经构建好的代码:
 </p>
@@ -1601,9 +1601,9 @@ print(n.query([1.0, 0.5, -1.5]))
 </div>
 </div>
 
-<div id="outline-container-org65caec0" class="outline-4">
-<h4 id="org65caec0">训练网络</h4>
-<div class="outline-text-4" id="text-org65caec0">
+<div id="outline-container-orgf162874" class="outline-4">
+<h4 id="orgf162874">训练网络</h4>
+<div class="outline-text-4" id="text-orgf162874">
 <p>
 现在来填充较为复杂的训练任务,训练任务分为两个部分:
 </p>
@@ -1688,9 +1688,9 @@ ok 完成了更新矩阵的计算.
 </div>
 </div>
 
-<div id="outline-container-orgeb514f1" class="outline-4">
-<h4 id="orgeb514f1">完整的神经网络代码</h4>
-<div class="outline-text-4" id="text-orgeb514f1">
+<div id="outline-container-org21f38c3" class="outline-4">
+<h4 id="org21f38c3">完整的神经网络代码</h4>
+<div class="outline-text-4" id="text-org21f38c3">
 <div class="org-src-container">
 <pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">neural network class definition</span>
 <span style="font-weight: bold;">import</span> numpy
@@ -1753,9 +1753,9 @@ ok 完成了更新矩阵的计算.
 </div>
 </div>
 
-<div id="outline-container-org1c4d3f3" class="outline-3">
-<h3 id="org1c4d3f3">手写数字的数据集MNIST</h3>
-<div class="outline-text-3" id="text-org1c4d3f3">
+<div id="outline-container-orgca8bf93" class="outline-3">
+<h3 id="orgca8bf93">手写数字的数据集MNIST</h3>
+<div class="outline-text-3" id="text-orgca8bf93">
 <p>
 手写数字的MNIST 数据集可以在网站 <a href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a> 里获得.
 这个网页也列出了在学习和正确识别手写字符方面,新旧想法的表现如何.
@@ -1869,9 +1869,9 @@ numpy.asfarray() 函数将文本字符串转换成实数,并创建这些数字�
 </p>
 </div>
 
-<div id="outline-container-orgd6dbab3" class="outline-4">
-<h4 id="orgd6dbab3">准备MNIST训练数据</h4>
-<div class="outline-text-4" id="text-orgd6dbab3">
+<div id="outline-container-org41e8e49" class="outline-4">
+<h4 id="org41e8e49">准备MNIST训练数据</h4>
+<div class="outline-text-4" id="text-org41e8e49">
 <p>
 我们已经指导如何获取和拆开 MNIST 数据文件中的数据,并理解和可视化这些数据.我
 们要使用这些数据训练神经网络之前,需要想想,我们应该如何准备数据.
@@ -2033,9 +2033,9 @@ for record in training_data_list:
 </div>
 </div>
 
-<div id="outline-container-org560aabb" class="outline-4">
-<h4 id="org560aabb">测试网络</h4>
-<div class="outline-text-4" id="text-org560aabb">
+<div id="outline-container-org2a6802e" class="outline-4">
+<h4 id="org2a6802e">测试网络</h4>
+<div class="outline-text-4" id="text-org2a6802e">
 <p>
 上面的代码已经使用了较小的子集数据(100条)来训练网络,我们来使用测试数据的10条
 记录来测试神经网络
@@ -2354,9 +2354,9 @@ performance =  0.3
 </div>
 </div>
 
-<div id="outline-container-org4ca9a30" class="outline-4">
-<h4 id="org4ca9a30">使用完整的数据集进行训练和测试</h4>
-<div class="outline-text-4" id="text-org4ca9a30">
+<div id="outline-container-org8374b58" class="outline-4">
+<h4 id="org8374b58">使用完整的数据集进行训练和测试</h4>
+<div class="outline-text-4" id="text-org8374b58">
 <p>
 上一节最后的代码已经包含了训练和测试网络性能的代码了,此时改变文件名,就可以使
 用完整的训练数据集和测试数据集进行训练了.
@@ -2491,9 +2491,9 @@ performance =  0.9495
 </div>
 </div>
 
-<div id="outline-container-org796a92e" class="outline-4">
-<h4 id="org796a92e">一些改进:调整学习率</h4>
-<div class="outline-text-4" id="text-org796a92e">
+<div id="outline-container-org4e66da2" class="outline-4">
+<h4 id="org4e66da2">一些改进:调整学习率</h4>
+<div class="outline-text-4" id="text-org4e66da2">
 <p>
 完成的第一个神经网络,只用了简单的思路,简单的代码,就可以在 MNIST 数据集上获得
 准确率大致为95%的性能分数,那我们看看是否可以进行一些简单的改进.
@@ -3041,9 +3041,9 @@ performance =  0.9238
 </div>
 </div>
 
-<div id="outline-container-org77b781d" class="outline-4">
-<h4 id="org77b781d">一些改进:多次运行</h4>
-<div class="outline-text-4" id="text-org77b781d">
+<div id="outline-container-orgb4e0df2" class="outline-4">
+<h4 id="orgb4e0df2">一些改进:多次运行</h4>
+<div class="outline-text-4" id="text-orgb4e0df2">
 <p>
 接下来的改进是可以使用数据集进行重复多次的训练.
 有些人把训练一次称为一个世代,因此,10个世代的训练,意味着整个训练数据集运行程
@@ -3206,7 +3206,7 @@ performance =  0.9546
 
 
 <p>
-在学习率为0.3使用1个世代的神经网络里,得到的性能是 <a href="#org4ca9a30">使用完整的数据集进行训练和
+在学习率为0.3使用1个世代的神经网络里,得到的性能是 <a href="#org8374b58">使用完整的数据集进行训练和
 测试</a> 只提高了一点点.
 像调整学习率一样,使用几个不同的世代进行实验,直觉告诉我们,训练越多,性能越好,
 但实验告诉我们,太多训练会过犹不及,因为网络过度拟合训练数据,因此网络在没有见
@@ -3246,9 +3246,9 @@ performance =  0.9546
 </div>
 </div>
 
-<div id="outline-container-org99f851a" class="outline-4">
-<h4 id="org99f851a">改变网络形状</h4>
-<div class="outline-text-4" id="text-org99f851a">
+<div id="outline-container-orgb34d59a" class="outline-4">
+<h4 id="orgb34d59a">改变网络形状</h4>
+<div class="outline-text-4" id="text-orgb34d59a">
 <p>
 我们还没尝试过改变神经网络的形状,也许我们早就该尝试了,之前一直使用的是100个
 节点的隐藏层.
@@ -3427,9 +3427,9 @@ performance =  0.9663
 </div>
 </div>
 
-<div id="outline-container-org1a7db2e" class="outline-4">
-<h4 id="org1a7db2e">大功告成!</h4>
-<div class="outline-text-4" id="text-org1a7db2e">
+<div id="outline-container-orga68a356" class="outline-4">
+<h4 id="orga68a356">大功告成!</h4>
+<div class="outline-text-4" id="text-orga68a356">
 <p>
 回顾这一部分内容,我们只使用先前介绍的简单概念以及简单Python代码,就创建了一个
 神经网络,没有任何多余花哨和神奇的数学,神经网络就已经有了不错的表现.
@@ -3440,12 +3440,12 @@ performance =  0.9663
 </div>
 
 
-<div id="outline-container-org92550b2" class="outline-4">
-<h4 id="org92550b2">最终代码:</h4>
-<div class="outline-text-4" id="text-org92550b2">
+<div id="outline-container-org50d7c87" class="outline-4">
+<h4 id="org50d7c87">最终代码:</h4>
+<div class="outline-text-4" id="text-org50d7c87">
 <p>
 由于网络资源访问的问题,中文版该书贴出了Github 上的到目前为止的最终代码,也就
-是 <a href="#org99f851a">改变网络形状</a> 这一部分最后面的代码.
+是 <a href="#orgb34d59a">改变网络形状</a> 这一部分最后面的代码.
 </p>
 </div>
 </div>
@@ -3454,18 +3454,18 @@ performance =  0.9663
 
 
 
-<div id="outline-container-orgc12beae" class="outline-2">
-<h2 id="orgc12beae">趣味盎然</h2>
-<div class="outline-text-2" id="text-orgc12beae">
+<div id="outline-container-orge8bca63" class="outline-2">
+<h2 id="orge8bca63">趣味盎然</h2>
+<div class="outline-text-2" id="text-orge8bca63">
 <p>
 这一部分是一些有趣的想法,如果只是想了解神经网络的基本知识,到上一章最后就可以停
 止阅读了.
 </p>
 </div>
 
-<div id="outline-container-org4a58583" class="outline-3">
-<h3 id="org4a58583">自己的手写数字</h3>
-<div class="outline-text-3" id="text-org4a58583">
+<div id="outline-container-orgbf3c28e" class="outline-3">
+<h3 id="orgbf3c28e">自己的手写数字</h3>
+<div class="outline-text-3" id="text-orgbf3c28e">
 <p>
 上面我们使用的是MNIST数据集的数字图片,
 </p>
