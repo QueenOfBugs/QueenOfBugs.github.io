@@ -224,45 +224,45 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4ecc46b">初见网络爬虫</a>
+<li><a href="#org2459f41">初见网络爬虫</a>
 <ul>
-<li><a href="#org65e588f">网络连接</a></li>
-<li><a href="#org1a51a6a">BeautifulSoup 简介</a>
+<li><a href="#org6c294c5">网络连接</a></li>
+<li><a href="#orgc22fb65">BeautifulSoup 简介</a>
 <ul>
-<li><a href="#orgaf7ee0d">安装BeautifulSoup</a></li>
-<li><a href="#org3f1b0e9">运行BeautifulSoup</a></li>
-<li><a href="#org2015cef">可靠的网络连接以及异常的处理</a></li>
+<li><a href="#orgb25614a">安装BeautifulSoup</a></li>
+<li><a href="#orgd9307c1">运行BeautifulSoup</a></li>
+<li><a href="#orgd3d1ee4">可靠的网络连接以及异常的处理</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org1b90c76">复杂 HTML 解析</a>
+<li><a href="#org9f9684f">复杂 HTML 解析</a>
 <ul>
-<li><a href="#org6f5934b">不是一直都要用锤子</a></li>
-<li><a href="#org16fc305">再端一碗 BeautifulSoup (Another Serving of BeautifulSoup)</a>
+<li><a href="#org185cc2d">不是一直都要用锤子</a></li>
+<li><a href="#org2dec5e2">再端一碗 BeautifulSoup (Another Serving of BeautifulSoup)</a>
 <ul>
-<li><a href="#org1cc96de">BeautifulSoup 的 find() 和 find_all()</a></li>
-<li><a href="#org8f9b941">其他 BeautifulSoup 对象</a></li>
-<li><a href="#org692b79b">导航树</a></li>
+<li><a href="#orgd148fe1">BeautifulSoup 的 find() 和 find_all()</a></li>
+<li><a href="#org7c5ecad">其他 BeautifulSoup 对象</a></li>
+<li><a href="#orgf15795e">导航树</a></li>
 </ul>
 </li>
-<li><a href="#org9a3296d">正则表达式</a></li>
-<li><a href="#orge8a053a">正则表达式和 BeautifulSoup</a></li>
-<li><a href="#org071c790">获取属性</a></li>
-<li><a href="#org658cb10">Lambda 表达式</a></li>
+<li><a href="#org87b3ae3">正则表达式</a></li>
+<li><a href="#orgbf8efbb">正则表达式和 BeautifulSoup</a></li>
+<li><a href="#org2f1ec74">获取属性</a></li>
+<li><a href="#org78113c2">Lambda 表达式</a></li>
 </ul>
 </li>
-<li><a href="#org5bd2b07">避开抓取陷阱</a></li>
+<li><a href="#org5a41ac6">避开抓取陷阱</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4ecc46b" class="outline-2">
-<h2 id="org4ecc46b">初见网络爬虫</h2>
-<div class="outline-text-2" id="text-org4ecc46b">
+<div id="outline-container-org2459f41" class="outline-2">
+<h2 id="org2459f41">初见网络爬虫</h2>
+<div class="outline-text-2" id="text-org2459f41">
 </div>
-<div id="outline-container-org65e588f" class="outline-3">
-<h3 id="org65e588f">网络连接</h3>
-<div class="outline-text-3" id="text-org65e588f">
+<div id="outline-container-org6c294c5" class="outline-3">
+<h3 id="org6c294c5">网络连接</h3>
+<div class="outline-text-3" id="text-org6c294c5">
 <p>
 当一台机器(客户端)想要与另一台机器(服务端)对话时,会发生下面的行为:
 </p>
@@ -304,16 +304,11 @@ Web 浏览器可以让处理器将数据发送到那些对接无线(或有线)�
 可以使用Python 代码来实现这些功能:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">from</span> urllib.request <span style="font-weight: bold;">import</span> urlopen
-<span style="font-weight: bold; font-style: italic;">html</span> = urlopen(<span style="font-style: italic;">'http://pythonscraping.com/pages/page1.html'</span>)
-<span style="font-weight: bold;">print</span>(html.read())
+<pre class="src src-python">     <span style="color: #89DDFF;">from</span> urllib.request <span style="color: #89DDFF;">import</span> urlopen
+     <span style="color: #ffcb6b;">html</span> = urlopen(<span style="color: #c3e88d;">'http://pythonscraping.com/pages/page1.html'</span>)
+     <span style="color: #82aaff;">print</span>(html.read())
 </pre>
 </div>
-
-<pre class="example">
-b'&lt;html&gt;\n&lt;head&gt;\n&lt;title&gt;A Useful Page&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n&lt;h1&gt;An Interesting Title&lt;/h1&gt;\n&lt;div&gt;\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n&lt;/div&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n'
-</pre>
-
 
 <p>
 这段代码可以输出 <a href="http://pythonscraping.com/pages/page1.html">http://pythonscraping.com/pages/page1.html</a> 网页的全部HTML 代
@@ -334,7 +329,7 @@ cuteKitten.jpg 文件中的数据来为用户充分渲染网页.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">from</span> urllib.request <span style="font-weight: bold;">import</span> urlopen
+<pre class="src src-python">     <span style="color: #89DDFF;">from</span> urllib.request <span style="color: #89DDFF;">import</span> urlopen
 </pre>
 </div>
 
@@ -353,9 +348,9 @@ urlopen 用来打开并读取一个从网络获取的远程对象,因为他是�
 </p>
 </div>
 </div>
-<div id="outline-container-org1a51a6a" class="outline-3">
-<h3 id="org1a51a6a">BeautifulSoup 简介</h3>
-<div class="outline-text-3" id="text-org1a51a6a">
+<div id="outline-container-orgc22fb65" class="outline-3">
+<h3 id="orgc22fb65">BeautifulSoup 简介</h3>
+<div class="outline-text-3" id="text-orgc22fb65">
 <p>
 BeautifulSoup 库的名字取自刘易斯·卡罗尔在《爱丽丝梦游仙境》里的同名诗歌.
 </p>
@@ -365,39 +360,34 @@ BeautifulSoup 库的名字取自刘易斯·卡罗尔在《爱丽丝梦游仙境�
 们展现 XML 结构信息.
 </p>
 </div>
-<div id="outline-container-orgaf7ee0d" class="outline-4">
-<h4 id="orgaf7ee0d">安装BeautifulSoup</h4>
-<div class="outline-text-4" id="text-orgaf7ee0d">
+<div id="outline-container-orgb25614a" class="outline-4">
+<h4 id="orgb25614a">安装BeautifulSoup</h4>
+<div class="outline-text-4" id="text-orgb25614a">
 <p>
 由于 BeautifulSoup 库不是Python 标准库,因此需要独立安装.
 pip 安装:
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">pip3 install beautifulsoup4
+<pre class="src src-sh">      pip3 install beautifulsoup4
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org3f1b0e9" class="outline-4">
-<h4 id="org3f1b0e9">运行BeautifulSoup</h4>
-<div class="outline-text-4" id="text-org3f1b0e9">
+<div id="outline-container-orgd9307c1" class="outline-4">
+<h4 id="orgd9307c1">运行BeautifulSoup</h4>
+<div class="outline-text-4" id="text-orgd9307c1">
 <p>
-BeautifulSoup 库最常用的对象恰好就是 BeautifulSoup 对象.调整 <a href="#org65e588f">网络连接</a> 里的例
+BeautifulSoup 库最常用的对象恰好就是 BeautifulSoup 对象.调整 <a href="#org6c294c5">网络连接</a> 里的例
 子再运行下看看:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">from</span> urllib.request <span style="font-weight: bold;">import</span> urlopen
-<span style="font-weight: bold;">from</span> bs4 <span style="font-weight: bold;">import</span> BeautifulSoup
-<span style="font-weight: bold; font-style: italic;">html</span> = urlopen(<span style="font-style: italic;">'http://pythonscraping.com/pages/page1.html'</span>)
-<span style="font-weight: bold; font-style: italic;">bs</span> = BeautifulSoup(html.read(), <span style="font-style: italic;">'html.parser'</span>)
-<span style="font-weight: bold;">print</span>(bs.h1)
+<pre class="src src-python">     <span style="color: #89DDFF;">from</span> urllib.request <span style="color: #89DDFF;">import</span> urlopen
+     <span style="color: #89DDFF;">from</span> bs4 <span style="color: #89DDFF;">import</span> BeautifulSoup
+     <span style="color: #ffcb6b;">html</span> = urlopen(<span style="color: #c3e88d;">'http://pythonscraping.com/pages/page1.html'</span>)
+     <span style="color: #ffcb6b;">bs</span> = BeautifulSoup(html.read(), <span style="color: #c3e88d;">'html.parser'</span>)
+     <span style="color: #82aaff;">print</span>(bs.h1)
 </pre>
 </div>
-<pre class="example">
-None
-</pre>
-
-
 <p>
 这里仅仅返回了页面上的第一个 h1 标签实例.通常情况下, 一个页面也只有一个 h1 标
 签,但在 Web 中,这个惯例经常被打破,因此你应该意识到这里仅仅检索了该标签的第一
@@ -410,35 +400,35 @@ None
 read() 函数.
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">bs</span> = BeautifulSoup(html, <span style="font-style: italic;">'html.parser'</span>)
+<pre class="src src-python">     <span style="color: #ffcb6b;">bs</span> = BeautifulSoup(html, <span style="color: #c3e88d;">'html.parser'</span>)
 </pre>
 </div>
 
 <p>
 这样就可以把 HTML 内容传到 BeautifulSoup 对象,转换成下面的结构:
 </p>
-<pre class="example" id="org7ba210a">
-⏺ html → &lt;html&gt;&lt;head&gt;...&lt;/head&gt;&lt;body&gt;...&lt;/body&gt;&lt;/html&gt;
-     ⏺ head → &lt;head&gt;&lt;title&gt;A Useful Page&lt;/title&gt;&lt;/head&gt;
-	   ⏹ title → &lt;title&gt;A Useful Page&lt;/title&gt;
-     ⏺ body → &lt;body&gt;&lt;h1&gt;An Int...&lt;/h1&gt;&lt;div&gt;Lorem ip...&lt;/div&gt;&lt;/body&gt;
-	   ⏹ h1 → &lt;h1&gt;An Interesting Title&lt;/h1&gt;
-	   ⏹ div → &lt;div&gt;Lorem Ipsum dolor...&lt;/div&gt;
+<pre class="example" id="orgadf5fe1">
+   ⏺ html → &lt;html&gt;&lt;head&gt;...&lt;/head&gt;&lt;body&gt;...&lt;/body&gt;&lt;/html&gt;
+	⏺ head → &lt;head&gt;&lt;title&gt;A Useful Page&lt;/title&gt;&lt;/head&gt;
+	      ⏹ title → &lt;title&gt;A Useful Page&lt;/title&gt;
+	⏺ body → &lt;body&gt;&lt;h1&gt;An Int...&lt;/h1&gt;&lt;div&gt;Lorem ip...&lt;/div&gt;&lt;/body&gt;
+	      ⏹ h1 → &lt;h1&gt;An Interesting Title&lt;/h1&gt;
+	      ⏹ div → &lt;div&gt;Lorem Ipsum dolor...&lt;/div&gt;
 </pre>
 <p>
 我们可以看到,网页中提取的 &lt;h1&gt; 标签被嵌在 BeautifulSoup 对象结构的第二层(html
 → body → h1). 但是, 我们从对象里提取 h1 标签的时候,我们可以直接调用它:
 </p>
-<pre class="example" id="org3d3b4a5">
-bs.h1
+<pre class="example" id="org3830a5a">
+   bs.h1
 </pre>
 <p>
 其实,虾米那所有的函数调用都可以产生相同的结果:
 </p>
 <div class="org-src-container">
-<pre class="src src-python">bs.html.body.h1
-bs.body.h1
-bs.html.h1
+<pre class="src src-python">     bs.html.body.h1
+     bs.body.h1
+     bs.html.h1
 </pre>
 </div>
 
@@ -446,7 +436,7 @@ bs.html.h1
 当创建一个 BeautifulSoup 对象时,需要传入两个参数:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">bs</span> = BeautifulSoup(html.read(), <span style="font-style: italic;">'html.parser'</span>)
+<pre class="src src-python">     <span style="color: #ffcb6b;">bs</span> = BeautifulSoup(html.read(), <span style="color: #c3e88d;">'html.parser'</span>)
 </pre>
 </div>
 
@@ -464,7 +454,7 @@ html.parser 是 Python3 中的一个解析器,不需要单独安装. 如果不�
 另一个常用的解析器是 lxml, 可以用 pip 安装:
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">pip3 install lxml
+<pre class="src src-sh">     pip3 install lxml
 </pre>
 </div>
 
@@ -472,7 +462,7 @@ html.parser 是 Python3 中的一个解析器,不需要单独安装. 如果不�
 BeautifulSoup 使用 lxml 解析器时,只需要改变解析器参数:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">bs</span> = BeautifulSoup(html.read(), <span style="font-style: italic;">'lxml'</span>)
+<pre class="src src-python">     <span style="color: #ffcb6b;">bs</span> = BeautifulSoup(html.read(), <span style="color: #c3e88d;">'lxml'</span>)
 </pre>
 </div>
 
@@ -499,21 +489,21 @@ html.parser 都慢. 尽管如此, 如果你处理的都是一些杂乱或手写�
 可以通过安装并将 html5lib 字符串传递给 BeautifulSoup 对象来使用它:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">bs</span> = BeautifulSoup(html.read(), <span style="font-style: italic;">'html5lib'</span>)
+<pre class="src src-python">     <span style="color: #ffcb6b;">bs</span> = BeautifulSoup(html.read(), <span style="color: #c3e88d;">'html5lib'</span>)
 </pre>
 </div>
 
 <p>
 其实,任何 HTML(或XML) 文件的任意节点信息都可以被提取出来, 只要目标信息的旁边
-或附近有标签就行 <a href="#org1b90c76">复杂 HTML 解析</a> 将会进一步探讨更复杂的 BeautifulSoup 函数,还
+或附近有标签就行 <a href="#org9f9684f">复杂 HTML 解析</a> 将会进一步探讨更复杂的 BeautifulSoup 函数,还
 会介绍正则表达式,以及如何把正则表达式用于 BeautifulSoup 以提取网站信息.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org2015cef" class="outline-4">
-<h4 id="org2015cef">可靠的网络连接以及异常的处理</h4>
-<div class="outline-text-4" id="text-org2015cef">
+<div id="outline-container-orgd3d1ee4" class="outline-4">
+<h4 id="orgd3d1ee4">可靠的网络连接以及异常的处理</h4>
+<div class="outline-text-4" id="text-orgd3d1ee4">
 <p>
 Web 是十分复杂的. 网络数据格式不友好,网站服务器死机,目标数据标签找不到,都是
 很麻烦的事情. 网页抓取最痛苦的遭遇之一,就是爬虫运行的时候你洗洗睡了,第二天醒
@@ -525,8 +515,8 @@ Web 是十分复杂的. 网络数据格式不友好,网站服务器死机,目标
 <p>
 看看这行代码:
 </p>
-<pre class="example" id="org5bb281c">
-html = urlopen('http://pythonscraping.com/pages/page1.html')
+<pre class="example" id="org38ec3c1">
+      html = urlopen('http://pythonscraping.com/pages/page1.html')
 </pre>
 <p>
 这行代码主要会发生两种异常:
@@ -543,16 +533,16 @@ html = urlopen('http://pythonscraping.com/pages/page1.html')
 理这种异常:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">from</span> urllib.request <span style="font-weight: bold;">import</span> urlopen
-<span style="font-weight: bold;">from</span> urllib.error <span style="font-weight: bold;">import</span> HTTPError
+<pre class="src src-python">      <span style="color: #89DDFF;">from</span> urllib.request <span style="color: #89DDFF;">import</span> urlopen
+      <span style="color: #89DDFF;">from</span> urllib.error <span style="color: #89DDFF;">import</span> HTTPError
 
-<span style="font-weight: bold;">try</span>:
-    <span style="font-weight: bold; font-style: italic;">html</span> = urlopen(<span style="font-style: italic;">'http://www.pythonscraping.com/pages/page1.html'</span>)
-<span style="font-weight: bold;">except</span> HTTPError <span style="font-weight: bold;">as</span> e:
-    <span style="font-weight: bold;">print</span>(e)
-    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#36820;&#22238;&#31354;&#20540;,&#20013;&#26029;&#31243;&#24207;,&#25110;&#32773;&#25191;&#34892;&#21478;&#19968;&#20010;&#26041;&#26696;</span>
-<span style="font-weight: bold;">else</span>:
-    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#31243;&#24207;&#32487;&#32493;. &#22914;&#26524;&#22312;&#19978;&#38754;&#30340;&#24322;&#24120;&#25429;&#25417;&#37324; return &#25110;&#32773; break, &#36825;&#37324;&#23601;&#19981;&#38656;&#35201;&#20351;&#29992; else &#35821;&#21477;,&#22240;&#20026;&#36825;&#27573;&#20195;&#30721;&#19981;&#20250;&#25191;&#34892;&#20102;</span>
+      <span style="color: #89DDFF;">try</span>:
+          <span style="color: #ffcb6b;">html</span> = urlopen(<span style="color: #c3e88d;">'http://www.pythonscraping.com/pages/page1.html'</span>)
+      <span style="color: #89DDFF;">except</span> HTTPError <span style="color: #89DDFF;">as</span> e:
+          <span style="color: #82aaff;">print</span>(e)
+          <span style="color: #676E95;"># </span><span style="color: #676E95;">&#36820;&#22238;&#31354;&#20540;,&#20013;&#26029;&#31243;&#24207;,&#25110;&#32773;&#25191;&#34892;&#21478;&#19968;&#20010;&#26041;&#26696;</span>
+      <span style="color: #89DDFF;">else</span>:
+          <span style="color: #676E95;"># </span><span style="color: #676E95;">&#31243;&#24207;&#32487;&#32493;. &#22914;&#26524;&#22312;&#19978;&#38754;&#30340;&#24322;&#24120;&#25429;&#25417;&#37324; return &#25110;&#32773; break, &#36825;&#37324;&#23601;&#19981;&#38656;&#35201;&#20351;&#29992; else &#35821;&#21477;,&#22240;&#20026;&#36825;&#27573;&#20195;&#30721;&#19981;&#20250;&#25191;&#34892;&#20102;</span>
 </pre>
 </div>
 
@@ -567,20 +557,20 @@ html = urlopen('http://pythonscraping.com/pages/page1.html')
 捕捉到更严重的 URLError 异常.可以增加下面的检查代码:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">from</span> urllib.request <span style="font-weight: bold;">import</span> urlopen
-<span style="font-weight: bold;">from</span> urllib.error <span style="font-weight: bold;">import</span> HTTPError
-<span style="font-weight: bold;">from</span> urllib.eror <span style="font-weight: bold;">import</span> URLError
+<pre class="src src-python">      <span style="color: #89DDFF;">from</span> urllib.request <span style="color: #89DDFF;">import</span> urlopen
+      <span style="color: #89DDFF;">from</span> urllib.error <span style="color: #89DDFF;">import</span> HTTPError
+      <span style="color: #89DDFF;">from</span> urllib.eror <span style="color: #89DDFF;">import</span> URLError
 
-<span style="font-weight: bold;">try</span>:
-    <span style="font-weight: bold; font-style: italic;">html</span> = urlopen(<span style="font-style: italic;">'http://www.pythonscraping.com/pages/page1.html'</span>)
-<span style="font-weight: bold;">except</span> HTTPError <span style="font-weight: bold;">as</span> e:
-    <span style="font-weight: bold;">print</span>(e)
-    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#36820;&#22238;&#31354;&#20540;,&#20013;&#26029;&#31243;&#24207;,&#25110;&#32773;&#25191;&#34892;&#21478;&#19968;&#20010;&#26041;&#26696;</span>
-<span style="font-weight: bold;">except</span> URLError <span style="font-weight: bold;">as</span> e:
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'The server could not be found!'</span>)
-<span style="font-weight: bold;">else</span>:
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'It Worked!'</span>)
-    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#31243;&#24207;&#32487;&#32493;. &#22914;&#26524;&#22312;&#19978;&#38754;&#30340;&#24322;&#24120;&#25429;&#25417;&#37324; return &#25110;&#32773; break, &#36825;&#37324;&#23601;&#19981;&#38656;&#35201;&#20351;&#29992; else &#35821;&#21477;,&#22240;&#20026;&#36825;&#27573;&#20195;&#30721;&#19981;&#20250;&#25191;&#34892;&#20102;</span>
+      <span style="color: #89DDFF;">try</span>:
+          <span style="color: #ffcb6b;">html</span> = urlopen(<span style="color: #c3e88d;">'http://www.pythonscraping.com/pages/page1.html'</span>)
+      <span style="color: #89DDFF;">except</span> HTTPError <span style="color: #89DDFF;">as</span> e:
+          <span style="color: #82aaff;">print</span>(e)
+          <span style="color: #676E95;"># </span><span style="color: #676E95;">&#36820;&#22238;&#31354;&#20540;,&#20013;&#26029;&#31243;&#24207;,&#25110;&#32773;&#25191;&#34892;&#21478;&#19968;&#20010;&#26041;&#26696;</span>
+      <span style="color: #89DDFF;">except</span> URLError <span style="color: #89DDFF;">as</span> e:
+          <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'The server could not be found!'</span>)
+      <span style="color: #89DDFF;">else</span>:
+          <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'It Worked!'</span>)
+          <span style="color: #676E95;"># </span><span style="color: #676E95;">&#31243;&#24207;&#32487;&#32493;. &#22914;&#26524;&#22312;&#19978;&#38754;&#30340;&#24322;&#24120;&#25429;&#25417;&#37324; return &#25110;&#32773; break, &#36825;&#37324;&#23601;&#19981;&#38656;&#35201;&#20351;&#29992; else &#35821;&#21477;,&#22240;&#20026;&#36825;&#27573;&#20195;&#30721;&#19981;&#20250;&#25191;&#34892;&#20102;</span>
 </pre>
 </div>
 
@@ -595,7 +585,7 @@ None 对象.不过, 如果再调用这个 None 对象下面的子标签,就会�
 象里实际没有).
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">print</span>(bs.nonExistentTag)
+<pre class="src src-python">      <span style="color: #82aaff;">print</span>(bs.nonExistentTag)
 </pre>
 </div>
 
@@ -605,30 +595,30 @@ None 对象.不过, 如果再调用这个 None 对象下面的子标签,就会�
 会有麻烦, 如下:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">print</span>(bs.nonExistentTag.someTag)
+<pre class="src src-python">      <span style="color: #82aaff;">print</span>(bs.nonExistentTag.someTag)
 </pre>
 </div>
 
 <p>
 就会返回异常:
 </p>
-<pre class="example" id="org1c5576a">
-AttributeError: 'NoneType' object has no attribute 'someTag'
+<pre class="example" id="orgd69e07a">
+    AttributeError: 'NoneType' object has no attribute 'someTag'
 </pre>
 
 <p>
 避免这两种情形的异常最简单的方式就是对两种情形进行检查:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">try</span>:
-    <span style="font-weight: bold; font-style: italic;">badContent</span> = bs.nonExistentTag.anotherTag
-<span style="font-weight: bold;">except</span> <span style="font-weight: bold; text-decoration: underline;">AttributeError</span> <span style="font-weight: bold;">as</span> e:
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'Tag was not found'</span>)
-<span style="font-weight: bold;">else</span>:
-    <span style="font-weight: bold;">if</span> badContent == <span style="font-weight: bold; text-decoration: underline;">None</span>:
-        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'Tag was not found'</span>)
-    <span style="font-weight: bold;">else</span>:
-        <span style="font-weight: bold;">print</span>(badContent)
+<pre class="src src-python">      <span style="color: #89DDFF;">try</span>:
+          <span style="color: #ffcb6b;">badContent</span> = bs.nonExistentTag.anotherTag
+      <span style="color: #89DDFF;">except</span> <span style="color: #c792ea;">AttributeError</span> <span style="color: #89DDFF;">as</span> e:
+          <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'Tag was not found'</span>)
+      <span style="color: #89DDFF;">else</span>:
+          <span style="color: #89DDFF;">if</span> badContent == <span style="color: #f78c6c;">None</span>:
+              <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'Tag was not found'</span>)
+          <span style="color: #89DDFF;">else</span>:
+              <span style="color: #82aaff;">print</span>(badContent)
 </pre>
 </div>
 <p>
@@ -636,32 +626,32 @@ AttributeError: 'NoneType' object has no attribute 'someTag'
 不那么难写(难读).例如下面的代码就是上面爬虫的另一种写法:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">from</span> urllib.request <span style="font-weight: bold;">import</span> urlopen
-<span style="font-weight: bold;">from</span> urllib.error <span style="font-weight: bold;">import</span> HTTPError
-<span style="font-weight: bold;">from</span> urllib.error <span style="font-weight: bold;">import</span> URLError
-<span style="font-weight: bold;">from</span> bs4 <span style="font-weight: bold;">import</span> BeautifulSoup
+<pre class="src src-python">      <span style="color: #89DDFF;">from</span> urllib.request <span style="color: #89DDFF;">import</span> urlopen
+      <span style="color: #89DDFF;">from</span> urllib.error <span style="color: #89DDFF;">import</span> HTTPError
+      <span style="color: #89DDFF;">from</span> urllib.error <span style="color: #89DDFF;">import</span> URLError
+      <span style="color: #89DDFF;">from</span> bs4 <span style="color: #89DDFF;">import</span> BeautifulSoup
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">getTitle</span>(url):
-    <span style="font-weight: bold;">try</span>:
-        <span style="font-weight: bold; font-style: italic;">html</span> = urlopen(url)
-    <span style="font-weight: bold;">except</span> HTTPError <span style="font-weight: bold;">as</span> e:
-        <span style="font-weight: bold;">return</span> <span style="font-weight: bold; text-decoration: underline;">None</span>
-    <span style="font-weight: bold;">except</span> URLError <span style="font-weight: bold;">as</span> e:
-        <span style="font-weight: bold;">return</span> <span style="font-weight: bold; text-decoration: underline;">None</span>
-    <span style="font-weight: bold;">try</span>:
-        <span style="font-weight: bold; font-style: italic;">bs</span> = BeautifulSoup(html.read(), <span style="font-style: italic;">'html.parser'</span>)
-        <span style="font-weight: bold; font-style: italic;">title</span> = bs.body.h1
-    <span style="font-weight: bold;">except</span> <span style="font-weight: bold; text-decoration: underline;">AttributeError</span> <span style="font-weight: bold;">as</span> e:
-        <span style="font-weight: bold;">return</span> <span style="font-weight: bold; text-decoration: underline;">None</span>
-    <span style="font-weight: bold;">return</span> title
+      <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">getTitle</span>(url):
+          <span style="color: #89DDFF;">try</span>:
+              <span style="color: #ffcb6b;">html</span> = urlopen(url)
+          <span style="color: #89DDFF;">except</span> HTTPError <span style="color: #89DDFF;">as</span> e:
+              <span style="color: #89DDFF;">return</span> <span style="color: #f78c6c;">None</span>
+          <span style="color: #89DDFF;">except</span> URLError <span style="color: #89DDFF;">as</span> e:
+              <span style="color: #89DDFF;">return</span> <span style="color: #f78c6c;">None</span>
+          <span style="color: #89DDFF;">try</span>:
+              <span style="color: #ffcb6b;">bs</span> = BeautifulSoup(html.read(), <span style="color: #c3e88d;">'html.parser'</span>)
+              <span style="color: #ffcb6b;">title</span> = bs.body.h1
+          <span style="color: #89DDFF;">except</span> <span style="color: #c792ea;">AttributeError</span> <span style="color: #89DDFF;">as</span> e:
+              <span style="color: #89DDFF;">return</span> <span style="color: #f78c6c;">None</span>
+          <span style="color: #89DDFF;">return</span> title
 
-<span style="font-weight: bold; font-style: italic;">title</span> = getTitle(<span style="font-style: italic;">'http://www.pythonscraping.com/pages/page1.html'</span>)
+      <span style="color: #ffcb6b;">title</span> = getTitle(<span style="color: #c3e88d;">'http://www.pythonscraping.com/pages/page1.html'</span>)
 
-<span style="font-weight: bold;">if</span> title <span style="font-weight: bold;">is</span> <span style="font-weight: bold; text-decoration: underline;">None</span>:
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'Title could not be found!'</span>)
-    <span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">type</span>(title))
-<span style="font-weight: bold;">else</span>:
-    <span style="font-weight: bold;">print</span>(title)
+      <span style="color: #89DDFF;">if</span> title <span style="color: #89DDFF;">is</span> <span style="color: #f78c6c;">None</span>:
+          <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'Title could not be found!'</span>)
+          <span style="color: #82aaff;">print</span>(<span style="color: #82aaff;">type</span>(title))
+      <span style="color: #89DDFF;">else</span>:
+          <span style="color: #82aaff;">print</span>(title)
 
 </pre>
 </div>
@@ -686,17 +676,17 @@ AttributeError 的函数.
 </div>
 
 
-<div id="outline-container-org1b90c76" class="outline-2">
-<h2 id="org1b90c76">复杂 HTML 解析</h2>
-<div class="outline-text-2" id="text-org1b90c76">
+<div id="outline-container-org9f9684f" class="outline-2">
+<h2 id="org9f9684f">复杂 HTML 解析</h2>
+<div class="outline-text-2" id="text-org9f9684f">
 <p>
 这一部分将介绍如何解析复杂的 HTML 页面,从中提取出所需的信息.
 </p>
 </div>
 
-<div id="outline-container-org6f5934b" class="outline-3">
-<h3 id="org6f5934b">不是一直都要用锤子</h3>
-<div class="outline-text-3" id="text-org6f5934b">
+<div id="outline-container-org185cc2d" class="outline-3">
+<h3 id="org185cc2d">不是一直都要用锤子</h3>
+<div class="outline-text-3" id="text-org185cc2d">
 <p>
 面对页面解析的难题时,很容易不假思索直接写几行代码来提取信息.但是,这样鲁莽使用
 技术,只会让程序变得难以调试或脆弱不堪,甚至二者兼具.在开始解析网页之前,让我们
@@ -711,8 +701,8 @@ AttributeError 的函数.
 <p>
 假如你不经过考虑就写出下面这样的代码来提取内容:
 </p>
-<pre class="example" id="org504ff08">
-bs.find_all('table')[4].find_all('tr')[2].find('td').find_all('div')[1].find('a')
+<pre class="example" id="orga783ba9">
+   bs.find_all('table')[4].find_all('tr')[2].find('td').find_all('div')[1].find('a')
 </pre>
 <p>
 虽然可以达到目标,但是这样看起来并不是很好. 除了代码欠缺美感之外,还有一个问题
@@ -726,7 +716,7 @@ div), 该怎么做呢? 上面的代码是不安全的,它依赖于网站的结�
 </p>
 <ul class="org-ul">
 <li>寻找 "打印此页" 的链接,或者看看网站有没有 HTML 样式更友好的移动版(把请求头
-设置成处于移动设备的状态,然后接受网站移动版,更多内容在 <a href="#org5bd2b07">避开抓取陷阱</a> 介绍)</li>
+设置成处于移动设备的状态,然后接受网站移动版,更多内容在 <a href="#org5a41ac6">避开抓取陷阱</a> 介绍)</li>
 <li>寻找隐藏在 JavaScript 文件里的信息,实现这一点,需要查看网页加载的 JavaScript
 文件.</li>
 <li>虽然网页标题经常会用到,但是这个信息也许可以从网页的 URL 链接里获取.</li>
@@ -752,11 +742,11 @@ div), 该怎么做呢? 上面的代码是不安全的,它依赖于网站的结�
 </div>
 </div>
 
-<div id="outline-container-org16fc305" class="outline-3">
-<h3 id="org16fc305">再端一碗 BeautifulSoup (Another Serving of BeautifulSoup)</h3>
-<div class="outline-text-3" id="text-org16fc305">
+<div id="outline-container-org2dec5e2" class="outline-3">
+<h3 id="org2dec5e2">再端一碗 BeautifulSoup (Another Serving of BeautifulSoup)</h3>
+<div class="outline-text-3" id="text-org2dec5e2">
 <p>
-第一部分(<a href="#org3f1b0e9">运行BeautifulSoup</a>)使用了选择对象的解析方式
+第一部分(<a href="#orgd9307c1">运行BeautifulSoup</a>)使用了选择对象的解析方式
 这一节介绍通过属性查找标签的方法,标签组的使用,以及标签解析书的导航过程.
 </p>
 
@@ -764,14 +754,14 @@ div), 该怎么做呢? 上面的代码是不安全的,它依赖于网站的结�
 基本上,每个网站都有层叠样式表(cascading style sheet, CSS).CSS 可以让 HTML 元
 素呈现差异化,使那些具有完全相同修饰的元素呈现不同的样式.比如:
 </p>
-<pre class="example" id="orgd6bc6e4">
-&lt;span class="green"&gt;&lt;/span&gt;
+<pre class="example" id="org432549c">
+   &lt;span class="green"&gt;&lt;/span&gt;
 </pre>
 <p>
 有的标签长这样:
 </p>
-<pre class="example" id="org58af0a4">
-&lt;span class="red"&gt;&lt;/span&gt;
+<pre class="example" id="org00eb826">
+   &lt;span class="red"&gt;&lt;/span&gt;
 </pre>
 
 <p>
@@ -787,21 +777,21 @@ class 和 id 的属性.
 这个页面里,小说人物的对话内容都是红色的,人物名称都是绿色的. 网页源代码里的
 span 标签引用了对应的 CSS 属性:
 </p>
-<pre class="example" id="orgc0a34f1">
-&lt;span class="red"&gt;Heavens! what a virulent attack!&lt;/span&gt; replied
-&lt;span class="green"&gt;the prince&lt;/span&gt;, not in the least disconcerted
-by this reception.
+<pre class="example" id="orgdbcd564">
+   &lt;span class="red"&gt;Heavens! what a virulent attack!&lt;/span&gt; replied
+   &lt;span class="green"&gt;the prince&lt;/span&gt;, not in the least disconcerted
+   by this reception.
 </pre>
 <p>
-使用和 <a href="#org3f1b0e9">运行BeautifulSoup</a> 里类似的程序抓取整个页面并创建一个 BeautifulSoup 对
+使用和 <a href="#orgd9307c1">运行BeautifulSoup</a> 里类似的程序抓取整个页面并创建一个 BeautifulSoup 对
 象:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">from</span> urllib.request <span style="font-weight: bold;">import</span> urlopen
-<span style="font-weight: bold;">from</span> bs4 <span style="font-weight: bold;">import</span> BeautifulSoup
+<pre class="src src-python">     <span style="color: #89DDFF;">from</span> urllib.request <span style="color: #89DDFF;">import</span> urlopen
+     <span style="color: #89DDFF;">from</span> bs4 <span style="color: #89DDFF;">import</span> BeautifulSoup
 
-<span style="font-weight: bold; font-style: italic;">html</span> = urlopen(<span style="font-style: italic;">'http://www.pythonscraping.com/pages/warandpeace.html'</span>)
-<span style="font-weight: bold; font-style: italic;">bs</span> = BeautifulSoup(html.read(), <span style="font-style: italic;">'html.parser'</span>)
+     <span style="color: #ffcb6b;">html</span> = urlopen(<span style="color: #c3e88d;">'http://www.pythonscraping.com/pages/warandpeace.html'</span>)
+     <span style="color: #ffcb6b;">bs</span> = BeautifulSoup(html.read(), <span style="color: #c3e88d;">'html.parser'</span>)
 </pre>
 </div>
 
@@ -811,9 +801,9 @@ class="green"&gt;&lt;/span&gt; 标签里的文字.这样就可以得到一个人
 非常灵活的函数, 后面也经常使用它):
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">nameList</span> = bs.find_all(<span style="font-style: italic;">'span'</span>, {<span style="font-style: italic;">'class'</span>: <span style="font-style: italic;">'green'</span>})
-<span style="font-weight: bold;">for</span> name <span style="font-weight: bold;">in</span> nameList:
-    <span style="font-weight: bold;">print</span>(name.get_text(), end=<span style="font-style: italic;">''</span>)
+<pre class="src src-python">     <span style="color: #ffcb6b;">nameList</span> = bs.find_all(<span style="color: #c3e88d;">'span'</span>, {<span style="color: #c3e88d;">'class'</span>: <span style="color: #c3e88d;">'green'</span>})
+     <span style="color: #89DDFF;">for</span> name <span style="color: #89DDFF;">in</span> nameList:
+         <span style="color: #82aaff;">print</span>(name.get_text(), end=<span style="color: #c3e88d;">''</span>)
 </pre>
 </div>
 <p>
@@ -848,9 +838,9 @@ Unicode 字符串. 如果你正在处理一个包含许多超链接,段落和其
 </blockquote>
 </div>
 
-<div id="outline-container-org1cc96de" class="outline-4">
-<h4 id="org1cc96de">BeautifulSoup 的 find() 和 find_all()</h4>
-<div class="outline-text-4" id="text-org1cc96de">
+<div id="outline-container-orgd148fe1" class="outline-4">
+<h4 id="orgd148fe1">BeautifulSoup 的 find() 和 find_all()</h4>
+<div class="outline-text-4" id="text-orgd148fe1">
 <p>
 BeautifulSoup 里的 find() 和 find_all() 可能是最常用的两个函数. 使用它们,可
 以通过标签的不同属性轻松过滤 HTML 页面, 查找需要的标签组或者单个标签.
@@ -860,29 +850,29 @@ BeautifulSoup 里的 find() 和 find_all() 可能是最常用的两个函数. �
 这两个函数非常类似, BeautifulSoup 文档里的定义就是这样:
 <a href="https://beautiful-soup-4.readthedocs.io/en/latest/index.html?highlight=find_all#find-all">find_all</a>:
 </p>
-<pre class="example" id="org526ce55">
-find_all(name, attrs, recursive, string, limit, **kwargs)
+<pre class="example" id="org048b9d4">
+    find_all(name, attrs, recursive, string, limit, **kwargs)
 </pre>
 <p>
 <a href="https://beautiful-soup-4.readthedocs.io/en/latest/index.html?highlight=find_all#find">find</a>:
 </p>
-<pre class="example" id="org2344ab0">
-find(name, attrs, recursive, string, **kwargs)
+<pre class="example" id="org38afc9b">
+    find(name, attrs, recursive, string, **kwargs)
 </pre>
 <p>
 多数时候,都只需要使用前两个参数 name(tagname) 和 attrs(attributes)
 name 是标签名称或多个标签名称组成的 PYthon 列表:
 </p>
-<pre class="example" id="orgdf5de02">
-# 返回一个包含 HTML 文档种所有标题标签的列表
-.find_all(['h1','h2','h3,'h4,'h5,'h6'])
+<pre class="example" id="orgc9a2d71">
+    # 返回一个包含 HTML 文档种所有标题标签的列表
+    .find_all(['h1','h2','h3,'h4,'h5,'h6'])
 </pre>
 <p>
 attrs 是一个用 Python 字典封装的一个标签的若干属性和对应属性值:
 </p>
-<pre class="example" id="orgda9cfa7">
-# 返回 HTML 文档里红色和绿色两种颜色的 span 标签.
-.find_all('span', {'class':{'green', 'red'}})
+<pre class="example" id="org60c8bf8">
+    # 返回 HTML 文档里红色和绿色两种颜色的 span 标签.
+    .find_all('span', {'class':{'green', 'red'}})
 </pre>
 <p>
 recursive 递归参数是一个布尔变量. 如果 recursive 设置为 True, find_all 就会
@@ -895,8 +885,8 @@ string 文本参数有点不同, 它是用标签的文本内容取匹配, 而不
 想要查找网页种包含 "the prince" 内容的标签数量,就可以使用下面代码:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">nameList</span> = bs.find_all(text=<span style="font-style: italic;">'the prince'</span>)
-<span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">len</span>(nameList))
+<pre class="src src-python">      <span style="color: #ffcb6b;">nameList</span> = bs.find_all(text=<span style="color: #c3e88d;">'the prince'</span>)
+      <span style="color: #82aaff;">print</span>(<span style="color: #82aaff;">len</span>(nameList))
 </pre>
 </div>
 
@@ -912,23 +902,23 @@ string 文本参数有点不同, 它是用标签的文本内容取匹配, 而不
 置为1 的find_all 方法.
 另一个关键词参数 keyword 可选择具有指定属性的标签:
 </p>
-<pre class="example" id="orgc81ee24">
-# 返回第一个在 class_ 属性中包含 text 并且在 id 属性中包含 title 的标签.
-title = bs.find_all(id='title', class_='text')
+<pre class="example" id="orgfa37f18">
+    # 返回第一个在 class_ 属性中包含 text 并且在 id 属性中包含 title 的标签.
+    title = bs.find_all(id='title', class_='text')
 </pre>
 <p>
 事实上,按照惯例, 页面中每个 id 的属性只能被使用一次,因此上面的代码并不实用,
 下面代码可以达到相同效果:
 </p>
-<pre class="example" id="org5680dff">
-title = bs.find(id='title')
+<pre class="example" id="org7789c7c">
+    title = bs.find(id='title')
 </pre>
 
 <blockquote>
 <p>
 <b>关键词参数和"类"的注意事项</b>
 虽然关键词参数 keyword 在一些场景中很有用,但实际上是一个冗余的 BeautifulSoup
-功能. 任何用关键词参数能完成的人物,也可以用后面的技术解决(见 <a href="#org9a3296d">正则表达式</a> 和 <a href="#org658cb10">Lambda 表达式</a>)
+功能. 任何用关键词参数能完成的人物,也可以用后面的技术解决(见 <a href="#org87b3ae3">正则表达式</a> 和 <a href="#org78113c2">Lambda 表达式</a>)
 例如,下面两行代码效果完全相同:
 bs.find_all(id='text')
 bs.find_all('', {'id', 'text'})
@@ -951,17 +941,17 @@ bs.find_all('', {'class', 'green'})
 </div>
 </div>
 
-<div id="outline-container-org8f9b941" class="outline-4">
-<h4 id="org8f9b941">其他 BeautifulSoup 对象</h4>
-<div class="outline-text-4" id="text-org8f9b941">
+<div id="outline-container-org7c5ecad" class="outline-4">
+<h4 id="org7c5ecad">其他 BeautifulSoup 对象</h4>
+<div class="outline-text-4" id="text-org7c5ecad">
 <dl class="org-dl">
 <dt>BeautifulSoupd 对象</dt><dd>前面代码实例种的 bs.</dd>
 <dt>标签 Tag 对象</dt><dd><p>
 BeautifulSoup 对象通过 find 或 find_all 或者直接调用子标
 签获取的一列对象或单个对象:
 </p>
-<pre class="example" id="orga230acd">
-bs.div.h1
+<pre class="example" id="orgf15fc40">
+      bs.div.h1
 </pre></dd>
 <dt>NavigableString 对象</dt><dd>用来表示标签里的文字,而不是标签本身(有些函数可以操
 作和生成 NavigableString 对象,而不是标签对象)</dd>
@@ -977,9 +967,9 @@ bs.div.h1
 </div>
 
 
-<div id="outline-container-org692b79b" class="outline-4">
-<h4 id="org692b79b">导航树</h4>
-<div class="outline-text-4" id="text-org692b79b">
+<div id="outline-container-orgf15795e" class="outline-4">
+<h4 id="orgf15795e">导航树</h4>
+<div class="outline-text-4" id="text-orgf15795e">
 <p>
 find_all 函数通过标签的名称和属性来查找标签. 但是如果需要通过标签在文档种的
 位置来查找标签,该怎么办?
@@ -989,8 +979,8 @@ find_all 函数通过标签的名称和属性来查找标签. 但是如果需要
 这里就要用到导航树(navigating trees) 了.
 第一章使用过单一方向进行 BeautifulSoup 标签树导航:
 </p>
-<pre class="example" id="orgec19684">
-bs.tag.subTag.anotherSubTag
+<pre class="example" id="orgb2bee97">
+    bs.tag.subTag.anotherSubTag
 </pre>
 
 <p>
@@ -1002,27 +992,27 @@ bs.tag.subTag.anotherSubTag
 <p>
 这个 HTML 页面可以映射成一棵树.
 </p>
-<pre class="example" id="orge741473">
-⚫ HTML
-    ⚫ body
-	▪ div.wrapper
-	⚬ h1
-	⚬ div.content
-	⚬ table#giftList
-	    ⚬ tr
-	   	⚬ th
-	   	⚬ th
-	   	⚬ th
-	   	⚬ th
-	    ⚬ tr.gift#gift1
-	   	⚬ td
-	   	⚬ td
-	   	    ⚬ span.excitingNote
-	   	⚬ td
-	   	⚬ td
-	   	⚬ img
-	    ⚬ ...table rows continue...
-	⚬ div.footer
+<pre class="example" id="org3b4d2b0">
+    ⚫ HTML
+        ⚫ body
+	    ▪ div.wrapper
+	    ⚬ h1
+	    ⚬ div.content
+	    ⚬ table#giftList
+	        ⚬ tr
+	   	    ⚬ th
+	   	    ⚬ th
+	   	    ⚬ th
+	   	    ⚬ th
+	        ⚬ tr.gift#gift1
+	   	    ⚬ td
+	   	    ⚬ td
+	   	        ⚬ span.excitingNote
+	   	    ⚬ td
+	   	    ⚬ td
+	   	    ⚬ img
+	   	⚬ ...table rows continue...
+	    ⚬ div.footer
 </pre>
 <p>
 后面的几节内容也以这个标签结构为例
@@ -1030,8 +1020,8 @@ bs.tag.subTag.anotherSubTag
 </div>
 
 <ul class="org-ul">
-<li><a id="org1419166"></a>处理子标签和其后代标签<br />
-<div class="outline-text-5" id="text-org1419166">
+<li><a id="orgef8f022"></a>处理子标签和其后代标签<br />
+<div class="outline-text-5" id="text-orgef8f022">
 <p>
 在 BeautifulSoup 库里, 孩子(child) 和 后代(descendant) 有显著不同:
 子标签和人类的家谱一样,子标签就是父标签的下一级, 而后代标签是指父标签下面所
@@ -1039,31 +1029,31 @@ bs.tag.subTag.anotherSubTag
 标签,使用 descendants 属性就会获取标签对象的所有后代标签.
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">from</span> urllib.request <span style="font-weight: bold;">import</span> urlopen
-<span style="font-weight: bold;">from</span> bs4 <span style="font-weight: bold;">import</span> BeautifulSoup
+<pre class="src src-python">       <span style="color: #89DDFF;">from</span> urllib.request <span style="color: #89DDFF;">import</span> urlopen
+       <span style="color: #89DDFF;">from</span> bs4 <span style="color: #89DDFF;">import</span> BeautifulSoup
 
-<span style="font-weight: bold; font-style: italic;">html</span> = urlopen(<span style="font-style: italic;">'http://www.pythonscraping.com/pages/page3.html'</span>)
+       <span style="color: #ffcb6b;">html</span> = urlopen(<span style="color: #c3e88d;">'http://www.pythonscraping.com/pages/page3.html'</span>)
 
-<span style="font-weight: bold; font-style: italic;">bs</span> = BeautifulSoup(html, <span style="font-style: italic;">'html.parser'</span>)
+       <span style="color: #ffcb6b;">bs</span> = BeautifulSoup(html, <span style="color: #c3e88d;">'html.parser'</span>)
 
-<span style="font-weight: bold; font-style: italic;">child</span> = bs.find(<span style="font-style: italic;">'table'</span>, {<span style="font-style: italic;">'id'</span>: <span style="font-style: italic;">'giftList'</span>}).children
-<span style="font-weight: bold; font-style: italic;">items</span> = 0
-<span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> child:
-    <span style="font-weight: bold;">print</span>(i)
-    <span style="font-weight: bold;">if</span> items == 5:
-        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"above is a part of child"</span>)
+       <span style="color: #ffcb6b;">child</span> = bs.find(<span style="color: #c3e88d;">'table'</span>, {<span style="color: #c3e88d;">'id'</span>: <span style="color: #c3e88d;">'giftList'</span>}).children
+       <span style="color: #ffcb6b;">items</span> = 0
+       <span style="color: #89DDFF;">for</span> i <span style="color: #89DDFF;">in</span> child:
+           <span style="color: #82aaff;">print</span>(i)
+           <span style="color: #89DDFF;">if</span> items == 5:
+               <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">"above is a part of child"</span>)
 
-        <span style="font-weight: bold;">break</span>
-    <span style="font-weight: bold; font-style: italic;">items</span> += 1
+               <span style="color: #89DDFF;">break</span>
+           <span style="color: #ffcb6b;">items</span> += 1
 
-<span style="font-weight: bold; font-style: italic;">descents</span> = bs.find(<span style="font-style: italic;">'table'</span>, {<span style="font-style: italic;">'id'</span>: <span style="font-style: italic;">'giftList'</span>}).descendants
-<span style="font-weight: bold; font-style: italic;">items</span> = 0
-<span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> descents:
-    <span style="font-weight: bold;">print</span>(i)
-    <span style="font-weight: bold;">if</span> items == 5:
-        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">"above is a part of descents"</span>)
-        <span style="font-weight: bold;">break</span>
-    <span style="font-weight: bold; font-style: italic;">items</span> += 1
+       <span style="color: #ffcb6b;">descents</span> = bs.find(<span style="color: #c3e88d;">'table'</span>, {<span style="color: #c3e88d;">'id'</span>: <span style="color: #c3e88d;">'giftList'</span>}).descendants
+       <span style="color: #ffcb6b;">items</span> = 0
+       <span style="color: #89DDFF;">for</span> i <span style="color: #89DDFF;">in</span> descents:
+           <span style="color: #82aaff;">print</span>(i)
+           <span style="color: #89DDFF;">if</span> items == 5:
+               <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">"above is a part of descents"</span>)
+               <span style="color: #89DDFF;">break</span>
+           <span style="color: #ffcb6b;">items</span> += 1
 
 </pre>
 </div>
@@ -1072,72 +1062,72 @@ bs.tag.subTag.anotherSubTag
 children 只会打印子标签, descendants 会打印所有后代标签.
 </p>
 
-<pre class="example" id="org97d0c2e">
+<pre class="example" id="orgb0eede6">
 
 
-&lt;tr&gt;&lt;th&gt;
-Item Title
-&lt;/th&gt;&lt;th&gt;
-Description
-&lt;/th&gt;&lt;th&gt;
-Cost
-&lt;/th&gt;&lt;th&gt;
-Image
-&lt;/th&gt;&lt;/tr&gt;
+     &lt;tr&gt;&lt;th&gt;
+     Item Title
+     &lt;/th&gt;&lt;th&gt;
+     Description
+     &lt;/th&gt;&lt;th&gt;
+     Cost
+     &lt;/th&gt;&lt;th&gt;
+     Image
+     &lt;/th&gt;&lt;/tr&gt;
 
 
-&lt;tr class="gift" id="gift1"&gt;&lt;td&gt;
-Vegetable Basket
-&lt;/td&gt;&lt;td&gt;
-This vegetable basket is the perfect gift for your health conscious (or overweight) friends!
-&lt;span class="excitingNote"&gt;Now with super-colorful bell peppers!&lt;/span&gt;
-&lt;/td&gt;&lt;td&gt;
-$15.00
-&lt;/td&gt;&lt;td&gt;
-&lt;img src="../img/gifts/img1.jpg"/&gt;
-&lt;/td&gt;&lt;/tr&gt;
+     &lt;tr class="gift" id="gift1"&gt;&lt;td&gt;
+     Vegetable Basket
+     &lt;/td&gt;&lt;td&gt;
+     This vegetable basket is the perfect gift for your health conscious (or overweight) friends!
+     &lt;span class="excitingNote"&gt;Now with super-colorful bell peppers!&lt;/span&gt;
+     &lt;/td&gt;&lt;td&gt;
+     $15.00
+     &lt;/td&gt;&lt;td&gt;
+     &lt;img src="../img/gifts/img1.jpg"/&gt;
+     &lt;/td&gt;&lt;/tr&gt;
 
 
-&lt;tr class="gift" id="gift2"&gt;&lt;td&gt;
-Russian Nesting Dolls
-&lt;/td&gt;&lt;td&gt;
-Hand-painted by trained monkeys, these exquisite dolls are priceless! And by "priceless," we mean "extremely expensive"! &lt;span class="excitingNote"&gt;8 entire dolls per set! Octuple the presents!&lt;/span&gt;
-&lt;/td&gt;&lt;td&gt;
-$10,000.52
-&lt;/td&gt;&lt;td&gt;
-&lt;img src="../img/gifts/img2.jpg"/&gt;
-&lt;/td&gt;&lt;/tr&gt;
-above is a part of child
+     &lt;tr class="gift" id="gift2"&gt;&lt;td&gt;
+     Russian Nesting Dolls
+     &lt;/td&gt;&lt;td&gt;
+     Hand-painted by trained monkeys, these exquisite dolls are priceless! And by "priceless," we mean "extremely expensive"! &lt;span class="excitingNote"&gt;8 entire dolls per set! Octuple the presents!&lt;/span&gt;
+     &lt;/td&gt;&lt;td&gt;
+     $10,000.52
+     &lt;/td&gt;&lt;td&gt;
+     &lt;img src="../img/gifts/img2.jpg"/&gt;
+     &lt;/td&gt;&lt;/tr&gt;
+     above is a part of child
 
 
-&lt;tr&gt;&lt;th&gt;
-Item Title
-&lt;/th&gt;&lt;th&gt;
-Description
-&lt;/th&gt;&lt;th&gt;
-Cost
-&lt;/th&gt;&lt;th&gt;
-Image
-&lt;/th&gt;&lt;/tr&gt;
-&lt;th&gt;
-Item Title
-&lt;/th&gt;
+     &lt;tr&gt;&lt;th&gt;
+     Item Title
+     &lt;/th&gt;&lt;th&gt;
+     Description
+     &lt;/th&gt;&lt;th&gt;
+     Cost
+     &lt;/th&gt;&lt;th&gt;
+     Image
+     &lt;/th&gt;&lt;/tr&gt;
+     &lt;th&gt;
+     Item Title
+     &lt;/th&gt;
 
-Item Title
+     Item Title
 
-&lt;th&gt;
-Description
-&lt;/th&gt;
+     &lt;th&gt;
+     Description
+     &lt;/th&gt;
 
-Description
+     Description
 
-above is a part of descents
+     above is a part of descents
 </pre>
 </div>
 </li>
 
-<li><a id="org3ddc226"></a>处理兄弟标签<br />
-<div class="outline-text-5" id="text-org3ddc226">
+<li><a id="org291cb1a"></a>处理兄弟标签<br />
+<div class="outline-text-5" id="text-org291cb1a">
 <p>
 兄弟标签就是同一层级的标签.
 标签对象的 next_siblings 属性可以获取该标签后面的兄弟标签,
@@ -1150,25 +1140,25 @@ next_sibling 和 previous_sibling 是获取前面(后面)的一个标签.
 </div>
 </div>
 
-<div id="outline-container-org9a3296d" class="outline-3">
-<h3 id="org9a3296d">正则表达式</h3>
+<div id="outline-container-org87b3ae3" class="outline-3">
+<h3 id="org87b3ae3">正则表达式</h3>
 </div>
 
-<div id="outline-container-orge8a053a" class="outline-3">
-<h3 id="orge8a053a">正则表达式和 BeautifulSoup</h3>
+<div id="outline-container-orgbf8efbb" class="outline-3">
+<h3 id="orgbf8efbb">正则表达式和 BeautifulSoup</h3>
 </div>
 
-<div id="outline-container-org071c790" class="outline-3">
-<h3 id="org071c790">获取属性</h3>
+<div id="outline-container-org2f1ec74" class="outline-3">
+<h3 id="org2f1ec74">获取属性</h3>
 </div>
 
-<div id="outline-container-org658cb10" class="outline-3">
-<h3 id="org658cb10">Lambda 表达式</h3>
+<div id="outline-container-org78113c2" class="outline-3">
+<h3 id="org78113c2">Lambda 表达式</h3>
 </div>
 </div>
 
-<div id="outline-container-org5bd2b07" class="outline-2">
-<h2 id="org5bd2b07">避开抓取陷阱</h2>
+<div id="outline-container-org5a41ac6" class="outline-2">
+<h2 id="org5a41ac6">避开抓取陷阱</h2>
 </div>
 </div>
 <div id="postamble" class="status">

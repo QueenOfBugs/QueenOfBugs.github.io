@@ -223,53 +223,53 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf665e11">使用Github遇到的问题记录</a>
+<li><a href="#org417505b">使用Github遇到的问题记录</a>
 <ul>
-<li><a href="#orgf56cabe">github actions</a>
+<li><a href="#org50dca96">github actions</a>
 <ul>
-<li><a href="#orgfb17f3e">git会记录文件状态</a></li>
+<li><a href="#orgb4d0cc2">git会记录文件状态</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgc165bd3">生成和添加 SSH keys 到github</a>
+<li><a href="#orgf1ff19e">生成和添加 SSH keys 到github</a>
 <ul>
-<li><a href="#orgc26ec5a">生成新的 SHH 密钥</a></li>
-<li><a href="#orga8c66e0">添加 SSH 密钥到 ssh-agent</a>
+<li><a href="#orgc15f313">生成新的 SHH 密钥</a></li>
+<li><a href="#org098c799">添加 SSH 密钥到 ssh-agent</a>
 <ul>
-<li><a href="#org4fefd8b">后台启动 ssh 代理</a></li>
-<li><a href="#orgad8df35">将 ssh 私钥添加到代理</a></li>
-<li><a href="#orgeda9577">将 SSH 密钥添加到 Github 帐号</a></li>
+<li><a href="#org516d303">后台启动 ssh 代理</a></li>
+<li><a href="#org26fb9c0">将 ssh 私钥添加到代理</a></li>
+<li><a href="#orga04d0fc">将 SSH 密钥添加到 Github 帐号</a></li>
 </ul>
 </li>
-<li><a href="#org6e1167e">测试 SSH 连接</a></li>
-<li><a href="#org24b69d3">通过代理连接 SSH</a></li>
+<li><a href="#orgc0ea1e0">测试 SSH 连接</a></li>
+<li><a href="#org0cafef2">通过代理连接 SSH</a></li>
 </ul>
 </li>
-<li><a href="#org1846fe1">Github.io 踩坑</a>
+<li><a href="#orgabefa8f">Github.io 踩坑</a>
 <ul>
-<li><a href="#orgd37f438">路径含有隐藏文件夹时url访问失败</a></li>
-<li><a href="#org6df0287">Windows 上会的仓库会自动修改可执行文件的权限,且 chmod 没效果</a></li>
+<li><a href="#orgef975f9">路径含有隐藏文件夹时url访问失败</a></li>
+<li><a href="#org57a3fe5">Windows 上会的仓库会自动修改可执行文件的权限,且 chmod 没效果</a></li>
 </ul>
 </li>
-<li><a href="#orgc4fefb2">远程仓库强制覆盖本地仓库.</a></li>
+<li><a href="#org348e974">远程仓库强制覆盖本地仓库.</a></li>
 </ul>
 </div>
 </div>
 <p>
 Last modified:2024-01-24 17:08:13 kamisama
 </p>
-<div id="outline-container-orgf665e11" class="outline-2">
-<h2 id="orgf665e11">使用Github遇到的问题记录</h2>
-<div class="outline-text-2" id="text-orgf665e11">
+<div id="outline-container-org417505b" class="outline-2">
+<h2 id="org417505b">使用Github遇到的问题记录</h2>
+<div class="outline-text-2" id="text-org417505b">
 </div>
-<div id="outline-container-orgf56cabe" class="outline-3">
-<h3 id="orgf56cabe">github actions</h3>
-<div class="outline-text-3" id="text-orgf56cabe">
+<div id="outline-container-org50dca96" class="outline-3">
+<h3 id="org50dca96">github actions</h3>
+<div class="outline-text-3" id="text-org50dca96">
 </div>
-<div id="outline-container-orgfb17f3e" class="outline-4">
-<h4 id="orgfb17f3e">git会记录文件状态</h4>
-<div class="outline-text-4" id="text-orgfb17f3e">
+<div id="outline-container-orgb4d0cc2" class="outline-4">
+<h4 id="orgb4d0cc2">git会记录文件状态</h4>
+<div class="outline-text-4" id="text-orgb4d0cc2">
 <p>
 使用 Emacs 编辑文件的情况下: 很容易一边编辑文件,另一边就打开了shell-mode 要
 对刚刚的更改进行提交.
@@ -280,28 +280,28 @@ Last modified:2024-01-24 17:08:13 kamisama
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="orgf489804"></a><span class="todo TODO">TODO</span> 测试其他文本编辑器是否会出现这种状况.<br /></li>
+<li><a id="orgded9a23"></a><span class="todo TODO">TODO</span> 测试其他文本编辑器是否会出现这种状况.<br /></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-orgc165bd3" class="outline-2">
-<h2 id="orgc165bd3">生成和添加 SSH keys 到github</h2>
-<div class="outline-text-2" id="text-orgc165bd3">
+<div id="outline-container-orgf1ff19e" class="outline-2">
+<h2 id="orgf1ff19e">生成和添加 SSH keys 到github</h2>
+<div class="outline-text-2" id="text-orgf1ff19e">
 </div>
-<div id="outline-container-orgc26ec5a" class="outline-3">
-<h3 id="orgc26ec5a">生成新的 SHH 密钥</h3>
-<div class="outline-text-3" id="text-orgc26ec5a">
+<div id="outline-container-orgc15f313" class="outline-3">
+<h3 id="orgc15f313">生成新的 SHH 密钥</h3>
+<div class="outline-text-3" id="text-orgc15f313">
 <div class="org-src-container">
-<pre class="src src-sh">ssh-keygen -t ed25519 -C <span style="font-style: italic;">"wj915614874@163.com"</span>
+<pre class="src src-sh">ssh-keygen -t ed25519 -C <span style="color: #c3e88d;">"wj915614874@163.com"</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orga8c66e0" class="outline-3">
-<h3 id="orga8c66e0">添加 SSH 密钥到 ssh-agent</h3>
-<div class="outline-text-3" id="text-orga8c66e0">
+<div id="outline-container-org098c799" class="outline-3">
+<h3 id="org098c799">添加 SSH 密钥到 ssh-agent</h3>
+<div class="outline-text-3" id="text-org098c799">
 <blockquote>
 <p>
 这里的命令都是 Linux 系统下的命令,Window 下可以查看官方的文档
@@ -317,19 +317,19 @@ cmd 好像有些命令就不好使了.
 </p>
 </blockquote>
 </div>
-<div id="outline-container-org4fefd8b" class="outline-4">
-<h4 id="org4fefd8b">后台启动 ssh 代理</h4>
-<div class="outline-text-4" id="text-org4fefd8b">
+<div id="outline-container-org516d303" class="outline-4">
+<h4 id="org516d303">后台启动 ssh 代理</h4>
+<div class="outline-text-4" id="text-org516d303">
 <div class="org-src-container">
-<pre class="src src-sh"><span style="font-weight: bold;">eval</span> <span style="font-style: italic;">"$(</span><span style="font-weight: bold;">ssh-agent -s</span><span style="font-style: italic;">)"</span>
+<pre class="src src-sh"><span style="color: #82aaff;">eval</span> <span style="color: #c3e88d;">"$(</span><span style="color: #89DDFF; font-weight: bold;">ssh-agent -s</span><span style="color: #c3e88d;">)"</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgad8df35" class="outline-4">
-<h4 id="orgad8df35">将 ssh 私钥添加到代理</h4>
-<div class="outline-text-4" id="text-orgad8df35">
+<div id="outline-container-org26fb9c0" class="outline-4">
+<h4 id="org26fb9c0">将 ssh 私钥添加到代理</h4>
+<div class="outline-text-4" id="text-org26fb9c0">
 <div class="org-src-container">
 <pre class="src src-sh">ssh-add ~/.ssh/id_ed25519
 </pre>
@@ -337,9 +337,9 @@ cmd 好像有些命令就不好使了.
 </div>
 </div>
 
-<div id="outline-container-orgeda9577" class="outline-4">
-<h4 id="orgeda9577">将 SSH 密钥添加到 Github 帐号</h4>
-<div class="outline-text-4" id="text-orgeda9577">
+<div id="outline-container-orga04d0fc" class="outline-4">
+<h4 id="orga04d0fc">将 SSH 密钥添加到 Github 帐号</h4>
+<div class="outline-text-4" id="text-orga04d0fc">
 <p>
 将下面命令的结果复制到 <a href="https://github.com/settings/ssh/new">https://github.com/settings/ssh/new</a> 里的 Key 表单中.
 </p>
@@ -351,11 +351,11 @@ cmd 好像有些命令就不好使了.
 </div>
 </div>
 
-<div id="outline-container-org6e1167e" class="outline-3">
-<h3 id="org6e1167e">测试 SSH 连接</h3>
-<div class="outline-text-3" id="text-org6e1167e">
+<div id="outline-container-orgc0ea1e0" class="outline-3">
+<h3 id="orgc0ea1e0">测试 SSH 连接</h3>
+<div class="outline-text-3" id="text-orgc0ea1e0">
 <div class="org-src-container">
-<pre class="src src-sh">ssh -T git@github.com
+<pre class="src src-sh"> ssh -T git@github.com
 </pre>
 </div>
 
@@ -363,15 +363,15 @@ cmd 好像有些命令就不好使了.
 如果前面都设置正常的,应该会提示你验证公钥是否正确,输入 yes 后会看到类似下面的信
 息:
 </p>
-<pre class="example" id="org2f79911">
+<pre class="example" id="orgc913c34">
 Hi username! You've successfully authenticated, but GitHub does not provide shell access.
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org24b69d3" class="outline-3">
-<h3 id="org24b69d3">通过代理连接 SSH</h3>
-<div class="outline-text-3" id="text-org24b69d3">
+<div id="outline-container-org0cafef2" class="outline-3">
+<h3 id="org0cafef2">通过代理连接 SSH</h3>
+<div class="outline-text-3" id="text-org0cafef2">
 <p>
 因为经常被墙的原因,使用代理连接 SSH 是很有必要的.这里去分一下 git 命令里设置的走
 代理, git 里设置的代理是用来 clone 下载文件的,走的是 http/https 协议,因为下载文
@@ -390,15 +390,15 @@ openssh 自身是不带代理功能的(网上说的,具体是不是没有翻文�
 使用命令完成代理:
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">ssh user@server -o <span style="font-style: italic;">"ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p"</span>
+<pre class="src src-sh">    ssh user@server -o <span style="color: #c3e88d;">"ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p"</span>
 </pre>
 </div></li>
 <li><p>
 使用 ".ssh/config" 配置文件:
 </p>
-<pre class="example" id="orgc3bfaba">
-Host *
-  ProxyCommand=nc -x 127.0.0.1:1080 %h %p
+<pre class="example" id="org3c00c49">
+  Host *
+    ProxyCommand=nc -x 127.0.0.1:1080 %h %p
 </pre></li>
 </ul>
 
@@ -407,29 +407,29 @@ Host *
 windows 下面是没有 nc 命令的,相应的程序是 connect.exe 这个程序需要在 Git 的安装
 目录下查找:
 </p>
-<pre class="example" id="org1403eec">
+<pre class="example" id="org6eb7977">
 Host github.com
   ProxyCommand "E:\Program Files\Git\mingw64\bin\connect.exe" -S 127.0.0.1:1080 %h %p
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org1846fe1" class="outline-2">
-<h2 id="org1846fe1">Github.io 踩坑</h2>
-<div class="outline-text-2" id="text-org1846fe1">
+<div id="outline-container-orgabefa8f" class="outline-2">
+<h2 id="orgabefa8f">Github.io 踩坑</h2>
+<div class="outline-text-2" id="text-orgabefa8f">
 </div>
-<div id="outline-container-orgd37f438" class="outline-3">
-<h3 id="orgd37f438">路径含有隐藏文件夹时url访问失败</h3>
-<div class="outline-text-3" id="text-orgd37f438">
+<div id="outline-container-orgef975f9" class="outline-3">
+<h3 id="orgef975f9">路径含有隐藏文件夹时url访问失败</h3>
+<div class="outline-text-3" id="text-orgef975f9">
 <p>
 如果网页资源的某个文件路径中有隐藏文件(夹)，那该资源就会访问失败.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org6df0287" class="outline-3">
-<h3 id="org6df0287">Windows 上会的仓库会自动修改可执行文件的权限,且 chmod 没效果</h3>
-<div class="outline-text-3" id="text-org6df0287">
+<div id="outline-container-org57a3fe5" class="outline-3">
+<h3 id="org57a3fe5">Windows 上会的仓库会自动修改可执行文件的权限,且 chmod 没效果</h3>
+<div class="outline-text-3" id="text-org57a3fe5">
 <p>
 我部署blog 的脚本里有一个 build.sh 文件,在 linux 上正常可以执行,等我在 windows
 上克隆了仓库,并做出修改,push 到远程仓库,就发现 github action 失败,原因是
@@ -444,7 +444,7 @@ build.sh 没有权限,察看权限后发现 build.sh 的可执行权限没了. w
 查看文件权限:
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">git ls-files --stage build.sh
+<pre class="src src-sh">    git ls-files --stage build.sh
 </pre>
 </div></li>
 
@@ -452,7 +452,7 @@ build.sh 没有权限,察看权限后发现 build.sh 的可执行权限没了. w
 修改权限:
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">git update-index --chmod=+x build.sh
+<pre class="src src-sh">    git update-index --chmod=+x build.sh
 </pre>
 </div></li>
 
@@ -460,7 +460,7 @@ build.sh 没有权限,察看权限后发现 build.sh 的可执行权限没了. w
 再次查看权限:
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">git ls-files --stage build.sh
+<pre class="src src-sh">    git ls-files --stage build.sh
 </pre>
 </div></li>
 </ul>
@@ -487,7 +487,7 @@ windows 上的 git 就只会追踪和提交文件内容的改变,而不会影响
 <p>
 直接修改配置文件:
 </p>
-<pre class="example" id="org1693a5c">
+<pre class="example" id="orgd48551e">
 # file : .git/config
 # This is the config file, and
 # a '#' or ';' character indicates
@@ -507,17 +507,17 @@ windows 上的 git 就只会追踪和提交文件内容的改变,而不会影响
 </div>
 </div>
 
-<div id="outline-container-orgc4fefb2" class="outline-2">
-<h2 id="orgc4fefb2">远程仓库强制覆盖本地仓库.</h2>
-<div class="outline-text-2" id="text-orgc4fefb2">
+<div id="outline-container-org348e974" class="outline-2">
+<h2 id="org348e974">远程仓库强制覆盖本地仓库.</h2>
+<div class="outline-text-2" id="text-org348e974">
 <p>
 适用于本地未提交的修改,但远端仓库已经从另一台机器提交了新的修改.如果本地未提交的
 修改并不重要,可以删除,那么就使用这种方法:
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">git fetch --all
-git reset --hard origin/main
-git pull
+<pre class="src src-sh">  git fetch --all
+  git reset --hard origin/main
+  git pull
 </pre>
 </div>
 <p>

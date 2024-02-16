@@ -223,12 +223,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org2543c44">Emacs Modeline 主题和设置</a>
+<li><a href="#org7f64ea0">Emacs Modeline 主题和设置</a>
 <ul>
-<li><a href="#orgf2cbc41">telephone-line</a>
+<li><a href="#orgeb0aa09">telephone-line</a>
 <ul>
-<li><a href="#orgab30eed">安装</a></li>
-<li><a href="#orgbc950d1">效果</a></li>
+<li><a href="#org7c26f1a">安装</a></li>
+<li><a href="#org46fe3e1">效果</a></li>
 </ul>
 </li>
 </ul>
@@ -236,43 +236,43 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org2543c44" class="outline-2">
-<h2 id="org2543c44">Emacs Modeline 主题和设置</h2>
-<div class="outline-text-2" id="text-org2543c44">
+<div id="outline-container-org7f64ea0" class="outline-2">
+<h2 id="org7f64ea0">Emacs Modeline 主题和设置</h2>
+<div class="outline-text-2" id="text-org7f64ea0">
 </div>
-<div id="outline-container-orgf2cbc41" class="outline-3">
-<h3 id="orgf2cbc41"><a href="https://github.com/dbordak/telephone-line">telephone-line</a></h3>
-<div class="outline-text-3" id="text-orgf2cbc41">
+<div id="outline-container-orgeb0aa09" class="outline-3">
+<h3 id="orgeb0aa09"><a href="https://github.com/dbordak/telephone-line">telephone-line</a></h3>
+<div class="outline-text-3" id="text-orgeb0aa09">
 <p>
 Powerline 针对Emacs 的另一个实现.
 </p>
 </div>
-<div id="outline-container-orgab30eed" class="outline-4">
-<h4 id="orgab30eed">安装</h4>
-<div class="outline-text-4" id="text-orgab30eed">
+<div id="outline-container-org7c26f1a" class="outline-4">
+<h4 id="org7c26f1a">安装</h4>
+<div class="outline-text-4" id="text-org7c26f1a">
 <p>
 Use package.el from MELPA.
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">telephone-line</span>)
-(telephone-line-mode 1)
+<pre class="src src-emacs-lisp">      (<span style="color: #89DDFF;">require</span> '<span style="color: #f78c6c;">telephone-line</span>)
+      (telephone-line-mode 1)
 </pre>
 </div>
 <p>
 use-package:
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> telephone-line
-  <span style="font-weight: bold;">:config</span>
-  (telephone-line-mode 1)
-  )
+<pre class="src src-emacs-lisp">      (<span style="color: #89DDFF;">use-package</span> <span style="color: #f78c6c;">telephone-line</span>
+        <span style="color: #82aaff;">:config</span>
+        (telephone-line-mode 1)
+        )
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgbc950d1" class="outline-4">
-<h4 id="orgbc950d1">效果</h4>
-<div class="outline-text-4" id="text-orgbc950d1">
+<div id="outline-container-org46fe3e1" class="outline-4">
+<h4 id="org46fe3e1">效果</h4>
+<div class="outline-text-4" id="text-org46fe3e1">
 <p>
 evil 的编辑模式倒是显示的很好, <code>display-battery-mode</code> 不能显示,鼠标当前位置,选
 中多少字符的功能也没有, 没有进一步配置的情况下不如 doom-modeline 好用.

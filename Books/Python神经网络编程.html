@@ -257,61 +257,61 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgc35e1a7">神经网络是如何工作的?</a>
+<li><a href="#orgfc22a7c">神经网络是如何工作的?</a>
 <ul>
-<li><a href="#org8a013e0">尺有所长,寸有所短</a></li>
-<li><a href="#orgfb52c26">一台简单的预测机</a></li>
-<li><a href="#orga8f61e4">分类器与预测器并无太大差别</a></li>
-<li><a href="#org3d39dd5">训练简单的分类器</a></li>
-<li><a href="#orgd409ea8">有时候一个分类器不足以求解问题</a></li>
-<li><a href="#org3aa8b5c">神经元&#x2013;大自然的计算器</a></li>
-<li><a href="#orgb53d952">神经网络中追踪信号</a></li>
+<li><a href="#org59b2435">尺有所长,寸有所短</a></li>
+<li><a href="#org220918f">一台简单的预测机</a></li>
+<li><a href="#org6b65507">分类器与预测器并无太大差别</a></li>
+<li><a href="#org9102b01">训练简单的分类器</a></li>
+<li><a href="#orga585ae2">有时候一个分类器不足以求解问题</a></li>
+<li><a href="#orgd9bbeaf">神经元&#x2013;大自然的计算器</a></li>
+<li><a href="#org256d3de">神经网络中追踪信号</a></li>
 </ul>
 </li>
-<li><a href="#org81ae6d9">使用Python进行DIY</a>
+<li><a href="#org92e6356">使用Python进行DIY</a>
 <ul>
-<li><a href="#org48b18bf">测试 emacs-jupyter</a></li>
-<li><a href="#org5823ebe">开始制作神经网络</a>
+<li><a href="#orgdc9bcc9">测试 emacs-jupyter</a></li>
+<li><a href="#orgae0c563">开始制作神经网络</a>
 <ul>
-<li><a href="#orgacf9f54">框架代码</a></li>
-<li><a href="#orge7a49fa">初始化网络</a></li>
-<li><a href="#org76cac7a">权重&#x2013;网络的核心</a></li>
-<li><a href="#org51183c2">可选: 较复杂的权重</a></li>
-<li><a href="#orgff0fa4e">查询网络</a></li>
-<li><a href="#org5143add">目前为止的所有代码</a></li>
-<li><a href="#org1d76757">训练网络</a></li>
-<li><a href="#orgc860d68">完整的神经网络代码</a></li>
+<li><a href="#orge4fb82d">框架代码</a></li>
+<li><a href="#org64ede53">初始化网络</a></li>
+<li><a href="#org7d195ea">权重&#x2013;网络的核心</a></li>
+<li><a href="#orgc6e1822">可选: 较复杂的权重</a></li>
+<li><a href="#org1344538">查询网络</a></li>
+<li><a href="#org2a9fd1b">目前为止的所有代码</a></li>
+<li><a href="#org314ca61">训练网络</a></li>
+<li><a href="#orgc6c3aab">完整的神经网络代码</a></li>
 </ul>
 </li>
-<li><a href="#org5517d43">手写数字的数据集MNIST</a>
+<li><a href="#org6c809f1">手写数字的数据集MNIST</a>
 <ul>
-<li><a href="#org6341345">准备MNIST训练数据</a></li>
-<li><a href="#org5d218b8">测试网络</a></li>
-<li><a href="#org370d53b">使用完整的数据集进行训练和测试</a></li>
-<li><a href="#org542693d">一些改进:调整学习率</a></li>
-<li><a href="#orga3f6967">一些改进:多次运行</a></li>
-<li><a href="#orgdb0c9b5">改变网络形状</a></li>
-<li><a href="#orgd7c62bf">大功告成!</a></li>
-<li><a href="#org23b3b2e">最终代码:</a></li>
+<li><a href="#org8305a35">准备MNIST训练数据</a></li>
+<li><a href="#org3accd98">测试网络</a></li>
+<li><a href="#org980fcdf">使用完整的数据集进行训练和测试</a></li>
+<li><a href="#org5a60705">一些改进:调整学习率</a></li>
+<li><a href="#orgfa2a762">一些改进:多次运行</a></li>
+<li><a href="#org396688b">改变网络形状</a></li>
+<li><a href="#orgc15ad2f">大功告成!</a></li>
+<li><a href="#orgce07c67">最终代码:</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgb4073af">趣味盎然</a>
+<li><a href="#org6d098dd">趣味盎然</a>
 <ul>
-<li><a href="#orgfb43120">自己的手写数字</a></li>
+<li><a href="#orge6197c2">自己的手写数字</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc35e1a7" class="outline-2">
-<h2 id="orgc35e1a7">神经网络是如何工作的?</h2>
-<div class="outline-text-2" id="text-orgc35e1a7">
+<div id="outline-container-orgfc22a7c" class="outline-2">
+<h2 id="orgfc22a7c">神经网络是如何工作的?</h2>
+<div class="outline-text-2" id="text-orgfc22a7c">
 </div>
-<div id="outline-container-org8a013e0" class="outline-3">
-<h3 id="org8a013e0">尺有所长,寸有所短</h3>
-<div class="outline-text-3" id="text-org8a013e0">
+<div id="outline-container-org59b2435" class="outline-3">
+<h3 id="org59b2435">尺有所长,寸有所短</h3>
+<div class="outline-text-3" id="text-org59b2435">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -356,9 +356,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgfb52c26" class="outline-3">
-<h3 id="orgfb52c26">一台简单的预测机</h3>
-<div class="outline-text-3" id="text-orgfb52c26">
+<div id="outline-container-org220918f" class="outline-3">
+<h3 id="org220918f">一台简单的预测机</h3>
+<div class="outline-text-3" id="text-org220918f">
 <p>
 先从构建超级简单的机器开始了解神经网络中的学习过程.
 </p>
@@ -368,46 +368,29 @@
 类识别照片时进行的操作一样,我们从眼睛输入图片,使用大脑分析场景,并得出场景中
 有哪些物体的结论.那这台机器看起来可能是这样的:
 </p>
-<div class="org-src-container">
-<pre class="src src-dot">digraph G{
-rankdir = "LR";
-input [label="&#38382;&#39064;", shape=plaintext];
-machine [label="&#24605;&#32771;", shape=circle,width=0.75, height=0.75, fixedsize=true];
-output [label="&#31572;&#26696;", shape=plaintext];
-input -&gt; machine -&gt; output;
-}
 
-</pre>
+<div id="orge422b2b" class="figure">
+<p><img src="./imgs/1.2.1.png" alt="1.2.1.png" />
+</p>
 </div>
 
 <p>
 但是计算机并不能真正的思考,所以更确切的表述应该是这样的:
 </p>
-<div class="org-src-container">
-<pre class="src src-dot">digraph G{
-rankdir = "LR";
-input [label="&#36755;&#20837;", shape=plaintext];
-machine [label="&#27969;&#31243;\n(&#35745;&#31639;)", shape=circle,width=0.75, height=0.75, fixedsize=true];
-output [label="&#36755;&#20986;", shape=plaintext];
-input -&gt; machine -&gt; output;
-}
-</pre>
+
+<div id="orgc8e4a43" class="figure">
+<p><img src="./imgs/1.2.2.png" alt="1.2.2.png" />
+</p>
 </div>
 
 <p>
 以计算乘法 "3 × 4" 为例:
 </p>
 
-<div class="org-src-container">
-<pre class="src src-dot">digraph G{
-rankdir = "LR";
-node [width=0.75, height=0.75, fixedsize=true];
-input [label="&#36755;&#20837;\n3&#215;4", shape=plaintext];
-machine [label="&#35745;&#31639;\n4+4+4", shape=circle,width=0.75, height=0.75, fixedsize=true];
-output [label="&#36755;&#20986;\n12", shape=plaintext];
-input -&gt; machine -&gt; output;
-}
-</pre>
+
+<div id="org5ce7436" class="figure">
+<p><img src="./imgs/1.2.3.png" alt="1.2.3.png" />
+</p>
 </div>
 
 <p>
@@ -463,7 +446,7 @@ input -&gt; machine -&gt; output;
 </p>
 
 
-<div id="org81971ca" class="figure">
+<div id="orge0e78f9" class="figure">
 <p><img src="imgs/00141.gif" alt="00141.gif" />
 </p>
 </div>
@@ -474,7 +457,7 @@ input -&gt; machine -&gt; output;
 </p>
 
 
-<div id="orgaee8652" class="figure">
+<div id="org19a2f88" class="figure">
 <p><img src="imgs/00061.jpeg" alt="00061.jpeg" />
 </p>
 </div>
@@ -489,7 +472,7 @@ input -&gt; machine -&gt; output;
 </p>
 
 
-<div id="org2714a41" class="figure">
+<div id="orgd14c6da" class="figure">
 <p><img src="imgs/00144.jpeg" alt="00144.jpeg" />
 </p>
 </div>
@@ -512,7 +495,7 @@ input -&gt; machine -&gt; output;
 </p>
 
 
-<div id="org9b83da3" class="figure">
+<div id="orge7c7264" class="figure">
 <p><img src="imgs/00078.jpeg" alt="00078.jpeg" />
 </p>
 </div>
@@ -526,7 +509,7 @@ input -&gt; machine -&gt; output;
 </p>
 
 
-<div id="org4c07d69" class="figure">
+<div id="orgc5b6546" class="figure">
 <p><img src="imgs/00148.jpeg" alt="00148.jpeg" />
 </p>
 </div>
@@ -569,9 +552,9 @@ input -&gt; machine -&gt; output;
 </div>
 </div>
 
-<div id="outline-container-orga8f61e4" class="outline-3">
-<h3 id="orga8f61e4">分类器与预测器并无太大差别</h3>
-<div class="outline-text-3" id="text-orga8f61e4">
+<div id="outline-container-org6b65507" class="outline-3">
+<h3 id="org6b65507">分类器与预测器并无太大差别</h3>
+<div class="outline-text-3" id="text-org6b65507">
 <p>
 上面的简单机器接受了一个输入,并作出应有的预测,输出结果,我们将其称为预测器.根
 据结果与已知真实示例进行比较所得出的误差,调整内部参数,使得预测更加精确.
@@ -579,7 +562,7 @@ input -&gt; machine -&gt; output;
 </p>
 
 
-<div id="org823d5fb" class="figure">
+<div id="org88731ea" class="figure">
 <p><img src="imgs/00095.jpeg" alt="00095.jpeg" />
 </p>
 </div>
@@ -592,7 +575,7 @@ input -&gt; machine -&gt; output;
 </p>
 
 
-<div id="orgcb876b0" class="figure">
+<div id="orgfb98ddc" class="figure">
 <p><img src="imgs/00153.jpeg" alt="00153.jpeg" />
 </p>
 </div>
@@ -605,7 +588,7 @@ input -&gt; machine -&gt; output;
 </p>
 
 
-<div id="org695ef11" class="figure">
+<div id="orgd81e057" class="figure">
 <p><img src="imgs/00155.jpeg" alt="00155.jpeg" />
 </p>
 </div>
@@ -616,7 +599,7 @@ input -&gt; machine -&gt; output;
 </p>
 
 
-<div id="orgd155958" class="figure">
+<div id="org3cf92f1" class="figure">
 <p><img src="imgs/00157.jpeg" alt="00157.jpeg" />
 </p>
 </div>
@@ -637,7 +620,7 @@ input -&gt; machine -&gt; output;
 </p>
 
 
-<div id="org798cf52" class="figure">
+<div id="org515dc40" class="figure">
 <p><img src="imgs/00158.gif" alt="00158.gif" />
 </p>
 </div>
@@ -654,9 +637,9 @@ input -&gt; machine -&gt; output;
 </div>
 </div>
 
-<div id="outline-container-org3d39dd5" class="outline-3">
-<h3 id="org3d39dd5">训练简单的分类器</h3>
-<div class="outline-text-3" id="text-org3d39dd5">
+<div id="outline-container-org9102b01" class="outline-3">
+<h3 id="org9102b01">训练简单的分类器</h3>
+<div class="outline-text-3" id="text-org9102b01">
 <p>
 上一节我们构思了一种线性分类器,能够正确分类瓢虫和毛虫,根据上节图示,我们可以观
 察到,想要实现这样一种分类器,重点在于调整分界线的斜率,使其能够基于小虫的宽度和
@@ -719,7 +702,7 @@ input -&gt; machine -&gt; output;
 </p>
 
 
-<div id="org7184ebc" class="figure">
+<div id="org0a2b5a5" class="figure">
 <p><img src="imgs/00159.jpeg" alt="00159.jpeg" />
 </p>
 </div>
@@ -751,7 +734,7 @@ input -&gt; machine -&gt; output;
 </p>
 
 
-<div id="org35b7f49" class="figure">
+<div id="org95d6502" class="figure">
 <p><img src="imgs/00160.jpeg" alt="00160.jpeg" />
 </p>
 </div>
@@ -801,7 +784,7 @@ input -&gt; machine -&gt; output;
 </p>
 
 
-<div id="org5c3c160" class="figure">
+<div id="orga84e49b" class="figure">
 <p><img src="imgs/00161.jpeg" alt="00161.jpeg" />
 </p>
 </div>
@@ -836,7 +819,7 @@ input -&gt; machine -&gt; output;
 </p>
 
 
-<div id="org2ad2247" class="figure">
+<div id="org732e379" class="figure">
 <p><img src="imgs/00164.jpeg" alt="00164.jpeg" />
 </p>
 </div>
@@ -903,7 +886,7 @@ y=3.0 差了很多,根据先前相同的推理,我们希望直线不经过点,�
 </p>
 
 
-<div id="org8ccc1a8" class="figure">
+<div id="org6446779" class="figure">
 <p><img src="imgs/00165.jpeg" alt="00165.jpeg" />
 </p>
 </div>
@@ -997,9 +980,9 @@ y=3.0 差了很多,根据先前相同的推理,我们希望直线不经过点,�
 </div>
 </div>
 
-<div id="outline-container-orgd409ea8" class="outline-3">
-<h3 id="orgd409ea8">有时候一个分类器不足以求解问题</h3>
-<div class="outline-text-3" id="text-orgd409ea8">
+<div id="outline-container-orga585ae2" class="outline-3">
+<h3 id="orga585ae2">有时候一个分类器不足以求解问题</h3>
+<div class="outline-text-3" id="text-orga585ae2">
 <ul class="org-ul">
 <li>如果数据本身不是由单一线性过程支配,那么一个简单的线性分类器不能对数据进行划
 分.例如由逻辑 XOR 运算符支配的数据.</li>
@@ -1008,9 +991,9 @@ y=3.0 差了很多,根据先前相同的推理,我们希望直线不经过点,�
 </div>
 </div>
 
-<div id="outline-container-org3aa8b5c" class="outline-3">
-<h3 id="org3aa8b5c">神经元&#x2013;大自然的计算器</h3>
-<div class="outline-text-3" id="text-org3aa8b5c">
+<div id="outline-container-orgd9bbeaf" class="outline-3">
+<h3 id="orgd9bbeaf">神经元&#x2013;大自然的计算器</h3>
+<div class="outline-text-3" id="text-orgd9bbeaf">
 <p>
 计算机有大量电子计算元件,巨大存储空间,并且计算机的运行频率比生物大脑要快得多,
 但即使是像鸽子一样小的大脑,能力也远大于电子计算机.
@@ -1034,7 +1017,7 @@ y=3.0 差了很多,根据先前相同的推理,我们希望直线不经过点,�
 </p>
 
 
-<div id="org1447ec6" class="figure">
+<div id="orgc3b1e5b" class="figure">
 <p><img src="imgs/00031.jpeg" alt="00031.jpeg" />
 </p>
 </div>
@@ -1046,7 +1029,7 @@ y=3.0 差了很多,根据先前相同的推理,我们希望直线不经过点,�
 </p>
 
 
-<div id="org6343ab6" class="figure">
+<div id="org961aad8" class="figure">
 <p><img src="imgs/00182.gif" alt="00182.gif" />
 </p>
 </div>
@@ -1096,7 +1079,7 @@ S 函数,有时也称为逻辑函数,其表达式为:
 </p>
 
 
-<div id="orgc328486" class="figure">
+<div id="org5b34565" class="figure">
 <p><img src="imgs/00185.jpeg" alt="00185.jpeg" />
 </p>
 </div>
@@ -1111,7 +1094,7 @@ S 函数,有时也称为逻辑函数,其表达式为:
 </p>
 
 
-<div id="org701be10" class="figure">
+<div id="orgfb584f7" class="figure">
 <p><img src="imgs/00187.jpeg" alt="00187.jpeg" />
 </p>
 </div>
@@ -1127,7 +1110,7 @@ S 函数,有时也称为逻辑函数,其表达式为:
 </p>
 
 
-<div id="org1984a22" class="figure">
+<div id="org9eca551" class="figure">
 <p><img src="imgs/00189.jpeg" alt="00189.jpeg" />
 </p>
 </div>
@@ -1153,7 +1136,7 @@ S 函数,有时也称为逻辑函数,其表达式为:
 </p>
 
 
-<div id="orgec534f6" class="figure">
+<div id="orgdadb0d3" class="figure">
 <p><img src="imgs/00191.jpeg" alt="00191.jpeg" />
 </p>
 </div>
@@ -1169,15 +1152,15 @@ S 函数,有时也称为逻辑函数,其表达式为:
 </div>
 </div>
 
-<div id="outline-container-orgb53d952" class="outline-3">
-<h3 id="orgb53d952">神经网络中追踪信号</h3>
-<div class="outline-text-3" id="text-orgb53d952">
+<div id="outline-container-org256d3de" class="outline-3">
+<h3 id="org256d3de">神经网络中追踪信号</h3>
+<div class="outline-text-3" id="text-org256d3de">
 <p>
 我们使用每层两个的神经元的较小神经网络来演示下神经网络是如何工作的:
 </p>
 
 
-<div id="orgfff86da" class="figure">
+<div id="orge2b32fe" class="figure">
 <p><img src="imgs/00195.jpeg" alt="00195.jpeg" />
 </p>
 </div>
@@ -1187,7 +1170,7 @@ S 函数,有时也称为逻辑函数,其表达式为:
 </p>
 
 
-<div id="org67f885e" class="figure">
+<div id="org21e944f" class="figure">
 <p><img src="imgs/00198.jpeg" alt="00198.jpeg" />
 </p>
 </div>
@@ -1214,7 +1197,7 @@ x 表示一个节点的输入,由于一个节点有上一层每个节点的多�
 </p>
 
 
-<div id="orgf0d41ce" class="figure">
+<div id="org0b669d3" class="figure">
 <p><img src="imgs/00200.jpeg" alt="00200.jpeg" />
 </p>
 </div>
@@ -1235,48 +1218,48 @@ x 表示一个节点的输入,由于一个节点有上一层每个节点的多�
 </div>
 </div>
 </div>
-<div id="outline-container-org81ae6d9" class="outline-2">
-<h2 id="org81ae6d9">使用Python进行DIY</h2>
-<div class="outline-text-2" id="text-org81ae6d9">
+<div id="outline-container-org92e6356" class="outline-2">
+<h2 id="org92e6356">使用Python进行DIY</h2>
+<div class="outline-text-2" id="text-org92e6356">
 </div>
-<div id="outline-container-org48b18bf" class="outline-3">
-<h3 id="org48b18bf">测试 emacs-jupyter</h3>
-<div class="outline-text-3" id="text-org48b18bf">
+<div id="outline-container-orgdc9bcc9" class="outline-3">
+<h3 id="orgdc9bcc9">测试 emacs-jupyter</h3>
+<div class="outline-text-3" id="text-orgdc9bcc9">
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">import</span> sys
-<span style="font-weight: bold;">print</span>(sys.version)
+<pre class="src src-python">     <span style="color: #89DDFF;">import</span> sys
+     <span style="color: #82aaff;">print</span>(sys.version)
 </pre>
 </div>
 
 
 <div class="org-src-container">
-<pre class="src src-jupyter-python">#import matplotlib.pyplot
-#import numpy
-import sys
-print(sys.version)
-#a = numpy.zeros([3,2])
-#a[0,0]=1
-#a[0,1]=2
-#a[1,0]=9
-#a[2,1]=12
-#matplotlib.pyplot.imshow(a,interpolation="nearest")
-#print(a)
+<pre class="src src-jupyter-python">     #import matplotlib.pyplot
+     #import numpy
+     import sys
+     print(sys.version)
+     #a = numpy.zeros([3,2])
+     #a[0,0]=1
+     #a[0,1]=2
+     #a[1,0]=9
+     #a[2,1]=12
+     #matplotlib.pyplot.imshow(a,interpolation="nearest")
+     #print(a)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org5823ebe" class="outline-3">
-<h3 id="org5823ebe">开始制作神经网络</h3>
-<div class="outline-text-3" id="text-org5823ebe">
+<div id="outline-container-orgae0c563" class="outline-3">
+<h3 id="orgae0c563">开始制作神经网络</h3>
+<div class="outline-text-3" id="text-orgae0c563">
 <p>
 从小处开始,然后让程序慢慢长大,这好似构建中等复杂度计算机代码的一种明智的方式.
 </p>
 </div>
 
-<div id="outline-container-orgacf9f54" class="outline-4">
-<h4 id="orgacf9f54">框架代码</h4>
-<div class="outline-text-4" id="text-orgacf9f54">
+<div id="outline-container-orge4fb82d" class="outline-4">
+<h4 id="orge4fb82d">框架代码</h4>
+<div class="outline-text-4" id="text-orge4fb82d">
 <p>
 神经网络类应该至少有三个函数:
 </p>
@@ -1290,35 +1273,35 @@ print(sys.version)
 代码框架:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">neural network class definition</span>
-<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">neuralNetwork</span>:
-    <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">initialize the neutral network.</span>
-    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>():
-        <span style="font-weight: bold;">pass</span>
-    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">train the neural network</span>
-    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">train</span>():
-        <span style="font-weight: bold;">pass</span>
-    <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">query the neural network</span>
-    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">query</span>():
-        <span style="font-weight: bold;">pass</span>
+<pre class="src src-python">      <span style="color: #676E95;"># </span><span style="color: #676E95;">neural network class definition</span>
+      <span style="color: #89DDFF;">class</span> <span style="color: #c792ea;">neuralNetwork</span>:
+          <span style="color: #676E95;">#</span><span style="color: #676E95;">initialize the neutral network.</span>
+          <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">__init__</span>():
+              <span style="color: #89DDFF;">pass</span>
+          <span style="color: #676E95;"># </span><span style="color: #676E95;">train the neural network</span>
+          <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">train</span>():
+              <span style="color: #89DDFF;">pass</span>
+          <span style="color: #676E95;">#</span><span style="color: #676E95;">query the neural network</span>
+          <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">query</span>():
+              <span style="color: #89DDFF;">pass</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orge7a49fa" class="outline-4">
-<h4 id="orge7a49fa">初始化网络</h4>
-<div class="outline-text-4" id="text-orge7a49fa">
+<div id="outline-container-org64ede53" class="outline-4">
+<h4 id="org64ede53">初始化网络</h4>
+<div class="outline-text-4" id="text-org64ede53">
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">initialize the neutral network</span>
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>(<span style="font-weight: bold;">self</span>, inputnodes, hiddennodes, outputnodes, learningrate):
-    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">set number of nodes in each input,hidden,output layer</span>
-    <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">inodes</span> = inputnodes
-    <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">hnodes</span> = hiddennodes
-    <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">onodes</span> = outputnodes
-    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">learning rate</span>
-    <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">lr</span> = learningrate
-    <span style="font-weight: bold;">pass</span>
+<pre class="src src-python">      <span style="color: #676E95;"># </span><span style="color: #676E95;">initialize the neutral network</span>
+      <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">__init__</span>(<span style="color: #89DDFF;">self</span>, inputnodes, hiddennodes, outputnodes, learningrate):
+          <span style="color: #676E95;"># </span><span style="color: #676E95;">set number of nodes in each input,hidden,output layer</span>
+          <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">inodes</span> = inputnodes
+          <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">hnodes</span> = hiddennodes
+          <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">onodes</span> = outputnodes
+          <span style="color: #676E95;"># </span><span style="color: #676E95;">learning rate</span>
+          <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">lr</span> = learningrate
+          <span style="color: #89DDFF;">pass</span>
 </pre>
 </div>
 
@@ -1327,24 +1310,24 @@ print(sys.version)
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">number of input hidden and output nodes</span>
-<span style="font-weight: bold; font-style: italic;">input_nodes</span> = 3
-<span style="font-weight: bold; font-style: italic;">hidden_nodes</span> = 3
-<span style="font-weight: bold; font-style: italic;">output_nodes</span> = 3
+<pre class="src src-python">      <span style="color: #676E95;"># </span><span style="color: #676E95;">number of input hidden and output nodes</span>
+      <span style="color: #ffcb6b;">input_nodes</span> = 3
+      <span style="color: #ffcb6b;">hidden_nodes</span> = 3
+      <span style="color: #ffcb6b;">output_nodes</span> = 3
 
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">learning rate is 0.5</span>
-<span style="font-weight: bold; font-style: italic;">learning_rate</span> = 0.5
+      <span style="color: #676E95;"># </span><span style="color: #676E95;">learning rate is 0.5</span>
+      <span style="color: #ffcb6b;">learning_rate</span> = 0.5
 
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">create instance of neutral network</span>
-<span style="font-weight: bold; font-style: italic;">n</span> = neuralNetwork(input_nodes, hiddennodes, output_nodes, learning_rate)
+      <span style="color: #676E95;"># </span><span style="color: #676E95;">create instance of neutral network</span>
+      <span style="color: #ffcb6b;">n</span> = neuralNetwork(input_nodes, hiddennodes, output_nodes, learning_rate)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org76cac7a" class="outline-4">
-<h4 id="org76cac7a">权重&#x2013;网络的核心</h4>
-<div class="outline-text-4" id="text-org76cac7a">
+<div id="outline-container-org7d195ea" class="outline-4">
+<h4 id="org7d195ea">权重&#x2013;网络的核心</h4>
+<div class="outline-text-4" id="text-org7d195ea">
 <p>
 前面我们知道使用矩阵可以简明地表达权重.所以我们可以创建:
 </p>
@@ -1362,7 +1345,7 @@ hidden_nodes 乘以 output_nodes.</li>
 columns.
 </p>
 <div class="org-src-container">
-<pre class="src src-python">numpy.random.rand(rows,columns)
+<pre class="src src-python">      numpy.random.rand(rows,columns)
 </pre>
 </div>
 <p>
@@ -1373,8 +1356,8 @@ numpy 函数的使用手册可以在互联网上查找.
 下面显示了生成3×3的numpy数组.数组中每个值都是 0-1的随机值.
 </p>
 <div class="org-src-container">
-<pre class="src src-jupyter-python">import numpy
-numpy.random.rand(3, 3)
+<pre class="src src-jupyter-python">      import numpy
+      numpy.random.rand(3, 3)
 </pre>
 </div>
 
@@ -1392,8 +1375,8 @@ array([[0.89201918, 0.37893307, 0.3509575 ],
 </p>
 
 <div class="org-src-container">
-<pre class="src src-jupyter-python">import numpy
-numpy.random.rand(3, 3) - 0.5
+<pre class="src src-jupyter-python">      import numpy
+      numpy.random.rand(3, 3) - 0.5
 </pre>
 </div>
 
@@ -1411,11 +1394,11 @@ array([[-0.38037314, -0.47892486, -0.13405653],
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">link weight matrices, with and who weights inside the arrays are  w_i_j, where link is from node i to node j in the next layer</span>
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">w11 w21</span>
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">w12 w22 etc.</span>
-<span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">wih</span> = (numpy.random.rand(<span style="font-weight: bold;">self</span>.hnodes, <span style="font-weight: bold;">self</span>.inodes) - 0.5)
-<span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">who</span> = (numpy.random.rand(<span style="font-weight: bold;">self</span>.hnodes, <span style="font-weight: bold;">self</span>.onodes) - 0.5)
+<pre class="src src-python">      <span style="color: #676E95;"># </span><span style="color: #676E95;">link weight matrices, with and who weights inside the arrays are  w_i_j, where link is from node i to node j in the next layer</span>
+      <span style="color: #676E95;"># </span><span style="color: #676E95;">w11 w21</span>
+      <span style="color: #676E95;"># </span><span style="color: #676E95;">w12 w22 etc.</span>
+      <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">wih</span> = (numpy.random.rand(<span style="color: #89DDFF;">self</span>.hnodes, <span style="color: #89DDFF;">self</span>.inodes) - 0.5)
+      <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">who</span> = (numpy.random.rand(<span style="color: #89DDFF;">self</span>.hnodes, <span style="color: #89DDFF;">self</span>.onodes) - 0.5)
 </pre>
 </div>
 
@@ -1425,9 +1408,9 @@ array([[-0.38037314, -0.47892486, -0.13405653],
 </div>
 </div>
 
-<div id="outline-container-org51183c2" class="outline-4">
-<h4 id="org51183c2">可选: 较复杂的权重</h4>
-<div class="outline-text-4" id="text-org51183c2">
+<div id="outline-container-orgc6e1822" class="outline-4">
+<h4 id="orgc6e1822">可选: 较复杂的权重</h4>
+<div class="outline-text-4" id="text-orgc6e1822">
 <p>
 我们可以选择一种简单却流行的优化初始权重的方式.
 </p>
@@ -1442,8 +1425,8 @@ numpy 库可以帮助我们实现这点. <code>numpy.random.normal()</code> 函�
 此外,我们使用下一层的节点数的开方最为标准方差来初始化权重.
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">wih</span> = numpy.random.normal(0.0, <span style="font-weight: bold;">pow</span>(<span style="font-weight: bold;">self</span>.hnodes, -5), (<span style="font-weight: bold;">self</span>.hnodes, <span style="font-weight: bold;">self</span>.inodes))
-<span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">who</span> = numpy.random.normal(0.0, <span style="font-weight: bold;">pow</span>(<span style="font-weight: bold;">self</span>.onodes, -5), (<span style="font-weight: bold;">self</span>.hnodes, <span style="font-weight: bold;">self</span>.onodes))
+<pre class="src src-python">      <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">wih</span> = numpy.random.normal(0.0, <span style="color: #82aaff;">pow</span>(<span style="color: #89DDFF;">self</span>.hnodes, -5), (<span style="color: #89DDFF;">self</span>.hnodes, <span style="color: #89DDFF;">self</span>.inodes))
+      <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">who</span> = numpy.random.normal(0.0, <span style="color: #82aaff;">pow</span>(<span style="color: #89DDFF;">self</span>.onodes, -5), (<span style="color: #89DDFF;">self</span>.hnodes, <span style="color: #89DDFF;">self</span>.onodes))
 </pre>
 </div>
 <p>
@@ -1452,9 +1435,9 @@ normal 函数第一个参数是正态分布的中心,第二个参数是标准方
 </div>
 </div>
 
-<div id="outline-container-orgff0fa4e" class="outline-4">
-<h4 id="orgff0fa4e">查询网络</h4>
-<div class="outline-text-4" id="text-orgff0fa4e">
+<div id="outline-container-org1344538" class="outline-4">
+<h4 id="org1344538">查询网络</h4>
+<div class="outline-text-4" id="text-org1344538">
 <p>
 根据逻辑,我们因该开始填充 train() 函数.让我们先推迟一下这一步,来先编写简单的
 query() 函数,这会给我们更多时间来逐步建立信心,获得使用Python 和神经网络对象
@@ -1472,7 +1455,7 @@ query() 函数接受神经网络的输入,返回网络的输出.
 下面是python代码完成上面的矩阵乘法:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">hidden_inputs</span> = numpy.dot(<span style="font-weight: bold;">self</span>.wih, inputs)
+<pre class="src src-python">      <span style="color: #ffcb6b;">hidden_inputs</span> = numpy.dot(<span style="color: #89DDFF;">self</span>.wih, inputs)
 </pre>
 </div>
 <p>
@@ -1482,7 +1465,7 @@ query() 函数接受神经网络的输入,返回网络的输出.
 导入 expit():
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">from</span> scipy.special <span style="font-weight: bold;">import</span> expit
+<pre class="src src-python">     <span style="color: #89DDFF;">from</span> scipy.special <span style="color: #89DDFF;">import</span> expit
 </pre>
 </div>
 <p>
@@ -1492,7 +1475,7 @@ query() 函数接受神经网络的输入,返回网络的输出.
 下面定义了希望使用的激活函数:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">activation_function</span> = <span style="font-weight: bold;">lambda</span> x: expit(x)
+<pre class="src src-python">     <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">activation_function</span> = <span style="color: #89DDFF;">lambda</span> x: expit(x)
 </pre>
 </div>
 <p>
@@ -1504,7 +1487,7 @@ self.activation_function, 所以我们可以通过 self.activation_function() �
 回到给隐藏层节点的输入信号应用激活函数生成隐藏层的输出信号:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">hidden_outputs</span> = <span style="font-weight: bold;">self</span>.activation_function(hidden_inputs)
+<pre class="src src-python">     <span style="color: #ffcb6b;">hidden_outputs</span> = <span style="color: #89DDFF;">self</span>.activation_function(hidden_inputs)
 </pre>
 </div>
 <p>
@@ -1514,66 +1497,66 @@ self.activation_function, 所以我们可以通过 self.activation_function() �
 </p>
 <div class="org-src-container">
 <pre class="src src-python">
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">calculate signals into hidden layer</span>
-<span style="font-weight: bold; font-style: italic;">hidden_inputs</span> = numpy.dot(<span style="font-weight: bold;">self</span>.wih, inputs)
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">calculate signals emerging from hidden layer</span>
-<span style="font-weight: bold; font-style: italic;">hidden_outputs</span> = <span style="font-weight: bold;">self</span>.activation_function(hidden_inputs)
+     <span style="color: #676E95;"># </span><span style="color: #676E95;">calculate signals into hidden layer</span>
+     <span style="color: #ffcb6b;">hidden_inputs</span> = numpy.dot(<span style="color: #89DDFF;">self</span>.wih, inputs)
+     <span style="color: #676E95;"># </span><span style="color: #676E95;">calculate signals emerging from hidden layer</span>
+     <span style="color: #ffcb6b;">hidden_outputs</span> = <span style="color: #89DDFF;">self</span>.activation_function(hidden_inputs)
 
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">calculate signals into final output layer</span>
-<span style="font-weight: bold; font-style: italic;">final_inputs</span> = numpy.dot(<span style="font-weight: bold;">self</span>.who, hidden_outputs)
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">calculate the signals emerging from final output layer</span>
-<span style="font-weight: bold; font-style: italic;">final_outputs</span> = <span style="font-weight: bold;">self</span>.activation_function(final_inputs)
+     <span style="color: #676E95;"># </span><span style="color: #676E95;">calculate signals into final output layer</span>
+     <span style="color: #ffcb6b;">final_inputs</span> = numpy.dot(<span style="color: #89DDFF;">self</span>.who, hidden_outputs)
+     <span style="color: #676E95;"># </span><span style="color: #676E95;">calculate the signals emerging from final output layer</span>
+     <span style="color: #ffcb6b;">final_outputs</span> = <span style="color: #89DDFF;">self</span>.activation_function(final_inputs)
 
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org5143add" class="outline-4">
-<h4 id="org5143add">目前为止的所有代码</h4>
-<div class="outline-text-4" id="text-org5143add">
+<div id="outline-container-org2a9fd1b" class="outline-4">
+<h4 id="org2a9fd1b">目前为止的所有代码</h4>
+<div class="outline-text-4" id="text-org2a9fd1b">
 <p>
 让我们检查一下已经构建好的代码:
 </p>
 <div class="org-src-container">
-<pre class="src src-jupyter-python"># neural network class definition
-import numpy
-from scipy.special import expit
-class neuralNetwork:
-    #initialize the neutral network.
-    def __init__(self, inputnodes, hiddennodes, outputnodes, learningrate):
-        # set number of nodes in each input,hidden,output layer
-        self.inodes = inputnodes
-        self.hnodes = hiddennodes
-        self.onodes = outputnodes
-        # learning rate
-        self.lr = learningrate
-        self.wih = numpy.random.normal(0.0, pow(self.hnodes, -0.5), (self.hnodes, self.inodes))
-        self.who = numpy.random.normal(0.0, pow(self.onodes, -0.5), (self.onodes, self.hnodes))
-        self.activation_function = lambda x: expit(x)
-        pass
-    # train the neural network
-    def train():
-        pass
-    #query the neural network
-    def query(self, inputs_list):
-        # convert inputs list to 2d array
-        inputs = numpy.array(inputs_list, ndmin=2).T
-        # calculate signals into hidden layer
-        hidden_inputs = numpy.dot(self.wih, inputs)
-        # calculate the signals emerging form hidden layer
-        hidden_outputs = self.activation_function(hidden_inputs)
-        # calculate the signals into final output layer
-        final_inputs = numpy.dot(self.who, hidden_outputs)
-        # calculate the signals emerging from final output layer
-        final_outputs = self.activation_function(final_inputs)
-        return final_outputs
-input_nodes = 3
-hidden_nodes = 3
-output_nodes= 3
-learning_rate = 0.3
-n = neuralNetwork(input_nodes, hidden_nodes,output_nodes, learning_rate)
-print(n.query([1.0, 0.5, -1.5]))
+<pre class="src src-jupyter-python">      # neural network class definition
+      import numpy
+      from scipy.special import expit
+      class neuralNetwork:
+          #initialize the neutral network.
+          def __init__(self, inputnodes, hiddennodes, outputnodes, learningrate):
+              # set number of nodes in each input,hidden,output layer
+              self.inodes = inputnodes
+              self.hnodes = hiddennodes
+              self.onodes = outputnodes
+              # learning rate
+              self.lr = learningrate
+              self.wih = numpy.random.normal(0.0, pow(self.hnodes, -0.5), (self.hnodes, self.inodes))
+              self.who = numpy.random.normal(0.0, pow(self.onodes, -0.5), (self.onodes, self.hnodes))
+              self.activation_function = lambda x: expit(x)
+              pass
+          # train the neural network
+          def train():
+              pass
+          #query the neural network
+          def query(self, inputs_list):
+              # convert inputs list to 2d array
+              inputs = numpy.array(inputs_list, ndmin=2).T
+              # calculate signals into hidden layer
+              hidden_inputs = numpy.dot(self.wih, inputs)
+              # calculate the signals emerging form hidden layer
+              hidden_outputs = self.activation_function(hidden_inputs)
+              # calculate the signals into final output layer
+              final_inputs = numpy.dot(self.who, hidden_outputs)
+              # calculate the signals emerging from final output layer
+              final_outputs = self.activation_function(final_inputs)
+              return final_outputs
+      input_nodes = 3
+      hidden_nodes = 3
+      output_nodes= 3
+      learning_rate = 0.3
+      n = neuralNetwork(input_nodes, hidden_nodes,output_nodes, learning_rate)
+      print(n.query([1.0, 0.5, -1.5]))
 </pre>
 </div>
 
@@ -1585,9 +1568,9 @@ print(n.query([1.0, 0.5, -1.5]))
 </div>
 </div>
 
-<div id="outline-container-org1d76757" class="outline-4">
-<h4 id="org1d76757">训练网络</h4>
-<div class="outline-text-4" id="text-org1d76757">
+<div id="outline-container-org314ca61" class="outline-4">
+<h4 id="org314ca61">训练网络</h4>
+<div class="outline-text-4" id="text-org314ca61">
 <p>
 现在来填充较为复杂的训练任务,训练任务分为两个部分:
 </p>
@@ -1600,20 +1583,20 @@ print(n.query([1.0, 0.5, -1.5]))
 第一部分就是查询函数的代码:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">def</span> <span style="font-weight: bold;">train</span>(<span style="font-weight: bold;">self</span>, input_list, targets_list):
-    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">convert input list to 2d array</span>
-    <span style="font-weight: bold; font-style: italic;">inputs</span> = numpy.array(input_list, ndmin=2).T
-    <span style="font-weight: bold; font-style: italic;">targets</span> = numpy.array(targets_list, ndmin=2).T
-    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">calculate signals into hidden layer</span>
-    <span style="font-weight: bold; font-style: italic;">hidden_inputs</span> = numpy.dot(<span style="font-weight: bold;">self</span>.wih, inputs)
-    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">calculate signals emerging from hidden layer</span>
-    <span style="font-weight: bold; font-style: italic;">hidden_outputs</span> = <span style="font-weight: bold;">self</span>.activation_function(hidden_inputs)
+<pre class="src src-python">      <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">train</span>(<span style="color: #89DDFF;">self</span>, input_list, targets_list):
+          <span style="color: #676E95;"># </span><span style="color: #676E95;">convert input list to 2d array</span>
+          <span style="color: #ffcb6b;">inputs</span> = numpy.array(input_list, ndmin=2).T
+          <span style="color: #ffcb6b;">targets</span> = numpy.array(targets_list, ndmin=2).T
+          <span style="color: #676E95;"># </span><span style="color: #676E95;">calculate signals into hidden layer</span>
+          <span style="color: #ffcb6b;">hidden_inputs</span> = numpy.dot(<span style="color: #89DDFF;">self</span>.wih, inputs)
+          <span style="color: #676E95;"># </span><span style="color: #676E95;">calculate signals emerging from hidden layer</span>
+          <span style="color: #ffcb6b;">hidden_outputs</span> = <span style="color: #89DDFF;">self</span>.activation_function(hidden_inputs)
 
-    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">calculate signals into final output layer</span>
-    <span style="font-weight: bold; font-style: italic;">final_inputs</span> = numpy.dot(<span style="font-weight: bold;">self</span>.who, hidden_inputs)
-    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">calculate signals emerging from final output layer</span>
-    <span style="font-weight: bold; font-style: italic;">final_outputs</span> = <span style="font-weight: bold;">self</span>.activation_function(final_inputs)
-    <span style="font-weight: bold;">pass</span>
+          <span style="color: #676E95;"># </span><span style="color: #676E95;">calculate signals into final output layer</span>
+          <span style="color: #ffcb6b;">final_inputs</span> = numpy.dot(<span style="color: #89DDFF;">self</span>.who, hidden_inputs)
+          <span style="color: #676E95;"># </span><span style="color: #676E95;">calculate signals emerging from final output layer</span>
+          <span style="color: #ffcb6b;">final_outputs</span> = <span style="color: #89DDFF;">self</span>.activation_function(final_inputs)
+          <span style="color: #89DDFF;">pass</span>
 </pre>
 </div>
 <p>
@@ -1625,8 +1608,8 @@ print(n.query([1.0, 0.5, -1.5]))
 targets_list 和矩阵 final_inputs 中每个对应元素相减得到.Python 代码非常简单:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">error is the (target - actual)</span>
-<span style="font-weight: bold; font-style: italic;">output_errors</span> = targets - final_outputs
+<pre class="src src-python">      <span style="color: #676E95;"># </span><span style="color: #676E95;">error is the (target - actual)</span>
+      <span style="color: #ffcb6b;">output_errors</span> = targets - final_outputs
 </pre>
 </div>
 <p>
@@ -1635,8 +1618,8 @@ targets_list 和矩阵 final_inputs 中每个对应元素相减得到.Python 代
 使用 Python 代码计算十分简单:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">hidden layer error is the output_errors, split by weights, recombined at hidden nodes</span>
-<span style="font-weight: bold; font-style: italic;">hidden_errors</span> = numpy.dot(<span style="font-weight: bold;">self</span>.who.T, output_errors)
+<pre class="src src-python">      <span style="color: #676E95;"># </span><span style="color: #676E95;">hidden layer error is the output_errors, split by weights, recombined at hidden nodes</span>
+      <span style="color: #ffcb6b;">hidden_errors</span> = numpy.dot(<span style="color: #89DDFF;">self</span>.who.T, output_errors)
 </pre>
 </div>
 <p>
@@ -1652,18 +1635,18 @@ Python 代码中,转置很容易实现.
 首先为隐藏层和最终层之间的权重进行编码:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">update the weights for the links between the hidden and output layers</span>
-<span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">who</span> += <span style="font-weight: bold;">self</span>.lr * numpu.dot((output_errors * final_outputs * (1.0 - final_outputs)), numpy.transpose(hidden_outputs))
+<pre class="src src-python">      <span style="color: #676E95;"># </span><span style="color: #676E95;">update the weights for the links between the hidden and output layers</span>
+      <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">who</span> += <span style="color: #89DDFF;">self</span>.lr * numpu.dot((output_errors * final_outputs * (1.0 - final_outputs)), numpy.transpose(hidden_outputs))
 </pre>
 </div>
 <p>
 输入层和隐藏层之间的权重代码也类似,下面是两个权重的代码:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">update the weights for the links between the hidden and output layers</span>
-<span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">who</span> += <span style="font-weight: bold;">self</span>.lr * numpu.dot((output_errors * final_outputs * (1.0 - final_outputs)), numpy.transpose(hidden_outputs))
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">update the weights for the links between the hidden and output layers</span>
-<span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">wih</span> += <span style="font-weight: bold;">self</span>.lr * numpu.dot((hidden_errors * hidden_outputs * (1.0 - hidden_outputs)), numpy.transpose(inputs))
+<pre class="src src-python">      <span style="color: #676E95;"># </span><span style="color: #676E95;">update the weights for the links between the hidden and output layers</span>
+      <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">who</span> += <span style="color: #89DDFF;">self</span>.lr * numpu.dot((output_errors * final_outputs * (1.0 - final_outputs)), numpy.transpose(hidden_outputs))
+      <span style="color: #676E95;"># </span><span style="color: #676E95;">update the weights for the links between the hidden and output layers</span>
+      <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">wih</span> += <span style="color: #89DDFF;">self</span>.lr * numpu.dot((hidden_errors * hidden_outputs * (1.0 - hidden_outputs)), numpy.transpose(inputs))
 </pre>
 </div>
 <p>
@@ -1672,59 +1655,59 @@ ok 完成了更新矩阵的计算.
 </div>
 </div>
 
-<div id="outline-container-orgc860d68" class="outline-4">
-<h4 id="orgc860d68">完整的神经网络代码</h4>
-<div class="outline-text-4" id="text-orgc860d68">
+<div id="outline-container-orgc6c3aab" class="outline-4">
+<h4 id="orgc6c3aab">完整的神经网络代码</h4>
+<div class="outline-text-4" id="text-orgc6c3aab">
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">neural network class definition</span>
-<span style="font-weight: bold;">import</span> numpy
-<span style="font-weight: bold;">from</span> scipy.special <span style="font-weight: bold;">import</span> expit
-<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">neuralNetwork</span>:
+<pre class="src src-python">      <span style="color: #676E95;"># </span><span style="color: #676E95;">neural network class definition</span>
+      <span style="color: #89DDFF;">import</span> numpy
+      <span style="color: #89DDFF;">from</span> scipy.special <span style="color: #89DDFF;">import</span> expit
+      <span style="color: #89DDFF;">class</span> <span style="color: #c792ea;">neuralNetwork</span>:
 
-    <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">initialize the neutral network.</span>
-    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>(<span style="font-weight: bold;">self</span>, inputnodes, hiddennodes, outputnodes, learningrate):
-        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">set number of nodes in each input,hidden,output layer</span>
-        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">inodes</span> = inputnodes
-        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">hnodes</span> = hiddennodes
-        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">onodes</span> = outputnodes
-        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">learning rate</span>
-        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">lr</span> = learningrate
-        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">wih</span> = numpy.random.normal(0.0, <span style="font-weight: bold;">pow</span>(<span style="font-weight: bold;">self</span>.hnodes, -0.5), (<span style="font-weight: bold;">self</span>.hnodes, <span style="font-weight: bold;">self</span>.inodes))
-        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">who</span> = numpy.random.normal(0.0, <span style="font-weight: bold;">pow</span>(<span style="font-weight: bold;">self</span>.onodes, -0.5), (<span style="font-weight: bold;">self</span>.onodes, <span style="font-weight: bold;">self</span>.hnodes))
-        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">activation_function</span> = <span style="font-weight: bold;">lambda</span> x: expit(x)
-        <span style="font-weight: bold;">pass</span>
-    <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">train the neural network</span>
-    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">train</span>(<span style="font-weight: bold;">self</span>, input_list, targets_list):
-        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">convert input list to 2d array</span>
-        <span style="font-weight: bold; font-style: italic;">inputs</span> = numpy.array(input_list, ndmin=2).T
-        <span style="font-weight: bold; font-style: italic;">targets</span> = numpy.array(targets_list, ndmin=2).T
-        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">calculate signals into hidden layer</span>
-        <span style="font-weight: bold; font-style: italic;">hidden_inputs</span> = numpy.dot(<span style="font-weight: bold;">self</span>.wih, inputs)
-        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">calculate signals emerging from hidden layer</span>
-        <span style="font-weight: bold; font-style: italic;">hidden_outputs</span> = <span style="font-weight: bold;">self</span>.activation_function(hidden_inputs)
-        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">calculate signals into final output layer</span>
-        <span style="font-weight: bold; font-style: italic;">final_inputs</span> = numpy.dot(<span style="font-weight: bold;">self</span>.who, hidden_inputs)
-        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">calculate signals emerging from final output layer</span>
-        <span style="font-weight: bold; font-style: italic;">final_outputs</span> = <span style="font-weight: bold;">self</span>.activation_function(final_inputs)
-        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">update the weights for the links between the hidden and output layers</span>
-        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">who</span> += <span style="font-weight: bold;">self</span>.lr * numpy.dot((output_errors * final_outputs * (1.0 - final_outputs)), numpy.transpose(hidden_outputs))
-        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">update the weights for the links between the hidden and output layers</span>
-        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">wih</span> += <span style="font-weight: bold;">self</span>.lr * numpy.dot((hidden_errors * hidden_outputs * (1.0 - hidden_outputs)), numpy.transpose(inputs))
-        <span style="font-weight: bold;">pass</span>
+          <span style="color: #676E95;">#</span><span style="color: #676E95;">initialize the neutral network.</span>
+          <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">__init__</span>(<span style="color: #89DDFF;">self</span>, inputnodes, hiddennodes, outputnodes, learningrate):
+              <span style="color: #676E95;"># </span><span style="color: #676E95;">set number of nodes in each input,hidden,output layer</span>
+              <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">inodes</span> = inputnodes
+              <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">hnodes</span> = hiddennodes
+              <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">onodes</span> = outputnodes
+              <span style="color: #676E95;"># </span><span style="color: #676E95;">learning rate</span>
+              <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">lr</span> = learningrate
+              <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">wih</span> = numpy.random.normal(0.0, <span style="color: #82aaff;">pow</span>(<span style="color: #89DDFF;">self</span>.hnodes, -0.5), (<span style="color: #89DDFF;">self</span>.hnodes, <span style="color: #89DDFF;">self</span>.inodes))
+              <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">who</span> = numpy.random.normal(0.0, <span style="color: #82aaff;">pow</span>(<span style="color: #89DDFF;">self</span>.onodes, -0.5), (<span style="color: #89DDFF;">self</span>.onodes, <span style="color: #89DDFF;">self</span>.hnodes))
+              <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">activation_function</span> = <span style="color: #89DDFF;">lambda</span> x: expit(x)
+              <span style="color: #89DDFF;">pass</span>
+          <span style="color: #676E95;"># </span><span style="color: #676E95;">train the neural network</span>
+          <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">train</span>(<span style="color: #89DDFF;">self</span>, input_list, targets_list):
+              <span style="color: #676E95;"># </span><span style="color: #676E95;">convert input list to 2d array</span>
+              <span style="color: #ffcb6b;">inputs</span> = numpy.array(input_list, ndmin=2).T
+              <span style="color: #ffcb6b;">targets</span> = numpy.array(targets_list, ndmin=2).T
+              <span style="color: #676E95;"># </span><span style="color: #676E95;">calculate signals into hidden layer</span>
+              <span style="color: #ffcb6b;">hidden_inputs</span> = numpy.dot(<span style="color: #89DDFF;">self</span>.wih, inputs)
+              <span style="color: #676E95;"># </span><span style="color: #676E95;">calculate signals emerging from hidden layer</span>
+              <span style="color: #ffcb6b;">hidden_outputs</span> = <span style="color: #89DDFF;">self</span>.activation_function(hidden_inputs)
+              <span style="color: #676E95;"># </span><span style="color: #676E95;">calculate signals into final output layer</span>
+              <span style="color: #ffcb6b;">final_inputs</span> = numpy.dot(<span style="color: #89DDFF;">self</span>.who, hidden_inputs)
+              <span style="color: #676E95;"># </span><span style="color: #676E95;">calculate signals emerging from final output layer</span>
+              <span style="color: #ffcb6b;">final_outputs</span> = <span style="color: #89DDFF;">self</span>.activation_function(final_inputs)
+              <span style="color: #676E95;"># </span><span style="color: #676E95;">update the weights for the links between the hidden and output layers</span>
+              <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">who</span> += <span style="color: #89DDFF;">self</span>.lr * numpy.dot((output_errors * final_outputs * (1.0 - final_outputs)), numpy.transpose(hidden_outputs))
+              <span style="color: #676E95;"># </span><span style="color: #676E95;">update the weights for the links between the hidden and output layers</span>
+              <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">wih</span> += <span style="color: #89DDFF;">self</span>.lr * numpy.dot((hidden_errors * hidden_outputs * (1.0 - hidden_outputs)), numpy.transpose(inputs))
+              <span style="color: #89DDFF;">pass</span>
 
-    <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">query the neural network</span>
-    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">query</span>(<span style="font-weight: bold;">self</span>, inputs_list):
-        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">convert inputs list to 2d array</span>
-        <span style="font-weight: bold; font-style: italic;">inputs</span> = numpy.array(inputs_list, ndmin=2).T
-        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">calculate signals into hidden layer</span>
-        <span style="font-weight: bold; font-style: italic;">hidden_inputs</span> = numpy.dot(<span style="font-weight: bold;">self</span>.wih, inputs)
-        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">calculate the signals emerging form hidden layer</span>
-        <span style="font-weight: bold; font-style: italic;">hidden_outputs</span> = <span style="font-weight: bold;">self</span>.activation_function(hidden_inputs)
-        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">calculate the signals into final output layer</span>
-        <span style="font-weight: bold; font-style: italic;">final_inputs</span> = numpy.dot(<span style="font-weight: bold;">self</span>.who, hidden_outputs)
-        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">calculate the signals emerging from final output layer</span>
-        <span style="font-weight: bold; font-style: italic;">final_outputs</span> = <span style="font-weight: bold;">self</span>.activation_function(final_inputs)
-        <span style="font-weight: bold;">return</span> final_outputs
+          <span style="color: #676E95;">#</span><span style="color: #676E95;">query the neural network</span>
+          <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">query</span>(<span style="color: #89DDFF;">self</span>, inputs_list):
+              <span style="color: #676E95;"># </span><span style="color: #676E95;">convert inputs list to 2d array</span>
+              <span style="color: #ffcb6b;">inputs</span> = numpy.array(inputs_list, ndmin=2).T
+              <span style="color: #676E95;"># </span><span style="color: #676E95;">calculate signals into hidden layer</span>
+              <span style="color: #ffcb6b;">hidden_inputs</span> = numpy.dot(<span style="color: #89DDFF;">self</span>.wih, inputs)
+              <span style="color: #676E95;"># </span><span style="color: #676E95;">calculate the signals emerging form hidden layer</span>
+              <span style="color: #ffcb6b;">hidden_outputs</span> = <span style="color: #89DDFF;">self</span>.activation_function(hidden_inputs)
+              <span style="color: #676E95;"># </span><span style="color: #676E95;">calculate the signals into final output layer</span>
+              <span style="color: #ffcb6b;">final_inputs</span> = numpy.dot(<span style="color: #89DDFF;">self</span>.who, hidden_outputs)
+              <span style="color: #676E95;"># </span><span style="color: #676E95;">calculate the signals emerging from final output layer</span>
+              <span style="color: #ffcb6b;">final_outputs</span> = <span style="color: #89DDFF;">self</span>.activation_function(final_inputs)
+              <span style="color: #89DDFF;">return</span> final_outputs
 
 </pre>
 </div>
@@ -1737,9 +1720,9 @@ ok 完成了更新矩阵的计算.
 </div>
 </div>
 
-<div id="outline-container-org5517d43" class="outline-3">
-<h3 id="org5517d43">手写数字的数据集MNIST</h3>
-<div class="outline-text-3" id="text-org5517d43">
+<div id="outline-container-org6c809f1" class="outline-3">
+<h3 id="org6c809f1">手写数字的数据集MNIST</h3>
+<div class="outline-text-3" id="text-org6c809f1">
 <p>
 手写数字的MNIST 数据集可以在网站 <a href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a> 里获得.
 这个网页也列出了在学习和正确识别手写字符方面,新旧想法的表现如何.
@@ -1769,9 +1752,9 @@ ok 完成了更新矩阵的计算.
 下面先使用 Python 来打开文件并获取其中数据:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">data_file</span> = <span style="font-weight: bold;">open</span>(<span style="font-style: italic;">"mnist_dataset/mnist_train_100.csv"</span>, <span style="font-style: italic;">'r'</span>)
-<span style="font-weight: bold; font-style: italic;">data_list</span> = data_file.readlines()
-data_file.close()
+<pre class="src src-python">     <span style="color: #ffcb6b;">data_file</span> = <span style="color: #82aaff;">open</span>(<span style="color: #c3e88d;">"mnist_dataset/mnist_train_100.csv"</span>, <span style="color: #c3e88d;">'r'</span>)
+     <span style="color: #ffcb6b;">data_list</span> = data_file.readlines()
+     data_file.close()
 </pre>
 </div>
 <p>
@@ -1793,10 +1776,10 @@ data_file 变量.
 下面我们来试试这种方式打开10条记录的文件:
 </p>
 <div class="org-src-container">
-<pre class="src src-jupyter-python">data_file = open("/home/kamisama/Downloads/mnist_test_10.csv", 'r')
-data_list = data_file.readlines()
-data_file.close()
-len(data_list)
+<pre class="src src-jupyter-python">     data_file = open("/home/kamisama/Downloads/mnist_test_10.csv", 'r')
+     data_list = data_file.readlines()
+     data_file.close()
+     len(data_list)
 </pre>
 </div>
 
@@ -1804,7 +1787,7 @@ len(data_list)
 接着我们看看读取的一行内容是什么:
 </p>
 <div class="org-src-container">
-<pre class="src src-jupyter-python">data_list[0]
+<pre class="src src-jupyter-python">     data_list[0]
 </pre>
 </div>
 
@@ -1829,12 +1812,12 @@ len(data_list)
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-jupyter-python">import numpy
-import matplotlib.pyplot
-%matplotlib inline
-all_values = data_list[0].split(',')
-image_array = numpy.asfarray(all_values[1:]).reshape((28,28))
-matplotlib.pyplot.imshow(image_array, cmap='Greys', interpolation='None')
+<pre class="src src-jupyter-python">     import numpy
+     import matplotlib.pyplot
+     %matplotlib inline
+     all_values = data_list[0].split(',')
+     image_array = numpy.asfarray(all_values[1:]).reshape((28,28))
+     matplotlib.pyplot.imshow(image_array, cmap='Greys', interpolation='None')
 </pre>
 </div>
 
@@ -1843,7 +1826,7 @@ matplotlib.pyplot.imshow(image_array, cmap='Greys', interpolation='None')
 </pre>
 
 
-<div id="org02efb5d" class="figure">
+<div id="org9fe83ef" class="figure">
 <p><img src="./ob-jupyter/783eb55c55f0ee77e2904757086b26102293c1a5.png" alt="783eb55c55f0ee77e2904757086b26102293c1a5.png" />
 </p>
 </div>
@@ -1853,9 +1836,9 @@ numpy.asfarray() 函数将文本字符串转换成实数,并创建这些数字�
 </p>
 </div>
 
-<div id="outline-container-org6341345" class="outline-4">
-<h4 id="org6341345">准备MNIST训练数据</h4>
-<div class="outline-text-4" id="text-org6341345">
+<div id="outline-container-org8305a35" class="outline-4">
+<h4 id="org8305a35">准备MNIST训练数据</h4>
+<div class="outline-text-4" id="text-org8305a35">
 <p>
 我们已经指导如何获取和拆开 MNIST 数据文件中的数据,并理解和可视化这些数据.我
 们要使用这些数据训练神经网络之前,需要想想,我们应该如何准备数据.
@@ -1878,8 +1861,8 @@ numpy.asfarray() 函数将文本字符串转换成实数,并创建这些数字�
 下面是演示代码实现并打印调整后的值
 </p>
 <div class="org-src-container">
-<pre class="src src-jupyter-python">scale_input = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
-print(scale_input)
+<pre class="src src-jupyter-python">      scale_input = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
+      print(scale_input)
 </pre>
 </div>
 
@@ -1913,11 +1896,11 @@ print(scale_input)
 下面代码展示了创建目标矩阵:
 </p>
 <div class="org-src-container">
-<pre class="src src-jupyter-python"># output nodes is 10 (example)
-onodes = 10
-targets = numpy.zeros(onodes) + 0.01
-targets[int(all_values[0])] = 0.99
-print(targets)
+<pre class="src src-jupyter-python">      # output nodes is 10 (example)
+      onodes = 10
+      targets = numpy.zeros(onodes) + 0.01
+      targets[int(all_values[0])] = 0.99
+      print(targets)
 </pre>
 </div>
 
@@ -2017,9 +2000,9 @@ for record in training_data_list:
 </div>
 </div>
 
-<div id="outline-container-org5d218b8" class="outline-4">
-<h4 id="org5d218b8">测试网络</h4>
-<div class="outline-text-4" id="text-org5d218b8">
+<div id="outline-container-org3accd98" class="outline-4">
+<h4 id="org3accd98">测试网络</h4>
+<div class="outline-text-4" id="text-org3accd98">
 <p>
 上面的代码已经使用了较小的子集数据(100条)来训练网络,我们来使用测试数据的10条
 记录来测试神经网络
@@ -2060,7 +2043,7 @@ matplotlib.pyplot.imshow(image_array, cmap="Greys", interpolation="None")
 </pre>
 
 
-<div id="org9a080e7" class="figure">
+<div id="orgc59b173" class="figure">
 <p><img src="./ob-jupyter/05a79ae6b89fc614f93113e7fab9ecad95efcc70.png" alt="05a79ae6b89fc614f93113e7fab9ecad95efcc70.png" />
 </p>
 </div>
@@ -2131,27 +2114,27 @@ for record in test_data_list:
 </pre>
 </div>
 
-<pre class="example" id="orgf8d524a">
-7 correct label
-7 network's answer
-2 correct label
-2 network's answer
-1 correct label
-7 network's answer
-0 correct label
-7 network's answer
-4 correct label
-7 network's answer
-1 correct label
-7 network's answer
-4 correct label
-7 network's answer
-9 correct label
-7 network's answer
-5 correct label
-7 network's answer
-9 correct label
-7 network's answer
+<pre class="example" id="org2bff8a0">
+    7 correct label
+    7 network's answer
+    2 correct label
+    2 network's answer
+    1 correct label
+    7 network's answer
+    0 correct label
+    7 network's answer
+    4 correct label
+    7 network's answer
+    1 correct label
+    7 network's answer
+    4 correct label
+    7 network's answer
+    9 correct label
+    7 network's answer
+    5 correct label
+    7 network's answer
+    9 correct label
+    7 network's answer
 </pre>
 
 <p>
@@ -2312,35 +2295,35 @@ print("performance = ", scorecard_array.sum()/scorecard_array.size)
 </pre>
 </div>
 
-<pre class="example" id="org6377ae5">
-7 correct label
-7 network's answer
-2 correct label
-0 network's answer
-1 correct label
-4 network's answer
-0 correct label
-7 network's answer
-4 correct label
-4 network's answer
-1 correct label
-4 network's answer
-4 correct label
-4 network's answer
-9 correct label
-4 network's answer
-5 correct label
-4 network's answer
-9 correct label
-4 network's answer
-performance =  0.3
+<pre class="example" id="org4c305e9">
+    7 correct label
+    7 network's answer
+    2 correct label
+    0 network's answer
+    1 correct label
+    4 network's answer
+    0 correct label
+    7 network's answer
+    4 correct label
+    4 network's answer
+    1 correct label
+    4 network's answer
+    4 correct label
+    4 network's answer
+    9 correct label
+    4 network's answer
+    5 correct label
+    4 network's answer
+    9 correct label
+    4 network's answer
+    performance =  0.3
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org370d53b" class="outline-4">
-<h4 id="org370d53b">使用完整的数据集进行训练和测试</h4>
-<div class="outline-text-4" id="text-org370d53b">
+<div id="outline-container-org980fcdf" class="outline-4">
+<h4 id="org980fcdf">使用完整的数据集进行训练和测试</h4>
+<div class="outline-text-4" id="text-org980fcdf">
 <p>
 上一节最后的代码已经包含了训练和测试网络性能的代码了,此时改变文件名,就可以使
 用完整的训练数据集和测试数据集进行训练了.
@@ -2475,9 +2458,9 @@ performance =  0.9495
 </div>
 </div>
 
-<div id="outline-container-org542693d" class="outline-4">
-<h4 id="org542693d">一些改进:调整学习率</h4>
-<div class="outline-text-4" id="text-org542693d">
+<div id="outline-container-org5a60705" class="outline-4">
+<h4 id="org5a60705">一些改进:调整学习率</h4>
+<div class="outline-text-4" id="text-org5a60705">
 <p>
 完成的第一个神经网络,只用了简单的思路,简单的代码,就可以在 MNIST 数据集上获得
 准确率大致为95%的性能分数,那我们看看是否可以进行一些简单的改进.
@@ -3025,9 +3008,9 @@ performance =  0.9238
 </div>
 </div>
 
-<div id="outline-container-orga3f6967" class="outline-4">
-<h4 id="orga3f6967">一些改进:多次运行</h4>
-<div class="outline-text-4" id="text-orga3f6967">
+<div id="outline-container-orgfa2a762" class="outline-4">
+<h4 id="orgfa2a762">一些改进:多次运行</h4>
+<div class="outline-text-4" id="text-orgfa2a762">
 <p>
 接下来的改进是可以使用数据集进行重复多次的训练.
 有些人把训练一次称为一个世代,因此,10个世代的训练,意味着整个训练数据集运行程
@@ -3036,20 +3019,20 @@ performance =  0.9238
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">train the neural network</span>
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">go through all records in the training data set</span>
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">epochs is the number of times the training data set is used for training.</span>
-<span style="font-weight: bold; font-style: italic;">epochs</span> = 2
-<span style="font-weight: bold;">for</span> e <span style="font-weight: bold;">in</span> <span style="font-weight: bold;">range</span>(epochs):
-    <span style="font-weight: bold;">for</span> record <span style="font-weight: bold;">in</span> training_data_list:
-        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">split the record by the ',' commas</span>
-        <span style="font-weight: bold; font-style: italic;">all_values</span> = record.split(<span style="font-style: italic;">','</span>)
-        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">scale and shift the inputs</span>
-        <span style="font-weight: bold; font-style: italic;">inputs</span> = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
-        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">create the target output values (all 0.01, except the desired label which is 0.99)</span>
-        <span style="font-weight: bold; font-style: italic;">targets</span> = numpy.zeros(output_nodes) + 0.01
-        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">all_values[0] is the target label for this record</span>
-        targets[<span style="font-weight: bold;">int</span>(all_values[0])] = 0.99
+<pre class="src src-python"><span style="color: #676E95;"># </span><span style="color: #676E95;">train the neural network</span>
+<span style="color: #676E95;"># </span><span style="color: #676E95;">go through all records in the training data set</span>
+<span style="color: #676E95;"># </span><span style="color: #676E95;">epochs is the number of times the training data set is used for training.</span>
+<span style="color: #ffcb6b;">epochs</span> = 2
+<span style="color: #89DDFF;">for</span> e <span style="color: #89DDFF;">in</span> <span style="color: #82aaff;">range</span>(epochs):
+    <span style="color: #89DDFF;">for</span> record <span style="color: #89DDFF;">in</span> training_data_list:
+        <span style="color: #676E95;"># </span><span style="color: #676E95;">split the record by the ',' commas</span>
+        <span style="color: #ffcb6b;">all_values</span> = record.split(<span style="color: #c3e88d;">','</span>)
+        <span style="color: #676E95;"># </span><span style="color: #676E95;">scale and shift the inputs</span>
+        <span style="color: #ffcb6b;">inputs</span> = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
+        <span style="color: #676E95;"># </span><span style="color: #676E95;">create the target output values (all 0.01, except the desired label which is 0.99)</span>
+        <span style="color: #ffcb6b;">targets</span> = numpy.zeros(output_nodes) + 0.01
+        <span style="color: #676E95;"># </span><span style="color: #676E95;">all_values[0] is the target label for this record</span>
+        targets[<span style="color: #82aaff;">int</span>(all_values[0])] = 0.99
         n.train(inputs, targets)
 </pre>
 </div>
@@ -3190,7 +3173,7 @@ performance =  0.9546
 
 
 <p>
-在学习率为0.3使用1个世代的神经网络里,得到的性能是 <a href="#org370d53b">使用完整的数据集进行训练和
+在学习率为0.3使用1个世代的神经网络里,得到的性能是 <a href="#org980fcdf">使用完整的数据集进行训练和
 测试</a> 只提高了一点点.
 像调整学习率一样,使用几个不同的世代进行实验,直觉告诉我们,训练越多,性能越好,
 但实验告诉我们,太多训练会过犹不及,因为网络过度拟合训练数据,因此网络在没有见
@@ -3211,7 +3194,7 @@ performance =  0.9546
 </p>
 
 
-<div id="orgcc9a9a8" class="figure">
+<div id="orgd65b410" class="figure">
 <p><img src="imgs/00151.jpeg" alt="00151.jpeg" />
 </p>
 </div>
@@ -3230,9 +3213,9 @@ performance =  0.9546
 </div>
 </div>
 
-<div id="outline-container-orgdb0c9b5" class="outline-4">
-<h4 id="orgdb0c9b5">改变网络形状</h4>
-<div class="outline-text-4" id="text-orgdb0c9b5">
+<div id="outline-container-org396688b" class="outline-4">
+<h4 id="org396688b">改变网络形状</h4>
+<div class="outline-text-4" id="text-org396688b">
 <p>
 我们还没尝试过改变神经网络的形状,也许我们早就该尝试了,之前一直使用的是100个
 节点的隐藏层.
@@ -3259,7 +3242,7 @@ performance =  0.9546
 </p>
 
 
-<div id="org6a4e63f" class="figure">
+<div id="org325b096" class="figure">
 <p><img src="imgs/00152.jpeg" alt="00152.jpeg" />
 </p>
 </div>
@@ -3272,128 +3255,128 @@ performance =  0.9546
 </p>
 
 <div class="org-src-container">
-<pre class="src src-jupyter-python"># neural network class definition
-import matplotlib.pyplot
-import numpy
-from scipy.special import expit
-class neuralNetwork:
-    #initialize the neutral network.
-    def __init__(self, inputnodes, hiddennodes, outputnodes, learningrate):
-        # set number of nodes in each input,hidden,output layer
-        self.inodes = inputnodes
-        self.hnodes = hiddennodes
-        self.onodes = outputnodes
-        # learning rate
-        self.lr = learningrate
-        self.wih = numpy.random.normal(0.0, pow(self.hnodes, -0.5), (self.hnodes, self.inodes))
-        self.who = numpy.random.normal(0.0, pow(self.onodes, -0.5), (self.onodes, self.hnodes))
-        self.activation_function = lambda x: expit(x)
-        pass
-    # train the neural network
-    def train(self, input_list, targets_list):
-        # convert input list to 2d array
-        inputs = numpy.array(input_list, ndmin=2).T
-        targets = numpy.array(targets_list, ndmin=2).T
-        # calculate signals into hidden layer
-        hidden_inputs = numpy.dot(self.wih, inputs)
-        # calculate signals emerging from hidden layer
-        hidden_outputs = self.activation_function(hidden_inputs)
-        # calculate signals into final output layer
-        final_inputs = numpy.dot(self.who, hidden_outputs)
-        # calculate signals emerging from final output layer
-        final_outputs = self.activation_function(final_inputs)
+<pre class="src src-jupyter-python">      # neural network class definition
+      import matplotlib.pyplot
+      import numpy
+      from scipy.special import expit
+      class neuralNetwork:
+	  #initialize the neutral network.
+	  def __init__(self, inputnodes, hiddennodes, outputnodes, learningrate):
+	      # set number of nodes in each input,hidden,output layer
+	      self.inodes = inputnodes
+	      self.hnodes = hiddennodes
+	      self.onodes = outputnodes
+	      # learning rate
+	      self.lr = learningrate
+	      self.wih = numpy.random.normal(0.0, pow(self.hnodes, -0.5), (self.hnodes, self.inodes))
+	      self.who = numpy.random.normal(0.0, pow(self.onodes, -0.5), (self.onodes, self.hnodes))
+	      self.activation_function = lambda x: expit(x)
+	      pass
+	  # train the neural network
+	  def train(self, input_list, targets_list):
+	      # convert input list to 2d array
+	      inputs = numpy.array(input_list, ndmin=2).T
+	      targets = numpy.array(targets_list, ndmin=2).T
+	      # calculate signals into hidden layer
+	      hidden_inputs = numpy.dot(self.wih, inputs)
+	      # calculate signals emerging from hidden layer
+	      hidden_outputs = self.activation_function(hidden_inputs)
+	      # calculate signals into final output layer
+	      final_inputs = numpy.dot(self.who, hidden_outputs)
+	      # calculate signals emerging from final output layer
+	      final_outputs = self.activation_function(final_inputs)
 
-        # error is the (target - actual)
-        output_errors = targets - final_outputs
+	      # error is the (target - actual)
+	      output_errors = targets - final_outputs
 
-        # hidden layer error is the output_errors, split by weights, recombined at hidden nodes
-        hidden_errors = numpy.dot(self.who.T, output_errors)
+	      # hidden layer error is the output_errors, split by weights, recombined at hidden nodes
+	      hidden_errors = numpy.dot(self.who.T, output_errors)
 
-        # update the weights for the links between the hidden and output layers
-        self.who += self.lr * numpy.dot((output_errors * final_outputs * (1.0 - final_outputs)), numpy.transpose(hidden_outputs))
-        # update the weights for the links between the hidden and output layers
-        self.wih += self.lr * numpy.dot((hidden_errors * hidden_outputs * (1.0 - hidden_outputs)), numpy.transpose(inputs))
-        pass
+	      # update the weights for the links between the hidden and output layers
+	      self.who += self.lr * numpy.dot((output_errors * final_outputs * (1.0 - final_outputs)), numpy.transpose(hidden_outputs))
+	      # update the weights for the links between the hidden and output layers
+	      self.wih += self.lr * numpy.dot((hidden_errors * hidden_outputs * (1.0 - hidden_outputs)), numpy.transpose(inputs))
+	      pass
 
-    #query the neural network
-    def query(self, inputs_list):
-        # convert inputs list to 2d array
-        inputs = numpy.array(inputs_list, ndmin=2).T
-        # calculate signals into hidden layer
-        hidden_inputs = numpy.dot(self.wih, inputs)
-        # calculate the signals emerging form hidden layer
-        hidden_outputs = self.activation_function(hidden_inputs)
-        # calculate the signals into final output layer
-        final_inputs = numpy.dot(self.who, hidden_outputs)
-        # calculate the signals emerging from final output layer
-        final_outputs = self.activation_function(final_inputs)
-        return final_outputs
+	  #query the neural network
+	  def query(self, inputs_list):
+	      # convert inputs list to 2d array
+	      inputs = numpy.array(inputs_list, ndmin=2).T
+	      # calculate signals into hidden layer
+	      hidden_inputs = numpy.dot(self.wih, inputs)
+	      # calculate the signals emerging form hidden layer
+	      hidden_outputs = self.activation_function(hidden_inputs)
+	      # calculate the signals into final output layer
+	      final_inputs = numpy.dot(self.who, hidden_outputs)
+	      # calculate the signals emerging from final output layer
+	      final_outputs = self.activation_function(final_inputs)
+	      return final_outputs
 
-# number of input hidden and output nodes
-input_nodes = 784
-hidden_nodes = 500
-output_nodes = 10
+      # number of input hidden and output nodes
+      input_nodes = 784
+      hidden_nodes = 500
+      output_nodes = 10
 
-# learning rate is 0.3
-learning_rate = 0.2
+      # learning rate is 0.3
+      learning_rate = 0.2
 
-# create instance of neural network
-n = neuralNetwork(input_nodes, hidden_nodes, output_nodes, learning_rate)
+      # create instance of neural network
+      n = neuralNetwork(input_nodes, hidden_nodes, output_nodes, learning_rate)
 
-# load the mnist training data CSV file into a list
-training_data_file = open("/home/kamisama/Downloads/mnist_train.csv", 'r')
-training_data_list = training_data_file.readlines()
-training_data_file.close()
+      # load the mnist training data CSV file into a list
+      training_data_file = open("/home/kamisama/Downloads/mnist_train.csv", 'r')
+      training_data_list = training_data_file.readlines()
+      training_data_file.close()
 
-# train the neural network
-# go through all records in the training data set
-# epochs is the number of times the training data set is used for training.
-epochs = 2
-for e in range(epochs):
-    for record in training_data_list:
-        # split the record by the ',' commas
-        all_values = record.split(',')
-        # scale and shift the inputs
-        inputs = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
-        # create the target output values (all 0.01, except the desired label which is 0.99)
-        targets = numpy.zeros(output_nodes) + 0.01
-        # all_values[0] is the target label for this record
-        targets[int(all_values[0])] = 0.99
-        n.train(inputs, targets)
+      # train the neural network
+      # go through all records in the training data set
+      # epochs is the number of times the training data set is used for training.
+      epochs = 2
+      for e in range(epochs):
+	  for record in training_data_list:
+	      # split the record by the ',' commas
+	      all_values = record.split(',')
+	      # scale and shift the inputs
+	      inputs = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
+	      # create the target output values (all 0.01, except the desired label which is 0.99)
+	      targets = numpy.zeros(output_nodes) + 0.01
+	      # all_values[0] is the target label for this record
+	      targets[int(all_values[0])] = 0.99
+	      n.train(inputs, targets)
 
-# test the neural network
-test_data_file = open("/home/kamisama/Downloads/mnist_test.csv", 'r')
-test_data_list = test_data_file.readlines()
-test_data_file.close()
-# scorecard for how well the network performs, initially empty.
-scorecard = []
-# go through all the records in the test data set
-for record in test_data_list:
-    # split the record by the '.' commas
-    all_values = record.split(',')
-    # correct answer is first value
-    correct_label = int(all_values[0])
-    # print(correct_label, "correct label")
-    # scale and shift the inputs
-    inputs = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
-    # query the network
-    outputs = n.query(inputs)
-    # the index of the highest value corresponds to the label
-    label = numpy.argmax(outputs)
-    # print(label, "network's answer")
-    # append correct or in correct to list
-    if (label == correct_label):
-        # network's answer matches correct answer, add 1 to scorecard
-        scorecard.append(1)
-    else:
-        # network's answer doesn't match correct answer, add 0 to scorecard
-        scorecard.append(0)
-        pass
-    pass
+      # test the neural network
+      test_data_file = open("/home/kamisama/Downloads/mnist_test.csv", 'r')
+      test_data_list = test_data_file.readlines()
+      test_data_file.close()
+      # scorecard for how well the network performs, initially empty.
+      scorecard = []
+      # go through all the records in the test data set
+      for record in test_data_list:
+	  # split the record by the '.' commas
+	  all_values = record.split(',')
+	  # correct answer is first value
+	  correct_label = int(all_values[0])
+	  # print(correct_label, "correct label")
+	  # scale and shift the inputs
+	  inputs = (numpy.asfarray(all_values[1:]) / 255.0 * 0.99) + 0.01
+	  # query the network
+	  outputs = n.query(inputs)
+	  # the index of the highest value corresponds to the label
+	  label = numpy.argmax(outputs)
+	  # print(label, "network's answer")
+	  # append correct or in correct to list
+	  if (label == correct_label):
+	      # network's answer matches correct answer, add 1 to scorecard
+	      scorecard.append(1)
+	  else:
+	      # network's answer doesn't match correct answer, add 0 to scorecard
+	      scorecard.append(0)
+	      pass
+	  pass
 
-# calculate the performance score, the fraction of correct answers
-scorecard_array = numpy.asarray(scorecard)
-print("performance = ", scorecard_array.sum()/scorecard_array.size)
+      # calculate the performance score, the fraction of correct answers
+      scorecard_array = numpy.asarray(scorecard)
+      print("performance = ", scorecard_array.sum()/scorecard_array.size)
 </pre>
 </div>
 
@@ -3411,9 +3394,9 @@ performance =  0.9663
 </div>
 </div>
 
-<div id="outline-container-orgd7c62bf" class="outline-4">
-<h4 id="orgd7c62bf">大功告成!</h4>
-<div class="outline-text-4" id="text-orgd7c62bf">
+<div id="outline-container-orgc15ad2f" class="outline-4">
+<h4 id="orgc15ad2f">大功告成!</h4>
+<div class="outline-text-4" id="text-orgc15ad2f">
 <p>
 回顾这一部分内容,我们只使用先前介绍的简单概念以及简单Python代码,就创建了一个
 神经网络,没有任何多余花哨和神奇的数学,神经网络就已经有了不错的表现.
@@ -3424,12 +3407,12 @@ performance =  0.9663
 </div>
 
 
-<div id="outline-container-org23b3b2e" class="outline-4">
-<h4 id="org23b3b2e">最终代码:</h4>
-<div class="outline-text-4" id="text-org23b3b2e">
+<div id="outline-container-orgce07c67" class="outline-4">
+<h4 id="orgce07c67">最终代码:</h4>
+<div class="outline-text-4" id="text-orgce07c67">
 <p>
 由于网络资源访问的问题,中文版该书贴出了Github 上的到目前为止的最终代码,也就
-是 <a href="#orgdb0c9b5">改变网络形状</a> 这一部分最后面的代码.
+是 <a href="#org396688b">改变网络形状</a> 这一部分最后面的代码.
 </p>
 </div>
 </div>
@@ -3438,18 +3421,18 @@ performance =  0.9663
 
 
 
-<div id="outline-container-orgb4073af" class="outline-2">
-<h2 id="orgb4073af">趣味盎然</h2>
-<div class="outline-text-2" id="text-orgb4073af">
+<div id="outline-container-org6d098dd" class="outline-2">
+<h2 id="org6d098dd">趣味盎然</h2>
+<div class="outline-text-2" id="text-org6d098dd">
 <p>
 这一部分是一些有趣的想法,如果只是想了解神经网络的基本知识,到上一章最后就可以停
 止阅读了.
 </p>
 </div>
 
-<div id="outline-container-orgfb43120" class="outline-3">
-<h3 id="orgfb43120">自己的手写数字</h3>
-<div class="outline-text-3" id="text-orgfb43120">
+<div id="outline-container-orge6197c2" class="outline-3">
+<h3 id="orge6197c2">自己的手写数字</h3>
+<div class="outline-text-3" id="text-orge6197c2">
 <p>
 上面我们使用的是MNIST数据集的数字图片,
 </p>

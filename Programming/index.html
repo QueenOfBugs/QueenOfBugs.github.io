@@ -219,16 +219,16 @@
  |
  <a accesskey="H" href="./sitemap.html"> HOME </a>
 </div><div id="content" class="content">
-<div id="outline-container-orgbb48276" class="outline-2">
-<h2 id="orgbb48276">Language</h2>
+<div id="outline-container-org0e06416" class="outline-2">
+<h2 id="org0e06416">Language</h2>
 </div>
-<div id="outline-container-org8aae962" class="outline-2">
-<h2 id="org8aae962">多线程(multithread, MT) 编程</h2>
-<div class="outline-text-2" id="text-org8aae962">
+<div id="outline-container-org6bbc9eb" class="outline-2">
+<h2 id="org6bbc9eb">多线程(multithread, MT) 编程</h2>
+<div class="outline-text-2" id="text-org6bbc9eb">
 </div>
-<div id="outline-container-org2516851" class="outline-3">
-<h3 id="org2516851">简介/动机</h3>
-<div class="outline-text-3" id="text-org2516851">
+<div id="outline-container-org32dc03c" class="outline-3">
+<h3 id="org32dc03c">简介/动机</h3>
+<div class="outline-text-3" id="text-org32dc03c">
 <p>
 多线程编程出现之前,计算机程序的执行是由单个步骤序列组成的,该序列在主机的 CPU 中
 按照同步顺序执行.无论是任务本身需要按照步骤顺序执行,还是整个程序实际上包含多个子
@@ -292,13 +292,13 @@
 </div>
 </div>
 
-<div id="outline-container-orga179c9e" class="outline-3">
-<h3 id="orga179c9e">线程和进程</h3>
-<div class="outline-text-3" id="text-orga179c9e">
+<div id="outline-container-org9f46cea" class="outline-3">
+<h3 id="org9f46cea">线程和进程</h3>
+<div class="outline-text-3" id="text-org9f46cea">
 </div>
-<div id="outline-container-org0a761da" class="outline-4">
-<h4 id="org0a761da">进程</h4>
-<div class="outline-text-4" id="text-org0a761da">
+<div id="outline-container-org80d9bd6" class="outline-4">
+<h4 id="org80d9bd6">进程</h4>
+<div class="outline-text-4" id="text-org80d9bd6">
 <p>
 程序是存储在磁盘上的可执行文件.只有将其加载到内存中并被操作系统调用,才拥有其生命
 期.
@@ -317,9 +317,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgd3ad2d4" class="outline-4">
-<h4 id="orgd3ad2d4">线程</h4>
-<div class="outline-text-4" id="text-orgd3ad2d4">
+<div id="outline-container-org9b9c290" class="outline-4">
+<h4 id="org9b9c290">线程</h4>
+<div class="outline-text-4" id="text-org9b9c290">
 <p>
 线程与进程类似,不过他们是在同一进程下执行的,并共享相同的上下文.
 可以将线程认为是在一个主进程或"主线程"中并行运行的一些"迷你进程".
@@ -353,18 +353,18 @@
 </div>
 </div>
 
-<div id="outline-container-org5b57008" class="outline-3">
-<h3 id="org5b57008">线程和Python</h3>
-<div class="outline-text-3" id="text-org5b57008">
+<div id="outline-container-orgce1cf18" class="outline-3">
+<h3 id="orgce1cf18">线程和Python</h3>
+<div class="outline-text-3" id="text-orgce1cf18">
 <p>
 这部分讨论如何在Python中使用线程,其中包括全局解释器锁对线程的限制和一个快速的演
 示脚本.
 </p>
 </div>
 
-<div id="outline-container-org9da2fdf" class="outline-4">
-<h4 id="org9da2fdf">全局解释器锁</h4>
-<div class="outline-text-4" id="text-org9da2fdf">
+<div id="outline-container-orga3ef35a" class="outline-4">
+<h4 id="orga3ef35a">全局解释器锁</h4>
+<div class="outline-text-4" id="text-orga3ef35a">
 <p>
 Python 代码的执行是由Python 虚拟机(又名解释器主循环)进行控制的.
 Python 在设计时是这样考虑的:主循环中只能有一个控制线程在执行,就像单核 CPU 系统中
@@ -380,8 +380,10 @@ Python 在设计时是这样考虑的:主循环中只能有一个控制线程在
 <li>设置GIL</li>
 <li>切换进一个线程去执行</li>
 <li>执行下面操作之一:
-a. 指定数量的字节码指令
-b. 线程主动让出控制权(可以调用 time.sleep(0) 来完成.)</li>
+<ol class="org-ol">
+<li>指定数量的字节码指令</li>
+<li>线程主动让出控制权(可以调用 time.sleep(0) 来完成.)</li>
+</ol></li>
 <li>把线程设置回睡眠状态(切出线程).</li>
 <li>解锁GIL.</li>
 <li>重复上述步骤.</li>
@@ -407,9 +409,9 @@ Python 卡爱抚这,你并不需要担心 Python 代码在这些情况下被锁�
 </div>
 </div>
 
-<div id="outline-container-org94e16fc" class="outline-4">
-<h4 id="org94e16fc">退出线程</h4>
-<div class="outline-text-4" id="text-org94e16fc">
+<div id="outline-container-orgd88fcac" class="outline-4">
+<h4 id="orgd88fcac">退出线程</h4>
+<div class="outline-text-4" id="text-orgd88fcac">
 <p>
 当一个线程完成函数的执行时,它就会退出.另外,还可以通过调用例如 thread.exit() 之类
 的退出函数,或者 sys.exit() 之类的退出Python进程的标准方法,亦或是抛出 SystemExit
@@ -421,7 +423,7 @@ Python 卡爱抚这,你并不需要担心 Python 代码在这些情况下被锁�
 这个建议有很多原因,其中一个最明显的原因是在主线程退出之后,所有其他线程都会在没有
 清理的情况下直接退出,而另一个 threading 模块会确保在所有 "重要的" 子线程退出前,
 保持整个进程的存活(对于 "重要的" 这个含义的说明,请阅读下面的
-<a href="#org1b188e1">No description for this link</a> .)
+<a href="#org30bf993">No description for this link</a> .)
 </p>
 
 <p>
@@ -432,9 +434,9 @@ Python 卡爱抚这,你并不需要担心 Python 代码在这些情况下被锁�
 </div>
 </div>
 
-<div id="outline-container-org9307014" class="outline-4">
-<h4 id="org9307014">在Python中使用线程</h4>
-<div class="outline-text-4" id="text-org9307014">
+<div id="outline-container-org5911592" class="outline-4">
+<h4 id="org5911592">在Python中使用线程</h4>
+<div class="outline-text-4" id="text-org5911592">
 <p>
 避免使用thread模块
 Python 虽然支持多线程编程,但是还需要取决于它运行的操作系统.如下操作系统是支持多
@@ -447,15 +449,15 @@ Python 虽然支持多线程编程,但是还需要取决于它运行的操作系
 已经启用的. 要确定解释器是否支持线程,只需要在交互式解释器中尝试导入 thread 模块
 即可,如果线程是可用的,则不会产生错误:
 </p>
-<pre class="example" id="org13449c6">
+<pre class="example" id="orga3a5deb">
 &gt;&gt;&gt; import _thread
 &gt;&gt;&gt;
 </pre>
 <p>
-我用的是 Python3 所以导入 _thread 模块,更多信息参考 <a href="#org1b188e1">No description for this link</a>
+我用的是 Python3 所以导入 _thread 模块,更多信息参考 <a href="#org30bf993">No description for this link</a>
 如果你的 Python 解释器没有将线程支持编译进去,模块导入将会失败:
 </p>
-<pre class="example" id="org7ecef39">
+<pre class="example" id="orge38de38">
 &gt;&gt;&gt; import thread
 Traceback (most recent call last):
   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
@@ -471,9 +473,9 @@ README 文件,来获取如何在系统中编译线程支持的 Python 的指定�
 </div>
 </div>
 
-<div id="outline-container-org37c2d90" class="outline-4">
-<h4 id="org37c2d90">不使用线程的情况</h4>
-<div class="outline-text-4" id="text-org37c2d90">
+<div id="outline-container-org284d1ee" class="outline-4">
+<h4 id="org284d1ee">不使用线程的情况</h4>
+<div class="outline-text-4" id="text-org284d1ee">
 <p>
 在第一个例子里,我们使用 time.sleep() 函数来演示线程是如何工作的. time.sleep() 函
 数需要一个浮点型的参数,然后以这个给定的秒数进行"睡眠",也就是说,程序的执行会暂停
@@ -498,29 +500,29 @@ onethr.py:
 耗的时间是每个循环所用的时间之和.
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">from</span> time <span style="font-weight: bold;">import</span> sleep, ctime
+<pre class="src src-python">    <span style="color: #89DDFF;">from</span> time <span style="color: #89DDFF;">import</span> sleep, ctime
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">loop0</span>():
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'start loop 0 at:'</span>, ctime())
-    sleep(4)
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'loop 0 done at:'</span>, ctime())
-
-
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">loop1</span>():
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'start loop 1 at:'</span>, ctime())
-    sleep(2)
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'loop 1 done at:'</span>, ctime())
+    <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">loop0</span>():
+        <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'start loop 0 at:'</span>, ctime())
+        sleep(4)
+        <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'loop 0 done at:'</span>, ctime())
 
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">main</span>():
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'starting at:'</span>, ctime())
-    loop0()
-    loop1()
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'all Done at:'</span>, ctime())
+    <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">loop1</span>():
+        <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'start loop 1 at:'</span>, ctime())
+        sleep(2)
+        <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'loop 1 done at:'</span>, ctime())
 
 
-<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">'__main__'</span>:
-    main()
+    <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">main</span>():
+        <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'starting at:'</span>, ctime())
+        loop0()
+        loop1()
+        <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'all Done at:'</span>, ctime())
+
+
+    <span style="color: #89DDFF;">if</span> <span style="color: #82aaff;">__name__</span> == <span style="color: #c3e88d;">'__main__'</span>:
+        main()
 </pre>
 </div>
 
@@ -533,9 +535,9 @@ onethr.py:
 </div>
 </div>
 
-<div id="outline-container-orgd8dda7f" class="outline-4">
-<h4 id="orgd8dda7f">Python的threading模块</h4>
-<div class="outline-text-4" id="text-orgd8dda7f">
+<div id="outline-container-org997a10d" class="outline-4">
+<h4 id="org997a10d">Python的threading模块</h4>
+<div class="outline-text-4" id="text-org997a10d">
 <p>
 Python 提供了多个模块来支持多线程编程,包括 thread, threading 和 Queue 模块等.程
 序可以使用 thread 和 threading 模块开创建和管理线程. thread 模块提供了基本的线程
@@ -545,7 +547,7 @@ Python 提供了多个模块来支持多线程编程,包括 thread, threading �
 </p>
 
 <p>
-<a id="org1b188e1"></a>
+<a id="org30bf993"></a>
 推荐使用更高级别的 threading 模块,而不是使用 thread 模块有很多原因.
 threading 模块更加先进,有更好的线程支持,并且 thread 模块中的一些属性会和
 threading 模块有冲突. 另一个原因就是低级别的 thread 模块拥有的同步原语很少(实际
@@ -573,9 +575,9 @@ Python3 中该模块被重命名为 _thread. 你创建的任何多线程应用�
 </div>
 </div>
 
-<div id="outline-container-org33c9ee5" class="outline-3">
-<h3 id="org33c9ee5">thread 模块</h3>
-<div class="outline-text-3" id="text-org33c9ee5">
+<div id="outline-container-orgab8b4c1" class="outline-3">
+<h3 id="orgab8b4c1">thread 模块</h3>
+<div class="outline-text-3" id="text-orgab8b4c1">
 <p>
 除了派生线程外, thread 模块还提供了基本的同步数据结构,称为 <span class="underline">锁对象</span> (lock object,
 也叫原语锁,简单锁,互斥锁,互斥和二进制信号量). 如前所述,这个同步原语和线程管理是
@@ -655,29 +657,29 @@ thread 模块的核心函数是 start<sub>new</sub><sub>thread</sub>(). 他的�
 不是每个线程运行时间之和.
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">import</span> _thread
-<span style="font-weight: bold;">from</span> time <span style="font-weight: bold;">import</span> sleep, ctime
+<pre class="src src-python">  <span style="color: #89DDFF;">import</span> _thread
+  <span style="color: #89DDFF;">from</span> time <span style="color: #89DDFF;">import</span> sleep, ctime
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">loop0</span>():
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'start loop 0 at:'</span>, ctime())
-    sleep(4)
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'loop 0 done at:'</span>, ctime())
+  <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">loop0</span>():
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'start loop 0 at:'</span>, ctime())
+      sleep(4)
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'loop 0 done at:'</span>, ctime())
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">loop1</span>():
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'start loop 1 at:'</span>, ctime())
-    sleep(2)
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'loop 1 done at:'</span>, ctime())
+  <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">loop1</span>():
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'start loop 1 at:'</span>, ctime())
+      sleep(2)
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'loop 1 done at:'</span>, ctime())
 
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">main</span>():
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'starting at:'</span>, ctime())
-    _thread.start_new_thread(loop0, ())
-    _thread.start_new_thread(loop1, ())
-    sleep(6)
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'all Done at:'</span>, ctime())
+  <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">main</span>():
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'starting at:'</span>, ctime())
+      _thread.start_new_thread(loop0, ())
+      _thread.start_new_thread(loop1, ())
+      sleep(6)
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'all Done at:'</span>, ctime())
 
-<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">'__main__'</span>:
-    main()
+  <span style="color: #89DDFF;">if</span> <span style="color: #82aaff;">__name__</span> == <span style="color: #c3e88d;">'__main__'</span>:
+      main()
 </pre>
 </div>
 
@@ -701,28 +703,28 @@ thread 模块对进程何时退出没有控制,如果不让主线程等待子线
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">import</span> _thread
-<span style="font-weight: bold;">from</span> time <span style="font-weight: bold;">import</span> sleep, ctime
+<pre class="src src-python">  <span style="color: #89DDFF;">import</span> _thread
+  <span style="color: #89DDFF;">from</span> time <span style="color: #89DDFF;">import</span> sleep, ctime
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">loop0</span>():
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'start loop 0 at:'</span>, ctime())
-    sleep(4)
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'loop 0 done at:'</span>, ctime())
+  <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">loop0</span>():
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'start loop 0 at:'</span>, ctime())
+      sleep(4)
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'loop 0 done at:'</span>, ctime())
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">loop1</span>():
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'start loop 1 at:'</span>, ctime())
-    sleep(2)
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'loop 1 done at:'</span>, ctime())
+  <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">loop1</span>():
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'start loop 1 at:'</span>, ctime())
+      sleep(2)
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'loop 1 done at:'</span>, ctime())
 
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">main</span>():
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'starting at:'</span>, ctime())
-    _thread.start_new_thread(loop0, ())
-    _thread.start_new_thread(loop1, ())
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'all Done at:'</span>, ctime())
+  <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">main</span>():
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'starting at:'</span>, ctime())
+      _thread.start_new_thread(loop0, ())
+      _thread.start_new_thread(loop1, ())
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'all Done at:'</span>, ctime())
 
-<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">'__main__'</span>:
-    main()
+  <span style="color: #89DDFF;">if</span> <span style="color: #82aaff;">__name__</span> == <span style="color: #c3e88d;">'__main__'</span>:
+      main()
 </pre>
 </div>
 
@@ -755,32 +757,32 @@ thread 模块对进程何时退出没有控制,如果不让主线程等待子线
 <b>mtsleepB.oy</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">import</span> _thread
-<span style="font-weight: bold;">from</span> time <span style="font-weight: bold;">import</span> ctime, sleep
-<span style="font-weight: bold; font-style: italic;">loops</span> = [4, 2]
+<pre class="src src-python">  <span style="color: #89DDFF;">import</span> _thread
+  <span style="color: #89DDFF;">from</span> time <span style="color: #89DDFF;">import</span> ctime, sleep
+  <span style="color: #ffcb6b;">loops</span> = [4, 2]
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">loop</span>(nloop, nsec, lock):
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'start loop,'</span>, nloop, <span style="font-style: italic;">'at:'</span>, ctime())
-    sleep(nsec)
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'loop'</span>, nloop, <span style="font-style: italic;">'done at:'</span>, ctime())
-    lock.release()
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">main</span>():
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'starting at:'</span>, ctime())
-    <span style="font-weight: bold; font-style: italic;">locks</span> = []
-    <span style="font-weight: bold; font-style: italic;">nloops</span> = <span style="font-weight: bold;">range</span>(<span style="font-weight: bold;">len</span>(loops))
-    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nloops:
-        <span style="font-weight: bold; font-style: italic;">lock</span> = _thread.allocate_lock()
-        lock.acquire()
-        locks.append(lock)
-    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nloops:
-        _thread.start_new_thread(loop, (i, loops[i], locks[i]))
-    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nloops:
-        <span style="font-weight: bold;">while</span> locks[i].locked(): <span style="font-weight: bold;">pass</span>
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'all done at:'</span>, ctime())
+  <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">loop</span>(nloop, nsec, lock):
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'start loop,'</span>, nloop, <span style="color: #c3e88d;">'at:'</span>, ctime())
+      sleep(nsec)
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'loop'</span>, nloop, <span style="color: #c3e88d;">'done at:'</span>, ctime())
+      lock.release()
+  <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">main</span>():
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'starting at:'</span>, ctime())
+      <span style="color: #ffcb6b;">locks</span> = []
+      <span style="color: #ffcb6b;">nloops</span> = <span style="color: #82aaff;">range</span>(<span style="color: #82aaff;">len</span>(loops))
+      <span style="color: #89DDFF;">for</span> i <span style="color: #89DDFF;">in</span> nloops:
+          <span style="color: #ffcb6b;">lock</span> = _thread.allocate_lock()
+          lock.acquire()
+          locks.append(lock)
+      <span style="color: #89DDFF;">for</span> i <span style="color: #89DDFF;">in</span> nloops:
+          _thread.start_new_thread(loop, (i, loops[i], locks[i]))
+      <span style="color: #89DDFF;">for</span> i <span style="color: #89DDFF;">in</span> nloops:
+          <span style="color: #89DDFF;">while</span> locks[i].locked(): <span style="color: #89DDFF;">pass</span>
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'all done at:'</span>, ctime())
 
 
-<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">'__main__'</span>:
-    main()
+  <span style="color: #89DDFF;">if</span> <span style="color: #82aaff;">__name__</span> == <span style="color: #c3e88d;">'__main__'</span>:
+      main()
 </pre>
 </div>
 
@@ -817,9 +819,9 @@ release() 方法则表明获取该锁的线程已经完成. 没有在上锁的�
 </div>
 </div>
 
-<div id="outline-container-org18249fe" class="outline-3">
-<h3 id="org18249fe">threading 模块</h3>
-<div class="outline-text-3" id="text-org18249fe">
+<div id="outline-container-org558bdb5" class="outline-3">
+<h3 id="org558bdb5">threading 模块</h3>
+<div class="outline-text-3" id="text-org558bdb5">
 <p>
 现在介绍更高级别的 threading 模块. 除了 Thread 类外,该模块还包括许多非常好用的同
 步机制.下面给出 threading 模块中所有可用对象的列表.
@@ -914,9 +916,9 @@ Python 程序(理解为主线程)将在所有非守护线程退出后才退出,�
 </p>
 </div>
 
-<div id="outline-container-orgd1c13f0" class="outline-4">
-<h4 id="orgd1c13f0">Thread 类</h4>
-<div class="outline-text-4" id="text-orgd1c13f0">
+<div id="outline-container-orgc1c590c" class="outline-4">
+<h4 id="orgc1c590c">Thread 类</h4>
+<div class="outline-text-4" id="text-orgc1c590c">
 <p>
 threading 模块的 Thread 类是主要的执行对象. 它有 thread 模块中没有的很多函数.
 </p>
@@ -1043,33 +1045,33 @@ threading 模块的 Thread 类有一个 join() 方法,可以让主线程等待�
 <b>mtsleepC.py:</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">import</span> threading
-<span style="font-weight: bold;">from</span> time <span style="font-weight: bold;">import</span> sleep, ctime
-<span style="font-weight: bold; font-style: italic;">loops</span> = [4, 2]
+<pre class="src src-python">  <span style="color: #89DDFF;">import</span> threading
+  <span style="color: #89DDFF;">from</span> time <span style="color: #89DDFF;">import</span> sleep, ctime
+  <span style="color: #ffcb6b;">loops</span> = [4, 2]
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">loop</span>(nloop, nsec):
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'start loop'</span>, nloop, <span style="font-style: italic;">'at:'</span>, ctime())
-    sleep(nsec)
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'loop'</span>, nloop, <span style="font-style: italic;">'done at:'</span>, ctime())
+  <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">loop</span>(nloop, nsec):
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'start loop'</span>, nloop, <span style="color: #c3e88d;">'at:'</span>, ctime())
+      sleep(nsec)
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'loop'</span>, nloop, <span style="color: #c3e88d;">'done at:'</span>, ctime())
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">main</span>():
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'starting at:'</span>, ctime())
-    <span style="font-weight: bold; font-style: italic;">threads</span> = []
+  <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">main</span>():
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'starting at:'</span>, ctime())
+      <span style="color: #ffcb6b;">threads</span> = []
 
-    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> <span style="font-weight: bold;">range</span>(<span style="font-weight: bold;">len</span>(loops)):
-        <span style="font-weight: bold; font-style: italic;">t</span> = threading.Thread(target=loop,args=(i, loops[i]))
-        threads.append(t)
+      <span style="color: #89DDFF;">for</span> i <span style="color: #89DDFF;">in</span> <span style="color: #82aaff;">range</span>(<span style="color: #82aaff;">len</span>(loops)):
+          <span style="color: #ffcb6b;">t</span> = threading.Thread(target=loop,args=(i, loops[i]))
+          threads.append(t)
 
-    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> <span style="font-weight: bold;">range</span>(<span style="font-weight: bold;">len</span>(loops)):
-        threads[i].start()
+      <span style="color: #89DDFF;">for</span> i <span style="color: #89DDFF;">in</span> <span style="color: #82aaff;">range</span>(<span style="color: #82aaff;">len</span>(loops)):
+          threads[i].start()
 
-    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> <span style="font-weight: bold;">range</span>(<span style="font-weight: bold;">len</span>(loops)):
-        threads[i].join()
+      <span style="color: #89DDFF;">for</span> i <span style="color: #89DDFF;">in</span> <span style="color: #82aaff;">range</span>(<span style="color: #82aaff;">len</span>(loops)):
+          threads[i].join()
 
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'all Done at:'</span>, ctime())
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'all Done at:'</span>, ctime())
 
-<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">'__main__'</span>:
-    main()
+  <span style="color: #89DDFF;">if</span> <span style="color: #82aaff;">__name__</span> == <span style="color: #c3e88d;">'__main__'</span>:
+      main()
 
 </pre>
 </div>
@@ -1099,44 +1101,44 @@ Thread( 调用 Thread()) 和调用 thread.start<sub>new</sub><sub>thread</sub>()
 <b>mtsleepD.py</b>:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">import</span> threading
-<span style="font-weight: bold;">from</span> time <span style="font-weight: bold;">import</span> sleep, ctime
+<pre class="src src-python">  <span style="color: #89DDFF;">import</span> threading
+  <span style="color: #89DDFF;">from</span> time <span style="color: #89DDFF;">import</span> sleep, ctime
 
-<span style="font-weight: bold; font-style: italic;">loops</span> = [4, 2]
+  <span style="color: #ffcb6b;">loops</span> = [4, 2]
 
-<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">ThreadFunc</span>(<span style="font-weight: bold;">object</span>):
+  <span style="color: #89DDFF;">class</span> <span style="color: #c792ea;">ThreadFunc</span>(<span style="color: #82aaff;">object</span>):
 
-    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>(<span style="font-weight: bold;">self</span>, func, args, name=<span style="font-style: italic;">''</span>):
-        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">name</span> = name
-        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">func</span> = func
-        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">args</span> = args
+      <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">__init__</span>(<span style="color: #89DDFF;">self</span>, func, args, name=<span style="color: #c3e88d;">''</span>):
+          <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">name</span> = name
+          <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">func</span> = func
+          <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">args</span> = args
 
-    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__call__</span>(<span style="font-weight: bold;">self</span>):
-        <span style="font-weight: bold;">self</span>.func(*<span style="font-weight: bold;">self</span>.args)
+      <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">__call__</span>(<span style="color: #89DDFF;">self</span>):
+          <span style="color: #89DDFF;">self</span>.func(*<span style="color: #89DDFF;">self</span>.args)
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">loop</span>(nloop, secs):
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'start loop'</span>, nloop, <span style="font-style: italic;">'at:'</span>, ctime())
-    sleep(secs)
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'loop'</span>, nloop, <span style="font-style: italic;">'done at:'</span>, ctime())
+  <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">loop</span>(nloop, secs):
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'start loop'</span>, nloop, <span style="color: #c3e88d;">'at:'</span>, ctime())
+      sleep(secs)
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'loop'</span>, nloop, <span style="color: #c3e88d;">'done at:'</span>, ctime())
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">main</span>():
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'starting at:'</span>, ctime())
-    <span style="font-weight: bold; font-style: italic;">threads</span> = []
-    <span style="font-weight: bold; font-style: italic;">nloops</span> = <span style="font-weight: bold;">range</span>(<span style="font-weight: bold;">len</span>(loops))
+  <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">main</span>():
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'starting at:'</span>, ctime())
+      <span style="color: #ffcb6b;">threads</span> = []
+      <span style="color: #ffcb6b;">nloops</span> = <span style="color: #82aaff;">range</span>(<span style="color: #82aaff;">len</span>(loops))
 
-    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nloops:
-        <span style="font-weight: bold; font-style: italic;">t</span> = threading.Thread(target=ThreadFunc(loop, (i, loops[i]), loop.<span style="font-weight: bold;">__name__</span>))
-        threads.append(t)
-    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nloops:
-        threads[i].start()
+      <span style="color: #89DDFF;">for</span> i <span style="color: #89DDFF;">in</span> nloops:
+          <span style="color: #ffcb6b;">t</span> = threading.Thread(target=ThreadFunc(loop, (i, loops[i]), loop.<span style="color: #82aaff;">__name__</span>))
+          threads.append(t)
+      <span style="color: #89DDFF;">for</span> i <span style="color: #89DDFF;">in</span> nloops:
+          threads[i].start()
 
-    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nloops:
-        threads[i].join()
+      <span style="color: #89DDFF;">for</span> i <span style="color: #89DDFF;">in</span> nloops:
+          threads[i].join()
 
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'all done at:'</span>, ctime())
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'all done at:'</span>, ctime())
 
-<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">'__main__'</span>:
-    main()
+  <span style="color: #89DDFF;">if</span> <span style="color: #82aaff;">__name__</span> == <span style="color: #c3e88d;">'__main__'</span>:
+      main()
 </pre>
 </div>
 
@@ -1161,46 +1163,46 @@ mtsleepD.py 在实例化 Thread 对象时同时实例化了可调用类 ThreadFu
 <b>mtsleepE.py</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">import</span> threading
-<span style="font-weight: bold;">from</span> time <span style="font-weight: bold;">import</span> sleep, ctime
+<pre class="src src-python">  <span style="color: #89DDFF;">import</span> threading
+  <span style="color: #89DDFF;">from</span> time <span style="color: #89DDFF;">import</span> sleep, ctime
 
-<span style="font-weight: bold; font-style: italic;">loops</span> = (4, 2)
+  <span style="color: #ffcb6b;">loops</span> = (4, 2)
 
-<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">MyThread</span>(threading.Thread):
-    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>(<span style="font-weight: bold;">self</span>, func, args, name=<span style="font-style: italic;">''</span>):
-        threading.Thread.__init__(<span style="font-weight: bold;">self</span>)
-        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">name</span> = name
-        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">func</span> = func
-        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">args</span> = args
+  <span style="color: #89DDFF;">class</span> <span style="color: #c792ea;">MyThread</span>(threading.Thread):
+      <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">__init__</span>(<span style="color: #89DDFF;">self</span>, func, args, name=<span style="color: #c3e88d;">''</span>):
+          threading.Thread.__init__(<span style="color: #89DDFF;">self</span>)
+          <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">name</span> = name
+          <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">func</span> = func
+          <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">args</span> = args
 
-    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">run</span>(<span style="font-weight: bold;">self</span>):
-        <span style="font-weight: bold;">self</span>.func(*<span style="font-weight: bold;">self</span>.args)
+      <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">run</span>(<span style="color: #89DDFF;">self</span>):
+          <span style="color: #89DDFF;">self</span>.func(*<span style="color: #89DDFF;">self</span>.args)
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">loop</span>(nloop, secs):
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'start loop'</span>, nloop, <span style="font-style: italic;">'at:'</span>, ctime())
-    sleep(secs)
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'loop'</span>, nloop, <span style="font-style: italic;">'done at:'</span>, ctime())
+  <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">loop</span>(nloop, secs):
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'start loop'</span>, nloop, <span style="color: #c3e88d;">'at:'</span>, ctime())
+      sleep(secs)
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'loop'</span>, nloop, <span style="color: #c3e88d;">'done at:'</span>, ctime())
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">main</span>():
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'starting at:'</span>, ctime())
-    <span style="font-weight: bold; font-style: italic;">threads</span> = []
-    <span style="font-weight: bold; font-style: italic;">nloops</span> = <span style="font-weight: bold;">range</span>(<span style="font-weight: bold;">len</span>(loops))
+  <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">main</span>():
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'starting at:'</span>, ctime())
+      <span style="color: #ffcb6b;">threads</span> = []
+      <span style="color: #ffcb6b;">nloops</span> = <span style="color: #82aaff;">range</span>(<span style="color: #82aaff;">len</span>(loops))
 
-    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nloops:
-        <span style="font-weight: bold; font-style: italic;">t</span> = MyThread(loop,(i, loops[i]), loop.<span style="font-weight: bold;">__name__</span>)
-        threads.append(t)
+      <span style="color: #89DDFF;">for</span> i <span style="color: #89DDFF;">in</span> nloops:
+          <span style="color: #ffcb6b;">t</span> = MyThread(loop,(i, loops[i]), loop.<span style="color: #82aaff;">__name__</span>)
+          threads.append(t)
 
-    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nloops:
-        threads[i].start()
+      <span style="color: #89DDFF;">for</span> i <span style="color: #89DDFF;">in</span> nloops:
+          threads[i].start()
 
 
-    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nloops:
-        threads[i].join()
+      <span style="color: #89DDFF;">for</span> i <span style="color: #89DDFF;">in</span> nloops:
+          threads[i].join()
 
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'all done at:'</span>, ctime())
+      <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'all done at:'</span>, ctime())
 
-<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">'__main__'</span>:
-    main()
+  <span style="color: #89DDFF;">if</span> <span style="color: #82aaff;">__name__</span> == <span style="color: #c3e88d;">'__main__'</span>:
+      main()
 </pre>
 </div>
 
@@ -1217,7 +1219,7 @@ mtsleepD.py 在实例化 Thread 对象时同时实例化了可调用类 ThreadFu
 <p>
 Thread 对象开始运行时(执行 start()), 它会在一个独立的控制进程里调用对象的 run()
 方法. run() 方法是代表线程活动的方法,这个方法可有在子类型里重载. 标准的 run() 方
-法会对作为 target 参数传递给该对象构造器的<a href="#orgac9ee1e">No description for this link</a>(如果存在)发起调用,并从附带
+法会对作为 target 参数传递给该对象构造器的<a href="#org0d90e3a">No description for this link</a>(如果存在)发起调用,并从附带
 args 和 kwargs 参数分别获取的位置和关键字参数.
 </p>
 
@@ -1231,25 +1233,25 @@ self.res 中,并创建一个获取这个值的新方法 getResult()
 <b>Thread 子类 MyThread(myThread.py)</b>:
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">import</span> threading
-<span style="font-weight: bold;">from</span> time <span style="font-weight: bold;">import</span> sleep, ctime
+<pre class="src src-python"><span style="color: #89DDFF;">import</span> threading
+<span style="color: #89DDFF;">from</span> time <span style="color: #89DDFF;">import</span> sleep, ctime
 
 
-<span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">MyThread</span>(threading.Thread):
+<span style="color: #89DDFF;">class</span> <span style="color: #c792ea;">MyThread</span>(threading.Thread):
 
-    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">__init__</span>(<span style="font-weight: bold;">self</span>, func, args, name=<span style="font-style: italic;">''</span>):
-        threading.Thread.__init__(<span style="font-weight: bold;">self</span>)
-        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">name</span> = name
-        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">func</span> = func
-        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">args</span> = args
+    <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">__init__</span>(<span style="color: #89DDFF;">self</span>, func, args, name=<span style="color: #c3e88d;">''</span>):
+        threading.Thread.__init__(<span style="color: #89DDFF;">self</span>)
+        <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">name</span> = name
+        <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">func</span> = func
+        <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">args</span> = args
 
-    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">getResult</span>(<span style="font-weight: bold;">self</span>):
-        <span style="font-weight: bold;">return</span> <span style="font-weight: bold;">self</span>.res
+    <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">getResult</span>(<span style="color: #89DDFF;">self</span>):
+        <span style="color: #89DDFF;">return</span> <span style="color: #89DDFF;">self</span>.res
 
-    <span style="font-weight: bold;">def</span> <span style="font-weight: bold;">run</span>(<span style="font-weight: bold;">self</span>):
-        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'starting'</span>, <span style="font-weight: bold;">self</span>.name, <span style="font-style: italic;">'at:'</span>, ctime())
-        <span style="font-weight: bold;">self</span>.<span style="font-weight: bold; font-style: italic;">res</span> = <span style="font-weight: bold;">self</span>.func(*<span style="font-weight: bold;">self</span>.args)
-        <span style="font-weight: bold;">print</span>(<span style="font-weight: bold;">self</span>.name, <span style="font-style: italic;">'finished at:'</span>, ctime())
+    <span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">run</span>(<span style="color: #89DDFF;">self</span>):
+        <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'starting'</span>, <span style="color: #89DDFF;">self</span>.name, <span style="color: #c3e88d;">'at:'</span>, ctime())
+        <span style="color: #89DDFF;">self</span>.<span style="color: #ffcb6b;">res</span> = <span style="color: #89DDFF;">self</span>.func(*<span style="color: #89DDFF;">self</span>.args)
+        <span style="color: #82aaff;">print</span>(<span style="color: #89DDFF;">self</span>.name, <span style="color: #c3e88d;">'finished at:'</span>, ctime())
 </pre>
 </div>
 </div>
@@ -1257,9 +1259,9 @@ self.res 中,并创建一个获取这个值的新方法 getResult()
 
 
 
-<div id="outline-container-org3ae9f7d" class="outline-4">
-<h4 id="org3ae9f7d">threading 模块的其他函数</h4>
-<div class="outline-text-4" id="text-org3ae9f7d">
+<div id="outline-container-org087e2ee" class="outline-4">
+<h4 id="org087e2ee">threading 模块的其他函数</h4>
+<div class="outline-text-4" id="text-org087e2ee">
 <p>
 除了各种同步和线程对象外, threading 模块还提供一些函数,如下所示:
 </p>
@@ -1323,9 +1325,9 @@ self.res 中,并创建一个获取这个值的新方法 getResult()
 </div>
 </div>
 
-<div id="outline-container-org0211774" class="outline-3">
-<h3 id="org0211774">单线程或多线程执行对比</h3>
-<div class="outline-text-3" id="text-org0211774">
+<div id="outline-container-org8b24247" class="outline-3">
+<h3 id="org8b24247">单线程或多线程执行对比</h3>
+<div class="outline-text-3" id="text-org8b24247">
 <p>
 下面的 mtfacfib.py 脚本比较了递归求斐波那契,阶乘与累加函数的执行.该脚本按照单线
 程方式运行这三个函数.之后使用多线程方式执行同样任务.来比较多线程环境的优点.
@@ -1336,76 +1338,76 @@ self.res 中,并创建一个获取这个值的新方法 getResult()
 </p>
 <div class="org-src-container">
 <pre class="src src-python">
-<span style="font-weight: bold;">from</span> myThread <span style="font-weight: bold;">import</span> MyThread
-<span style="font-weight: bold;">from</span> time <span style="font-weight: bold;">import</span> ctime, sleep
+<span style="color: #89DDFF;">from</span> myThread <span style="color: #89DDFF;">import</span> MyThread
+<span style="color: #89DDFF;">from</span> time <span style="color: #89DDFF;">import</span> ctime, sleep
 
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">fib</span>(x):
+<span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">fib</span>(x):
     sleep(0.005)
-    <span style="font-weight: bold;">if</span> x &lt; 2:
-        <span style="font-weight: bold;">return</span> 1
-    <span style="font-weight: bold;">return</span> (fib(x - 2) + fib(x - 1))
+    <span style="color: #89DDFF;">if</span> x &lt; 2:
+        <span style="color: #89DDFF;">return</span> 1
+    <span style="color: #89DDFF;">return</span> (fib(x - 2) + fib(x - 1))
 
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">sum</span>(x):
+<span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">sum</span>(x):
     sleep(0.1)
-    <span style="font-weight: bold;">if</span> x &lt; 2:
-        <span style="font-weight: bold;">return</span> 1
-    <span style="font-weight: bold;">return</span> (x + <span style="font-weight: bold;">sum</span>(x - 1))
+    <span style="color: #89DDFF;">if</span> x &lt; 2:
+        <span style="color: #89DDFF;">return</span> 1
+    <span style="color: #89DDFF;">return</span> (x + <span style="color: #82aaff;">sum</span>(x - 1))
 
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">fac</span>(x):
+<span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">fac</span>(x):
     sleep(0.1)
-    <span style="font-weight: bold;">if</span> x &lt; 2:
-        <span style="font-weight: bold;">return</span> 1
-    <span style="font-weight: bold;">return</span> (x * fac(x - 1))
+    <span style="color: #89DDFF;">if</span> x &lt; 2:
+        <span style="color: #89DDFF;">return</span> 1
+    <span style="color: #89DDFF;">return</span> (x * fac(x - 1))
 
 
-<span style="font-weight: bold; font-style: italic;">funcs</span> = [fib, fac, <span style="font-weight: bold;">sum</span>]
-<span style="font-weight: bold; font-style: italic;">n</span> = 12
+<span style="color: #ffcb6b;">funcs</span> = [fib, fac, <span style="color: #82aaff;">sum</span>]
+<span style="color: #ffcb6b;">n</span> = 12
 
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">main</span>():
-    <span style="font-weight: bold; font-style: italic;">nfuncs</span> = <span style="font-weight: bold;">range</span>(<span style="font-weight: bold;">len</span>(funcs))
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'*** SINGLE THREAD'</span>)
-    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nfuncs:
-        <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'starting'</span>, funcs[i].<span style="font-weight: bold;">__name__</span>, <span style="font-style: italic;">'at:'</span>, ctime())
-        <span style="font-weight: bold;">print</span>(funcs[i](n))
-        <span style="font-weight: bold;">print</span>(funcs[i].<span style="font-weight: bold;">__name__</span>, <span style="font-style: italic;">'finished'</span>, <span style="font-style: italic;">'at:'</span>, ctime())
+<span style="color: #89DDFF;">def</span> <span style="color: #82aaff;">main</span>():
+    <span style="color: #ffcb6b;">nfuncs</span> = <span style="color: #82aaff;">range</span>(<span style="color: #82aaff;">len</span>(funcs))
+    <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'*** SINGLE THREAD'</span>)
+    <span style="color: #89DDFF;">for</span> i <span style="color: #89DDFF;">in</span> nfuncs:
+        <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'starting'</span>, funcs[i].<span style="color: #82aaff;">__name__</span>, <span style="color: #c3e88d;">'at:'</span>, ctime())
+        <span style="color: #82aaff;">print</span>(funcs[i](n))
+        <span style="color: #82aaff;">print</span>(funcs[i].<span style="color: #82aaff;">__name__</span>, <span style="color: #c3e88d;">'finished'</span>, <span style="color: #c3e88d;">'at:'</span>, ctime())
 
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'</span><span style="font-weight: bold; text-decoration: underline;">\n</span><span style="font-style: italic;">*** MULTIPLE THREADS'</span>)
-    <span style="font-weight: bold; font-style: italic;">threads</span> = []
-    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nfuncs:
-        <span style="font-weight: bold; font-style: italic;">t</span> = MyThread(funcs[i], (n,), funcs[i].<span style="font-weight: bold;">__name__</span>)
+    <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'</span><span style="color: #f78c6c;">\n</span><span style="color: #c3e88d;">*** MULTIPLE THREADS'</span>)
+    <span style="color: #ffcb6b;">threads</span> = []
+    <span style="color: #89DDFF;">for</span> i <span style="color: #89DDFF;">in</span> nfuncs:
+        <span style="color: #ffcb6b;">t</span> = MyThread(funcs[i], (n,), funcs[i].<span style="color: #82aaff;">__name__</span>)
         threads.append(t)
-    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nfuncs:
+    <span style="color: #89DDFF;">for</span> i <span style="color: #89DDFF;">in</span> nfuncs:
         threads[i].start()
-    <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> nfuncs:
+    <span style="color: #89DDFF;">for</span> i <span style="color: #89DDFF;">in</span> nfuncs:
         threads[i].join()
-        <span style="font-weight: bold;">print</span>(threads[i].getResult())
-    <span style="font-weight: bold;">print</span>(<span style="font-style: italic;">'all Done at:'</span>, ctime())
+        <span style="color: #82aaff;">print</span>(threads[i].getResult())
+    <span style="color: #82aaff;">print</span>(<span style="color: #c3e88d;">'all Done at:'</span>, ctime())
 
 
-<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">'__main__'</span>:
+<span style="color: #89DDFF;">if</span> <span style="color: #82aaff;">__name__</span> == <span style="color: #c3e88d;">'__main__'</span>:
     main()
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org03745d7" class="outline-3">
-<h3 id="org03745d7">多线程实践</h3>
-<div class="outline-text-3" id="text-org03745d7">
+<div id="outline-container-orge7dc53c" class="outline-3">
+<h3 id="orge7dc53c">多线程实践</h3>
+<div class="outline-text-3" id="text-orge7dc53c">
 <p>
-<a href="#org9da2fdf">全局解释器锁</a> 里曾提到,由于 Python 虚拟机是单线程(GIL) 的原因,只有线程在执行 I/O
+<a href="#orga3ef35a">全局解释器锁</a> 里曾提到,由于 Python 虚拟机是单线程(GIL) 的原因,只有线程在执行 I/O
 密集型的应用时才能更好发挥 Python 的并发性(对比计算密集型,I/O 密集型只需要做轮
 询),因此让我们看一个 I/O 密集型的例子.
 </p>
 </div>
 
-<div id="outline-container-org80b4a45" class="outline-4">
-<h4 id="org80b4a45">图书排名示例</h4>
-<div class="outline-text-4" id="text-org80b4a45">
+<div id="outline-container-org6694303" class="outline-4">
+<h4 id="org6694303">图书排名示例</h4>
+<div class="outline-text-4" id="text-org6694303">
 <p>
 下面例子在 Amazon 上查询图书的当前排名.这个例子里函数 getRanking() 使用正则表达
 式来拉取和返回当前排名,而函数 _showRanking() 用于向用户显示结果.
@@ -1423,11 +1425,11 @@ self.res 中,并创建一个获取这个值的新方法 getResult()
 </div>
 </div>
 
-<div id="outline-container-orgbd1764e" class="outline-2">
-<h2 id="orgbd1764e">相关概念</h2>
-<div class="outline-text-2" id="text-orgbd1764e">
+<div id="outline-container-orgab988ed" class="outline-2">
+<h2 id="orgab988ed">相关概念</h2>
+<div class="outline-text-2" id="text-orgab988ed">
 <p>
-<a id="orgac9ee1e"></a>:函数(用户自定义,内置,内置对象的方法), 类对象, 类实例的方法以及任何具
+<a id="org0d90e3a"></a>:函数(用户自定义,内置,内置对象的方法), 类对象, 类实例的方法以及任何具
 有 _<sub>call</sub>_<sub>()</sub> 方法的对象都是可调用对象
 </p>
 </div>

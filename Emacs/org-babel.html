@@ -223,11 +223,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3215ecb">Python</a>
+<li><a href="#orgf1e755c">Python</a>
 <ul>
-<li><a href="#org8a2d7c7">异步执行 python 代码</a>
+<li><a href="#orgaeef7fa">异步执行 python 代码</a>
 <ul>
-<li><a href="#org94dffbb"><span class="todo TODO">TODO</span> 因为需要下载不少东西,这个包也不在 Emacs 包管理系统中,所以没能试用,暂且记下.</a></li>
+<li><a href="#org93f9254"><span class="todo TODO">TODO</span> 因为需要下载不少东西,这个包也不在 Emacs 包管理系统中,所以没能试用,暂且记下.</a></li>
 </ul>
 </li>
 </ul>
@@ -235,23 +235,23 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org3215ecb" class="outline-2">
-<h2 id="org3215ecb">Python</h2>
-<div class="outline-text-2" id="text-org3215ecb">
+<div id="outline-container-orgf1e755c" class="outline-2">
+<h2 id="orgf1e755c">Python</h2>
+<div class="outline-text-2" id="text-orgf1e755c">
 </div>
-<div id="outline-container-org8a2d7c7" class="outline-3">
-<h3 id="org8a2d7c7">异步执行 python 代码</h3>
-<div class="outline-text-3" id="text-org8a2d7c7">
+<div id="outline-container-orgaeef7fa" class="outline-3">
+<h3 id="orgaeef7fa">异步执行 python 代码</h3>
+<div class="outline-text-3" id="text-orgaeef7fa">
 <p>
 正常情况下,执行下面的代码,Emacs 进程会直接挂起,直到代码执行完毕,也就是会卡死
 10秒.
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold;">import</span> time
+<pre class="src src-python">    <span style="color: #89DDFF;">import</span> time
 
-<span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> <span style="font-weight: bold;">range</span>(5):
-    <span style="font-weight: bold;">print</span>(i)
-    time.sleep(2)
+    <span style="color: #89DDFF;">for</span> i <span style="color: #89DDFF;">in</span> <span style="color: #82aaff;">range</span>(5):
+        <span style="color: #82aaff;">print</span>(i)
+        time.sleep(2)
 </pre>
 </div>
 
@@ -260,8 +260,8 @@
 (需要自己下载):
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">scimax-org-babel-python</span>)
-(add-to-list 'org-ctrl-c-ctrl-c-hook 'org-babel-async-execute:python)
+<pre class="src src-emacs-lisp">    (<span style="color: #89DDFF;">require</span> '<span style="color: #f78c6c;">scimax-org-babel-python</span>)
+    (add-to-list 'org-ctrl-c-ctrl-c-hook 'org-babel-async-execute:python)
 </pre>
 </div>
 <p>
@@ -269,9 +269,9 @@
 </p>
 </div>
 
-<div id="outline-container-org94dffbb" class="outline-4">
-<h4 id="org94dffbb"><span class="todo TODO">TODO</span> 因为需要下载不少东西,这个包也不在 Emacs 包管理系统中,所以没能试用,暂且记下.</h4>
-<div class="outline-text-4" id="text-org94dffbb">
+<div id="outline-container-org93f9254" class="outline-4">
+<h4 id="org93f9254"><span class="todo TODO">TODO</span> 因为需要下载不少东西,这个包也不在 Emacs 包管理系统中,所以没能试用,暂且记下.</h4>
+<div class="outline-text-4" id="text-org93f9254">
 <p>
 <a href="https://kitchingroup.cheme.cmu.edu/blog/2016/11/09/New-and-improved-asynchronous-org-babel-python-blocks/">原文</a>
 </p>

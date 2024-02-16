@@ -224,60 +224,60 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge7824bf">开机boot 进入Emacs</a></li>
-<li><a href="#orgd50d8cc">配置 Exwm</a></li>
-<li><a href="#org09ed2ff">Panel(Polybar)</a>
+<li><a href="#orge0ff230">开机boot 进入Emacs</a></li>
+<li><a href="#org566f7ad">配置 Exwm</a></li>
+<li><a href="#orgf0f5b57">Panel(Polybar)</a>
 <ul>
-<li><a href="#org4bdfe9a">配置 Polybar</a></li>
+<li><a href="#org166972d">配置 Polybar</a></li>
 </ul>
 </li>
-<li><a href="#orgacf28cc">david 的Exwm 系列</a></li>
+<li><a href="#org064dea0">david 的Exwm 系列</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge7824bf" class="outline-2">
-<h2 id="orge7824bf">开机boot 进入Emacs</h2>
-<div class="outline-text-2" id="text-orge7824bf">
+<div id="outline-container-orge0ff230" class="outline-2">
+<h2 id="orge0ff230">开机boot 进入Emacs</h2>
+<div class="outline-text-2" id="text-orge0ff230">
 <p>
 manjaro-i3 的desktop文件:
 </p>
-<pre class="example" id="org78da156">
-[Desktop Entry]
-Name=i3
-Comment=improved dynamic tiling window manager
-Exec=i3
-TryExec=i3
-Type=Application
-X-LightDM-DesktopName=i3
-DesktopNames=i3
-Keywords=tiling;wm;windowmanager;window;manager;
+<pre class="example" id="org662732a">
+    [Desktop Entry]
+    Name=i3
+    Comment=improved dynamic tiling window manager
+    Exec=i3
+    TryExec=i3
+    Type=Application
+    X-LightDM-DesktopName=i3
+    DesktopNames=i3
+    Keywords=tiling;wm;windowmanager;window;manager;
 </pre>
 <p>
 下面代码放进 .emacs.d/exwm/exwm.desktop 文件.注意Exec 一行的 kamisama 要换成自
 己的用户名.
 </p>
-<pre class="example" id="orgad8a1d5">
-[Desktop Entry]
-Name=EXWM
-Comment=Emacs Window Manager
-Exec=sh /home/kamisama/.emacs.d/exwm/start-exwm.sh
-TryExec=sh
-Type=Application
-X-LightDM-DesktopName=exwm
-DesktopNames=exwm
+<pre class="example" id="orgba8df4c">
+    [Desktop Entry]
+    Name=EXWM
+    Comment=Emacs Window Manager
+    Exec=sh /home/kamisama/.emacs.d/exwm/start-exwm.sh
+    TryExec=sh
+    Type=Application
+    X-LightDM-DesktopName=exwm
+    DesktopNames=exwm
 </pre>
 <p>
 为该文件创建链接(直接复制过去也行):
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">sudo ln -f ~/.emacs.d/exwm/exwm.desktop /usr/share/xsessions/exwm.desktop
+<pre class="src src-sh">      sudo ln -f ~/.emacs.d/exwm/exwm.desktop /usr/share/xsessions/exwm.desktop
 </pre>
 </div>
 <p>
 可能还需要重启 GDM/LightDM
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">sudo systemctl restart lightdm
+<pre class="src src-sh">      sudo systemctl restart lightdm
 </pre>
 </div>
 
@@ -288,13 +288,13 @@ DesktopNames=exwm
 </p>
 <div class="org-src-container">
 <pre class="src src-sh">
-<span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">!/bin/sh</span>
+      <span style="color: #676E95;">#</span><span style="color: #676E95;">!/bin/sh</span>
 
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">NOTE: This is only for the live demo, not needed for your configuration!</span>
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">spice-vdagent</span>
+      <span style="color: #676E95;"># </span><span style="color: #676E95;">NOTE: This is only for the live demo, not needed for your configuration!</span>
+      <span style="color: #676E95;"># </span><span style="color: #676E95;">spice-vdagent</span>
 
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Fire it up</span>
-<span style="font-weight: bold;">exec</span> dbus-launch --exit-with-session emacs -mm --debug-init
+      <span style="color: #676E95;"># </span><span style="color: #676E95;">Fire it up</span>
+      <span style="color: #89DDFF;">exec</span> dbus-launch --exit-with-session emacs -mm --debug-init
 
 </pre>
 </div>
@@ -310,228 +310,228 @@ Xorg 窗口,进入终端模式还是别的什么情况?先记下,试过再来.�
 </p>
 </div>
 </div>
-<div id="outline-container-orgd50d8cc" class="outline-2">
-<h2 id="orgd50d8cc">配置 Exwm</h2>
-<div class="outline-text-2" id="text-orgd50d8cc">
+<div id="outline-container-org566f7ad" class="outline-2">
+<h2 id="org566f7ad">配置 Exwm</h2>
+<div class="outline-text-2" id="text-org566f7ad">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
-(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">efs/exwm-update-class</span> ()
-  (exwm-workspace-rename-buffer exwm-class-name))
+    (<span style="color: #89DDFF;">defun</span> <span style="color: #82aaff;">efs/exwm-update-class</span> ()
+      (exwm-workspace-rename-buffer exwm-class-name))
 
-(<span style="font-weight: bold;">use-package</span> exwm
-  <span style="font-weight: bold;">:config</span>
-  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Set the default number of workspaces</span>
-  (<span style="font-weight: bold;">setq</span> exwm-workspace-number 5)
+    (<span style="color: #89DDFF;">use-package</span> <span style="color: #f78c6c;">exwm</span>
+      <span style="color: #82aaff;">:config</span>
+      <span style="color: #676E95;">;; </span><span style="color: #676E95;">Set the default number of workspaces</span>
+      (<span style="color: #89DDFF;">setq</span> exwm-workspace-number 5)
 
-  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">When window "class" updates, use it to set the buffer name</span>
-  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(add-hook 'exwm-update-class-hook #'efs/exwm-update-class)</span>
+      <span style="color: #676E95;">;; </span><span style="color: #676E95;">When window "class" updates, use it to set the buffer name</span>
+      <span style="color: #676E95;">;; </span><span style="color: #676E95;">(add-hook 'exwm-update-class-hook #'efs/exwm-update-class)</span>
 
-  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">These keys should always pass through to Emacs</span>
-  (<span style="font-weight: bold;">setq</span> exwm-input-prefix-keys
-        '(?\C-x
-          ?\C-u
-          ?\C-h
-          ?\M-x
-          ?\M-`
-          ?\M-&amp;
-          ?\M-:
-          ?\C-\M-j  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Buffer list</span>
-          ?\C-\ ))  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Ctrl+Space</span>
+      <span style="color: #676E95;">;; </span><span style="color: #676E95;">These keys should always pass through to Emacs</span>
+      (<span style="color: #89DDFF;">setq</span> exwm-input-prefix-keys
+            '(?\C-x
+              ?\C-u
+              ?\C-h
+              ?\M-x
+              ?\M-`
+              ?\M-&amp;
+              ?\M-:
+              ?\C-\M-j  <span style="color: #676E95;">;; </span><span style="color: #676E95;">Buffer list</span>
+              ?\C-\ ))  <span style="color: #676E95;">;; </span><span style="color: #676E95;">Ctrl+Space</span>
 
-  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Ctrl+Q will enable the next key to be sent directly</span>
-  (define-key exwm-mode-map [?\C-q] 'exwm-input-send-next-key)
+      <span style="color: #676E95;">;; </span><span style="color: #676E95;">Ctrl+Q will enable the next key to be sent directly</span>
+      (define-key exwm-mode-map [?\C-q] 'exwm-input-send-next-key)
 
-  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Set up global key bindings.  These always work, no matter the input state!</span>
-  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Keep in mind that changing this list after EXWM initializes has no effect.</span>
-  (<span style="font-weight: bold;">setq</span> exwm-input-global-keys
-        `(
-          <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Reset to line-mode (C-c C-k switches to char-mode via exwm-input-release-keyboard)</span>
-          ([?\s-r] . exwm-reset)
+      <span style="color: #676E95;">;; </span><span style="color: #676E95;">Set up global key bindings.  These always work, no matter the input state!</span>
+      <span style="color: #676E95;">;; </span><span style="color: #676E95;">Keep in mind that changing this list after EXWM initializes has no effect.</span>
+      (<span style="color: #89DDFF;">setq</span> exwm-input-global-keys
+            `(
+              <span style="color: #676E95;">;; </span><span style="color: #676E95;">Reset to line-mode (C-c C-k switches to char-mode via exwm-input-release-keyboard)</span>
+              ([?\s-r] . exwm-reset)
 
-          <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Move between windows</span>
-          ([s-left] . windmove-left)
-          ([s-right] . windmove-right)
-          ([s-up] . windmove-up)
-          ([s-down] . windmove-down)
+              <span style="color: #676E95;">;; </span><span style="color: #676E95;">Move between windows</span>
+              ([s-left] . windmove-left)
+              ([s-right] . windmove-right)
+              ([s-up] . windmove-up)
+              ([s-down] . windmove-down)
 
-          <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Launch applications via shell command</span>
-          ([?\s-&amp;] . (<span style="font-weight: bold;">lambda</span> (command)
-                       (<span style="font-weight: bold;">interactive</span> (list (read-shell-command <span style="font-style: italic;">"$ "</span>)))
-                       (start-process-shell-command command nil command)))
+              <span style="color: #676E95;">;; </span><span style="color: #676E95;">Launch applications via shell command</span>
+              ([?\s-&amp;] . (<span style="color: #89DDFF;">lambda</span> (command)
+                           (<span style="color: #89DDFF;">interactive</span> (list (read-shell-command <span style="color: #c3e88d;">"$ "</span>)))
+                           (start-process-shell-command command nil command)))
 
-          <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Switch workspace</span>
-          ([?\s-w] . exwm-workspace-switch)
+              <span style="color: #676E95;">;; </span><span style="color: #676E95;">Switch workspace</span>
+              ([?\s-w] . exwm-workspace-switch)
 
-          <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">'</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">s-N</span><span style="font-weight: bold; font-style: italic;">': Switch to certain workspace with Super (Win) plus a number key (0 - 9)</span>
-          ,@(mapcar (<span style="font-weight: bold;">lambda</span> (i)
-                      `(,(kbd (format <span style="font-style: italic;">"s-%d"</span> i)) .
-                        (<span style="font-weight: bold;">lambda</span> ()
-                          (<span style="font-weight: bold;">interactive</span>)
-                          (exwm-workspace-switch-create ,i))))
-                    (number-sequence 0 9))))
+              <span style="color: #676E95;">;; </span><span style="color: #676E95;">'</span><span style="color: #f78c6c;">s-N</span><span style="color: #676E95;">': Switch to certain workspace with Super (Win) plus a number key (0 - 9)</span>
+              ,@(mapcar (<span style="color: #89DDFF;">lambda</span> (i)
+                          `(,(kbd (format <span style="color: #c3e88d;">"s-%d"</span> i)) .
+                            (<span style="color: #89DDFF;">lambda</span> ()
+                              (<span style="color: #89DDFF;">interactive</span>)
+                              (exwm-workspace-switch-create ,i))))
+                        (number-sequence 0 9))))
 
-  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Screen resolution</span>
+      <span style="color: #676E95;">;; </span><span style="color: #676E95;">Screen resolution</span>
 
-  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Ensure screen updates with xrandr will refresh EXWM frames</span>
-  (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">exwm-randr</span>)
-  (exwm-randr-enable)
-  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Set the screen resolution</span>
-  (start-process-shell-command <span style="font-style: italic;">"xrandr"</span> nil <span style="font-style: italic;">"xrandr --output eDP-1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --off"</span>)
+      <span style="color: #676E95;">;; </span><span style="color: #676E95;">Ensure screen updates with xrandr will refresh EXWM frames</span>
+      (<span style="color: #89DDFF;">require</span> '<span style="color: #f78c6c;">exwm-randr</span>)
+      (exwm-randr-enable)
+      <span style="color: #676E95;">;; </span><span style="color: #676E95;">Set the screen resolution</span>
+      (start-process-shell-command <span style="color: #c3e88d;">"xrandr"</span> nil <span style="color: #c3e88d;">"xrandr --output eDP-1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --off"</span>)
 
 
 
-  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Load the system tray before exwm-init</span>
-  (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">exwm-systemtray</span>)
-  (exwm-systemtray-enable)
+      <span style="color: #676E95;">;; </span><span style="color: #676E95;">Load the system tray before exwm-init</span>
+      (<span style="color: #89DDFF;">require</span> '<span style="color: #f78c6c;">exwm-systemtray</span>)
+      (exwm-systemtray-enable)
 
-  (exwm-enable))
+      (exwm-enable))
 
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org09ed2ff" class="outline-2">
-<h2 id="org09ed2ff">Panel(Polybar)</h2>
-<div class="outline-text-2" id="text-org09ed2ff">
+<div id="outline-container-orgf0f5b57" class="outline-2">
+<h2 id="orgf0f5b57">Panel(Polybar)</h2>
+<div class="outline-text-2" id="text-orgf0f5b57">
 </div>
-<div id="outline-container-org4bdfe9a" class="outline-3">
-<h3 id="org4bdfe9a">配置 Polybar</h3>
-<div class="outline-text-3" id="text-org4bdfe9a">
+<div id="outline-container-org166972d" class="outline-3">
+<h3 id="org166972d">配置 Polybar</h3>
+<div class="outline-text-3" id="text-org166972d">
 <div class="org-src-container">
 <pre class="src src-conf">
-; Docs: https://github.com/polybar/polybar
-<span style="font-weight: bold; font-style: italic;">;</span>==========================================================
+     ; Docs: https://github.com/polybar/polybar
+     <span style="color: #ffcb6b;">;</span>==========================================================
 
-[<span style="font-weight: bold; text-decoration: underline;">settings</span>]
-<span style="font-weight: bold; font-style: italic;">screenchange-reload</span> = true
+     [<span style="color: #c792ea;">settings</span>]
+     <span style="color: #ffcb6b;">screenchange-reload</span> = true
 
-[<span style="font-weight: bold; text-decoration: underline;">global/wm</span>]
-<span style="font-weight: bold; font-style: italic;">margin-top</span> = 0
-<span style="font-weight: bold; font-style: italic;">margin-bottom</span> = 0
+     [<span style="color: #c792ea;">global/wm</span>]
+     <span style="color: #ffcb6b;">margin-top</span> = 0
+     <span style="color: #ffcb6b;">margin-bottom</span> = 0
 
-[<span style="font-weight: bold; text-decoration: underline;">colors</span>]
-<span style="font-weight: bold; font-style: italic;">background</span> = <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">f0232635</span>
-<span style="font-weight: bold; font-style: italic;">background-alt</span> = <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">576075</span>
-<span style="font-weight: bold; font-style: italic;">foreground</span> = <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">A6Accd</span>
-<span style="font-weight: bold; font-style: italic;">foreground-alt</span> = <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">555</span>
-<span style="font-weight: bold; font-style: italic;">primary</span> = <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">ffb52a</span>
-<span style="font-weight: bold; font-style: italic;">secondary</span> = <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">e60053</span>
-<span style="font-weight: bold; font-style: italic;">alert</span> = <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">bd2c40</span>
-<span style="font-weight: bold; font-style: italic;">underline-1</span> = <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">c792ea</span>
+     [<span style="color: #c792ea;">colors</span>]
+     <span style="color: #ffcb6b;">background</span> = <span style="color: #676E95;">#</span><span style="color: #676E95;">f0232635</span>
+     <span style="color: #ffcb6b;">background-alt</span> = <span style="color: #676E95;">#</span><span style="color: #676E95;">576075</span>
+     <span style="color: #ffcb6b;">foreground</span> = <span style="color: #676E95;">#</span><span style="color: #676E95;">A6Accd</span>
+     <span style="color: #ffcb6b;">foreground-alt</span> = <span style="color: #676E95;">#</span><span style="color: #676E95;">555</span>
+     <span style="color: #ffcb6b;">primary</span> = <span style="color: #676E95;">#</span><span style="color: #676E95;">ffb52a</span>
+     <span style="color: #ffcb6b;">secondary</span> = <span style="color: #676E95;">#</span><span style="color: #676E95;">e60053</span>
+     <span style="color: #ffcb6b;">alert</span> = <span style="color: #676E95;">#</span><span style="color: #676E95;">bd2c40</span>
+     <span style="color: #ffcb6b;">underline-1</span> = <span style="color: #676E95;">#</span><span style="color: #676E95;">c792ea</span>
 
-[<span style="font-weight: bold; text-decoration: underline;">bar/panel</span>]
-<span style="font-weight: bold; font-style: italic;">width</span> = 100%
-<span style="font-weight: bold; font-style: italic;">height</span> = 35
-<span style="font-weight: bold; font-style: italic;">offset-x</span> = 0
-<span style="font-weight: bold; font-style: italic;">offset-y</span> = 0
-<span style="font-weight: bold; font-style: italic;">fixed-center</span> = true
-<span style="font-weight: bold; font-style: italic;">enable-ipc</span> = true
+     [<span style="color: #c792ea;">bar/panel</span>]
+     <span style="color: #ffcb6b;">width</span> = 100%
+     <span style="color: #ffcb6b;">height</span> = 35
+     <span style="color: #ffcb6b;">offset-x</span> = 0
+     <span style="color: #ffcb6b;">offset-y</span> = 0
+     <span style="color: #ffcb6b;">fixed-center</span> = true
+     <span style="color: #ffcb6b;">enable-ipc</span> = true
 
-<span style="font-weight: bold; font-style: italic;">background</span> = ${colors.background}
-<span style="font-weight: bold; font-style: italic;">foreground</span> = ${colors.foreground}
+     <span style="color: #ffcb6b;">background</span> = ${colors.background}
+     <span style="color: #ffcb6b;">foreground</span> = ${colors.foreground}
 
-<span style="font-weight: bold; font-style: italic;">line-size</span> = 2
-<span style="font-weight: bold; font-style: italic;">line-color</span> = <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">f00</span>
+     <span style="color: #ffcb6b;">line-size</span> = 2
+     <span style="color: #ffcb6b;">line-color</span> = <span style="color: #676E95;">#</span><span style="color: #676E95;">f00</span>
 
-<span style="font-weight: bold; font-style: italic;">border-size</span> = 0
-<span style="font-weight: bold; font-style: italic;">border-color</span> = <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">00000000</span>
+     <span style="color: #ffcb6b;">border-size</span> = 0
+     <span style="color: #ffcb6b;">border-color</span> = <span style="color: #676E95;">#</span><span style="color: #676E95;">00000000</span>
 
-<span style="font-weight: bold; font-style: italic;">padding-top</span> = 5
-<span style="font-weight: bold; font-style: italic;">padding-left</span> = 1
-<span style="font-weight: bold; font-style: italic;">padding-right</span> = 1
+     <span style="color: #ffcb6b;">padding-top</span> = 5
+     <span style="color: #ffcb6b;">padding-left</span> = 1
+     <span style="color: #ffcb6b;">padding-right</span> = 1
 
-<span style="font-weight: bold; font-style: italic;">module-margin</span> = 1
+     <span style="color: #ffcb6b;">module-margin</span> = 1
 
-<span style="font-weight: bold; font-style: italic;">font-0</span> = <span style="font-style: italic;">"Cantarell:size=18:weight=bold;2"</span>
-<span style="font-weight: bold; font-style: italic;">font-1</span> = <span style="font-style: italic;">"Font Awesome:size=14;2"</span>
-<span style="font-weight: bold; font-style: italic;">font-2</span> = <span style="font-style: italic;">"Material Icons:size=20;5"</span>
-<span style="font-weight: bold; font-style: italic;">font-3</span> = <span style="font-style: italic;">"Fira Mono:size=13;-3"</span>
+     <span style="color: #ffcb6b;">font-0</span> = <span style="color: #c3e88d;">"Cantarell:size=18:weight=bold;2"</span>
+     <span style="color: #ffcb6b;">font-1</span> = <span style="color: #c3e88d;">"Font Awesome:size=14;2"</span>
+     <span style="color: #ffcb6b;">font-2</span> = <span style="color: #c3e88d;">"Material Icons:size=20;5"</span>
+     <span style="color: #ffcb6b;">font-3</span> = <span style="color: #c3e88d;">"Fira Mono:size=13;-3"</span>
 
-<span style="font-weight: bold; font-style: italic;">modules-right</span> = cpu temperature battery date
+     <span style="color: #ffcb6b;">modules-right</span> = cpu temperature battery date
 
-<span style="font-weight: bold; font-style: italic;">tray-position</span> = right
-<span style="font-weight: bold; font-style: italic;">tray-padding</span> = 2
-<span style="font-weight: bold; font-style: italic;">tray-maxsize</span> = 28
+     <span style="color: #ffcb6b;">tray-position</span> = right
+     <span style="color: #ffcb6b;">tray-padding</span> = 2
+     <span style="color: #ffcb6b;">tray-maxsize</span> = 28
 
-<span style="font-weight: bold; font-style: italic;">cursor-click</span> = pointer
-<span style="font-weight: bold; font-style: italic;">cursor-scroll</span> = ns-resize
+     <span style="color: #ffcb6b;">cursor-click</span> = pointer
+     <span style="color: #ffcb6b;">cursor-scroll</span> = ns-resize
 
-[<span style="font-weight: bold; text-decoration: underline;">module/cpu</span>]
-<span style="font-weight: bold; font-style: italic;">type</span> = internal/cpu
-<span style="font-weight: bold; font-style: italic;">interval</span> = 2
-<span style="font-weight: bold; font-style: italic;">format</span> = &#58146;&lt;label&gt; &lt;ramp-coreload&gt;
-<span style="font-weight: bold; font-style: italic;">format-underline</span> = ${colors.underline-1}
-<span style="font-weight: bold; font-style: italic;">click-left</span> = emacsclient -e <span style="font-style: italic;">"(proced)"</span>
-<span style="font-weight: bold; font-style: italic;">label</span> = %percentage:2%%
-<span style="font-weight: bold; font-style: italic;">ramp-coreload-spacing</span> = 0
-<span style="font-weight: bold; font-style: italic;">ramp-coreload-0</span> = &#9601;
-<span style="font-weight: bold; font-style: italic;">ramp-coreload-0-foreground</span> = ${colors.foreground-alt}
-<span style="font-weight: bold; font-style: italic;">ramp-coreload-1</span> = &#9602;
-<span style="font-weight: bold; font-style: italic;">ramp-coreload-2</span> = &#9603;
-<span style="font-weight: bold; font-style: italic;">ramp-coreload-3</span> = &#9604;
-<span style="font-weight: bold; font-style: italic;">ramp-coreload-4</span> = &#9605;
-<span style="font-weight: bold; font-style: italic;">ramp-coreload-5</span> = &#9606;
-<span style="font-weight: bold; font-style: italic;">ramp-coreload-6</span> = &#9607;
+     [<span style="color: #c792ea;">module/cpu</span>]
+     <span style="color: #ffcb6b;">type</span> = internal/cpu
+     <span style="color: #ffcb6b;">interval</span> = 2
+     <span style="color: #ffcb6b;">format</span> = &#58146;&lt;label&gt; &lt;ramp-coreload&gt;
+     <span style="color: #ffcb6b;">format-underline</span> = ${colors.underline-1}
+     <span style="color: #ffcb6b;">click-left</span> = emacsclient -e <span style="color: #c3e88d;">"(proced)"</span>
+     <span style="color: #ffcb6b;">label</span> = %percentage:2%%
+     <span style="color: #ffcb6b;">ramp-coreload-spacing</span> = 0
+     <span style="color: #ffcb6b;">ramp-coreload-0</span> = &#9601;
+     <span style="color: #ffcb6b;">ramp-coreload-0-foreground</span> = ${colors.foreground-alt}
+     <span style="color: #ffcb6b;">ramp-coreload-1</span> = &#9602;
+     <span style="color: #ffcb6b;">ramp-coreload-2</span> = &#9603;
+     <span style="color: #ffcb6b;">ramp-coreload-3</span> = &#9604;
+     <span style="color: #ffcb6b;">ramp-coreload-4</span> = &#9605;
+     <span style="color: #ffcb6b;">ramp-coreload-5</span> = &#9606;
+     <span style="color: #ffcb6b;">ramp-coreload-6</span> = &#9607;
 
-[<span style="font-weight: bold; text-decoration: underline;">module/date</span>]
-<span style="font-weight: bold; font-style: italic;">type</span> = internal/date
-<span style="font-weight: bold; font-style: italic;">interval</span> = 5
+     [<span style="color: #c792ea;">module/date</span>]
+     <span style="color: #ffcb6b;">type</span> = internal/date
+     <span style="color: #ffcb6b;">interval</span> = 5
 
-<span style="font-weight: bold; font-style: italic;">date</span> = <span style="font-style: italic;">"%a %b %e"</span>
-<span style="font-weight: bold; font-style: italic;">date-alt</span> = <span style="font-style: italic;">"%A %B %d %Y"</span>
+     <span style="color: #ffcb6b;">date</span> = <span style="color: #c3e88d;">"%a %b %e"</span>
+     <span style="color: #ffcb6b;">date-alt</span> = <span style="color: #c3e88d;">"%A %B %d %Y"</span>
 
-<span style="font-weight: bold; font-style: italic;">time</span> = %l:%M %p
-<span style="font-weight: bold; font-style: italic;">time-alt</span> = %H:%M:%S
+     <span style="color: #ffcb6b;">time</span> = %l:%M %p
+     <span style="color: #ffcb6b;">time-alt</span> = %H:%M:%S
 
-<span style="font-weight: bold; font-style: italic;">format-prefix-foreground</span> = ${colors.foreground-alt}
-<span style="font-weight: bold; font-style: italic;">format-underline</span> = ${colors.underline-1}
+     <span style="color: #ffcb6b;">format-prefix-foreground</span> = ${colors.foreground-alt}
+     <span style="color: #ffcb6b;">format-underline</span> = ${colors.underline-1}
 
-<span style="font-weight: bold; font-style: italic;">label</span> = %date% %time%
+     <span style="color: #ffcb6b;">label</span> = %date% %time%
 
-[<span style="font-weight: bold; text-decoration: underline;">module/battery</span>]
-<span style="font-weight: bold; font-style: italic;">type</span> = internal/battery
-<span style="font-weight: bold; font-style: italic;">battery</span> = BAT0
-<span style="font-weight: bold; font-style: italic;">adapter</span> = ADP1
-<span style="font-weight: bold; font-style: italic;">full-at</span> = 98
-<span style="font-weight: bold; font-style: italic;">time-format</span> = %-l:%M
+     [<span style="color: #c792ea;">module/battery</span>]
+     <span style="color: #ffcb6b;">type</span> = internal/battery
+     <span style="color: #ffcb6b;">battery</span> = BAT0
+     <span style="color: #ffcb6b;">adapter</span> = ADP1
+     <span style="color: #ffcb6b;">full-at</span> = 98
+     <span style="color: #ffcb6b;">time-format</span> = %-l:%M
 
-<span style="font-weight: bold; font-style: italic;">label-charging</span> = %percentage%% / %time%
-<span style="font-weight: bold; font-style: italic;">format-charging</span> = &lt;animation-charging&gt; &lt;label-charging&gt;
-<span style="font-weight: bold; font-style: italic;">format-charging-underline</span> = ${colors.underline-1}
+     <span style="color: #ffcb6b;">label-charging</span> = %percentage%% / %time%
+     <span style="color: #ffcb6b;">format-charging</span> = &lt;animation-charging&gt; &lt;label-charging&gt;
+     <span style="color: #ffcb6b;">format-charging-underline</span> = ${colors.underline-1}
 
-<span style="font-weight: bold; font-style: italic;">label-discharging</span> = %percentage%% / %time%
-<span style="font-weight: bold; font-style: italic;">format-discharging</span> = &lt;ramp-capacity&gt; &lt;label-discharging&gt;
-<span style="font-weight: bold; font-style: italic;">format-discharging-underline</span> = ${self.format-charging-underline}
+     <span style="color: #ffcb6b;">label-discharging</span> = %percentage%% / %time%
+     <span style="color: #ffcb6b;">format-discharging</span> = &lt;ramp-capacity&gt; &lt;label-discharging&gt;
+     <span style="color: #ffcb6b;">format-discharging-underline</span> = ${self.format-charging-underline}
 
-<span style="font-weight: bold; font-style: italic;">format-full</span> = &lt;ramp-capacity&gt; &lt;label-full&gt;
-<span style="font-weight: bold; font-style: italic;">format-full-underline</span> = ${self.format-charging-underline}
+     <span style="color: #ffcb6b;">format-full</span> = &lt;ramp-capacity&gt; &lt;label-full&gt;
+     <span style="color: #ffcb6b;">format-full-underline</span> = ${self.format-charging-underline}
 
-<span style="font-weight: bold; font-style: italic;">ramp-capacity-0</span> = &#62020;
-<span style="font-weight: bold; font-style: italic;">ramp-capacity-1</span> = &#62019;
-<span style="font-weight: bold; font-style: italic;">ramp-capacity-2</span> = &#62018;
-<span style="font-weight: bold; font-style: italic;">ramp-capacity-3</span> = &#62017;
-<span style="font-weight: bold; font-style: italic;">ramp-capacity-4</span> = &#62016;
+     <span style="color: #ffcb6b;">ramp-capacity-0</span> = &#62020;
+     <span style="color: #ffcb6b;">ramp-capacity-1</span> = &#62019;
+     <span style="color: #ffcb6b;">ramp-capacity-2</span> = &#62018;
+     <span style="color: #ffcb6b;">ramp-capacity-3</span> = &#62017;
+     <span style="color: #ffcb6b;">ramp-capacity-4</span> = &#62016;
 
-<span style="font-weight: bold; font-style: italic;">animation-charging-0</span> = &#62020;
-<span style="font-weight: bold; font-style: italic;">animation-charging-1</span> = &#62019;
-<span style="font-weight: bold; font-style: italic;">animation-charging-2</span> = &#62018;
-<span style="font-weight: bold; font-style: italic;">animation-charging-3</span> = &#62017;
-<span style="font-weight: bold; font-style: italic;">animation-charging-4</span> = &#62016;
-<span style="font-weight: bold; font-style: italic;">animation-charging-framerate</span> = 750
+     <span style="color: #ffcb6b;">animation-charging-0</span> = &#62020;
+     <span style="color: #ffcb6b;">animation-charging-1</span> = &#62019;
+     <span style="color: #ffcb6b;">animation-charging-2</span> = &#62018;
+     <span style="color: #ffcb6b;">animation-charging-3</span> = &#62017;
+     <span style="color: #ffcb6b;">animation-charging-4</span> = &#62016;
+     <span style="color: #ffcb6b;">animation-charging-framerate</span> = 750
 
-[<span style="font-weight: bold; text-decoration: underline;">module/temperature</span>]
-<span style="font-weight: bold; font-style: italic;">type</span> = internal/temperature
-<span style="font-weight: bold; font-style: italic;">thermal-zone</span> = 0
-<span style="font-weight: bold; font-style: italic;">warn-temperature</span> = 60
+     [<span style="color: #c792ea;">module/temperature</span>]
+     <span style="color: #ffcb6b;">type</span> = internal/temperature
+     <span style="color: #ffcb6b;">thermal-zone</span> = 0
+     <span style="color: #ffcb6b;">warn-temperature</span> = 60
 
-<span style="font-weight: bold; font-style: italic;">format</span> = &lt;label&gt;
-<span style="font-weight: bold; font-style: italic;">format-underline</span> = ${colors.underline-1}
-<span style="font-weight: bold; font-style: italic;">format-warn</span> = &lt;label-warn&gt;
-<span style="font-weight: bold; font-style: italic;">format-warn-underline</span> = ${self.format-underline}
+     <span style="color: #ffcb6b;">format</span> = &lt;label&gt;
+     <span style="color: #ffcb6b;">format-underline</span> = ${colors.underline-1}
+     <span style="color: #ffcb6b;">format-warn</span> = &lt;label-warn&gt;
+     <span style="color: #ffcb6b;">format-warn-underline</span> = ${self.format-underline}
 
-<span style="font-weight: bold; font-style: italic;">label</span> = %temperature-c%
-<span style="font-weight: bold; font-style: italic;">label-warn</span> = %temperature-c%!
-<span style="font-weight: bold; font-style: italic;">label-warn-foreground</span> = ${colors.secondary}
+     <span style="color: #ffcb6b;">label</span> = %temperature-c%
+     <span style="color: #ffcb6b;">label-warn</span> = %temperature-c%!
+     <span style="color: #ffcb6b;">label-warn-foreground</span> = ${colors.secondary}
 
 </pre>
 </div>
@@ -539,9 +539,9 @@ Xorg 窗口,进入终端模式还是别的什么情况?先记下,试过再来.�
 </div>
 </div>
 
-<div id="outline-container-orgacf28cc" class="outline-2">
-<h2 id="orgacf28cc">david 的Exwm 系列</h2>
-<div class="outline-text-2" id="text-orgacf28cc">
+<div id="outline-container-org064dea0" class="outline-2">
+<h2 id="org064dea0">david 的Exwm 系列</h2>
+<div class="outline-text-2" id="text-org064dea0">
 <ul class="org-ul">
 <li>Notes:
 <ul class="org-ul">

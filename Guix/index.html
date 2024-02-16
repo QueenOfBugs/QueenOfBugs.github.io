@@ -224,29 +224,29 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgb2ec41d">虚拟机运行Guix</a>
+<li><a href="#org7c6b7f1">虚拟机运行Guix</a>
 <ul>
-<li><a href="#orgb42e2e5">下载安装包</a></li>
-<li><a href="#org7dbfe36">QEMU 里安装 Guix</a>
+<li><a href="#org4df0882">下载安装包</a></li>
+<li><a href="#orgdb56aa8">QEMU 里安装 Guix</a>
 <ul>
-<li><a href="#org0f99b59">创建一个磁盘镜像,用来运行 Guix</a></li>
-<li><a href="#orgc6ec02b">使用下载的安装镜像引导启动,进行系统安装</a></li>
+<li><a href="#orgec1779e">创建一个磁盘镜像,用来运行 Guix</a></li>
+<li><a href="#orgc5bb7d6">使用下载的安装镜像引导启动,进行系统安装</a></li>
 </ul>
 </li>
-<li><a href="#orgd90636a">安装好后运行Guix</a></li>
-<li><a href="#orgc012df7">使用官方提供的 QEMU 镜像运行 Guix</a></li>
+<li><a href="#org939ed7e">安装好后运行Guix</a></li>
+<li><a href="#orgc6f57bd">使用官方提供的 QEMU 镜像运行 Guix</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb2ec41d" class="outline-2">
-<h2 id="orgb2ec41d">虚拟机运行Guix</h2>
-<div class="outline-text-2" id="text-orgb2ec41d">
+<div id="outline-container-org7c6b7f1" class="outline-2">
+<h2 id="org7c6b7f1">虚拟机运行Guix</h2>
+<div class="outline-text-2" id="text-org7c6b7f1">
 </div>
-<div id="outline-container-orgb42e2e5" class="outline-3">
-<h3 id="orgb42e2e5">下载安装包</h3>
-<div class="outline-text-3" id="text-orgb42e2e5">
+<div id="outline-container-org4df0882" class="outline-3">
+<h3 id="org4df0882">下载安装包</h3>
+<div class="outline-text-3" id="text-org4df0882">
 <p>
 下载地址:<a href="https://guix.gnu.org/zh-CN/download/">https://guix.gnu.org/zh-CN/download/</a>
 完整的虚拟机安装包下载第一个 Guix 系统的 USB/DVD ISO 安装包
@@ -255,13 +255,13 @@
 </div>
 </div>
 
-<div id="outline-container-org7dbfe36" class="outline-3">
-<h3 id="org7dbfe36">QEMU 里安装 Guix</h3>
-<div class="outline-text-3" id="text-org7dbfe36">
+<div id="outline-container-orgdb56aa8" class="outline-3">
+<h3 id="orgdb56aa8">QEMU 里安装 Guix</h3>
+<div class="outline-text-3" id="text-orgdb56aa8">
 </div>
-<div id="outline-container-org0f99b59" class="outline-4">
-<h4 id="org0f99b59">创建一个磁盘镜像,用来运行 Guix</h4>
-<div class="outline-text-4" id="text-org0f99b59">
+<div id="outline-container-orgec1779e" class="outline-4">
+<h4 id="orgec1779e">创建一个磁盘镜像,用来运行 Guix</h4>
+<div class="outline-text-4" id="text-orgec1779e">
 <div class="org-src-container">
 <pre class="src src-sh">qemu-img create -f qcow2 guix-system.img 50G
 </pre>
@@ -272,21 +272,21 @@
 </div>
 </div>
 
-<div id="outline-container-orgc6ec02b" class="outline-4">
-<h4 id="orgc6ec02b">使用下载的安装镜像引导启动,进行系统安装</h4>
-<div class="outline-text-4" id="text-orgc6ec02b">
+<div id="outline-container-orgc5bb7d6" class="outline-4">
+<h4 id="orgc5bb7d6">使用下载的安装镜像引导启动,进行系统安装</h4>
+<div class="outline-text-4" id="text-orgc5bb7d6">
 <div class="org-src-container">
-<pre class="src src-sh">qemu-system-x86_64 -m 1024 -smp 1 -enable-kvm <span style="font-style: italic;">\</span>
-  -nic user,<span style="font-weight: bold; font-style: italic;">model</span>=virtio-net-pci -boot <span style="font-weight: bold; font-style: italic;">menu</span>=on,<span style="font-weight: bold; font-style: italic;">order</span>=d <span style="font-style: italic;">\</span>
-  -drive <span style="font-weight: bold; font-style: italic;">file</span>=guix-system.img <span style="font-style: italic;">\</span>
-  -drive <span style="font-weight: bold; font-style: italic;">media</span>=cdrom,<span style="font-weight: bold; font-style: italic;">file</span>=guix-system-install-4a2f487.system.iso
+<pre class="src src-sh">qemu-system-x86_64 -m 1024 -smp 1 -enable-kvm <span style="color: #c3e88d;">\</span>
+  -nic user,<span style="color: #ffcb6b;">model</span>=virtio-net-pci -boot <span style="color: #ffcb6b;">menu</span>=on,<span style="color: #ffcb6b;">order</span>=d <span style="color: #c3e88d;">\</span>
+  -drive <span style="color: #ffcb6b;">file</span>=guix-system.img <span style="color: #c3e88d;">\</span>
+  -drive <span style="color: #ffcb6b;">media</span>=cdrom,<span style="color: #ffcb6b;">file</span>=guix-system-install-4a2f487.system.iso
 </pre>
 </div>
 </div>
 
 <ul class="org-ul">
-<li><a id="org2ae398a"></a>系统安装<br />
-<div class="outline-text-5" id="text-org2ae398a">
+<li><a id="org7a6b593"></a>系统安装<br />
+<div class="outline-text-5" id="text-org7a6b593">
 <p>
 熟悉 Linux 系统安装的都不会陌生,不熟悉的可以看看手册
 手册:<a href="https://guix.gnu.org/zh-CN/manual/devel/zh-cn/html_node/Zhun-Bei-An-Zhuang-.html">https://guix.gnu.org/zh-CN/manual/devel/zh-cn/html_node/Zhun-Bei-An-Zhuang-.html</a>
@@ -297,34 +297,34 @@
 </div>
 </div>
 
-<div id="outline-container-orgd90636a" class="outline-3">
-<h3 id="orgd90636a">安装好后运行Guix</h3>
-<div class="outline-text-3" id="text-orgd90636a">
+<div id="outline-container-org939ed7e" class="outline-3">
+<h3 id="org939ed7e">安装好后运行Guix</h3>
+<div class="outline-text-3" id="text-org939ed7e">
 <p>
-安装完成后我们就将系统成功加载到 <a href="#org0f99b59">创建一个磁盘镜像,用来运行 Guix</a> 这一步创建的磁盘
+安装完成后我们就将系统成功加载到 <a href="#orgec1779e">创建一个磁盘镜像,用来运行 Guix</a> 这一步创建的磁盘
 镜像里了,那么以后再启动就可以直接使用该镜像文件启动了:
 command:
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">qemu-system-x86_64 <span style="font-style: italic;">\</span>
-                                      -nic user,<span style="font-weight: bold; font-style: italic;">model</span>=virtio-net-pci <span style="font-style: italic;">\</span>
-                                      -enable-kvm -m 2048 <span style="font-style: italic;">\</span>
-                                      -device virtio-blk,<span style="font-weight: bold; font-style: italic;">drive</span>=myhd <span style="font-style: italic;">\</span>
-                                      -drive <span style="font-weight: bold; font-style: italic;">if</span>=none,<span style="font-weight: bold; font-style: italic;">file</span>=$<span style="font-weight: bold; font-style: italic;">HOME</span>/guix-system.img,<span style="font-weight: bold; font-style: italic;">id</span>=myhd
+<pre class="src src-sh">     qemu-system-x86_64 <span style="color: #c3e88d;">\</span>
+                                           -nic user,<span style="color: #ffcb6b;">model</span>=virtio-net-pci <span style="color: #c3e88d;">\</span>
+                                           -enable-kvm -m 2048 <span style="color: #c3e88d;">\</span>
+                                           -device virtio-blk,<span style="color: #ffcb6b;">drive</span>=myhd <span style="color: #c3e88d;">\</span>
+                                           -drive <span style="color: #ffcb6b;">if</span>=none,<span style="color: #ffcb6b;">file</span>=$<span style="color: #ffcb6b;">HOME</span>/guix-system.img,<span style="color: #ffcb6b;">id</span>=myhd
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgc012df7" class="outline-3">
-<h3 id="orgc012df7">使用官方提供的 QEMU 镜像运行 Guix</h3>
-<div class="outline-text-3" id="text-orgc012df7">
+<div id="outline-container-orgc6f57bd" class="outline-3">
+<h3 id="orgc6f57bd">使用官方提供的 QEMU 镜像运行 Guix</h3>
+<div class="outline-text-3" id="text-orgc6f57bd">
 <div class="org-src-container">
-<pre class="src src-sh">qemu-system-x86_64 <span style="font-style: italic;">\</span>
-   -nic user,<span style="font-weight: bold; font-style: italic;">model</span>=virtio-net-pci <span style="font-style: italic;">\</span>
-   -enable-kvm -m 1024 <span style="font-style: italic;">\</span>
-   -device virtio-blk,<span style="font-weight: bold; font-style: italic;">drive</span>=myhd <span style="font-style: italic;">\</span>
-   -drive <span style="font-weight: bold; font-style: italic;">if</span>=none,<span style="font-weight: bold; font-style: italic;">file</span>=/path/to/qemu-image,<span style="font-weight: bold; font-style: italic;">id</span>=myhd
+<pre class="src src-sh">qemu-system-x86_64 <span style="color: #c3e88d;">\</span>
+   -nic user,<span style="color: #ffcb6b;">model</span>=virtio-net-pci <span style="color: #c3e88d;">\</span>
+   -enable-kvm -m 1024 <span style="color: #c3e88d;">\</span>
+   -device virtio-blk,<span style="color: #ffcb6b;">drive</span>=myhd <span style="color: #c3e88d;">\</span>
+   -drive <span style="color: #ffcb6b;">if</span>=none,<span style="color: #ffcb6b;">file</span>=/path/to/qemu-image,<span style="color: #ffcb6b;">id</span>=myhd
 </pre>
 </div>
 </div>
