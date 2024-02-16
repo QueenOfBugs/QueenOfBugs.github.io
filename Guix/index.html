@@ -224,29 +224,29 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge52b983">虚拟机运行Guix</a>
+<li><a href="#orgb2ec41d">虚拟机运行Guix</a>
 <ul>
-<li><a href="#orgbd4969b">下载安装包</a></li>
-<li><a href="#org61bcfc3">QEMU 里安装 Guix</a>
+<li><a href="#orgb42e2e5">下载安装包</a></li>
+<li><a href="#org7dbfe36">QEMU 里安装 Guix</a>
 <ul>
-<li><a href="#orgbfd6209">创建一个磁盘镜像,用来运行 Guix</a></li>
-<li><a href="#org37fd232">使用下载的安装镜像引导启动,进行系统安装</a></li>
+<li><a href="#org0f99b59">创建一个磁盘镜像,用来运行 Guix</a></li>
+<li><a href="#orgc6ec02b">使用下载的安装镜像引导启动,进行系统安装</a></li>
 </ul>
 </li>
-<li><a href="#org1d2f79a">安装好后运行Guix</a></li>
-<li><a href="#org67bb7ef">使用官方提供的 QEMU 镜像运行 Guix</a></li>
+<li><a href="#orgd90636a">安装好后运行Guix</a></li>
+<li><a href="#orgc012df7">使用官方提供的 QEMU 镜像运行 Guix</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge52b983" class="outline-2">
-<h2 id="orge52b983">虚拟机运行Guix</h2>
-<div class="outline-text-2" id="text-orge52b983">
+<div id="outline-container-orgb2ec41d" class="outline-2">
+<h2 id="orgb2ec41d">虚拟机运行Guix</h2>
+<div class="outline-text-2" id="text-orgb2ec41d">
 </div>
-<div id="outline-container-orgbd4969b" class="outline-3">
-<h3 id="orgbd4969b">下载安装包</h3>
-<div class="outline-text-3" id="text-orgbd4969b">
+<div id="outline-container-orgb42e2e5" class="outline-3">
+<h3 id="orgb42e2e5">下载安装包</h3>
+<div class="outline-text-3" id="text-orgb42e2e5">
 <p>
 下载地址:<a href="https://guix.gnu.org/zh-CN/download/">https://guix.gnu.org/zh-CN/download/</a>
 完整的虚拟机安装包下载第一个 Guix 系统的 USB/DVD ISO 安装包
@@ -255,13 +255,13 @@
 </div>
 </div>
 
-<div id="outline-container-org61bcfc3" class="outline-3">
-<h3 id="org61bcfc3">QEMU 里安装 Guix</h3>
-<div class="outline-text-3" id="text-org61bcfc3">
+<div id="outline-container-org7dbfe36" class="outline-3">
+<h3 id="org7dbfe36">QEMU 里安装 Guix</h3>
+<div class="outline-text-3" id="text-org7dbfe36">
 </div>
-<div id="outline-container-orgbfd6209" class="outline-4">
-<h4 id="orgbfd6209">创建一个磁盘镜像,用来运行 Guix</h4>
-<div class="outline-text-4" id="text-orgbfd6209">
+<div id="outline-container-org0f99b59" class="outline-4">
+<h4 id="org0f99b59">创建一个磁盘镜像,用来运行 Guix</h4>
+<div class="outline-text-4" id="text-org0f99b59">
 <div class="org-src-container">
 <pre class="src src-sh">qemu-img create -f qcow2 guix-system.img 50G
 </pre>
@@ -272,9 +272,9 @@
 </div>
 </div>
 
-<div id="outline-container-org37fd232" class="outline-4">
-<h4 id="org37fd232">使用下载的安装镜像引导启动,进行系统安装</h4>
-<div class="outline-text-4" id="text-org37fd232">
+<div id="outline-container-orgc6ec02b" class="outline-4">
+<h4 id="orgc6ec02b">使用下载的安装镜像引导启动,进行系统安装</h4>
+<div class="outline-text-4" id="text-orgc6ec02b">
 <div class="org-src-container">
 <pre class="src src-sh">qemu-system-x86_64 -m 1024 -smp 1 -enable-kvm <span style="font-style: italic;">\</span>
   -nic user,<span style="font-weight: bold; font-style: italic;">model</span>=virtio-net-pci -boot <span style="font-weight: bold; font-style: italic;">menu</span>=on,<span style="font-weight: bold; font-style: italic;">order</span>=d <span style="font-style: italic;">\</span>
@@ -285,8 +285,8 @@
 </div>
 
 <ul class="org-ul">
-<li><a id="org10dfa86"></a>系统安装<br />
-<div class="outline-text-5" id="text-org10dfa86">
+<li><a id="org2ae398a"></a>系统安装<br />
+<div class="outline-text-5" id="text-org2ae398a">
 <p>
 熟悉 Linux 系统安装的都不会陌生,不熟悉的可以看看手册
 手册:<a href="https://guix.gnu.org/zh-CN/manual/devel/zh-cn/html_node/Zhun-Bei-An-Zhuang-.html">https://guix.gnu.org/zh-CN/manual/devel/zh-cn/html_node/Zhun-Bei-An-Zhuang-.html</a>
@@ -297,11 +297,11 @@
 </div>
 </div>
 
-<div id="outline-container-org1d2f79a" class="outline-3">
-<h3 id="org1d2f79a">安装好后运行Guix</h3>
-<div class="outline-text-3" id="text-org1d2f79a">
+<div id="outline-container-orgd90636a" class="outline-3">
+<h3 id="orgd90636a">安装好后运行Guix</h3>
+<div class="outline-text-3" id="text-orgd90636a">
 <p>
-安装完成后我们就将系统成功加载到 <a href="#orgbfd6209">创建一个磁盘镜像,用来运行 Guix</a> 这一步创建的磁盘
+安装完成后我们就将系统成功加载到 <a href="#org0f99b59">创建一个磁盘镜像,用来运行 Guix</a> 这一步创建的磁盘
 镜像里了,那么以后再启动就可以直接使用该镜像文件启动了:
 command:
 </p>
@@ -316,9 +316,9 @@ command:
 </div>
 </div>
 
-<div id="outline-container-org67bb7ef" class="outline-3">
-<h3 id="org67bb7ef">使用官方提供的 QEMU 镜像运行 Guix</h3>
-<div class="outline-text-3" id="text-org67bb7ef">
+<div id="outline-container-orgc012df7" class="outline-3">
+<h3 id="orgc012df7">使用官方提供的 QEMU 镜像运行 Guix</h3>
+<div class="outline-text-3" id="text-orgc012df7">
 <div class="org-src-container">
 <pre class="src src-sh">qemu-system-x86_64 <span style="font-style: italic;">\</span>
    -nic user,<span style="font-weight: bold; font-style: italic;">model</span>=virtio-net-pci <span style="font-style: italic;">\</span>
